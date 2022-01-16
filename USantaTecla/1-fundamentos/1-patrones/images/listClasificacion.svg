@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="319px" preserveAspectRatio="none" style="width:431px;height:319px;background:#222222;" version="1.1" viewBox="0 0 431 319" width="431px" zoomAndPan="magnify"><defs/><g><!--cluster listsRecursive--><polygon fill="#222222" points="22,24,198,24,205,58.1133,409,58.1133,409,307,22,307,22,24" style="stroke: #1E90FF; stroke-width: 3.0;"/><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="22" x2="205" y1="58.1133" y2="58.1133"/><text fill="#1E90FF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="168" x="27" y="47.1074">listsRecursive</text><!--class ListRecursive--><rect fill="#222222" height="54.1133" id="ListRecursive" style="stroke: #1E90FF; stroke-width: 3.0;" width="82" x="222" y="71"/><ellipse cx="237" cy="90.0566" fill="#ADD1B2" rx="11" ry="11" style="stroke: #1E90FF; stroke-width: 1.0;"/><path d="M239.7656,85.9316 Q239.9219,85.7129 240.1094,85.6035 Q240.2969,85.4941 240.5156,85.4941 Q240.8906,85.4941 241.125,85.7598 Q241.3594,86.0098 241.3594,86.6191 L241.3594,88.0723 Q241.3594,88.6816 241.125,88.9473 Q240.8906,89.2129 240.5156,89.2129 Q240.1719,89.2129 239.9688,89.0098 Q239.7656,88.8223 239.6563,88.3066 Q239.6094,87.9473 239.4219,87.7598 Q239.0938,87.3848 238.4844,87.166 Q237.875,86.9473 237.25,86.9473 Q236.4844,86.9473 235.8438,87.2754 Q235.2188,87.6035 234.7188,88.3535 Q234.2344,89.1035 234.2344,90.1348 L234.2344,91.2285 Q234.2344,92.4629 235.125,93.291 Q236.0156,94.1035 237.6094,94.1035 Q238.5469,94.1035 239.2031,93.8535 Q239.5938,93.6973 240.0156,93.2598 Q240.2813,92.9941 240.4219,92.916 Q240.5781,92.8379 240.7813,92.8379 Q241.1094,92.8379 241.3594,93.1035 Q241.625,93.3535 241.625,93.6973 Q241.625,94.041 241.2813,94.4473 Q240.7813,95.0254 239.9844,95.3535 Q238.9063,95.8066 237.6094,95.8066 Q236.0938,95.8066 234.8906,95.1816 Q233.9063,94.6816 233.2188,93.6191 Q232.5313,92.541 232.5313,91.2598 L232.5313,90.1035 Q232.5313,88.7754 233.1406,87.6348 Q233.7656,86.4785 234.8594,85.8691 Q235.9531,85.2441 237.1875,85.2441 Q237.9219,85.2441 238.5625,85.416 Q239.2188,85.5723 239.7656,85.9316 Z "/><text fill="#1E90FF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="252" y="97.1074">List</text><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="223" x2="303" y1="109.1133" y2="109.1133"/><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="223" x2="303" y1="117.1133" y2="117.1133"/><!--class EmptyList--><rect fill="#222222" height="54.1133" id="EmptyList" style="stroke: #1E90FF; stroke-width: 3.0;" width="142" x="38" y="226"/><ellipse cx="53" cy="245.0566" fill="#ADD1B2" rx="11" ry="11" style="stroke: #1E90FF; stroke-width: 1.0;"/><path d="M55.7656,240.9316 Q55.9219,240.7129 56.1094,240.6035 Q56.2969,240.4941 56.5156,240.4941 Q56.8906,240.4941 57.125,240.7598 Q57.3594,241.0098 57.3594,241.6191 L57.3594,243.0723 Q57.3594,243.6816 57.125,243.9473 Q56.8906,244.2129 56.5156,244.2129 Q56.1719,244.2129 55.9688,244.0098 Q55.7656,243.8223 55.6563,243.3066 Q55.6094,242.9473 55.4219,242.7598 Q55.0938,242.3848 54.4844,242.166 Q53.875,241.9473 53.25,241.9473 Q52.4844,241.9473 51.8438,242.2754 Q51.2188,242.6035 50.7188,243.3535 Q50.2344,244.1035 50.2344,245.1348 L50.2344,246.2285 Q50.2344,247.4629 51.125,248.291 Q52.0156,249.1035 53.6094,249.1035 Q54.5469,249.1035 55.2031,248.8535 Q55.5938,248.6973 56.0156,248.2598 Q56.2813,247.9941 56.4219,247.916 Q56.5781,247.8379 56.7813,247.8379 Q57.1094,247.8379 57.3594,248.1035 Q57.625,248.3535 57.625,248.6973 Q57.625,249.041 57.2813,249.4473 Q56.7813,250.0254 55.9844,250.3535 Q54.9063,250.8066 53.6094,250.8066 Q52.0938,250.8066 50.8906,250.1816 Q49.9063,249.6816 49.2188,248.6191 Q48.5313,247.541 48.5313,246.2598 L48.5313,245.1035 Q48.5313,243.7754 49.1406,242.6348 Q49.7656,241.4785 50.8594,240.8691 Q51.9531,240.2441 53.1875,240.2441 Q53.9219,240.2441 54.5625,240.416 Q55.2188,240.5723 55.7656,240.9316 Z "/><text fill="#1E90FF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="68" y="252.1074">EmptyList</text><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="39" x2="179" y1="264.1133" y2="264.1133"/><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="39" x2="179" y1="272.1133" y2="272.1133"/><!--class NotEmptyList--><rect fill="#222222" height="75.6982" id="NotEmptyList" style="stroke: #1E90FF; stroke-width: 3.0;" width="178" x="215" y="215"/><ellipse cx="230" cy="234.0566" fill="#ADD1B2" rx="11" ry="11" style="stroke: #1E90FF; stroke-width: 1.0;"/><path d="M232.7656,229.9316 Q232.9219,229.7129 233.1094,229.6035 Q233.2969,229.4941 233.5156,229.4941 Q233.8906,229.4941 234.125,229.7598 Q234.3594,230.0098 234.3594,230.6191 L234.3594,232.0723 Q234.3594,232.6816 234.125,232.9473 Q233.8906,233.2129 233.5156,233.2129 Q233.1719,233.2129 232.9688,233.0098 Q232.7656,232.8223 232.6563,232.3066 Q232.6094,231.9473 232.4219,231.7598 Q232.0938,231.3848 231.4844,231.166 Q230.875,230.9473 230.25,230.9473 Q229.4844,230.9473 228.8438,231.2754 Q228.2188,231.6035 227.7188,232.3535 Q227.2344,233.1035 227.2344,234.1348 L227.2344,235.2285 Q227.2344,236.4629 228.125,237.291 Q229.0156,238.1035 230.6094,238.1035 Q231.5469,238.1035 232.2031,237.8535 Q232.5938,237.6973 233.0156,237.2598 Q233.2813,236.9941 233.4219,236.916 Q233.5781,236.8379 233.7813,236.8379 Q234.1094,236.8379 234.3594,237.1035 Q234.625,237.3535 234.625,237.6973 Q234.625,238.041 234.2813,238.4473 Q233.7813,239.0254 232.9844,239.3535 Q231.9063,239.8066 230.6094,239.8066 Q229.0938,239.8066 227.8906,239.1816 Q226.9063,238.6816 226.2188,237.6191 Q225.5313,236.541 225.5313,235.2598 L225.5313,234.1035 Q225.5313,232.7754 226.1406,231.6348 Q226.7656,230.4785 227.8594,229.8691 Q228.9531,229.2441 230.1875,229.2441 Q230.9219,229.2441 231.5625,229.416 Q232.2188,229.5723 232.7656,229.9316 Z "/><text fill="#1E90FF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="144" x="245" y="241.1074">NotEmptyList</text><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="216" x2="392" y1="253.1133" y2="253.1133"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="36" x="222" y="273.1938">info</text><line style="stroke: #1E90FF; stroke-width: 3.0;" x1="216" x2="392" y1="282.6982" y2="282.6982"/><!--link ListRecursive to EmptyList--><path d="M222.195,139.54 C199.854,161.736 172.25,189.161 149.894,211.371 " fill="none" id="ListRecursive-EmptyList" style="stroke: #1E90FF; stroke-width: 2.0;"/><polygon fill="#1E90FF" points="135.385,225.786,144.5889,222.2807,138.9321,222.2621,138.9507,216.6053,135.385,225.786" style="stroke: #1E90FF; stroke-width: 2.0;"/><line style="stroke: #1E90FF; stroke-width: 2.0;" x1="138.9321" x2="149.5735" y1="222.2621" y2="211.69"/><polygon fill="none" points="217.405,134.432,236.526,125.302,227.272,144.364,217.405,134.432" style="stroke: #1E90FF; stroke-width: 2.0;"/><!--link ListRecursive to NotEmptyList--><path d="M262.028,145.528 C262.743,158.496 264.455,172.461 268,185 C269.078,188.812 270.397,192.651 271.887,196.457 " fill="none" id="ListRecursive-NotEmptyList" style="stroke: #1E90FF; stroke-width: 2.0;"/><polygon fill="#1E90FF" points="280.425,214.954,280.2844,205.1061,278.3293,210.4144,273.0211,208.4593,280.425,214.954" style="stroke: #1E90FF; stroke-width: 2.0;"/><line style="stroke: #1E90FF; stroke-width: 2.0;" x1="278.3293" x2="272.0435" y1="210.4144" y2="196.795"/><polygon fill="none" points="255.021,145.209,261.618,125.072,269.018,144.928,255.021,145.209" style="stroke: #1E90FF; stroke-width: 2.0;"/><!--link NotEmptyList to ListRecursive--><path d="M294.054,214.884 C287.122,189.018 277.977,154.89 271.409,130.38 " fill="none" id="NotEmptyList-ListRecursive" style="stroke: #1E90FF; stroke-width: 2.0;"/><polygon fill="#1E90FF" points="270.048,125.302,268.5138,135.0306,271.3422,130.1316,276.2412,132.9599,270.048,125.302" style="stroke: #1E90FF; stroke-width: 2.0;"/><text fill="#1E90FF" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="48" x="287" y="177.1074">next</text><text fill="#1E90FF" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="257.0572" y="154.2826">1</text><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #1E90FF
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #1E90FF
+}
+skinparam package {
+    BorderThickness 3
+    BorderColor #1E90FF
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #1E90FF
+}
+
+skinparam class {
+    BorderThickness 3
+    BorderColor #1E90FF
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #1E90FF
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+package listsRecursive {
+class ListRecursive as "List"
+class EmptyList
+class NotEmptyList {
+info
+}
+}
+
+ListRecursive <|-down-> EmptyList
+ListRecursive <|-down-> NotEmptyList
+NotEmptyList - -> "1" ListRecursive : next
+
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.8+10-LTS
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

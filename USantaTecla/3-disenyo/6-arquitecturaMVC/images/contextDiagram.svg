@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="797.5px" preserveAspectRatio="none" style="width:1713px;height:797px;" version="1.1" viewBox="0 0 1713 797" width="1713.75px" zoomAndPan="magnify"><defs><filter height="300%" id="f1icndlw60jekd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="821.25" cy="22.5" fill="#000000" filter="url(#f1icndlw60jekd)" rx="12.5" ry="12.5" style="stroke: none; stroke-width: 1.25;"/><rect fill="#FEFECE" filter="url(#f1icndlw60jekd)" height="50" rx="15.625" ry="15.625" style="stroke: #A80036; stroke-width: 1.875;" width="67.5" x="787.5" y="111.25"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="55" x="793.75" y="143.4106">INITIAL</text><rect fill="#FEFECE" filter="url(#f1icndlw60jekd)" height="50" rx="15.625" ry="15.625" style="stroke: #A80036; stroke-width: 1.875;" width="201.25" x="720.625" y="326.875"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="188.75" x="726.875" y="359.0356">OPENED_DASHBOARD</text><rect fill="#FEFECE" filter="url(#f1icndlw60jekd)" height="50" rx="15.625" ry="15.625" style="stroke: #A80036; stroke-width: 1.875;" width="176.25" x="11.875" y="563.125"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="163.75" x="18.125" y="595.2856">OPENED_VEHICLES</text><rect fill="#FEFECE" filter="url(#f1icndlw60jekd)" height="50" rx="15.625" ry="15.625" style="stroke: #A80036; stroke-width: 1.875;" width="165" x="397.5" y="563.125"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="152.5" x="403.75" y="595.2856">OPENED_CLIENTS</text><rect fill="#FEFECE" filter="url(#f1icndlw60jekd)" height="50" rx="15.625" ry="15.625" style="stroke: #A80036; stroke-width: 1.875;" width="228.75" x="759.375" y="563.125"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="216.25" x="765.625" y="595.2856">OPENED_INTERVENTIONS</text><rect fill="#FEFECE" filter="url(#f1icndlw60jekd)" height="50" rx="15.625" ry="15.625" style="stroke: #A80036; stroke-width: 1.875;" width="205" x="1222.5" y="563.125"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="192.5" x="1228.75" y="595.2856">OPENED_OPERATIONS</text><ellipse cx="645" cy="771.25" fill="none" filter="url(#f1icndlw60jekd)" rx="12.5" ry="12.5" style="stroke: #000000; stroke-width: 1.25;"/><ellipse cx="645.625" cy="771.875" fill="#000000" rx="7.5" ry="7.5" style="stroke: none; stroke-width: 1.25;"/><!--MD5=[06c3f2024f4ea60966e79307ee69ec5f]
+link *start to INITIAL--><path d="M821.25,35.2362 C821.25,51.475 821.25,81.72 821.25,104.6675 " fill="none" id="*start-&gt;INITIAL" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="821.25,110.9288,826.25,99.6788,821.25,104.6788,816.25,99.6788,821.25,110.9288" style="stroke: #008000; stroke-width: 1.25;"/><!--MD5=[2f9381f69d49eaf825075dc57500e277]
+link INITIAL to OPENED_DASHBOARD--><path d="M821.25,161.5337 C821.25,200.4912 821.25,277.3638 821.25,320.1213 " fill="none" id="INITIAL-&gt;OPENED_DASHBOARD" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="821.25,326.6788,826.25,315.4288,821.25,320.4288,816.25,315.4288,821.25,326.6788" style="stroke: #008000; stroke-width: 1.25;"/><path d="M827.5,205 L827.5,257.5 L901.25,257.5 L901.25,217.5 L888.75,205 L827.5,205 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M888.75,205 L888.75,217.5 L901.25,217.5 L888.75,205 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="33.75" x="835" y="228.1189">login</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="47.5" x="835" y="248.5583">sign in</text><!--MD5=[7fd3362ee68cab4ea336d5422e86651e]
+link OPENED_DASHBOARD to OPENED_VEHICLES--><path d="M720.2425,363.2875 C502.3125,385.215 7.5,435 7.5,435 C7.5,435 7.5,505 7.5,505 C7.5,505 41.1438,534.7788 67.8509,558.4188 " fill="none" id="OPENED_DASHBOARD-&gt;OPENED_VEHICLES" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="72.7473,562.7525,67.6368,551.5522,68.0671,558.6102,61.0091,559.0405,72.7473,562.7525" style="stroke: #008000; stroke-width: 1.25;"/><path d="M13.75,451.25 L13.75,483.75 L137.5,483.75 L137.5,463.75 L125,451.25 L13.75,451.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M125,451.25 L125,463.75 L137.5,463.75 L125,451.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="97.5" x="21.25" y="474.3689">openVehicles</text><!--MD5=[5e11674a1be49c544b6d95b1bdfce1b5]
+link OPENED_VEHICLES to OPENED_DASHBOARD--><path d="M121.9854,562.81 C161.1088,519.985 238.75,435 238.75,435 C238.75,435 545.785,391.8438 714.0313,368.195 " fill="none" id="OPENED_VEHICLES-&gt;OPENED_DASHBOARD" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="720.4513,367.2925,708.6148,363.9069,714.2621,368.1624,710.0066,373.8096,720.4513,367.2925" style="stroke: #008000; stroke-width: 1.25;"/><path d="M245,441.25 L245,493.75 L397.5,493.75 L397.5,453.75 L385,441.25 L245,441.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M385,441.25 L385,453.75 L397.5,453.75 L385,441.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="126.25" x="252.5" y="464.3689">createIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="112.5" x="252.5" y="484.8083">openDashboard</text><!--MD5=[0658bce038e6d069da9bd29c93478e6a]
+link OPENED_DASHBOARD to OPENED_DASHBOARD--><path d="M922.115,330.1663 C947.0375,331.73 965.625,338.9663 965.625,351.875 C965.625,363.675 950.095,370.735 928.3912,373.055 " fill="none" id="OPENED_DASHBOARD-&gt;OPENED_DASHBOARD" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="922.115,373.5838,933.7452,377.6212,928.3429,373.0588,932.9053,367.6565,922.115,373.5838" style="stroke: #008000; stroke-width: 1.25;"/><path d="M971.875,312.5 L971.875,386.25 L1124.375,386.25 L1124.375,325 L1111.875,312.5 L971.875,312.5 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1111.875,312.5 L1111.875,325 L1124.375,325 L1111.875,312.5 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="126.25" x="979.375" y="335.6189">createIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="125" x="979.375" y="356.0583">pauseIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="118.75" x="979.375" y="376.4978">finishIntervention</text><!--MD5=[5b0402e1717c04d353cefcf5f980b708]
+link OPENED_VEHICLES to OPENED_VEHICLES--><path d="M188.13,568.0688 C212.8775,568.9463 231.875,575.6325 231.875,588.125 C231.875,599.5438 216.0025,606.1113 194.375,607.8263 " fill="none" id="OPENED_VEHICLES-&gt;OPENED_VEHICLES" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="188.13,608.1813,199.6461,612.5335,194.3699,607.8259,199.0775,602.5496,188.13,608.1813" style="stroke: #008000; stroke-width: 1.25;"/><path d="M238.125,548.75 L238.125,622.5 L363.125,622.5 L363.125,561.25 L350.625,548.75 L238.125,548.75 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M350.625,548.75 L350.625,561.25 L363.125,561.25 L350.625,548.75 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="98.75" x="245.625" y="571.8689">createVehicle</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="96.25" x="245.625" y="592.3083">configVehicle</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="97.5" x="245.625" y="612.7478">deleteVehicle</text><!--MD5=[15c74f34291f5e75839dab458770ad02]
+link OPENED_DASHBOARD to OPENED_CLIENTS--><path d="M720.2013,373.68 C600.9738,397.9325 418.75,435 418.75,435 C418.75,435 418.75,505 418.75,505 C418.75,505 440.4762,534.0425 458.05,557.5325 " fill="none" id="OPENED_DASHBOARD-&gt;OPENED_CLIENTS" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="461.9538,562.7525,459.2181,550.7492,458.2098,557.748,451.211,556.7396,461.9538,562.7525" style="stroke: #008000; stroke-width: 1.25;"/><path d="M425,451.25 L425,483.75 L536.25,483.75 L536.25,463.75 L523.75,451.25 L425,451.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M523.75,451.25 L523.75,463.75 L536.25,463.75 L523.75,451.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="85" x="432.5" y="474.3689">openClients</text><!--MD5=[e86c9098c6e8a06dad771708352e16ef]
+link OPENED_CLIENTS to OPENED_DASHBOARD--><path d="M504.9562,562.81 C549.3675,519.985 637.5,435 637.5,435 C637.5,435 708.1313,403.5287 761.8113,379.61 " fill="none" id="OPENED_CLIENTS-&gt;OPENED_DASHBOARD" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="767.6075,377.0263,755.2964,377.0363,761.8982,379.5693,759.3652,386.1711,767.6075,377.0263" style="stroke: #008000; stroke-width: 1.25;"/><path d="M643.75,441.25 L643.75,493.75 L796.25,493.75 L796.25,453.75 L783.75,441.25 L643.75,441.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M783.75,441.25 L783.75,453.75 L796.25,453.75 L783.75,441.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="126.25" x="651.25" y="464.3689">createIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="112.5" x="651.25" y="484.8083">openDashboard</text><!--MD5=[bd7c2e30750d5e163bff11905f6efb8d]
+link OPENED_CLIENTS to OPENED_CLIENTS--><path d="M562.5688,568.0125 C587.135,568.6138 606.25,575.3175 606.25,588.125 C606.25,599.7325 590.5513,606.3263 569.3225,607.9075 " fill="none" id="OPENED_CLIENTS-&gt;OPENED_CLIENTS" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="562.5688,608.2375,574.0483,612.6852,568.8114,607.9339,573.5626,602.697,562.5688,608.2375" style="stroke: #008000; stroke-width: 1.25;"/><path d="M612.5,548.75 L612.5,622.5 L725,622.5 L725,561.25 L712.5,548.75 L612.5,548.75 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M712.5,548.75 L712.5,561.25 L725,561.25 L712.5,548.75 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="86.25" x="620" y="571.8689">createClient</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="83.75" x="620" y="592.3083">configClient</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="85" x="620" y="612.7478">deleteClient</text><!--MD5=[f962ecf610241878d7904dbcfaee543a]
+link OPENED_DASHBOARD to OPENED_INTERVENTIONS--><path d="M820.145,377.2475 C819.0387,401.3988 817.5,435 817.5,435 C817.5,435 817.5,505 817.5,505 C817.5,505 837.4525,534.0425 853.5913,557.5325 " fill="none" id="OPENED_DASHBOARD-&gt;OPENED_INTERVENTIONS" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="857.1775,562.7525,854.9284,550.6486,853.6384,557.601,846.686,556.3111,857.1775,562.7525" style="stroke: #008000; stroke-width: 1.25;"/><path d="M823.75,441.25 L823.75,493.75 L997.5,493.75 L997.5,453.75 L985,441.25 L823.75,441.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M985,441.25 L985,453.75 L997.5,453.75 L985,441.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="125" x="831.25" y="464.3689">openInterventions</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="147.5" x="831.25" y="484.8083">openMyInterventions</text><!--MD5=[0b4f9f0cf45c3a499e4f4e76b77491af]
+link OPENED_INTERVENTIONS to OPENED_DASHBOARD--><path d="M914.62,562.9738 C955.9425,538.8063 1013.75,505 1013.75,505 C1013.75,505 1013.75,435 1013.75,435 C1013.75,435 939.7562,403.5287 883.5188,379.61 " fill="none" id="OPENED_INTERVENTIONS-&gt;OPENED_DASHBOARD" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="877.4463,377.0263,885.8417,386.0306,883.1976,379.4725,889.7557,376.8284,877.4463,377.0263" style="stroke: #008000; stroke-width: 1.25;"/><path d="M1020,441.25 L1020,493.75 L1172.5,493.75 L1172.5,453.75 L1160,441.25 L1020,441.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1160,441.25 L1160,453.75 L1172.5,453.75 L1160,441.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="126.25" x="1027.5" y="464.3689">createIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="112.5" x="1027.5" y="484.8083">openDashboard</text><!--MD5=[34401e5380ef69428dfd3f5907d3a658]
+link OPENED_DASHBOARD to OPENED_OPERATIONS--><path d="M922.0538,375.2813 C1032.3713,399.5288 1193.75,435 1193.75,435 C1193.75,435 1261.5625,513.475 1299.7,557.6063 " fill="none" id="OPENED_DASHBOARD-&gt;OPENED_OPERATIONS" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="1304.2,562.81,1300.6325,551.0272,1300.1155,558.0793,1293.0634,557.5623,1304.2,562.81" style="stroke: #008000; stroke-width: 1.25;"/><path d="M1258.75,451.25 L1258.75,483.75 L1398.75,483.75 L1398.75,463.75 L1386.25,451.25 L1258.75,451.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1386.25,451.25 L1386.25,463.75 L1398.75,463.75 L1386.25,451.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="113.75" x="1266.25" y="474.3689">openOperations</text><!--MD5=[8c54216a9fd09b2d44ec0cc83a6c6b0d]
+link OPENED_OPERATIONS to OPENED_DASHBOARD--><path d="M1352.9875,562.7525 C1381.0125,538.6012 1420,505 1420,505 C1420,505 1420,435 1420,435 C1420,435 1101.0375,391.3838 928.7163,367.82 " fill="none" id="OPENED_OPERATIONS-&gt;OPENED_DASHBOARD" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="922.1425,366.9213,932.6115,373.3991,928.3349,367.7679,933.9661,363.4912,922.1425,366.9213" style="stroke: #008000; stroke-width: 1.25;"/><path d="M1426.25,441.25 L1426.25,493.75 L1578.75,493.75 L1578.75,453.75 L1566.25,441.25 L1426.25,441.25 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1566.25,441.25 L1566.25,453.75 L1578.75,453.75 L1566.25,441.25 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="126.25" x="1433.75" y="464.3689">createIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="112.5" x="1433.75" y="484.8083">openDashboard</text><!--MD5=[e577b56dcf70cdc3c7b9fb7f4477f901]
+link OPENED_OPERATIONS to OPENED_OPERATIONS--><path d="M1427.5125,568.2838 C1452.5875,569.7538 1471.25,576.3675 1471.25,588.125 C1471.25,598.8725 1455.6625,605.3213 1433.825,607.4738 " fill="none" id="OPENED_OPERATIONS-&gt;OPENED_OPERATIONS" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="1427.5125,607.9663,1439.1147,612.0836,1433.7439,607.4842,1438.3433,602.1134,1427.5125,607.9663" style="stroke: #008000; stroke-width: 1.25;"/><path d="M1477.5,569.375 L1477.5,601.875 L1611.25,601.875 L1611.25,581.875 L1598.75,569.375 L1477.5,569.375 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1598.75,569.375 L1598.75,581.875 L1611.25,581.875 L1598.75,569.375 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="107.5" x="1485" y="592.4939">importVehicles</text><!--MD5=[9cb05d4109c4a70493bb8d0f8a6b6c3b]
+link OPENED_INTERVENTIONS to OPENED_INTERVENTIONS--><path d="M988.1725,568.5113 C1013.4588,570.3538 1031.875,576.8925 1031.875,588.125 C1031.875,598.3925 1016.4888,604.7375 994.5325,607.16 " fill="none" id="OPENED_INTERVENTIONS-&gt;OPENED_INTERVENTIONS" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="988.1725,607.7388,999.8292,611.6991,994.3968,607.1726,998.9233,601.7402,988.1725,607.7388" style="stroke: #008000; stroke-width: 1.25;"/><path d="M1038.125,548.75 L1038.125,622.5 L1188.125,622.5 L1188.125,561.25 L1175.625,548.75 L1038.125,548.75 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1175.625,548.75 L1175.625,561.25 L1188.125,561.25 L1175.625,548.75 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="101.25" x="1045.625" y="571.8689">billIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="123.75" x="1045.625" y="592.3083">configIntervention</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="123.75" x="1045.625" y="612.7478">configIntervention</text><!--MD5=[793e8ba27cce923fc9e89a4e74e7431d]
+link OPENED_DASHBOARD to *end--><path d="M922.26,363.745 C1132.97,385.8988 1600,435 1600,435 C1600,435 1622.5,542.5 1622.5,542.5 C1622.5,542.5 1622.5,633.75 1622.5,633.75 C1622.5,633.75 798.5675,748.5949 663.5988,767.4076 " fill="none" id="OPENED_DASHBOARD-&gt;*end" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="657.3587,768.2773,669.1911,771.6769,663.549,767.4147,667.8111,761.7726,657.3587,768.2773" style="stroke: #008000; stroke-width: 1.25;"/><path d="M1628.75,569.375 L1628.75,601.875 L1698.75,601.875 L1698.75,581.875 L1686.25,569.375 L1628.75,569.375 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M1686.25,569.375 L1686.25,581.875 L1698.75,581.875 L1686.25,569.375 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="43.75" x="1636.25" y="592.4939">logout</text><!--MD5=[4e719d0417a469ca10e494df07e2e6c4]
+link OPENED_VEHICLES to *end--><path d="M165.42,613.2563 C269.5225,651.2588 461.25,721.25 461.25,721.25 C461.25,721.25 580.0875,752.7784 626.625,765.125 " fill="none" id="OPENED_VEHICLES-&gt;*end" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="632.9438,766.8014,623.3532,759.0824,626.903,765.1978,620.7875,768.7476,632.9438,766.8014" style="stroke: #008000; stroke-width: 1.25;"/><path d="M467.5,677.5 L467.5,710 L537.5,710 L537.5,690 L525,677.5 L467.5,677.5 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M525,677.5 L525,690 L537.5,690 L525,677.5 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="43.75" x="475" y="700.6189">logout</text><!--MD5=[adf8f57255849756616039a9ecd58871]
+link OPENED_CLIENTS to *end--><path d="M501.9113,613.36 C537.0475,651.8238 604.8613,726.0603 632.6575,756.489 " fill="none" id="OPENED_CLIENTS-&gt;*end" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="637.0663,761.3148,633.1722,749.6358,632.8517,756.6996,625.7879,756.379,637.0663,761.3148" style="stroke: #008000; stroke-width: 1.25;"/><path d="M602.5,677.5 L602.5,710 L672.5,710 L672.5,690 L660,677.5 L602.5,677.5 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M660,677.5 L660,690 L672.5,690 L660,677.5 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="43.75" x="610" y="700.6189">logout</text><!--MD5=[95d855294e3acb33a37e4375cc292d04]
+link OPENED_INTERVENTIONS to *end--><path d="M843.3738,613.36 C793.565,652.6913 696.3875,729.4237 659.5913,758.4783 " fill="none" id="OPENED_INTERVENTIONS-&gt;*end" style="stroke: #008000; stroke-width: 1.25;"/><polygon fill="#008000" points="654.6138,762.4089,666.5416,759.3612,659.5189,758.5357,660.3445,751.513,654.6138,762.4089" style="stroke: #008000; stroke-width: 1.25;"/><path d="M772.5,677.5 L772.5,710 L842.5,710 L842.5,690 L830,677.5 L772.5,677.5 " fill="#F5F5F5" filter="url(#f1icndlw60jekd)" style="stroke: #A80036; stroke-width: 1.25;"/><path d="M830,677.5 L830,690 L842.5,690 L830,677.5 " fill="#F5F5F5" style="stroke: #A80036; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="43.75" x="780" y="700.6189">logout</text><!--MD5=[16197263a768f066be708d383da65e37]
+@startuml
+skinparam {
+    NoteBackgroundColor #whiteSmoke
+    ArrowColor #green
+    linetype polyline
+}
+
+hide empty description
+
+
+[*] - -> INITIAL
+
+INITIAL - -> OPENED_DASHBOARD
+ note on link
+     login
+     sign in
+ end note
+
+OPENED_DASHBOARD - -> OPENED_VEHICLES
+    note on link
+         openVehicles
+    end note
+OPENED_DASHBOARD - -> OPENED_DASHBOARD
+    note on link
+         createIntervention
+         pauseIntervention
+         finishIntervention
+    end note
+
+OPENED_VEHICLES - -> OPENED_VEHICLES
+    note on link
+         createVehicle
+         configVehicle
+         deleteVehicle
+    end note
+
+OPENED_VEHICLES - -> OPENED_DASHBOARD
+    note on link
+     createIntervention
+     openDashboard
+    end note
+
+OPENED_DASHBOARD - -> OPENED_CLIENTS
+    note on link
+         openClients
+    end note
+
+OPENED_CLIENTS - -> OPENED_CLIENTS
+    note on link
+     createClient
+     configClient
+     deleteClient
+    end note
+
+OPENED_CLIENTS - -> OPENED_DASHBOARD
+    note on link
+     createIntervention
+     openDashboard
+    end note
+
+
+OPENED_DASHBOARD - -> OPENED_INTERVENTIONS
+    note on link
+         openInterventions
+         openMyInterventions
+    end note
+
+OPENED_DASHBOARD - -> OPENED_OPERATIONS
+    note on link
+        openOperations
+    end note
+
+OPENED_OPERATIONS - -> OPENED_DASHBOARD
+note on link
+    createIntervention
+    openDashboard
+end note
+
+OPENED_OPERATIONS - -> OPENED_OPERATIONS
+note on link
+    importVehicles
+end note
+
+OPENED_INTERVENTIONS - -> OPENED_INTERVENTIONS
+    note on link
+         billIntervention
+         configIntervention
+         configIntervention
+    end note
+OPENED_INTERVENTIONS - -> OPENED_DASHBOARD
+    note on link
+     createIntervention
+     openDashboard
+    end note
+
+OPENED_DASHBOARD - -> [*]
+    note on link
+    logout
+    end note
+OPENED_VEHICLES - -> [*]
+    note on link
+    logout
+    end note
+OPENED_CLIENTS - -> [*]
+    note on link
+    logout
+    end note
+OPENED_INTERVENTIONS - -> [*]
+    note on link
+    logout
+    end note
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 12:51:06 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.8+10-b1094.1
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

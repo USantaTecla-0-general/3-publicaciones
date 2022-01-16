@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="187px" preserveAspectRatio="none" style="width:224px;height:187px;background:#222222;" version="1.1" viewBox="0 0 224 187" width="224px" zoomAndPan="magnify"><defs/><g><!--class Expesión--><polygon fill="#222222" points="109,8,109,8.2102,119.4,7.5857,129.8,8.1933,140.2,8.3997,150.6,7.2866,161,7.9223,171.4,7.5735,181.8,7.6165,192.2,7.9318,202.6,7.3086,213,8,213.5536,8,212.3697,18.8227,212.8022,29.6453,213.4319,40.468,212.9142,51.2906,213,62.1133,213,62.1815,202.6,62.0813,192.2,62.2918,181.8,62.3524,171.4,62.699,161,62.7843,150.6,62.7925,140.2,62.3679,129.8,62.5769,119.4,62.8155,109,62.1133,108.2788,62.1133,109.6785,51.2906,108.7035,40.468,109.5338,29.6453,108.505,18.8227,109,8" style="stroke: #FF69B4; stroke-width: 3.0;"/><text fill="#FF69B4" font-family="courier" font-size="20" font-style="italic" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="113" y="34.1074">Expesión</text><path d="M110,46.1133 L110,46.3935 L120.2,45.5609 L130.4,46.371 L140.6,46.6462 L150.8,45.1621 L161,46.0097 L171.2,45.5446 L181.4,45.6019 L191.6,46.0224 L201.8,45.1915 L212,46.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><path d="M110,54.1133 L110,54.3935 L120.2,53.5609 L130.4,54.371 L140.6,54.6462 L150.8,53.1621 L161,54.0097 L171.2,53.5446 L181.4,53.6019 L191.6,54.0224 L201.8,53.1915 L212,54.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><!--class Valor--><polygon fill="#222222" points="6,122,6,122.2102,15.7143,121.5857,25.4286,122.1933,35.1429,122.3997,44.8571,121.2866,54.5714,121.9223,64.2857,121.5735,74,122,73.6165,122,73.9318,132.8227,73.3086,143.6453,74.5536,154.468,73.3697,165.2906,74,176.1133,74,175.9155,64.2857,176.5452,54.5714,176.0275,44.8571,176.1815,35.1429,176.0813,25.4286,176.2918,15.7143,176.3524,6,176.1133,6.5857,176.1133,6.6711,165.2906,6.6793,154.468,6.2546,143.6453,6.4636,132.8227,6,122" style="stroke: #FF69B4; stroke-width: 3.0;"/><text fill="#FF69B4" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="10" y="148.1074">Valor</text><path d="M7,160.1133 L7,160.3935 L16.4286,159.5609 L25.8571,160.371 L35.2857,160.6462 L44.7143,159.1621 L54.1429,160.0097 L63.5714,159.5446 L73,160.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><path d="M7,168.1133 L7,168.3935 L16.4286,167.5609 L25.8571,168.371 L35.2857,168.6462 L44.7143,167.1621 L54.1429,168.0097 L63.5714,167.5446 L73,168.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><!--class Operador--><polygon fill="#222222" points="109,122,109,122.2102,119.4,121.5857,129.8,122.1933,140.2,122.3997,150.6,121.2866,161,121.9223,171.4,121.5735,181.8,121.6165,192.2,121.9318,202.6,121.3086,213,122,213.5536,122,212.3697,132.8227,212.8022,143.6453,213.4319,154.468,212.9142,165.2906,213,176.1133,213,176.1815,202.6,176.0813,192.2,176.2918,181.8,176.3524,171.4,176.699,161,176.7843,150.6,176.7925,140.2,176.3679,129.8,176.5769,119.4,176.8155,109,176.1133,108.2788,176.1133,109.6785,165.2906,108.7035,154.468,109.5338,143.6453,108.505,132.8227,109,122" style="stroke: #FF69B4; stroke-width: 3.0;"/><text fill="#FF69B4" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="113" y="148.1074">Operador</text><path d="M110,160.1133 L110,160.3935 L120.2,159.5609 L130.4,160.371 L140.6,160.6462 L150.8,159.1621 L161,160.0097 L171.2,159.5446 L181.4,159.6019 L191.6,160.0224 L201.8,159.1915 L212,160.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><path d="M110,168.1133 L110,168.3935 L120.2,167.5609 L130.4,168.371 L140.6,168.6462 L150.8,167.1621 L161,168.0097 L171.2,167.5446 L181.4,167.6019 L191.6,168.0224 L201.8,167.1915 L212,168.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><!--link Expesión to Valor--><path d="M117.859,75.932 L118.0494,76.1377 L110.3884,82.0942 L103.8433,89.2564 L96.9349,96.026 L88.8314,101.5045 L82.3118,108.6942 L74.9005,114.9205 L68.1914,121.9055 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="113.198,70.708,113.2259,70.7723,117.0295,68.8915,120.9969,67.3875,124.9109,65.7608,128.6496,63.7307,132.631,62.259,132.6081,62.2469,130.5208,65.937,128.5488,69.6883,126.6571,73.4821,124.489,77.1294,122.708,80.9819,122.8434,81.1073,120.6518,78.7844,118.8556,76.8276,117.1077,74.9154,115.079,72.7434,113.198,70.708" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Expesión to Operador--><path d="M148.419,82.3672 L148.5124,82.3687 L148.2012,84.4075 L148.4375,86.4553 L148.4956,88.5002 L147.9673,90.5354 L148.2506,92.584 L148.2161,92.5833 L148.1035,94.62 L148.165,96.6602 L148.3475,98.703 L148.1129,100.7372 L148.4625,102.7834 L148.7077,102.8035 L148.4962,106.585 L149.0007,110.4251 L149.5925,114.2723 L149.6761,118.078 L150.027,121.9055 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="141.454,81.6464,141.5181,81.6747,143.038,77.7132,144.9337,73.9174,146.7071,70.0677,148.078,66.0405,150.006,62.259,149.981,62.2524,150.9495,66.3205,152.0444,70.4219,153.227,74.5464,154.1072,78.5912,155.411,82.7477,155.4255,82.9317,152.6031,82.318,149.823,82.2415,147.0481,82.2305,144.2432,81.8382,141.454,81.6464" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Operador to Expesión--><path d="M172.618,121.9055 L172.7109,121.9149 L172.698,119.2967 L173.23,116.7339 L173.5845,114.153 L173.3555,111.5128 L173.9342,108.9547 L173.8997,108.9533 L173.8545,106.1614 L173.9832,103.3763 L174.2329,100.596 L174.0657,97.7993 L174.4824,95.0255 L174.7284,95.0294 L174.1583,92.2009 L174.3065,89.3837 L174.5423,86.5678 L174.2682,83.7439 L174.2623,80.9243 L174.2926,80.9265 L174.0505,78.2298 L173.9461,75.5432 L173.7753,72.8517 L173.7313,70.1695 L173.274,67.457 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="#A9A9A9" points="172.641,62.259,172.708,62.2795,171.9324,64.1021,171.5495,66.0449,171.0387,67.9485,170.1073,69.7234,169.7581,71.6765,169.7377,71.6605,170.3436,70.698,171.0524,69.816,171.8326,68.99,172.3664,67.9711,173.2453,67.2223,173.3591,67.3677,174.0067,67.7544,174.9864,68.5653,176.0066,69.428,176.791,69.9896,177.6995,70.7095,177.719,70.7212,176.6787,69.014,175.7272,67.3599,174.7328,65.6802,173.8202,64.0494,172.641,62.259" style="stroke: #A9A9A9; stroke-width: 2.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="48" x="121.0944" y="91.2314">1..2</text><!--
+@startuml
+
+skinparam backgroundColor #222222
+
+skinparam default {
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam handwritten true
+
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+skinparam class {
+    BorderThickness 3
+    BorderColor #HotPink
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #HotPink
+}
+hide circle
+skinparam object {
+    BorderThickness 3
+    BorderColor #ForestGreen
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #ForestGreen
+}
+hide stereotype
+
+skinparam package {
+    BorderColor<<A>> #ForestGreen
+    BorderColor<<B>> #HotPink
+    FontColor<<A>> #ForestGreen
+    FontColor<<B>> #HotPink
+}
+
+abstract class Expesión
+class Valor
+class Operador
+
+Expesión <|-down- Valor
+Expesión <|-down- Operador
+Operador -down-> "1..2" Expesión
+
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.8+10-LTS
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

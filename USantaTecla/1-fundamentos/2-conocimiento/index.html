@@ -1,0 +1,2997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.8">
+<meta name="author" content="Universo Santa Tecla">
+<title>Conocimiento</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="book">
+<div id="header">
+<h1>Conocimiento</h1>
+<div class="details">
+<span id="author" class="author">Universo Santa Tecla</span><br>
+<span id="email" class="email"><a href="mailto:USantaTecla@gmail.com">USantaTecla@gmail.com</a></span><br>
+<span id="revnumber">version 0.0.1</span>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Índice</div>
+<ul class="sectlevel0">
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a>
+<ul class="sectlevel1">
+<li><a href="#pirámide-de-maslow">Pirámide de Maslow</a></li>
+</ul>
+</li>
+<li><a href="#qué"><strong>¿Qué?</strong></a>
+<ul class="sectlevel1">
+<li><a href="#pirámide-dikw">Pirámide DIKW</a></li>
+<li><a href="#lenguaje-formal">Lenguaje Formal</a></li>
+<li><a href="#expresiones-regulares">Expresiones Regulares</a></li>
+</ul>
+</li>
+<li><a href="#para-qué"><strong>¿Para qué?</strong></a>
+<ul class="sectlevel1">
+<li><a href="#sectores-productivos">Sectores Productivos</a></li>
+</ul>
+</li>
+<li><a href="#cómo"><strong>¿Cómo?</strong></a>
+<ul class="sectlevel1">
+<li><a href="#conjuntos">Conjuntos</a>
+<ul class="sectlevel2">
+<li><a href="#tipos-de-conjuntos">Tipos de Conjuntos</a></li>
+<li><a href="#objetos-y-clases">Objetos y Clases</a></li>
+<li><a href="#clases-abstractas">Clases Abstractas</a></li>
+<li><a href="#jerarquías-de-composición-vs-clasficación">Jerarquías de Composición vs Clasficación</a></li>
+<li><a href="#jerarquías-de-agregación-y-clasificación-múltiple">Jerarquías de Agregación y Clasificación Múltiple</a></li>
+<li><a href="#relación-de-asociación">Relación de Asociación</a></li>
+<li><a href="#álgebra-de-boole">Álgebra de Boole</a></li>
+</ul>
+</li>
+<li><a href="#estrategias-de-clasificación">Estrategias de Clasificación</a></li>
+<li><a href="#historia-de-la-ciencia">Historia de la Ciencia</a>
+<ul class="sectlevel2">
+<li><a href="#método-científico-de-galileo">Método Científico de Galileo</a></li>
+<li><a href="#método-cartesiano">Método Cartesiano</a></li>
+<li><a href="#ciclo-de-deming">Ciclo de Deming</a></li>
+<li><a href="#paradigmas-de-khun">Paradigmas de Khun</a></li>
+<li><a href="#dialéctica-hegeliana">Dialéctica Hegeliana</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
+<li><a href="#bibliografía"><strong>Bibliografía</strong></a>
+<ul class="sectlevel1">
+<li><a href="#ponente">Ponente</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/sintesis.png" alt="sintesis">
+</div>
+</div>
+</div>
+</div>
+<h1 id="por-qué" class="sect0"><strong>¿Por qué?</strong></h1>
+<div class="sect1">
+<h2 id="pirámide-de-maslow">Pirámide de Maslow</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Pirámide de Maslow</strong>, jerarquía de las necesidades humanas</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="quoteblock">
+<blockquote>
+El hombre es la medida de todas las cosas
+</blockquote>
+<div class="attribution">
+&#8212; Protágoras<br>
+<cite>Grecia Clásica</cite>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+El hombre como centro del universo
+</blockquote>
+<div class="attribution">
+&#8212; Humanismo<br>
+<cite>Renacimiento. XIV - XVI</cite>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideMaslow.png" alt="piramideMaslow" width="500"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="qué" class="sect0"><strong>¿Qué?</strong></h1>
+<div class="sect1">
+<h2 id="pirámide-dikw">Pirámide DIKW</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 60%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nivel</th>
+<th class="tableblock halign-left valign-top">Definición</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Ruido</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Señal física (visual, sonora, &#8230;&#8203;) no estandarizada, <strong>sin patrón</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>ñlaksjdfk, xxi, k34hsksi29sk2, ]})¿:?({#!!, :-*, &#8230;&#8203;, niño con tambor, aporreando las teclas del piano, &#8230;&#8203;</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Datos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Magnitudes de alguna característica cualitativa o cuantitativa concreta, sin ningún contexto o carentes de significado, con un <strong>formato</strong> preciso.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>1850, 7009.7 millones, 9,6%, (, ., !, 8-o, &#8230;&#8203;</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Información</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Es la aplicación de un <strong>orden estructurado</strong> a los datos con el propósito de que tengan algún significado. La información es un dato que está organizado, elemento relacionado dentro de una estructura de un sistema, descrito en un <strong>lenguaje</strong> conciso.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>1850 son las retrasmisiones en directo de las campanadas de fin de año que emocionaron al 9,6% de los 7009.7 millones de personas que lo celebramos en 2014 a la vez, decimocuarto aniversario anual dentro del siglo xxi.</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Conocimiento</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>La <strong>comprensión empírica</strong>, más que intuitiva, de un tema específico, a través de la experiencia o educación, normalmente en términos de una habilidad o pericia personal en un área determinada. La diferencia clave con la información es que el conocimiento nos da poder para tomar decisiones.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Te desenvuelves en el tipo de fiesta a las que sueles acudir</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Sabiduría</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Es el <strong>juicio óptimo</strong>, lo que refleja un profundo conocimiento de las personas, cosas, eventos o situaciones. Permite aplicar efectivamente la percepción y el conocimiento con el fin de producir los resultados deseados.dddd</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Sabe divertirse con los demás en cualquier fiesta sin perjuicio posterior a nadie</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideDIKW.png" alt="piramideDIKW"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>DIKW</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>D</strong><em>ata</em></p>
+</li>
+<li>
+<p><strong>I</strong><em>nformation</em></p>
+</li>
+<li>
+<p><strong>K</strong><em>nowledge</em></p>
+</li>
+<li>
+<p><strong>W</strong><em>isdom</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>DICS</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>D</strong><em>atos</em></p>
+</li>
+<li>
+<p><strong>I</strong><em>nformación</em></p>
+</li>
+<li>
+<p><strong>C</strong><em>onocimiento</em></p>
+</li>
+<li>
+<p><strong>S</strong><em>abiduría</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/efectividad.jpg" alt="efectividad"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lenguaje-formal">Lenguaje Formal</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Lexico</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Sintaxis</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Semántica</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>determina la corrección de las cadenas de símbolos del <strong>alfabeto</strong> que forman las <strong>palabras</strong> (simples, compuestas, derivadas, &#8230;&#8203;) y <strong>signos de puntuación</strong></p>
+</li>
+<li>
+<p><strong>morfología</strong>, &#8230;&#8203; piezas (unidad)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>determina la corrección de cadenas de piezas anteriores que forman las <strong>sentencias</strong> y <strong>expresiones</strong> del lenguaje (atributibas, afirmativas, subordinadas, &#8230;&#8203;)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>gramática</strong>, &#8230;&#8203; estructura (compuesto)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>determina la corrección del <strong>significado</strong> de la cadena anterior estableciendo su <strong>interpretación</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://wiki.c2.com/?LispShowOffExamples"><strong>LISP</strong></a>, &#8230;&#8203; <em>lot insipid stupid parenthesis</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>2</em></p>
+</li>
+<li>
+<p><em>x</em></p>
+</li>
+<li>
+<p><em>( )</em></p>
+</li>
+<li>
+<p><em>( 2 x )</em></p>
+</li>
+<li>
+<p><em>( ( ) ( ) )</em></p>
+</li>
+<li>
+<p><em>(defun get-operator (optional (operator nil)))</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/lisp.png" alt="lisp"></span>
+<span class="image"><img src="images/arbitro.jpg" alt="arbitro"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Lenguajes naturales</strong>: castellano, inglés, &#8230;&#8203;</p>
+</li>
+<li>
+<p><strong>Lenguajes artificiales</strong>: semaforo, malhechores, &#8230;&#8203;</p>
+</li>
+<li>
+<p><strong>Lenguajes formales</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lenguajes de modelado</strong>: <em>UML, plantuml, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><strong>Lenguajes de datos</strong>: <em>XML, JSON, YAML, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><strong>Lenguajes de publicación</strong>: <em>HTML, CSS, SVG, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><strong>Lenguajes de programación</strong>: <em>Javascript, Java, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="expresiones-regulares">Expresiones Regulares</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 15%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Jerarquía de Chomsky de Lenguajes Formales</th>
+<th class="tableblock halign-left valign-top" colspan="2">Expresiones Regulares</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tipoLenguajes.png" alt="tipoLenguajes"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/venTiposLenguajes.png" alt="venTiposLenguajes"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Caracter</strong>
+<span class="image"><img src="images/caracter.png" alt="caracter"></span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Operator</strong>
+<span class="image"><img src="images/operator.png" alt="operator"></span></p>
+</li>
+<li>
+<p><strong>Expression</strong>
+<span class="image"><img src="images/expression.png" alt="expression"></span></p>
+</li>
+<li>
+<p><a href="https://regexr.com/">Herramienta</a> y <a href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/">y detalle extenso</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="para-qué" class="sect0"><strong>¿Para qué?</strong></h1>
+<div class="sect1">
+<h2 id="sectores-productivos">Sectores Productivos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para obtener <strong>soluciones efectivas</strong>, eficaces y eficientes, a partir de <strong>sistemas complejos</strong> de cualquier <strong>sectores productivos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideProductiva.jpeg" alt="piramideProductiva"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 45%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sector Productivo</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+<th class="tableblock halign-left valign-top">Actividades</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Primario</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Conformado por las actividades económicas relacionadas con la transformación de los recursos naturales en productos primarios <strong>no elaborados</strong>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>pesca</strong>, <strong>caza</strong>, <strong>agricultura</strong>, <strong>ganadería</strong>, <strong>apicultura</strong>,<strong>piscicultura</strong>,  <strong>silvicultura</strong>, <strong>acuicultura</strong>,</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Secundario</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reúne la actividad artesanal e industrial manufacturera, mediante las cuales los bienes provenientes del sector primario son <strong>transformados</strong> en nuevos productos.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>industria minera</strong> y <strong>petrolífera</strong>, <strong>envasado</strong>, <strong>embotellado</strong>, <strong>manipulación</strong>, <strong>transformación de materias primas</strong> y/o <strong>productos semi-elaborados</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Terciario</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Es un sector que <strong>no produce bienes</strong>, que consiste en <strong>proporcionar a la población todos los productos</strong> que fabrica la industria, obtiene la agricultura e incluso el mismo sector servicios.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>comercio más pequeño</strong>, <strong>altas finanzas</strong> o <strong>gobierno</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Cuaternario o de información</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Actividades relacionadas con el <strong>valor intangible de la información</strong>, abarcando la gestión y la distribución de dicha información.  Este nuevo enfoque surge del concepto de <strong>sociedad de la información</strong> o <strong>sociedad del conocimiento</strong>, cuyos antecedentes se remontan al concepto de sociedad postindustrial, acuñado por <em>Daniel Bell</em>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>I</strong>nvestigación, <strong>D</strong>esarrollo, <strong>i</strong>nnovación y <strong>d</strong>ivulgación (<strong>I+D+i+d</strong>)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Quinario</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Relativo a los servicios <strong class="red">sin ánimo de lucro</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">cultura</strong>, <strong class="red">educación</strong>, <strong class="red">arte</strong> y <strong class="red">entretenimiento</strong>. Sin embargo, las actividades incluidas en este sector varían de unos autores a otros, incluyendo en ocasiones actividades relacionadas con la <strong>sanidad</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203; y para explotar el Universo, Galaxias, &#8230;&#8203; Planeta, Hidrosfera, &#8230;&#8203;, Persona, Pie, &#8230;&#8203;, Bacterias, &#8230;&#8203; hay que estudiarlo, investigarlo, analizarlo, sintetizarlo, &#8230;&#8203;, conocerlo, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+No se triunfa de la naturaleza sino obedeciéndola
+</blockquote>
+<div class="attribution">
+&#8212; Francis Bacon<br>
+<cite>Novum Organum. 1620</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="cómo" class="sect0"><strong>¿Cómo?</strong></h1>
+<div class="sect1">
+<h2 id="conjuntos">Conjuntos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definición</th>
+<th class="tableblock halign-left valign-top">Concreto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Un conjunto es una <strong>colección desordenada</strong> de <strong>elementos no repetidos</strong>, <strong>asociados por algún patrón</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conjuntoConcreto.svg" alt="conjuntoConcreto" width="518" height="195">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Un <strong>conjunto recursivo</strong> será aquél cuyos <strong>elementos pueden ser también otros conjuntos</strong>: los elementos de un conjunto pueden ser conjuntos de otros elementos a su vez o simplemente elementos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/recursivoConjuntoConcreto.svg" alt="recursivoConjuntoConcreto" width="597" height="330">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="tipos-de-conjuntos">Tipos de Conjuntos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Extensión</th>
+<th class="tableblock halign-left valign-top">Compresión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Colección desordenada de elementos no repetidos, asociados por <strong>extensión (aleatoriedad, capricho, &#8230;&#8203;)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Colección desordenada de elementos no repetidos, asociados por <strong>comprensión (criterio, ecuación, condición, &#8230;&#8203;)</strong> con conjunto de <strong>características comunes, patrón</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>las 7 maravillas del mundo moderno: Chichén Itzá, en México; El Coliseo de Roma, en Italia; La estatua Cristo Redentor, en Brasil; La Gran Muralla China, en China; Machu Picchu, en Perú; Petra, en Jordania;
+El Taj Mahal, en India</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>el patriminio artístico nacional es el conjunto de obras de arte dentro del territorio nacional</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>mis referentes: mis padres, Jorge, Séneca, Sócrates, Lao Tse, Buda, Jesucristo, Mahoma, Gandhi, Martin Luther King, &#8230;&#8203;, Grady Booch, Kent Beck, Martin Fowler, &#8230;&#8203;</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>ingenieros del software son aquellos que disponen de capacidades para las disciplinas de requisitos, análisis, diseño, programación, pruebas, despliegue y gestión de proyectos</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>números bíblicos: 7, 666, &#8230;&#8203;</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>los números primos son el conjunto de números naturales cuyo conjunto de divisores tiene intersección vacía con el conjunto del 2 al anterior al número dado</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="objetos-y-clases">Objetos y Clases</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Objetos</th>
+<th class="tableblock halign-left valign-top">Clases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un <strong>objeto</strong> es un conjunto de elementos que son <strong>otros objetos</strong> que a su vez &#8230;&#8203; recursivamente! &#8230;&#8203; hasta objetos con distintos valores de sus  características</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sinónimos: <strong>cosa</strong>, <strong>ente</strong> con <strong>identidad</strong>, <strong>archiperre</strong>, <strong>artilugio</strong>, <strong>adminículo</strong>, <strong>aparejo</strong>, <strong>pirindolo</strong>, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una <strong>clase</strong> es un conjunto cuyos elementos son <strong>las características comunes de otro conjunto de objetos similares</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sinónimos: <strong>tipo</strong>, <strong>categoría</strong>, <strong>especie</strong>, <strong>género</strong>, <strong>idea</strong>, <strong>concepto</strong>, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>este melocotón!!!; tu melocotón que me zampe; el tercero de abajo, rojito, con poca pelusa, ese!; &#8230;&#8203; compuestos de hueso, carne y piel concretos!</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Prunus persica, originalmente Amygdalus persica L., melocotonero (del latín malus cotonus, «manzana algodonosa» —en alusión a la piel del fruto—)3​ es una especie de árbol del género Prunus de la familia Rosaceae. También se suele denominar duraznero (del latín durus acinus, «que tiene la piel dura» —aludiendo a la piel del fruto—) y a su fruto, durazno en países americanos.</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>@&gt;&#8594;---</p>
+</li>
+<li>
+<p>@&gt;&#8594;---</p>
+</li>
+<li>
+<p>@&gt;&#8594;---</p>
+</li>
+<li>
+<p>@&gt;&#8594;---</p>
+</li>
+<li>
+<p>@&gt;&#8594;---</p>
+</li>
+<li>
+<p>@&gt;&#8594;--- :-*</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Un emoticono o emoticón (del acrónimo inglés emoticon) es una secuencia de caracteres ASCII que, en un principio, representaba una cara humana y expresaba una emoción. Posteriormente, fueron creándose otros emoticonos con significados muy diversos.</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>un ser real/virtual con valores concretos de sus características</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>un libro, una descripción, una definición de sus características comunes, sin valores concretos!</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/tu.svg" alt="tu" width="482" height="195">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/mujer.svg" alt="mujer" width="566" height="244">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Enfoco</strong> sobre un <strong>conjunto de objetos que colaboran mucho, con alta cohesión y bajo acoplamiento</strong>, independientemente de si son <strong>similares o no</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Un cuerpo humano es un conjunto de una cabeza, un tronco y 4 extremidades, no similares</em></p>
+</li>
+<li>
+<p><em>Un enjambre es un conjunto de abejas, similares</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Enfoco</strong> sobre un <strong>conjunto de características comunes de un conjunto de objetos que sí son similares</strong>, independientemente de si <strong>colaboran mucho o no</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>El Humano, que colaboran entre sí hasta ser el rey del mundo como ninguna otra especie muy superior en fuerza, rapidez, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><em>El servicio de las estaciones de combustible, que no colaboran</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conjuntoConcreto.svg" alt="conjuntoConcreto" width="518" height="195">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conjuntoClase.svg" alt="conjuntoClase" width="134" height="187">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/recursivoConjuntoConcreto.svg" alt="recursivoConjuntoConcreto" width="597" height="330">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conjuntoRecursivoAbstracto.svg" alt="conjuntoRecursivoAbstracto" width="330" height="217">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong>Conjunto</strong> es el fundamento del conocimiento, del pensamiento, del lenguaje y de la lógica: cada cosa y cada concepto/palabra define, habla, refiere a, &#8230;&#8203; un conjunto: dentro/fuera, cumple/no cumple, verdad/mentira, si/no, 1/0, 0 mvoltios/5 mvoltios, &#8230;&#8203;, yo/tu, nosotros/vosotros, bueno/malo, patriota/extranjero, &#8230;&#8203;, precisión sin decimales: blanco/negro!!!</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>"- ¡Este es tonto!" o sea, pertenece al conjunto de tontos, responde a las características del Tonto Esférico (compresión) o lo has puesto tú (extension)!!!</em></p>
+</li>
+<li>
+<p><em>"- ¿A qué hora llegas?" o sea ¿Qué elemento del conjunto horas del día marcará el reloj cuando llegues?; "- A las -24 horas!", que no pertenece al conjunto de las horas del día; "¡¡¡Éste es tonto!!!" o sea no conoce el conjunto de horas del día</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clases-abstractas">Clases Abstractas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una clase abstracta es el conjunto <strong>intersección de características comunes</strong> de un conjunto de clases similares</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Date un paseo bonito por el mundo y verás miles de objetos de las clases hoja, concretas, pero no de las intermedias, raíz y abstractas!!! Verás un mono pero no verás un vertebrado que no sea una especialización suya!!!</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Distintos tomos de una enciclopedia especializos por concepto que requiere la lectura del tomo anterior y permite la lectura de varios tomos especializados de este tomo, pare reuitilizar páginas</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Seres vivos</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Plantas</em></p>
+</li>
+<li>
+<p><em>Hongos</em></p>
+</li>
+<li>
+<p><em>Animales</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Invertebrados</em></p>
+</li>
+<li>
+<p><em>Vertebrados</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Peces</em></p>
+</li>
+<li>
+<p><em>Mamíferos</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Caninos</em></p>
+</li>
+<li>
+<p><em>Felinos</em></p>
+</li>
+<li>
+<p><em>Sus scrofa domestica, chancho,​ puerco, porcino, marrano, gorrino, cochino, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><em>Primates</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Monos</em></p>
+</li>
+<li>
+<p><em>Humanos</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaClasificacionPersonas.svg" alt="jerarquiaClasificacionPersonas" width="860" height="465">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaClasificacion.svg" alt="jerarquiaClasificacion" width="920" height="413">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Enfoco</strong> sobre un <strong>conjunto de clase que son similares</strong>, independientemente de si <strong>colaboran mucho o no</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Jerarquía de roles profesionales de un hospital, que sí colaboran</em></p>
+</li>
+<li>
+<p><em>Jerarquía de tipos de comensales, que no colaboran</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="jerarquías-de-composición-vs-clasficación">Jerarquías de Composición vs Clasficación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 26.6666%;">
+<col style="width: 53.3333%;">
+<col style="width: 20.0001%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con muchos conjuntos organizados/definidos/estandarizados se construyen sistemas de complejísima precisión, <strong>sin organización no existe "nada"</strong>!!!</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Piensa la cantidad de objetos y sus respectivas clases inmersas en el proceso de concesión de una beca de estudios: alumno, padres, situación laboral, &#8230;&#8203;, universidad, administrativos, profesores, &#8230;&#8203;, fondos, presupuestos, &#8230;&#8203;,  hasta aquí nada natural, todo inventado!!! &#8230;&#8203;, mitocondrias, moléculas, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>actual sistema educativo, sanitario, financiero, económico, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Jerarquía de Composición</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Jerarquía de Clasificación</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Surge de la <strong>unión de los objetos partes del todo</strong> que a su vez es parte de otro todo que a su vez &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Surge de la <strong>intersección de las características de las clases similares</strong> que a su vez es descendiente de otra clase base que a su vez &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaTodoParte.svg" alt="jerarquiaTodoParte" width="562" height="301">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaBaseDescendiente.svg" alt="jerarquiaBaseDescendiente" width="874" height="379">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>la parte es un elemento del todo y es el todo de otras partes</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>la derivada es una especialización de la base y es la base de otras especializaciones</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Ejemplo: tú eres el conjunto de tus órganos que cada uno es el conjunto de tejidos que son el conjunto de células, &#8230;&#8203; partículas elmentales</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Ejemplo: la persona es una mujer o un hombre que a su vez se subdividen en &#8230;&#8203; con características generales, comunes, compartidas, &#8230;&#8203;</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="jerarquías-de-agregación-y-clasificación-múltiple">Jerarquías de Agregación y Clasificación Múltiple</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Jerarquía con Agregación</th>
+<th class="tableblock halign-left valign-top">Jerarquía con Herencia Múltiple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Un objeto parte pertenece a varios objetos todo</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Un clase descendiente comparte características con varias clases base</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaAgregacion.svg" alt="jerarquiaAgregacion" width="397" height="175">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaClasificacionMultiple.svg" alt="jerarquiaClasificacionMultiple" width="567" height="213">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Yo pertenezco a la familia que me crió y a la que forme cuando crecí</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Mi primo es español y francés, doble nacionalidad</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="relación-de-asociación">Relación de Asociación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">¿Por qué?</th>
+<th class="tableblock halign-left valign-top">¿Cómo?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para <strong>colaboración entre objetos</strong> que pueden ser de distintas clases de <strong>jerarquías de clasificación</strong> de diferentes <strong>jerarquías de composición</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>característica emergente!!!</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>de la nada a la materia en física cuántica</em></p>
+</li>
+<li>
+<p><em>de la materia a la vida en ADN, autoreplicante</em></p>
+</li>
+<li>
+<p><em>de la vida a la inteligencia en la red de neuronal</em></p>
+</li>
+<li>
+<p><em>de la inteligencia a la conciencia en el libre albedrío?!?!</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p><em>del ruido al dato, por colaboración</em></p>
+</li>
+<li>
+<p><em>del dato a la información, por asociación</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p><em>de campamento de niños sordos surge un lenguaje particular</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p><em>del desorden al orden</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Par ordenado (a,b), a &#8594; b, &#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Un conjunto con dos conjuntos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>un subconjunto con los dos elementos</p>
+</li>
+<li>
+<p>un subconjunto con el primer elemento</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>El primer elmento es la intersección de ambos subconjuntos</p>
+</li>
+<li>
+<p>El segundo elemnto es la diferencia de la unión y la intersección de ambos subconjuntos</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/parOrdenado.svg" alt="parOrdenado" width="276" height="283">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Enlace entre objetos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/enlace.svg" alt="enlace" width="108" height="67">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Relación de Asociación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/asociacion.svg" alt="asociacion" width="92" height="73">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="estructuras-de-objetos">Estructuras de Objetos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 5%;">
+<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Estructura</th>
+<th class="tableblock halign-left valign-top">Condiciones</th>
+<th class="tableblock halign-left valign-top" colspan="2">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Secuencia</strong>, lista, flujo, &#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>0..1 anterior, 0 para el <strong>primer</strong> elemento</p>
+</li>
+<li>
+<p>0..1 siguiente, 0 para el <strong>último</strong> elemento</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/secuencia.svg" alt="secuencia" width="234" height="67">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/classSecuencia.svg" alt="classSecuencia" width="352" height="192">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Árbol</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>0..1 anterior, 0 para el elemento <strong>raíz</strong></p>
+</li>
+<li>
+<p>0..N siguientes, 0 para las <strong>hojas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/arbol.svg" alt="arbol" width="172" height="283">
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/classArbol.svg" alt="classArbol" width="340" height="192">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Grafo</strong>, maraña, &#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>0..N anteriores, 0 para cualquier elemento</p>
+</li>
+<li>
+<p>0..N siguientes, 0 para cualquier elemento</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/grafo.svg" alt="grafo" width="214" height="391">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/classGrafo.svg" alt="classGrafo" width="364" height="192">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Jerarquía</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>0..N anteriores, 0 para cualquier elemento</p>
+</li>
+<li>
+<p>0..N siguientes, 0 para cualquier elemento</p>
+</li>
+<li>
+<p><strong>sin ciclos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquia.svg" alt="jerarquia" width="174" height="283">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/classJerarquía.svg" alt="classJerarquía" width="388" height="192">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="clasificación-de-estructuras"><strong>Clasificación de Estructuras</strong></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/clasificacionEstructurasClases.svg" alt="clasificacionEstructurasClases" width="133" height="558">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/clasificacionEstructuras.svg" alt="clasificacionEstructuras" width="629" height="468">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="álgebra-de-boole">Álgebra de Boole</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 18%;">
+<col style="width: 18%;">
+<col style="width: 18%;">
+<col style="width: 18%;">
+<col style="width: 18%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="6"><strong><span class="blue">Operaciones nularias</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Operación nularia</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado1.png" alt="cuadrado1"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula1.svg" alt="formula1"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla1.svg" alt="tabla1"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia1.png" alt="secuencia1"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector1.png" alt="vector1"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>La contradicción</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado2.png" alt="cuadrado2"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula2.svg" alt="formula2"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla2.svg" alt="tabla2"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia2.png" alt="secuencia2"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector2.png" alt="vector2"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><div class="content"><div class="paragraph">
+<p><strong><span class="blue">Operaciones unarias</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Operación unaria</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado3.png" alt="cuadrado3"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula3.svg" alt="formula3"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla3.svg" alt="tabla3"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia3.png" alt="secuencia3"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector3.png" alt="vector3"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Negación lógica</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado4.png" alt="cuadrado4"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula4.svg" alt="formula4"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla4.svg" alt="tabla4"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia4.png" alt="secuencia4"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector4.png" alt="vector4"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><div class="content"><div class="paragraph">
+<p><strong><span class="blue">Operaciones binarias</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Conjunción lógica</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado5.png" alt="cuadrado5"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula5.svg" alt="formula5"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla5.svg" alt="tabla5"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia5.png" alt="secuencia5"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector5.png" alt="vector5"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Conjunción opuesta</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado6.png" alt="cuadrado6"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula6.svg" alt="formula6"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla6.svg" alt="tabla6"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia6.png" alt="secuencia6"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector6.png" alt="vector6"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Disyunción lógica</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado7.png" alt="cuadrado7"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula7.svg" alt="formula7"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla7.svg" alt="tabla7"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia7.png" alt="secuencia7"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector7.png" alt="vector7"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Disyunción opuesta</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado8.png" alt="cuadrado8"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula8.svg" alt="formula8"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla8.svg" alt="tabla8"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia8.png" alt="secuencia8"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector8.png" alt="vector8"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Implicación lógica</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado9.png" alt="cuadrado9"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula9.svg" alt="formula9"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla9.svg" alt="tabla9"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia9A.png" alt="secuencia9A"></span>
+<span class="image"><img src="images/secuencia9B.png" alt="secuencia9B"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector9.png" alt="vector9"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Adjunción lógica</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado10.png" alt="cuadrado10"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula10.svg" alt="formula10"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla10.svg" alt="tabla10"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia10.png" alt="secuencia10"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector10.png" alt="vector10"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Implicación opuesta</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado11.png" alt="cuadrado11"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula11.svg" alt="formula11"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla11.svg" alt="tabla11"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia11.png" alt="secuencia11"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector11.png" alt="vector11"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Adjunción opuesta</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado12.png" alt="cuadrado12"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula12.svg" alt="formula12"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla12.svg" alt="tabla12"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia12.png" alt="secuencia12"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector12.png" alt="vector12"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Bicondicional</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado13.png" alt="cuadrado13"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula13.svg" alt="formula13"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla13.svg" alt="tabla13"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia13.png" alt="secuencia13"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector13.png" alt="vector13"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Disyunción exclusiva</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cuadrado14.png" alt="cuadrado14"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/formula14.svg" alt="formula14"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tabla14.svg" alt="tabla14"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuencia14.png" alt="secuencia14"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vector14.png" alt="vector14"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="estrategias-de-clasificación">Estrategias de Clasificación</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Objetos</th>
+<th class="tableblock halign-left valign-top">Clasificación</th>
+<th class="tableblock halign-left valign-top">Jerarquía de Clasificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/objetosParecidos.svg" alt="objetosParecidos" width="504" height="664">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/clasesObjetosParecidos.svg" alt="clasesObjetosParecidos" width="92" height="266">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaClasesObjetosParecidos.svg" alt="jerarquiaClasesObjetosParecidos" width="119" height="234">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ornitorrinco.jpg" alt="ornitorrinco"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/negroAlbino.jpg" alt="negroAlbino"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/feto.jpg" alt="feto"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="2">Con clases</th>
+<th class="tableblock halign-left valign-top" rowspan="2">Sin clases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Conciso</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Difuso</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Categorización clásica</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">Agrupación conceptual</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Teoría de Prototipos</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/clasico.png" alt="clasico"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/conceptual.jpg" alt="conceptual"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/prototipo.jpg" alt="prototipo"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Todas las entidades que tienen una determinada propiedad o conjunto de propiedades en común forman una categoría (tipo/ clase). Estas propiedades son necesarias y suficientes para definir la categoría
+</blockquote>
+<div class="attribution">
+&#8212; Booch<br>
+<cite>96</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Las clases se generan mediante la formulación de primeras descripciones conceptuales de estas clases y, a
+continuación, la clasificación de las entidades de acuerdo con las descripciones
+</blockquote>
+<div class="attribution">
+&#8212; Stepp; Michalski
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Wittgenstein señaló que una categoría como juego no encaja en el molde clásico, ya que no hay propiedades comunes compartidos por todos los juegos. . . . Aunque no existe una única colección de propiedades que comparten todos los juegos, la categoría juego está unida por lo que Wittgenstein llama parecidos de familia. . . . Wittgenstein también observó que no había límite fijo en la categoría juego. La categoría podría extenderse y nuevos tipos de juegos ser introducidos, siempre que se parezcan a los juegos anteriores de manera apropiada
+</blockquote>
+<div class="attribution">
+&#8212; Lakov
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <span class="red">categorías naturales tienden a ser un poco incómodas</span>: la mayoría de los pájaros vuelan, pero algunos no lo hacen; las sillas pueden consistir de madera, plástico o metal y pueden tener casi cualquier número de patas, dependiendo del capricho del diseñador.</p>
+</li>
+<li>
+<p>Parece prácticamente <strong class="red">imposible llegar a una lista de propiedades para cualquier categoría</strong> natural que excluya a todos los ejemplos que no están en la categoría e incluya todos los ejemplos que se encuentran en la categoría</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Podemos afirmar un concepto como "canción de amor." Este es un concepto más que una propiedad, para la “canción de amor“-idad de cualquier canción no es algo que se pueda medir empíricamente. Sin embargo, si decidimos que una determinada canción es más una canción de amor que no, nos situamos en esta categoría. Por lo tanto, la agrupación conceptual representa más una <strong class="red">agrupación probabilística de objetos</strong></p>
+</li>
+<li>
+<p>Problemas de objetividad en conceptos con excepciones (pingüino no vuela, negros de piel blanca, persona, &#8230;&#8203;)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una clase de objetos está representada por un objeto prototípico y un objeto se considera que es un miembro de esta clase si, y sólo si se asemeja a este prototipo de forma significativa. Nosotros agrupamos cosas de acuerdo a distintos conceptos según el grado de su <strong class="green">relación con prototipos concretos</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="green"><em>Java, TypeScript, &#8230;&#8203; lenguajes fuertemente tipados</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="green"><em>JavaScript, &#8230;&#8203; lenguajes debilmente tipados</em></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="historia-de-la-ciencia">Historia de la Ciencia</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="método-científico-de-galileo">Método Científico de Galileo</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Método científico:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la <strong>observación</strong> del sistema en el <strong class="blue">pasado</strong>, <strong class="green">iterativamente</strong></p>
+</li>
+<li>
+<p>la <strong>hipótesis</strong> del sistema</p>
+</li>
+<li>
+<p>la <strong>experimentación</strong> con el sistema en el <strong class="blue">presente</strong>, <strong class="green">iterativamente</strong></p>
+</li>
+<li>
+<p>la <strong>predicción</strong> del sistema en el <strong class="blue">futuro</strong> con <strong>patrones</strong>, <strong>leyes</strong>, <strong>principios</strong>, <strong>teoremas</strong>, <strong>heurísitcas</strong>,  &#8230;&#8203;</p>
+</li>
+<li>
+<p>la <strong>publicacón</strong> de resultados para <strong>verificación</strong> y <strong>reusabilidad</strong> por parte de otros</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/medotoCientífico.jpg" alt="medotoCientífico"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="método-cartesiano">Método Cartesiano</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 29.1666%;">
+<col style="width: 20.8333%;">
+<col style="width: 29.1666%;">
+<col style="width: 20.8335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Principio de duda o evidencia sistemática</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Principio del análisis o descomposición</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Principio de la síntesis o la composición</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Principio de la enumeración o de la verificación</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>no aceptar como verdadero algo hasta que se compruebe con evidencia, clara y distintamente, aquello que es realmente verdadero. Con la duda sistemática, se evita la prevención y la precipitación, aceptándose como cierto lo que sea evidentemente cierto.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>dividir y descomponer cada dificultad o problema en <strong>tantas partes como sea posible y necesarias para su comprensión</strong> y solución y resolverlas por separado.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>conducir cuidadosamente los pensamientos y razonamientos, a partir de las formas más fáciles y simples de conocer para pasar gradualmente a los más difíciles, y así ir armando pensamientos para poder probar su funcionamiento.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>hacer verificaciones, recuentos y revisiones para asegurarse de que nada fue omitido o pasado por alto, y poder comprobar si tu evidencia es falsa o verdadera</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Disciplina de pruebas</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Disciplinas de análisis/diseño</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Disciplina de programación</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Disciplina de pruebas</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="ciclo-de-deming">Ciclo de Deming</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Acciones</th>
+<th class="tableblock halign-left valign-top">Resultados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Planificar</p>
+</li>
+<li>
+<p>Desarrollar</p>
+</li>
+<li>
+<p>Controlar</p>
+</li>
+<li>
+<p>Actuar con <strong>Mejora Continua</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CicloDeming.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/espiralPezon.jpg" alt="espiralPezon"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="paradigmas-de-khun">Paradigmas de Khun</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+&#8230;&#8203;'ciencia normal' significa investigación basada firmemente en una o más realizaciones científicas pasadas, realizaciones que alguna comunidad científica particular reconoce, durante cierto tiempo, como fundamento para su práctica posterior. [&#8230;&#8203;] Voy a llamar, de ahora en adelante, a las realizaciones que comparten esas dos características, 'paradigmas', término que se relaciona estrechamente con 'ciencia normal'. <strong>Paradigma es un conjunto de prácticas y saberes que definen una disciplina científica durante un período específico</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Thomas S. Kuhn<br>
+<cite>La estructura de las revoluciones científicas</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/paradigma.jpg" alt="paradigma"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="dialéctica-hegeliana">Dialéctica Hegeliana</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La dialéctica se basa en la fundamentación de que</p>
+<div class="ulist">
+<ul>
+<li>
+<p>una idea (<strong>tesis</strong>), generalmente histórica, social o filosófica,</p>
+</li>
+<li>
+<p>al ser desarrollada en detalle, abre aspectos diversos que entre sí se avienen mal (<strong>antítesis</strong>),</p>
+</li>
+<li>
+<p>pero finalmente surge una manera de reconcebirla conciliando aspectos aparentemente contradictorios (<strong>síntesis</strong>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Hegel.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/espiralDos.jpg" alt="espiralDos"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Hegel2.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/espiralNubes.jpg" alt="espiralNubes"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Física</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>la física de <strong>Newton</strong> (tesis, tiempo y espacio absolutos),</em></p>
+</li>
+<li>
+<p><em>no explicaba sucesos en áreas específicas (antítesis, no se ve a Mercurio donde debería estar, la luz no se comporta "correctamente", &#8230;&#8203;),</em></p>
+</li>
+<li>
+<p><em>hasta que la física de <strong>Einstein</strong> (síntesis, tiempo-espacio relativo) da una explicación general</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Filosofía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>los <strong>racionalistas</strong> (tesis, acentúa el papel de la razón en la adquisición del conocimiento de <strong>Platón</strong>, <strong>Descartes</strong>, &#8230;&#8203;),</em></p>
+</li>
+<li>
+<p><em>frente a los <strong>empiristas</strong> (antítesis, todo conocimiento deriva de la experiencia sensible, ésta es la única fuente de conocimiento de <strong>Aristóteles</strong>, <strong>Hume</strong>, &#8230;&#8203;),</em></p>
+</li>
+<li>
+<p><em>hasta el <strong>criticismo</strong> (síntesis, con juicios apriori de <strong>Kant</strong>)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Hardware</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>procesadores <strong>CISC</strong> (tesis, complejas instrucciones potentes),</em></p>
+</li>
+<li>
+<p><em>procesadores <strong>RISC</strong> (antítesis, pequeñas instrucciones paralelizables),</em></p>
+</li>
+<li>
+<p><em>hasta <strong>multicore</strong> (síntesis, paralelismo con varios procesadores)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Software</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>programación <strong>espaguetti</strong> vs <strong>estructurada</strong>,</em></p>
+</li>
+<li>
+<p><em>programación orientado a <strong>procesos</strong> vs a <strong>objetos</strong> vs a <strong>aspectos</strong>,</em></p>
+</li>
+<li>
+<p><em>programación <strong>imperativa</strong> vs <strong>funcional</strong> vs <strong>lógica</strong>,</em></p>
+</li>
+<li>
+<p><em>bases de datos <strong>jerárquicas</strong> vs <strong>relacionales</strong> vs <strong>NoSQL</strong>,</em></p>
+</li>
+<li>
+<p><em><strong>sistemas expertos</strong> vs <strong>redes neuronales</strong> vs <strong>algoritmos genéticos</strong>,</em></p>
+</li>
+<li>
+<p><em>&#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Tribus</strong>: <em>un hippy, un yuppi, &#8230;&#8203; buscan la felicidad con diferentes objetivos, valores, principios, métodos, &#8230;&#8203; en este mismo mundo</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Evolución</strong>: <em>de especies, personas, imperios, ideas, &#8230;&#8203;, humanidad, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="quoteblock">
+<blockquote>
+<strong>Ciclo dialéctico de paradigmas validado metódicamente por la comunidad</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Resumen?!?
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h1 id="síntesis" class="sect0"><strong>Síntesis</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 40%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>¿Por qué?</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>¿Qué?</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>¿Para qué?</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideMaslow.png" alt="piramideMaslow"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideDIKW.png" alt="piramideDIKW"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideProductiva.jpeg" alt="piramideProductiva"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p><strong>¿Cómo?</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Conjuntos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Objetos y Clases</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Asociación</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/recursivoConjuntoConcreto.svg" alt="recursivoConjuntoConcreto" width="597" height="330">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conjuntoRecursivoAbstracto.svg" alt="conjuntoRecursivoAbstracto" width="330" height="217">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/asociacion.svg" alt="asociacion" width="92" height="73">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Jerarquías de Composición</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Estructuras de Objetos</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaTodoParte.svg" alt="jerarquiaTodoParte" width="562" height="301">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="3"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/clasificacionEstructurasClases.svg" alt="clasificacionEstructurasClases" width="133" height="558">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Jerarquias de Clasificación</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/jerarquiaBaseDescendiente.svg" alt="jerarquiaBaseDescendiente" width="874" height="379">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 40%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p>Estrategias de Clasificación</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Categorización clásica</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Agrupación conceptual</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Teoría de Prototipos</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/clasico.png" alt="clasico"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/conceptual.jpg" alt="conceptual"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/prototipo.jpg" alt="prototipo"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p>Ciclo dialéctico de paradigmas validado metódicamente por la comunidad</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cicloDeming.jpg" alt="cicloDeming"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/hegel.jpg" alt="hegel"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/paradigma.jpg" alt="paradigma"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="bibliografía" class="sect0"><strong>Bibliografía</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Object Oriented Analysis and Design with Applications</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Grady Booch</strong></p>
+</li>
+<li>
+<p>Imprint Addison-Wesley Educational s Inc (3 de junio de 2011)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesignWithApplications.JPG" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ponente">Ponente</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Luis Fernández Muñoz</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Formador/Consultor</em></p>
+</li>
+<li>
+<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
+</li>
+<li>
+<p><em>Ingeniero en Informática por la UMA</em></p>
+</li>
+<li>
+<p><em>Diplomado en Informática por la UPM</em></p>
+</li>
+<li>
+<p><em>Profesor Titular de ETSISI de la UPM</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 0.0.1<br>
+Last updated 2021-12-21 17:37:05 +0100
+</div>
+</div>
+<script>
+                let speed = 50;
+                
+                function typeWriter(v) {
+                  let i = v.getAttribute("typewriter-index")
+                  let txt = v.getAttribute("typewriter-original")
+                  
+                  if (i < txt.length) {
+                    v.getElementsByTagName("P")[0].innerHTML += txt.charAt(i);
+                    i++;
+                    v.setAttribute("typewriter-index", i)                        
+                  }else{
+                    if( ++i > txt.length+30 ){
+                        v.setAttribute("typewriter-index", 0)
+                        v.getElementsByTagName("P")[0].innerHTML = ''
+                    }
+                  }
+                }
+                
+                function typeWriterAll(){
+                    [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                        typeWriter(v)
+                    })
+                    setTimeout(typeWriterAll, speed);
+                }
+                                    
+                [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                    v.setAttribute("typewriter-original", v.innerText)
+                    v.setAttribute("typewriter-index", 0)
+                    v.getElementsByTagName("P")[0].innerHTML = ''
+                })
+                
+                setTimeout(typeWriterAll, speed);
+                
+                </script>
+</html>

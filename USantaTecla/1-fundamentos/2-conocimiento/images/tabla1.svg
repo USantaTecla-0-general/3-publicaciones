@@ -1,0 +1,21 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.74ex" height="7.176ex" style="vertical-align: -3.005ex;" viewBox="0 -1796 2902 3089.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">{\displaystyle {\begin{array}{|c||c|}\hline &amp;\top \\\hline \hline &amp;V\\\hline \end{array}}}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMAIN-22A4" d="M55 642T55 648T59 659T66 666T71 668H708Q723 660 723 648T708 628H409V15Q402 2 391 0Q387 0 384 1T379 3T375 6T373 9T371 13T369 16V628H71Q70 628 67 630T59 637Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-56" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+<g transform="translate(167,0)">
+<line stroke-linecap="square" stroke-width="20.9" y1="10" x2="10" x1="10" y2="2820" transform="translate(889,-1166)"></line>
+<g transform="translate(1389,0)">
+ <use xlink:href="#E1-MJMAIN-22A4" x="0" y="650"></use>
+ <use xlink:href="#E1-MJMATHI-56" x="4" y="-750"></use>
+</g>
+<line stroke-linecap="square" stroke-width="20.9" y2="10" y1="10" x1="10" x2="2557" transform="translate(0,1644)"></line>
+<line stroke-linecap="square" stroke-width="20.9" y2="10" y1="10" x1="10" x2="2557" transform="translate(0,-1166)"></line>
+<line stroke-linecap="square" stroke-width="20.9" y1="10" x2="10" x1="10" y2="2820" transform="translate(0,-1166)"></line>
+<line stroke-linecap="square" stroke-width="20.9" y1="10" x2="10" x1="10" y2="2820" transform="translate(2547,-1166)"></line>
+<line stroke-linecap="square" stroke-width="20.9" y2="10" y1="10" x1="10" x2="2557" transform="translate(0,239)"></line>
+</g>
+</g>
+</svg>
