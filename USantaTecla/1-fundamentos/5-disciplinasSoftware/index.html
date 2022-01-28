@@ -699,16 +699,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul>
 <li>
 <p>La <strong class="red">gran cantidad de requisitos</strong> de un sistema a veces es inevitable y nos obliga a escribir una <strong class="red">gran cantidad de software</strong> nuevo o volver a utilizar el software existente en formas novedosas.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Hace tan sólo unas décadas, los programas en lenguaje ensamblador de sólo unos pocos miles de líneas de código subrayaron los límites de nuestras capacidades de ingeniería de software.</em></p>
-</li>
-<li>
-<p><em>Hoy en día, no es raro encontrar sistemas entregados cuyo tamaño se mide en cientos de miles o incluso millones de líneas de código, y todo eso en un lenguaje de programación de alto nivel</em></p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -725,17 +715,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<div class="imageblock">
-<div class="content">
-<img src="images/lenguajesDisciplinas.svg" alt="lenguajesDisciplinas" width="12" height="12">
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><em>Hace tan sólo unas décadas, los programas en lenguaje ensamblador de sólo unos pocos miles de líneas de código subrayaron los límites de nuestras capacidades de ingeniería de software.</em></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><em>Hoy en día, no es raro encontrar sistemas entregados cuyo tamaño se mide en cientos de miles o incluso millones de líneas de código, y todo eso en un lenguaje de programación de alto nivel</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <h1 id="qué" class="sect0"><strong>¿Qué?</strong></h1>
 <div class="openblock partintro">
 <div class="content">
-<div class="quoteblock">
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="quoteblock">
 <blockquote>
 <strong class="blue">Ingeniería de software</strong> es la aplicación práctica del <strong class="blue">conocimiento científico</strong> al <strong class="blue">diseño y construcción de programas de computadora y a la documentación</strong> asociada requerida para <strong class="blue">desarrollar, operar y mantenerlos</strong>. Se conoce también como <strong class="blue">desarrollo de software</strong> o <strong class="blue">producción de software</strong>
 </blockquote>
@@ -743,7 +751,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 &#8212; Bohem<br>
 <cite>1976</cite>
 </div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+<strong class="blue">El software es sagrado</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Booch
 </div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+y lo importante requiere de un <strong class="blue">ritual</strong>
+</blockquote>
+<div class="attribution">
+&#8212; sentido común / sabiduría popular<br>
+<cite>...</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -834,33 +864,6 @@ Las <strong class="blue">Disciplinas</strong> son <strong class="blue">contenedo
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="blue">El software es sagrado</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-y lo importante requiere de un <strong class="blue">ritual</strong>
-</blockquote>
-<div class="attribution">
-&#8212; sentido común<br>
-<cite>sabiduría popular</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <h1 id="para-qué" class="sect0"><strong>¿Para qué?</strong></h1>
@@ -924,6 +927,15 @@ y lo importante requiere de un <strong class="blue">ritual</strong>
 </div>
 </li>
 </ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<span class="red">No se convierte en un maestro del software aprendiendo una <strong>lista de heurísticas</strong></span>. <span class="green">El profesionalismo y la maestría provienen de <strong>valores que impulsan las disciplinas</strong></span>
+</blockquote>
+<div class="attribution">
+&#8212; Martin Fowler<br>
+<cite>Refactoring</cite>
+</div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
@@ -936,15 +948,6 @@ y lo importante requiere de un <strong class="blue">ritual</strong>
 </tr>
 </tbody>
 </table>
-<div class="quoteblock">
-<blockquote>
-<span class="red">No se convierte en un maestro del software aprendiendo una <strong>lista de heurísticas</strong></span>. <span class="green">El profesionalismo y la maestría provienen de <strong>valores que impulsan las disciplinas</strong></span>
-</blockquote>
-<div class="attribution">
-&#8212; Martin Fowler<br>
-<cite>Refactoring</cite>
-</div>
-</div>
 </div>
 </div>
 <h1 id="cómo" class="sect0"><strong>¿Cómo?</strong></h1>
@@ -1071,6 +1074,92 @@ y lo importante requiere de un <strong class="blue">ritual</strong>
 <div class="sect1">
 <h2 id="disciplina-de-diseño">Disciplina de Diseño</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="red">Sin diseño/análisis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="green">Con diseño/análisis</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/corriendoAgua.jpg" alt="corriendoAgua"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/corriendoBarro.jpg" alt="corriendoBarro"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/corriendoCharcos.jpg" alt="corriendoCharcos"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/corriendoOrilla.jpg" alt="corriendoOrilla"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">Ágil</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p><strong class="green">Iterativo</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/noSOLID.png" alt="noSOLID"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/superCali.jpg" alt="superCali"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/mecano.jpg" alt="mecano"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/puenteSpagueti.jpg" alt="puenteSpagueti"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Análisis</th>
+<th class="tableblock halign-left valign-top">Diseño</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/analisisMVC.png" alt="analisisMVC"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/diseñoMVC.png" alt="diseñoMVC"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="disciplina-de-análisis">Disciplina de Análisis</h3>
 <table class="tableblock frame-all grid-all stretch">
@@ -1396,92 +1485,6 @@ y lo importante requiere de un <strong class="blue">ritual</strong>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Análisis</th>
-<th class="tableblock halign-left valign-top">Diseño</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/analisisMVC.png" alt="analisisMVC"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/diseñoMVC.png" alt="diseñoMVC"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="red">Sin diseño/análisis</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="green">Con diseño/análisis</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/corriendoAgua.jpg" alt="corriendoAgua"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/corriendoBarro.jpg" alt="corriendoBarro"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/corriendoCharcos.jpg" alt="corriendoCharcos"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/corriendoOrilla.jpg" alt="corriendoOrilla"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Ágil</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="paragraph">
-<p><strong class="green">Iterativo</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/noSOLID.png" alt="noSOLID"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/superCali.jpg" alt="superCali"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/mecano.jpg" alt="mecano"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/puenteSpagueti.jpg" alt="puenteSpagueti"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -1514,7 +1517,7 @@ y lo importante requiere de un <strong class="blue">ritual</strong>
 <p><strong class="aqua">Implementar las clases</strong> y objetos en términos de componentes</p>
 </li>
 <li>
-<p><strong class="aqua">Probar el desarrollo de componentes como unidades</strong></p>
+<p><strong class="red">Probar</strong> <strong class="aqua">el desarrollo de componentes como</strong> <strong class="red">unidades</strong></p>
 </li>
 <li>
 <p><strong class="aqua">Integrar en un sistema ejecutable</strong> el resultado producido por implementadores individuales o equipos</p>
@@ -1814,6 +1817,75 @@ y lo importante requiere de un <strong class="blue">ritual</strong>
 <img src="images/sintesis.svg" alt="sintesis" width="1514" height="418">
 </div>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.7272%;">
+<col style="width: 54.5454%;">
+<col style="width: 22.7274%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Disciplinas técnicas</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Disciplinas de soporte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Modelado del dominio</strong></p>
+</li>
+<li>
+<p><strong class="blue">Requisitos</strong></p>
+</li>
+<li>
+<p><strong class="blue">Análisis</strong></p>
+</li>
+<li>
+<p><strong class="blue">Diseño</strong></p>
+</li>
+<li>
+<p><strong class="blue">Implementación</strong></p>
+</li>
+<li>
+<p><strong class="blue">Pruebas</strong></p>
+</li>
+<li>
+<p><strong class="blue">Despliegue</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/coloresDisciplinas.png" alt="coloresDisciplinas"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Gestión del Ecosistema</strong>, forja del <em>devop</em> para desarrollo colaborativo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Entorno</p>
+</li>
+<li>
+<p>Configuración y Gestión de Cambios</p>
+</li>
+<li>
+<p>Herramientas de desarrollo</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Gestión del Proyecto</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">

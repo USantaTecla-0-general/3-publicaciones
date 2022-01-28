@@ -943,22 +943,88 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Diagrama de Actividad</th>
+<th class="tableblock halign-left valign-top">Diagrama de Estados</th>
+</tr>
+</thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Grafo</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Nodos</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Acciones</strong>, es un elemento con nombre que representa un solo paso atómico (unidad) dentro de la actividad, es decir, que no se descompone más dentro de la actividad.</p>
+</li>
+<li>
+<p><strong>Disyunciones</strong>, conidición (guarda) evaluada en tiempo de ejecución para determinar el enlace que se puede atravesar</p>
+</li>
+<li>
+<p><strong>Conjunciones</strong>, para la unión de enlaces y continuar por un camino común</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Enlaces</em>: control de flujo de ejecución de las acciones y evaluación de las condiciones</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-grid/tree/master/0-imperativeGrid/v0.0"><em>Imperative Grid</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Grafo</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Nodos</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Estados</strong>, que no tiene sub-estados (unidad)</p>
+</li>
+<li>
+<p><strong>Disyunciones con condiciones</strong>, conidición (guarda) evaluada en tiempo de ejecución para determinar el enlace que se puede atravesar</p>
+</li>
+<li>
+<p><strong>Conjunciones</strong>, para la unión de enlaces y continuar por un camino común</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Enlaces</em>: control de flujo de transición de estados por la ejecución de las <strong>acciones</strong> de las transiciónes y evaluación de las condiciones</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/diagramaActividad.svg" alt="diagramaActividad" width="292" height="921">
+</div>
+</div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
 <img src="images/diagramaEstados.svg" alt="diagramaEstados" width="621" height="820">
 </div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaActividad.svg" alt="diagramaActividad" width="408" height="920">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-grid/tree/master/0-imperativeGrid/v0.0">Imperative Grid</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1182,7 +1248,7 @@ La <strong class="blue">abstracción</strong> es el <strong class="blue">proceso
 <p><span class="red"><em>¿lo mismo implica igual?</em></span></p>
 </li>
 <li>
-<p><span class="red"><em>¿igual no implica lo mismo?</em></span></p>
+<p><a href="https://www.youtube.com/watch?v=-EzuH2Z4YeM"><span class="red"><em>¿igual no implica lo mismo?</em></span></a></p>
 </li>
 <li>
 <p><span class="red"><em>¿igual no es igual que lo mismo?</em></span></p>
@@ -1207,7 +1273,7 @@ La <strong class="blue">abstracción</strong> es el <strong class="blue">proceso
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Igual</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Igual</strong>: <strong class="red">=</strong> vs <strong class="green">== y ===</strong></th>
 <th class="tableblock halign-left valign-top"><strong class="blue">Contexto</strong></th>
 </tr>
 </thead>
