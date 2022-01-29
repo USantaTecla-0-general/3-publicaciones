@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8">
 <meta name="author" content="Santa Tecla">
-<title>Arquitectura MV*</title>
+<title>Arquitectura MVC</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,7 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book">
 <div id="header">
-<h1>Arquitectura MV*</h1>
+<h1>Arquitectura MVC</h1>
 <div class="details">
 <span id="author" class="author">Santa Tecla</span><br>
 <span id="email" class="email"><a href="mailto:parqueNaturalSantaTecla@gmail.com">parqueNaturalSantaTecla@gmail.com</a></span><br>
@@ -454,7 +454,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#estilo-arquitectónico-modelovistacontrolador">Estilo Arquitectónico <strong>Modelo/Vista/Controlador</strong></a></li>
+<li><a href="#modelovistacontrolador">Modelo/Vista/Controlador</a></li>
 <li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
 <li><a href="#evolución">Evolución</a>
@@ -462,12 +462,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#baile-de-la-tríada">Baile de la Tríada</a></li>
 </ul>
 </li>
-<li><a href="#estilo-arquitectónico-modelovistapresentador-con-presentador-del-modelo">Estilo Arquitectónico <strong>Modelo/Vista/Presentador con Presentador del Modelo</strong></a></li>
-<li><a href="#estilo-arquitectónico-modelovistavista-modelo">Estilo Arquitectónico <strong>Modelo/Vista/Vista-Modelo</strong></a></li>
-<li><a href="#estilo-arquitectónico-modelovistapresentador-con-vista-pasiva">Estilo Arquitectónico <strong>Modelo/Vista/Presentador con Vista Pasiva</strong></a></li>
-<li><a href="#estilo-arquitectónico-modelovistapresentador-con-controlador-supervisor">Estilo Arquitectónico <strong>Modelo/Vista/Presentador con Controlador Supervisor</strong></a></li>
+<li><a href="#modelovistapresentador-con-presentador-del-modelo">Modelo/Vista/Presentador con Presentador del Modelo</a></li>
+<li><a href="#modelovistavista-modelo">Modelo/Vista/Vista-Modelo</a></li>
+<li><a href="#modelovistapresentador-con-vista-pasiva">Modelo/Vista/Presentador con Vista Pasiva</a></li>
+<li><a href="#modelovistapresentador-con-controlador-supervisor">Modelo/Vista/Presentador con Controlador Supervisor</a></li>
 <li><a href="#resumen">Resumen</a></li>
-<li><a href="#frameworks">Frameworks</a>
+<li><a href="#diseño-de-la-arquitectura-software">Diseño de la Arquitectura Software</a>
+<ul class="sectlevel2">
+<li><a href="#requisitos">Requisitos</a></li>
+<li><a href="#análisis-de-la-arquitectura-software">Análisis de la Arquitectura Software</a></li>
+<li><a href="#diseño-de-la-arquitectura-software-2">Diseño de la Arquitectura Software</a></li>
+</ul>
+</li>
+<li><a href="#frameworks"><em>Frameworks</em></a>
 <ul class="sectlevel2">
 <li><a href="#web-con-múltiples-páginas-con-mvc">Web con Múltiples páginas con MVC</a></li>
 <li><a href="#web-con-múltiples-páginas-con-mvp-pv">Web con Múltiples páginas con MVP-PV</a></li>
@@ -486,7 +493,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#arquitectura-limpia">Arquitectura Limpia</a></li>
 </ul>
 </li>
-<li><a href="#diseño-de-la-arquitectura-software">Diseño de la Arquitectura Software</a></li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -629,7 +635,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="estilo-arquitectónico-modelovistacontrolador">Estilo Arquitectónico <strong>Modelo/Vista/Controlador</strong></h2>
+<h2 id="modelovistacontrolador">Modelo/Vista/Controlador</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1022,7 +1028,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="estilo-arquitectónico-modelovistapresentador-con-presentador-del-modelo">Estilo Arquitectónico <strong>Modelo/Vista/Presentador con Presentador del Modelo</strong></h2>
+<h2 id="modelovistapresentador-con-presentador-del-modelo">Modelo/Vista/Presentador con Presentador del Modelo</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1136,7 +1142,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="estilo-arquitectónico-modelovistavista-modelo">Estilo Arquitectónico <strong>Modelo/Vista/Vista-Modelo</strong></h2>
+<h2 id="modelovistavista-modelo">Modelo/Vista/Vista-Modelo</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1205,7 +1211,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="estilo-arquitectónico-modelovistapresentador-con-vista-pasiva">Estilo Arquitectónico <strong>Modelo/Vista/Presentador con Vista Pasiva</strong></h2>
+<h2 id="modelovistapresentador-con-vista-pasiva">Modelo/Vista/Presentador con Vista Pasiva</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1319,7 +1325,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="estilo-arquitectónico-modelovistapresentador-con-controlador-supervisor">Estilo Arquitectónico <strong>Modelo/Vista/Presentador con Controlador Supervisor</strong></h2>
+<h2 id="modelovistapresentador-con-controlador-supervisor">Modelo/Vista/Presentador con Controlador Supervisor</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1491,7 +1497,166 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="frameworks">Frameworks</h2>
+<h2 id="diseño-de-la-arquitectura-software">Diseño de la Arquitectura Software</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="requisitos">Requisitos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><span class="red">Modelo del Dominio</span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><span class="green">Modelo de Casos de Uso</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/modeloMelany.png" alt="modeloMelany"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/casosUsoMelany.png" alt="casosUsoMelany"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">Prototipo de la Interfaz de Usuario Gráfcia/Consola/&#8230;&#8203; del Usuario</span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">Protocolo de la Interfaz de Comunicaciones con otros Sistemas que atacan al nuestro Sistema</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/interfazMelany.png" alt="interfazMelany"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/comunicacionesMelany.jpg" alt="comunicacionesMelany"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="análisis-de-la-arquitectura-software">Análisis de la Arquitectura Software</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="Silver"><strong>Modelos</strong></span>, inspirándose en el vocabulario del <em>Modelo del Dominio de Requisitos</em></p>
+</li>
+<li>
+<p><span class="Silver"><strong>Controladores</strong>/Servicios/&#8230;&#8203;</span>, de cada <em>Caso de Uso de Requisitos</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="Silver"><strong>Vistas</strong> Panel<em>/Frame/Dialog/&#8230;&#8203;</em></span>, de cada panel y sub-panel de la estructura del <em>Prototipo de Interfaz Gráfica, Consola, &#8230;&#8203; de Usuario de Requisitos</em></p>
+</li>
+<li>
+<p><span class="Silver"><strong>Vistas</strong> Despachadoras<em>/Resource/Port/&#8230;&#8203;</em></span>, de cada trama y sub-trama de la estructura del <em>Protocolo de la Interfaz de Comunicaciones de Requisitos</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/clasesMelany.png" alt="clasesMelany"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/colaboracionMelany.png" alt="colaboracionMelany"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="diseño-de-la-arquitectura-software-2">Diseño de la Arquitectura Software</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Comprensión profunda sobre los aspectos de los <strong class="red">requisitos no funcionales y limitaciones</strong> relacionadas con:</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>sistemas operativos</strong>,</p>
+</li>
+<li>
+<p><strong>reutilización de componentes</strong>,</p>
+</li>
+<li>
+<p><strong>tecnologías de distribución y concurrencia</strong>,</p>
+</li>
+<li>
+<p><strong>tecnologías de gestión de transacciones</strong>,</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>tecnologías de bases de datos</strong>,</p>
+</li>
+<li>
+<p><strong>tecnologías de interfaz de usuario</strong>,</p>
+</li>
+<li>
+<p><strong>lenguajes de programación</strong>,</p>
+</li>
+<li>
+<p>y así sucesivamente</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/melany.png" alt="melany"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/analisisDiseño.svg" alt="analisisDiseño"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/analisisDisenyoRUP.jpg" alt="analisisDisenyoRUP"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/planProjectSequenceDiagram.svg" alt="planProjectSequenceDiagram"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="frameworks"><em>Frameworks</em></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="web-con-múltiples-páginas-con-mvc">Web con Múltiples páginas con MVC</h3>
@@ -2433,7 +2598,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>2000, <strong class="blue">Writing Effective Use Cases</strong></p>
+<p>2000, <strong class="red">Writing Effective Use Cases</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -2473,7 +2638,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>2004, <strong class="red">Crystal Clear: A Human-Powered Methodology for Small Teams</strong>, marco metodológico XP, RUP, &#8230;&#8203; según tamaño y complejidad</p>
+<p>2004, <strong class="green">Crystal Clear: A Human-Powered Methodology for Small Teams</strong>, marco metodológico XP, RUP, &#8230;&#8203; según tamaño y complejidad</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2483,14 +2648,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>2005, <strong class="red">Hexagonal Architecture</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://our-academy.org/posts/arquitectura-hexagonal" class="bare">https://our-academy.org/posts/arquitectura-hexagonal</a></p>
-</li>
-</ul>
-</div>
+<p>2005, <a href="https://our-academy.org/posts/arquitectura-hexagonal"><strong class="red">Hexagonal Architecture</strong></a>
+*</p>
 </li>
 <li>
 <p>2006, <strong class="blue">Agile Software Development: The Cooperative Game</strong></p>
@@ -3426,7 +3585,7 @@ public class TestDiscounter
 </div>
 </li>
 <li>
-<p>2017, <strong class="red">Clean Architecture: A Craftsman&#8217;s Guide to Software Structure and Design</strong></p>
+<p>2017, <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"><strong class="red">Clean Architecture: A Craftsman&#8217;s Guide to Software Structure and Design</strong></a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3451,34 +3610,42 @@ public class TestDiscounter
 <p><span class="image"><img src="images/UncleBob.jpg" alt="UncleBob"></span></p>
 </div></div></td>
 </tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="quoteblock">
-<blockquote>
-Los Principios son [&#8230;&#8203; SOLID &#8230;&#8203;] Aunque <strong class="red">se presentan aquí como principios de diseño orientado a objetos, en realidad son casos especiales de principios de la ingeniería de software asentados hace tiempo</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Uncle Bob
-</div>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/agilePrinciples.jpg" alt="agilePrinciples"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.jpg" alt="CleanCodeAHandbookOfAgileSoftwareCraftsmanship"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/theCleanCoder2.jpg" alt="theCleanCoder2"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CleanArchitecture.jpg" alt="CleanArchitecture"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cleanAgile.jpg" alt="cleanAgile"></span></p>
 </div></div></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="red">El Principio de Inversión de Dependencias</strong>. <span class="red">En esta columna, discutimos las implicaciones estructurales del OCP y el LSP. La estructura que resulta del uso riguroso de estos principios puede generalizarse en un principio por sí solo. Lo llamo "El principio de inversión de dependencia" (DIP)</span>
-</blockquote>
-<div class="attribution">
-&#8212; Uncle Bob
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="red">El Principio de Única Responsabilidad</strong>. <span class="red">Este principio se describió en el trabajo de Tom DeMarco y Meilir Page-Jones. Lo llamaron cohesión</span>
-</blockquote>
-<div class="attribution">
-&#8212; Uncle Bob
-</div>
-</div></div></td>
-</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
 <blockquote>
@@ -3501,12 +3668,35 @@ Los Principios son [&#8230;&#8203; SOLID &#8230;&#8203;] Aunque <strong class="r
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CleanArchitecture.jpg" alt="CleanArchitecture"></span></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Los Principios son [&#8230;&#8203; SOLID &#8230;&#8203;] Aunque <strong class="red">se presentan aquí como principios de diseño orientado a objetos, en realidad son casos especiales de principios de la ingeniería de software asentados hace tiempo</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Uncle Bob
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+<strong class="red">El Principio de Única Responsabilidad</strong>. <span class="red">Este principio se describió en el trabajo de Tom DeMarco y Meilir Page-Jones. Lo llamaron cohesión</span>
+</blockquote>
+<div class="attribution">
+&#8212; Uncle Bob
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+<strong class="red">El Principio de Inversión de Dependencias</strong>. <span class="red">En esta columna, discutimos las implicaciones estructurales del OCP y el LSP. La estructura que resulta del uso riguroso de estos principios puede generalizarse en un principio por sí solo. Lo llamo "El principio de inversión de dependencia" (DIP)</span>
+</blockquote>
+<div class="attribution">
+&#8212; Uncle Bob
+</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -3579,12 +3769,6 @@ Los Principios son [&#8230;&#8203; SOLID &#8230;&#8203;] Aunque <strong class="r
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="diseño-de-la-arquitectura-software">Diseño de la Arquitectura Software</h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -3592,195 +3776,24 @@ Los Principios son [&#8230;&#8203; SOLID &#8230;&#8203;] Aunque <strong class="r
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="gray">Requisitos</strong></p>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CleanArchitecture.jpg" alt="CleanArchitecture"></span></p>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">Modelo del Dominio</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">Casos de Uso</span></p>
-</li>
-</ul>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CleanArchitectureRidiculo.png" alt="CleanArchitectureRidiculo"></span></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/modeloMelany.png" alt="modeloMelany"></span></p>
+<p><span class="image"><img src="images/CleanArchitectureRidiculo2.png" alt="CleanArchitectureRidiculo2"></span></p>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/casosUsoMelany.png" alt="casosUsoMelany"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Interfaz</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="red">Usuario Gráfcia/Consola/&#8230;&#8203;</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Interfaz</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="red">Comunicaciones</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/interfazMelany.png" alt="interfazMelany"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/comunicacionesMelany.jpg" alt="comunicacionesMelany"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="gray">Análisis</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">Modelos</span></p>
-</li>
-<li>
-<p><span class="green">Controladores/Servicios (1/N)</span></p>
-</li>
-<li>
-<p><span class="red">Vistas</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="red">Vistas Paneles/Lenguaje/&#8230;&#8203;</span></p>
-</li>
-<li>
-<p><span class="red">Vistas Despachadoras</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/clasesMelany.png" alt="clasesMelany"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/colaboracionMelany.png" alt="colaboracionMelany"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="gray">Diseño</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Adquirir una comprensión profunda sobre los aspectos de los <strong>requisitos no funcionales y limitaciones</strong> relacionadas con:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>los <strong>lenguajes de programación</strong>,</p>
-</li>
-<li>
-<p>la <strong>reutilización de componentes</strong>,</p>
-</li>
-<li>
-<p><strong>sistemas operativos</strong>,</p>
-</li>
-<li>
-<p><strong>tecnologías de distribución y concurrencia</strong>,</p>
-</li>
-<li>
-<p><strong>tecnologías de bases de datos</strong>,</p>
-</li>
-<li>
-<p><strong>tecnologías de interfaz de usuario</strong>,</p>
-</li>
-<li>
-<p><strong>tecnologías de gestión de transacciones</strong>,</p>
-</li>
-<li>
-<p>y así sucesivamente</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/melany.png" alt="melany"></span></p>
+<p><span class="image"><img src="images/CleanArchitectureRidiculo3.png" alt="CleanArchitectureRidiculo3"></span></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/analisisDiseño.svg" alt="analisisDiseño"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/analisisDisenyoRUP.jpg" alt="analisisDisenyoRUP"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/planProjectSequenceDiagram.svg" alt="planProjectSequenceDiagram"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -4038,7 +4051,7 @@ Los Principios son [&#8230;&#8203; SOLID &#8230;&#8203;] Aunque <strong class="r
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-01-25 13:53:22 +0100
+Last updated 2022-01-28 16:56:24 +0100
 </div>
 </div>
 <script>

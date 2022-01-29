@@ -964,7 +964,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/DiagramaClases.svg" alt="DiagramaClases" width="620" height="498">
+<img src="images/DiagramaBases.svg" alt="DiagramaBases" width="620" height="498">
 </div>
 </div></div></td>
 </tr>
@@ -1210,16 +1210,6 @@ console.log(<span class="string"><span class="delimiter">&quot;</span><span clas
 <ul>
 <li>
 <p><span class="red">"Video" (dinámica) con secuencia de acciones destacadas</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Acciones y condiciones</p>
-</li>
-<li>
-<p>Flujo de Control de Ejecución</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div></div></td>
@@ -1227,13 +1217,68 @@ console.log(<span class="string"><span class="delimiter">&quot;</span><span clas
 <ul>
 <li>
 <p><span class="green">"Video" (dinámica) con secuencia de acciones no destacadas, destacando los estados intermedios</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Grafo</em>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Estados, acciones y condiciones</p>
+<p><em>Nodos</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Acciones</strong>, es un elemento con nombre que representa un solo paso atómico (unidad) dentro de la actividad, es decir, que no se descompone más dentro de la actividad.</p>
 </li>
 <li>
-<p>Transición de Estados con Acciones</p>
+<p><strong>Disyunciones</strong>, conidición (guarda) evaluada en tiempo de ejecución para determinar el enlace que se puede atravesar</p>
+</li>
+<li>
+<p><strong>Conjunciones</strong>, para la unión de enlaces y continuar por un camino común</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Enlaces</em>: control de flujo de ejecución de las acciones y evaluación de las condiciones</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-grid/tree/master/0-imperativeGrid/v0.0"><em>Imperative Grid</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Grafo</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Nodos</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Estados</strong>, que no tiene sub-estados (unidad)</p>
+</li>
+<li>
+<p><strong>Disyunciones con condiciones</strong>, conidición (guarda) evaluada en tiempo de ejecución para determinar el enlace que se puede atravesar</p>
+</li>
+<li>
+<p><strong>Conjunciones</strong>, para la unión de enlaces y continuar por un camino común</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Enlaces</em>: control de flujo de transición de estados por la ejecución de las <strong>acciones</strong> de las transiciónes y evaluación de las condiciones</p>
 </li>
 </ul>
 </div>
