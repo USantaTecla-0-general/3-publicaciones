@@ -502,7 +502,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">git</a>
+Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a>
 </td>
 </tr>
 </table>
@@ -810,16 +810,24 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Persistencia</strong>
-* <strong class="red">"pequeñas Bases de Datos"</strong> para una configuración o una web estática: tu curriculum, tus recetas, &#8230;&#8203;
-- <strong class="blue">Interoperabilidad</strong>
-* intercambio de datos entre sistemas heterogéneos: servicios Web, &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Persistencia</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Interoperabilidad</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">"pequeñas Bases de Datos"</strong> para una configuración o una web estática: tu curriculum, tus recetas, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>intercambio de datos entre sistemas heterogéneos: servicios Web, &#8230;&#8203;</p>
+<div class="ulist">
 <ul>
 <li>
 <p><strong>estándares globales</strong>: <em>xHTML, MathML, WSDL, JavaML, NewsML, &#8230;&#8203;</em>,</p>
@@ -828,33 +836,41 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 <p><strong>estánderes verticales</strong>: financieras para intercambio de información de morosos, informes médicos para traslados de expedientes entre estados, &#8230;&#8203;</p>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Configuración de Visual Code: <em>pom.xml</em> de <em>maven</em></p>
+</div>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Gráficos vecotriales escalables: <em>SVG</em></p>
+<p>Configuración de Visual Code: <em>pom.xml</em> de <em>maven</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/pomxml.png" alt="pomxml"></span></p>
+<p>Gráficos vecotriales escalables: <em>SVG</em></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/svgxml.png" alt="svgxml"></span></p>
+<p><span class="image"><img src="images/pomxml.png" alt="pomxml"></span></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Publicación científica: <em>MathML</em></p>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/svgxml.png" alt="svgxml"></span></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Lenguajes de programación: <em>JavaML</em>, <em>cppML</em>, &#8230;&#8203; para métricas, documentación o transformaciones automáticas</p>
+<p>Publicación científica: <em>MathML</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lenguajes de programación: <a href="https://constraints.cs.washington.edu/web/badros-javaml-www9/"><em>JavaML</em></a>, <em>cppML</em>, &#8230;&#8203; para métricas, documentación o transformaciones automáticas</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/mathML.png" alt="mathML"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/javaml.jpg" alt="javaml"></span></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1637,22 +1653,14 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="tag">&lt;elementoEstructurado&gt;</span>
-    <span class="tag">&lt;subElemento&gt;</span>
-    informacion
-    <span class="tag">&lt;/subElemento&gt;</span>
+    <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
     ...
-
     <span class="tag">&lt;elementoEstructurado&gt;</span>
     ...
     <span class="tag">&lt;/elementoEstructurado&gt;</span>
-
     ...
-    <span class="tag">&lt;subElemento&gt;</span>
-    informacion
-    <span class="tag">&lt;/subElemento&gt;</span>
-    <span class="tag">&lt;otroElemento&gt;</span>
-    informacion
-    <span class="tag">&lt;/otroElemento&gt;</span>
+    <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
+    <span class="tag">&lt;otroElemento&gt;</span>informacion<span class="tag">&lt;/otroElemento&gt;</span>
 <span class="tag">&lt;/elementoEstructurado&gt;</span></code></pre>
 </div>
 </div></div></td>
@@ -1661,8 +1669,8 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -1745,7 +1753,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="tag">&lt;definitions&gt;</span>
   <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Proceso Unificado de Desarrollo</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> es un <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> con tres caracterísitcas: <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">basado en componentes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>, <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">dirigido por Casos de Uso</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> y <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">centrado en la Arquitectura</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>.<span class="tag">&lt;/definition&gt;</span>
-  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>es la La aplicación
+  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>es la aplicación
     de las actividades y procesos de mantenimiento del software que generan
     una nueva [blue]versión operativa de un software con una funcionalidad de usuario
     o propiedades cambiadas a partir de una versión anterior junto con los procesos
@@ -1861,7 +1869,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Los nombres de los elementos coinciden con los nombres de los <strong>campos o atributos de las estructuras, registros, clases, entidades, &#8230;&#8203;</strong> de los lenguajes de programación</p>
+<p>Los nombres de los elementos coinciden con los nombres de los <strong>campos, propiedades o atributos de las estructuras, registros, objetos, entidades, &#8230;&#8203;</strong> de los lenguajes de programación</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2006,7 +2014,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">2-texts/3-curriculum</a>: <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/2-texts/3-curriculum/v0.0/data.xml">v0.0</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/2-texts/3-curriculum/v0.1/data.xml">v0.1</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">6-collections/timetable</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/timetable/v0.0/data.xml">v0.0</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/timetable/v0.1/data.xml">v0.1</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/tree/master/6-collections/timetable/v0.2/data.xml">v0.2</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/timetable/v0.3/data.xml">v0.3</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">6-collections/timetable</a>: - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.0/data.xml">v0.0</a> - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.1/data.xml">v0.1</a> - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.2/data.xml">v0.2</a> - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.3/data.xml">v0.3</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">game-ticTacToe/0.0.dataLanguages</a> - <a href="https://github.com/USantaTecla-tech-xml/game-ticTacToe/blob/master/0.0.dataLanguages/v0.0/data.xml">v0.0</a> y <a href="https://github.com/USantaTecla-tech-xml/game-ticTacToe/blob/master/0.0.dataLanguages/v0.1/data.xml">v0.1</a></p>
@@ -2361,7 +2369,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml/src">gi
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-02-03 21:38:39 +0100
+Last updated 2022-02-08 05:57:00 +0100
 </div>
 </div>
 <style>
