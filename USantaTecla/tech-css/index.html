@@ -478,8 +478,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CSS.png" alt="CSS" width="250" height="330"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Códigos disponibles en <a href="https://github.com/USantaTecla-tech-css">git</a>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2384,75 +2409,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/semanticas.png" alt="semanticas"></span></p>
-</div></div></td>
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html&gt;</span>
-    <span class="tag">&lt;head&gt;</span>
-        <span class="tag">&lt;title&gt;</span>Layout<span class="tag">&lt;/title&gt;</span>
-        <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">styles.css</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/head&gt;</span>
-    <span class="tag">&lt;body&gt;</span>
-        <span class="tag">&lt;header</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;p&gt;</span>header<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;/header&gt;</span>
-        <span class="tag">&lt;nav</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;p&gt;</span>nav<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;/nav&gt;</span>
-        <span class="tag">&lt;main</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;p&gt;</span>main<span class="tag">&lt;/p&gt;</span>
-            <span class="tag">&lt;section</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                <span class="tag">&lt;p&gt;</span>section<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/article&gt;</span>
-                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/article&gt;</span>
-                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/article&gt;</span>
-                <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">noFloat</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-                <span class="tag">&lt;summary&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>sumary<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/summary&gt;</span>
-            <span class="tag">&lt;/section&gt;</span>
-            <span class="tag">&lt;section</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                <span class="tag">&lt;p&gt;</span>section<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/article&gt;</span>
-                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/article</span> class=&quot;general&quot;<span class="error">&gt;</span>
-                <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">noFloat</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-                <span class="tag">&lt;summary&gt;</span>
-                    <span class="tag">&lt;p&gt;</span>sumary<span class="tag">&lt;/p&gt;</span>
-                <span class="tag">&lt;/summary&gt;</span>
-            <span class="tag">&lt;/section&gt;</span>
-        <span class="tag">&lt;/main&gt;</span>
-        <span class="tag">&lt;aside</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;p&gt;</span>aside<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;/aside&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">noFloat</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;footer</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;p&gt;</span>footer<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;/footer&gt;</span>
-    <span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="css"><span class="tag">body</span> {
   <span class="key">width</span>: <span class="float">80%</span>;
@@ -2521,383 +2483,67 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/trianguloPascal.png" alt="trianguloPascal"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html</span> <span class="attribute-name">lang</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">es</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attribute-name">charset</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">UTF-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;title&gt;</span>Triangulo de Pascal<span class="tag">&lt;/title&gt;</span>
-    <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">styles.css</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
-<span class="tag">&lt;body&gt;</span>
-    <span class="tag">&lt;header&gt;</span>Triangulo de Pascal<span class="tag">&lt;/header&gt;</span>
-    <span class="tag">&lt;main&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">halfRowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>2<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">halfRowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>3<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>3<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>4<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>6<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>4<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">halfRowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>5<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>10<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>10<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>5<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>6<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>15<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>20<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>15<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>6<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">halfRowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>7<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>21<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>35<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>35<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>21<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>7<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>8<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>28<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>56<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>70<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>56<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>28<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>8<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">halfRowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="entity">&amp;nbsp;</span><span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>9<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>36<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>84<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>126<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>126<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>84<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>36<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>9<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>10<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>45<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>120<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>210<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>252<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>210<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>120<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>45<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>10<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowCell</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
-            <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">endRow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;/main&gt;</span>
-<span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span></code></pre>
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/semanticas.png" alt="semanticas"></span></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="css"><span class="tag">body</span> {
-    <span class="key">background-color</span>: <span class="value">black</span>;
-}
-
-<span class="tag">header</span> {
-    <span class="key">font-size</span>: <span class="float">40px</span>;
-    <span class="key">color</span>:<span class="value">orange</span>;
-    <span class="key">text-align</span>: <span class="value">center</span>;
-    <span class="key">margin-bottom</span>: <span class="float">50px</span>;
-}
-
-<span class="tag">main</span> {
-    <span class="key">margin-left</span>: <span class="float">350px</span>;
-}
-
-<span class="class">.rowCell</span> {
-    <span class="key">font-size</span>: <span class="float">30px</span>;
-    <span class="key">color</span>: <span class="value">orange</span>;
-    <span class="key">text-align</span>: <span class="value">center</span>;
-    <span class="key">width</span>: <span class="float">80px</span>;
-    <span class="key">float</span>: <span class="value">left</span>;
-}
-
-<span class="class">.halfRowCell</span> {
-    <span class="key">width</span>: <span class="float">40px</span>;
-    <span class="key">float</span>: <span class="value">left</span>;
-}
-
-<span class="class">.endRow</span> {
-    <span class="key">clear</span>: <span class="value">left</span>;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/metodoRecursivo.png" alt="metodoRecursivo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
 <pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html</span> <span class="attribute-name">lang</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">es</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attribute-name">charset</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">UTF-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;title&gt;</span>Metodo Recursivo<span class="tag">&lt;/title&gt;</span>
-  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">styles.css</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
-
-<span class="tag">&lt;body&gt;</span>
-  <span class="tag">&lt;h1&gt;</span>Metodo Recursivo<span class="tag">&lt;/h2&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box text</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit laboriosam ex ratione deserunt obcaecati quidem
-          itaque aliquam harum odio error commodi amet explicabo,
-          ducimus veniam rerum provident qui. A, aliquid.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box equal center</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">75</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">70</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">75</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">85</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">70</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">85</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box text right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit laboriosam ex ratione deserunt obcaecati quidem
-          itaque aliquam harum odio error commodi amet explicabo,
-          ducimus veniam rerum provident qui. A, aliquid.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowArrow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">boxArrow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg</span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">51</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-          <span class="tag">&lt;polyline</span> <span class="attribute-name">points</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">150 15 140 0 130 15</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/polyline&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">33</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">38</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">43</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">48</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">51</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">boxArrow right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg</span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">51</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-          <span class="tag">&lt;polyline</span> <span class="attribute-name">points</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">150 15 140 0 130 15</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/polyline&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">33</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">38</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">43</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">48</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">51</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box text</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit laboriosam ex ratione deserunt obcaecati quidem
-          itaque aliquam harum odio error commodi amet explicabo,
-          ducimus veniam rerum provident qui. A, aliquid.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box equal center</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">75</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">70</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">75</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">85</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">70</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">85</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box text right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit laboriosam ex ratione deserunt obcaecati quidem
-          itaque aliquam harum odio error commodi amet explicabo,
-          ducimus veniam rerum provident qui. A, aliquid.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">rowArrow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">boxArrow</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg</span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">35</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-          <span class="tag">&lt;polyline</span> <span class="attribute-name">points</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">150 15 140 0 130 15</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/polyline&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">33</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">boxArrow right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg</span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">35</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-          <span class="tag">&lt;polyline</span> <span class="attribute-name">points</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">150 15 140 0 130 15</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/polyline&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">5</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">140</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">33</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box text</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit laboriosam ex ratione deserunt obcaecati quidem
-          itaque aliquam harum odio error commodi amet explicabo,
-          ducimus veniam rerum provident qui. A, aliquid.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box equal center</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;svg&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">75</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">70</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">75</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-          <span class="tag">&lt;line</span> <span class="attribute-name">x1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">85</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">x2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">70</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">y2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">85</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-        <span class="tag">&lt;/svg&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">box text right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit laboriosam ex ratione deserunt obcaecati quidem
-          itaque aliquam harum odio error commodi amet explicabo,
-          ducimus veniam rerum provident qui. A, aliquid.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/body&gt;</span>
-
+<span class="tag">&lt;html&gt;</span>
+    <span class="tag">&lt;head&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Layout<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">styles.css</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/head&gt;</span>
+    <span class="tag">&lt;body&gt;</span>
+        <span class="tag">&lt;header</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p&gt;</span>header<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/header&gt;</span>
+        <span class="tag">&lt;nav</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p&gt;</span>nav<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/nav&gt;</span>
+        <span class="tag">&lt;main</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p&gt;</span>main<span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;section</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;p&gt;</span>section<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/article&gt;</span>
+                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/article&gt;</span>
+                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/article&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">noFloat</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;summary&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>sumary<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/summary&gt;</span>
+            <span class="tag">&lt;/section&gt;</span>
+            <span class="tag">&lt;section</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                <span class="tag">&lt;p&gt;</span>section<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/article&gt;</span>
+                <span class="tag">&lt;article</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>article<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/article</span> class=&quot;general&quot;<span class="error">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">noFloat</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;summary&gt;</span>
+                    <span class="tag">&lt;p&gt;</span>sumary<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/summary&gt;</span>
+            <span class="tag">&lt;/section&gt;</span>
+        <span class="tag">&lt;/main&gt;</span>
+        <span class="tag">&lt;aside</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p&gt;</span>aside<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/aside&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">noFloat</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;footer</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">general</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p&gt;</span>footer<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/footer&gt;</span>
+    <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="css"><span class="tag">body</span> {
-  <span class="key">background-color</span>: <span class="value">black</span>;
-  <span class="key">color</span>: <span class="value">orange</span>;
-  <span class="key">width</span>: <span class="float">80%</span>;
-  <span class="key">position</span>: <span class="value">relative</span>;
-  <span class="key">left</span>: <span class="float">10%</span>;
-  <span class="key">padding</span>: <span class="float">0</span>;
-  <span class="key">border</span>: <span class="float">0</span>;
-}
-
-<span class="tag">h1</span> {
-  <span class="key">text-align</span>: <span class="value">center</span>;
-}
-
-<span class="class">.row</span> {
-  <span class="key">height</span>: <span class="float">160px</span>;
-  <span class="key">margin</span>: <span class="float">0</span>;
-  <span class="key">padding</span>: <span class="float">3%</span>;
-}
-
-<span class="class">.rowArrow</span> {
-  <span class="key">height</span>: <span class="float">55px</span>;
-  <span class="key">margin</span>: <span class="float">0</span>;
-  <span class="key">border</span>: <span class="float">0</span>;
-}
-
-<span class="tag">div</span> {
-  <span class="key">padding</span>: <span class="float">3px</span>;
-  <span class="key">border</span>: <span class="float">1px</span> <span class="value">orange</span> <span class="value">solid</span>;
-  <span class="key">margin</span>: <span class="float">7px</span>;
-}
-
-<span class="class">.text</span> {
-  <span class="key">text-align</span>: <span class="value">center</span>;
-}
-
-<span class="class">.box</span> {
-  <span class="key">float</span>: <span class="value">left</span>;
-  <span class="key">width</span>: <span class="float">40%</span>;
-}
-
-<span class="class">.equal</span> {
-  <span class="key">width</span>: <span class="float">10%</span>;
-}
-
-<span class="class">.center</span> {
-  <span class="key">margin-left</span>: <span class="float">3%</span>;
-}
-
-<span class="tag">line</span> {
-  <span class="key">stroke-width</span>: <span class="float">3</span>;
-  <span class="key">stroke</span>: <span class="value">orange</span>;
-}
-
-<span class="tag">polyline</span> {
-  <span class="key">fill</span>: <span class="value">black</span>;
-  <span class="key">stroke</span>: <span class="value">orange</span>;
-  <span class="key">stroke-width</span>: <span class="float">3</span>;
-}
-
-<span class="class">.boxArrow</span> {
-  <span class="key">border</span>: <span class="float">0</span>;
-  <span class="key">float</span>: <span class="value">left</span>;
-  <span class="key">width</span>: <span class="float">30%</span>;
-  <span class="key">margin</span>: <span class="float">0</span>;
-}
-
-<span class="class">.right</span> {
-  <span class="key">float</span>: <span class="value">right</span>;
-}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -3015,7 +2661,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-01-16 13:16:34 +0100
+Last updated 2022-02-12 14:52:55 +0100
 </div>
 </div>
 <style>

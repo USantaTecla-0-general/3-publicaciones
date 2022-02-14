@@ -497,8 +497,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/logo.png" alt="logo" width="250" height="330"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Códigos disponibles en <a href="https://github.com/USantaTecla-tech-plantUml">git</a>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -777,7 +802,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><em><a href="https://github.com/USantaTecla-project-mastermind/requirements">Ejemplo</a></em></p>
+<p><em><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe">Ejemplo</a></em></p>
 </li>
 </ul>
 </div>
@@ -788,13 +813,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul>
 <li>
 <p><strong><a href="https://asciidoctor.org/docs/asciidoc-writers-guide/">Asciidoc</a></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em><a href="https://github.com/USantaTecla-0-itinerario/plantuml/tree/master/src/docs/asciidoc">Ejemplo</a></em></p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div></div></td>
@@ -1059,6 +1077,29 @@ Clase .down.&gt; Usada</code></pre>
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="plantuml">class Origen
+class Destino
+
+Origen &quot;1..*&quot; -right-&gt; &quot;7&quot; Destino : rol &gt;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/diagramaRelacionDecorada.svg" alt="diagramaRelacionDecorada" width="225" height="67">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="ulist">
 <ul>
 <li>
@@ -1108,6 +1149,8 @@ Comprador &quot;0..*&quot; - &quot;1..*&quot; Vendedor
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="plantuml">object objeto
 object &quot;objeto largo&quot; as objetoLargo
+object &quot;:Clase&quot; as anonimo
+object &quot; &quot; as undefined
 
 object objetoConEstado {
   atributo1 = &quot;valor&quot;
@@ -1117,7 +1160,7 @@ object objetoConEstado {
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo84.svg" alt="Ejemplo84" width="210" height="166">
+<img src="images/Ejemplo84.svg" alt="Ejemplo84" width="265" height="166">
 </div>
 </div></div></td>
 </tr>
@@ -1135,15 +1178,23 @@ object objetoConEstado {
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="plantuml">object objeto1
+<pre class="CodeRay highlight"><code data-lang="plantuml">object objeto1 {
+  atributo = valor
+}
 object objeto2
+object objeto3
+object objeto4
+object objeto5
 
-objeto1 -- objeto2</code></pre>
+objeto1 *-right-&gt; objeto2 : parte
+objeto1 o-right-&gt; objeto3 : agregado
+objeto1 -right-&gt; objeto4 : asociado
+objeto1 .right.&gt; objeto5 : usado</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo140.svg" alt="Ejemplo140" width="72" height="149">
+<img src="images/Ejemplo140.svg" alt="Ejemplo140" width="497" height="117">
 </div>
 </div></div></td>
 </tr>
@@ -1346,25 +1397,8 @@ stop</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="plantuml">start
-if (condition) then (then)
-  :Action;
-endif
-stop</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Ejemplo142.svg" alt="Ejemplo142" width="125" height="231">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="plantuml">start
-if (condition) then (then)
+if (condicion) then (cierto)
   :Action1;
-else (else)
   :Action2;
 endif
 stop</code></pre>
@@ -1372,7 +1406,7 @@ stop</code></pre>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo143.svg" alt="Ejemplo143" width="168" height="202">
+<img src="images/Ejemplo142.svg" alt="Ejemplo142" width="128" height="301">
 </div>
 </div></div></td>
 </tr>
@@ -1380,20 +1414,43 @@ stop</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="plantuml">start
-if (condition1) then (then)
+if (condicion) then (cierto)
   :Action1;
-elseif (condition2) then (then)
   :Action2;
-  stop
 else (else)
   :Action3;
+  :Action4;
 endif
 stop</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo69.svg" alt="Ejemplo69" width="277" height="272">
+<img src="images/Ejemplo143.svg" alt="Ejemplo143" width="171" height="257">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="plantuml">start
+if (condition1) then (cierto)
+  :Action1;
+  :Action2;
+elseif (condition2) then (cierto)
+  :Action3;
+  :Action4;
+  stop
+else (falso)
+  :Action5;
+  :Action6;
+endif
+stop</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Ejemplo69.svg" alt="Ejemplo69" width="283" height="274">
 </div>
 </div></div></td>
 </tr>
@@ -1418,15 +1475,16 @@ stop</code></pre>
 <pre class="CodeRay highlight"><code data-lang="plantuml">start
 
 repeat
-  :Action;
-repeat while (condition) is (then)
+  :Action1;
+  :Action2;
+repeat while (condicion) is (cierto)
 
 stop</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo70.svg" alt="Ejemplo70" width="125" height="226">
+<img src="images/Ejemplo70.svg" alt="Ejemplo70" width="129" height="288">
 </div>
 </div></div></td>
 </tr>
@@ -1435,16 +1493,17 @@ stop</code></pre>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="plantuml">start
 
-while (condition) is (then)
-  :Action;
-endwhile (otherwise)
+while (condicion) is (cierto)
+  :Action1;
+  :Action2;
+endwhile (falso)
 
 stop</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo71.svg" alt="Ejemplo71" width="164" height="180">
+<img src="images/Ejemplo71.svg" alt="Ejemplo71" width="150" height="244">
 </div>
 </div></div></td>
 </tr>
@@ -1509,7 +1568,7 @@ endif</code></pre>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo72.svg" alt="Ejemplo72" width="284" height="231">
+<img src="images/Ejemplo72.svg" alt="Ejemplo72" width="284" height="272">
 </div>
 </div></div></td>
 </tr>
@@ -1537,16 +1596,21 @@ endif</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="plantuml">State1 : commentary
+<pre class="CodeRay highlight"><code data-lang="plantuml">state State1
+State1 : commentary
+state State2 &lt;&lt;choice&gt;&gt;
+state State3
+
 [*] --&gt; State1
-State1 --&gt; [*]
-State1 -&gt; State2
-State2 --&gt; [*]</code></pre>
+State1 -&gt; State2 : accion1
+State2 --&gt; [*] : [condicion]
+State2 --&gt; State3 : [falso]
+State3 --&gt; [*] : accion2</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/Ejemplo86.svg" alt="Ejemplo86" width="202" height="232">
+<img src="images/Ejemplo86.svg" alt="Ejemplo86" width="291" height="379">
 </div>
 </div></div></td>
 </tr>
@@ -2791,39 +2855,6 @@ Third -left-&gt; Last</code></pre>
 </tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Indicar la posición entre clases</strong></p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="plantuml">class A #red
-class B #blue
-class C #blue
-class X #blue
-class Y #red
-class Z #blue
-a -[hidden]Y</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Ejemplo9.svg" alt="Ejemplo9" width="282" height="175">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="ocultación-de-clases-y-paquetes">Ocultación de clases y paquetes</h3>
@@ -3421,7 +3452,7 @@ MySql --&gt; (Use)</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-01-12 12:12:54 +0100
+Last updated 2022-02-11 18:22:11 +0100
 </div>
 </div>
 <style>
