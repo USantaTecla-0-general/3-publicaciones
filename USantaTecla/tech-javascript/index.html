@@ -472,6 +472,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#programación-orientada-a-procesos">Programación Orientada a Procesos</a>
 <ul class="sectlevel2">
 <li><a href="#funciones">Funciones</a></li>
+<li><a href="#recursividad">Recursividad</a></li>
 </ul>
 </li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
@@ -528,81 +529,171 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="6">- <strong class="blue">Lenguaje multiparadigma</strong></th>
+<th class="tableblock halign-left valign-top">Multi-paradigma</th>
+<th class="tableblock halign-left valign-top">Elementos de Programación</th>
+<th class="tableblock halign-left valign-top"><em>Capacitación</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><a href="https://www.youtube.com/watch?v=Sh6lK57Cuk4"><em>Historia</em></a></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"><em>Especificación</em></a> - <a href="https://developer.mozilla.org/es/docs/Web/JavaScript"><em>Referencia</em></a></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><a href="https://www.destroyallsoftware.com/talks/wat">Crítica</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programacion Imperativa</strong></p>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Programación Imperativa</strong> con variables a las que asignar la evaluación de expresiones, &#8230;&#8203;</p>
+<p>la gestión de datos con <strong>valores de tipos primitivos</strong></p>
+</li>
+<li>
+<p>evaluacion de <strong>expresiones de su jerarquía de operadores</strong></p>
+</li>
+<li>
+<p>la sentencia de <strong>asignación, entrada y salida</strong></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Programación Estructurada</strong> con sentencias secuenciales, alternativas e iterativas anidadas, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Programación Orientada a Procesos</strong> con funciones, de orden superior, anónimas, flecha, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Programación Orientada a Objetos</strong> con <strong class="red">prototipos</strong>, propiedades, métodos, mensajes, &#8230;&#8203;, y <strong class="red">clases, herencia</strong>, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Programación con Excepciones</strong> con elevación, captura y delegación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Programación Funcional?!?!</strong> con las restricciones por parte del desarrollador</p>
+<p><em>"pequeño" programa secuenciale</em></p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://www.youtube.com/watch?v=Sh6lK57Cuk4">Historia</a></p>
+<p><strong class="blue">Programacion Estructurada</strong></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://www.ecma-international.org/ecma-262">Especificación</a></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>las sentencias <strong>secuencial, alternativas e iterativas</strong> sobre datos primitivos</p>
+</li>
+<li>
+<p>y sobre datos compuestos en <strong>colecciones homogéneas</strong>, <em><strong>array</strong></em></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">Referencia</a></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>cualquier "mediano" programa</em></p>
+</li>
+</ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://flaviocopes.com/ecmascript/">Tutorial</a></p>
+<p><strong class="blue">Programacion Orientada a Procesos</strong></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://www.freecodecamp.org/learn">Tutoriales</a></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la organización/estructuración/modularización del código con <strong>funciones (no puras)</strong>, nueva unidad (compuesto de sentencias) y <strong>recursivas</strong></p>
+</li>
+<li>
+<p><strong>funciones de orden superior, <em>clousures</em>, funciones anónimas y flecha</strong></p>
+</li>
+<li>
+<p>diferenciar del uso de las <strong>funciones puras</strong> propias del <strong class="red">paradigma funcional</strong></p>
+</li>
+</ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>"gran" programa organizado en funciones</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://www.destroyallsoftware.com/talks/wat">Crítica</a></p>
+<p><strong class="blue">Programacion Orientada a Objetos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la organización/estructuración/modularización del código con <strong>objetos</strong>, nueva unidad (compuesto de datos y funciones)</p>
+</li>
+<li>
+<p>diferenciar el uso de <strong>funciones constructoras, prototipos, <em>clousures</em> y clases</strong></p>
+</li>
+<li>
+<p>gestionar las relaciones de <strong>herencia</strong> para la clasificación</p>
+</li>
+<li>
+<p>diferenciar del uso de <strong>objetos inmutables</strong> propias del <strong class="red">paradigma funcional</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>"gran" programa organizado en objetos</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programacion Modular</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la organización/estructuración/modularización del código con <strong>módulos</strong>, nueva unidad (compuesto de clases, funciones, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><strong>definición, publicación e importación de módulos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>"gran" programa organizado en módulos</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programacion con Excepciones</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>gestión de <strong>fallos, defecto y errores lógicos o excepcionales</strong> frente a las <strong>aserciones</strong></p>
+</li>
+<li>
+<p><strong>sentencia <em>try/catch/finally</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>programa con tratamiento de errores excepcionales</em></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -676,163 +767,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 <div class="sect1">
 <h2 id="cómo"><strong>¿Cómo?</strong></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 60%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Paradigma de Programación</th>
-<th class="tableblock halign-left valign-top">Elementos de Programación</th>
-<th class="tableblock halign-left valign-top"><em>Capacitación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Imperativa</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>la gestión de datos con <strong>valores de tipos primitivos</strong></p>
-</li>
-<li>
-<p>evaluacion de <strong>expresiones de su jerarquía de operadores</strong></p>
-</li>
-<li>
-<p>la sentencia de <strong>asignación, entrada y salida</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>"pequeño" programa secuenciale</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Estructurada</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>las sentencias <strong>secuencial, alternativas e iterativas</strong> sobre datos primitivos</p>
-</li>
-<li>
-<p>y sobre datos compuestos en <strong>colecciones homogéneas</strong>, <em><strong>array</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>cualquier "mediano" programa</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Orientada a Procesos</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>la organización/estructuración/modularización del código con <strong>funciones (no puras)</strong>, nueva unidad (compuesto de sentencias) y <strong>recursivas</strong></p>
-</li>
-<li>
-<p><strong>funciones de orden superior, <em>clousures</em>, funciones anónimas y flecha</strong></p>
-</li>
-<li>
-<p>diferenciar del uso de las funciones puras propias del <strong>paradigma funcional</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>"gran" programa organizado en funciones</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Orientada a Objetos</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>la organización/estructuración/modularización del código con <strong>objetos</strong>, nueva unidad (compuesto de datos y funciones)</p>
-</li>
-<li>
-<p>diferenciar el uso de <strong>funciones constructoras, prototipos, <em>clousures</em> y clases</strong></p>
-</li>
-<li>
-<p>gestionar las relaciones de <strong>herencia</strong> para la clasificación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>"gran" programa organizado en objetos</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion Modular</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>la organización/estructuración/modularización del código con <strong>módulos</strong>, nueva unidad (compuesto de clases, funciones, &#8230;&#8203;)</p>
-</li>
-<li>
-<p><strong>definición, publicación e importación de módulos</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>"gran" programa organizado en módulos</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Programacion con Excepciones</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>gestión de <strong>fallos, defecto y errores lógicos o excepcionales</strong> frente a las <strong>aserciones</strong></p>
-</li>
-<li>
-<p><strong>sentencia <em>try/catch/finally</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>programa con tratamiento de errores excepcionales</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+
 </div>
 </div>
 <div class="sect1">
@@ -918,7 +853,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/como.svg" alt="como" width="575" height="1047">
+<img src="images/como.svg" alt="como" width="576" height="1047">
 </div>
 </div></div></td>
 </tr>
@@ -2214,14 +2149,14 @@ console.writeln(<span class="predefined-constant">Infinity</span>); <span class=
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#0-regardsv1">2-texts/0-regards/v1</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.0/app.js">v1.0</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.1/app.js">v1.1</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.2/app.js">v1.2</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#0-regardsv1">2-texts/0-regards/v1</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.0/app.js">v1.0</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.1/app.js">v1.1</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.2/app.js">v1.2</a> -  <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v1.3/app.js">v1.3</a></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#0-regardsv2">2-texts/0-regards/v2</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v2.0/app.js">v2.0</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#0-regardsv2">2-texts/0-regards/v2</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v2.0/app.js">v2.0</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/0-regards/v2.1/app.js">v2.1</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -5302,7 +5237,7 @@ console.writeln();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfect">3-numbers/7-perfect/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v0.0/app.js">v0.0</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfectv0">3-numbers/7-perfect/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v0.0/app.js">v0.0</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -5486,8 +5421,8 @@ console.writeln([
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -5516,7 +5451,7 @@ console.writeln([
 <p><em>&lt;patron&gt;</em> ::= <strong>&#8230;&#8203;</strong> <em>&lt;identificador&gt;</em></p>
 </li>
 <li>
-<p><em>&lt;patron&gt;</em> ::= <strong>[</strong> <em>&lt;patron&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;patron&gt;</em> <strong class="red">}</strong>[red]<strong>*</strong> <strong>]</strong></p>
+<p><em>&lt;patron&gt;</em> ::= <strong>[</strong> <em>&lt;patron&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;patron&gt;</em> <strong class="red">}</strong>*  <strong>]</strong></p>
 </li>
 </ul>
 </div>
@@ -5526,14 +5461,14 @@ console.writeln([
 <div class="ulist">
 <ul>
 <li>
-<p>donde la expresión debe ser un array y se declaran 2 variables</p>
+<p>donde la expresión debe devolver un array y según la posición de cada identificador dentro del patrón, será inicializado con el <strong>valor del elemento de la posición correspondiente</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>el primer identificador, inicializado solo con el <strong>primer elemento</strong></p>
+<p><strong>si no existen</strong> un valor del elemento de la posición correspondiente, se inicializará con el valor <em><strong>undefined</strong></em></p>
 </li>
 <li>
-<p>el segundo identificador, inicialzado con un array con <strong>todos los elementos menos el primero</strong></p>
+<p>cuando antecede "&#8230;&#8203;", será inicializado con el <strong>array de los valores del elementos de la posición correspondiente en adelante</strong></p>
 </li>
 </ul>
 </div>
@@ -6281,6 +6216,13 @@ withHoisting();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#0-multiplicationtable">3-numbers/0-multiplicationTable/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/0-multiplicationTable/v0.4/app.js"><em>v0.4</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/0-multiplicationTable/v0.5/app.js">v0.5</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/0-time.md#2-sibilingsv0">0-time/2-sibilings/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/0-time/2-sibilings/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/0-time/2-sibilings/v0.3/app.js">v0.3</a></p>
 </li>
 </ul>
@@ -6289,13 +6231,6 @@ withHoisting();
 <ul>
 <li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/0-time.md#1-majorv0">0-time/1-major/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/tree/master/0-time/1-major/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/tree/master/0-time/1-major/v0.2/app.js">v0.2</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/0-time.md#1-major">0-time/1-major/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/0-time/1-major/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/0-time/1-major/v0.2/app.js">v0.2</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -6334,19 +6269,10 @@ withHoisting();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#0-multiplicationtable">3-numbers/0-multiplicationTable/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/0-multiplicationTable/v0.4/app.js"><em>v0.4</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/0-multiplicationTable/v0.5/app.js">v0.5</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#4-absolutevalue">3-numbers/4-absoluteValue/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/4-absoluteValue/v0.3/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/4-absoluteValue/v0.4/app.js">v0.4</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/4-absoluteValue/v0.5/app.js">v0.5</a></p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6354,6 +6280,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6368,8 +6296,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6377,26 +6303,19 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfect">3-numbers/7-perfect/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v1.0/app.js">v0.1</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfect">3-numbers/7-perfect/v1</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v1.0/app.js">v1.0</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v1.1/app.js">v1.1</a></p>
-</li>
-</ul>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfect">3-numbers/7-perfect/v2</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v2.0/app.js">v2.0</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfectv0">3-numbers/7-perfect/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v0.1/app.js">v0.1</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfectv1">3-numbers/7-perfect/v1</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v1.0/app.js">v1.0</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/7-perfect/v1.1/app.js">v1.1</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -6407,6 +6326,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6414,8 +6335,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6430,6 +6349,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6437,8 +6358,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6453,6 +6372,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6460,8 +6381,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6476,6 +6395,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6483,8 +6404,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6499,6 +6418,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6506,8 +6427,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6522,19 +6441,720 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="recursividad">Recursividad</h3>
+<div class="sect3">
+<h4 id="recursividad-lineal">Recursividad Lineal</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Este modelo de recursión consiste en que la aplicación de la función puede hacer <strong>como máximo una llamada recursiva en cada nivel de aplicación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/factorial.png" alt="factorial"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- Valores de la aplicación</th>
+<th class="tableblock halign-left valign-top">- Valor resultado</th>
+<th class="tableblock halign-left valign-top">- Recorrido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">Valor del Caso Base</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Valor resultado del Valor del Caso Base</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="4"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/recorridoRecursivo.png" alt="recorridoRecursivo"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Valor del Caso General en un Grado Menor</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>acercándose, que tienda sucesivamente a un Valor del Caso Base</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Valor resultado del Valor del Caso General en un Grado Menor</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="red">Valor del Caso General</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Valor resultado del Valor del Caso General</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
+<p><em>¿Qué le falta al <strong class="blue">Valor resultado del Valor del Caso General en un Grado Menor</strong> para ser igual al <strong class="red">Valor del resultado del Valor del Caso General</strong>, ayudándote del <span class="blue">Valor del Caso General</span>? &#8230;&#8203; con varios casos surge el salto inductivo: Generalización!!!</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle" colspan="2">Factorial</th>
+<th class="tableblock halign-center valign-middle" colspan="2">Potencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Valores de la aplicación de factorial</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Valor resultado de factorial</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Valores de la aplicación de potencia</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Valor resultado de potencia</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>0</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>1</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>_, 0</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>1</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>4</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>24</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>3,3</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>27</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>5</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>120</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>3,4</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>81</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><em>factorial(5) = 5 * 24 = 5 * factorial(5-1) | factorial(n) = n * factorial(n-1)</em></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><em>potencia(3,4) = 3 * _potencia(3,4-1) = 3 * 27 = 81 | _potencia(b,e) = b * _potencia(b,e-1)</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#9-factorialv0">3-numbers/9-factorial/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.2/app.js">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-powerv0">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.3/app.js">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="recursividad-múltiple">Recursividad Múltiple</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En la recursividad múltiple, en cada aplicación de la función pueden existir <strong>varias aplicaciones de la misma función en cada aplicación</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El seguimiento de una función recursiva múltiple describe un <strong>árbol</strong> de niveles de anidamiento de las llamadas recursivas teniendo en ejecución "pendiente" únicamente una rama de todo el árbol en la pila de ejecución</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/fibonacci.png" alt="fibonacci"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#10-fibonacci">3-numbers/10-fibonacci/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/10-fibonacci/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/10-fibonacci/v0.2/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#2-orderv0">6-collections/2-order/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/4-permutations/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/4-permutations/v0.2/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#">6-collections/4-permutations/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.3/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.4/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="recursividad-mutua">Recursividad Mutua</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es la definición de dos o más <strong>funciones basándose recíprocamente en esas mismas funciones</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El término basándose se refiere a que en el cuerpo de una función aparece la aplicación de otra función.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/evenOdd.svg" alt="evenOdd" width="97" height="520">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#3-evenv0">3-numbers/3-even/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/3-even/v0.5/app.js"><em>v0.5</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/3-even/v0.6/app.js">v0.6</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="recursividad-de-cola">Recursividad de Cola</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 85%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="quoteblock">
+<blockquote>
+Las funciónes de recursividad de cola son un tipo especial de funciones recursivas en las que todo el trabajo se hace antes de cada llamada recursiva
+</blockquote>
+<div class="attribution">
+&#8212; Touretzky<br>
+<cite>1984</cite>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La recursividad de cola es un subconjunto presente en otros tipos de recursividad: lineal, múltiple, &#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Su particularidad radica en que las <strong>reglas de recursión de la definición deben limitarse a la aplicación recursiva de la función sobre los argumentos que se deseen</strong>: el nombre de la función a definir sólo aparece como la primera palabra de las reglas de recursión y el resto de la regla de recursión debe ser su argumento, por tanto, la aplicación sobre la llamada recursiva debe ser la última al evaluar la expresión.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Esta limitación evita que el resultado de la aplicación recursiva sea parte del argumento de cualquier otra función y/u operador.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Este es el motivo por el que <em>Touretzky</em> se refiere a que todo <strong>el trabajo se hace antes de cada llamda recursiva</strong>: la definición es la llamada a la propia función sobre ciertos argumentos que hay que evaluar, de esta forma, resolver la regla de recursión es resolver las expresiones de sus argumentos.</p>
+</li>
+<li>
+<p>Conceptualmente, una definición recursiva de cola de <strong>un proceso sobre unos valores es ese mismo proceso sobre otros valores que tiendan hacia el caso base</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Observando el seguimiento de la aplicación, se aprecia que <strong>el valor devuelto por cada aplicación es el valor devuelto de la llamada a la siguiente</strong>, con excepción de la última aplciación para el caso base</p>
+</li>
+<li>
+<p>El punto clave de esta observación se encuentra en la fase de vuelta atrás de la recursividad: <strong>no existen cálculos pendientes intermedios con los valores devueltos por cada aplicación</strong>, como puede ocurrir en otras definiciones recursivas.</p>
+</li>
+<li>
+<p>Por tanto, en la recursividad de cola, la última aplicación devuelve el valor final resultante</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Este es el único <strong>motivo de interés</strong> de este tipo de recursividad: <strong class="red">eficiencia, con implantación interna iterativa</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acumulacionRecurisiva2.svg" alt="acumulacionRecurisiva2" width="163" height="288">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#0-digitsv0">4-numberingSystems/0-digits/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/0-digits/v0.3/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/0-digits/v0.4/app.js">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="recursividad-con-parámetros-de-acumulación">Recursividad con Parámetros de Acumulación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El motivo de este apartado dentro de las "familias" de recursividad viene dado por la <strong>eficiencia de la ejecución del código</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La recursividad con parámetros de acumulación es una técnica para convertir definiciones sin recursividad de cola en definiciones con recursividad de cola al <strong>introducir un parámetro de adicional a la función</strong>, llamado parámetro de acumulación.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La función principal se limita a llamar a la función secundaria con el Valor resultado en el Caso Base como el argumento del parámetro de acumulación</p>
+</li>
+<li>
+<p>La función secundaria:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el Caso Base, <strong>devolverá el valor acumulado</strong></p>
+</li>
+<li>
+<p>En el Caso General, devolverá a aplicación recursiva (de cola) de la propia función secundaria sobre el Valor General en un Grado Menos y sobre acumulador operado con el Valor en el Caso General, para tender al resultado final</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acumulacionRecurisiva.svg" alt="acumulacionRecurisiva" width="133" height="636">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#9-factorialv0">3-numbers/9-factorial/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.2/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.4/app.js">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-powerv0">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.3/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.4/app.js">v0.4</a> -</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="backtraking">Backtraking</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Backtracking</strong> (<em>retrocediendo</em>) conlleva una búsqueda exhaustiva sistemática de la solución</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Este tipo de recursividad se aplica cuando <strong>no es posible encontrar, no se conoce, una regla de recursión que dirija directamente a la solución del problema</strong>.</p>
+</li>
+<li>
+<p>De esta forma, se delega a la <strong>ejecución de la función que encuentre dicha solución porbando todos los caminos</strong> que considere necesarios hasta llegar a casos básicos que sí son conocidos previamente.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="txt">  coins(15);
+    coins(4);
+    &lt;= 4 de 1
+    coins(10);
+      coins(5);
+      &lt;= 1 de 5
+    &lt;= 2 de 5 y el resto de 1
+    coins(14);
+      coins(3);
+      &lt;= 3 de 1
+      coins(9);
+        coins(4);
+        &lt;= 4 de 1
+      &lt;= 5 de 5 y el resto de 1
+      coins(13);
+        coins(2);
+        &lt;= 2 de 1
+        coins(8);
+          coins(3);
+          &lt;= 3 de 1
+        &lt;= 4 de 5 y el resto de 1
+        coins(12);
+          coins(1);
+          &lt;= 1 de 1
+          coins(7);
+            coins(2);
+            &lt;= 2 de 1
+          &lt;= 3 de 5 y el resto de 1
+          coins(11);
+          &lt;= 1 de 11
+        &lt;= 2 de ...
+      &lt;= 3 de ...
+    &lt;= 4 de ...
+  &lt;= 3 de ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#5-changecoinsv0">3-numbers/5-changecoinsv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v1.2/app.js"><em>v1.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/5-changeCoins/v2.0/app.js">v2.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 <div class="literalblock">
 <div class="content">
-<pre>// include::3-funcionesOrdenSuperior.adoc[]
-// include::4-funcionesAnonimas.adoc[]
-// include::2-recursividad/0-index.adoc[]
-// include::5-programacionFuncional.adoc[]
-// include::4-programacionOrientadaObjetos/0-index.adoc[]
+<pre>// include::5-programacionFuncional.adoc[]
+// include::3-funcionesOrdenSuperior.adoc[]
+// include::4-funcionesAnonimas.adoc[]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// include::4-programacionOrientadaObjetos/0-index.adoc[]
 // include::5-programacionModular/0-index.adoc[]
 // include::6-programacionExcepciones/0-index.adoc[]</pre>
+</div>
 </div>
 </div>
 </div>
