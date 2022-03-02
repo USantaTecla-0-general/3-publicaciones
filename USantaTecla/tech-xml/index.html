@@ -1653,22 +1653,14 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="tag">&lt;elementoEstructurado&gt;</span>
-    <span class="tag">&lt;subElemento&gt;</span>
-    informacion
-    <span class="tag">&lt;/subElemento&gt;</span>
+    <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
     ...
-
     <span class="tag">&lt;elementoEstructurado&gt;</span>
     ...
     <span class="tag">&lt;/elementoEstructurado&gt;</span>
-
     ...
-    <span class="tag">&lt;subElemento&gt;</span>
-    informacion
-    <span class="tag">&lt;/subElemento&gt;</span>
-    <span class="tag">&lt;otroElemento&gt;</span>
-    informacion
-    <span class="tag">&lt;/otroElemento&gt;</span>
+    <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
+    <span class="tag">&lt;otroElemento&gt;</span>informacion<span class="tag">&lt;/otroElemento&gt;</span>
 <span class="tag">&lt;/elementoEstructurado&gt;</span></code></pre>
 </div>
 </div></div></td>
@@ -1760,8 +1752,16 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="tag">&lt;definitions&gt;</span>
-  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Proceso Unificado de Desarrollo</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>es un<span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-  <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">basado en componentes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>,<span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">dirigido por Casos de Uso</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>,<span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">centrado en la Arquitectura</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/definition&gt;</span>
+  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Proceso Unificado de Desarrollo</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> es un <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+     con tres caracterísitcas: <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">basado en componentes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>,
+     <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">dirigido por Casos de Uso</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> y
+     <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">centrado en la Arquitectura</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>.<span class="tag">&lt;/definition&gt;</span>
+  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>es la aplicación
+    de las actividades y procesos de mantenimiento del software que generan
+    una nueva [blue]versión operativa de un software con una funcionalidad de usuario
+    o propiedades cambiadas a partir de una versión anterior junto con los procesos
+    y actividades de garantía de calidad y con la gestión de esos procesos
+    <span class="tag">&lt;/definition&gt;</span>
 <span class="tag">&lt;/definitions&gt;</span></code></pre>
 </div>
 </div>
@@ -2096,24 +2096,116 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml">Unresolved directive in 4-como/3-patrones/5-grafos.adoc - include::../../../../../../src/4-como/3-patrones/4-grafos/src-0.xml[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="tag">&lt;graph&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>node_A<span class="tag">&lt;/node&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>node_B<span class="tag">&lt;/node&gt;</span>
+    ...
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>node_Z<span class="tag">&lt;/node&gt;</span>
+    <span class="tag">&lt;edge&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/edge&gt;</span>
+    <span class="tag">&lt;edge&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/edge&gt;</span>
+    ...
+    <span class="tag">&lt;edge&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/edge&gt;</span>
+<span class="tag">&lt;/graph&gt;</span></code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml">Unresolved directive in 4-como/3-patrones/5-grafos.adoc - include::../../../../../../src/4-como/3-patrones/4-grafos/src-1.xml[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="tag">&lt;graph&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;data&gt;</span>node_A<span class="tag">&lt;/data&gt;</span>
+    <span class="tag">&lt;/node&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;data&gt;</span>node_B<span class="tag">&lt;/data&gt;</span>
+        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/node&gt;</span>
+    ...
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;data&gt;</span>node_Z<span class="tag">&lt;/data&gt;</span>
+        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/node&gt;</span>
+<span class="tag">&lt;/graph&gt;</span></code></pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml">Unresolved directive in 4-como/3-patrones/5-grafos.adoc - include::../../../../../../src/4-como/3-patrones/4-grafos/bibliography-0.xml[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="tag">&lt;bibliography&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;author&gt;</span>Frederick P. Brooks<span class="tag">&lt;/author&gt;</span>
+        <span class="tag">&lt;title&gt;</span>The Mythical Man Month. Essays on Software Engineering<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;year&gt;</span>1995<span class="tag">&lt;/year&gt;</span>
+        <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
+    <span class="tag">&lt;/book&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;author&gt;</span>Grady Booch<span class="tag">&lt;/author&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Object Oriented Analysis and Design with Applications<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;year&gt;</span>2011<span class="tag">&lt;/year&gt;</span>
+        <span class="tag">&lt;publisher&gt;</span>Addison-Wesley<span class="tag">&lt;/publisher&gt;</span>
+    <span class="tag">&lt;/book&gt;</span>
+    ...
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;author&gt;</span>Robert C. Martin<span class="tag">&lt;/author&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Clean Code. A Handbook of Agile Software Craftsmanship<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;year&gt;</span>2008<span class="tag">&lt;/year&gt;</span>
+        <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
+    <span class="tag">&lt;/book&gt;</span>
+    <span class="tag">&lt;reference&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/reference&gt;</span>
+    <span class="tag">&lt;reference&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/reference&gt;</span>
+    ...
+    <span class="tag">&lt;reference&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/reference&gt;</span>
+<span class="tag">&lt;/bibliography&gt;</span></code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml">Unresolved directive in 4-como/3-patrones/5-grafos.adoc - include::../../../../../../src/4-como/3-patrones/4-grafos/bibliography-1.xml[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="tag">&lt;bibliography&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;author&gt;</span>Frederick P. Brooks<span class="tag">&lt;/author&gt;</span>
+        <span class="tag">&lt;title&gt;</span>The Mythical Man Month. Essays on Software Engineering<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;year&gt;</span>1995<span class="tag">&lt;/year&gt;</span>
+        <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
+    <span class="tag">&lt;/book&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;author&gt;</span>Grady Booch<span class="tag">&lt;/author&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Object Oriented Analysis and Design with Applications<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;year&gt;</span>2011<span class="tag">&lt;/year&gt;</span>
+        <span class="tag">&lt;publisher&gt;</span>Addison-Wesley<span class="tag">&lt;/publisher&gt;</span>
+        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/book&gt;</span>
+    ...
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;author&gt;</span>Robert C. Martin<span class="tag">&lt;/author&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Clean Code. A Handbook of Agile Software Craftsmanship<span class="tag">&lt;/title&gt;</span>
+        <span class="tag">&lt;year&gt;</span>2008<span class="tag">&lt;/year&gt;</span>
+        <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
+        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/book&gt;</span>
+<span class="tag">&lt;/bibliography&gt;</span></code></pre>
 </div>
 </div></div></td>
 </tr>
