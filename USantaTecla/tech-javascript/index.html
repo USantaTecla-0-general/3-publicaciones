@@ -473,6 +473,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#funciones">Funciones</a></li>
 <li><a href="#recursividad">Recursividad</a></li>
+<li><a href="#paradigma-funcional">Paradigma Funcional</a></li>
 </ul>
 </li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
@@ -1575,7 +1576,7 @@ console.writeln(<span class="error">`</span>Pero<span class="error">\</span>tel 
 
 console.writeln(<span class="error">`</span><span class="predefined">$</span>{<span class="integer">535</span>} * <span class="predefined">$</span>{<span class="integer">723</span>} = <span class="predefined">$</span>{<span class="integer">535</span>*<span class="integer">723</span>}.<span class="error">`</span>);
 console.writeln(<span class="integer">535</span> + <span class="string"><span class="delimiter">&quot;</span><span class="content"> * </span><span class="delimiter">&quot;</span></span> + <span class="integer">723</span> + <span class="string"><span class="delimiter">&quot;</span><span class="content"> = </span><span class="delimiter">&quot;</span></span> + <span class="integer">535</span>*<span class="integer">723</span> + <span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>);
-console.writeln(<span class="error">`</span>esto es <span class="predefined">$</span>{<span class="error">`</span>innecesariamente <span class="predefined">$</span>{innecesario}<span class="error">`</span>}, verdad?<span class="error">`</span>);</code></pre>
+console.writeln(<span class="error">`</span>esto es <span class="predefined">$</span>{<span class="error">`</span>innecesariamente <span class="predefined">$</span>{<span class="error">`</span>innecesario<span class="error">`</span>}<span class="error">`</span>}, verdad?<span class="error">`</span>);</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -2632,7 +2633,13 @@ console.writeln(crazyVariable); <span class="comment">// Infinity</span>
 crazyVariable = <span class="predefined-constant">NaN</span>;
 console.writeln(crazyVariable); <span class="comment">// NaN</span>
 crazyVariable = <span class="predefined-constant">false</span>;
-console.writeln(crazyVariable); <span class="comment">// false</span></code></pre>
+console.writeln(crazyVariable); <span class="comment">// false</span>
+
+let x;
+let y;
+let z = <span class="integer">0</span>;
+x = y = z;
+console.writeln(x); <span class="comment">// 0</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -3685,7 +3692,8 @@ let x = <span class="integer">0</span>;
 let y = <span class="integer">0</span>;
 console.writeln((x++, y++)); <span class="comment">// 0</span>
 console.writeln((x++, y++, <span class="string"><span class="delimiter">&quot;</span><span class="content">gggg</span><span class="delimiter">&quot;</span></span>)); <span class="comment">// gggg</span>
-console.writeln((x++, y++)); <span class="comment">// 2</span></code></pre>
+console.writeln((x++, y++)); <span class="comment">// 2</span>
+console.writeln((x)); <span class="comment">// 3</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -3760,15 +3768,12 @@ console.writeln((x++, y++)); <span class="comment">// 2</span></code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="comment">/* precedencia */</span>
 console.writeln(<span class="integer">100</span>/<span class="integer">2</span>-<span class="integer">1</span>); <span class="comment">// ¿100 o 49?</span>
 console.writeln(<span class="integer">4</span>&gt;=<span class="integer">7</span> &amp;&amp; <span class="integer">2</span>==<span class="integer">4</span> || <span class="integer">5</span>&lt;<span class="integer">6</span>); <span class="comment">// ¿false o true?</span>
 
-<span class="comment">/* asociatividad */</span>
 console.writeln(<span class="integer">100</span>/<span class="integer">2</span>/<span class="integer">2</span>); <span class="comment">// ¿100 o 25?</span>
 console.writeln(<span class="integer">1</span>-<span class="integer">1</span>-<span class="integer">1</span>); <span class="comment">// ¿1 o -1?</span>
 
-<span class="comment">/* orden de evaluación ¿izquierda a derecha?*/</span>
 console.writeln(<span class="integer">5</span> * <span class="integer">4</span>+<span class="integer">4</span> * <span class="integer">2</span>); <span class="comment">// ¿80 o 28?</span>
 console.writeln(<span class="integer">5</span>+<span class="integer">4</span> / <span class="integer">4</span>+<span class="integer">2</span>); <span class="comment">// ¿1.5 u 8?</span></code></pre>
 </div>
@@ -3818,23 +3823,14 @@ console.writeln(<span class="integer">5</span>+<span class="integer">4</span> / 
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="comment">/* precedencia */</span>
 console.writeln(<span class="integer">100</span>/(<span class="integer">2</span>-<span class="integer">1</span>)); <span class="comment">// ¿100 o 49?</span>
 console.writeln(<span class="integer">4</span>&gt;=<span class="integer">7</span> &amp;&amp; (<span class="integer">2</span>==<span class="integer">4</span> || <span class="integer">5</span>&lt;<span class="integer">6</span>)); <span class="comment">// ¿false o true?</span>
 
-<span class="comment">/* asociatividad */</span>
 console.writeln(<span class="integer">100</span>/(<span class="integer">2</span>/<span class="integer">2</span>)); <span class="comment">// ¿100 o 25?</span>
 console.writeln(<span class="integer">1</span>-(<span class="integer">1</span>-<span class="integer">1</span>)); <span class="comment">// ¿1 o -1?</span>
 
-<span class="comment">/* orden de evaluación ¿izquierda a derecha?*/</span>
 console.writeln(<span class="integer">5</span> * (<span class="integer">4</span>+<span class="integer">4</span>) * <span class="integer">2</span>); <span class="comment">// ¿80 o 28?</span>
-console.writeln((<span class="integer">5</span>+<span class="integer">4</span>) / (<span class="integer">4</span>+<span class="integer">2</span>)); <span class="comment">// ¿1.5 u 8?</span>
-
-let x;
-let y;
-x = y = <span class="integer">0</span>;
-console.writeln(x); <span class="comment">// 0</span>
-console.writeln(y); <span class="comment">// 0</span></code></pre>
+console.writeln((<span class="integer">5</span>+<span class="integer">4</span>) / (<span class="integer">4</span>+<span class="integer">2</span>)); <span class="comment">// ¿1.5 u 8?</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5381,39 +5377,34 @@ console.writeln();</code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-console.writeln([]);
-console.writeln([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>]);
-console.writeln([<span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span>]);
-console.writeln([<span class="predefined-constant">false</span>, <span class="predefined-constant">true</span>]);
-console.writeln([<span class="predefined-constant">undefined</span>]);
+console.writeln([]); <span class="comment">//</span>
+console.writeln([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>]); <span class="comment">// 1,2,3,4,5</span>
+console.writeln([<span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// Javascript,Java,Scala</span>
+console.writeln([<span class="predefined-constant">false</span>, <span class="predefined-constant">true</span>]); <span class="comment">// false,true</span>
+console.writeln([<span class="predefined-constant">undefined</span>]); <span class="comment">//</span>
 let x = <span class="string"><span class="delimiter">&quot;</span><span class="content">un valor</span><span class="delimiter">&quot;</span></span>;
-console.writeln([<span class="integer">7</span>, <span class="predefined-constant">undefined</span>, x, <span class="integer">5</span>+<span class="integer">6</span>&gt;<span class="integer">5</span>-<span class="integer">6</span>]);
+console.writeln([<span class="integer">7</span>, <span class="predefined-constant">undefined</span>, x, <span class="integer">5</span>+<span class="integer">6</span>&gt;<span class="integer">5</span>-<span class="integer">6</span>]); <span class="comment">// 7,,un valor,true</span>
 
 console.writeln([
     [<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">e</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">i</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">u</span><span class="delimiter">&quot;</span></span>],
-    [<span class="string"><span class="delimiter">&quot;</span><span class="content">A</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">E</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">I</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">O</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">U</span><span class="delimiter">&quot;</span></span>]]);
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content">A</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">E</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">I</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">O</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">U</span><span class="delimiter">&quot;</span></span>]]); <span class="comment">// a,e,i,o,u,A,E,I,O,U</span>
 console.writeln([
     [<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>],
     [<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>],
     [<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>],
-]);
+]); <span class="comment">// x, ,o,x,o,o, , ,x</span>
 console.writeln([
     [
         [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
+        [<span class="integer">0</span>,<span class="integer">0</span>],
+        [<span class="integer">0</span>],
     ],
     [
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-    ],
-    [
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
+        <span class="predefined-constant">null</span>,
+        [<span class="predefined-constant">null</span>],
+        [<span class="predefined-constant">null</span>,<span class="predefined-constant">null</span>],
     ]
-]);</code></pre>
+]); <span class="comment">// 0,0,0,0,0,0,,,,</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5484,13 +5475,24 @@ console.writeln([
 
 const console = <span class="keyword">new</span> Console();
 let [head, ...rest] = [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>];
-console.writeln(head);
-console.writeln(rest);
+console.writeln(head); <span class="comment">// 1</span>
+console.writeln(rest); <span class="comment">// 2,3,4,5</span>
 
-let array = [<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">e</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">i</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">u</span><span class="delimiter">&quot;</span></span>];
-[head, ...rest] = array;
-console.writeln(head);
-console.writeln(rest);</code></pre>
+[head, ...rest] = [<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">e</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">i</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">u</span><span class="delimiter">&quot;</span></span>];
+console.writeln(head); <span class="comment">// a</span>
+console.writeln(rest); <span class="comment">// e,i,o,u</span>
+[head, ...rest] = [<span class="predefined-constant">true</span>];
+console.writeln(head); <span class="comment">// true</span>
+console.writeln(rest); <span class="comment">// []</span>
+[head, ...rest] = [];
+console.writeln(head); <span class="comment">// undefined</span>
+console.writeln(rest); <span class="comment">// undefined</span>
+ <span class="comment">// [head, ...rest] = null;</span>
+
+let [[first, second], ...tail] = [[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="integer">3</span>],<span class="integer">4</span>];
+console.writeln(first); <span class="comment">// 1</span>
+console.writeln(second); <span class="comment">// 2</span>
+console.writeln(tail); <span class="comment">// 3,4</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5558,26 +5560,29 @@ console.writeln(rest);</code></pre>
 
 const console = <span class="keyword">new</span> Console();
 let array = [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>];
-console.writeln(<span class="keyword">typeof</span> array);
-console.writeln(array[<span class="integer">0</span>]);
-console.writeln(<span class="keyword">typeof</span> array[<span class="integer">0</span>]);
-console.writeln(array[<span class="integer">4</span>]);
-console.writeln(<span class="keyword">typeof</span> array[<span class="integer">4</span>]);
-console.writeln(array[<span class="integer">5</span>]);
-console.writeln(<span class="keyword">typeof</span> array[<span class="integer">5</span>]);
-<span class="keyword">for</span>(let i = <span class="integer">0</span>; i &lt; array.length; i++){
-    console.writeln(array[i]);
-}
-<span class="keyword">for</span>(let item of array){
-    console.writeln(item);
-}
+console.writeln(<span class="keyword">typeof</span> array); <span class="comment">// object</span>
+console.writeln(array[<span class="integer">0</span>]); <span class="comment">// 1</span>
+console.writeln(<span class="keyword">typeof</span> array[<span class="integer">0</span>]); <span class="comment">// number</span>
+console.writeln(array[<span class="integer">4</span>]); <span class="comment">// 5</span>
+console.writeln(<span class="keyword">typeof</span> array[<span class="integer">4</span>]); <span class="comment">// number</span>
+console.writeln(array[array.length]); <span class="comment">//</span>
+console.writeln(<span class="keyword">typeof</span> array[array.length]); <span class="comment">// undefined</span>
+
+console.writeln([[<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>],[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="predefined-constant">true</span>]][<span class="integer">1</span>][<span class="integer">1</span>]); <span class="comment">// 2</span>
+console.writeln(<span class="keyword">typeof</span> [[<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>],[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="predefined-constant">true</span>]][<span class="integer">1</span>][<span class="integer">1</span>]); <span class="comment">// number</span>
+console.writeln([[<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>],[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="predefined-constant">true</span>]][<span class="integer">1</span>]); <span class="comment">// 1,2</span>
+console.writeln(<span class="keyword">typeof</span> [[<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>],[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="predefined-constant">true</span>]][<span class="integer">1</span>]); <span class="comment">// object</span>
+console.writeln([[<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>],[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="predefined-constant">true</span>]]); <span class="comment">// a,b,c,1,2,true</span>
+console.writeln(<span class="keyword">typeof</span> [[<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>],[<span class="integer">1</span>,<span class="integer">2</span>],[<span class="predefined-constant">true</span>]]); <span class="comment">// object</span>
 
 <span class="keyword">for</span>(let i = <span class="integer">0</span>; i &lt; [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>].length; i++){
-    console.writeln([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>][i]);
+    console.write(<span class="error">`</span><span class="predefined">$</span>{[<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>][i]}, <span class="error">`</span>); <span class="comment">// 1,2,3</span>
 }
+console.writeln();
 <span class="keyword">for</span>(let item of [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>]){
-    console.writeln(item);
-}</code></pre>
+    console.write(<span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>); <span class="comment">// 1,2,3</span>
+}
+console.writeln();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5633,14 +5638,25 @@ console.writeln(<span class="keyword">typeof</span> array[<span class="integer">
 
 const console = <span class="keyword">new</span> Console();
 let array = [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>];
-console.writeln(array);
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{array} con <span class="predefined">$</span>{array.length} items<span class="error">`</span>); <span class="comment">// 1,2,3,4,5 con 5 items</span>
 array[<span class="integer">0</span>] = <span class="integer">0</span>;
-console.writeln(array);
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
-array[<span class="integer">4</span>] = <span class="integer">6</span>;
-console.writeln(array);
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);</code></pre>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{array} con <span class="predefined">$</span>{array.length} items<span class="error">`</span>); <span class="comment">// 0,2,3,4,5 con 5 items</span>
+array = [<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>];
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{array} con <span class="predefined">$</span>{array.length} items<span class="error">`</span>); <span class="comment">// a,b,c con 3 items</span>
+array[<span class="integer">0</span>] = <span class="error">`</span>_<span class="error">`</span>;
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{array} con <span class="predefined">$</span>{array.length} items<span class="error">`</span>); <span class="comment">// _,b,c con 3 items</span>
+array = [];
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{array} con <span class="predefined">$</span>{array.length} items<span class="error">`</span>); <span class="comment">//  con 0 items</span>
+
+let bidimensional = [
+  [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>],
+  [],
+  [<span class="predefined-constant">true</span>, <span class="predefined-constant">false</span>]
+];
+bidimensional[<span class="integer">0</span>] = bidimensional[<span class="integer">1</span>];
+bidimensional[<span class="integer">1</span>] = bidimensional[<span class="integer">2</span>];
+bidimensional[<span class="integer">2</span>] = [<span class="integer">3</span>,<span class="integer">2</span>,<span class="integer">1</span>];
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{bidimensional} con <span class="predefined">$</span>{bidimensional.length} items<span class="error">`</span>); <span class="comment">// ,true,false,3,2,1 con 3 items</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5690,42 +5706,34 @@ console.writeln(<span class="string"><span class="delimiter">&quot;</span><span 
 const console = <span class="keyword">new</span> Console();
 let array = [];
 <span class="keyword">for</span>(let item of array){
-    console.writeln(item);
+    console.write(<span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>); <span class="comment">//</span>
 }
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
+console.writeln(<span class="error">`</span> <span class="keyword">with</span> length: <span class="predefined">$</span>{array.length}<span class="error">`</span>); <span class="comment">// with length: 0</span>
 
 array[<span class="integer">0</span>] = <span class="integer">10</span>;
 <span class="keyword">for</span>(let item of array){
-    console.writeln(item);
+    console.write(<span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>); <span class="comment">// 10,  ...</span>
 }
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
+console.writeln(<span class="error">`</span> <span class="keyword">with</span> length: <span class="predefined">$</span>{array.length}<span class="error">`</span>); <span class="comment">// ... with length: 1</span>
 
 array[<span class="integer">1</span>] = <span class="integer">11</span>;
 <span class="keyword">for</span>(let item of array){
-    console.writeln(item);
+    console.write(<span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>); <span class="comment">// 10, 11, ...</span>
 }
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
+console.writeln(<span class="error">`</span> <span class="keyword">with</span> length: <span class="predefined">$</span>{array.length}<span class="error">`</span>); <span class="comment">// ... with length: 2</span>
 
-array[<span class="integer">99</span>] = <span class="integer">990</span>;
+array[<span class="integer">9</span>] = <span class="integer">99</span>;
 <span class="keyword">for</span>(let item of array){
-    console.writeln(item);
+    console.write(<span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>); <span class="comment">// 10, 11, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 99, ...</span>
 }
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
+console.writeln(<span class="error">`</span> <span class="keyword">with</span> length: <span class="predefined">$</span>{array.length}<span class="error">`</span>); <span class="comment">// ... with length: 10</span>
 
 array[-<span class="integer">1</span>] = -<span class="integer">10</span>;
 <span class="keyword">for</span>(let item of array){
-    console.writeln(item);
+    console.write(<span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>); <span class="comment">// 10, 11, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 99, ...</span>
 }
-console.writeln(array[-<span class="integer">1</span>]);
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);
-
-array[<span class="string"><span class="delimiter">&quot;</span><span class="content">zzz</span><span class="delimiter">&quot;</span></span>] = <span class="string"><span class="delimiter">&quot;</span><span class="content">zzz</span><span class="delimiter">&quot;</span></span>;
-<span class="keyword">for</span>(let item of array){
-    console.writeln(item);
-}
-console.writeln(array[-<span class="integer">1</span>]);
-console.writeln(array[<span class="string"><span class="delimiter">&quot;</span><span class="content">zzz</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">length: </span><span class="delimiter">&quot;</span></span> + array.length);</code></pre>
+console.writeln(<span class="error">`</span> <span class="keyword">with</span> length: <span class="predefined">$</span>{array.length}<span class="error">`</span>); <span class="comment">// ... with length: 10</span>
+console.writeln(array[-<span class="integer">1</span>]); <span class="comment">// -10</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5812,8 +5820,8 @@ console.writeln(<span class="string"><span class="delimiter">&quot;</span><span 
 <h3 id="funciones">Funciones</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 38%;">
+<col style="width: 62%;">
 </colgroup>
 <thead>
 <tr>
@@ -5847,19 +5855,31 @@ console.writeln(<span class="string"><span class="delimiter">&quot;</span><span 
 <ul>
 <li>
 <p>agrupación de sentencias(n) bajo un único(1) identificador</p>
+</li>
+<li>
+<p>son <strong>ciudadanos de primera</strong> (parte de unas expresión, &#8230;&#8203;), considerando la información de los valores de los tipos primitivos una alternativa a la información de la función con cómo manipular y/o calcular valores de tipo <em><strong>function</strong></em></p>
+</li>
+<li>
+<p>el identificador de la función, sin paréntesis de la llamada, se evalúa simplemente con la propia función de tipo <em>function</em></p>
+</li>
+<li>
+<p>la llamada/invocación/ejecución/&#8230;&#8203; de la función se realiza con paréntesis</p>
 <div class="ulist">
 <ul>
 <li>
-<p>se ejecuta la sentencia secuencial del cuerpo de la función</p>
+<p>se crea un <strong>contexto de ejecución</strong> (tiempo de ejecución, dinámico, memoria, espacio/tiempo) con las <strong>reglas de ámbito</strong> de la sentencia secuencial para el acceso a las <strong class="red">variables globales</strong> (tiempo de compilación, estático, texto, espacio) donde se permitirá la <strong>creación de posibles variables y/o constantes locales al ámbito de la función</strong></p>
 </li>
 <li>
-<p>se retorna el control de flujo y continúa con la siguiente sentencia a la llamada</p>
+<p>se <strong>ejecuta la sentencia secuencial</strong> del cuerpo de la función pudiendose llamar de nuevo a otra función, creandose otro contexto de ejecución &#8230;&#8203; recursivamente, de tal forma que se constituye una <strong>pila de contextos de ejecución</strong> con el que está en ejecución en la cima y todos los anteriores pendientes del retorno del control de flujo de ejecución</p>
+</li>
+<li>
+<p>se <strong>retorna el control de flujo de ejecución</strong> desde el final de la sentencia secuencial, <strong>desapilando</strong> (incluido los <em>clousures</em>), el contexto de ejecución liberando su memoria (excepción de los <em>clousures</em>) con todas las variables/constantes/funciones locales del ámbito de la función</p>
+</li>
+<li>
+<p>continua con la <strong>siguiente operador/sentencia posterior a la llamada</strong> de ésta</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>el identificador de la función, se evalúa con la propia función de tipo <em>function</em></p>
 </li>
 <li>
 <p><strong class="red"><em>hoisting</em></strong>, elevación:</p>
@@ -5885,14 +5905,67 @@ console.writeln(<span class="string"><span class="delimiter">&quot;</span><span 
 
 const console = <span class="keyword">new</span> Console();
 <span class="keyword">function</span> <span class="function">funcion</span>() {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nominal, arranque</span><span class="delimiter">&quot;</span></span>);
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nominal, medio</span><span class="delimiter">&quot;</span></span>);
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nominal, fin</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="error">`</span>mensaje<span class="error">`</span>);
 }
-console.writeln(funcion);
-console.writeln(<span class="keyword">typeof</span> funcion);
-console.writeln(funcion());
-console.writeln(<span class="keyword">typeof</span> funcion());</code></pre>
+console.writeln(funcion); <span class="comment">// function ...</span>
+console.writeln(<span class="keyword">typeof</span> funcion); <span class="comment">// function</span>
+console.writeln(funcion()); <span class="comment">// mensaje</span>
+console.writeln(<span class="keyword">typeof</span> funcion()); <span class="comment">// undefined</span>
+
+let nivel0 = <span class="integer">100</span>;
+external();
+
+<span class="keyword">function</span> <span class="function">external</span>() {
+    nivel0++;
+    console.writeln(<span class="error">`</span>external nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 1. external nivel0: 101</span>
+    middle();
+    sibbling();
+    nivel0++;
+    console.writeln(<span class="error">`</span>external nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 10. external nivel0: 106</span>
+
+    <span class="keyword">function</span> <span class="function">middle</span>() {
+        let nivel1 = <span class="integer">200</span>;
+        nivel1++;
+        console.writeln(<span class="error">`</span>middle nivel1: <span class="predefined">$</span>{nivel1}<span class="error">`</span>); <span class="comment">// 2. middle nivel1: 201</span>
+        nivel0++;
+        console.writeln(<span class="error">`</span>middle nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 3. middle nivel0: 102</span>
+        internal();
+        nivel1++;
+        console.writeln(<span class="error">`</span>middle nivel1: <span class="predefined">$</span>{nivel1}<span class="error">`</span>); <span class="comment">// 7. middle nivel1: 203</span>
+        nivel0++;
+        console.writeln(<span class="error">`</span>middle nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 8. middle nivel0: 104</span>
+
+        <span class="keyword">function</span> <span class="function">internal</span>() {
+            let nivel2 = <span class="integer">300</span>;
+            nivel2++;
+            console.writeln(<span class="error">`</span>internal nivel2: <span class="predefined">$</span>{nivel2}<span class="error">`</span>); <span class="comment">// 4. internal nivel2: 301</span>
+            nivel1++;
+            console.writeln(<span class="error">`</span>internal nivel1: <span class="predefined">$</span>{nivel1}<span class="error">`</span>); <span class="comment">// 5. internal nivel1: 202</span>
+            nivel0++;
+            console.writeln(<span class="error">`</span>internal nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 6. internal nivel0: 103</span>
+        }
+    }
+
+    <span class="keyword">function</span> <span class="function">sibbling</span>() {
+        nivel0++;
+        console.writeln(<span class="error">`</span>sibblings: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 9. sibblings: 105</span>
+    }
+}
+
+auxiliar(); <span class="comment">// segunda</span>
+principal(); <span class="comment">// segunda</span>
+
+<span class="keyword">function</span> <span class="function">auxiliar</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">primera</span><span class="delimiter">&quot;</span></span>);
+}
+
+<span class="keyword">function</span> <span class="function">principal</span>() {
+    auxiliar();
+}
+
+<span class="keyword">function</span> <span class="function">auxiliar</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">segunda</span><span class="delimiter">&quot;</span></span>);
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5931,7 +6004,7 @@ console.writeln(<span class="keyword">typeof</span> funcion());</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Los <strong>parámetros</strong>, con posible valor por defecto, son declaraciones locales a la función que aceptan como valores los correspondientes a la evaluación de los argumentos de la llamada</p>
+<p>Los <strong>parámetros</strong>, con posible valor por defecto, son declaraciones de patrones de identificadores (desestructuracion) locales a la función que aceptan como valores los correspondientes a la evaluación de los argumentos de la llamada</p>
 </li>
 <li>
 <p>la <strong>llamada a la función</strong> se realiza con paréntesis obligatorios que encierran la lista de argumentos o parámetros reales. En tal caso:</p>
@@ -5954,10 +6027,7 @@ console.writeln(<span class="keyword">typeof</span> funcion());</code></pre>
 </div>
 </li>
 <li>
-<p>se ejecuta la sentencia compuesta</p>
-</li>
-<li>
-<p>se retorna el control de flujo de ejecución desde el final de la sentencia secuencial y continua con la siguiente sentencia</p>
+<p>continúa como en el apartado anterior</p>
 </li>
 </ul>
 </div>
@@ -5976,24 +6046,38 @@ console.writeln(<span class="keyword">typeof</span> funcion());</code></pre>
 
 const console = <span class="keyword">new</span> Console();
 <span class="keyword">function</span> <span class="function">funcion</span>(x, y=<span class="integer">0</span>) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">entra:</span><span class="delimiter">&quot;</span></span>)
-    console.writeln(x);
-    console.writeln(y);
+    console.write(<span class="error">`</span>x:<span class="predefined">$</span>{x}, <span class="key">y</span>:<span class="predefined">$</span>{y} =&gt; <span class="error">`</span>);
     x++;
     y++;
-    console.writeln(x);
-    console.writeln(y);
+    console.writeln(<span class="error">`</span>x:<span class="predefined">$</span>{x}, <span class="key">y</span>:<span class="predefined">$</span>{y}<span class="error">`</span>);
 }
+funcion(); <span class="comment">// x:undefined, y:0 =&gt; x:NaN, y:1</span>
+funcion(-<span class="integer">1</span>); <span class="comment">// x:-1, y:0 =&gt; x:0, y:1</span>
+funcion(<span class="predefined-constant">undefined</span>); <span class="comment">// x:undefined, y:0 =&gt; x:NaN, y:1</span>
+funcion(<span class="integer">1</span>,<span class="integer">2</span>); <span class="comment">// x:1, y:2 =&gt; x:2, y:3</span>
+let x=<span class="integer">1</span>; <span class="comment">//</span>
+let y=<span class="integer">2</span>; <span class="comment">//</span>
+funcion(y,x); <span class="comment">// x:2, y:1 =&gt; x:3, y:2</span>
+funcion(x,y); <span class="comment">// x:1, y:2 =&gt; x:2, y:3</span>
+funcion(y,x); <span class="comment">// x:2, y:1 =&gt; x:3, y:2</span>
+funcion(x+y*<span class="integer">2</span>,x*y-<span class="integer">1</span>); <span class="comment">// x:5, y:1 =&gt; x:6, y:2</span>
+funcion(x,y,<span class="integer">666</span>); <span class="comment">// x:1, y:2 =&gt; x:2, y:3</span>
 
-funcion(<span class="integer">1</span>,<span class="integer">2</span>);
-let x=<span class="integer">1</span>;
-let y=<span class="integer">2</span>;
-funcion(x,y);
-funcion(x+y*<span class="integer">2</span>,x*y-<span class="integer">1</span>);
-funcion(<span class="predefined-constant">undefined</span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">012a</span><span class="delimiter">&quot;</span></span>);
-funcion(x,y,<span class="integer">666</span>);
-funcion(-<span class="integer">1</span>);
-funcion();</code></pre>
+<span class="keyword">function</span> <span class="function">writeln</span>([head, ...tail]){
+    console.writeln(<span class="error">`</span><span class="predefined">$</span>{head} y <span class="predefined">$</span>{tail.length} m<span class="error">á</span>s<span class="error">`</span>);
+}
+writeln([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>,<span class="integer">6</span>,<span class="integer">7</span>,<span class="integer">8</span>]); <span class="comment">// 1 y 7 más</span>
+
+<span class="keyword">function</span> <span class="function">writelnSum</span>(){
+    let sum = <span class="integer">0</span>;
+    <span class="keyword">for</span>(argument of <span class="local-variable">arguments</span>){
+        sum += argument;
+    }
+    console.writeln(sum);
+}
+writelnSum(); <span class="comment">// 0</span>
+writelnSum(<span class="integer">1</span>); <span class="comment">// 1</span>
+writelnSum(<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>); <span class="comment">// 15</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6001,8 +6085,8 @@ funcion();</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 36.3636%;">
+<col style="width: 63.6364%;">
 </colgroup>
 <thead>
 <tr>
@@ -6036,6 +6120,13 @@ funcion();</code></pre>
 </li>
 <li>
 <p>con la sentencia <strong class="blue"><em>return</em></strong> dentro del cuerpo de la función interrumpe el flujo de ejecución y retorna directamente a continuación del punto de la llamada para la devolución del valor calculado por la expresión</p>
+<div class="ulist">
+<ul>
+<li>
+<p>en ausencia de la expresión, también retorna el valor <em>undefined</em>, <strong class="red">GOTO?!?</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -6047,111 +6138,33 @@ funcion();</code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
+sinRetorno(); <span class="comment">// sin retorno. ...</span>
+console.writeln(sinRetorno() === <span class="predefined-constant">undefined</span>); <span class="comment">// ... sin retorno\n true</span>
+<span class="reserved">double</span>(<span class="integer">3</span>);
+console.writeln(<span class="reserved">double</span>(<span class="integer">3</span>)); <span class="comment">// 6</span>
+console.writeln(factorial(<span class="integer">3</span>)); <span class="comment">// 6</span>
+console.writeln(factorial(<span class="integer">3</span>)+<span class="reserved">double</span>(<span class="integer">3</span>)); <span class="comment">// 12</span>
+console.writeln(<span class="reserved">double</span>(factorial(<span class="integer">3</span>))); <span class="comment">// 12</span>
+console.writeln(factorial(<span class="reserved">double</span>(<span class="integer">3</span>))); <span class="comment">// 720</span>
+let value = <span class="integer">3</span>;
+console.writeln(value*factorial(value)); <span class="comment">// 18</span>
+
+<span class="keyword">function</span> <span class="function">sinRetorno</span>() {
+    console.write(<span class="error">`</span>sin retorno. <span class="error">`</span>);
+    <span class="keyword">return</span>; <span class="comment">// undefined</span>
+}
+
 <span class="keyword">function</span> <span class="reserved">double</span>(value) {
     <span class="keyword">return</span> value * <span class="integer">2</span>;
 }
-console.writeln(<span class="reserved">double</span>(<span class="integer">333</span>))
 
 <span class="keyword">function</span> <span class="function">factorial</span>(value) {
-    <span class="keyword">if</span> (value == <span class="integer">0</span>) {
-        <span class="keyword">return</span> <span class="integer">1</span>;
+    let result = <span class="integer">1</span>;
+    <span class="keyword">for</span> (let i = <span class="integer">1</span>; i &lt;= value; i++) {
+        result *= i;
     }
-    <span class="keyword">return</span> value * factorial(value - <span class="integer">1</span>);
-}
-console.writeln(factorial(<span class="integer">6</span>))</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Ámbito de función</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>la definición de la función puede albergar <strong>definiciones locales</strong> internas de variables, constantes y funciones, referenciables, junto a los parámetros, únicamente desde las sentencias de dentro del ámbito de la sentencia secuencial</p>
-<div class="ulist">
-<ul>
-<li>
-<p>se tiene acceso a las <strong>variables globales</strong> del ámbito de la llamada de la función</p>
-</li>
-<li>
-<p>se puede declarar <strong>variables locales</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>con el <strong>mismo el identificador de ambas variables, global y local</strong>, ésta última <strong>oculta</strong> a la global, en contra de la sentencia compuesta fuera del ámbito de la función</p>
-</li>
-<li>
-<p>la declaración de la función, tanto global como local, puede llamarse antes de su definición, <strong><em>hoisting</em></strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">contenedora</span>() {
-    let local = -<span class="integer">1</span>;
-    <span class="keyword">function</span> <span class="function">anidada</span>(arg) {
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anidada</span><span class="delimiter">&quot;</span></span> + arg);
-    }
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">contenedora</span><span class="delimiter">&quot;</span></span>);
-    anidada(local);
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">contenedora</span><span class="delimiter">&quot;</span></span>);
-}
-contenedora();
-
-
-let global= <span class="integer">1</span>;
-console.writeln(global);
-let igual = <span class="integer">2</span>;
-console.writeln(igual);
-
-<span class="keyword">function</span> <span class="function">ambito</span>() {
-    global--;
-    console.writeln(global);
-    let igual = <span class="integer">0</span>;
-    igual--;
-    console.writeln(igual);
-    let local = <span class="integer">3</span>;
-    console.writeln(local);
-}
-console.writeln(global);
-console.writeln(igual);
-ambito();
-console.writeln(global);
-console.writeln(igual);
-
-withHoisting();
-
-<span class="keyword">function</span> <span class="function">withHoisting</span>() {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">withHoisting</span><span class="delimiter">&quot;</span></span>);
-    innerWithHoisting();
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">withHoisting</span><span class="delimiter">&quot;</span></span>);
-
-    <span class="keyword">function</span> <span class="function">innerWithHoisting</span>() {
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">innerWithHoisting</span><span class="delimiter">&quot;</span></span>);
-    }
-};</code></pre>
+    <span class="keyword">return</span> result;
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6189,12 +6202,45 @@ withHoisting();
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">3</span>-programacionOrientadaProcesos/<span class="integer">1</span>-funciones.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">3</span>-programacionOrientadaProcesos/<span class="integer">1</span>-funciones/<span class="integer">0</span>-funciones.globales/app1.adoc[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="error">`</span>.<span class="regexp"><span class="delimiter">/</span><span class="content">console`);
+
+const console = new Console();
+console.writeln(parseFloat(`3.14`)); </span><span class="delimiter">/</span></span>/ <span class="float">3.14</span>
+console.writeln(parseFloat(<span class="error">`</span><span class="float">314e-2</span><span class="error">`</span>)); <span class="comment">// 3.14</span>
+console.writeln(parseFloat(<span class="error">`</span><span class="float">0.0314E+2</span><span class="error">`</span>)); <span class="comment">// 3.14</span>
+console.writeln(parseFloat(<span class="error">`</span><span class="float">3.1</span> error <span class="integer">4</span><span class="error">`</span>)); <span class="comment">// 3.1</span>
+console.writeln(parseFloat(<span class="error">`</span>error<span class="error">`</span>)); <span class="comment">// NaN</span>
+
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">F</span><span class="delimiter">&quot;</span></span>, <span class="integer">16</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">12</span><span class="delimiter">&quot;</span></span>, <span class="integer">13</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">15</span><span class="delimiter">&quot;</span></span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="float">15.99</span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">15*3</span><span class="delimiter">&quot;</span></span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">17</span><span class="delimiter">&quot;</span></span>, <span class="integer">8</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">1111</span><span class="delimiter">&quot;</span></span>, <span class="integer">2</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span>, <span class="integer">8</span>)); <span class="comment">// NaN</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">546</span><span class="delimiter">&quot;</span></span>, <span class="integer">2</span>)); <span class="comment">// NaN</span></code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">3</span>-programacionOrientadaProcesos/<span class="integer">1</span>-funciones.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">3</span>-programacionOrientadaProcesos/<span class="integer">1</span>-funciones/<span class="integer">0</span>-funciones.globales/app2.adoc[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">console.writeln(isFinite(<span class="integer">0</span>)); <span class="comment">// true</span>
+console.writeln(isFinite(<span class="float">2e64</span>)); <span class="comment">// true</span>
+console.writeln(isFinite(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>)); <span class="comment">// true!!!</span>
+console.writeln(isFinite(-<span class="predefined-constant">Infinity</span>)); <span class="comment">// false</span>
+console.writeln(isFinite(<span class="predefined-constant">Infinity</span>)); <span class="comment">// false</span>
+console.writeln(isFinite(<span class="predefined-constant">NaN</span>)); <span class="comment">// false</span>
+
+console.writeln(isNaN(<span class="predefined-constant">NaN</span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="integer">0</span> / <span class="integer">0</span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">NaN</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">Hello</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">2005/12/12</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="predefined-constant">undefined</span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="integer">0</span>)); <span class="comment">//false</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">123</span><span class="delimiter">'</span></span>)); <span class="comment">//false</span>
+console.writeln(isNaN(<span class="predefined-constant">true</span>)); <span class="comment">//false</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>)); <span class="comment">//false</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6368,19 +6414,12 @@ withHoisting();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#4-decimaltobinaryv1">4-numberingSystems/4-decimalToBinary/v1</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/4-decimalToBinary/v1.0/app.js"><em>v1.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/4-decimalToBinary/v1.1/app.js">v1.1</a> !!!</p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#2-abacus">4-numberingSystems/2-abacus/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/2-abacus/v0.0/app.js">v0.0</a></p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#2-abacus">4-numberingSystems/2-abacus/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/2-abacus/v0.0/app.js">v0.0</a></p>
-</li>
-</ul>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6388,15 +6427,6 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">5-units/0-fraction/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/5-units/0-fraction/v0.0/app.js">v0.0</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6411,15 +6441,15 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-power">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.1/app.js">v0.1</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.2/app.js">v0.2</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-power">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.1/app.js">v0.1</a></p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6434,6 +6464,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -6441,6 +6473,8 @@ withHoisting();
 </li>
 </ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -6737,7 +6771,7 @@ withHoisting();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-powerv0">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.3/app.js">v0.3</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-powerv0">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/11-power/v0.3/app.js">v0.3</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -6798,7 +6832,7 @@ withHoisting();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#2-orderv0">6-collections/2-order/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/4-permutations/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/4-permutations/v0.2/app.js">v0.2</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#2-orderv0">6-collections/2-order/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.3/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.4/app.js">v0.4</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -7133,7 +7167,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#5-changecoinsv0">3-numbers/5-changecoinsv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v1.2/app.js"><em>v1.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/5-changeCoins/v2.0/app.js">v2.0</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#5-changecoinsv0">3-numbers/5-changecoinsv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/5-changeCoins/v2.0/app.js">v2.0</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -7142,19 +7176,204 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="paradigma-funcional">Paradigma Funcional</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Paradigma Imperativo</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Paradigma Funcional</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>órdenes directas, <strong class="blue">sentencias de asignación</strong> (evalúa y guarda) de formas alternativas y/o iterativas y/o recursivas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la <strong class="blue">solución a una entrada de datos es un regla de correspondencia para devolver la salida de datos</strong>, sin cambios. Ejemplos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Añadir un ficha a un tablero, sería obtener el tablero resultante a partir de un tablero dado, un color dado y una coordenada dada</em></p>
+</li>
+<li>
+<p><em>Un tratamiento de textos es una correspondencia entre una secuencia de pulsaciones dadas y una secuencia de caracteres resultante; _ano&#8592;a</em> retorna <em>ana</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">cambiando el estado de las variables</strong> y siendo un programa un conjunto de variables que parten de un estado inicial y con el <strong class="red">tiempo</strong> alcanzan el estado final deseado</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">no hay variables</strong>, no hay bucles, no hay sentencias, <strong class="green">no hay tiempo</strong>, no hay historia de ejecución, &#8230;&#8203; hay constantes con valores y operadores (<em>if</em>, ternario) y <strong class="red">mucha recursividad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>abstracción de la máquina de <em>von Neumann</em>, &#8230;&#8203; <strong class="red">orientado a la máquina</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">mayor abstracción</strong>, <strong class="red">orientada al hombre</strong> y no a la máquina</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">efectos laterales</strong>, con acoplamientos en el tiempo accediendo a variables globales</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">transparencia referencial</strong>, aquella notación en que el valor de una <strong class="green">expresión compuesta depende únicamente de sus componentes</strong> y de nada más, no de la historia del programa en ejecución o de otros componentes que no estén inmersos en la expresión</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">soluciones incorrectas</strong>, con miles de pruebas &#8230;&#8203; y, por tanto, <strong class="red">bajas cotas de productividad</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">soluciones correctas</strong>, "sin pruebas" &#8230;&#8203; y, por tanto, <strong class="green">altas cotas de productividad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">concurrencia muy compleja/costosa</strong>: semáforos, regiones críticas, sincronización de barrera, interbloqueos, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">concurrencia "regalada"</strong> por el entorno (intérprete, máquina, &#8230;&#8203;), "máximamente" paralelizable</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">soluciones eficientes</strong>, recursividad: consumo de recursos, &#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">soluciones "ineficientes"</strong>, parámetros de acumulación, &#8230;&#8203;</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#9-factorialv0">3-numbers/9-factorial/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.3/app.js">v0.3</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/9-factorial/v0.4/app.js">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#10-fibonacci">3-numbers/10-fibonacci/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/10-fibonacci/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/10-fibonacci/v0.3/app.js">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.6/app.js"><em>v0.6</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.7/app.js">v0.7</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#4-permutationsv0">6-collections/4-permutations/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/4-permutations/v0.2/app.js"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/4-permutations/v0.3/app.js">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#5-changecoinsv0">3-numbers/5-changecoinsv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/5-changeCoins/v2.0/app.js"><em>v2.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/5-changeCoins/v2.1/app.js">v2.1</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 <div class="literalblock">
 <div class="content">
-<pre>// include::5-programacionFuncional.adoc[]
-// include::3-funcionesOrdenSuperior.adoc[]
-// include::4-funcionesAnonimas.adoc[]</pre>
+<pre>// include::4-ordenSuperior.adoc[]
+// include::5-anonimas.adoc[]
+// include::6-flecha.adoc[]</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>// include::4-programacionOrientadaObjetos/0-index.adoc[]
-// include::5-programacionModular/0-index.adoc[]
-// include::6-programacionExcepciones/0-index.adoc[]</pre>
-</div>
+<pre>// include::4-objetos/0-index.adoc[]
+// include::5-modular/0-index.adoc[]
+// include::6-excepciones/0-index.adoc[]</pre>
 </div>
 </div>
 </div>
