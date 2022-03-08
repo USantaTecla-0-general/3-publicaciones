@@ -7456,11 +7456,6 @@ const console = <span class="keyword">new</span> Console();
 superiorX(normalXA); <span class="comment">// A</span>
 superiorX(normalXB); <span class="comment">// B</span>
 
-let f = normalXA;
-f(); <span class="comment">// A</span>
-f = normalXB;
-f(); <span class="comment">// B</span>
-
 <span class="keyword">function</span> <span class="function">normalYA</span>(){
     <span class="keyword">return</span> <span class="error">`</span>A<span class="error">`</span>;
 }
@@ -7491,7 +7486,22 @@ superiorY(normalYB); <span class="comment">// B</span>
 superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZA); <span class="comment">// A</span>
 superiorZ(<span class="error">`</span>B<span class="error">`</span>, normalZB); <span class="comment">// BB</span>
 superiorZ(<span class="error">`</span>B<span class="error">`</span>, normalZA); <span class="comment">// B</span>
-superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZB); <span class="comment">// AA</span></code></pre>
+superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZB); <span class="comment">// AA</span>
+
+let f = una;
+f(<span class="error">`</span>first<span class="error">`</span>); <span class="comment">// mensaje: first</span>
+f = otra;
+f(<span class="error">`</span>second<span class="error">`</span>); <span class="comment">// mensaje: second</span>
+
+<span class="keyword">function</span> <span class="function">una</span>(msg) {
+    console.writeln(<span class="error">`</span>mensaje: <span class="predefined">$</span>{msg}<span class="error">`</span>);
+}
+<span class="keyword">function</span> <span class="function">otra</span>(msg) {
+    console.writeln(<span class="error">`</span>mensaje: <span class="predefined">$</span>{msg}<span class="error">`</span>);
+}
+console.writeln(una === otra); <span class="comment">// false</span>
+otra = una;
+console.writeln(otra === una); <span class="comment">// true</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -7568,71 +7578,59 @@ superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZB); 
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-console.writeln(<span class="keyword">typeof</span> <span class="keyword">function</span>() {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
+console.writeln(<span class="keyword">typeof</span> <span class="keyword">function</span> () {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>); <span class="comment">// function</span>
 });
-console.writeln(<span class="keyword">function</span>() {
+console.writeln(<span class="keyword">function</span> () {
     console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
-});
-console.writeln(<span class="keyword">function</span>() {
+}); <span class="comment">// function () ...</span>
+console.writeln(<span class="keyword">function</span> () {
     console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
-}());
-console.writeln(<span class="keyword">typeof</span> <span class="keyword">function</span>() {
+}()); <span class="comment">// anonima</span>
+console.writeln(<span class="keyword">typeof</span> <span class="keyword">function</span> () {
     console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
-}());
+}()); <span class="comment">// anonima\nundefined</span>
 
-<span class="comment">/* variables de tipo función */</span>
-<span class="keyword">function</span> <span class="function">nominal</span>(){
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nomima</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">function</span> <span class="function">nominal</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nomimal</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">return</span> <span class="predefined-constant">true</span>;
 }
 
 let f = nominal;
-console.writeln(<span class="keyword">typeof</span> f);
-console.writeln(f);
-console.writeln(f());
-console.writeln(<span class="keyword">typeof</span> f());
+console.writeln(<span class="keyword">typeof</span> f); <span class="comment">// function</span>
+console.writeln(f); <span class="comment">// function nominal() ...</span>
+console.writeln(f()); <span class="comment">// nomimal\ntrue</span>
+console.writeln(<span class="keyword">typeof</span> f()); <span class="comment">// nomimal\nboolean</span>
 
-let <span class="function">g</span> = <span class="keyword">function</span>() {
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima g</span><span class="delimiter">&quot;</span></span>);
-    };
-console.writeln(<span class="keyword">typeof</span> g);
-console.writeln(g);
-console.writeln(g());
-console.writeln(<span class="keyword">typeof</span> g());
+let <span class="function">g</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima g</span><span class="delimiter">&quot;</span></span>);
+};
+console.writeln(<span class="keyword">typeof</span> g); <span class="comment">// function</span>
+console.writeln(g); <span class="comment">// function () ...</span>
+console.writeln(g()); <span class="comment">// anonima g\n</span>
+console.writeln(<span class="keyword">typeof</span> g()); <span class="comment">// undefined</span>
 
 <span class="keyword">function</span> <span class="function">gg</span>() {
     console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nominal gg</span><span class="delimiter">&quot;</span></span>);
 };
-console.writeln(<span class="keyword">typeof</span> gg);
-console.writeln(gg);
-console.writeln(gg());
-console.writeln(<span class="keyword">typeof</span> gg());
+console.writeln(<span class="keyword">typeof</span> gg); <span class="comment">// function</span>
+console.writeln(gg); <span class="comment">// function gg() ...</span>
+console.writeln(gg()); <span class="comment">// anonimal gg\n</span>
+console.writeln(<span class="keyword">typeof</span> gg()); <span class="comment">// undefined</span>
 
 g = gg;
-console.writeln(<span class="keyword">typeof</span> g);
-console.writeln(g);
-console.writeln(g());
-console.writeln(<span class="keyword">typeof</span> g());
+console.writeln(<span class="keyword">typeof</span> g); <span class="comment">// function</span>
+console.writeln(g); <span class="comment">// function gg() ...</span>
+console.writeln(g()); <span class="comment">// anonimal gg\n</span>
+console.writeln(<span class="keyword">typeof</span> g()); <span class="comment">// undefined</span>
 
-<span class="function">nominal</span> = <span class="keyword">function</span>() {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">re-nominal</span><span class="delimiter">&quot;</span></span>);
+<span class="function">nominal</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">re-anomina</span><span class="delimiter">&quot;</span></span>);
 };
-console.writeln(<span class="keyword">typeof</span> nominal);
-console.writeln(nominal);
-console.writeln(nominal());
-console.writeln(<span class="keyword">typeof</span> nominal());
-
-<span class="comment">/* igualdad por referencia */</span>
-<span class="keyword">function</span> <span class="function">una</span>() {
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">mensaje</span><span class="delimiter">&quot;</span></span>);
-}
-<span class="keyword">function</span> <span class="function">otra</span>() {
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">mensaje</span><span class="delimiter">&quot;</span></span>);
-}
-console.writeln(una==otra);
-otra = una;
-console.writeln(otra==una);</code></pre>
+console.writeln(<span class="keyword">typeof</span> nominal); <span class="comment">// function</span>
+console.writeln(nominal); <span class="comment">// function () ...</span>
+console.writeln(nominal()); <span class="comment">// re-anomina\n</span>
+console.writeln(<span class="keyword">typeof</span> nominal()); <span class="comment">// undefined</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -7666,19 +7664,15 @@ console.writeln(otra==una);</code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="comment">/* con hoisting: funciones nominales */</span>
-<span class="keyword">function</span> <span class="function">ambitoNominal</span>(){
-    <span class="keyword">function</span> <span class="function">nominal</span>(){
-        <span class="keyword">return</span> <span class="integer">0</span>;
-    }
-    <span class="keyword">return</span> nominal();
-    <span class="keyword">function</span> <span class="function">nominal</span>(){
-        <span class="keyword">return</span> <span class="integer">1</span>;
+<span class="keyword">function</span> <span class="function">global</span>(){
+    <span class="keyword">return</span> local();
+
+    <span class="keyword">function</span> <span class="function">local</span>(){
+        <span class="keyword">return</span> -<span class="integer">1</span>;
     }
 }
-console.writeln(ambitoNominal());
+console.writeln(global()); <span class="comment">// -1</span>
 
-<span class="comment">/* sin hoisting: con funciones anónimas */</span>
 <span class="keyword">function</span> <span class="function">ambitoAnonima</span>(){
     let <span class="function">a</span> = <span class="keyword">function</span>(){
         <span class="keyword">return</span> <span class="integer">0</span>;
@@ -7688,17 +7682,18 @@ console.writeln(ambitoNominal());
         <span class="keyword">return</span> <span class="integer">1</span>;
     }
 }
-console.writeln(ambitoAnonima());
+console.writeln(ambitoAnonima()); <span class="comment">// 0</span>
 
-<span class="comment">/* formato */</span>
-<span class="keyword">function</span> <span class="function">global</span>(){
-    <span class="keyword">return</span> local();
-
-    <span class="keyword">function</span> <span class="function">local</span>(){
-        <span class="keyword">return</span> -<span class="integer">1</span>;
+<span class="keyword">function</span> <span class="function">ambitoNominal</span>(){
+    <span class="keyword">function</span> <span class="function">nominal</span>(){
+        <span class="keyword">return</span> <span class="integer">0</span>;
+    }
+    <span class="keyword">return</span> nominal();
+    <span class="keyword">function</span> <span class="function">nominal</span>(){
+        <span class="keyword">return</span> <span class="integer">1</span>;
     }
 }
-console.writeln(global());</code></pre>
+console.writeln(ambitoNominal()); <span class="comment">// 1</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -7858,74 +7853,76 @@ console.log(flechaSoloRetorno(<span class="integer">1</span>));</code></pre>
 
 const console = <span class="keyword">new</span> Console();
 let <span class="function">anominaDosOMasParametros</span> =
-        <span class="keyword">function</span>(x, y)
-                { x++; y++; console.writeln(x+y); };
+  <span class="keyword">function</span>(x, y)
+    { x++; y++; console.writeln(x+y); };
 console.writeln(<span class="keyword">typeof</span> anominaDosOMasParametros);
 console.writeln(anominaDosOMasParametros);
 console.writeln(anominaDosOMasParametros(<span class="integer">1</span>, <span class="integer">2</span>));
 
 let flechaDosOMasParametros =
-        (x, y) =&gt;
-                { x++; y++; console.writeln(x+y); };
+  (x, y) =&gt;
+    { x++; y++; console.writeln(x+y); };
 console.writeln(<span class="keyword">typeof</span> flechaDosOMasParametros);
 console.writeln(flechaDosOMasParametros);
 console.writeln(flechaDosOMasParametros(<span class="integer">1</span>, <span class="integer">2</span>));
 
 let <span class="function">anominaUnParametro</span> =
-        <span class="keyword">function</span>(x)
-                { x++; console.writeln(x); };
+  <span class="keyword">function</span>(x)
+    { x++; console.writeln(x); };
 console.writeln(<span class="keyword">typeof</span> anominaUnParametro);
 console.writeln(anominaUnParametro);
 console.writeln(anominaUnParametro(<span class="integer">1</span>));
 
 let flechaUnParametro =
-        x =&gt;
-                { x++; console.writeln(x); };
+  x =&gt;
+    { x++; console.writeln(x); };
 console.writeln(<span class="keyword">typeof</span> flechaUnParametro);
 console.writeln(flechaUnParametro);
 console.writeln(flechaUnParametro(<span class="integer">1</span>));
 
 let <span class="function">anominaCeroParametros</span> =
-        <span class="keyword">function</span>()
-                { console.writeln(<span class="integer">0</span>); };
+  <span class="keyword">function</span>()
+    { console.writeln(<span class="integer">0</span>); };
 console.writeln(<span class="keyword">typeof</span> anominaCeroParametros);
 console.writeln(anominaCeroParametros);
 console.writeln(anominaCeroParametros());
 
 let flechaCeroParametros =
-        () =&gt;
-                { console.writeln(<span class="integer">0</span>); };
+  () =&gt;
+    { console.writeln(<span class="integer">0</span>); };
 console.writeln(<span class="keyword">typeof</span> flechaCeroParametros);
 console.writeln(flechaCeroParametros);
 console.writeln(flechaCeroParametros());
 
 let <span class="function">anominaSoloRetorno</span> =
-        <span class="keyword">function</span>(x)
-                { <span class="keyword">return</span> x+<span class="integer">1</span>; };
+  <span class="keyword">function</span>(x)
+    { <span class="keyword">return</span> x+<span class="integer">1</span>; };
 console.writeln(<span class="keyword">typeof</span> anominaSoloRetorno);
 console.writeln(anominaSoloRetorno);
 console.writeln(anominaSoloRetorno(<span class="integer">1</span>));
 
 let flechaSoloRetorno =
-        x =&gt; x+<span class="integer">1</span>;
+  x =&gt; x+<span class="integer">1</span>;
 console.writeln(<span class="keyword">typeof</span> flechaSoloRetorno);
 console.writeln(flechaSoloRetorno);
 console.writeln(flechaSoloRetorno(<span class="integer">1</span>));
 
-<span class="keyword">function</span> <span class="function">sumatorio</span>(ini, fin, serie) {
-        let sum = <span class="integer">0</span>;
-        <span class="keyword">for</span>(let i=ini; i&lt;=fin; i++){
-                        sum += serie(i);
-        }
-        <span class="keyword">return</span> sum;
+console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, (x) =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
+console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
+console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; <span class="integer">2</span>*x));
+console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, <span class="reserved">double</span>));
+
+<span class="keyword">function</span> <span class="function">sum</span>(from, to, next) {
+  let result = <span class="integer">0</span>;
+  <span class="keyword">for</span>(let i=from; i&lt;=to; i++){
+                result += next(i);
+  }
+  <span class="keyword">return</span> result;
 }
-console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, (x) =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
-console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
-console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; <span class="integer">2</span>*x));
-let <span class="function">h</span> = <span class="keyword">function</span>(x) {
-        <span class="keyword">return</span> <span class="integer">2</span>*x;
-}
-console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, h));</code></pre>
+
+let <span class="reserved">double</span> = <span class="keyword">function</span>(x) {
+  <span class="keyword">return</span> <span class="integer">2</span>*x;
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8044,21 +8041,20 @@ Object: typeof instance === "object". Tipo estructural especial que no es de dat
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="comment">/* creación de objeto */</span>
-let x = <span class="keyword">new</span> Object();
-console.writeln(x);
-console.writeln(<span class="keyword">typeof</span> x);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
-    console.writeln(campo);
-    console.writeln(<span class="keyword">typeof</span> campo);
+let object = {};
+console.writeln(object); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+    console.writeln(property); <span class="comment">//</span>
+    console.writeln(<span class="keyword">typeof</span> property); <span class="comment">//</span>
 }
 
-let x = {};
-console.writeln(x);
-console.writeln(<span class="keyword">typeof</span> x);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
-    console.writeln(campo);
-    console.writeln(<span class="keyword">typeof</span> campo);
+object = <span class="keyword">new</span> Object();
+console.writeln(object); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+    console.writeln(property); <span class="comment">//</span>
+    console.writeln(<span class="keyword">typeof</span> property); <span class="comment">//</span>
 }</code></pre>
 </div>
 </div></div></td>
@@ -8123,68 +8119,65 @@ console.writeln(<span class="keyword">typeof</span> x);
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="comment">/* añadir propiedades */</span>
-x.a = <span class="integer">666</span>;
-x[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>] = <span class="integer">666</span>;
-x.b = <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>;
-x[<span class="string"><span class="delimiter">&quot;</span><span class="content">bb</span><span class="delimiter">&quot;</span></span>] = <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>;
-x.<span class="function">c</span> = <span class="keyword">function</span>(){
+let object = {};
+object.a = <span class="integer">666</span>;
+object[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>] = <span class="integer">666</span>;
+object.b = <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>;
+object[<span class="string"><span class="delimiter">&quot;</span><span class="content">bb</span><span class="delimiter">&quot;</span></span>] = <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>;
+object.<span class="function">c</span> = <span class="keyword">function</span>(){
         <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">método c</span><span class="delimiter">&quot;</span></span>;
     };
-x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>] = <span class="keyword">function</span>(){
+object[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>] = <span class="keyword">function</span>(){
         <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">método cc</span><span class="delimiter">&quot;</span></span>;
     };
-x.y = {};
-console.writeln(x);
-console.writeln(<span class="keyword">typeof</span> x);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
-    console.writeln(x[campo]);
-    console.writeln(<span class="keyword">typeof</span> x[campo]);
+object.y = {};
+console.writeln(object); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+<span class="keyword">for</span>(campo <span class="keyword">in</span> object){
+    console.writeln(object[campo]); <span class="comment">// 666 / 666 / campo / campo / function()... / function()... / [object Object]</span>
+    console.writeln(<span class="keyword">typeof</span> object[campo]); <span class="comment">// number / number / string / function / function / object</span>
 }
 
-<span class="comment">/* acceso a propiedades */</span>
-console.writeln(x.a);
-console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(x.aa);
-console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(x.c);
-console.writeln(<span class="keyword">typeof</span> x.c);
-console.writeln(x.c());
-console.writeln(<span class="keyword">typeof</span> x.c());
-console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]());
-console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]());
-console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]);
-console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]());
-console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]());
-console.writeln(x.cc);
-console.writeln(<span class="keyword">typeof</span> x.cc);
-console.writeln(x.cc());
-console.writeln(<span class="keyword">typeof</span> x.cc());
+console.writeln(object.a); <span class="comment">// 666</span>
+console.writeln(object[<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// 666</span>
+console.writeln(object.aa); <span class="comment">// 666</span>
+console.writeln(object[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// 666</span>
+console.writeln(object.c); <span class="comment">// function()...</span>
+console.writeln(<span class="keyword">typeof</span> object.c); <span class="comment">// function</span>
+console.writeln(object.c()); <span class="comment">// método c</span>
+console.writeln(<span class="keyword">typeof</span> object.c()); <span class="comment">// string</span>
+console.writeln(object[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// function()...</span>
+console.writeln(<span class="keyword">typeof</span> object[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// function</span>
+console.writeln(object[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]()); <span class="comment">// método c</span>
+console.writeln(<span class="keyword">typeof</span> object[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]()); <span class="comment">// string</span>
+console.writeln(object[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// function()...</span>
+console.writeln(<span class="keyword">typeof</span> object[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// function</span>
+console.writeln(object[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]()); <span class="comment">// método cc</span>
+console.writeln(<span class="keyword">typeof</span> object[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]()); <span class="comment">// string</span>
+console.writeln(object.cc); <span class="comment">// function()...</span>
+console.writeln(<span class="keyword">typeof</span> object.cc); <span class="comment">// function</span>
+console.writeln(object.cc()); <span class="comment">// método cc</span>
+console.writeln(<span class="keyword">typeof</span> object.cc()); <span class="comment">// string</span>
 
-<span class="comment">/* modificación de propiedades */</span>
-x.a = <span class="integer">7</span>;
-x[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>] = <span class="integer">7</span>;
-x.<span class="function">c</span> = <span class="keyword">function</span>() {
+object.a = <span class="integer">7</span>;
+object[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>] = <span class="integer">7</span>;
+object.<span class="function">c</span> = <span class="keyword">function</span>() {
     console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nueva</span><span class="delimiter">&quot;</span></span>);
 }
-console.writeln(x);
-console.writeln(<span class="keyword">typeof</span> x);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
-    console.writeln(x[campo]);
-    console.writeln(<span class="keyword">typeof</span> x[campo]);
+console.writeln(object); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+<span class="keyword">for</span>(campo <span class="keyword">in</span> object){
+    console.writeln(object[campo]); <span class="comment">// 7 / 7 / campo / campo / function()... / function()...</span>
+    console.writeln(<span class="keyword">typeof</span> object[campo]); <span class="comment">// number / number / string / string / function  / function</span>
 }
 
-<span class="comment">/* eliminación de propiedades */</span>
-<span class="keyword">delete</span> x.b;
-<span class="keyword">delete</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">bb</span><span class="delimiter">&quot;</span></span>];
-console.writeln(x);
-console.writeln(<span class="keyword">typeof</span> x);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
-    console.writeln(x[campo]);
-    console.writeln(<span class="keyword">typeof</span> x[campo]);
+<span class="keyword">delete</span> object.b;
+<span class="keyword">delete</span> object[<span class="string"><span class="delimiter">&quot;</span><span class="content">bb</span><span class="delimiter">&quot;</span></span>];
+console.writeln(object); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+<span class="keyword">for</span>(campo <span class="keyword">in</span> object){
+    console.writeln(object[campo]); <span class="comment">// 7 / 7 / function()... / function()...</span>
+    console.writeln(<span class="keyword">typeof</span> object[campo]); <span class="comment">// number / number / function  / function</span>
 }</code></pre>
 </div>
 </div></div></td>
@@ -8240,65 +8233,53 @@ console.log(dogName);</p>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="comment">/* inicilización de objetos */</span>
-let y = {
+let object = {
     <span class="key">a</span> : <span class="integer">666</span>*<span class="integer">7</span>,
-    <span class="key">b</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>,
-    <span class="function">c</span> : <span class="keyword">function</span>(){
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">método c</span><span class="delimiter">&quot;</span></span>);
+    <span class="key">b</span> : <span class="error">`</span>valor<span class="error">`</span>,
+    <span class="function">method</span> : <span class="keyword">function</span>(){
+        console.writeln(<span class="error">`</span>m<span class="error">é</span>todo<span class="error">`</span>);
     }
 }
-console.writeln(y);
-console.writeln(<span class="keyword">typeof</span> y);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> y){
-    console.writeln(y[campo]);
-    console.writeln(<span class="keyword">typeof</span> y[campo]);
+console.writeln(object); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+    console.writeln(object[property]); <span class="comment">// 4662 / valor / function () ...</span>
+    console.writeln(<span class="keyword">typeof</span> object[property]); <span class="comment">// number / string / function</span>
 }
-console.writeln(y.c());
-console.writeln(<span class="keyword">typeof</span> y.c());
 
-<span class="comment">/* inicilización de objetos por JSON */</span>
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">JSON!!!!!!!!!!!!</span><span class="delimiter">&quot;</span></span>);
-let z = {
+console.writeln(object.method()); <span class="comment">// método</span>
+console.writeln(<span class="keyword">typeof</span> object.method()); <span class="comment">// método\nundefined</span>
+
+let {a, b} = object;
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>); <span class="comment">// 4662 - valor</span>
+({a, b} = { <span class="key">b</span> : <span class="integer">666</span>, <span class="key">a</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">oh</span><span class="delimiter">&quot;</span></span>});
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>); <span class="comment">// oh - 666</span>
+
+<span class="keyword">function</span> <span class="function">f</span>({a, b}){
+    console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>);
+}
+
+f(object); <span class="comment">// 4662 - valor</span>
+f({<span class="key">a</span>:-<span class="integer">1</span>, <span class="key">b</span>:<span class="predefined-constant">true</span>}); <span class="comment">// -1 - true</span>
+f({<span class="key">a</span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">que</span><span class="delimiter">&quot;</span></span>}); <span class="comment">// que - undefined</span>
+
+console.writeln(JSON.stringify(object)); <span class="comment">// {&quot;a&quot;:4662,&quot;b&quot;:&quot;campo&quot;}</span>
+console.writeln(<span class="keyword">typeof</span> JSON.stringify(object)); <span class="comment">// string</span>
+console.writeln(JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;:7,&quot;aa&quot;:7,&quot;y&quot;:{}}</span><span class="delimiter">'</span></span>)); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;:7,&quot;aa&quot;:7,&quot;y&quot;:{}}</span><span class="delimiter">'</span></span>)); <span class="comment">// object</span>
+let jsonObject = {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span> : <span class="integer">666</span>*<span class="integer">7</span>,
     <span class="key"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>,
     <span class="key"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> : <span class="keyword">function</span>(){
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">método c</span><span class="delimiter">&quot;</span></span>);
     }
 }
-console.writeln(y);
-console.writeln(<span class="keyword">typeof</span> y);
-<span class="keyword">for</span>(campo <span class="keyword">in</span> y){
-    console.writeln(y[campo]);
-    console.writeln(<span class="keyword">typeof</span> y[campo]);
-}
-console.writeln(y.c());
-console.writeln(<span class="keyword">typeof</span> y.c());
-
-<span class="comment">/* objeto JSON */</span>
-console.writeln(JSON.stringify(z));
-console.writeln(<span class="keyword">typeof</span> JSON.stringify(z));
-console.writeln(JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;:7,&quot;aa&quot;:7,&quot;y&quot;:{}}</span><span class="delimiter">'</span></span>));
-console.writeln(<span class="keyword">typeof</span> JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;:7,&quot;aa&quot;:7,&quot;y&quot;:{}}</span><span class="delimiter">'</span></span>));
-
-<span class="comment">/* inicialización por desestructuración */</span>
-let { m, n } = {<span class="key">n</span> : <span class="integer">666</span>, <span class="key">m</span> : <span class="predefined-constant">true</span>};
-console.writeln(m);
-console.writeln(n);
-
-
-let x = {
-    <span class="key">a</span> : <span class="integer">0</span>,
-    <span class="key">b</span> : <span class="integer">1</span>
-};
-
-<span class="keyword">function</span> <span class="function">f</span>({a, b}){
-    console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>);
-}
-
-f(x);
-f({<span class="key">a</span>:-<span class="integer">1</span>, <span class="key">b</span>:<span class="predefined-constant">true</span>});
-f({<span class="key">a</span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">que</span><span class="delimiter">&quot;</span></span>});</code></pre>
+console.writeln(jsonObject); <span class="comment">// [object Object]</span>
+console.writeln(<span class="keyword">typeof</span> jsonObject); <span class="comment">// object</span>
+<span class="keyword">for</span>(let property <span class="keyword">in</span> jsonObject){
+    console.writeln(jsonObject[property]); <span class="comment">// 4662 / campo / function()...</span>
+    console.writeln(<span class="keyword">typeof</span> jsonObject[property]); <span class="comment">// number / string / function</span>
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8901,7 +8882,7 @@ console.writeln(array);</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : ink:https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.5/app.js[<em>v0.5</em>] - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.6/app.js">v0.6</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.5/app.js"><em>v0.5</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.6/app.js">v0.6</a></p>
 </li>
 </ul>
 </div></div></td>
