@@ -474,8 +474,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#funciones">Funciones</a></li>
 <li><a href="#recursividad">Recursividad</a></li>
 <li><a href="#paradigma-funcional">Paradigma Funcional</a></li>
+<li><a href="#funciones-de-orden-superior">Funciones de Orden Superior</a></li>
+<li><a href="#funciones-anónimas">Funciones Anónimas</a></li>
+<li><a href="#funciones-flecha">Funciones Flecha</a></li>
 </ul>
 </li>
+<li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a>
+<ul class="sectlevel2">
+<li><a href="#objetos">Objetos</a></li>
+<li><a href="#función-constructora">Función Constructora</a></li>
+<li><a href="#envolturas">Envolturas</a></li>
+<li><a href="#arrays-2">Arrays</a></li>
+<li><a href="#funciones-2">Funciones</a></li>
+<li><a href="#clases">Clases</a></li>
+<li><a href="#paradigma-funcional-2">Paradigma Funcional</a></li>
+<li><a href="#herencia">Herencia</a></li>
+<li><a href="#símbolos">Símbolos</a></li>
+</ul>
+</li>
+<li><a href="#programación-modular">Programación Modular</a></li>
+<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -5921,7 +5939,7 @@ external();
     middle();
     sibbling();
     nivel0++;
-    console.writeln(<span class="error">`</span>external nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 10. external nivel0: 106</span>
+    console.writeln(<span class="error">`</span>external nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 11. external nivel0: 105</span>
 
     <span class="keyword">function</span> <span class="function">middle</span>() {
         let nivel1 = <span class="integer">200</span>;
@@ -5947,8 +5965,13 @@ external();
     }
 
     <span class="keyword">function</span> <span class="function">sibbling</span>() {
+        let nivel0 = <span class="integer">0</span>;
         nivel0++;
-        console.writeln(<span class="error">`</span>sibblings: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 9. sibblings: 105</span>
+        console.writeln(<span class="error">`</span>sibblings nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 9. sibblings nivel0: 1</span>
+        let nivel2 = <span class="integer">0</span>;
+        nivel2++;
+        console.writeln(<span class="error">`</span>sibblings nivel2: <span class="predefined">$</span>{nivel2}<span class="error">`</span>); <span class="comment">// 10. sibblings nivel2: 1</span>
+
     }
 }
 
@@ -6140,6 +6163,12 @@ writelnSum(<span class="integer">1</span>,<span class="integer">2</span>,<span c
 const console = <span class="keyword">new</span> Console();
 sinRetorno(); <span class="comment">// sin retorno. ...</span>
 console.writeln(sinRetorno() === <span class="predefined-constant">undefined</span>); <span class="comment">// ... sin retorno\n true</span>
+
+<span class="keyword">function</span> <span class="function">sinRetorno</span>() {
+    console.write(<span class="error">`</span>sin retorno. <span class="error">`</span>);
+    <span class="keyword">return</span>; <span class="comment">// undefined</span>
+}
+
 <span class="reserved">double</span>(<span class="integer">3</span>);
 console.writeln(<span class="reserved">double</span>(<span class="integer">3</span>)); <span class="comment">// 6</span>
 console.writeln(factorial(<span class="integer">3</span>)); <span class="comment">// 6</span>
@@ -6148,11 +6177,6 @@ console.writeln(<span class="reserved">double</span>(factorial(<span class="inte
 console.writeln(factorial(<span class="reserved">double</span>(<span class="integer">3</span>))); <span class="comment">// 720</span>
 let value = <span class="integer">3</span>;
 console.writeln(value*factorial(value)); <span class="comment">// 18</span>
-
-<span class="keyword">function</span> <span class="function">sinRetorno</span>() {
-    console.write(<span class="error">`</span>sin retorno. <span class="error">`</span>);
-    <span class="keyword">return</span>; <span class="comment">// undefined</span>
-}
 
 <span class="keyword">function</span> <span class="reserved">double</span>(value) {
     <span class="keyword">return</span> value * <span class="integer">2</span>;
@@ -7362,21 +7386,1850 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </tr>
 </tbody>
 </table>
-<div class="literalblock">
+</div>
+<div class="sect2">
+<h3 id="funciones-de-orden-superior">Funciones de Orden Superior</h3>
+<div class="sect3">
+<h4 id="funciones-como-parámetros">Funciones como parámetros</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funciones de orden superior</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son funciones que admiten como parámetros otras funciones</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>// include::4-ordenSuperior.adoc[]
-// include::5-anonimas.adoc[]
-// include::6-flecha.adoc[]</pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">incGenerator</span>(initial) {
+  let counter = initial;
+  <span class="keyword">return</span> next;
+
+  <span class="keyword">function</span> <span class="function">next</span>() {
+    counter++;
+    <span class="keyword">return</span> counter
+  }
+};
+
+const incX = incGenerator(<span class="integer">0</span>);
+const incY = incGenerator(<span class="integer">1</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 4</span></code></pre>
 </div>
-</div>
-<div class="literalblock">
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre>// include::4-objetos/0-index.adoc[]
-// include::5-modular/0-index.adoc[]
-// include::6-excepciones/0-index.adoc[]</pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">normalXA</span>(){
+    console.writeln(<span class="error">`</span>A<span class="error">`</span>);
+}
+
+<span class="keyword">function</span> <span class="function">normalXB</span>(){
+    console.writeln(<span class="error">`</span>B<span class="error">`</span>);
+}
+
+<span class="keyword">function</span> <span class="function">superiorX</span>(f){
+    f();
+}
+
+superiorX(normalXA); <span class="comment">// A</span>
+superiorX(normalXB); <span class="comment">// B</span>
+
+let f = normalXA;
+f(); <span class="comment">// A</span>
+f = normalXB;
+f(); <span class="comment">// B</span>
+
+<span class="keyword">function</span> <span class="function">normalYA</span>(){
+    <span class="keyword">return</span> <span class="error">`</span>A<span class="error">`</span>;
+}
+
+<span class="keyword">function</span> <span class="function">normalYB</span>(){
+    <span class="keyword">return</span> <span class="error">`</span>B<span class="error">`</span>;
+}
+
+<span class="keyword">function</span> <span class="function">superiorY</span>(f){
+    console.writeln(f());
+}
+
+superiorY(normalYA); <span class="comment">// A</span>
+superiorY(normalYB); <span class="comment">// B</span>
+
+<span class="keyword">function</span> <span class="function">normalZA</span>(value){
+    console.writeln(value);
+}
+
+<span class="keyword">function</span> <span class="function">normalZB</span>(value){
+    console.writeln(value + value);
+}
+
+<span class="keyword">function</span> <span class="function">superiorZ</span>(value, f){
+    f(value);
+}
+
+superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZA); <span class="comment">// A</span>
+superiorZ(<span class="error">`</span>B<span class="error">`</span>, normalZB); <span class="comment">// BB</span>
+superiorZ(<span class="error">`</span>B<span class="error">`</span>, normalZA); <span class="comment">// B</span>
+superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZB); <span class="comment">// AA</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.3/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.4/app.js">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="funciones-anónimas">Funciones Anónimas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funciones anónimas</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se pueden declarar funciones sin identificador y su conveniencia se verá más adelante</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se pueden declarar variables que albergan funciones, nominales o anónimas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>dichas variables comparten el mismo objeto función</p>
+</li>
+<li>
+<p>el operador de igualdad es por referencia</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+console.writeln(<span class="keyword">typeof</span> <span class="keyword">function</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
+});
+console.writeln(<span class="keyword">function</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
+});
+console.writeln(<span class="keyword">function</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
+}());
+console.writeln(<span class="keyword">typeof</span> <span class="keyword">function</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima</span><span class="delimiter">&quot;</span></span>);
+}());
+
+<span class="comment">/* variables de tipo función */</span>
+<span class="keyword">function</span> <span class="function">nominal</span>(){
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nomima</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+}
+
+let f = nominal;
+console.writeln(<span class="keyword">typeof</span> f);
+console.writeln(f);
+console.writeln(f());
+console.writeln(<span class="keyword">typeof</span> f());
+
+let <span class="function">g</span> = <span class="keyword">function</span>() {
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">anonima g</span><span class="delimiter">&quot;</span></span>);
+    };
+console.writeln(<span class="keyword">typeof</span> g);
+console.writeln(g);
+console.writeln(g());
+console.writeln(<span class="keyword">typeof</span> g());
+
+<span class="keyword">function</span> <span class="function">gg</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nominal gg</span><span class="delimiter">&quot;</span></span>);
+};
+console.writeln(<span class="keyword">typeof</span> gg);
+console.writeln(gg);
+console.writeln(gg());
+console.writeln(<span class="keyword">typeof</span> gg());
+
+g = gg;
+console.writeln(<span class="keyword">typeof</span> g);
+console.writeln(g);
+console.writeln(g());
+console.writeln(<span class="keyword">typeof</span> g());
+
+<span class="function">nominal</span> = <span class="keyword">function</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">re-nominal</span><span class="delimiter">&quot;</span></span>);
+};
+console.writeln(<span class="keyword">typeof</span> nominal);
+console.writeln(nominal);
+console.writeln(nominal());
+console.writeln(<span class="keyword">typeof</span> nominal());
+
+<span class="comment">/* igualdad por referencia */</span>
+<span class="keyword">function</span> <span class="function">una</span>() {
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">mensaje</span><span class="delimiter">&quot;</span></span>);
+}
+<span class="keyword">function</span> <span class="function">otra</span>() {
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">mensaje</span><span class="delimiter">&quot;</span></span>);
+}
+console.writeln(una==otra);
+otra = una;
+console.writeln(otra==una);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="blue"><strong>hoisting</strong></em></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Función nominal <strong>sufre <em>hoisting</em></strong> como la declaración de variables</p>
+</li>
+<li>
+<p>Fnción anónima <strong>no sufre <em>hoisting</em></strong> y reserva memoria en cada declaración</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="comment">/* con hoisting: funciones nominales */</span>
+<span class="keyword">function</span> <span class="function">ambitoNominal</span>(){
+    <span class="keyword">function</span> <span class="function">nominal</span>(){
+        <span class="keyword">return</span> <span class="integer">0</span>;
+    }
+    <span class="keyword">return</span> nominal();
+    <span class="keyword">function</span> <span class="function">nominal</span>(){
+        <span class="keyword">return</span> <span class="integer">1</span>;
+    }
+}
+console.writeln(ambitoNominal());
+
+<span class="comment">/* sin hoisting: con funciones anónimas */</span>
+<span class="keyword">function</span> <span class="function">ambitoAnonima</span>(){
+    let <span class="function">a</span> = <span class="keyword">function</span>(){
+        <span class="keyword">return</span> <span class="integer">0</span>;
+    }
+    <span class="keyword">return</span> a();
+    <span class="function">a</span> = <span class="keyword">function</span>(){
+        <span class="keyword">return</span> <span class="integer">1</span>;
+    }
+}
+console.writeln(ambitoAnonima());
+
+<span class="comment">/* formato */</span>
+<span class="keyword">function</span> <span class="function">global</span>(){
+    <span class="keyword">return</span> local();
+
+    <span class="keyword">function</span> <span class="function">local</span>(){
+        <span class="keyword">return</span> -<span class="integer">1</span>;
+    }
+}
+console.writeln(global());</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.4/app.js"><em>v0.4</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.5/app.js">v0.5</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="funciones-flecha">Funciones Flecha</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funciones flecha</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>son una simplificación (azucar sintáctico) de las funciones anónimas, <strong>azucar sintáctico</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>evitar la palabra reservada <strong><em>function</em></strong></p>
+</li>
+<li>
+<p>intercala <strong><em>&#8658;</em></strong> entre los parámetros y el cuerpo de la función</p>
+</li>
+<li>
+<p>en el caso de que los parametros sea solo uno, se puede ahorrar los paréntesis</p>
+</li>
+<li>
+<p>en el caso de que el cuerpo de la función sea un único retorno de una expresión, se pueden ahorrar las llaves y la palabra reservada <strong><em>return</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">var</span> <span class="function">anominaDosOMasParametros</span> =
+        <span class="keyword">function</span>(x, y)
+                { x++; y++; console.log(x+y); };
+console.log(<span class="keyword">typeof</span> anominaDosOMasParametros);
+console.log(anominaDosOMasParametros);
+console.log(anominaDosOMasParametros(<span class="integer">1</span>, <span class="integer">2</span>));
+
+<span class="keyword">var</span> flechaDosOMasParametros =
+        (x, y) =&gt;
+                { x++; y++; console.log(x+y); };
+console.log(<span class="keyword">typeof</span> flechaDosOMasParametros);
+console.log(flechaDosOMasParametros);
+console.log(flechaDosOMasParametros(<span class="integer">1</span>, <span class="integer">2</span>));
+
+<span class="keyword">var</span> <span class="function">anominaUnParametro</span> =
+        <span class="keyword">function</span>(x)
+                { x++; console.log(x); };
+console.log(<span class="keyword">typeof</span> anominaUnParametro);
+console.log(anominaUnParametro);
+console.log(anominaUnParametro(<span class="integer">1</span>));
+
+<span class="keyword">var</span> flechaUnParametro =
+        x =&gt;
+                { x++; console.log(x); };
+console.log(<span class="keyword">typeof</span> flechaUnParametro);
+console.log(flechaUnParametro);
+console.log(flechaUnParametro(<span class="integer">1</span>));
+
+<span class="keyword">var</span> <span class="function">anominaCeroParametros</span> =
+        <span class="keyword">function</span>()
+                { console.log(<span class="integer">0</span>); };
+console.log(<span class="keyword">typeof</span> anominaCeroParametros);
+console.log(anominaCeroParametros);
+console.log(anominaCeroParametros());
+
+<span class="keyword">var</span> flechaCeroParametros =
+        () =&gt;
+                { console.log(<span class="integer">0</span>); };
+console.log(<span class="keyword">typeof</span> flechaCeroParametros);
+console.log(flechaCeroParametros);
+console.log(flechaCeroParametros());
+
+<span class="keyword">var</span> <span class="function">anominaSoloRetorno</span> =
+        <span class="keyword">function</span>(x)
+                { <span class="keyword">return</span> x+<span class="integer">1</span>; };
+console.log(<span class="keyword">typeof</span> anominaSoloRetorno);
+console.log(anominaSoloRetorno);
+console.log(anominaSoloRetorno(<span class="integer">1</span>));
+
+<span class="keyword">var</span> flechaSoloRetorno =
+        x =&gt; x+<span class="integer">1</span>;
+console.log(<span class="keyword">typeof</span> flechaSoloRetorno);
+console.log(flechaSoloRetorno);
+console.log(flechaSoloRetorno(<span class="integer">1</span>));</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Función nominal vs función anónima</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Función nominal <strong>sufre <em>hoisting</em></strong> como la declaración de variables</p>
+</li>
+<li>
+<p>Fnción anónima <strong>no sufre <em>hoisting</em></strong> y reserva memoria en cada declaración</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let <span class="function">anominaDosOMasParametros</span> =
+        <span class="keyword">function</span>(x, y)
+                { x++; y++; console.writeln(x+y); };
+console.writeln(<span class="keyword">typeof</span> anominaDosOMasParametros);
+console.writeln(anominaDosOMasParametros);
+console.writeln(anominaDosOMasParametros(<span class="integer">1</span>, <span class="integer">2</span>));
+
+let flechaDosOMasParametros =
+        (x, y) =&gt;
+                { x++; y++; console.writeln(x+y); };
+console.writeln(<span class="keyword">typeof</span> flechaDosOMasParametros);
+console.writeln(flechaDosOMasParametros);
+console.writeln(flechaDosOMasParametros(<span class="integer">1</span>, <span class="integer">2</span>));
+
+let <span class="function">anominaUnParametro</span> =
+        <span class="keyword">function</span>(x)
+                { x++; console.writeln(x); };
+console.writeln(<span class="keyword">typeof</span> anominaUnParametro);
+console.writeln(anominaUnParametro);
+console.writeln(anominaUnParametro(<span class="integer">1</span>));
+
+let flechaUnParametro =
+        x =&gt;
+                { x++; console.writeln(x); };
+console.writeln(<span class="keyword">typeof</span> flechaUnParametro);
+console.writeln(flechaUnParametro);
+console.writeln(flechaUnParametro(<span class="integer">1</span>));
+
+let <span class="function">anominaCeroParametros</span> =
+        <span class="keyword">function</span>()
+                { console.writeln(<span class="integer">0</span>); };
+console.writeln(<span class="keyword">typeof</span> anominaCeroParametros);
+console.writeln(anominaCeroParametros);
+console.writeln(anominaCeroParametros());
+
+let flechaCeroParametros =
+        () =&gt;
+                { console.writeln(<span class="integer">0</span>); };
+console.writeln(<span class="keyword">typeof</span> flechaCeroParametros);
+console.writeln(flechaCeroParametros);
+console.writeln(flechaCeroParametros());
+
+let <span class="function">anominaSoloRetorno</span> =
+        <span class="keyword">function</span>(x)
+                { <span class="keyword">return</span> x+<span class="integer">1</span>; };
+console.writeln(<span class="keyword">typeof</span> anominaSoloRetorno);
+console.writeln(anominaSoloRetorno);
+console.writeln(anominaSoloRetorno(<span class="integer">1</span>));
+
+let flechaSoloRetorno =
+        x =&gt; x+<span class="integer">1</span>;
+console.writeln(<span class="keyword">typeof</span> flechaSoloRetorno);
+console.writeln(flechaSoloRetorno);
+console.writeln(flechaSoloRetorno(<span class="integer">1</span>));
+
+<span class="keyword">function</span> <span class="function">sumatorio</span>(ini, fin, serie) {
+        let sum = <span class="integer">0</span>;
+        <span class="keyword">for</span>(let i=ini; i&lt;=fin; i++){
+                        sum += serie(i);
+        }
+        <span class="keyword">return</span> sum;
+}
+console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, (x) =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
+console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
+console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; <span class="integer">2</span>*x));
+let <span class="function">h</span> = <span class="keyword">function</span>(x) {
+        <span class="keyword">return</span> <span class="integer">2</span>*x;
+}
+console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, h));</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="programación-orientada-a-objetos">Programación Orientada a Objetos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lenguaje con <strong class="blue">prototipos</strong>, donde todo objeto referencia a su prototipo para información compartida por todos los objetos de la misma "clase" y así almacenar las <strong class="blue">funciones de instancia</strong> y los <strong class="blue">miembros estáticos, atributos y/o métodos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/prototipos.svg" alt="prototipos" width="1338" height="718">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/constructora.svg" alt="constructora" width="1369" height="187">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>tipos primitios: valores inmutables, cambiar por otro, sin métodos ni propiedades
+string number boolean undefined null symbol
+symbol</p>
+</div>
+<div class="paragraph">
+<p>TODO: valor de tipo null
+TODO: objeto.toString()</p>
+</div>
+<div class="paragraph">
+<p>Null: typeof instance === "object". Tipo primitivo especial que tiene un uso adicional para su valor: si el objeto no se hereda, se muestra null;
+Object: typeof instance === "object". Tipo estructural especial que no es de datos pero para cualquier instancia de objeto construido que también se utiliza como estructuras de datos: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date y casi todo lo hecho con la palabra clave new;</p>
+</div>
+<div class="paragraph">
+<p>TODO typeof null &#8658; object  barbaridad con prosigue!!!</p>
+</div>
+<div class="sect2">
+<h3 id="objetos">Objetos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Creación de objeto</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Mediante la sintaxis:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>new Object()</em></strong>, poco recomendado</p>
+</li>
+<li>
+<p><strong><em>{}</em></strong>, muy recomendado</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Su tipo es el <em>string "object"</em>, devuelto por <strong><em>typeof</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="comment">/* creación de objeto */</span>
+let x = <span class="keyword">new</span> Object();
+console.writeln(x);
+console.writeln(<span class="keyword">typeof</span> x);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
+    console.writeln(campo);
+    console.writeln(<span class="keyword">typeof</span> campo);
+}
+
+let x = {};
+console.writeln(x);
+console.writeln(<span class="keyword">typeof</span> x);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
+    console.writeln(campo);
+    console.writeln(<span class="keyword">typeof</span> campo);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Gestión de propiedades de objeto</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>&lt;sentenciaFor&gt;</em> ::= <strong>for</strong> <strong>(</strong> <em>&lt;declaración&gt;</em> <strong>in</strong> <em>&lt;expresión&gt;</em> <strong>)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>donde la variable declarada tomará cada uno de los índices del <em>array</em> de cualquier índice</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las propiedades de un objeto están asociadas a la notación punto, <strong><em>.</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Para <strong>añadir</strong> se <strong>inicializa</strong> con la asignación de un valor inicial</p>
+</li>
+<li>
+<p>Para <strong>modificar</strong> se <strong>asigna</strong> el nuevo valor</p>
+</li>
+<li>
+<p>Para <strong>eliminar</strong> con el operador <strong><em>delete</em></strong> y la referencia a la propiedad, 4 nivel con asociatividad de derecha a izquierda</p>
+</li>
+<li>
+<p>Para <strong>acceder</strong>, mediante la referencia al objeto, <strong><em>.</em></strong> y  la propiedad</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Extensión de sentencia <strong><em>for</em></strong>: <strong><em>in</em></strong> permite recorrer cada propiedad del objeto especificado</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="comment">/* añadir propiedades */</span>
+x.a = <span class="integer">666</span>;
+x[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>] = <span class="integer">666</span>;
+x.b = <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>;
+x[<span class="string"><span class="delimiter">&quot;</span><span class="content">bb</span><span class="delimiter">&quot;</span></span>] = <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>;
+x.<span class="function">c</span> = <span class="keyword">function</span>(){
+        <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">método c</span><span class="delimiter">&quot;</span></span>;
+    };
+x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>] = <span class="keyword">function</span>(){
+        <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">método cc</span><span class="delimiter">&quot;</span></span>;
+    };
+x.y = {};
+console.writeln(x);
+console.writeln(<span class="keyword">typeof</span> x);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
+    console.writeln(x[campo]);
+    console.writeln(<span class="keyword">typeof</span> x[campo]);
+}
+
+<span class="comment">/* acceso a propiedades */</span>
+console.writeln(x.a);
+console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>]);
+console.writeln(x.aa);
+console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>]);
+console.writeln(x.c);
+console.writeln(<span class="keyword">typeof</span> x.c);
+console.writeln(x.c());
+console.writeln(<span class="keyword">typeof</span> x.c());
+console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]);
+console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]);
+console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]());
+console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>]());
+console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]);
+console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]);
+console.writeln(x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]());
+console.writeln(<span class="keyword">typeof</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">cc</span><span class="delimiter">&quot;</span></span>]());
+console.writeln(x.cc);
+console.writeln(<span class="keyword">typeof</span> x.cc);
+console.writeln(x.cc());
+console.writeln(<span class="keyword">typeof</span> x.cc());
+
+<span class="comment">/* modificación de propiedades */</span>
+x.a = <span class="integer">7</span>;
+x[<span class="string"><span class="delimiter">&quot;</span><span class="content">aa</span><span class="delimiter">&quot;</span></span>] = <span class="integer">7</span>;
+x.<span class="function">c</span> = <span class="keyword">function</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">nueva</span><span class="delimiter">&quot;</span></span>);
+}
+console.writeln(x);
+console.writeln(<span class="keyword">typeof</span> x);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
+    console.writeln(x[campo]);
+    console.writeln(<span class="keyword">typeof</span> x[campo]);
+}
+
+<span class="comment">/* eliminación de propiedades */</span>
+<span class="keyword">delete</span> x.b;
+<span class="keyword">delete</span> x[<span class="string"><span class="delimiter">&quot;</span><span class="content">bb</span><span class="delimiter">&quot;</span></span>];
+console.writeln(x);
+console.writeln(<span class="keyword">typeof</span> x);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> x){
+    console.writeln(x[campo]);
+    console.writeln(<span class="keyword">typeof</span> x[campo]);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Inicialización de objetos</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un objeto puede inicializarse con la sintaxis de la <strong>notación JSON</strong> o con la misma <strong>sin comillas en los identificadores</strong> de las claves de las propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>JSON</strong> es un objeto con métodos/funciones para la conversión</p>
+<div class="ulist">
+<ul>
+<li>
+<p>de objeto a <em>string</em> con <strong><em>stringify</em></strong></p>
+</li>
+<li>
+<p>de <em>string</em> a objeto con <strong><em>parse</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>const dogName = adventurer.dog?.name;
+console.log(dogName);</p>
+</div>
+<div class="paragraph">
+<p>console.log(adventurer.someNonExistentMethod?.());</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="comment">/* inicilización de objetos */</span>
+let y = {
+    <span class="key">a</span> : <span class="integer">666</span>*<span class="integer">7</span>,
+    <span class="key">b</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>,
+    <span class="function">c</span> : <span class="keyword">function</span>(){
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">método c</span><span class="delimiter">&quot;</span></span>);
+    }
+}
+console.writeln(y);
+console.writeln(<span class="keyword">typeof</span> y);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> y){
+    console.writeln(y[campo]);
+    console.writeln(<span class="keyword">typeof</span> y[campo]);
+}
+console.writeln(y.c());
+console.writeln(<span class="keyword">typeof</span> y.c());
+
+<span class="comment">/* inicilización de objetos por JSON */</span>
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">JSON!!!!!!!!!!!!</span><span class="delimiter">&quot;</span></span>);
+let z = {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span> : <span class="integer">666</span>*<span class="integer">7</span>,
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>,
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> : <span class="keyword">function</span>(){
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">método c</span><span class="delimiter">&quot;</span></span>);
+    }
+}
+console.writeln(y);
+console.writeln(<span class="keyword">typeof</span> y);
+<span class="keyword">for</span>(campo <span class="keyword">in</span> y){
+    console.writeln(y[campo]);
+    console.writeln(<span class="keyword">typeof</span> y[campo]);
+}
+console.writeln(y.c());
+console.writeln(<span class="keyword">typeof</span> y.c());
+
+<span class="comment">/* objeto JSON */</span>
+console.writeln(JSON.stringify(z));
+console.writeln(<span class="keyword">typeof</span> JSON.stringify(z));
+console.writeln(JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;:7,&quot;aa&quot;:7,&quot;y&quot;:{}}</span><span class="delimiter">'</span></span>));
+console.writeln(<span class="keyword">typeof</span> JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;:7,&quot;aa&quot;:7,&quot;y&quot;:{}}</span><span class="delimiter">'</span></span>));
+
+<span class="comment">/* inicialización por desestructuración */</span>
+let { m, n } = {<span class="key">n</span> : <span class="integer">666</span>, <span class="key">m</span> : <span class="predefined-constant">true</span>};
+console.writeln(m);
+console.writeln(n);
+
+
+let x = {
+    <span class="key">a</span> : <span class="integer">0</span>,
+    <span class="key">b</span> : <span class="integer">1</span>
+};
+
+<span class="keyword">function</span> <span class="function">f</span>({a, b}){
+    console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>);
+}
+
+f(x);
+f({<span class="key">a</span>:-<span class="integer">1</span>, <span class="key">b</span>:<span class="predefined-constant">true</span>});
+f({<span class="key">a</span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">que</span><span class="delimiter">&quot;</span></span>});</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#1-integerdivision">3-numbers/1-intergerDivision/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/1-intergerDivision/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/1-intergerDivision/v0.1/app.js">v0.1</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">5-units/0-fraction/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/5-units/0-fraction/v0.0/app.js">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};</p>
+</div>
+<div class="paragraph">
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Optional_chaining" class="bare">https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Optional_chaining</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="función-constructora">Función Constructora</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Función constructora</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las clases, <strong>no disponibles en JavaScript</strong>, se "simulan" con una función nominal que hace referencia a <strong><em>this</em></strong> como ámbito del objeto que se construye</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el operador <strong><em>new</em></strong> reserva memoria para el objeto creado, <strong><em>this</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
+    <span class="local-variable">this</span>.x = x;
+    <span class="local-variable">this</span>.y = y;
+    <span class="local-variable">this</span>.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.x == <span class="local-variable">this</span>.y;
+    }
+}
+console.writeln(Coordenada);
+console.writeln(<span class="keyword">typeof</span> Coordenada);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+console.writeln(Coordenada.prototype);
+console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">for</span> (let coordenada of [<span class="keyword">new</span> Coordenada(<span class="integer">0</span>, <span class="integer">1</span>), <span class="keyword">new</span> Coordenada(<span class="integer">2</span>, <span class="integer">3</span>)]) {
+    console.writeln(coordenada);
+    console.writeln(<span class="keyword">typeof</span> coordenada);
+    console.writeln(coordenada.x);
+    console.writeln(coordenada.y);
+    console.writeln(coordenada.isDiagonal());
+    coordenada.x = <span class="integer">2</span>;
+    coordenada.y = <span class="integer">2</span>;
+    console.writeln(coordenada.x);
+    console.writeln(coordenada.y);
+    console.writeln(coordenada.isDiagonal());
+    <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
+        console.writeln(coordenada[campo]);
+    }
+}
+
+console.writeln(<span class="keyword">new</span> Coordenada(-<span class="integer">234</span>,<span class="integer">345</span>));
+console.writeln(<span class="keyword">new</span> Coordenada(<span class="integer">9</span>,<span class="integer">7</span>));</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="prototipos">Prototipos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Miembros privados</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son propiedades no enlazadas a <em><strong>this</strong></em> y accesibles únicamente durante la construcción del objeto</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
+    let _x = x;
+    let _y = y;
+    <span class="keyword">function</span> <span class="function">getX</span>() {
+        <span class="keyword">return</span> _x;
+    }
+    <span class="keyword">function</span> <span class="function">getY</span>() {
+        <span class="keyword">return</span> _y;
+    }
+    <span class="local-variable">this</span>.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
+        <span class="keyword">return</span> getX() == getY();
+    }
+}
+console.writeln(Coordenada);
+console.writeln(<span class="keyword">typeof</span> Coordenada);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+console.writeln(Coordenada.prototype);
+console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">for</span> (let coordenada of [<span class="keyword">new</span> Coordenada(<span class="integer">0</span>, <span class="integer">1</span>), <span class="keyword">new</span> Coordenada(<span class="integer">2</span>, <span class="integer">3</span>)]) {
+    console.writeln(coordenada);
+    console.writeln(<span class="keyword">typeof</span> coordenada);
+    console.writeln(coordenada.x);
+    console.writeln(coordenada.y);
+    console.writeln(coordenada.isDiagonal());
+    coordenada.x = <span class="integer">2</span>;
+    coordenada.y = <span class="integer">2</span>;
+    console.writeln(coordenada.x);
+    console.writeln(coordenada.y);
+    console.writeln(coordenada.isDiagonal());
+    <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
+        console.writeln(coordenada[campo]);
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Métodos en prototipos</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para <strong>compartir las mismas funciones</strong> por parte de muchos objetos</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cuando un objeto recibe un mensaje y no corresponde con ninguna propiedad, se busca en su objeto prototipo</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
+    <span class="local-variable">this</span>.x = x;
+    <span class="local-variable">this</span>.y = y;
+}
+Coordenada.prototype.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="local-variable">this</span>.x == <span class="local-variable">this</span>.y;
+}
+
+console.writeln(Coordenada);
+console.writeln(<span class="keyword">typeof</span> Coordenada);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+console.writeln(Coordenada.prototype);
+console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">for</span> (let coordenada of [<span class="keyword">new</span> Coordenada(<span class="integer">0</span>, <span class="integer">1</span>), <span class="keyword">new</span> Coordenada(<span class="integer">2</span>, <span class="integer">3</span>)]) {
+    console.writeln(coordenada);
+    console.writeln(<span class="keyword">typeof</span> coordenada);
+    console.writeln(coordenada.x);
+    console.writeln(coordenada.y);
+    console.writeln(coordenada.isDiagonal());
+    coordenada.x = <span class="integer">2</span>;
+    coordenada.y = <span class="integer">2</span>;
+    console.writeln(coordenada.x);
+    console.writeln(coordenada.y);
+    console.writeln(coordenada.isDiagonal());
+    <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
+        console.writeln(coordenada[campo]);
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Atributos estáticos</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Propiedades de la función constructora</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
+    <span class="local-variable">this</span>.x = x;
+    <span class="local-variable">this</span>.y = y;
+}
+Coordenada.prototype.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> <span class="local-variable">this</span>.x == <span class="local-variable">this</span>.y;
+}
+Coordenada.dimension = <span class="integer">3</span>;
+Coordenada.<span class="function">getDimension</span> = <span class="keyword">function</span> () {
+    <span class="keyword">return</span> Coordenada.dimension;
+}
+Coordenada.<span class="function">isValid</span> = <span class="keyword">function</span> (x, y) {
+    <span class="keyword">if</span> (<span class="integer">0</span> &lt;= x &amp;&amp; x &lt; Coordenada.dimension &amp;&amp;
+        <span class="integer">0</span> &lt;= y &amp;&amp; y &lt; Coordenada.dimension) {
+        <span class="keyword">return</span> <span class="keyword">new</span> Coordenada(x, y);
+    }
+    <span class="keyword">return</span> <span class="predefined-constant">undefined</span>;
+}
+
+console.writeln(Coordenada);
+console.writeln(<span class="keyword">typeof</span> Coordenada);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+console.writeln(Coordenada.prototype);
+console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
+<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
+}
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+console.writeln(Coordenada.getDimension());
+<span class="keyword">for</span> (let coordenada of [Coordenada.isValid(<span class="integer">0</span>, <span class="integer">1</span>), Coordenada.isValid(<span class="integer">2</span>, <span class="integer">3</span>)]) {
+    <span class="keyword">if</span> (coordenada != <span class="predefined-constant">undefined</span>) {
+        console.writeln(coordenada);
+        console.writeln(<span class="keyword">typeof</span> coordenada);
+        console.writeln(coordenada.x);
+        console.writeln(coordenada.y);
+        console.writeln(coordenada.isDiagonal());
+        coordenada.x = <span class="integer">2</span>;
+        coordenada.y = <span class="integer">2</span>;
+        console.writeln(coordenada.x);
+        console.writeln(coordenada.y);
+        console.writeln(coordenada.isDiagonal());
+        <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
+            console.writeln(coordenada[campo]);
+        }
+    }
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Clases predefinidas</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String">String</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number">Number</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean">Boolean</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math">Math</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp">RegExp</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date">Date</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="comment">/* Clases predefinidas */</span>
+console.log(<span class="predefined-constant">true</span>);
+console.log(<span class="predefined-constant">true</span>.toString()===<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span>);
+console.log(<span class="integer">666</span>);
+console.log(Number.isNaN(<span class="integer">666</span>));
+console.log(<span class="float">7.666</span>.toFixed(<span class="integer">2</span>));
+console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">hola</span><span class="delimiter">&quot;</span></span>);
+console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">hola</span><span class="delimiter">&quot;</span></span>.toUpperCase());
+console.log(Math.PI);
+console.log(Math.sqrt(<span class="integer">7</span>));
+let regExp = <span class="regexp"><span class="delimiter">/</span><span class="content">[ABC][0-9]:([a-zA-Z0-9]+.)+</span><span class="delimiter">/</span><span class="modifier">i</span></span>;
+console.log(regExp.test(<span class="string"><span class="delimiter">&quot;</span><span class="content">a4:IB234.AE755</span><span class="delimiter">&quot;</span></span>));
+console.log(regExp.test(<span class="string"><span class="delimiter">&quot;</span><span class="content">a4:a.</span><span class="delimiter">&quot;</span></span>));
+console.log(<span class="regexp"><span class="delimiter">/</span><span class="content">[ABC][0-9]:([a-zA-Z0-9]+.)+</span><span class="delimiter">/</span><span class="modifier">i</span></span>.test(<span class="string"><span class="delimiter">&quot;</span><span class="content">a4:a.b.</span><span class="delimiter">&quot;</span></span>));
+console.log(<span class="keyword">new</span> Date().getHours());
+<span class="keyword">try</span> {
+    <span class="float">7.7</span>.toPrecision(<span class="integer">666</span>);
+}
+<span class="keyword">catch</span>(exception) {
+    console.log(exception.name);
+    console.log(exception.message);
+    console.log(exception);
+    console.log(<span class="keyword">typeof</span> exception);
+    console.log(exception <span class="keyword">instanceof</span> Error);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Función constructora <strong><em>Function</em></strong></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Completamente desaconsejada</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Recibe los parámetros y el cuerpo de la función</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let f = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">return a * b</span><span class="delimiter">&quot;</span></span>);
+console.writeln(f(<span class="integer">2</span>,<span class="integer">4</span>));
+console.writeln(<span class="keyword">new</span> Function(<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">return a * b</span><span class="delimiter">&quot;</span></span>)(<span class="integer">4</span>,<span class="integer">5</span>));</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/2-morseTranlator/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/2-morseTranlator/v0.2/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#5-romannumerals">4-numberingSystems/5-romanNumerals/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/5-romanNumerals/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/4-numberingSystems/5-romanNumerals/v2.0/app.js">v02.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">5-units/0-fraction/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/5-units/0-fraction/v0.0/app.js"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/5-units/0-fraction/v0.1/app.js">v0.1</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Prototipos!!!</p>
+</div>
+<div class="paragraph">
+<p>Envolvente, wrapers
+TODO null vs undefined no tienen wrappers!!!</p>
+</div>
+<div class="paragraph">
+<p>TODO -(2<strong>53) +1 .. (2</strong>53)-1
+TODO Number.MIN_SAFE_INTEGER y Number.MAX_SAFE_INTEGER
+TODO Number.MAX_VALUE y Number.MIN_VALUE</p>
+</div>
+<div class="paragraph">
+<p>Number('123')  // retorna el número 123
+Number('123') === 123  // retorna true</p>
+</div>
+<div class="paragraph">
+<p>Number("unicorn")  // NaN
+Number(undefined)  // NaN</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="envolturas">Envolturas</h3>
+<div class="paragraph">
+<p>TODO: wraps number.toFixed(cantidad decimales) &#8658; string
+Object wrapper
+TODO valor.toUpperCase() devuelve objeto</p>
+</div>
+<div class="paragraph">
+<p>let v = false;
+let o = new Boolean(false)
+if(v) &#8230;&#8203; distinto de if(o)</p>
+</div>
+<div class="paragraph">
+<p>Object</p>
+</div>
+<div class="paragraph">
+<p>Boolean
+Number
+ BigInt
+ Math random!!!
+String
+ RegExp
+Date</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="arrays-2">Arrays</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Métodos de <em>arrays</em></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son funciones que admiten como parámetros otras funciones</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let array = [];
+array.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>);
+array.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">otro</span><span class="delimiter">&quot;</span></span>);
+array.push(<span class="predefined-constant">false</span>);
+console.writeln(array);
+console.writeln(array.pop());
+console.writeln(array.pop());
+console.writeln(array.pop());
+console.writeln(array);
+
+<span class="comment">/* métodos indexOf, splice, ... */</span>
+array = [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>,<span class="integer">6</span>,<span class="integer">7</span>,<span class="integer">8</span>,<span class="integer">9</span>,<span class="integer">10</span>];
+console.writeln(array.indexOf(<span class="integer">7</span>));
+console.writeln(array.splice(<span class="integer">7</span>,<span class="integer">2</span>));
+console.writeln(array);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : ink:https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.5/app.js[<em>v0.5</em>] - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.6/app.js">v0.6</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Array</p>
+</div>
+<div class="paragraph">
+<p>array["zzz"] = "zzz";
+for(let item of array){
+    console.writeln(item);
+}
+console.writeln(array[-1]);
+console.writeln(array["zzz"]);
+console.writeln("length: " + array.length);</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="funciones-2">Funciones</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Estado de la función</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las funciones son objetos y pueden tener atributos</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se declara con su uso a través de la <strong>notación punto</strong> a partir de la función</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">estado</span>() {
+    console.writeln(estado.variable);
+    estado.variable++;
+}
+estado.variable = <span class="integer">0</span>;
+estado();
+estado();
+estado();
+console.writeln(estado.variable);
+
+let f1 = estado;
+let f2 = estado;
+let f3 = f1;
+f2.variable = <span class="integer">666</span>;
+f1();
+f2();
+f3();
+console.writeln(estado.variable);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ejemplo: programación dinámica con fibonacci</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Function</p>
+</div>
+<div class="sect3">
+<h4 id="clousures">Clousures</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="clases">Clases</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">5-units/0-fraction/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/5-units/0-fraction/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/5-units/0-fraction/v0.2/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="paradigma-funcional-2">Paradigma Funcional</h3>
+
+</div>
+<div class="sect2">
+<h3 id="herencia">Herencia</h3>
+
+</div>
+<div class="sect2">
+<h3 id="símbolos">Símbolos</h3>
+<div class="paragraph">
+<p>No son objetos!!! Son tipos primitivos!!!</p>
+</div>
+<div class="paragraph">
+<p>Symbols, únicos irrepetibles solo iguales a sí mismos, aunque tengan las misma descrpción!!! no como string</p>
+</div>
+<div class="paragraph">
+<p>var s = Symbol("descripcion")
+var s2 = Symbol("descripcion")
+s == s2 &#8658; false
+s === s &#8658; true
+Symbol.for("descripción") &#8658; como síngleton
+Registro global
+Symbol.keyFor(s)</p>
+</div>
+<div class="paragraph">
+<p>const DIRECTIONS = {
+  left: "left",
+  &#8230;&#8203;
+}</p>
+</div>
+<div class="paragraph">
+<p>mover(DIRECTIONS.left) o mover("left") o mover ("izquierda")</p>
+</div>
+<div class="paragraph">
+<p>const DIRECTIONS = {
+  left: Symbol("left"),
+  &#8230;&#8203;
+}</p>
+</div>
+<div class="paragraph">
+<p>mover(DIRECTIONS.left) y nada más</p>
+</div>
+<div class="paragraph">
+<p>evita colisiones con propiedades
+si son claves de propiedades de objetos no sale con for/in, Object.keys(objeto), &#8230;&#8203;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="programación-modular">Programación Modular</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Modulos</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="programación-con-excepciones">Programación con Excepciones</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Excepciones</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>detección de excepciones</strong>, con sentencia <em>try</em>, se ejecuta hasta la excepción</p>
+</li>
+<li>
+<p><strong>captura de excepciones</strong>, con sentencia <em>catch</em>, se ejecuta solo en caso de una excepción durante la ejecución del <em>try</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*bloque <em>finally</em>, se ejecuta en cualquier caso</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>elevación/delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./0-programacionExcepciones/console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="comment">/* captura */</span>
+<span class="keyword">try</span> {
+    let error = <span class="integer">5</span>/<span class="integer">0</span>;
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span>(exception){
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepción capturada</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">finally</span> {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">finally</span><span class="delimiter">&quot;</span></span>);
+}
+
+<span class="comment">/* captura y delegación */</span>
+<span class="keyword">try</span> {
+    <span class="keyword">try</span> {
+        let error = <span class="integer">5</span>/<span class="integer">0</span>;
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span>(exception){
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepción capturada</span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">throw</span> excpetion;
+    }
+} <span class="keyword">catch</span>(exception){
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepcion delegada</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(exception);
+}
+
+<span class="comment">/* elevación */</span>
+<span class="keyword">try</span> {
+    <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">exception elevada</span><span class="delimiter">&quot;</span></span>;
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span> (expection){
+    console.writeln(expection);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
