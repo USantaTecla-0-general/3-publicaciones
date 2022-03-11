@@ -483,8 +483,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#objetos">Objetos</a></li>
 <li><a href="#función-constructora">Función Constructora</a></li>
+<li><a href="#clases">Clases</a></li>
 </ul>
 </li>
+<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -8256,6 +8258,202 @@ console.writeln(<span class="keyword">typeof</span> object); <span class="commen
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Objeto sin comportamiento</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Funciones libres reciben objetos y los manipulan oportunamente</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = createObject(<span class="integer">7</span>);
+method(object);
+
+<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+  <span class="keyword">return</span> {
+    <span class="key">property</span>: property,
+    <span class="key">other</span>: <span class="integer">0</span>
+  };
+}
+
+<span class="keyword">function</span> <span class="function">method</span>(object) {
+  <span class="reserved">private</span>(object);
+  console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{object.property} - other: <span class="predefined">$</span>{object.other}<span class="error">`</span>);
+
+  <span class="keyword">function</span> <span class="reserved">private</span>(object){
+    object.other++;
+    object.property++;
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Objeto con comportamiento</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los métodos son propiedades del propio objeto</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = createObject(<span class="integer">7</span>);
+object.method();
+
+<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+    const object = {
+        <span class="key">property</span>: property,
+        <span class="key">other</span>: <span class="integer">0</span>
+    };
+
+    object.<span class="function">method</span> = <span class="keyword">function</span> () {
+        <span class="reserved">private</span>(object);
+        console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{object.property} - other: <span class="predefined">$</span>{object.other}<span class="error">`</span>);
+    }
+    <span class="keyword">return</span> object;
+
+    <span class="keyword">function</span> <span class="reserved">private</span>(object){
+        object.property++;
+        object.other++;
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>this</em></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>this</em> es una constante, no asignable, con la dirección al propio objeto que reciba el mensaje correspondiente al método que se esté ejecutando</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = createObject(<span class="integer">7</span>);
+object.method();
+
+<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+    <span class="keyword">return</span> {
+        <span class="key">property</span>: property,
+        <span class="key">other</span>: <span class="integer">0</span>,
+        <span class="function">method</span>: <span class="keyword">function</span> () {
+            <span class="reserved">private</span>(<span class="local-variable">this</span>);
+            console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{<span class="local-variable">this</span>.property} - other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+        }
+    };
+
+    <span class="keyword">function</span> <span class="reserved">private</span>(object) {
+        object.property++;
+        object.other++;
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>clousures</em></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los <em>clousures</em> permiten la creación de objetos con atributos privados como variables locales a la función constructora</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = createObject(<span class="integer">7</span>);
+object.method();
+
+<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+  let other = <span class="integer">0</span>;
+
+  <span class="keyword">return</span> {
+    <span class="function">method</span>: <span class="keyword">function</span> () {
+      <span class="reserved">private</span>(<span class="local-variable">this</span>);
+      console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{property} - other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+    }
+  };
+
+  <span class="keyword">function</span> <span class="reserved">private</span>(object) {
+    property++;
+    other++;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
@@ -8268,7 +8466,13 @@ console.writeln(<span class="keyword">typeof</span> object); <span class="commen
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/4-estructuras/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/5-comportamiento/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/6-this/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/7-clousure/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -8340,43 +8544,95 @@ console.writeln(<span class="keyword">typeof</span> object); <span class="commen
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
-    <span class="local-variable">this</span>.x = x;
-    <span class="local-variable">this</span>.y = y;
-    <span class="local-variable">this</span>.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
-        <span class="keyword">return</span> <span class="local-variable">this</span>.x == <span class="local-variable">this</span>.y;
-    }
-}
-console.writeln(Coordenada);
-console.writeln(<span class="keyword">typeof</span> Coordenada);
-<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
-}
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-console.writeln(Coordenada.prototype);
-console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
-<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
-}
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-<span class="keyword">for</span> (let coordenada of [<span class="keyword">new</span> Coordenada(<span class="integer">0</span>, <span class="integer">1</span>), <span class="keyword">new</span> Coordenada(<span class="integer">2</span>, <span class="integer">3</span>)]) {
-    console.writeln(coordenada);
-    console.writeln(<span class="keyword">typeof</span> coordenada);
-    console.writeln(coordenada.x);
-    console.writeln(coordenada.y);
-    console.writeln(coordenada.isDiagonal());
-    coordenada.x = <span class="integer">2</span>;
-    coordenada.y = <span class="integer">2</span>;
-    console.writeln(coordenada.x);
-    console.writeln(coordenada.y);
-    console.writeln(coordenada.isDiagonal());
-    <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
-        console.writeln(coordenada[campo]);
-    }
-}
+const object = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
+object.method();
 
-console.writeln(<span class="keyword">new</span> Coordenada(-<span class="integer">234</span>,<span class="integer">345</span>));
-console.writeln(<span class="keyword">new</span> Coordenada(<span class="integer">9</span>,<span class="integer">7</span>));</code></pre>
+<span class="keyword">function</span> <span class="function">Clazz</span>(property) {
+    <span class="local-variable">this</span>.property = property;
+    <span class="local-variable">this</span>.other = <span class="integer">0</span>;
+    <span class="local-variable">this</span>.<span class="function">method</span> = <span class="keyword">function</span> () {
+        <span class="reserved">private</span>(object);
+        console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{object.property} - other: <span class="predefined">$</span>{object.other}<span class="error">`</span>);
+    }
+
+    <span class="keyword">function</span> <span class="reserved">private</span>(object) {
+        object.property++;
+        object.other++;
+    }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con <em>clousure</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
+object.method();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(property) {
+    let other = <span class="integer">0</span>;
+
+    <span class="keyword">function</span> <span class="reserved">private</span>() {
+        property++;
+        other++;
+    }
+
+    <span class="local-variable">this</span>.<span class="function">method</span> = <span class="keyword">function</span> () {
+        <span class="reserved">private</span>();
+        console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{property} - other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+    }
+
+
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con atributos y métodos locales</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
+object.method();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(property) {
+    let that = {
+        <span class="key">property</span>: property,
+        <span class="key">other</span>: <span class="integer">0</span>,
+        <span class="reserved">private</span>: <span class="keyword">function</span> () {
+            <span class="local-variable">this</span>.property++;
+            <span class="local-variable">this</span>.other++;
+        }
+    };
+
+    <span class="keyword">return</span> {
+            <span class="function">method</span>: <span class="keyword">function</span> () {
+                that.<span class="reserved">private</span>();
+                console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{that.property} - other: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
+            }
+        }
+
+    }</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8414,41 +8670,23 @@ console.writeln(<span class="keyword">new</span> Coordenada(<span class="integer
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
-    <span class="local-variable">this</span>.x = x;
-    <span class="local-variable">this</span>.y = y;
-}
-Coordenada.prototype.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
-    <span class="keyword">return</span> <span class="local-variable">this</span>.x == <span class="local-variable">this</span>.y;
+<span class="keyword">function</span> <span class="function">Clazz</span>(property) {
+    <span class="local-variable">this</span>.property = property;
+    <span class="local-variable">this</span>.other = <span class="integer">0</span>;
 }
 
-console.writeln(Coordenada);
-console.writeln(<span class="keyword">typeof</span> Coordenada);
-<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
+Clazz.prototype.<span class="function">method</span> = <span class="keyword">function</span> () {
+    <span class="reserved">private</span>(<span class="local-variable">this</span>);
+    console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{<span class="local-variable">this</span>.property} - other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
 }
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-console.writeln(Coordenada.prototype);
-console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
-<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
-}
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-<span class="keyword">for</span> (let coordenada of [<span class="keyword">new</span> Coordenada(<span class="integer">0</span>, <span class="integer">1</span>), <span class="keyword">new</span> Coordenada(<span class="integer">2</span>, <span class="integer">3</span>)]) {
-    console.writeln(coordenada);
-    console.writeln(<span class="keyword">typeof</span> coordenada);
-    console.writeln(coordenada.x);
-    console.writeln(coordenada.y);
-    console.writeln(coordenada.isDiagonal());
-    coordenada.x = <span class="integer">2</span>;
-    coordenada.y = <span class="integer">2</span>;
-    console.writeln(coordenada.x);
-    console.writeln(coordenada.y);
-    console.writeln(coordenada.isDiagonal());
-    <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
-        console.writeln(coordenada[campo]);
-    }
-}</code></pre>
+
+<span class="reserved">private</span> = <span class="keyword">function</span> (object) {
+    object.property++;
+    object.other++;
+};
+
+const object = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
+object.method();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8476,59 +8714,7 @@ console.writeln(<span class="string"><span class="delimiter">&quot;</span><span 
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">Coordenada</span>(x, y) {
-    <span class="local-variable">this</span>.x = x;
-    <span class="local-variable">this</span>.y = y;
-}
-Coordenada.prototype.<span class="function">isDiagonal</span> = <span class="keyword">function</span> () {
-    <span class="keyword">return</span> <span class="local-variable">this</span>.x == <span class="local-variable">this</span>.y;
-}
-Coordenada.dimension = <span class="integer">3</span>;
-Coordenada.<span class="function">getDimension</span> = <span class="keyword">function</span> () {
-    <span class="keyword">return</span> Coordenada.dimension;
-}
-Coordenada.<span class="function">isValid</span> = <span class="keyword">function</span> (x, y) {
-    <span class="keyword">if</span> (<span class="integer">0</span> &lt;= x &amp;&amp; x &lt; Coordenada.dimension &amp;&amp;
-        <span class="integer">0</span> &lt;= y &amp;&amp; y &lt; Coordenada.dimension) {
-        <span class="keyword">return</span> <span class="keyword">new</span> Coordenada(x, y);
-    }
-    <span class="keyword">return</span> <span class="predefined-constant">undefined</span>;
-}
-
-console.writeln(Coordenada);
-console.writeln(<span class="keyword">typeof</span> Coordenada);
-<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada[campo]);
-}
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-console.writeln(Coordenada.prototype);
-console.writeln(<span class="keyword">typeof</span> Coordenada.prototype);
-<span class="keyword">for</span> (campo <span class="keyword">in</span> Coordenada.prototype) {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">propiedad: </span><span class="delimiter">&quot;</span></span> + Coordenada.prototype[campo]);
-}
-console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-console.writeln(Coordenada.getDimension());
-<span class="keyword">for</span> (let coordenada of [Coordenada.isValid(<span class="integer">0</span>, <span class="integer">1</span>), Coordenada.isValid(<span class="integer">2</span>, <span class="integer">3</span>)]) {
-    <span class="keyword">if</span> (coordenada != <span class="predefined-constant">undefined</span>) {
-        console.writeln(coordenada);
-        console.writeln(<span class="keyword">typeof</span> coordenada);
-        console.writeln(coordenada.x);
-        console.writeln(coordenada.y);
-        console.writeln(coordenada.isDiagonal());
-        coordenada.x = <span class="integer">2</span>;
-        coordenada.y = <span class="integer">2</span>;
-        console.writeln(coordenada.x);
-        console.writeln(coordenada.y);
-        console.writeln(coordenada.isDiagonal());
-        <span class="keyword">for</span> (let campo <span class="keyword">in</span> coordenada) {
-            console.writeln(coordenada[campo]);
-        }
-    }
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">2</span>-constructora.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">2</span>-constructora/<span class="integer">4</span>-atributosEstaticos/app.js[]</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8569,9 +8755,198 @@ console.writeln(Coordenada.getDimension());
 </ul>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/7-clousure/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionConstructora/1-version/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionConstructora/2-version/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="clases">Clases</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Función constructora</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Notación sintáctica "orientada a objetos" más compacta y legible que su homologa la función constructora "orientada a procesos"</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Clazz {
+
+    constructor(property){
+        <span class="local-variable">this</span>.property = property;
+        <span class="local-variable">this</span>.other = <span class="integer">0</span>;
+    }
+
+    method() {
+        <span class="reserved">private</span>(object);
+        console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{object.property} - other: <span class="predefined">$</span>{object.other}<span class="error">`</span>);
+    }
+
+    <span class="reserved">private</span>(object) {
+        object.property++;
+        object.other++;
+    }
+
+}
+
+const object = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
+object.method();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionConstructora/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/3-clases/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="programación-con-excepciones">Programación con Excepciones</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Excepciones</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>detección de excepciones</strong>, con sentencia <em>try</em>, se ejecuta hasta la excepción</p>
+</li>
+<li>
+<p><strong>captura de excepciones</strong>, con sentencia <em>catch</em>, se ejecuta solo en caso de una excepción durante la ejecución del <em>try</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*bloque <em>finally</em>, se ejecuta en cualquier caso</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>elevación/delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./0-programacionExcepciones/console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="comment">/* captura */</span>
+<span class="keyword">try</span> {
+    let error = <span class="integer">5</span>/<span class="integer">0</span>;
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span>(exception){
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepción capturada</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">finally</span> {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">finally</span><span class="delimiter">&quot;</span></span>);
+}
+
+<span class="comment">/* captura y delegación */</span>
+<span class="keyword">try</span> {
+    <span class="keyword">try</span> {
+        let error = <span class="integer">5</span>/<span class="integer">0</span>;
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span>(exception){
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepción capturada</span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">throw</span> excpetion;
+    }
+} <span class="keyword">catch</span>(exception){
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepcion delegada</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(exception);
+}
+
+<span class="comment">/* elevación */</span>
+<span class="keyword">try</span> {
+    <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">exception elevada</span><span class="delimiter">&quot;</span></span>;
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span> (expection){
+    console.writeln(expection);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
