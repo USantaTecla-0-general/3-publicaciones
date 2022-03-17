@@ -448,13 +448,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Índice</div>
 <ul class="sectlevel1">
-<li><a href="#contexto"><strong>Contexto</strong></a></li>
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
+<li><a href="#qué"><strong>¿Qué?</strong></a></li>
+<li><a href="#para-qué"><strong>Para qué?</strong></a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
+<li><a href="#modelo-del-objeto-documento">Modelo del Objeto Documento</a></li>
 <li><a href="#xpath">XPath</a>
 <ul class="sectlevel2">
+<li><a href="#rutas">Rutas</a></li>
 <li><a href="#ejes">Ejes</a></li>
-<li><a href="#expresión">Expresión</a></li>
-<li><a href="#semántica">Semántica</a></li>
+<li><a href="#pruebas">Pruebas</a></li>
+<li><a href="#predicados">Predicados</a></li>
 </ul>
 </li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
@@ -466,13 +470,129 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/dom.png" alt="dom" width="250" height="330"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Códigos disponibles en <a href="https://github.com/USantaTecla-tech-dom">git</a>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contexto"><strong>Contexto</strong></h2>
+<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/clienteWeb.svg" alt="clienteWeb" width="1366" height="2477">
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Otros navegadores Web:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Flock, Midori, Arora</em>, que comparten con <em>Safari y Chrome</em> el motor de visualización (render) <em>WebKit</em> basado en el motor KHTML de navegador <em>Konqueror</em>.</p>
+</li>
+<li>
+<p><em>AOL Explorer</em>, … que comparte el motor <em>Trindent con IExplorer</em>.</p>
+</li>
+<li>
+<p><em>Camino, Galeon</em>, … que comparten el motor Gecko con <em>Mozilla Firefox</em>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/ClienteWEB.png" alt="ClienteWEB">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Batallas de los Navegadores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>I Batalla</strong> entre <strong><em>Navigator</em></strong> de <strong><em>Netscape</em></strong> e <strong><em>IExplorer</em></strong> de <strong><em>Microsoft</em></strong> en los 90’.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Inicialmente ganada por <strong class="green"><em>Navigator</em></strong> y con resolución judicial a favor de Netscape por carácter monopolista de <strong class="red"><em>Microsoft</em></strong> pero éste finalmente surgió ganador en el mercado.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/batallaNavegadoresI.svg" alt="batallaNavegadoresI"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>II Batalla</strong> actual desde el 2003 entre los “3 grandes”, <em><strong>IExplorer, Firefox, Chrome</strong></em>,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>o los “5 grandes”, incluyendo <em><strong>Safari y Opera</strong></em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qué"><strong>¿Qué?</strong></h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -482,85 +602,337 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
+<h2 id="para-qué"><strong>Para qué?</strong></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Eficiencia</strong>, <em class="green">gracias a un estándar, todos igual de la misma manera: sencillo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">&lt;!DOCTYPE html&gt;
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Finding HTML Elements Using document.anchors<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">html</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>HTML Tutorial<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;br&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">css</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>CSS Tutorial<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;br&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>XML Tutorial<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;br&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">demo</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+<span class="inline">document.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">demo</span><span class="delimiter">&quot;</span></span>) .innerHTML = <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">Number of anchors are: </span><span class="delimiter">&quot;</span></span> + document.anchors.length;</span>
+<span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> <span class="include">org.w3c.dom</span>.*;
+<span class="keyword">import</span> <span class="include">javax.xml.parsers</span>.*;
+<span class="directive">public</span> <span class="type">class</span> <span class="class">TestGetElementById</span> {
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) <span class="directive">throws</span> <span class="exception">Exception</span> {
+        <span class="predefined-type">String</span> widgetXMLFile = <span class="string"><span class="delimiter">&quot;</span><span class="content">piechart.xml</span><span class="delimiter">&quot;</span></span>;
+        <span class="predefined-type">DocumentBuilderFactory</span> domFactory = <span class="predefined-type">DocumentBuilderFactory</span>. newInstance();
+        domFactory.setNamespaceAware (<span class="predefined-constant">true</span>);
+        <span class="predefined-type">DocumentBuilder</span> docBuilder = domFactory. newDocumentBuilder();
+        <span class="predefined-type">Document</span> doc = docBuilder. parse(widgetXMLFile);
+        Node n = doc.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">/chart/legend</span><span class="delimiter">&quot;</span></span>); <i class="conum" data-value="1"></i><b>(1)</b>
+        <span class="predefined-type">Element</span> newNode = doc.createElement(<span class="string"><span class="delimiter">&quot;</span><span class="content">root</span><span class="delimiter">&quot;</span></span>);
+        n.appendChild(newNode);
+    }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="php"><span class="inline-delimiter">&lt;?php</span>
+<span class="local-variable">$doc</span> = <span class="keyword">new</span> <span class="constant">DomDocument</span>;
+<span class="local-variable">$doc</span>-&gt;validateOnParse = <span class="predefined-constant">true</span>;
+<span class="local-variable">$doc</span>-&gt;<span class="constant">Load</span>(<span class="string"><span class="delimiter">'</span><span class="content">book.xml</span><span class="delimiter">'</span></span>);
+<span class="predefined">echo</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">The element whose id is 'php-basics' is: </span><span class="delimiter">&quot;</span></span> . <span class="local-variable">$doc</span>-&gt;getElementById(<span class="string"><span class="delimiter">'</span><span class="content">php-basics</span><span class="delimiter">'</span></span>)-&gt;tagName . <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
+<span class="inline-delimiter">?&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cómo"><strong>¿Cómo?</strong></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="modelo-del-objeto-documento">Modelo del Objeto Documento</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://www.tutorialspoint.com/dom/xml_dom_model.htm">Tutorial</a></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>DOCUMENT_NODE</em></strong></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/dom/dom_documenttype_object.htm"><strong><em>DOCUMENT_TYPE_NODE</em></strong></a></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/dom/dom_element_object.htm"><strong><em>ELEMENT_NODE</em></strong></a></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/dom/dom_attribute_object.htm"><strong><em>ATTRIBUTE_NODE</em></strong></a></p>
+</li>
+<li>
+<p><strong><em>TEXT_NODE</em></strong></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/dom/dom_comment_object.htm"><strong><em>COMMENT_NODE</em></strong></a></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/dom/dom_entityreference_object.htm"><strong><em>ENTITY_REFERENCE_NODE</em></strong></a></p>
+</li>
+<li>
+<p><a href="https://www.tutorialspoint.com/dom/dom_processinginstruction_object.htm"><strong><em>PROCESSING_INSTRUCTION_NODE</em></strong></a></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-center valign-middle" rowspan="2"><div class="content"><div class="imageblock">
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Diagrama de clases: Tipos de nodos</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/nodes.svg" alt="nodes" width="834" height="426">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://www.tutorialspoint.com/dom/xml_dom_model.htm">Tutorial</a>: <em>CDATA_SECTION_NODE, ENTITY_NODE, DOCUMENT_FRAGMENT_NODE, NOTATION_NODE, &#8230;&#8203;</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version = &quot;1.0&quot;?&gt;</span>
+<span class="tag">&lt;Company&gt;</span>
+   <span class="tag">&lt;Employee</span> <span class="attribute-name">category</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">technical</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;FirstName&gt;</span>Tanmay<span class="tag">&lt;/FirstName&gt;</span>
+      <span class="tag">&lt;LastName&gt;</span>Patil<span class="tag">&lt;/LastName&gt;</span>
+      <span class="tag">&lt;ContactNo&gt;</span>1234567890<span class="tag">&lt;/ContactNo&gt;</span>
+   <span class="tag">&lt;/Employee&gt;</span>
+
+   <span class="tag">&lt;Employee</span> <span class="attribute-name">category</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">non-technical</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;FirstName&gt;</span>Taniya<span class="tag">&lt;/FirstName&gt;</span>
+      <span class="tag">&lt;LastName&gt;</span>Mishra<span class="tag">&lt;/LastName&gt;</span>
+      <span class="tag">&lt;ContactNo&gt;</span>1234667898<span class="tag">&lt;/ContactNo&gt;</span>
+   <span class="tag">&lt;/Employee&gt;</span>
+<span class="tag">&lt;/Company&gt;</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Diagrama de objetos: DOM de documento XML</strong>:</p>
+</div>
+<div class="imageblock">
 <div class="content">
 <img src="images/ejemploDOM.gif" alt="ejemploDOM">
 </div>
 </div></div></td>
 </tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+<col style="width: 22%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><a href="https://es.wikipedia.org/wiki/XPointer"><em>XPointer</em></a></th>
+<th class="tableblock halign-left valign-top"><a href="https://es.wikipedia.org/wiki/XLink"><em>XLink</em></a></th>
+<th class="tableblock halign-left valign-top"><a href="https://es.wikipedia.org/wiki/XQuery#:~:text=XQuery%20es%20un%20lenguaje%20de,de%20Consulta%20XML%20del%20W3C."><em>XQuery</em></a></th>
+<th class="tableblock halign-left valign-top"><a href="https://en.wikipedia.org/wiki/XSLT"><em>XSLT</em></a></th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Tipos de nodos y tipo</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>ELEMENT_NODE</strong>, 1</p>
-</li>
-<li>
-<p><strong>ATTRIBUTE_NODE</strong>, 2</p>
-</li>
-<li>
-<p><strong>TEXT_NODE</strong>, 3</p>
-</li>
-<li>
-<p>CDATA_SECTION_NODE, 4</p>
-</li>
-<li>
-<p><strong>ENTITY_REFERENCE_NODE</strong>, 5</p>
-</li>
-<li>
-<p>ENTITY_NODE, 6</p>
-</li>
-<li>
-<p><strong>PROCESSING_INSTRUCTION_NODE</strong>, 7</p>
-</li>
-<li>
-<p><strong>COMMENT_NODE</strong>, 8</p>
-</li>
-<li>
-<p><strong>DOCUMENT_NODE</strong>, 9</p>
-</li>
-<li>
-<p><strong>DOCUMENT_TYPE_NODE</strong>, 10</p>
-</li>
-<li>
-<p>DOCUMENT_FRAGMENT_NODE, 11</p>
-</li>
-<li>
-<p>NOTATION_NODE, 12</p>
+<p>proporciona una forma de <strong class="blue">identificar de forma única fragmentos de un documento XML</strong> con el objetivo de realizar vínculos</p>
 </li>
 </ul>
-</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>permite crear una <strong class="blue">relación de vínculos entre varios documentos</strong>, agregar a un vínculo información acerca del mismo (metadatos), crear y describir vínculos a documentos en multitud de ubicaciones</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es un <strong class="blue">lenguaje de consulta diseñado para colecciones de datos XML</strong>, semánticamente similar a <strong class="green"><em>SQL</em></strong>, aunque incluye algunas capacidades de programación</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>forma de <strong class="blue">transformar documentos XML en otros e incluso a formatos que no son <em>XML</em></strong>, <em>pdf, rtf, text</em>, &#8230;&#8203;</p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-none stretch">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>XLink</em> y <em>XPointer</em></th>
+<th class="tableblock halign-left valign-top"><em>XQuery</em></th>
+<th class="tableblock halign-left valign-top"><em>XSLT</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
 <div class="content">
-<img src="images/nodes.svg" alt="nodes" width="834" height="426">
+<pre class="CodeRay highlight"><code data-lang="xlink">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+
+&lt;mydogs xmlns:xlink = &quot;http://www.w3.org/1999/xlink&quot;&gt;
+
+&lt;mydog xlink:type=&quot;simple&quot;
+xlink:href = &quot;http://dog.com/ dogbreeds.xml#Rottweiler&quot;&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;description xlink:type=&quot;simple&quot;
+xlink:href = &quot;http://myweb.com/ mydogs/anton.gif&quot;&gt;
+Anton is my favorite dog. He has won a lot of.....
+&lt;/description&gt;
+&lt;/mydog&gt;
+
+&lt;mydog xlink:type=&quot;simple&quot;
+xlink:href = &quot;http://dog.com/ dogbreeds.xml#FCRetriever&quot;&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+&lt;description xlink:type=&quot;simple&quot;
+xlink:href = &quot;http://myweb.com/ mydogs/pluto.gif&quot;&gt;
+Pluto is the sweetest dog on earth......
+&lt;/description&gt;
+&lt;/mydog&gt;
+
+&lt;/mydogs&gt;</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><strong><em>XPath</em></strong>: <em>dogbreeds.xml#Rottweiler</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong><em>XPath</em></strong>: <em>dogbreeds.xml#FCRetriever</em></td>
+</tr>
+</table>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xquery">&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+{
+  for $act in doc(&quot;hamlet.xml&quot;) //ACT
+  let $speakers := distinct-values($act//SPEAKER)
+  return
+    &lt;span&gt;
+      &lt;h1&gt;{ $act/TITLE/text() }&lt;/h1&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+      &lt;ul&gt;
+      {
+        for $speaker in $speakers
+        return &lt;li&gt;{ $speaker }&lt;/li&gt;
+      }
+      &lt;/ul&gt;
+    &lt;/span&gt;
+}
+&lt;/body&gt;&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><strong><em>XPath</em></strong>: <em>$act/TITLE/text()</em></td>
+</tr>
+</table>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xslt">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl = &quot;http://www.w3.org/       1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    Article - &lt;xsl:value-of select = &quot;/Article/Title&quot;/&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    Authors: &lt;xsl:apply-templates select = &quot;/Article/Authors/Author&quot;/&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;Author&quot;&gt;
+    - &lt;xsl:value-of select=&quot;.&quot; /&gt; <i class="conum" data-value="4"></i><b>(4)</b>
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><strong><em>XPath</em></strong>: <em>/</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong><em>XPath</em></strong>: <em>/Article/Title</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><strong><em>XPath</em></strong>: <em>/Article/Authors/Author</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><strong><em>XPath</em></strong>: <em>.</em></td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/tecnologiasXML.gif" alt="tecnologiasXML"></span></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -570,6 +942,133 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="xpath">XPath</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definición</th>
+<th class="tableblock halign-left valign-top">Retorno</th>
+<th class="tableblock halign-left valign-top">Documentación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es un estándar <strong><em>W3C</em></strong> que utiliza <strong class="blue">expresiones de ruta para navegar en documentos XML</strong> que contiene una biblioteca de funciones estándar</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la evaluación de las expresiones devuelven:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">secuencias de nodos</strong></p>
+</li>
+<li>
+<p><strong class="blue">valores lógicos, númericos o cadena de caracteres</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.mclibre.org/consultar/xml/lecciones/xml-xpath.html#xpath-que-es">Tutorial</a></p>
+</li>
+<li>
+<p>Ejemplos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.zvon.org/xxl/XPathTutorial/General_spa/examples.html">Práctica</a></p>
+</li>
+<li>
+<p><a href="https://www.freeformatter.com/xpath-tester.html#ad-output">Herramienta</a> (<a href="https://github.com/USantaTecla-tech-xml/manager-countries/blob/master/0.0.dataLanguages/v0.0/data.xml">countries.xml</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="rutas">Rutas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;xpath&gt;</em> <strong class="red">::=</strong> <em>&lt;rutaAbsoluta&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;rutaAbsoluta&gt;</em> <strong class="red">::=</strong> <strong>/</strong> <strong class="red">[</strong> <em>&lt;rutaRelativa&gt;</em> <strong class="red">{</strong> <strong>/</strong> <em>&lt;rutaRelativa&gt;</em> <strong class="red">}</strong>* <strong class="red">]</strong></p>
+</li>
+<li>
+<p><em>&lt;rutaRelativa&gt;</em> <strong class="red">::=</strong> <strong class="red">[</strong> <em>&lt;eje&gt;</em> <strong class="red">]</strong> <em>&lt;prueba&gt;</em> <strong class="red">[</strong> <em>&lt;predicado&gt;</em> <strong class="red">]</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+</li>
+<li>
+<p>Ruta absoluta: se parte de un <strong class="blue">conjunto de nodos</strong> compuesto por el <strong class="blue">nodo documento</strong></p>
+</li>
+<li>
+<p>Ruta relativa: se parte de un <strong class="blue">conjunto de nodos</strong> obtenida por la <strong class="blue">ruta anterior</strong></p>
+</li>
+<li>
+<p>Para cada <span class="blue">elemento del conjunto de nodos</span> anterior, llamado <strong class="blue">nodo contextual</strong>,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se obtiene el <strong class="blue">conjunto de nodos del eje</strong> aplicado al nodo contextual</p>
+</li>
+<li>
+<p>Se <strong class="blue">filtran con la prueba</strong> los nodos del conjunto de nodos anterior</p>
+</li>
+<li>
+<p>Se <strong class="blue">flitran con el predicado</strong> los nodos del conjunto de nodos anterior</p>
+</li>
+<li>
+<p>El conjunto de nodos resultante, es la <strong class="blue">unión de todos los conjuntos de nodos resultantes</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sect2">
 <h3 id="ejes">Ejes</h3>
 <table class="tableblock frame-all grid-all stretch">
@@ -578,6 +1077,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <col style="width: 40%;">
 </colgroup>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;eje&gt;</em> <strong class="red">::=</strong> ( <strong>parent</strong> <strong class="red">|</strong> <strong>ancestor</strong> <strong class="red">|</strong> <strong>ancestor-or-self</strong> <strong class="red">|</strong>  <strong>child</strong> <strong class="red">|</strong> <strong>descendant</strong> <strong class="red">|</strong> <strong>descendant-or-self</strong> <strong class="red">|</strong> <strong>self</strong> <strong class="red">|</strong> <strong>following</strong> <strong class="red">|</strong> <strong>following-sibling</strong> <strong class="red">|</strong> <strong>preceding</strong> <strong class="red">|</strong> <strong>preceding-sibling</strong> <strong class="red">|</strong> <strong>namespace</strong> <strong class="red">|</strong> <strong>attribute</strong> ) <strong>::</strong> <strong class="red">|</strong> <strong>.</strong> <strong class="red">|</strong> <strong>..</strong> <strong class="red">|</strong> <strong>@</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong>: según el eje, se selecciona el conjunto de nodos que cumplen el eje a partir del nodo contextual</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Abreviaturas</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>por defecto</strong> equivalente a <em>child::</em></p>
+</li>
+<li>
+<p><strong>.</strong> equivalente a <em>self::</em></p>
+</li>
+<li>
+<p><strong>..</strong> equivalente a <em>parent::</em></p>
+</li>
+<li>
+<p><strong>@</strong> equivalente a <em>attribute::</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
@@ -597,7 +1142,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>descendant</strong>, lista de nodos con descendientes del nodo contexto</p>
 </li>
 <li>
-<p><strong>descendant</strong>-or-self, lista de nodos con el nodo de contexto</p>
+<p><strong>descendant-or-self</strong>, lista de nodos con el nodo de contexto</p>
 </li>
 <li>
 <p><strong>self</strong>, lista de nodos con el nodo contexto</p>
@@ -639,69 +1184,736 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="expresión">Expresión</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/expresion.svg" alt="expresion" width="611" height="497">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/selector.svg" alt="selector" width="453" height="277">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="semántica">Semántica</h3>
+<h3 id="pruebas">Pruebas</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 80%;">
-<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Se parte de un conjunto de nodos con un nodo contexto</p>
+<p><strong class="blue">Sintaxis</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>camino absoluto (con /), comienza con la raíz del árbol</p>
-</li>
-<li>
-<p>camino relativo (sin /), comienza con el nodo del conjunto de nodos</p>
+<p><em>&lt;prueba&gt;</em> <strong class="red">::=</strong> <em>&lt;identificador&gt;</em> <strong class="red">|</strong> <strong>node()</strong> <strong class="red">|</strong> <strong>text()</strong> <strong class="red">|</strong> <strong>* <strong class="red">|</strong> *@</strong></p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p>Para cada localizador (eje::selector[predicado])</p>
+<p><strong class="blue">Semántica</strong>: se filtra del conjunto de nodos aquellos que cumplan la prueba del nodo por nombre mediante un identificador o tipo mediante node(), text(), &#8230;&#8203;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Se calcula el conjunto de nodos determinado por el eje y selector a partir del nodo contexto</p>
+<p><strong class="green">Abreviaturas</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>*</em></strong>, equivalente a todos los elementos hijos del nodo contextual</p>
+</li>
+<li>
+<p><strong><em>@*</em></strong>, equivalente a todos los atributos del nodo contextual</p>
+</li>
+<li>
+<p><strong><em>//</em></strong>, equivalente a <em>/descendant-or-self/node()/</em>, para absoluto</p>
+</li>
+<li>
+<p><strong><em>.//</em></strong> equivalente a <em>descendant-or-self/node()/</em>, para relativo</p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>Resultado</em></th>
+<th class="tableblock halign-left valign-top"><em>XPath</em></th>
+<th class="tableblock halign-left valign-top"><em>XPath abreviado</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p>Se filtran los nodos del conjunto de nodos que no cumplen el predicado</p>
+<p>todos los nodos país</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://zvon.org/comp/r/tut-XPath_1.html#Pages~List_of_XPaths">Tutorial</a></p>
+<p><em>/child::countries</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>/countries, //countries</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos capital de cada páis</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>/child::countries/child::country/ child::capital</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//capital</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos lenguajes de cada páis</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>/child::countries/child::country/ child::languages</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//languages</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los textos lenguajes de cada país</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>/child::countries/child::country/ child::languages/child::text()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//languages/text()</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los atributos arrays de todos los países</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>/child::countries/child::country/ child::topLevelDomain/attribute::array</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//@array</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="predicados">Predicados</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;predicado&gt;</em> <strong class="red">::=</strong> <strong>[</strong> <em>&lt;expresion&gt;</em> <strong>]</strong></p>
+</li>
+<li>
+<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <em>&lt;valor&gt;</em> <strong class="red">|</strong> <em>&lt;expresion&gt;</em> <em>&lt;operador&gt;</em> <em>&lt;expresion&gt;</em> <strong class="red">|</strong> <em>&lt;identificador&gt;</em> <strong>(</strong> <strong class="red">{</strong> <em>&lt;expresion&gt;</em> <strong class="red">|</strong> <em>&lt;rutaAbsoluta&gt;</em> <strong class="red">|</strong> <em>&lt;rutaRelativa&gt;</em> <strong class="red">}</strong> <strong>)</strong></p>
+</li>
+<li>
+<p><em>&lt;operador&gt;</em> <strong class="red">::=</strong> <strong>and</strong> <strong class="red">|</strong> <strong>or</strong> <strong class="red">|</strong> <strong>=</strong> <strong class="red">|</strong> <strong>!=</strong> <strong class="red">|</strong> <strong>&lt;</strong> <strong class="red">|</strong> <strong>&lt;</strong> <strong class="red">|</strong> <strong>&gt;</strong> <strong class="red">|</strong> <strong>&gt;</strong> <strong class="red">|</strong> <strong>+</strong> <strong class="red">|</strong> <strong>-</strong> <strong class="red">|</strong> <strong>*</strong> <strong class="red">|</strong> <strong>div</strong></p>
+</li>
+<li>
+<p><em>&lt;xpath&gt;</em> <strong class="red">::=</strong> &lt;expresion&gt;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong>: se filtra el conjunto de nodos para aquellos cuya evalaución de la expresión con el nodo contextual para cada &#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>operadores:</p>
+</li>
+<li>
+<p><strong class="green">Abreviaturas</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>[n]</em></strong> equivalente a <em>[position() = n]</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Función</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Retorno</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Descripción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-last"><em>last()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="4"><div class="content"><div class="paragraph">
+<p>conjunto de nodos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Returns the number of the number of items in the selected node set</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-position"><em>position()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Returns the position of the context node in the selected node set</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-count"><em>count()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a location path as an argument and returns the number of nodes in that location path</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-id"><em>id()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes an id as an argument and returns the node that has that id</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-starts-with"><em>starts-with()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="8"><div class="content"><div class="paragraph">
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#string-functions"><em>string</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a string and substring as arguments. Returns true if the string begins with the substring. Otherwise, returns false</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-contains"><em>contains()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a string and substring as arguments. Returns true if the string contains the substring. Otherwise, returns false</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-substring-before"><em>substringbefore()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a string and substring as arguments. Returns the portion of the string to the left of the substring</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-substring-after"><em>substringafter()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a string and substring as arguments. Returns the portion of the string to the right of the substring</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-substring">[<em>substring()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a string, start position and length as arguments. Returns the substring of length characters beginning with the character at start position</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-string-length"><em>stringlength()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a string as an argument and returns its length</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-function-name"><em>name()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Returns the name of an element</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-unparsed-text"><em>text()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Returns the text child nodes of an element</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-boolean"><em>boolean()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#boolean-constructors"><em>boolean</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes an object as an argument. Returns true if: the object is a number greater than zero the object is a non-empty node-set the object is a string with at least one character.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-sum"><em>sum()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="4"><div class="content"><div class="paragraph">
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#numeric-value-functions"><em>number</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a node-set as an argument and returns the sum of of the string values of the node-set.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-ceiling"><em>ceiling()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a number as an argument and returns the rounded-up value.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-floor"><em>floor()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a number as an argument and returns the rounded-down value.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/xpath-functions-31/#func-round"><em>round()</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Takes a number as an argument and returns the rounded value.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>Resultado</em></th>
+<th class="tableblock halign-left valign-top"><em>XPath</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el nodo país cuyo nombre sea Spain</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//country[name = "Spain"]</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los textos name de todos los países cuya población supera el millón de personas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//country[population &gt; 1000.0E+6]/name/text()</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos name de los paises fronterizos con España</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//country[borders/text() = "ESP"]/name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>nodo name del país cuyo nativo sea Español</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//nativeName[. = "Español"]/../../name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos name cuya población sea superior al millón de personas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//population[. &gt; 1000.0E+6]/../name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos name de países fronterizos con España</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//borders[. = "ESP"]/../name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos name de los primeros lenguajes oficiales</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//languages[./preceding-sibling::languages]/name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//languages[position() = 1]/name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//languages[1]/name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos name de países con más de un lenguaje oficial</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//country[count(./languages)&gt;1]/name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el nodo name del primer idioma oficial del primer país</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//languages[count(./preceding::languages)=0]/name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos country entre zonas horarias de -5 a -3</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>//country/timezones[-5 &#8656; number(substring-before(substring-after(text(),"UTC"),":")) and number(substring-before(substring-after(text(),"UTC"),":")) &#8656; -3]/../name</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cantidad de población mundial</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>sum(//population)</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cantidad de países supera su población al millón de personas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>count(//country[population &gt; 1000.E+6])</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cantidad de paises con más de un lengauje oficial</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>count(/countries/country[count(./languages)&gt;1])</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cantidad de países tienen el Español como lengua oficial</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>count(/countries/country/languages/nativeName[text() = "Español"])</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cantidad de media de población</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>sum(//population) div count(//country)</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los distintos nodos correspondientes a los primeros lenguajes de cada país</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>distinct-values(//country/languages[1]/./name)</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>todos los nodos name de los paises con población superior a la media</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>/countries/country[(sum(//population) div count(//country)) &lt; ./population]/name</em></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -735,14 +1947,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <th class="tableblock halign-left valign-top">Portada</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
 </table>
 </div>
 </div>
@@ -802,9 +2006,98 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-01-16 14:03:48 +0100
+Last updated 2022-03-13 09:43:21 +0100
 </div>
 </div>
+<style>
+/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+pre.CodeRay{background:#f7f7f8}
+.CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.code{padding:0 0 0 .75em}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 <script>
                 let speed = 50;
                 
