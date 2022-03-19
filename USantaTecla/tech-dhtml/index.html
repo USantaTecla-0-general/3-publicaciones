@@ -469,8 +469,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/dhtml.png" alt="dhtml" width="250" height="330"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Códigos disponibles en <a href="https://github.com/USantaTecla-tech-dhtml">git</a>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -716,7 +741,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-technologies/0-requisitos/blob/master/docs/colecciones.md#provincias">Tablas de Provincias</a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/blob/master/1-DOMyJS/1-gestionNodos/provincias/JS%20DOM%20element.%20Tablas%20de%20Provincias.html"><em>solución</em></a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/blob/master/1-DOMyJS/1-gestionNodos/provincias/JS%20DOM%20innerHTML.%20Tablas%20de%20Provincias.html"><em>solución</em></a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/blob/master/1-DOMyJS/1-gestionNodos/provincias/JS%20DOM%20write.%20Tablas%20de%20Provincias.html"><em>solución</em></a></p>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/src/blob/master/2-CSSyJS/sistemasNumeracion/JS%20DOM.%20Numeral%20Systems.html">numberSystem</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-dhtml/src/tree/master/combinations">colorCombination</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-jsCoercion">javascriptCoercion</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-goldenNumber">goldenNumber</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
@@ -2340,10 +2376,10 @@ mousewheel	Deprecated. Use the wheel event instead</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">function</span> <span class="function">onLoad</span>(){
-  <span class="keyword">for</span>(let div of document.getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">div</span><span class="delimiter">&quot;</span></span>)) {
-    <span class="comment">//div.addEventListener(&quot;click&quot;, alertBubblingFromListener);</span>
-    <span class="comment">//div.addEventListener(&quot;click&quot;, alertTricklingFromListener, true);</span>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">function</span> <span class="function">onLoad</span>() {
+  <span class="keyword">for</span> (let div of document.getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">div</span><span class="delimiter">&quot;</span></span>)) {
+    <span class="comment">// div.addEventListener(&quot;click&quot;, alertBubblingFromListener);</span>
+    <span class="comment">// div.addEventListener(&quot;click&quot;, alertTricklingFromListener, true);</span>
     div.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>
       , alertBubblingFromListenerWithoutPropagation);
     div.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>
@@ -2351,7 +2387,7 @@ mousewheel	Deprecated. Use the wheel event instead</p>
   }
 }
 
-<span class="keyword">function</span> <span class="function">getMsg</span>(event, element){
+<span class="keyword">function</span> <span class="function">getMsg</span>(event, element) {
   <span class="keyword">if</span> (event.count == <span class="predefined-constant">undefined</span>) {
     event.count = <span class="integer">0</span>;
   }
@@ -2359,20 +2395,20 @@ mousewheel	Deprecated. Use the wheel event instead</p>
   <span class="keyword">return</span> element.getAttribute(<span class="string"><span class="delimiter">&quot;</span><span class="content">class</span><span class="delimiter">&quot;</span></span>) + <span class="string"><span class="delimiter">&quot;</span><span class="content"> con </span><span class="delimiter">&quot;</span></span> + event.count;
 }
 
-<span class="keyword">function</span> <span class="function">alertBubblingFromHTML</span>(event, element){
+<span class="keyword">function</span> <span class="function">alertBubblingFromHTML</span>(event, element) {
   console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Bubbling form HTML: </span><span class="delimiter">&quot;</span></span> + getMsg(event, element));
 }
 
-<span class="keyword">function</span> <span class="function">alertBubblingFromListener</span>(event){
+<span class="keyword">function</span> <span class="function">alertBubblingFromListener</span>(event) {
   console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Bubbling form addEventListener: </span><span class="delimiter">&quot;</span></span> + getMsg(event, <span class="local-variable">this</span>));
 }
 
-<span class="keyword">function</span> <span class="function">alertTricklingFromListener</span>(event){
+<span class="keyword">function</span> <span class="function">alertTricklingFromListener</span>(event) {
   console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Trickling form addEventListener: </span><span class="delimiter">&quot;</span></span>
     + getMsg(event, <span class="local-variable">this</span>));
 }
 
-<span class="keyword">function</span> <span class="function">alertBubblingFromListenerWithoutPropagation</span>(event){
+<span class="keyword">function</span> <span class="function">alertBubblingFromListenerWithoutPropagation</span>(event) {
   console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Bubbling form addEventListener without Propagation: </span><span class="delimiter">&quot;</span></span>
     + getMsg(event, <span class="local-variable">this</span>));
   <span class="keyword">if</span> (<span class="local-variable">this</span>.getAttribute(<span class="string"><span class="delimiter">&quot;</span><span class="content">class</span><span class="delimiter">&quot;</span></span>) === <span class="string"><span class="delimiter">&quot;</span><span class="content">nivel-2 derecha</span><span class="delimiter">&quot;</span></span>) {
@@ -2381,7 +2417,7 @@ mousewheel	Deprecated. Use the wheel event instead</p>
   }
 }
 
-<span class="keyword">function</span> <span class="function">alertTricklingFromListenerWithoutPropagation</span>(event){
+<span class="keyword">function</span> <span class="function">alertTricklingFromListenerWithoutPropagation</span>(event) {
   console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Trickling form addEventListener without Propagation: </span><span class="delimiter">&quot;</span></span>
     + getMsg(event, <span class="local-variable">this</span>));
   <span class="keyword">if</span> (<span class="local-variable">this</span>.getAttribute(<span class="string"><span class="delimiter">&quot;</span><span class="content">class</span><span class="delimiter">&quot;</span></span>) === <span class="string"><span class="delimiter">&quot;</span><span class="content">nivel-3 izquierda</span><span class="delimiter">&quot;</span></span>) {
@@ -2562,20 +2598,22 @@ mousewheel	Deprecated. Use the wheel event instead</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-technologies/0-requisitos/blob/master/docs/numeros.md#tabla-est%C3%A1tica">Sistemas Numeracion</a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/blob/master/2-CSSyJS/sistemasNumeracion/JS%20DOM.%20Numeral%20Systems.html"><em>solución</em></a></p>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-numberingSystem">numberSystem</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-technologies/0-requisitos/blob/master/docs/numeros.md#numero-aureo">Número Aureo</a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/tree/master/2-CSSyJS/numeroAureo"><em>solución</em></a></p>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-euclides">euclidesAlgortithm</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-technologies/0-requisitos/blob/master/docs/numeros.md#desarrollo-dinamico">Sistemas de Numeración</a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/tree/master/2-CSSyJS/numberingSystem"><em>solución</em></a></p>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-grid">grid</a></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-technologies/0-requisitos/blob/master/docs/numeros.md#euclides">Algoritmo de Euclides</a> - <a href="https://github.com/USantaTecla-0-technologies/dhtml/tree/master/2-CSSyJS/euclides"><em>solución</em></a></p>
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-cssBoxModel">cssBoxModel</a></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-dhtml/tool-cssLayout">cssLayout</a></p>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -2832,7 +2870,7 @@ mousewheel	Deprecated. Use the wheel event instead</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-01-16 13:45:30 +0100
+Last updated 2022-03-19 11:58:08 +0100
 </div>
 </div>
 <style>
