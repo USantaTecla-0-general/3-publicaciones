@@ -1,0 +1,8 @@
+<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="30" r="25" style="stroke: none; fill: #00cc00;">
+        <animate attributeName="cx" attributeType="XML"
+                 from="30"  to="470"
+                 begin="0s" dur="5s"
+                 fill="remove" repeatCount="indefinite"/>
+    </circle>
+</svg>

@@ -1,0 +1,6 @@
+<svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 25 H100 V75 H50 Z" fill="red" stroke="green" stroke-width="5" />
+  <path d="M75 50 L50 125 H100 Z" fill="green" stroke="blue" stroke-width="3" />
+  <path d="M-1000 100 H1000" fill="blue" stroke="red" stroke-width="1" />
+  <path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="#808080" stroke="black" stroke-width="3" />
+</svg>
