@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="644px" preserveAspectRatio="none" style="width:416px;height:644px;background:#222222;" version="1.1" viewBox="0 0 416 644" width="416px" zoomAndPan="magnify"><defs/><g><ellipse cx="155" cy="20" fill="#A9A9A9" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#222222" height="52.1875" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="108" x="101" y="50"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="80" x="112" y="73.457">Crear rama de</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="83" x="115" y="88.5508">pre-producción</text><rect fill="#222222" height="52.1875" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="139" x="85.5" y="122.1875"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="51" x="96.5" y="145.6445">Construir</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="117" x="96.5" y="160.7383">(compilar, enlazar, ...)</text><polygon fill="#222222" points="143,203.9941,167,203.9941,179,215.9941,167,227.9941,143,227.9941,131,215.9941,143,203.9941" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#FF0000" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="120" x="10" y="208.9883">!construye</text><rect fill="#222222" height="97.4688" style="stroke: #A9A9A9; stroke-width: 1.5;" width="98" x="35.25" y="237.9941"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="40.25" x2="40.25" y1="237.9941" y2="335.4629"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="128.25" x2="128.25" y1="237.9941" y2="335.4629"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="46.25" y="261.4512">Construcción</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="25" x="46.25" y="276.5449">para</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="46.25" y="291.6387">arreglar error</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="46.25" y="306.7324">en el entorno</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="26" x="46.25" y="321.8262">local</text><path d="M297.75,237.9941 L297.75,266.1074 L277.75,270.1074 L297.75,274.1074 L297.75,302.2207 A0,0 0 0 0 297.75,302.2207 L404.75,302.2207 A0,0 0 0 0 404.75,302.2207 L404.75,247.9941 L394.75,237.9941 L297.75,237.9941 A0,0 0 0 0 297.75,237.9941 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 1.0;"/><path d="M394.75,237.9941 L394.75,247.9941 L404.75,247.9941 L394.75,237.9941 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="84" x="304.75" y="264.1016">Pruebas</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="60" x="316.75" y="290.2148">Alpha</text><rect fill="#222222" height="52.1875" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="104" x="173.75" y="244.0137"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="79" x="184.75" y="267.4707">Ejecutar todas</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="184.75" y="282.5645">las pruebas</text><rect fill="#222222" height="37.0938" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="138" x="156.75" y="337.2207"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="167.75" y="360.6777">Mostrar por Radiador</text><rect fill="#222222" height="67.2813" style="stroke: #A9A9A9; stroke-width: 1.5;" width="125" x="163.25" y="450.3711"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="168.25" x2="168.25" y1="450.3711" y2="517.6523"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="283.25" x2="283.25" y1="450.3711" y2="517.6523"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="174.25" y="473.8281">Construcción</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="100" x="174.25" y="488.9219">para arreglar error</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="101" x="174.25" y="504.0156">en el entorno local</text><polygon fill="#222222" points="213.75,394.3145,237.75,394.3145,249.75,406.3145,237.75,418.3145,213.75,418.3145,201.75,406.3145,213.75,394.3145" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#FF0000" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="48" x="230.75" y="439.4219">rojo</text><polygon fill="#222222" points="225.75,537.6523,237.75,549.6523,225.75,561.6523,213.75,549.6523,225.75,537.6523" style="stroke: #A9A9A9; stroke-width: 1.5;"/><polygon fill="#222222" points="155,567.6523,167,579.6523,155,591.6523,143,579.6523,155,567.6523" style="stroke: #A9A9A9; stroke-width: 1.5;"/><ellipse cx="155" cy="622.6523" fill="#FFFFFF" rx="11" ry="11" style="stroke: #A9A9A9; stroke-width: 1.0;"/><ellipse cx="155" cy="622.6523" fill="#A9A9A9" rx="6" ry="6" style="stroke: #D4D4D4; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="155" x2="155" y1="30" y2="50"/><polygon fill="#A9A9A9" points="151,40,155,50,159,40,155,44" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="155" x2="155" y1="102.1875" y2="122.1875"/><polygon fill="#A9A9A9" points="151,112.1875,155,122.1875,159,112.1875,155,116.1875" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="225.75" y1="296.2012" y2="337.2207"/><polygon fill="#A9A9A9" points="221.75,327.2207,225.75,337.2207,229.75,327.2207,225.75,331.2207" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="225.75" y1="418.3145" y2="450.3711"/><polygon fill="#A9A9A9" points="221.75,440.3711,225.75,450.3711,229.75,440.3711,225.75,444.3711" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="249.75" x2="298.25" y1="406.3145" y2="406.3145"/><polygon fill="#A9A9A9" points="294.25,475.0117,298.25,485.0117,302.25,475.0117,298.25,479.0117" style="stroke: #A9A9A9; stroke-width: 1.5;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="298.25" x2="298.25" y1="406.3145" y2="549.6523"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="298.25" x2="237.75" y1="549.6523" y2="549.6523"/><polygon fill="#A9A9A9" points="247.75,545.6523,237.75,549.6523,247.75,553.6523,243.75,549.6523" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="225.75" y1="517.6523" y2="537.6523"/><polygon fill="#A9A9A9" points="221.75,527.6523,225.75,537.6523,229.75,527.6523,225.75,531.6523" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="225.75" y1="374.3145" y2="394.3145"/><polygon fill="#A9A9A9" points="221.75,384.3145,225.75,394.3145,229.75,384.3145,225.75,388.3145" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="131" x2="84.25" y1="215.9941" y2="215.9941"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="84.25" x2="84.25" y1="215.9941" y2="237.9941"/><polygon fill="#A9A9A9" points="80.25,227.9941,84.25,237.9941,88.25,227.9941,84.25,231.9941" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="179" x2="225.75" y1="215.9941" y2="215.9941"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="225.75" y1="215.9941" y2="244.0137"/><polygon fill="#A9A9A9" points="221.75,234.0137,225.75,244.0137,229.75,234.0137,225.75,238.0137" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="84.25" x2="84.25" y1="335.4629" y2="579.6523"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="84.25" x2="143" y1="579.6523" y2="579.6523"/><polygon fill="#A9A9A9" points="133,575.6523,143,579.6523,133,583.6523,137,579.6523" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="225.75" y1="561.6523" y2="579.6523"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="225.75" x2="167" y1="579.6523" y2="579.6523"/><polygon fill="#A9A9A9" points="177,575.6523,167,579.6523,177,583.6523,173,579.6523" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="155" x2="155" y1="174.375" y2="203.9941"/><polygon fill="#A9A9A9" points="151,193.9941,155,203.9941,159,193.9941,155,197.9941" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="155" x2="155" y1="591.6523" y2="611.6523"/><polygon fill="#A9A9A9" points="151,601.6523,155,611.6523,159,601.6523,155,605.6523" style="stroke: #A9A9A9; stroke-width: 1.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam activity {
+   startColor #DarkGrey
+   endColor #DarkGrey
+   borderColor #DarkGrey
+   BackgroundColor #222222
+   FontColor #DarkGrey
+   DiamondBorderColor #DarkGrey
+   DiamondBackgroundColor #222222
+}
+skinparam note {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+start
+:Crear rama de\n pre-producción;
+:Construir \n(compilar, enlazar, ...);
+if() then (<font color="red">!construye</font>)
+:Construcción \npara \narreglar error \nen el entorno \nlocal|
+else
+:Ejecutar todas \nlas pruebas;
+note right
+Pruebas
+ Alpha
+endnote
+:Mostrar por Radiador;
+if() then (<font color="red">rojo</font>)
+:Construcción \npara arreglar error \nen el entorno local|
+endif
+endif
+stop
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.8+10
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="632px" preserveAspectRatio="none" style="width:370px;height:632px;background:#222222;" version="1.1" viewBox="0 0 370 632" width="370px" zoomAndPan="magnify"><defs/><g><ellipse cx="172" cy="20" fill="#A9A9A9" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#222222" height="67.2813" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="98" x="123" y="50"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="52" x="134" y="73.457">Checkout</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="76" x="134" y="88.5508">de la rama de</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="137" y="103.6445">desarrollo</text><rect fill="#222222" height="52.1875" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="139" x="102.5" y="137.2813"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="51" x="113.5" y="160.7383">Construir</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="117" x="113.5" y="175.832">(compilar, enlazar, ...)</text><polygon fill="#222222" points="160,219.0879,184,219.0879,196,231.0879,184,243.0879,160,243.0879,148,231.0879,160,219.0879" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#FF0000" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="120" x="27" y="224.082">!construye</text><rect fill="#222222" height="67.2813" style="stroke: #A9A9A9; stroke-width: 1.5;" width="146" x="10" y="253.0879"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="15" x2="15" y1="253.0879" y2="320.3691"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="151" x2="151" y1="253.0879" y2="320.3691"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="76" x="21" y="276.5449">Construcción</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="124" x="21" y="291.6387">para arreglar un error</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="104" x="21" y="306.7324">en el entorno local</text><rect fill="#222222" height="37.0938" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="170" x="176" y="253.0879"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="148" x="187" y="276.5449">Ejecutar todas las pruebas</text><rect fill="#222222" height="37.0938" rx="12.5" ry="12.5" style="stroke: #A9A9A9; stroke-width: 1.5;" width="138" x="192" y="325.1816"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="203" y="348.6387">Mostrar por Radiador</text><rect fill="#222222" height="67.2813" style="stroke: #A9A9A9; stroke-width: 1.5;" width="146" x="188" y="438.332"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="193" x2="193" y1="438.332" y2="505.6133"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="329" x2="329" y1="438.332" y2="505.6133"/><text fill="#A9A9A9" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="76" x="199" y="461.7891">Construcción</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="124" x="199" y="476.8828">para arreglar un error</text><text fill="#A9A9A9" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="104" x="199" y="491.9766">en el entorno local</text><polygon fill="#222222" points="249,382.2754,273,382.2754,285,394.2754,273,406.2754,249,406.2754,237,394.2754,249,382.2754" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#FF0000" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="48" x="266" y="427.3828">rojo</text><polygon fill="#222222" points="261,525.6133,273,537.6133,261,549.6133,249,537.6133,261,525.6133" style="stroke: #A9A9A9; stroke-width: 1.5;"/><polygon fill="#222222" points="172,555.6133,184,567.6133,172,579.6133,160,567.6133,172,555.6133" style="stroke: #A9A9A9; stroke-width: 1.5;"/><ellipse cx="172" cy="610.6133" fill="#FFFFFF" rx="11" ry="11" style="stroke: #A9A9A9; stroke-width: 1.0;"/><ellipse cx="172" cy="610.6133" fill="#A9A9A9" rx="6" ry="6" style="stroke: #D4D4D4; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="172" x2="172" y1="30" y2="50"/><polygon fill="#A9A9A9" points="168,40,172,50,176,40,172,44" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="172" x2="172" y1="117.2813" y2="137.2813"/><polygon fill="#A9A9A9" points="168,127.2813,172,137.2813,176,127.2813,172,131.2813" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="261" y1="290.1816" y2="325.1816"/><polygon fill="#A9A9A9" points="257,315.1816,261,325.1816,265,315.1816,261,319.1816" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="261" y1="406.2754" y2="438.332"/><polygon fill="#A9A9A9" points="257,428.332,261,438.332,265,428.332,261,432.332" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="285" x2="344" y1="394.2754" y2="394.2754"/><polygon fill="#A9A9A9" points="340,462.9727,344,472.9727,348,462.9727,344,466.9727" style="stroke: #A9A9A9; stroke-width: 1.5;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="344" x2="344" y1="394.2754" y2="537.6133"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="344" x2="273" y1="537.6133" y2="537.6133"/><polygon fill="#A9A9A9" points="283,533.6133,273,537.6133,283,541.6133,279,537.6133" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="261" y1="505.6133" y2="525.6133"/><polygon fill="#A9A9A9" points="257,515.6133,261,525.6133,265,515.6133,261,519.6133" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="261" y1="362.2754" y2="382.2754"/><polygon fill="#A9A9A9" points="257,372.2754,261,382.2754,265,372.2754,261,376.2754" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="148" x2="83" y1="231.0879" y2="231.0879"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="83" x2="83" y1="231.0879" y2="253.0879"/><polygon fill="#A9A9A9" points="79,243.0879,83,253.0879,87,243.0879,83,247.0879" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="196" x2="261" y1="231.0879" y2="231.0879"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="261" y1="231.0879" y2="253.0879"/><polygon fill="#A9A9A9" points="257,243.0879,261,253.0879,265,243.0879,261,247.0879" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="83" x2="83" y1="320.3691" y2="567.6133"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="83" x2="160" y1="567.6133" y2="567.6133"/><polygon fill="#A9A9A9" points="150,563.6133,160,567.6133,150,571.6133,154,567.6133" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="261" y1="549.6133" y2="567.6133"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="261" x2="184" y1="567.6133" y2="567.6133"/><polygon fill="#A9A9A9" points="194,563.6133,184,567.6133,194,571.6133,190,567.6133" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="172" x2="172" y1="189.4688" y2="219.0879"/><polygon fill="#A9A9A9" points="168,209.0879,172,219.0879,176,209.0879,172,213.0879" style="stroke: #A9A9A9; stroke-width: 1.0;"/><line style="stroke: #A9A9A9; stroke-width: 1.5;" x1="172" x2="172" y1="579.6133" y2="599.6133"/><polygon fill="#A9A9A9" points="168,589.6133,172,599.6133,176,589.6133,172,593.6133" style="stroke: #A9A9A9; stroke-width: 1.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam activity {
+   startColor #DarkGrey
+   endColor #DarkGrey
+   borderColor #DarkGrey
+   BackgroundColor #222222
+   FontColor #DarkGrey
+   DiamondBorderColor #DarkGrey
+   DiamondBackgroundColor #222222
+}
+start
+:Checkout \nde la rama de\n desarrollo;
+:Construir \n(compilar, enlazar, ...);
+if () then (<font color="red">!construye</font>)
+:<b>Construcción</b>
+<b>para arreglar un error</b>
+<b>en el entorno local</b>|
+else
+:Ejecutar todas las pruebas;
+:Mostrar por Radiador;
+if () then  (<font color="red">rojo</font>)
+:<b>Construcción</b>
+<b>para arreglar un error</b>
+<b>en el entorno local</b>|
+endif
+endif
+stop
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.8+10
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

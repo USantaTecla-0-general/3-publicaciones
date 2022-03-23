@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.8">
+<meta name="author" content="Santa Tecla">
+<title>Pruebas Unitarias</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="book">
+<div id="header">
+<h1>Pruebas Unitarias</h1>
+<div class="details">
+<span id="author" class="author">Santa Tecla</span><br>
+<span id="email" class="email"><a href="mailto:parqueNaturalSantaTecla@gmail.com">parqueNaturalSantaTecla@gmail.com</a></span><br>
+<span id="revnumber">version 0.0.1</span>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Índice</div>
+<ul class="sectlevel0">
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
+<li><a href="#qué"><strong>¿Qué?</strong></a></li>
+<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
+<li><a href="#cómo"><strong>¿Cómo?</strong></a>
+<ul class="sectlevel1">
+<li><a href="#reducen-los-riesgos">Reducen los Riesgos</a>
+<ul class="sectlevel2">
+<li><a href="#inocuas">Inocuas</a></li>
+<li><a href="#red-de-seguridad">Red de Seguridad</a></li>
+</ul>
+</li>
+<li><a href="#fáciles-de-ejecutar">Fáciles de Ejecutar</a>
+<ul class="sectlevel2">
+<li><a href="#automatizadas">Automatizadas</a></li>
+<li><a href="#autoverificables">Autoverificables</a></li>
+<li><a href="#repetibles">Repetibles</a></li>
+<li><a href="#independientes">Independientes</a></li>
+<li><a href="#rápidas">Rápidas</a></li>
+</ul>
+</li>
+<li><a href="#fáciles-de-mantener">Fáciles de Mantener</a>
+<ul class="sectlevel2">
+<li><a href="#profesionales">Profesionales</a></li>
+</ul>
+</li>
+<li><a href="#fáciles-de-leerescribir">Fáciles de Leer/Escribir</a>
+<ul class="sectlevel2">
+<li><a href="#cohesivas">Cohesivas</a></li>
+<li><a href="#sencillas">Sencillas</a></li>
+<li><a href="#expresivas">Expresivas</a></li>
+</ul>
+</li>
+<li><a href="#mejoran-la-comprensión-del-sut">Mejoran la Comprensión del SUT</a>
+<ul class="sectlevel2">
+<li><a href="#mejoran-la-documentación">Mejoran la Documentación</a></li>
+</ul>
+</li>
+<li><a href="#mejoran-la-calidad">Mejoran la Calidad</a>
+<ul class="sectlevel2">
+<li><a href="#pruebas-como-especificación">Pruebas como especificación</a></li>
+<li><a href="#repelentes-de-errores">Repelentes de Errores</a></li>
+<li><a href="#localizador-de-defectos">Localizador de Defectos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
+<li><a href="#bibliografía"><strong>Bibliografía</strong></a>
+<ul class="sectlevel1">
+<li><a href="#ponente">Ponente</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div>
+</div>
+</div>
+<h1 id="por-qué" class="sect0"><strong>¿Por qué?</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si las pruebas son <strong class="red">viscosas</strong>, <span class="red">difíciles de leer o de escribir o &#8230;&#8203;</span></p>
+</li>
+<li>
+<p>Si las pruebas son <strong class="red">rígidas</strong>, <span class="red">difíciles de mantener o extender o &#8230;&#8203;</span></p>
+</li>
+<li>
+<p>Si las pruebas son <strong class="red">difíciles de ejecutar</strong>, <span class="red">lentas o acopladas a un entorno o &#8230;&#8203;</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Entonces las pruebas <strong class="red">no mejoran la documentación del SUT</strong>, <span class="green">para corregirlo e incrementarlo</span></p>
+</li>
+<li>
+<p>Entonces las pruebas <strong class="red">no mejoran la calidad</strong>, <span class="red">sin retroalimentación ante cambios del SUT</span></p>
+</li>
+<li>
+<p>Entonces los <strong class="red">riesgos son altos</strong> a falta de una buen <strong class="green">Red de Seguridad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="qué" class="sect0"><strong>¿Qué?</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son <strong class="blue">pruebas automáticas</strong>, habitualmente funcionales, cuyo <strong class="blue">SUT es una clase</strong> implantadas habitualmente por el propio desarrollador del SUT</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Pero con esta definición pocas clases <strong class="red">cumplen el criterio</strong></p>
+</li>
+<li>
+<p>Una relajación sería, aquellas pruebas cuyo <strong class="green">SUT no tienen DOC&#8217;s fuera de los paquetes del proyecto  pero excluyendo cuando acceden fuera de la memoria de ejecución</strong>. Por ejemplo, acceso a persistencia, comunicaciones, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="para-qué" class="sect0"><strong>¿Para qué?</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si las pruebas son <strong class="green">fluidas</strong>, <span class="green">fáciles de leer o de escribir o &#8230;&#8203;</span></p>
+</li>
+<li>
+<p>Si las pruebas son <strong class="green">flexibles</strong>, <span class="green">fáciles de mantener o extender o &#8230;&#8203;</span></p>
+</li>
+<li>
+<p>Si las pruebas son <strong class="green">fáciles de ejecutar</strong>, <span class="green">rápidas y no acopladas a un entorno o &#8230;&#8203;</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Entonces las pruebas <strong class="green">mejoran la documentación del SUT</strong>, <span class="green">para corregirlo e incrementarlo</span></p>
+</li>
+<li>
+<p>Entonces las pruebas <strong class="green">mejoran la calidad</strong>, <span class="green">con retroalimentación ante cambios del SUT</span></p>
+</li>
+<li>
+<p>Entonces los <strong class="green">riesgos son bajos</strong> por una buena <strong class="green">Red de Seguridad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="cómo" class="sect0"><strong>¿Cómo?</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Reducen los Riesgos</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Inocuas</span></p>
+</li>
+<li>
+<p><span class="blue">Red de Seguridad</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Fáciles de Ejecutar</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Automatizadas</span></p>
+</li>
+<li>
+<p><span class="blue">Auto-verificables</span></p>
+</li>
+<li>
+<p><span class="blue">Repetibles</span></p>
+</li>
+<li>
+<p><span class="blue">Independientes</span></p>
+</li>
+<li>
+<p><span class="blue">Rápidas</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Fáciles de Mantener</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Profesionales</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Fáciles de Leer/Escribir</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Cohesivas</span></p>
+</li>
+<li>
+<p><span class="blue">Sencillas</span></p>
+</li>
+<li>
+<p><span class="blue">Expresivas</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Mejoran la Comprensión del SUT</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Parte de la Documentación</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Mejoran la Calidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Repelentes de Errores</span></p>
+</li>
+<li>
+<p><span class="blue">Localizan Defectos</span></p>
+</li>
+<li>
+<p><span class="blue">Parte de la Especificación</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reducen-los-riesgos">Reducen los Riesgos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 50%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La planificación de pruebas debe <strong class="blue">revisar todos los riesgos del proyecto</strong> y discutir sobre la clase de riesgos que podrían <strong class="blue">ser mitigados</strong>, al menos parcialmente, a través de las pruebas automáticas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong class="green">Red de Seguridad</strong> debe ser un <strong class="red">juego de pruebas exhaustivo y muy superior frente a las pruebas manuales de validación por parte del cliente</strong>.</p>
+</li>
+<li>
+<p>Por tanto, debe alcanzarse una <strong class="red">alta cobertura</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Inocuas</strong></p>
+</li>
+<li>
+<p><strong class="blue">Red de Seguridad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="inocuas">Inocuas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas <strong class="red">no deben introducir nuevos fallos</strong> por lo que <strong class="red">no se debe modificar el SUT</strong> con “nuevos problemas”.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Por tanto, se debe <strong class="green">mantener toda la lógica de la prueba fuera del SUT</strong>, de tal forma que cualquier código específico de la prueba debe ser aportado por la prueba y sólo en el entorno de prueba.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 25%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Manazas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">incorpora/modifica código de producción para facilitar su codificación</strong>: añadir métodos get, cambiar la signatura del método para devolver un valor esperado, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>modificando el SUT: <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/closedInterval/v1/modifiyingSUT/ClosedInterval.java"><em>closedInterval/v1/ modifiyingSUT/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v1/modifiyingSUT/ClosedIntervalTest.java"><em>closedInterval/v1/ modifiyingSUT/ ClosedIntervalTest</em></a> vs</p>
+</li>
+<li>
+<p>métodos cruzado: <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/closedInterval/v2/crossTest/ClosedInterval.java"><em>closedInterval/v2/ crossTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v2/crossTest/ClosedIntervalTest.java"><em>closedInterval/v2/ crossTest/ ClosedIntervalTest</em></a> vs</p>
+</li>
+<li>
+<p>herencia: <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/closedInterval/v3/inheritTest/ClosedInterval.java"><em>closedInterval/v3/ inheritTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v3/inheritTest/ClosedIntervalTest.java"><em>closedInterval/v3/ inheritTest/ ClosedIntervalTest</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v3/inheritTest/models/ClosedInterval.java"><em>closedInterval/v3/ inheritTest/models/ ClosedInterval</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="red-de-seguridad">Red de Seguridad</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas deben <strong class="blue">evidenciar todos los fallos</strong> de tal forma que los <strong class="green">errores no detectados en producción sean muy infrecuentes</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 40.909%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Infalible</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba se escribió <strong class="red">para pasar en lugar de para fallar primero</strong>. Como desafortunado efecto colateral, sucede que el <strong class="red">test siempre funciona</strong>, aunque debiese fallar, creando una falsa sensación de seguridad</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/closedInterval/v4/neverFailingTest/ClosedInterval.java"><em>closedInterval/v4/ neverFailingTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v4/neverFailingTest/ClosedIntervalTest.java"><em>closedInterval/v4/ neverFailingTest/ ClosedIntervalTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/closedInterval/v2/crossTest/ClosedInterval.java"><em>closedInterval/v2/ crossTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v2/crossTest/ClosedIntervalTest.java"><em>closedInterval/v2/ crossTest/ ClosedIntervalTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Errática</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">a veces pasa y a veces falla</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">El poder de la <em>barra roja</em> disminuye significativamente cuando se ve regularmente</strong>, se comienza a ignorar y se ha perdido gran parte del valor de las pruebas sin la retroalimentación que indica si se ha introducido un error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/shuffleTest/v1/erraticTest/ShuffleTest.java"><em>shuffleTest/v1/ erraticTest/ ShuffleTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/shuffleTest/v2/notErraticTest/ShuffleTest.java"><em>shuffleTest/v2/ notErraticTest/ ShuffleTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Incompleta</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que parece confiable porque ha sido probado <strong class="red">a fondo cuando, de hecho, no lo hace</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/factorial/v1/incompleteTest/Math.java"><em>factorial/v1/ incompleteTest/ Math</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/factorial/v1/incompleteTest/MathTest.java"><em>factorial/v1/ incompleteTest/ MathTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/factorial/v2/completeTest/Math.java"><em>factorial/v2/ completeTest/ Math</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/factorial/v2/completeTest/MathTest.java"><em>factorial/v2/ completeTest/ MathTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Bajas Expectativas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que toma un atajo con el que puede ayudarle a ir más rápido pero <strong class="red">no prueba la característica en toda su extensión</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/main/java/usantatecla/closedInterval/v5/loweredExpectations/ClosedInterval.java"><em>closedInterval/v5/ loweredExpectations/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v5/loweredExpectations/ClosedIntervalTest.java"><em>closedInterval/v5/ loweredExpectations/ ClosedIntervalTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fáciles-de-ejecutar">Fáciles de Ejecutar</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28%;">
+<col style="width: 57%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong class="blue">pruebas automatizadas se ejecutarán con frecuencia</strong> sólo si son realmente fáciles de ejecutar</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un <strong class="green">clic de un botón</strong>, o atajo de teclado, es todo lo necesario para obtener la valiosa <strong class="green">retroalimentación</strong> que proporcionan la ejecución de pruebas: <strong class="green">verde</strong> o <strong class="red">rojo</strong>!</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Automatizadas</strong></p>
+</li>
+<li>
+<p><strong class="blue">Autoverificables</strong></p>
+</li>
+<li>
+<p><strong class="blue">Repetibles</strong></p>
+</li>
+<li>
+<p><strong class="blue">Independientes</strong></p>
+</li>
+<li>
+<p><strong class="blue">Rapidas</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="automatizadas">Automatizadas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La prueba <strong class="red">no requiere intervención humana para su ejecución</strong> más que un <em>click</em> para disparar el conjunto de pruebas deseado</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Interventora</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba cuya ejecución <strong class="red">requiere de la intervención humana para suministrar datos por teclado</strong>, configuraciones previas por la existencia de un fichero vacío, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v6/interventionalTest/ClosedIntervalTest.java"><em>closedInterval/v6/ interventionalTest/ ClosedIntervalTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="autoverificables">Autoverificables</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La prueba <strong class="red">no requiere intervención humana para evaluar su resultado</strong> en verde, o sea, aplicar el <strong class="green">Principio Hollywood, “No me llames, ya te llamaré”</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Bocazas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">llena la consola con mensajes</strong> de diagnóstico, de logs, depuración, &#8230;&#8203; incluso cuando pasan los test.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/closedInterval/v7/interventionalTest/ClosedIntervalTest.java"><em>closedInterval/v7/ interventionalTest/ ClosedIntervalTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="repetibles">Repetibles</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong class="blue">ejecuciones consecutivas</strong> del mismo conjunto de pruebas desprenden el mismo resultado cuantas veces sea, no la <strong class="red">primera diferente de la segunda o de forma “aleatoria”</strong>, cuantas veces sea.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Abundantes Sobras</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una prueba que crea datos</strong> que se guardan en algún lugar y <strong class="red">otra prueba los reutiliza</strong> para sus propios fines siendo dependiente del orden de ejecución de la prueba.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/executable/repeatable/abundantLeftoversTest/TurnSharedTest.java"><em>characteristics.executable .repeatable.abundantLeftoversTest .TurnSharedTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="independientes">Independientes</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las ejecuciones del mismo conjunto de pruebas desprenden el mismo resultado <strong class="red">independientemente del entorno</strong>: local, integración o pre-producción</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Dependencia oculta</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">requiere que existan datos en alguna parte</strong> antes de correr. Si los datos no se rellenaron, la prueba falla sin dejar apenas explicación.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/executable/independent/hiddenDependencieTest/DecisionTreeBoardTest.java"><em>characteristics.executable .independent.hiddenDependencieTest .DecisionTreeBoardTest.testWriteFile</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="rápidas">Rápidas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">conjunto de pruebas</strong> de regresión se ejecuta en <strong class="red">segundos como máximo</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Lenta</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que se ejecuta de forma <strong class="red">increíblemente lenta</strong>. Se evita con dobles de algún DOC lento.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/executable/fast/slowTest/DecisionTreeBoardTest.java"><em>characteristics.executable .fast.slowTest .DecisionTreeBoardTest.testWriteFile</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fáciles-de-mantener">Fáciles de Mantener</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Inevitablemente, queremos hacer muchos tipos de cambios en el código a medida que un proyecto se desarrolla y sus <strong class="blue">requisitos evolucionan</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Profesionales</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Por esta razón, queremos escribir nuestras pruebas de tal manera que el <strong class="green">número de pruebas afectadas por cualquier cambio sea bastante pequeño</strong>.</p>
+</li>
+<li>
+<p>Eso significa que necesitamos <strong class="green">minimizar la superposición entre las pruebas</strong>.</p>
+</li>
+<li>
+<p>También debemos asegurarnos de que los <strong class="green">cambios en el entorno de prueba no afectan</strong> nuestras pruebas;</p>
+</li>
+<li>
+<p>Lo hacemos <strong class="green">aislando el SUT del medio ambiente</strong> tanto como sea posible. Esto resulta en pruebas mucho más robustas.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Idealmente, <strong class="green">sólo un tipo de cambio debe hacer que una prueba requiera mantenimiento</strong>.</p>
+</li>
+<li>
+<p>Los cambios del sistema que afectan al código de prueba en la preparación del SUT o su desmontaje pueden encapsularse en los <strong class="green">Métodos de Utilidad de prueba</strong> (<em>@Before, @BeforeClass, @After</em> y <em>@AfterClass</em>)  para <strong class="green">reducir aún más el número de pruebas directamente afectadas por el cambio</strong>.</p>
+</li>
+<li>
+<p>Se debe <strong class="green">diseñar el código de pruebas de tal forma que se controlen las posibles oleadas de cambios en las prueba por un pequeño cambio del SUT</strong> porque no debe frenar el desarrollo</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="profesionales">Profesionales</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El <strong class="green">código de pruebas debe cumplir los principios de diseño</strong> (<em>por ejemplo, SOLID, GRASP, KISS, DRY, YAGNI</em>, Patrones de Diseño, &#8230;&#8203;) igual que el código de producción</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Comentario engañoso</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La misma situación que en el código de Producción</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/maintenance/professional/misleadingComments/AccountTest.java"><em>characteristics.readable .maintenance.professional .misleadingComments</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Dependiente de la creación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un cambio de constructor afecta a multitud de pruebas. Se evita con <strong>Patrón Builder</strong>, o también conocido como <a href="https://martinfowler.com/bliki/ObjectMother.html">Object Mother</a> en el ámbito de pruebas, "madre/generador" de objetos</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/main/java/usantatecla/qualifications/v1"><em>qualifications/v1</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v1"><em>qualifications/v1</em></a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/main/java/usantatecla/qualifications/v2"><em>qualifications/v2</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v2"><em>qualifications/v2</em></a> y <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v2/builders"><em>qualifications/v2/builders</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fáciles-de-leerescribir">Fáciles de Leer/Escribir</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Probar el código de pruebas es un esfuerzo muy complicado</strong> y sería un problema recursivo: probar el código de pruebas que prueba el código de pruebas, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El código de pruebas tiene que ser <strong class="green">fácil de leer/escribir porque solo tenemos nuestros ojos para permitir detectar errores en el código de pruebas</strong> &#8230;&#8203; así que deben ser muy sencillas por la limitación humana, ya que programar es difícil cuando exige acumular mucha información en la cabeza.</p>
+</li>
+<li>
+<p>Tenemos que <strong class="green">concentrarnos en la prueba, no en codificar la prueba</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="cohesivas">Cohesivas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cada prueba se debe centrar en un único asunto, <strong class="green">evitando métodos que comprueba varias características</strong> del SUT porque, en caso contrario, no permitirá la localización de errores. Por tanto, cada prueba debe cumplir el <strong class="green">Principio de Única Responsabilidad</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Extraña</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong>ni siquiera pertenece a la clase porque es parte de otra prueba</strong> de otro SUT, muy probablemente usado por el SUT de la prueba pero saltándose la interacción que hay entre ambos</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/maintenance/professional/misleadingComments/AccountTest.java"><em>characteristics.maintenance .professional.misleadingComments</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Dependiente de la creación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un cambio de constructor afecta a multitud de pruebas. Se evita con <strong>Patrón Builder</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/characteristics/readable/cohesive/strangeTest"><em>characteristics.readable .cohesive.strangeTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sencillas">Sencillas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Evitar que la prueba verifica demasiada funcionalidad en una sola prueba.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hay que <strong class="green">partir en varios métodos atómicos</strong> de prueba, incluso en <strong>varias clases de prueba</strong>.</p>
+</li>
+<li>
+<p>Un método de prueba <strong class="green">raramente excede las 10 líneas de código</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Aserciones Sobreprotegidas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que incorpora aserciones innecesarias. Por ejemplo, porque aplica la programación defensiva en su código protegiendo el fallo con una fea NullPointerExceptiony, en su lugar, dejando que la prueba falle con gracia con un error de aserción bien formulado</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/overprotectiveTests/v1/ProjectTest.java"><em>characteristics.readable .simple.overprotectiveTests .v1.ProjectTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/overprotectiveTests/v2/ProjectTest.java"><em>characteristics.readable .simple.overprotectiveTests .v2.ProjectTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Cotilla</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que compara la salida “completa” del ejercicio del SUT que se está probando cuando en realidad solo se precisa parcialmente para la verificación de la característica, aumentando los esfuerzos de comprensión y mantenimiento</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/snitchTest/DecisionTreeBoardTest.java"><em>characteristics.readable .simple.snitchTest .DecisionTreeBoardTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba de Múltiple Personalidad</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba verifica varias características del SUT en un mismo método de prueba. Lo correcto será partir en varios métodos, incluso en varias clases.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/splitPersonality/v1/ConfigurationTest.java"><em>characteristics.readable .simple.splitPersonality .v1.ConfigurationTest</em></a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/splitPersonality/v2/ConfigurationTest.java"><em>characteristics.readable .simple.splitPersonality .v2.ConfigurationTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Lógica Condicional</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba contempla sentencias alternativas que dificultan la comprensión de la prueba</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/conditionalLogic/v1/DictionaryTest.java"><em>characteristics.readable .simple.conditionalLogicTest .v1.DictionaryTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/simple/conditionalLogic/v2/DictionaryTest.java"><em>characteristics.readable .simple.conditionalLogicTest .v2.DictionaryTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="expresivas">Expresivas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Maximizar el objetivo de la prueba</strong></p>
+</li>
+<li>
+<p>Una prueba <strong class="red">no debe contemplar una brecha de expresividad demasiado grande entre el código de la prueba y los conceptos del dominio que está tratando de expresar</strong> la prueba.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Esta "brecha de expresividad" se puede resolver <strong class="green">creando una biblioteca de Métodos de Utilidad</strong> de Prueba que constituyen un <strong class="green">lenguaje de prueba específico del dominio</strong>.</p>
+</li>
+<li>
+<p>Esta colección de métodos <strong class="green">permite a las pruebas expresar los conceptos que desean probar sin tener que traducir sus pensamientos en código mucho más detallado</strong>.</p>
+</li>
+<li>
+<p><strong class="green">Métodos de creación y aserción personalizadas</strong> son buenos ejemplos de los bloques de construcción que conforman dicho lenguaje de nivel superior.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba obscura</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba con <strong class="red">nombre poco descriptivo</strong> (<em>por ejemplo, test1, &#8230;&#8203;</em>) cuando debería expresar con total claridad la intención del mismo. Se evita con nombres descriptivos, sea la longitud que sea necesaria para el identificador.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Números Mágicos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba con <strong class="red">literales en el código que no revelan su significado</strong>. Se evita con una función que dé nombre explícitamente a cada literal.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/magicNumbers/v1/BowlingGameTest.java"><em>characteristics.readable .expressive.magicNumbers .v1.BowlingGameTest</em></a> vs</p>
+</li>
+<li>
+<p>- <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/magicNumbers/v2/BowlingGameTest.java"><em>characteristics.readable .expressive.magicNumbers .v2.BowlingGameTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Detalles Incidentales</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba con <strong class="red">sobreinformación de cómo se crea, ejercita o verifica un SUT</strong>: algoritmos, valores necesarios para la construcción de la prueba,&#8230;&#8203; Se evita con un único nivel de abstracción a través de buenos nombres de métodos privados de la prueba que encapsulen la sobreinformación</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/main/java/usantatecla/qualifications/v2"><em>qualifications/v2</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v2"><em>qualifications/v2</em></a> y <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v2/builders"><em>qualifications/v2/builders</em></a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/main/java/usantatecla/qualifications/v3"><em>qualifications/v3</em></a> con <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v3"><em>qualifications/v3</em></a> y <a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/tree/master/src/test/java/usantatecla/qualifications/v3/builders"><em>qualifications/v3/builders</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Sermón de Preparación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba tiene una <strong class="red">preparación muy larga y no se ven los datos relevantes</strong> de tal forma que no se sabe lo que se está probando. Hay que usar métodos privados para encapsular detalles indeseados</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/setupSermon/v1/PackageFetcherTest.java"><em>characteristics.readable .expressive.setupSermon .v1.PackageFetcherTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/setupSermon/v2/PackageFetcherTest.java"><em>characteristics.readable .expressive.setupSermon .v2.PackageFetcherTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Aserciones Primitivas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">no parece tener sentido</strong> porque la justificación e intención de la prueba está oculta <strong class="red">tras palabras y números aparentemente sin sentido</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/primitiveAssertion/v1/GrepTest.java"><em>characteristics.readable .expressive.primitiveAssertion .v1.GrepTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/primitiveAssertion/v2/GrepTest.java"><em>characteristics.readable .expressive.primitiveAssertion .v2.GrepTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/primitiveAssertion/v3/GrepTest.java"><em>characteristics.readable .expressive.primitiveAssertion .v3.GrepTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/primitiveAssertion/v4/GrepTest.java"><em>characteristics.readable .expressive.primitiveAssertion .v4.GrepTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Híper-aserciones</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba debería tener <strong class="red">una sola razón para fallar</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/hyperassertion/v1/LogFileTransformerTest.java"><em>characteristics.readable .expresive.hyperassertion .v1.LogFileTransformerTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-3-pruebas/x-unitTests/blob/master/src/test/java/usantatecla/characteristics/readable/expressive/hyperassertion/v2/LogFileTransformerTest.java"><em>characteristics.readable .expresive.hyperassertion .v2.LogFileTransformerTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mejoran-la-comprensión-del-sut">Mejoran la Comprensión del SUT</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Deben mostrar al lector cómo supuestamente trabaja el código</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas de caja negra <strong class="blue">describen los requisitos funcionales del componente software</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="mejoran-la-documentación">Mejoran la Documentación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 15%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Sin pruebas automáticas</strong>, necesitaríamos volcarnos sobre el SUT intentando responder la pregunta, <strong class="red">¿cuál sería el resultado si &#8230;&#8203;?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Con pruebas automáticas</strong>, se permite la <strong class="green">experimentación inmediata, retroalimentación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-project-ticTacToe/requirements"><em>USantaTecla- project- ticTacToe/requirements</em></a> con <a href="https://github.com/USantaTecla-project-ticTacToe/java.swing.socket.sql"><em>USantaTecla- project- ticTacToe/ java.swing.socket.sql</em></a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-project-mastermind/requirements"><em>USantaTecla- project- mastermind/ requirements</em></a> con <a href="https://github.com/USantaTecla-project-mastermind/java.swing.socket.sql"><em>USantaTecla- project- mastermind/ java.swing.socket.sql</em></a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-project-draughts/requirements"><em>USantaTecla- project- draughts/ requirements</em></a> con <a href="https://github.com/USantaTecla-project-draughts/java.swing.socket.sql"><em>USantaTecla- project- draughts/ java.swing.socket.sql</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mejoran-la-calidad">Mejoran la Calidad</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">verificar</strong>, ¿es está construyendo el sistema correctamente? y</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">validar</strong>, ¿se está construyendo el sistema correcto?</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="pruebas-como-especificación">Pruebas como especificación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas nos <strong class="green">permiten especificar el comportamiento</strong> a través de distintos escenarios con suficiente detalle nos ayudan a <strong class="red">identificar áreas donde los requisitos son ambiguos o contradictorios</strong>, como una <strong class="green">“especificación ejecutable”</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Tal análisis <strong class="green">mejora la calidad de la especificación, lo cual mejora la calidad del software</strong> así especificado.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="repelentes-de-errores">Repelentes de Errores</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas <strong class="green">previenen de errores</strong> antes de entregar el código desde que son introducidos gracias a la <strong class="green">reusabilidad de las pruebas de regresión</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="localizador-de-defectos">Localizador de Defectos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong class="green">pruebas de aceptación</strong> por parte del cliente nos dicen que algún <strong class="red">comportamiento esperado por el cliente no está funcionando</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong class="green">pruebas unitarias nos dicen por qué</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pero si son bastante pequeñas, es decir, <strong class="red">probamos solamente un solo comportamiento en cada una</strong>.</p>
+</li>
+<li>
+<p>Así, deberíamos ser <strong class="green">capaces de localizar el error rápidamente</strong> basado en qué prueba falla, por <strong class="blue">triangulación</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h1 id="sintesis" class="sect0"><strong>Sintesis</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<span class="image"><img src="images/sintesis.png" alt="sintesis"></span>
+</div>
+</div>
+<h1 id="bibliografía" class="sect0"><strong>Bibliografía</strong></h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>xUnit Test Patterns: Refactoring Test Code</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Gerard Meszaros</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Educational Publishers Inc; Edición: 01 (21 de mayo de 2007)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/xUnitTestPatternsRefactoringTestCode.jpg" alt="xUnitTestPatternsRefactoringTestCode" width="177" height="266"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Effective Unit Testing</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lasse Koskela</strong></p>
+</li>
+<li>
+<p>Manning Publications Company; Edición: 1 (16 de febrero de 2013)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/EffectiveUnitTesting.jpg" alt="EffectiveUnitTesting" width="177" height="266"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>The Art of Software Testing</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Glenford J. Myers</strong></p>
+</li>
+<li>
+<p>John Wiley &amp; Sons Inc; Edición: 3. Auflage (16 de diciembre de 2011)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TheArtofSoftwareTesting.jpg" alt="TheArtofSoftwareTesting" width="177" height="266"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Pragmatic Unit Testing in Java with JUnit</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Andy Hunt, Dave Thomas</strong></p>
+</li>
+<li>
+<p>The Pragmatic Programmers (1674)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/PragmaticUnitTestinginJavawithJUnit.jpg" alt="PragmaticUnitTestinginJavawithJUnit" width="177" height="266"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Testing Computer Software</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cem Kaner,Jack Falk,Hung Q. Nguyen</strong></p>
+</li>
+<li>
+<p>Wiley John + Sons; Edición: 2nd (12 de abril de 1999)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TestingComputerSoftware.jpg" alt="TestingComputerSoftware" width="177" height="266"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Diseno Agil con TDD</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ble Jurado, Carlos</strong></p>
+</li>
+<li>
+<p>Lulu.com (18 de enero de 2010)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/DisenoAgilconTDD.jpg" alt="DisenoAgilconTDD" width="177" height="266"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Test Driven Development</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Kent Beck</strong></p>
+</li>
+<li>
+<p>Addison Wesley; Edición: 01 (8 de noviembre de 2002)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="TestDrivenDevelopment" width="177" height="266"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Growing Object-Oriented Software, Guided by Tests</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Steve Freeman</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Professional (12 de octubre de 2009)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/GrowingObjectOrientedSoftware,GuidedbyTests.jpg" alt="GrowingObjectOrientedSoftware,GuidedbyTests" width="177" height="266"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>How Google Tests Software</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>James A. Whittaker,Jason Arbon,Jeff Carollo</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Educational Publishers Inc; Edición: 01 (2 de abril de 2012)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/HowGoogleTestsSoftware.jpg" alt="HowGoogleTestsSoftware" width="177" height="266"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mike Clark</strong></p>
+</li>
+<li>
+<p>The Pragmatic Programmers (1900)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/PragmaticProjectAutomation.jpg" alt="PragmaticProjectAutomation" width="177" height="266"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ponente">Ponente</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Luis Fernández Muñoz</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Formador/Consultor</em></p>
+</li>
+<li>
+<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
+</li>
+<li>
+<p><em>Ingeniero en Informática por la UMA</em></p>
+</li>
+<li>
+<p><em>Diplomado en Informática por la UPM</em></p>
+</li>
+<li>
+<p><em>Profesor Titular de ETSISI de la UPM</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 0.0.1<br>
+Last updated 2021-12-29 17:21:08 +0100
+</div>
+</div>
+<script>
+                let speed = 50;
+                
+                function typeWriter(v) {
+                  let i = v.getAttribute("typewriter-index")
+                  let txt = v.getAttribute("typewriter-original")
+                  
+                  if (i < txt.length) {
+                    v.getElementsByTagName("P")[0].innerHTML += txt.charAt(i);
+                    i++;
+                    v.setAttribute("typewriter-index", i)                        
+                  }else{
+                    if( ++i > txt.length+30 ){
+                        v.setAttribute("typewriter-index", 0)
+                        v.getElementsByTagName("P")[0].innerHTML = ''
+                    }
+                  }
+                }
+                
+                function typeWriterAll(){
+                    [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                        typeWriter(v)
+                    })
+                    setTimeout(typeWriterAll, speed);
+                }
+                                    
+                [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                    v.setAttribute("typewriter-original", v.innerText)
+                    v.setAttribute("typewriter-index", 0)
+                    v.getElementsByTagName("P")[0].innerHTML = ''
+                })
+                
+                setTimeout(typeWriterAll, speed);
+                
+                </script>
+</html>
