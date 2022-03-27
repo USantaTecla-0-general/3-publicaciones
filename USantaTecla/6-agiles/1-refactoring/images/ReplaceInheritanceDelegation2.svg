@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="194px" preserveAspectRatio="none" style="width:365px;height:194px;background:#222222;" version="1.1" viewBox="0 0 365 194" width="365px" zoomAndPan="magnify"><defs/><g><!--class Vector--><rect fill="#222222" height="75.6982" id="Vector" style="stroke: #A9A9A9; stroke-width: 3.0;" width="109" x="245" y="8"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="263.5" y="34.1074">Vector</text><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="246" x2="353" y1="46.1133" y2="46.1133"/><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="246" x2="353" y1="54.1133" y2="54.1133"/><ellipse cx="256" cy="70.4058" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="81" x="266" y="74.1938">isEmpty()</text><!--class Stack--><rect fill="#222222" height="75.6982" id="Stack" style="stroke: #A9A9A9; stroke-width: 3.0;" width="109" x="101" y="8"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="125.5" y="34.1074">Stack</text><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="102" x2="209" y1="46.1133" y2="46.1133"/><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="102" x2="209" y1="54.1133" y2="54.1133"/><ellipse cx="112" cy="70.4058" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="81" x="122" y="74.1938">isEmpty()</text><path d="M6,144 L6,182.1133 A0,0 0 0 0 6,182.1133 L305,182.1133 A0,0 0 0 0 305,182.1133 L305,154 L295,144 L159.5,144 L155.5,84.0197 L151.5,144 L6,144 A0,0 0 0 0 6,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M295,144 L295,154 L305,154 L295,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="276" x="13" y="170.1074">return_vector.isEmpty()</text><!--link Stack to Vector--><path d="M210.063,46 C219.979,46 229.896,46 239.813,46 " fill="none" id="Stack-Vector" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="#A9A9A9" points="244.999,46,235.999,42,239.999,46,235.999,50,244.999,46" style="stroke: #A9A9A9; stroke-width: 2.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="224.1192" y="37.3403">1</text><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+hide circle
+hide stereotype
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam note {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+class Vector {
++ isEmpty()
+}
+class Stack{
++ isEmpty()
+}
+
+note bottom
+return_vector.isEmpty()
+end note
+
+Stack -right-> "1" Vector
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.8+10-LTS
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>
