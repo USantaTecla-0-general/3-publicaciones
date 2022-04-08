@@ -483,9 +483,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#objetos">Objetos</a></li>
 <li><a href="#función-constructora">Función Constructora</a></li>
+<li><a href="#patrón-modulo">Patrón Modulo</a></li>
 <li><a href="#clases">Clases</a></li>
 <li><a href="#herencia">Herencia</a></li>
 <li><a href="#envolturas">Envolturas</a></li>
+<li><a href="#símbolos">Símbolos</a></li>
+<li><a href="#arrays-2">Arrays</a></li>
+<li><a href="#funciones-2">Funciones</a></li>
+<li><a href="#estructuras-de-datos">Estructuras de Datos</a></li>
+<li><a href="#callbacks"><em>Callbacks</em></a></li>
+<li><a href="#promesas">Promesas</a></li>
+<li><a href="#funciones-asíncronas">Funciones Asíncronas</a></li>
+<li><a href="#patrón-observadorobservado">Patrón Observador/Observado</a></li>
+</ul>
+</li>
+<li><a href="#programación-modular">Programación Modular</a>
+<ul class="sectlevel2">
+<li><a href="#common-js"><em>Common JS</em></a></li>
+<li><a href="#es-modules"><em>ES Modules</em></a></li>
 </ul>
 </li>
 <li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
@@ -6558,7 +6573,7 @@ console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span
 </ul>
 </div></div></td>
 <td class="tableblock halign-center valign-middle" rowspan="4"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/recorridoRecursivo.png" alt="recorridoRecursivo"></span></p>
+<p><span class="image"><img src="images/metodoRecursivo.jpg" alt="metodoRecursivo"></span></p>
 </div></div></td>
 </tr>
 <tr>
@@ -6804,10 +6819,76 @@ console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Unresolved directive in 4-como/3-procesos/2-recursividad/0-index.adoc - include::2-múltiple.adoc[]
-==== Recursividad Mutua</p>
 </div>
+<div class="sect3">
+<h4 id="recursividad-múltiple">Recursividad Múltiple</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En la recursividad múltiple, en cada aplicación de la función pueden existir <strong>varias aplicaciones de la misma función en cada aplicación</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El seguimiento de una función recursiva múltiple describe un <strong>árbol</strong> de niveles de anidamiento de las llamadas recursivas teniendo en ejecución "pendiente" únicamente una rama de todo el árbol en la pila de ejecución</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/fibonacci.png" alt="fibonacci"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#10-fibonacci">3-numbers/10-fibonacci/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/10-fibonacci/v0.1/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/10-fibonacci/v0.2/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#2-orderv0">6-collections/2-order/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.3/app.js"><em>v0.3</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.4/app.js">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#">6-collections/4-permutations/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.3/app.js"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/2-order/v0.4/app.js">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="recursividad-mutua">Recursividad Mutua</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -8627,6 +8708,10 @@ object.method();</code></pre>
 </table>
 </div>
 <div class="sect2">
+<h3 id="patrón-modulo">Patrón Modulo</h3>
+
+</div>
+<div class="sect2">
 <h3 id="clases">Clases</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -8848,10 +8933,117 @@ Number('123') === 123  // retorna true</p>
 <p>Number("unicorn")  // NaN
 Number(undefined)  // NaN</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in 4-como/4-objetos/0-index.adoc - include::6-arrays.adoc[]
-=== Funciones</p>
 </div>
+<div class="sect2">
+<h3 id="símbolos">Símbolos</h3>
+<div class="paragraph">
+<p>No son objetos!!! Son tipos primitivos!!!</p>
+</div>
+<div class="paragraph">
+<p>Symbols, únicos irrepetibles solo iguales a sí mismos, aunque tengan las misma descrpción!!! no como string</p>
+</div>
+<div class="paragraph">
+<p>var s = Symbol("descripcion")
+var s2 = Symbol("descripcion")
+s == s2 &#8658; false
+s === s &#8658; true
+Symbol.for("descripción") &#8658; como síngleton
+Registro global
+Symbol.keyFor(s)</p>
+</div>
+<div class="paragraph">
+<p>const DIRECTIONS = {
+  left: "left",
+  &#8230;&#8203;
+}</p>
+</div>
+<div class="paragraph">
+<p>mover(DIRECTIONS.left) o mover("left") o mover ("izquierda")</p>
+</div>
+<div class="paragraph">
+<p>const DIRECTIONS = {
+  left: Symbol("left"),
+  &#8230;&#8203;
+}</p>
+</div>
+<div class="paragraph">
+<p>mover(DIRECTIONS.left) y nada más</p>
+</div>
+<div class="paragraph">
+<p>evita colisiones con propiedades
+si son claves de propiedades de objetos no sale con for/in, Object.keys(objeto), &#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="arrays-2">Arrays</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Métodos de <em>arrays</em></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son funciones que admiten como parámetros otras funciones</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">6</span>-tablas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">4</span>-arrays/app.js[]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.5/app.js"><em>v0.5</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.6/app.js">v0.6</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Array</p>
+</div>
+<div class="paragraph">
+<p>array["zzz"] = "zzz";
+for(let item of array){
+    console.writeln(item);
+}
+console.writeln(array[-1]);
+console.writeln(array["zzz"]);
+console.writeln("length: " + array.length);</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="funciones-2">Funciones</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -8936,6 +9128,98 @@ console.writeln(estado.variable);</code></pre>
 <h4 id="clousures">Clousures</h4>
 
 </div>
+</div>
+<div class="sect2">
+<h3 id="estructuras-de-datos">Estructuras de Datos</h3>
+<div class="sect3">
+<h4 id="set"><em>Set</em></h4>
+
+</div>
+<div class="sect3">
+<h4 id="map"><em>Map</em></h4>
+
+</div>
+<div class="sect3">
+<h4 id="stream"><em>Stream</em></h4>
+
+</div>
+<div class="sect3">
+<h4 id="comparación">Comparación</h4>
+
+</div>
+<div class="sect3">
+<h4 id="ordenación">Ordenación</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="callbacks"><em>Callbacks</em></h3>
+
+</div>
+<div class="sect2">
+<h3 id="promesas">Promesas</h3>
+
+</div>
+<div class="sect2">
+<h3 id="funciones-asíncronas">Funciones Asíncronas</h3>
+
+</div>
+<div class="sect2">
+<h3 id="patrón-observadorobservado">Patrón Observador/Observado</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="programación-modular">Programación Modular</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="common-js"><em>Common JS</em></h3>
+
+</div>
+<div class="sect2">
+<h3 id="es-modules"><em>ES Modules</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Modulos</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
