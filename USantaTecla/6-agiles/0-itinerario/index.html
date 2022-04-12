@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8">
 <meta name="author" content="Universo de Santa Tecla &lt;USantaTecla@gmail.com&gt;">
-<title>Proceso de Desarrollo Software</title>
+<title>Proceso de Desarrollo Ágil</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,7 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book">
 <div id="header">
-<h1>Proceso de Desarrollo Software</h1>
+<h1>Proceso de Desarrollo Ágil</h1>
 <div class="details">
 <span id="author" class="author">Universo de Santa Tecla &lt;USantaTecla@gmail.com&gt;</span><br>
 <span id="revnumber">version 0.0.1</span>
@@ -448,19 +448,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Índice</div>
 <ul class="sectlevel1">
 <li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#leyes-del-cambio-continuo">Leyes del Cambio Continuo</a></li>
 <li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#proceso-de-desarrollo-del-software">Proceso de Desarrollo del Software</a></li>
+<li><a href="#manifiesto-ágil">Manifiesto Ágil</a></li>
 <li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#industria">Industria</a></li>
-<li><a href="#metodo-logía-en-cascada">Metodo-logía? en Cascada</a></li>
-<li><a href="#desarrollo-iterativo">Desarrollo Iterativo</a></li>
-<li><a href="#rational-unified-process">Rational Unified Process</a></li>
-<li><a href="#scrum">Scrum</a></li>
-<li><a href="#extreme-programming">eXtreme Programming</a></li>
-<li><a href="#comparativa-entre-rup-vs-scrumxp">Comparativa entre RUP vs Scrum+XP</a></li>
-<li><a href="#manifiesto-ágil">Manifiesto Ágil</a></li>
+<li><a href="#principios">Principios</a></li>
+<li><a href="#métodos">Métodos</a></li>
+<li><a href="#crítica">Crítica</a></li>
 <li><a href="#itinerario">Itinerario</a></li>
 <li><a href="#síntesis"><strong>Síntesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
@@ -552,423 +546,99 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="leyes-del-cambio-continuo">Leyes del Cambio Continuo</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Ley del Cambio Continuo</strong>: Un programa que se usa en un ámbito del mundo real, necesariamente debe cambiar
-o convertirse cada vez en menos útil y menos satisfactorio para el usuario.
-</blockquote>
-<div class="attribution">
-&#8212; Lehman y Belady
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Ley del Crecimiento continuado</strong>: La funcionalidad ofrecida por los sistemas tiene que crecer continuamente para mantener la satisfacción de los usuarios.
-</blockquote>
-<div class="attribution">
-&#8212; Lehman y Belady
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Ley de la Complejidad Creciente</strong>: Debido a que los programas cambian por evolución, su estructura se convierte en más compleja a menos que se hagan esfuerzos activos para evitar este fenómeno
-</blockquote>
-<div class="attribution">
-&#8212; Lehman y Belady
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Ley del Decremento de la calidad</strong>: La calidad de los sistemas software comenzará a disminuir a menos que dichos sistemas se adapten a los cambios de su entorno de funcionamiento.
-</blockquote>
-<div class="attribution">
-&#8212; Lehman y Belady
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ProyectoSoftware.jpg" alt="ProyectoSoftware"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>El desarrollo software es como criar a un hijo &#8230;&#8203; tonto?!?</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>la producción del software sería la gestación del niño, que es un periodo vital en el crecimiento del hijo</em></p>
-</li>
-<li>
-<p><em>el mantenimiento del software sería la educación del niño, que es un periodo largo que depende de la gestación y crianza previas</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><strong class="red"><em>El software no se muere, se convierte en un zombi!!!</em></strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
 <h2 id="qué"><strong>¿Qué?</strong></h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="proceso-de-desarrollo-del-software">Proceso de Desarrollo del Software</h2>
+<h2 id="manifiesto-ágil">Manifiesto Ágil</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 80%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Definición</th>
-<th class="tableblock halign-left valign-top">Sinónimos</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">gestión de proyectos</strong> de software es la encargada de <strong class="blue">planificar</strong> todo el proceso de desarrollo del producto. Es la encargada además de realizar un <strong class="blue">seguimiento</strong> del trabajo de forma que se <strong class="blue">cumplan</strong> los estándares establecidos, se siga la <strong class="blue">agenda</strong> prevista y no se sobrepase el <strong class="blue">presupuesto</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Los métodos o procesos de desarrollo software <strong class="blue">ordenan las distintas actividades de todas las disciplina</strong> con diferentes respuestas a cuándo (planificación), dónde (artefacto), quién (desarrollador) y qué (actividad)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Metodologías</strong> (Método) de Desarrollo Software</p>
-</li>
-<li>
-<p><strong class="green">Proceso de Desarrollo Software</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 23.8095%;">
-<col style="width: 14.2857%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Unidad</th>
-<th class="tableblock halign-left valign-top">Definición</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
-<th class="tableblock halign-left valign-top">Características</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Actividad</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">unidad de trabajo que puede ser solicitado o realizado por un rol individual y que produce un resultado significativo en el contexto del proyecto</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>especificar un caso de uso</em>,</p>
-</li>
-<li>
-<p><em>implementar una clase</em>,</p>
-</li>
-<li>
-<p><em>ejecutar pruebas de rendimiento</em>,</p>
-</li>
-<li>
-<p><em>&#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">propósito claro expresado en términos de crear o modificar artefactos</strong>, generalmente, tales como un modelo, una clase o un plan</p>
-</li>
-<li>
-<p>es asignada a un <strong class="blue">rol específico</strong></p>
-</li>
-<li>
-<p>afecta a <strong class="blue">un solo o un pequeño número de artefactos</strong></p>
-</li>
-<li>
-<p><strong class="blue">granularidad entre unas horas o unos pocos días</strong>, generalmente</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Rol</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">define el comportamiento y responsabilidad de un individuo o un grupo de individuos juntos como un equipo</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>analista de sistemas</em>,</p>
-</li>
-<li>
-<p><em>ingeniero de componentes</em>,</p>
-</li>
-<li>
-<p><em>integrador de sistemas</em>,</p>
-</li>
-<li>
-<p><em>&#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">comportamiento expresado en términos de actividades</strong> que el rol realiza y cada rol es asociado con un conjunto cohesivo de actividades (cada rol es asociado con un conjunto de habilidades para realizar las actividades del rol)</p>
-</li>
-<li>
-<p><strong class="blue">responsabilidad expresada en relación a ciertos artefactos</strong> que el rol crea, modifica o controla</p>
-</li>
-<li>
-<p><strong class="blue">no son individuos</strong> sino que son títulos de trabajo intercambiables</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Artefacto</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">pieza de información que es producida, modificada o usada por un proceso</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>código fuente</em>,</p>
-</li>
-<li>
-<p><em>especificación de un caso de uso</em>,</p>
-</li>
-<li>
-<p><em>arquitectura del software</em>,</p>
-</li>
-<li>
-<p><em>&#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">formales</strong>, típicamente no son documentos abiertos: código, UML, &#8230;&#8203;, algún texto_</p>
-</li>
-<li>
-<p><strong class="blue">productos tangibles</strong>: los elementos que el proyecto produce o usa mientras se trabaja hacia el producto</p>
-</li>
-<li>
-<p>usados como <strong class="blue">entrada por los diferentesroles para realizar una actividad</strong> y son el resultado o <strong class="blue">salida de tales actividades</strong></p>
-</li>
-<li>
-<p>sujetos al <strong class="blue">control de versiones y gestión de la configuración</strong>, muy posiblemente</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="red">Una mera enumeración de todos los roles, actividades y artefactos no alcanza a constituir un proceso</span></p>
+<p><em><strong>K. Beck</strong></em> (<em>XP</em>)</p>
 </li>
 <li>
-<p>Un <strong class="blue">Proceso es un flujo de trabajo, una secuencia de actividades que producen algún valor observable en artefactos y muestra las interacciones entre los roles</strong></p>
+<p><em><strong>R. Jeffries</strong></em> (<em>XP</em>)</p>
+</li>
+<li>
+<p><em><strong>M. Fowler</strong></em> (<em>XP</em>)</p>
+</li>
+<li>
+<p><em><strong>W. Cunningham</strong></em> (<em>XP</em>)</p>
+</li>
+<li>
+<p><em><strong>S. Mellor</strong></em> (<em>OMG</em>)</p>
+</li>
+<li>
+<p><em><strong>D. Thomas</strong></em> (<em>Pragmatic Programmer</em>)</p>
+</li>
+<li>
+<p><em>A. Hunt</em> (<em>Pragmatic Programmer</em>)</p>
+</li>
+<li>
+<p><em>M. Beedle</em></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Proceso.jpg" alt="height32">
-</div>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/manifiestoAgil.png" alt="manifiestoAgil"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>R. C. Martin</strong></em> (<em>Clean Code</em>)</p>
+</li>
+<li>
+<p><em><strong>A. Cockburn</strong></em> (<em>Arquitectura Hexagonal</em>)</p>
+</li>
+<li>
+<p><em><strong>J. Sutherland</strong></em> (<em>Scrum</em>)</p>
+</li>
+<li>
+<p><em>K. Schwaber</em> (<em>Scrum</em>)</p>
+</li>
+<li>
+<p><em>J. Highsmith</em> (<em>ASD</em>)</p>
+</li>
+<li>
+<p><em>J. Grenning</em></p>
+</li>
+<li>
+<p><em>J. Kern</em></p>
+</li>
+<li>
+<p><em>B. Marick</em></p>
+</li>
+<li>
+<p><em>A. v. Bennekum</em></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
 <blockquote>
-<strong class="blue">Proceso de Desarrollo Software</strong>: el conjunto total de <strong class="blue">actividades necesarias llevadas a cabo por distintos roles para transformar los requerimientos del cliente en un conjunto consistente de artefactos que representan un producto software</strong> y, en un momento posterior, para <strong class="blue">transformar los cambios de estos requerimientos en una nueva versión del producto software</strong>
+"En febrero de <strong>2001</strong>, un grupo de 17 expertos en procesos [&#8230;&#8203;] interesados en promover métodos y principios de <strong>IID</strong> modernos y simples se reunieron en Utah para discutir un terreno común
 </blockquote>
 <div class="attribution">
-&#8212; Booch<br>
-<cite>1985</cite>
+&#8212; Larman y Basili<br>
+<cite>A History of Iterative and Incremental Development IEEE Computer  vol.36  nº6</cite>
 </div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Metodologías <strong>sin requisitos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Metodología <strong class="blue">Top-Down</strong></p>
-</li>
-<li>
-<p>Metodología <strong class="blue">Bottom-Up</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Metodologías <strong>con requisitos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Metodología en <strong class="blue">Cascada</strong></p>
-</li>
-<li>
-<p>Metodología en <strong class="blue">V, doble Cascada</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Metodologías <strong>iterativas</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Metodológías <strong class="blue">Rational Unified Process</strong></p>
-</li>
-<li>
-<p>Metodologías <strong class="blue">Agiles</strong> (<strong>XP</strong>, CrystalClear, Scrum, Kanban, &#8230;&#8203;)</p>
-</li>
-<li>
-<p>Metodologías en <strong class="blue">Software Libre</strong>: <a href="https://biblioweb.sindominio.net/telematica/catedral.html">La Catedral y el Bazar</a>, <a href="https://biblioweb.sindominio.net/telematica/noosfera.html">Cultivando la Noosfera</a> y <a href="https://www.elmundo.es/navegante/99/julio/05/raymond.caldero.html">El caldero mágico, o cómo ganar dinero con código abierto</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 32%;">
-<col style="width: 36%;">
-<col style="width: 32%;">
-</colgroup>
-<thead>
 <tr>
-<th class="tableblock halign-left valign-top">Cascada</th>
-<th class="tableblock halign-left valign-top">RUP, Rationale Unified Process</th>
-<th class="tableblock halign-left valign-top">XP, eXtreme Programming</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresCascada.png" alt="coloresCascada"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresRUP.png" alt="coloresRUP"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresXP.png" alt="coloresXP"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Cronología</th>
-<th class="tableblock halign-left valign-top">Popularidad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/historia3.svg" alt="historia3" width="745" height="616">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/normalesGestion.png" alt="normalesGestion"></span></p>
+<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
+<p><a href="https://agilemanifesto.org/iso/es/manifesto.html">Manifiesto Ágil</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1057,1886 +727,14 @@ o convertirse cada vez en menos útil y menos satisfactorio para el usuario.
 </div>
 </div>
 <div class="sect1">
-<h2 id="industria">Industria</h2>
+<h2 id="principios">Principios</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autores</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1911</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>F.W. Taylor</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Producción en Cadena</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Organización industrial del trabajo mediante la división de las distintas tareas del proceso de producción.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Objetivo: aumentar la productividad y evitar el control que el obrero podía tener en los tiempos de producción</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1950</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>W A. Shewhart, W.E. Deming</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Ciclos de Demming-Shewhart</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>espiral de mejora continua en 4 pasos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Plan-Do-Check-Act</em> (<em>PDCA</em>) o Planificar-Hacer-Verificar-Actuar (PHVA)</p>
-</li>
-<li>
-<p>enfocando con el teorema de Pareto (80% de las consecuencias proviene del 20% de las causas), Diagrama de Ishikawa (representación gráfica de las relaciones múltiples de causa-efecto entre las diversas variables que intervienen en un proceso), &#8230;&#8203;</p>
-</li>
-<li>
-<p>aplicado a todos los ámbitos: calidad, medioambiental, seguridad, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1965~</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Taichi Ohno</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong><em>Kanban</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Toyota</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Just-in-time (JIT) manufacturing</p>
-</li>
-<li>
-<p>Radiadores de información: burndowns, tareas, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1986</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>H. Takeuchi y I. Nonaka</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong><em>The New Product Development Game</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Harvard Business Review, vol. January/February, pp. 285-305</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Scrum!!!</strong> (<em>melé</em>)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="metodo-logía-en-cascada">Metodo-logía? en Cascada</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 15%;">
-<col style="width: 45%;">
-<col style="width: 35%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1970</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>W.W. Royce</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Managing the development of large Software Systems</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>IEEE WESCON Proceedings, pp. 1-9</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/cascada.jpg" alt="cascada"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresCascada.png" alt="coloresCascada"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Ventajas</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Desventajas</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Son modelos <strong class="green">fáciles de implementar y entender</strong>. Son modelos conocidos y utilizados con frecuencia.</p>
-</li>
-<li>
-<p>Promueven una metodología de <strong class="green">trabajo efectiva</strong>: definir antes que diseñar, diseñar antes que codificar, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-Si el <strong class="blue">90% o más de los requisitos de tu sistema se espera que sean estables</strong> a lo largo de la vida del proyecto, entonces aplicar una política dirigida por los requisitos es una oportunidad apropiada de dar razonablemente una <strong>solución óptima</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Booch<br>
-<cite>Object Solutions</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Cualquier <strong class="red">error detectado en la etapa de prueba</strong> conduce necesariamente al rediseño y nueva programación del código afectado, aumentando los <strong>costos del desarrollo</strong></p>
-</li>
-<li>
-<p><strong class="red">No hay método para gran parte del proyecto</strong>, mantenimiento</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<strong class="blue">Otros grados menores de estabilidad en los requisitos requieren un enfoque de desarrollo diferente</strong> para dar un valor tolerable del coste total
-</blockquote>
-<div class="attribution">
-&#8212; Booch<br>
-<cite>Object Solutions</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Aportaciones</strong>:</th>
-<th class="tableblock halign-left valign-top"><strong class="red">Excesos</strong>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Formalización de disciplinas</strong>: Metodologías Jackson, Warnier, Yourdon, DeMarco, &#8230;&#8203;,</p>
-</li>
-<li>
-<p><strong class="green">Formalización de técnicas</strong>: DFD, E/R, Acoplamiento Aferente/Eferente, Cohesión, Granularidad, Métricas del Software, Diseño de Pruebas de Caja Negra y Caja Blanca, &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong class="green">Herramientas CASE</strong>: gestión, requisitos, análisis, diseños, &#8230;&#8203;, generación de código!!!</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Proyecto ISDOS: Problem Statement Analyzer (PSA) automatizaba la relación existente entre los requisitos de un problema dados en Problem Statement Language (PSL) y las necesidades que éstos generaban</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Enfocó en primeras disciplinas</strong>: gestion, requisitos, análisis, &#8230;&#8203;, certificaciones, documentación, &#8230;&#8203; "abandonando" al "humilde programador"</p>
-</li>
-<li>
-<p><strong class="red">Planificaciones absurdas, control del calendario, <em>Big Design Up Front (BDUF)</em></strong> &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong class="red">Excesiva documentación de dudosa calidad</strong></p>
-</li>
-<li>
-<p><strong class="red">Mantenimiento sin método</strong>, a veces el 80% del proyecto</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="desarrollo-iterativo">Desarrollo Iterativo</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 18%;">
-<col style="width: 40%;">
-<col style="width: 37%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1930</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>NASA</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Proyecto</strong> <em><strong>Mercury</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>primer programa de vuelo espacial humano de los Estados Unidos</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1988</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>B.W. Boehm</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>A <strong>Spiral Model</strong> of Software Development and Enhancement</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>IEEE, vol. 21, nº 5, pp. 61-72</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1990</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>A. Cockburn</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Crystal</strong>, marco metodológico</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>IBM</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1991</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>J. Martin</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Rapid Application Development</strong> (RAD)</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>IBM</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/bohem.jpg" alt="bohem"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e implementar un <strong class="blue">poco</strong>. Integrar, probar y ejecutar un <strong class="blue">poco</strong> en cada iteración
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/crystal.jpg" alt="crystal"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Iteración</strong>, <em class="blue">Sprint</em></th>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Incremento</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Conjunto distinto de actividades llevado a cabo de acuerdo con un <strong class="blue">plan dedicado</strong> (iteración) y <strong class="blue">criterios de evaluación</strong> que se traduce en una <strong class="blue">entrega</strong>, ya sea interna o externa.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una parte del sistema pequeña y manejable, por lo general, la <strong class="blue">diferencia entre dos construcciones sucesivas</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/entregas.png" alt="entregas"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Cada iteración se traducirá en al menos una nueva construcción y, por lo tanto, se añadirá un incremento en el sistema</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Entrega</strong>. Un conjunto de artefactos (documentos y posiblemente una construcción ejecutable) relativamente completos y consistente entregada a usuarios externos o internos</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Entrega interna</strong>. Una entrega no expuesta a los clientes y usuarios pero sí internamente solo para el proyecto y sus miembros</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Entrega externa</strong>. Una entrega expuesta a clientes y usuarios externos al proyectos y sus miembros.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 18%;">
-<col style="width: 40%;">
-<col style="width: 37%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1997</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>J.De Luca, P. Coad</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Feature-driven development</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Java modelling in Color with UML</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1999</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>J. Highsmith</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Adaptative Software Development</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Press New York: Dorset House</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2003</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>J. Stapleton</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>DSDM: The Method in Practice</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Addison-Wesley</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Ventajas</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Desventajas</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite la <strong class="green">participación del usuario</strong> desde fechas tempranas del proyecto para corregir las desviaciones de sus necesidades</p>
-</li>
-<li>
-<p>Permite <strong class="green">elevar el ánimo del equipo</strong> de desarrollo con las entregas externas que superan las pruebas de aceptación</p>
-</li>
-<li>
-<p><strong class="green">Errores de programación, diseño, … se localizan con facilidad</strong> en el incremento producido en la iteración vigente</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Dificultad para gestionar</strong> a los miembros del equipo de desarrollo en un iteración cerrada o dificultad para gestionar a los miembros del equipo de desarrollo con varias iteraciones abiertas en paralelo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rational-unified-process">Rational Unified Process</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 20%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1967</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>I.H. Jacobson</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Ericsson approach</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Ericsson</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1992</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>I.H. Jacobson</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Object-Oriented Software Engineering: A Use Case Driven Approach</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>ACM Press Addison-Wesley</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1995</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>G. Booch</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Rational Approach</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Rational Softare</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2001</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>G. Booch, I. Jacobson, J. Rumbaugh</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Rational Unified Process</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Rational Softare</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2011</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>S. Ambler</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Agile Unified Process</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><a href="http://www.ambysoft.com/unifiedprocess/agileUP.html" class="bare">http://www.ambysoft.com/unifiedprocess/agileUP.html</a></em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RUP.jpg" alt="RUP"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresRUP.png" alt="coloresRUP"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="scrum">Scrum</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 20%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1995</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>K. Schwaber</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>The Scrum development process</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>OOPSLA ’95 Workshop on Business Object Design and Implementation, Austin</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Scrum.jpg" alt="Scrum"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Sólo gestión</strong>, sin ningún aspecto técnico</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="extreme-programming">eXtreme Programming</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 20%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1999</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>K. Beck</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Extreme Programming Explained: Embrace Change</strong></em>: <em><strong>xUnit, refactoring, test-driven development</strong></em>, &#8230;&#8203;</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Addison-Wesley</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/XP.png" alt="XP"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresXP.png" alt="coloresXP"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="comparativa-entre-rup-vs-scrumxp">Comparativa entre RUP vs Scrum+XP</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle" colspan="2">RUP</th>
-<th class="tableblock halign-center valign-middle" colspan="2">Scrum+XP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RUP.jpg" alt="RUP"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/GradyBooch.png" alt="GradyBooch"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/xp.png" alt="xp"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/KentBeck.png" alt="KentBeck"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresRUP.png" alt="coloresRUP"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/coloresXP.png" alt="coloresXP"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle" colspan="2"><strong>Disciplinas en RUP</strong></th>
-<th class="tableblock halign-center valign-middle" colspan="2"><strong>Actividades en Scrum/XP</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Requisitos</strong> y <strong class="yellow">Análisis</strong></p>
-</li>
-<li>
-<p><strong class="green">Diseño</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Implemetación</strong></p>
-</li>
-<li>
-<p><strong class="blue">Pruebas</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="maroon">Escuchar</strong></p>
-</li>
-<li>
-<p><strong class="blue">Probar</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Programar</strong></p>
-</li>
-<li>
-<p><strong class="green">Diseñar</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Disciplina de Requisitos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Casos de Uso</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="yellow">Disciplina de Análisis</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="maroon"><em>Sprint Planning</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Historias de Usuario</strong></p>
-</li>
-<li>
-<p><strong class="yellow">Tareas</strong>: <em>ToDo, Doing, Done</em> del <em>Burndown</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>Test-Last/First/<strong>Driven</strong> Development</em></span></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Disciplina de Diseño</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Pruebas</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Disciplina de Programación</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Test-driven Development</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Disciplina de Pruebas/Diseño de la interfaz del SUT</strong> (<em>rojo</em>)</p>
-</li>
-<li>
-<p><strong class="aqua">Disciplina de Progrmación</strong> (<em>verde</em>)</p>
-</li>
-<li>
-<p>Disciplina de Diseño: <strong class="green"><em>refactoring</em></strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle">Fases de <em>RUP</em></th>
-<th class="tableblock halign-center valign-middle"><em>Sprints</em> de <em>Scrum/XP</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Fases</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inicio</strong></p>
-</li>
-<li>
-<p><strong class="green">Elaboración</strong></p>
-</li>
-<li>
-<p><strong class="cyan">Construcción</strong></p>
-</li>
-<li>
-<p><strong class="pink">Transición</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Fases?</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red"><em>Sprint 0?</em></strong></p>
-</li>
-<li>
-<p><strong><em>Sprint</em></strong> &#8230;&#8203;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>El ciclo semanal</strong> y <strong class="red">el ciclo trimestral?!?</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle"><strong>Actividades <em>RUP</em></strong></th>
-<th class="tableblock halign-center valign-middle"><strong>Concepto Ágil</strong></th>
-<th class="tableblock halign-center valign-middle"><em>Fuente Ágil</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Modelo del Dominio</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Contextos, Values, Entidades, &#8230;&#8203;</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Domain-Driven Development</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Encontrar Actores y Casos de Uso</strong></p>
-</li>
-<li>
-<p><strong class="red">Priorizar Casos de Uso por Riesgo</strong></p>
-</li>
-<li>
-<p><strong class="red">Detallar Caso de Uso</strong></p>
-</li>
-<li>
-<p><strong class="red">Estructurar Casos de Uso</strong></p>
-</li>
-<li>
-<p><strong class="red">Prototipar Interfaz de Usuario</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Roles e Historias de Usuario</strong></p>
-</li>
-<li>
-<p><strong class="red">Priorización por Retorno de Inversión</strong></p>
-</li>
-<li>
-<p><strong class="red">Historias de Usuario, Aceptación y Conversación</strong></p>
-</li>
-<li>
-<p><strong class="red"><em>TDD, Refactoring</em></strong></p>
-</li>
-<li>
-<p><strong class="red">Historias de Usuario, Prototipo de Interfaz</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="yellow">Análisis de la Arquitectura</strong></p>
-</li>
-<li>
-<p><strong class="yellow">Análisis de Caso de Uso</strong></p>
-</li>
-<li>
-<p><strong class="yellow">Análisis de Clase</strong></p>
-</li>
-<li>
-<p><strong class="yellow">Análisis de Paquete</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="yellow">Sprint 0</strong></p>
-</li>
-<li>
-<p><strong class="yellow">Sprint Planning</strong></p>
-</li>
-<li>
-<p><strong class="yellow">TDD, Refactoring</strong></p>
-</li>
-<li>
-<p><strong class="yellow">TDD, Refactoring</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>¿?</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Diseño de la Arquitectura</strong></p>
-</li>
-<li>
-<p><strong class="green">Diseño de Caso de Uso</strong></p>
-</li>
-<li>
-<p><strong class="green">Diseño de Clase</strong></p>
-</li>
-<li>
-<p><strong class="green">Diseño de Paquete</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Sprint 0</strong> y <strong class="green">Spyke</strong></p>
-</li>
-<li>
-<p><strong class="green">TDD, escuelas Clasica vs Londres</strong></p>
-</li>
-<li>
-<p><strong class="green">TDD, Refactoring</strong></p>
-</li>
-<li>
-<p><strong class="green">TDD, Refactoring</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>¿?/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming/Growing Oject Oriented Software</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="aqua">Implementar la Arquitectura</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Integración de Sistemas</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Implementar Clase</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Pruebas Unitarias</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Implementar Subsistema</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="aqua">Arquitectura emergente</strong></p>
-</li>
-<li>
-<p><strong class="aqua">Sprint Backlog</strong></p>
-</li>
-<li>
-<p><strong class="aqua">TDD, código mínimo</strong></p>
-</li>
-<li>
-<p><strong class="aqua">TDD, prueba primero</strong></p>
-</li>
-<li>
-<p><strong class="aqua">_</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>eXtreme Programming</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Planificar Pruebas</strong></p>
-</li>
-<li>
-<p><strong class="blue">Diseñar Pruebas</strong></p>
-</li>
-<li>
-<p><strong class="blue">Implementar Pruebas</strong></p>
-</li>
-<li>
-<p><strong class="blue">Realizar Pruebas de Integración</strong></p>
-</li>
-<li>
-<p><strong class="blue">Realizar Pruebas de Sistemas</strong></p>
-</li>
-<li>
-<p><strong class="blue">Evaluar Pruebas</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Integración continua</strong></p>
-</li>
-<li>
-<p><strong class="blue">Integración continua</strong></p>
-</li>
-<li>
-<p><strong class="blue">Integración continua</strong></p>
-</li>
-<li>
-<p><strong class="blue">Integración continua</strong>
-*</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Continuous Delivery/Análisis y Diseño Orientado a Objetos</em></p>
-</li>
-<li>
-<p><em>Continuous Delivery/Análisis y Diseño Orientado a Objetos</em></p>
-</li>
-<li>
-<p><em>Continuous Delivery/Análisis y Diseño Orientado a Objetos</em></p>
-</li>
-<li>
-<p><em>Continuous Delivery/Análisis y Diseño Orientado a Objetos</em></p>
-</li>
-<li>
-<p><em>Continuous Delivery/Análisis y Diseño Orientado a Objetos</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="gray">Apertura de la Iteración</strong></p>
-</li>
-<li>
-<p><strong class="gray">Realización del Iteración</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="gray">Dirigido por Casos de Uso y Riesgos</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="gray">Cierre de la Iteración</strong></p>
-</li>
-<li>
-<p><strong class="gray">Cierre/Apertura de Fase</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="gray">Planificación del Sprint</strong></p>
-</li>
-<li>
-<p><strong class="gray">Realización del Sprint</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="gray">Dirigido por el Retorno de Inversión de las Historias de Usuario</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="gray">Demo del Sprint</strong></p>
-</li>
-<li>
-<p><strong class="gray">Retrospectiva del Sprint</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-<li>
-<p><em>Scrum/eXtreme Programming</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedSoftwareDevelopmentProcess.jpg" alt="TheUnifiedSoftwareDevelopmentProcess"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG" alt="ExtremeProgrammingExplainedEmbraceChangeEmbracingChange"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ScrumElRevolucionario.jpg" alt="ScrumElRevolucionario"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RationalUnifiedProcessMadeEasy.png" alt="RationalUnifiedProcessMadeEasy"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="TestDrivenDevelopment"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ddd.jpg" alt="ddd"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="TheUnifiedModelingLanguageUserGuide"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Refectoring.jpg" alt="Refectoring"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Planning.jpg" alt="Planning"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Qué es una historia de usuario?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Historias de Usuario vs Casos de Uso?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Alistair Cockburn</strong>: autor de Arquitectura Hexagonal, <a href="http://www.inf.puc-rio.br/~ivan/INF1013/NotasAula/Why%20I%20Still%20Use%20Use%20Cases.pdf?ref=hackernoon.com">Why I Still Use Use Cases </a></p>
-</li>
-<li>
-<p><a href="https://scalingsoftwareagility.files.wordpress.com/2009/11/ch-19-use-cases-draft.pdf">Agile&amp;Software&amp;Requirements</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Puntos de Historias de Usuario?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Ron Jefries</strong>: <a href="https://ronjeffries.com/articles/019-01ff/story-points/Index.html">I like to say that I may have invented story points, and if I did, I’m sorry now</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Escuelas Clásica vs Londres en TDD?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">TDD Escuela Clásica</strong>: no <strong class="red"><em>top/down</em></strong>, no <strong><em>bottom/up</em></strong>?!?!, sí <strong class="green"><em>know/unknow</em></strong></p>
-</li>
-<li>
-<p><strong class="red">TDD Estilo Londres</strong>: <a href="https://josemyduarte.github.io/2018-12-09-tdd-outside-in/">vertical slicing, full stack, &#8230;&#8203;</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿TDD está muerto?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>David Heinemeier Hansson: referente de Ruby on Rails, <a href="https://dhh.dk/2014/test-induced-design-damage.html">Test-induced design damage</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Sprint 0 es Agile?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.agilescrum.cl/post/qu%C3%A9-es-el-sprint-0#:~:text=Tal%20y%20como%20se%20ha,las%20l%C3%ADneas%20principales%20de%20trabajo">¿Qué es el Sprint 0?</a></p>
-</li>
-<li>
-<p><a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=CjwKCAjwloCSBhAeEiwA3hVo_dx9lzuXa5qZEucuFvd3A-xV1aAntqAPFoDw0oj-pyTnOx6Bb1ONpBoC9zQQAvD_BwE">Sprint 0, Design Sprint, Harderning Sprint, &#8230;&#8203;</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿RUP es Agile?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>RUP es un <a href="https://martinfowler.com/articles/newMethodology.html#rationalUnifiedProcess">framework</a></p>
-</li>
-<li>
-<p><strong>Craig Larman</strong>, histórico y cronista del movimiento agile y autor de <a href="https://www.amazon.es/UML-y-patrones-Craig-Larman/dp/8420534382">UML y Patrones</a></p>
-</li>
-<li>
-<p><strong>Krutchen</strong>, director del Movimiento Agile en Canada y autor de 4+1 vistas</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿UML es Agile?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No</strong> &#8230;&#8203;?!?!? pero lo usan todos los textos seminales de agilismo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle">Enfasis de <em>RUP</em></th>
-<th class="tableblock halign-center valign-middle">Enfasis de <em>Scrum+XP</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Entrevistas con el <strong>cliente en cada iteración, cada vez menos</strong>, y en cada entrega</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Entrevistas con el <strong>cliente durante todo el proyecto</strong>, cliente in situ parte del proyecto</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Planifica con Casos de Uso priorizados por riesgos</strong> técnicos, políticos, &#8230;&#8203; del proyecto</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Planifica con Historias de Usuario priorizado por el retorno de inversión</strong> (<em>return of invesment, ROI</em>) del cliente</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Diseño de la <strong>Arquitectura con diseño suficiente (análisis)</strong> previa al desarrollo</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Arquitectura emergente</strong> según se re-diseña (<em>TDD y refactoring</em>)</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Equipo variable</strong> en el proyecto, crece y decrece</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Equipo constante</strong> en el proyecto, se mantiene</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Roles especializados</strong> por desarrollador: analista de sistemas, arquitecto del software, ingeniero de componentes, integrador de sistemas, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Desarrolladores multidisciplinares</strong> por funcionalidad: <em class="red">product owner</em>, <span class="green">equipo</span>, <span class="gray">gestor</span>/<em class="red">scrum master</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Gestión de documentación</strong> de requisitos, análisis y diseño: <strong>pesadas</strong>/<strong>ligeras</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Poca documentación</strong> porque la mejor documentación es el código: <strong>ligeras</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Artefactos/<span class="red">documentación</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Modelo del Dominio</strong></p>
-</li>
-<li>
-<p><strong>4+1 vistas</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Vista de Casos de Uso</strong></p>
-</li>
-<li>
-<p><strong>Vista de Diseño</strong></p>
-</li>
-<li>
-<p><strong>Vista de Implementación</strong></p>
-</li>
-<li>
-<p><strong>Vista de Despliegue</strong></p>
-</li>
-<li>
-<p><strong>Vista de Procesos</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Buenas prácticas</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p><strong>Equipo</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>El equipo como una unidad</strong></p>
-</li>
-<li>
-<p><strong>Programación por pares</strong></p>
-</li>
-<li>
-<p><strong>Propiedad compartida del código</strong></p>
-</li>
-<li>
-<p><strong>El equipo debe estar junto</strong></p>
-</li>
-<li>
-<p><strong>Radiadores de información</strong></p>
-</li>
-<li>
-<p><strong>Trabaja las horas razonables para ser productivo</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/orquesta.jpg" alt="orquesta"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/jazz.jpg" alt="jazz"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Microsoft.png" alt="Microsoft"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Linux.png" alt="Linux"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/BillGates.png" alt="BillGates"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/LinusTorvalds.png" alt="LinusTorvalds"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="manifiesto-ágil">Manifiesto Ágil</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 70%;">
-<col style="width: 15%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>K. Beck</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>R. Jeffries</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>M. Fowler</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>W. Cunningham</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>S. Mellor</strong></em> (<em>OMG</em>)</p>
-</li>
-<li>
-<p><em><strong>D. Thomas</strong></em> (<em>Pragmatic Programmer</em>)</p>
-</li>
-<li>
-<p><em>A. Hunt</em> (<em>Pragmatic Programmer</em>)</p>
-</li>
-<li>
-<p><em>M. Beedle</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-"En febrero de <strong>2001</strong>, un grupo de 17 expertos en procesos [&#8230;&#8203;] interesados en promover métodos y principios de <strong>IID</strong> modernos y simples se reunieron en Utah para discutir un terreno común
-</blockquote>
-<div class="attribution">
-&#8212; Larman y Basili<br>
-<cite>A History of Iterative and Incremental Development IEEE Computer  vol.36  nº6</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>R. C. Martin</strong></em> (<em>Clean Code</em>)</p>
-</li>
-<li>
-<p><em><strong>A. Cockburn</strong></em> (<em>Arquitectura Hexagonal</em>)</p>
-</li>
-<li>
-<p><em><strong>J. Sutherland</strong></em> (<em>Scrum</em>)</p>
-</li>
-<li>
-<p><em>K. Schwaber</em> (<em>Scrum</em>)</p>
-</li>
-<li>
-<p><em>J. Highsmith</em> (<em>ASD</em>)</p>
-</li>
-<li>
-<p><em>J. Grenning</em></p>
-</li>
-<li>
-<p><em>J. Kern</em></p>
-</li>
-<li>
-<p><em>B. Marick</em></p>
-</li>
-<li>
-<p><em>A. v. Bennekum</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/manifiestoAgil.png" alt="manifiestoAgil"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle" colspan="3"><a href="https://agilemanifesto.org/iso/es/manifesto.html">Principios ágiles</a></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -2988,6 +786,11 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="métodos">Métodos</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 5%;">
@@ -3020,9 +823,233 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle" colspan="4"><div class="content"><div class="paragraph">
-<p><a href="https://www.slideshare.net/DocList/agile-in-a-nutshell-11350762/2-Agile_in_a_Nutshell_Steven"><strong>A-gilismo</strong></a>: <a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=Cj0KCQiAkNiMBhCxARIsAIDDKNW6l9Oc9cVx5QsbfOCkkORapdR8pVkGheAsbk1dNzUs6iGWQP5QE3saArR-EALw_wcB"><em>Sprint 0</em>, ¿Fase Inception?</a>; <em>Design Sprint; Hardening Sprint;</em> &#8230;&#8203; <a href="https://josehuerta.es/gestion/agile/que-es-una-epica-y-que-no-es">Epicas, ¿Estimación a largo plazo?</a>; <em>Planning Poker; T-Shirt Sizes; Bucket System; Dot Voting;</em> &#8230;&#8203;</p>
+<p><a href="https://www.slideshare.net/DocList/agile-in-a-nutshell-11350762/2-Agile_in_a_Nutshell_Steven"><strong>A-gilismo</strong></a>: <a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=Cj0KCQiAkNiMBhCxARIsAIDDKNW6l9Oc9cVx5QsbfOCkkORapdR8pVkGheAsbk1dNzUs6iGWQP5QE3saArR-EALw_wcB"><em>Sprint 0</em>, ¿Fase Inception?</a>; <a href="https://jtbd.info/replacing-the-user-story-with-the-job-story-af7cdee10c27">Job Stories</a> <em>Design Sprint; Hardening Sprint;</em> &#8230;&#8203; <a href="https://josehuerta.es/gestion/agile/que-es-una-epica-y-que-no-es">Epicas, ¿Estimación a largo plazo?</a>; <em>Planning Poker; T-Shirt Sizes; Bucket System; Dot Voting;</em> &#8230;&#8203;</p>
 </div></div></td>
 </tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/piramideAgil.jpg" alt="piramideAgil"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/paraguas1.png" alt="paraguas1"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/paraguas2.jpg" alt="paraguas2"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/paraguas3.webp" alt="paraguas3"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 35%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿RUP es Agile?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>RUP es un <a href="https://martinfowler.com/articles/newMethodology.html#rationalUnifiedProcess">framework</a> que debe configurarse ligero o pesado según el contexto:</p>
+</li>
+<li>
+<p><strong><em>Philip Krutchen</em></strong>, autor de 4+1 Vistas de RUP y cofundador de Agile Vancouver</p>
+</li>
+<li>
+<p><strong><em>Craig Larman</em></strong>, histórico y cronista del movimiento agile y autor de <a href="https://www.amazon.es/UML-y-patrones-Craig-Larman/dp/8420534382">UML y Patrones</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/contexto.jpg" alt="contexto"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿UML es Agile?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No</strong> &#8230;&#8203; <a href="https://www.martinfowler.com/articles/designDead.html#UmlAndXp"><strong class="green">Sí</strong></a>?!?!? pero lo usan todos los textos seminales de agilismo</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="crítica">Crítica</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿Gestor o Scrum Master?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Scrum</strong>: <em>Product Owner, Scrum Team, <strong>Scrum Master</strong></em></p>
+</li>
+<li>
+<p><strong>XP</strong>: Cliente, Programadores y <strong>Gestor</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="3"><div class="content"><div class="paragraph">
+<p><a href="https://link.springer.com/chapter/10.1007/978-1-4842-4221-6_11"><strong><em>Dark Agile</em></strong></a>
+<span class="image"><img src="images/darkagile.png" alt="darkagile"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿Sprint 0 es Agile?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.agilescrum.cl/post/qu%C3%A9-es-el-sprint-0#:~:text=Tal%20y%20como%20se%20ha,las%20l%C3%ADneas%20principales%20de%20trabajo">¿Qué es el Sprint 0?</a></p>
+</li>
+<li>
+<p><a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=CjwKCAjwloCSBhAeEiwA3hVo_dx9lzuXa5qZEucuFvd3A-xV1aAntqAPFoDw0oj-pyTnOx6Bb1ONpBoC9zQQAvD_BwE">Sprint 0, Design Sprint, Harderning Sprint, &#8230;&#8203;</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿Historias de Usuario vs Casos de Uso?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Alistair Cockburn</em></strong>: autor de Arquitectura Hexagonal, <a href="http://www.inf.puc-rio.br/~ivan/INF1013/NotasAula/Why%20I%20Still%20Use%20Use%20Cases.pdf?ref=hackernoon.com">Why I Still Use Use Cases </a></p>
+</li>
+<li>
+<p><a href="https://scalingsoftwareagility.files.wordpress.com/2009/11/ch-19-use-cases-draft.pdf">Agile&amp;Software&amp;Requirements</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿Puntos de Historias de Usuario?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Ron Jefries</em></strong>: <a href="https://ronjeffries.com/articles/019-01ff/story-points/Index.html">I like to say that I may have invented story points, and if I did, I’m sorry now</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿Escuelas Clásica vs Londres en TDD?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">TDD Escuela Clásica</strong>: no <strong class="red"><em>top/down</em></strong>, no <strong><em>bottom/up</em></strong>?!?!, sí <strong class="green"><em>know/unknow</em></strong></p>
+</li>
+<li>
+<p><strong class="red">TDD Estilo Londres</strong>: <a href="https://josemyduarte.github.io/2018-12-09-tdd-outside-in/">vertical slicing, full stack, &#8230;&#8203;</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿TDD está muerto?</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>David Heinemeier Hansson</em></strong>: referente de Ruby on Rails, <a href="https://dhh.dk/2014/test-induced-design-damage.html">Test-induced design damage</a></p>
+</li>
+<li>
+<p><em>David Heinemeier Hansson</em> vs <em>Kent Beck - Martin Fowler</em>: debate ( <a href="https://www.youtube.com/watch?v=z9quxZsLcfo&amp;t=589s">parte I</a>, <a href="https://www.youtube.com/watch?v=JoTB2mcjU7w">parte II</a>, <a href="https://www.youtube.com/watch?v=YNw4baDz6WA">parte III</a>, <a href="https://www.youtube.com/watch?v=dGtasFJnUxI">parte IV</a> y <a href="https://www.youtube.com/watch?v=gWD6REVeKW4">parte V y VI</a>)</p>
+</li>
+<li>
+<p><em>Jim Coplien</em> vs <em>Robert Martin</em>: <a href="https://www.youtube.com/watch?v=KtHQGs3zFAM">debate</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 5%;">
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Año</th>
+<th class="tableblock halign-left valign-top">Autor</th>
+<th class="tableblock halign-left valign-top">Publicación</th>
+<th class="tableblock halign-left valign-top"><a href="https://manifesto.softwarecraftsmanship.org/#/es">Movimiento <em>Craftmanship</em></a></th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2009</p>
@@ -3031,10 +1058,10 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 <p><em><strong>M. Fowler</strong></em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Flaccid Scrum</em></p>
+<p><a href="https://martinfowler.com/bliki/FlaccidScrum.html"><em class="red">Flaccid Scrum</em></a></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><a href="https://martinfowler.com/bliki/FlaccidScrum.html" class="bare">https://martinfowler.com/bliki/FlaccidScrum.html</a></em></p>
+<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/craftmanship.png" alt="craftmanship"></span></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3045,10 +1072,7 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 <p><em><strong>D. Thomas</strong></em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Agile is dead, long live agility</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><a href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html" class="bare">https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html</a></em></p>
+<p><a href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html"><em class="red">Agile is dead</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3059,10 +1083,7 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 <p><em><strong>R. Jeffiers</strong></em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Scrum is not an Agile Software Development Framework</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><a href="https://ronjeffries.com/articles/018-01ff/scrum-not-asd-1/" class="bare">https://ronjeffries.com/articles/018-01ff/scrum-not-asd-1/</a></em></p>
+<p><a href="https://ronjeffries.com/articles/018-01ff/scrum-not-asd-1"><em class="red">Scrum is not an Agile Software Development Framework</em></a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3073,10 +1094,7 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 <p><em><strong>R. Jeffiers</strong></em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Developers Should Abandon Agile</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><a href="https://ronjeffries.com/articles/018-01ff/abandon-1/" class="bare">https://ronjeffries.com/articles/018-01ff/abandon-1/</a></em></p>
+<p><a href="https://ronjeffries.com/articles/018-01ff/abandon-1"><em class="red">Developers Should Abandon Agile</em></a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3456,7 +1474,7 @@ Planificar de un <strong class="blue">poco</strong>. Especificar, diseñar e imp
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-03-29 19:09:08 +0200
+Last updated 2022-04-10 20:12:11 +0200
 </div>
 </div>
 <script>
