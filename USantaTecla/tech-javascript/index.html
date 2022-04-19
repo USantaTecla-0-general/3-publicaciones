@@ -477,6 +477,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#funciones-de-orden-superior">Funciones de Orden Superior</a></li>
 <li><a href="#funciones-anónimas">Funciones Anónimas</a></li>
 <li><a href="#funciones-flecha">Funciones Flecha</a></li>
+<li><a href="#clousures"><em>Clousures</em></a></li>
+<li><a href="#currificación">Currificación</a></li>
 </ul>
 </li>
 <li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a>
@@ -490,6 +492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#símbolos">Símbolos</a></li>
 <li><a href="#arrays-2">Arrays</a></li>
 <li><a href="#funciones-2">Funciones</a></li>
+<li><a href="#funciones-generadoras">Funciones Generadoras</a></li>
 <li><a href="#estructuras-de-datos">Estructuras de Datos</a></li>
 <li><a href="#callbacks"><em>Callbacks</em></a></li>
 <li><a href="#promesas">Promesas</a></li>
@@ -2255,8 +2258,7 @@ console.writeln(<span class="predefined-constant">Infinity</span>); <span class=
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-console.writeln(<span class="error">`</span>T<span class="error">ú</span> n<span class="error">ú</span>mero es <span class="predefined">$</span>{console.readNumber(<span class="error">`</span>Dame un n<span class="error">ú</span>mero: <span class="error">`</span>)}<span class="error">`</span>);
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{console.readNumber()}<span class="error">`</span>);</code></pre>
+console.writeln(<span class="error">`</span>El siguiente es <span class="predefined">$</span>{console.readNumber(<span class="error">`</span>Dame un n<span class="error">ú</span>mero: <span class="error">`</span>) + <span class="integer">1</span>}<span class="error">`</span>);</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -2368,10 +2370,11 @@ console.writeln(<span class="error">`</span><span class="predefined">$</span>{co
 
 const console = <span class="keyword">new</span> Console();
 let identifier = <span class="integer">0</span>;
-console.writeln(<span class="error">`</span>.<span class="predefined">$</span>{identifier}.<span class="error">`</span>); <span class="comment">// .0.</span>
+console.writeln(<span class="error">`</span>Valor actual .<span class="predefined">$</span>{identifier}.<span class="error">`</span>); <span class="comment">// Valor actual .0.</span>
+console.writeln(<span class="error">`</span>Valor siguiente .<span class="predefined">$</span>{identifier + <span class="integer">1</span>}.<span class="error">`</span>); <span class="comment">// Valor siguiente .1.</span>
 
 let identifierWithoutInitialization;
-console.writeln( <span class="error">`</span>.<span class="predefined">$</span>{identifierWithoutInitialization}.<span class="error">`</span>); <span class="comment">// .undefined.</span></code></pre>
+console.writeln(<span class="error">`</span>.<span class="predefined">$</span>{identifierWithoutInitialization}.<span class="error">`</span>); <span class="comment">// .undefined.</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -2633,7 +2636,7 @@ console.writeln(variableDefined !== <span class="predefined-constant">undefined<
 <div class="ulist">
 <ul>
 <li>
-<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <em>&lt;identificador&gt;</em> <strong class="red">[</strong> <strong>=</strong> <em>&lt;expresion&gt;</em> <strong>;</strong> <strong class="red">]</strong></p>
+<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <em>&lt;identificador&gt;</em> <strong>=</strong> <em>&lt;expresion&gt;</em> <strong>;</strong></p>
 </li>
 </ul>
 </div>
@@ -2643,10 +2646,10 @@ console.writeln(variableDefined !== <span class="predefined-constant">undefined<
 <div class="ulist">
 <ul>
 <li>
-<p>como "sentencia", asigna/ actualiza/ "iguala", &#8230;&#8203;, <em>set, move, :=</em>, &#8230;&#8203;, con <strong class="red">efecto lateral</strong>: a la variable identificada a la izquierda el resultado de la evaluacíon de la expresión <strong class="blue">sin restricción de tipos, lenguaje con sistema de tipos dinámico!!!</strong></p>
+<p>como "sentencia", asigna/ actualiza/ "iguala", &#8230;&#8203;, <em>set, move, :=</em>, &#8230;&#8203;, con <strong class="red">efecto lateral</strong>: asignando a la variable identificada a la izquierda el resultado de la evaluacíon de la expresión <strong class="blue">sin restricción de tipos, lenguaje con sistema de tipos dinámico!!!</strong></p>
 </li>
 <li>
-<p><strong class="red">devuelve</strong>, como operador, el <strong class="blue">valor recién asignado</strong> a la variable</p>
+<p>como operador, <strong class="red">devuelve</strong>, el <strong class="blue">valor recién asignado</strong> a la variable</p>
 <div class="ulist">
 <ul>
 <li>
@@ -3828,7 +3831,7 @@ console.writeln(<span class="integer">5</span>+<span class="integer">4</span> / 
 </table>
 </div>
 <div class="sect3">
-<h4 id="operador-coma-2">Operador coma</h4>
+<h4 id="operador-paréntesis">Operador Paréntesis</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -5867,17 +5870,13 @@ console.writeln(array[-<span class="integer">1</span>]); <span class="comment">/
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="funciones">Funciones</h3>
+<div class="sect3">
+<h4 id="funcion-nominal">Funcion nominal</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 38%;">
-<col style="width: 62%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Función nominal</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -5892,9 +5891,6 @@ console.writeln(array[-<span class="integer">1</span>]); <span class="comment">/
 <li>
 <p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong> <em>&lt;identificador&gt;</em> <strong>(</strong> <strong>)</strong> <strong>;</strong></p>
 </li>
-<li>
-<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <em>&lt;identificador&gt;</em></p>
-</li>
 </ul>
 </div>
 </li>
@@ -5903,45 +5899,13 @@ console.writeln(array[-<span class="integer">1</span>]); <span class="comment">/
 <div class="ulist">
 <ul>
 <li>
-<p>agrupación de sentencias(n) bajo un único(1) identificador</p>
+<p><strong>agrupación de sentencias</strong> (compuesto) bajo un único (unidad) identificador</p>
 </li>
 <li>
-<p>son <strong>ciudadanos de primera</strong> (parte de unas expresión, &#8230;&#8203;), considerando la información de los valores de los tipos primitivos una alternativa a la información de la función con cómo manipular y/o calcular valores de tipo <em><strong>function</strong></em></p>
+<p>el nombre de la función será de <strong>tipo <em>function</em></strong> y el operador <em>typeof</em> retornará el <em>string</em> con valor <em>"function"</em></p>
 </li>
 <li>
-<p>el identificador de la función, sin paréntesis de la llamada, se evalúa simplemente con la propia función de tipo <em>function</em></p>
-</li>
-<li>
-<p>la llamada/invocación/ejecución/&#8230;&#8203; de la función se realiza con paréntesis</p>
-<div class="ulist">
-<ul>
-<li>
-<p>se crea un <strong>contexto de ejecución</strong> (tiempo de ejecución, dinámico, memoria, espacio/tiempo) con las <strong>reglas de ámbito</strong> de la sentencia secuencial para el acceso a las <strong class="red">variables globales</strong> (tiempo de compilación, estático, texto, espacio) donde se permitirá la <strong>creación de posibles variables y/o constantes locales al ámbito de la función</strong></p>
-</li>
-<li>
-<p>se <strong>ejecuta la sentencia secuencial</strong> del cuerpo de la función pudiendose llamar de nuevo a otra función, creandose otro contexto de ejecución &#8230;&#8203; recursivamente, de tal forma que se constituye una <strong>pila de contextos de ejecución</strong> con el que está en ejecución en la cima y todos los anteriores pendientes del retorno del control de flujo de ejecución</p>
-</li>
-<li>
-<p>se <strong>retorna el control de flujo de ejecución</strong> desde el final de la sentencia secuencial, <strong>desapilando</strong> (incluido los <em>clousures</em>), el contexto de ejecución liberando su memoria (excepción de los <em>clousures</em>) con todas las variables/constantes/funciones locales del ámbito de la función</p>
-</li>
-<li>
-<p>continua con la <strong>siguiente operador/sentencia posterior a la llamada</strong> de ésta</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="red"><em>hoisting</em></strong>, elevación:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>la definición de la función <strong class="green">no requiere que sea previa</strong> a la primera apliación de la función</p>
-</li>
-<li>
-<p>la redefinición de la funición <strong class="red">anula las definiciones anteriores</strong></p>
-</li>
-</ul>
-</div>
+<p>la <strong>aplicación/ llamada/ invocación/ ejecución de la función</strong> se realiza postponiendo al nombre de la función el <strong>operador paréntesis</strong> y el tipo devuelto será, por defecto, <em>undefined</em></p>
 </li>
 </ul>
 </div>
@@ -5953,89 +5917,269 @@ console.writeln(array[-<span class="integer">1</span>]); <span class="comment">/
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">funcion</span>() {
-    console.writeln(<span class="error">`</span>mensaje<span class="error">`</span>);
-}
-console.writeln(funcion); <span class="comment">// function ...</span>
-console.writeln(<span class="keyword">typeof</span> funcion); <span class="comment">// function</span>
-console.writeln(funcion()); <span class="comment">// mensaje</span>
-console.writeln(<span class="keyword">typeof</span> funcion()); <span class="comment">// undefined</span>
-
-let nivel0 = <span class="integer">100</span>;
-external();
-
-<span class="keyword">function</span> <span class="function">external</span>() {
-    nivel0++;
-    console.writeln(<span class="error">`</span>external nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 1. external nivel0: 101</span>
-    middle();
-    sibbling();
-    nivel0++;
-    console.writeln(<span class="error">`</span>external nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 11. external nivel0: 105</span>
-
-    <span class="keyword">function</span> <span class="function">middle</span>() {
-        let nivel1 = <span class="integer">200</span>;
-        nivel1++;
-        console.writeln(<span class="error">`</span>middle nivel1: <span class="predefined">$</span>{nivel1}<span class="error">`</span>); <span class="comment">// 2. middle nivel1: 201</span>
-        nivel0++;
-        console.writeln(<span class="error">`</span>middle nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 3. middle nivel0: 102</span>
-        internal();
-        nivel1++;
-        console.writeln(<span class="error">`</span>middle nivel1: <span class="predefined">$</span>{nivel1}<span class="error">`</span>); <span class="comment">// 7. middle nivel1: 203</span>
-        nivel0++;
-        console.writeln(<span class="error">`</span>middle nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 8. middle nivel0: 104</span>
-
-        <span class="keyword">function</span> <span class="function">internal</span>() {
-            let nivel2 = <span class="integer">300</span>;
-            nivel2++;
-            console.writeln(<span class="error">`</span>internal nivel2: <span class="predefined">$</span>{nivel2}<span class="error">`</span>); <span class="comment">// 4. internal nivel2: 301</span>
-            nivel1++;
-            console.writeln(<span class="error">`</span>internal nivel1: <span class="predefined">$</span>{nivel1}<span class="error">`</span>); <span class="comment">// 5. internal nivel1: 202</span>
-            nivel0++;
-            console.writeln(<span class="error">`</span>internal nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 6. internal nivel0: 103</span>
-        }
-    }
-
-    <span class="keyword">function</span> <span class="function">sibbling</span>() {
-        let nivel0 = <span class="integer">0</span>;
-        nivel0++;
-        console.writeln(<span class="error">`</span>sibblings nivel0: <span class="predefined">$</span>{nivel0}<span class="error">`</span>); <span class="comment">// 9. sibblings nivel0: 1</span>
-        let nivel2 = <span class="integer">0</span>;
-        nivel2++;
-        console.writeln(<span class="error">`</span>sibblings nivel2: <span class="predefined">$</span>{nivel2}<span class="error">`</span>); <span class="comment">// 10. sibblings nivel2: 1</span>
-
-    }
+<span class="keyword">function</span> <span class="function">example</span>() {
+    const constant = <span class="error">`</span>acci<span class="error">ó</span>n intermedia<span class="error">`</span>;
+    console.writeln(<span class="error">`</span>primera acci<span class="error">ó</span>n<span class="error">`</span>);
+    console.writeln(constant);
+    console.writeln(<span class="error">`</span>segunda acci<span class="error">ó</span>n<span class="error">`</span>);
 }
 
-auxiliar(); <span class="comment">// segunda</span>
-principal(); <span class="comment">// segunda</span>
+example(); <span class="comment">// primera acción\nacción intermedia\nsegunda acción</span>
+console.writeln(<span class="keyword">typeof</span> example()); <span class="comment">// primera acción\nacción intermedia\nsegunda acción\nundefined</span>
+console.writeln(example()); <span class="comment">// primera acción\nacción intermedia\nsegunda acción\n</span>
+console.writeln(<span class="keyword">typeof</span> example); <span class="comment">// function</span>
+console.writeln(example); <span class="comment">// function ...</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los pasos en la ejecución de la función son los siguientes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se crea un <strong>contexto de ejecución</strong> de la función llamada mediante un espacio /tiempo que contendrá todas las declaraciones internas a la definición de la función: variables /constantes / funciones anidadas</p>
+</li>
+<li>
+<p>se <strong>apila</strong> el contexto de ejecución en la <strong>pila de contextos de ejecución</strong> con la cima para la función en ejecución y todos los contextos de ejecución anteriores pendientes del retorno del control de flujo de ejecución</p>
+</li>
+<li>
+<p>se <strong>ejecuta la sentencia secuencial</strong> del cuerpo de la función pudiendose llamar de nuevo a otra función, creandose otro contexto de ejecución, se apila en la pila de contextos de ejecución, &#8230;&#8203; recursivamente</p>
+</li>
+<li>
+<p>se <strong>retorna el control de flujo de ejecución</strong> desde el final de la sentencia secuencial, <strong>desapilando</strong> el contexto de ejecución y liberando su memoria con todas las variables/constantes/funciones locales del ámbito de la función, a excepción de los <em>clousures</em></p>
+</li>
+<li>
+<p>se continua con el /la <strong>siguiente operador /sentencia posterior a la llamada</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="elevación-hoisting">Elevación, <em>Hoisting</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la definición de la función <strong class="green">no requiere que sea previa</strong> a la primera apliación de la función</p>
+<div class="ulist">
+<ul>
+<li>
+<p>sufre <strong class="red"><em>hoisting</em></strong>, con la elevación por parte del motor hasta el comienzo del ámbito de su declaración</p>
+</li>
+<li>
+<p>la redefinición de la función, con el mismo nombre a otra función previamente declarada, <strong class="red">anula las definiciones anteriores</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
-<span class="keyword">function</span> <span class="function">auxiliar</span>() {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">primera</span><span class="delimiter">&quot;</span></span>);
-}
+const console = <span class="keyword">new</span> Console();
+principal(); <span class="comment">// última definición</span>
+auxiliar(); <span class="comment">// última definición</span>
 
 <span class="keyword">function</span> <span class="function">principal</span>() {
     auxiliar();
 }
 
 <span class="keyword">function</span> <span class="function">auxiliar</span>() {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">segunda</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">primera definición</span><span class="delimiter">&quot;</span></span>);
+}
+
+<span class="keyword">function</span> <span class="function">auxiliar</span>() {
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">última definición</span><span class="delimiter">&quot;</span></span>);
 }</code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="reglas-de-ámbito">Reglas de Ámbito</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>las <strong>reglas de ámbito</strong> establecen a qué declaraciones (variables /constantes /funciones) se tiene desde cada punto del código</p>
+<div class="ulist">
+<ul>
+<li>
+<p>existe un <strong>ámbito global</strong>, asociado a todo el programa, con declaraciones de funciones con un <strong>ámbito local</strong> que recursivamente contiene anidadas la declaración de otras funciones con sus respectivos ámbitos locales anidados</p>
+</li>
+<li>
+<p>desde cualquier <strong>ámbito se tiene acceso</strong> a todas las declaraciones previas en dicho ámbito y a todas las <strong>delcaraciones previas de ámbitos que aniden al ámbito en cuestión</strong></p>
+</li>
+<li>
+<p>pero <strong class="red">no se tiene acceso a las declaraciones en funciones declaradas anidadas</strong> en dicho ámbito</p>
+</li>
+<li>
+<p>por tanto,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el concepto de <strong>contexto de ejecución</strong> es una cuestión <strong>dinámica</strong> de <strong>espacio/tiempo de memoria</strong> que está relacionado con el <strong>tiempo de ejecución</strong>, mientras que</p>
+</li>
+<li>
+<p>el concepto de <strong>ámbito de la función</strong> es una cuestión <strong>estática</strong> de <strong>área de texto</strong> que está relacionado con el <strong>tiempo de "compilación"</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ambito.svg" alt="ambito" width="276" height="261">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let level0 = <span class="integer">0</span>;
+console.writeln(<span class="error">`</span>global level0: <span class="predefined">$</span>{level0}<span class="error">`</span>); <span class="comment">// global level0: 0</span>
+outer();
+
+<span class="keyword">function</span> <span class="function">outer</span>() {
+    level0++;
+    let level1 = <span class="integer">1</span>;
+    level1++;
+    console.writeln(<span class="error">`</span>outer level0: <span class="predefined">$</span>{level0}<span class="error">`</span>); <span class="comment">// external level0: 1</span>
+    console.writeln(<span class="error">`</span>outer level1: <span class="predefined">$</span>{level1}<span class="error">`</span>); <span class="comment">// external level1: 2</span>
+    <span class="comment">// console.writeln(`outer level2: ${level2}`); // Error!!!</span>
+    <span class="comment">// console.writeln(`outer level3: ${level3}`); // Error!!!</span>
+    middle();
+    inner();
+
+    <span class="keyword">function</span> <span class="function">middle</span>() {
+        level0++;
+        level1++;
+        let level2 = <span class="integer">2</span>;
+        level2++;
+        console.writeln(<span class="error">`</span>middle level0: <span class="predefined">$</span>{level0}<span class="error">`</span>); <span class="comment">// middle level0: 2</span>
+        console.writeln(<span class="error">`</span>middle level1: <span class="predefined">$</span>{level1}<span class="error">`</span>); <span class="comment">// middle level1: 3</span>
+        console.writeln(<span class="error">`</span>middle level2: <span class="predefined">$</span>{level2}<span class="error">`</span>); <span class="comment">// middle level2: 3</span>
+        <span class="comment">// console.writeln(`middle level3: ${level3}`); // Error!!!</span>
+        inner();
+
+        <span class="keyword">function</span> <span class="function">inner</span>() {
+            level0++;
+            level1++;
+            level2++;
+            let level3 = <span class="integer">3</span>;
+            level3++;
+            console.writeln(<span class="error">`</span>inner level0: <span class="predefined">$</span>{level0}<span class="error">`</span>); <span class="comment">// internal level0: 3</span>
+            console.writeln(<span class="error">`</span>inner level1: <span class="predefined">$</span>{level1}<span class="error">`</span>); <span class="comment">// internal level1: 4</span>
+            console.writeln(<span class="error">`</span>inner level2: <span class="predefined">$</span>{level2}<span class="error">`</span>); <span class="comment">// internal level2: 4</span>
+            console.writeln(<span class="error">`</span>inner level3: <span class="predefined">$</span>{level3}<span class="error">`</span>); <span class="comment">// internal level3: 4</span>
+        }
+    }
+
+    <span class="keyword">function</span> <span class="function">inner</span>() {
+        level0++;
+        level1++;
+        let level2 = <span class="integer">2</span>;
+        level2++;
+        console.writeln(<span class="error">`</span>inner level0: <span class="predefined">$</span>{level0}<span class="error">`</span>); <span class="comment">// sibbling level0: 4</span>
+        console.writeln(<span class="error">`</span>inner level1: <span class="predefined">$</span>{level1}<span class="error">`</span>); <span class="comment">// sibbling level1: 5</span>
+        console.writeln(<span class="error">`</span>inner level2: <span class="predefined">$</span>{level2}<span class="error">`</span>); <span class="comment">// sibbling level2: 3</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="colisión">Colisión</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>una declaración local, anidada, <strong>ocultará el acceso</strong> a cualquier otra <strong>declaración con el mismo nombre</strong> en sus <strong>ámbitos ancestro</strong> en el árbol de ámbitos del código</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let global = <span class="integer">3</span>;
+let collision = <span class="integer">2</span>;
+console.writeln(<span class="error">`</span>global: <span class="predefined">$</span>{global}<span class="error">`</span>); <span class="comment">// global: 3</span>
+console.writeln(<span class="error">`</span>collision: <span class="predefined">$</span>{collision}<span class="error">`</span>);<span class="comment">// collision: 2</span>
+outer();
+console.writeln(<span class="error">`</span>global: <span class="predefined">$</span>{global}<span class="error">`</span>); <span class="comment">// global: 4</span>
+console.writeln(<span class="error">`</span>collision: <span class="predefined">$</span>{collision}<span class="error">`</span>); <span class="comment">// collision: 2</span>
+
+<span class="keyword">function</span> <span class="function">outer</span>() {
+    let local = <span class="integer">1</span>;
+    let collision = <span class="integer">0</span>;
+    global++;
+    local++;
+    collision++;
+    console.writeln(<span class="error">`</span>global: <span class="predefined">$</span>{global}<span class="error">`</span>); <span class="comment">// global: 4</span>
+    console.writeln(<span class="error">`</span>local: <span class="predefined">$</span>{local}<span class="error">`</span>); <span class="comment">// local: 2</span>
+    console.writeln(<span class="error">`</span>collision: <span class="predefined">$</span>{collision}<span class="error">`</span>); <span class="comment">// collision: 1</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="función-parametrizada">Función parametrizada</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Función parametrizada</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -6137,17 +6281,14 @@ writelnSum(<span class="integer">1</span>,<span class="integer">2</span>,<span c
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="retorno-de-función">Retorno de Función</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 36.3636%;">
 <col style="width: 63.6364%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Retorno</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -6220,82 +6361,6 @@ console.writeln(value*factorial(value)); <span class="comment">// 18</span>
     }
     <span class="keyword">return</span> result;
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Funciones globales</th>
-<th class="tableblock halign-left valign-top" colspan="2"><em>Ejemplos</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>isFinite()</em></p>
-</li>
-<li>
-<p><em>isNaN()</em></p>
-</li>
-<li>
-<p><em>parseFloat()</em></p>
-</li>
-<li>
-<p><em>parseInt()</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="error">`</span>.<span class="regexp"><span class="delimiter">/</span><span class="content">console`);
-
-const console = new Console();
-console.writeln(parseFloat(`3.14`)); </span><span class="delimiter">/</span></span>/ <span class="float">3.14</span>
-console.writeln(parseFloat(<span class="error">`</span><span class="float">314e-2</span><span class="error">`</span>)); <span class="comment">// 3.14</span>
-console.writeln(parseFloat(<span class="error">`</span><span class="float">0.0314E+2</span><span class="error">`</span>)); <span class="comment">// 3.14</span>
-console.writeln(parseFloat(<span class="error">`</span><span class="float">3.1</span> error <span class="integer">4</span><span class="error">`</span>)); <span class="comment">// 3.1</span>
-console.writeln(parseFloat(<span class="error">`</span>error<span class="error">`</span>)); <span class="comment">// NaN</span>
-
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">F</span><span class="delimiter">&quot;</span></span>, <span class="integer">16</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">12</span><span class="delimiter">&quot;</span></span>, <span class="integer">13</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">15</span><span class="delimiter">&quot;</span></span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="float">15.99</span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">15*3</span><span class="delimiter">&quot;</span></span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">17</span><span class="delimiter">&quot;</span></span>, <span class="integer">8</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">1111</span><span class="delimiter">&quot;</span></span>, <span class="integer">2</span>)); <span class="comment">// 15</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span>, <span class="integer">8</span>)); <span class="comment">// NaN</span>
-console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">546</span><span class="delimiter">&quot;</span></span>, <span class="integer">2</span>)); <span class="comment">// NaN</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">console.writeln(isFinite(<span class="integer">0</span>)); <span class="comment">// true</span>
-console.writeln(isFinite(<span class="float">2e64</span>)); <span class="comment">// true</span>
-console.writeln(isFinite(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>)); <span class="comment">// true!!!</span>
-console.writeln(isFinite(-<span class="predefined-constant">Infinity</span>)); <span class="comment">// false</span>
-console.writeln(isFinite(<span class="predefined-constant">Infinity</span>)); <span class="comment">// false</span>
-console.writeln(isFinite(<span class="predefined-constant">NaN</span>)); <span class="comment">// false</span>
-
-console.writeln(isNaN(<span class="predefined-constant">NaN</span>)); <span class="comment">//true</span>
-console.writeln(isNaN(<span class="integer">0</span> / <span class="integer">0</span>)); <span class="comment">//true</span>
-console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">NaN</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
-console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">Hello</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
-console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">2005/12/12</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
-console.writeln(isNaN(<span class="predefined-constant">undefined</span>)); <span class="comment">//true</span>
-console.writeln(isNaN(<span class="integer">0</span>)); <span class="comment">//false</span>
-console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">123</span><span class="delimiter">'</span></span>)); <span class="comment">//false</span>
-console.writeln(isNaN(<span class="predefined-constant">true</span>)); <span class="comment">//false</span>
-console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>)); <span class="comment">//false</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6533,6 +6598,136 @@ console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="funciones-globales">Funciones Globales</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>isFinite()</em></p>
+</li>
+<li>
+<p><em>isNaN()</em></p>
+</li>
+<li>
+<p><em>parseFloat()</em></p>
+</li>
+<li>
+<p><em>parseInt()</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="error">`</span>.<span class="regexp"><span class="delimiter">/</span><span class="content">console`);
+
+const console = new Console();
+console.writeln(parseFloat(`3.14`)); </span><span class="delimiter">/</span></span>/ <span class="float">3.14</span>
+console.writeln(parseFloat(<span class="error">`</span><span class="float">314e-2</span><span class="error">`</span>)); <span class="comment">// 3.14</span>
+console.writeln(parseFloat(<span class="error">`</span><span class="float">0.0314E+2</span><span class="error">`</span>)); <span class="comment">// 3.14</span>
+console.writeln(parseFloat(<span class="error">`</span><span class="float">3.1</span> error <span class="integer">4</span><span class="error">`</span>)); <span class="comment">// 3.1</span>
+console.writeln(parseFloat(<span class="error">`</span>error<span class="error">`</span>)); <span class="comment">// NaN</span>
+
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">F</span><span class="delimiter">&quot;</span></span>, <span class="integer">16</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">12</span><span class="delimiter">&quot;</span></span>, <span class="integer">13</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">15</span><span class="delimiter">&quot;</span></span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="float">15.99</span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">15*3</span><span class="delimiter">&quot;</span></span>, <span class="integer">10</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">17</span><span class="delimiter">&quot;</span></span>, <span class="integer">8</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">1111</span><span class="delimiter">&quot;</span></span>, <span class="integer">2</span>)); <span class="comment">// 15</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span>, <span class="integer">8</span>)); <span class="comment">// NaN</span>
+console.writeln(parseInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">546</span><span class="delimiter">&quot;</span></span>, <span class="integer">2</span>)); <span class="comment">// NaN</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.writeln(isFinite(<span class="integer">0</span>)); <span class="comment">// true</span>
+console.writeln(isFinite(<span class="float">2e64</span>)); <span class="comment">// true</span>
+console.writeln(isFinite(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>)); <span class="comment">// true!!!</span>
+console.writeln(isFinite(-<span class="predefined-constant">Infinity</span>)); <span class="comment">// false</span>
+console.writeln(isFinite(<span class="predefined-constant">Infinity</span>)); <span class="comment">// false</span>
+console.writeln(isFinite(<span class="predefined-constant">NaN</span>)); <span class="comment">// false</span>
+
+console.writeln(isNaN(<span class="predefined-constant">NaN</span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="integer">0</span> / <span class="integer">0</span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">NaN</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">Hello</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">2005/12/12</span><span class="delimiter">'</span></span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="predefined-constant">undefined</span>)); <span class="comment">//true</span>
+console.writeln(isNaN(<span class="integer">0</span>)); <span class="comment">//false</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="content">123</span><span class="delimiter">'</span></span>)); <span class="comment">//false</span>
+console.writeln(isNaN(<span class="predefined-constant">true</span>)); <span class="comment">//false</span>
+console.writeln(isNaN(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>)); <span class="comment">//false</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="variablesconstantes-función">Variables/Constantes Función</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong>funciones son ciudadanos de primera</strong>, considerando la información de los valores de los tipos primitivos como una alternativa a la información de la función con cómo manipular y/o calcular otros valores</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el identificador de la función, sin paréntesis de la llamada, se evalúa con la propia función de tipo <em>function</em></p>
+</li>
+<li>
+<p>se pueden declarar <strong>variables y/o constantes que referencian a funciones</strong> mediante la <strong>inicialización</strong> / <strong>asignación</strong> del nombre de una función</p>
+</li>
+<li>
+<p>el <strong>operador de igualdad</strong>, "==" y "===" y <strong>operador distinto</strong>, "!=" y "!==" sobre estas referencias realmente se <strong>convierte en el operador el mismo</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let dynamic = first;
+dynamic(<span class="error">`</span>cualquiera<span class="error">`</span>); <span class="comment">// mensaje: cualquiera</span>
+dynamic = second;
+dynamic(<span class="error">`</span>cualquiera<span class="error">`</span>); <span class="comment">// MENSAJE: cualquiera</span>
+
+<span class="keyword">function</span> <span class="function">first</span>(msg) {
+    console.writeln(<span class="error">`</span>mensaje: <span class="predefined">$</span>{msg}<span class="error">`</span>);
+}
+
+<span class="keyword">function</span> <span class="function">second</span>(msg) {
+    console.writeln(<span class="error">`</span>MENSAJE: <span class="predefined">$</span>{msg}<span class="error">`</span>);
+}
+
+console.writeln(first === second); <span class="comment">// false</span>
+second = first;
+console.writeln(first === second); <span class="comment">// true</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="recursividad">Recursividad</h3>
@@ -7143,8 +7338,8 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <h4 id="backtraking">Backtraking</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <tbody>
 <tr>
@@ -7422,62 +7617,95 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <h3 id="funciones-de-orden-superior">Funciones de Orden Superior</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Funciones de orden superior</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Son funciones que admiten como <strong class="blue">parámetros otras funciones o retornan funciones</strong> como resultado de su aplicación</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em class="blue"><strong>clousures</strong></em>, cerradura, la definición de la función interna a la función tiene acceso a las variables del ámbito de la función de orden superior que la envuelve</p>
-<div class="ulist">
-<ul>
-<li>
-<p>por tanto, tras la ejecucíón de la función de orden superior, se desapila de la pila del control de flujo de ejecución pero su <strong class="blue">contexto no se libera</strong></p>
-</li>
-<li>
-<p>de tal forma, que cada posterior aplicación de la función interna devuelta tiene acceso a esta <strong class="blue">información persistente y compartida por todas sus aplicaciones</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Se pueden declarar variables y/o constantes que <strong class="blue">referencian</strong> a funciones</p>
-<div class="ulist">
-<ul>
-<li>
-<p>los valores de dichas variables son la dirección del objeto función que almacena la información de un algoritmo</p>
-</li>
-<li>
-<p>el <strong class="blue">operador de igualdad</strong>, <em>"==" y "==="</em> sobre estas referencias realmente se convierte en el <em class="red"><strong>operador el mismo</strong></em></p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">3</span>-procesos/<span class="integer">4</span>-ordenSuperior.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-procesos/<span class="integer">4</span>-ordenSuperior/salida/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">selector</span>(direction) {
+  <span class="keyword">if</span> (direction){
+    <span class="keyword">return</span> increment;
+  }
+  <span class="keyword">return</span> decrement;
+
+  <span class="keyword">function</span> <span class="function">increment</span>(value) {
+    <span class="keyword">return</span> value + <span class="integer">1</span>;
+  }
+
+  <span class="keyword">function</span> <span class="function">decrement</span>(value) {
+    <span class="keyword">return</span> value - <span class="integer">1</span>;
+  }
+};
+
+let operation = selector(<span class="predefined-constant">true</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{operation(<span class="integer">1</span>)}<span class="error">`</span>); <span class="comment">// 2</span>
+operation = selector(<span class="predefined-constant">false</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{operation(<span class="integer">1</span>)}<span class="error">`</span>); <span class="comment">// 0</span></code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">3</span>-procesos/<span class="integer">4</span>-ordenSuperior.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-procesos/<span class="integer">4</span>-ordenSuperior/entrada/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">normalXA</span>(){
+    console.writeln(<span class="error">`</span>A<span class="error">`</span>);
+}
+
+<span class="keyword">function</span> <span class="function">normalXB</span>(){
+    console.writeln(<span class="error">`</span>B<span class="error">`</span>);
+}
+
+<span class="keyword">function</span> <span class="function">superiorX</span>(f){
+    f();
+}
+
+superiorX(normalXA); <span class="comment">// A</span>
+superiorX(normalXB); <span class="comment">// B</span>
+
+<span class="keyword">function</span> <span class="function">normalYA</span>(){
+    <span class="keyword">return</span> <span class="error">`</span>A<span class="error">`</span>;
+}
+
+<span class="keyword">function</span> <span class="function">normalYB</span>(){
+    <span class="keyword">return</span> <span class="error">`</span>B<span class="error">`</span>;
+}
+
+<span class="keyword">function</span> <span class="function">superiorY</span>(f){
+    console.writeln(f());
+}
+
+superiorY(normalYA); <span class="comment">// A</span>
+superiorY(normalYB); <span class="comment">// B</span>
+
+<span class="keyword">function</span> <span class="function">normalZA</span>(value){
+    console.writeln(value);
+}
+
+<span class="keyword">function</span> <span class="function">normalZB</span>(value){
+    console.writeln(value + value);
+}
+
+<span class="keyword">function</span> <span class="function">superiorZ</span>(value, f){
+    f(value);
+}
+
+superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZA); <span class="comment">// A</span>
+superiorZ(<span class="error">`</span>B<span class="error">`</span>, normalZB); <span class="comment">// BB</span>
+superiorZ(<span class="error">`</span>B<span class="error">`</span>, normalZA); <span class="comment">// B</span>
+superiorZ(<span class="error">`</span>A<span class="error">`</span>, normalZB); <span class="comment">// AA</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -7499,11 +7727,17 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#findindex">countries-findIndex</a>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/0-funciones/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/1-funcionesOrdenSuperior/0-entrada/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/1-funcionesOrdenSuperior/1-salida/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#reduce">countries-reduces</a>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/15-reduce/3-procesos/1-funciones/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/15-reduce/3-procesos/4-ordenSuperior/0-entrada/app.js">solución</a></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -7516,28 +7750,22 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <col style="width: 40%;">
 <col style="width: 60%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Funciones anónimas</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>se pueden declarar <strong class="blue">funciones sin identificador</strong> posibilitando sin necesidad de nombrar el conjunto de acciones:</p>
+<p>Se pueden declarar <strong class="blue">funciones sin identificador</strong> posibilitando sin necesidad de nombrar el conjunto de acciones:</p>
 <div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">aplicarla de inmediato</strong></p>
 </li>
 <li>
-<p><strong class="blue">retornarla por otra función de orden superior</strong></p>
+<p><strong class="blue">almacenarla en una referencia o parámetro</strong> variable/constante para su posterior aplicación</p>
 </li>
 <li>
-<p><strong class="blue">almacenarla en una referencia</strong> variable/constante para su posterior aplicación</p>
+<p><strong class="blue">retornarla por otra función de orden superior</strong></p>
 </li>
 </ul>
 </div>
@@ -7594,6 +7822,7 @@ console.writeln(<span class="keyword">typeof</span> g); <span class="comment">//
 console.writeln(g); <span class="comment">// function gg() ...</span>
 console.writeln(g()); <span class="comment">// anonimal gg\n</span>
 console.writeln(<span class="keyword">typeof</span> g()); <span class="comment">// undefined</span>
+
 
 <span class="function">nominal</span> = <span class="keyword">function</span> () {
     console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">re-anomina</span><span class="delimiter">&quot;</span></span>);
@@ -7686,11 +7915,17 @@ console.writeln(ambitoNominal()); <span class="comment">// 1</span></code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#findIndex">countries-findIndex</a>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/1-funcionesOrdenSuperior/0-entrada/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/1-funcionesOrdenSuperior/1-salida/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/2-funcionesAnonimas/0-entrada/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/2-funcionesAnonimas/1-salida/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#reduce">countries-reduces</a>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/15-reduce/3-procesos/4-ordenSuperior/0-entrada/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/15-reduce/3-procesos/5-anonimas/0-entrada/app.js">solución</a></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -7703,12 +7938,6 @@ console.writeln(ambitoNominal()); <span class="comment">// 1</span></code></pre>
 <col style="width: 40%;">
 <col style="width: 60%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Funciones flecha</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -7842,11 +8071,249 @@ let <span class="reserved">double</span> = <span class="keyword">function</span>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#findIndex">countries-findIndex</a>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/2-funcionesAnonimas/0-entrada/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/2-funcionesAnonimas/1-salida/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/3-funcionesFlecha/0-entrada/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/3-procesos/3-funcionesFlecha/1-salida/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#reduce">countries-reduces</a>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/15-reduce/3-procesos/5-anonimas/0-entrada/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/15-reduce/3-procesos/6-flecha/0-entrada/app.js">solución</a></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="clousures"><em>Clousures</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semática</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>clousures</strong></em>, cerradura, la definición de la función interna a la función tiene acceso a las variables del ámbito de la función de orden superior que la envuelve</p>
+<div class="ulist">
+<ul>
+<li>
+<p>por tanto, tras la ejecucíón de la función de orden superior, se desapila de la pila del control de flujo de ejecución pero su <strong class="blue">contexto no se libera</strong></p>
+</li>
+<li>
+<p>de tal forma, que cada posterior aplicación de la función interna devuelta tiene acceso a esta <strong class="blue">información persistente y compartida por todas sus aplicaciones</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>permiten la `<strong class="blue">encapsulación de datos compartidos</strong>, preludio de la <strong class="green">implantación de objetos con parte privada</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">incGenerator</span>(initial) {
+  let counter = initial;
+  <span class="keyword">return</span> next;
+
+  <span class="keyword">function</span> <span class="function">next</span>() {
+    counter++;
+    <span class="keyword">return</span> counter
+  }
+}
+
+const incX = incGenerator(<span class="integer">0</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 3</span>
+const incY = incGenerator(<span class="integer">1</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 4</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">incGenerator</span>(initial) {
+  let counter = initial;
+  <span class="keyword">return</span> <span class="keyword">function</span> () {
+    counter++;
+    <span class="keyword">return</span> counter
+  };
+}
+
+const incX = incGenerator(<span class="integer">0</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 3</span>
+const incY = incGenerator(<span class="integer">1</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 4</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">incGenerator</span>(initial) {
+  let counter = initial;
+  <span class="keyword">return</span> () =&gt; {
+    counter++;
+    <span class="keyword">return</span> counter
+  };
+}
+
+const incX = incGenerator(<span class="integer">0</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 3</span>
+const incY = incGenerator(<span class="integer">1</span>);
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 4</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="currificación">Currificación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Toda función que recibe más de un parámetro, se puede <strong>reescribir como una función que toma un único parámetro y retorna una función que, a su vez, toma un único parámetro y así, hasta una función con un único parametro que realiza las mismas acciones</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Son los fundamentos de la programación funcional: <strong class="green">cálculo lambda</strong></p>
+</li>
+<li>
+<p>Están basados en <strong class="blue"><em>clousures</em></strong>, funciones de <strong class="blue">orden superior</strong> que devuelven una función con cierre a las declaraciones de la función que la genera</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ventajas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>crear funciones nuevas mediante la aplicación parcial de los argumentos</p>
+</li>
+<li>
+<p>escribir pequeñas piezas de código que sean más fácil de reutilizar</p>
+</li>
+<li>
+<p>razonar sobre ellas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const <span class="function">isDivisible</span> = <span class="keyword">function</span> (mod, num) {
+    <span class="keyword">return</span> num % mod === <span class="integer">0</span>;
+}
+console.writeln(isDivisible(<span class="integer">2</span>, <span class="integer">111</span>));
+console.writeln(isDivisible(<span class="integer">2</span>, <span class="integer">110</span>));
+console.writeln(isDivisible(<span class="integer">3</span>, <span class="integer">111</span>));
+console.writeln(isDivisible(<span class="integer">3</span>, <span class="integer">110</span>));
+
+const <span class="function">isDivisibleCurry</span> = <span class="keyword">function</span> (mod) {
+    <span class="keyword">return</span> <span class="keyword">function</span> (num) {
+        <span class="keyword">return</span> num % mod == <span class="integer">0</span>;
+    }
+}
+console.writeln(isDivisibleCurry(<span class="integer">2</span>)(<span class="integer">111</span>));
+console.writeln(isDivisibleCurry(<span class="integer">2</span>)(<span class="integer">110</span>));
+console.writeln(isDivisibleCurry(<span class="integer">3</span>)(<span class="integer">111</span>));
+console.writeln(isDivisibleCurry(<span class="integer">3</span>)(<span class="integer">110</span>));
+const isEvenAnonymus = isDivisibleCurry(<span class="integer">2</span>);
+console.writeln(isEvenAnonymus(<span class="integer">111</span>));
+console.writeln(isEvenAnonymus(<span class="integer">110</span>));
+const isTripleAnonymus = isDivisibleCurry(<span class="integer">3</span>);
+console.writeln(isTripleAnonymus(<span class="integer">111</span>));
+console.writeln(isTripleAnonymus(<span class="integer">110</span>));
+
+const isdivisibleCurryArrow = mod =&gt; num =&gt; num % mod === <span class="integer">0</span>;
+console.writeln(isdivisibleCurryArrow(<span class="integer">2</span>)(<span class="integer">111</span>));
+console.writeln(isdivisibleCurryArrow(<span class="integer">2</span>)(<span class="integer">110</span>));
+console.writeln(isdivisibleCurryArrow(<span class="integer">3</span>)(<span class="integer">111</span>));
+console.writeln(isdivisibleCurryArrow(<span class="integer">3</span>)(<span class="integer">110</span>));
+const isEvenArrow = isdivisibleCurryArrow(<span class="integer">2</span>);
+console.writeln(isEvenArrow(<span class="integer">111</span>));
+console.writeln(isEvenArrow(<span class="integer">110</span>));
+const isTripleArrow = isdivisibleCurryArrow(<span class="integer">3</span>);
+console.writeln(isTripleArrow(<span class="integer">111</span>));
+console.writeln(isTripleArrow(<span class="integer">110</span>));</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/3-procesos/8-currificacion/1-log/app.js">log</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/3-procesos/8-currificacion/2-units/app.js">converter</a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -8849,7 +9316,7 @@ object.method();</code></pre>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">5</span>-envolturas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">2</span>-constructora/<span class="integer">5</span>-clasesPredefinidas/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">6</span>-envolturas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">2</span>-constructora/<span class="integer">5</span>-clasesPredefinidas/app.js[]</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8884,7 +9351,7 @@ object.method();</code></pre>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">5</span>-envolturas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">2</span>-constructora/<span class="integer">6</span>-constructoraFuncion/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">6</span>-envolturas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">2</span>-constructora/<span class="integer">6</span>-constructoraFuncion/app.js[]</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9013,7 +9480,7 @@ si son claves de propiedades de objetos no sale con for/in, Object.keys(objeto),
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">6</span>-tablas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">4</span>-arrays/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">8</span>-tablas.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">4</span>-objetos/<span class="integer">4</span>-arrays/app.js[]</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9088,27 +9555,7 @@ console.writeln("length: " + array.length);</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">estado</span>() {
-    console.writeln(estado.variable);
-    estado.variable++;
-}
-estado.variable = <span class="integer">0</span>;
-estado();
-estado();
-estado();
-console.writeln(estado.variable);
-
-let f1 = estado;
-let f2 = estado;
-let f3 = f1;
-f2.variable = <span class="integer">666</span>;
-f1();
-f2();
-f3();
-console.writeln(estado.variable);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">9</span>-funciones.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-procesos/<span class="integer">1</span>-funciones/<span class="integer">5</span>-estadoFuncion/app.js[]</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9140,9 +9587,13 @@ console.writeln(estado.variable);</code></pre>
 <p>Function</p>
 </div>
 <div class="sect3">
-<h4 id="clousures">Clousures</h4>
+<h4 id="clousures-2">Clousures</h4>
 
 </div>
+</div>
+<div class="sect2">
+<h3 id="funciones-generadoras">Funciones Generadoras</h3>
+
 </div>
 <div class="sect2">
 <h3 id="estructuras-de-datos">Estructuras de Datos</h3>
