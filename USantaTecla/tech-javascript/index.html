@@ -484,30 +484,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a>
 <ul class="sectlevel2">
 <li><a href="#objetos">Objetos</a></li>
+<li><a href="#objetos-de-utilidad">Objetos de utilidad</a></li>
 <li><a href="#función-constructora">Función Constructora</a></li>
-<li><a href="#patrón-modulo">Patrón Modulo</a></li>
+<li><a href="#funciones-constructoras-de-utilidad">Funciones constructoras de utilidad</a></li>
+<li><a href="#función-constructora-object">Función constructora <em>Object</em></a></li>
+<li><a href="#función-contructora-array">Función contructora <em>Array</em></a></li>
+<li><a href="#función-constructora-function">Función constructora <em>Function</em></a></li>
 <li><a href="#clases">Clases</a></li>
-<li><a href="#json">JSON</a></li>
-<li><a href="#envolturas">Envolturas</a></li>
-<li><a href="#símbolos">Símbolos</a></li>
-<li><a href="#arrays-2">Arrays</a></li>
-<li><a href="#funciones-2">Funciones</a></li>
 <li><a href="#herencia">Herencia</a></li>
-<li><a href="#funciones-generadoras">Funciones Generadoras</a></li>
-<li><a href="#estructuras-de-datos">Estructuras de Datos</a></li>
-<li><a href="#callbacks"><em>Callbacks</em></a></li>
-<li><a href="#promesas">Promesas</a></li>
-<li><a href="#funciones-asíncronas">Funciones Asíncronas</a></li>
-<li><a href="#patrón-observadorobservado">Patrón Observador/Observado</a></li>
 </ul>
 </li>
-<li><a href="#programación-modular">Programación Modular</a>
-<ul class="sectlevel2">
-<li><a href="#common-js"><em>Common JS</em></a></li>
-<li><a href="#es-modules"><em>ES Modules</em></a></li>
-</ul>
-</li>
-<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -8205,8 +8191,8 @@ console.writeln(<span class="error">`</span><span class="predefined">$</span>{in
 <h3 id="currificación">Currificación</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <tbody>
 <tr>
@@ -8741,8 +8727,8 @@ console.writeln(<span class="keyword">typeof</span> object); <span class="commen
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">7</span>);
-method(object);
+const o = createObject(<span class="integer">7</span>);
+method(o);
 
 <span class="keyword">function</span> <span class="function">createObject</span>(property) {
   <span class="keyword">return</span> {
@@ -8791,8 +8777,8 @@ method(object);
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">7</span>);
-object.method();
+const o = createObject(<span class="integer">7</span>);
+o.method();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(property) {
     let returned = {
@@ -8840,8 +8826,8 @@ object.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">7</span>);
-object.method();
+const o = createObject(<span class="integer">7</span>);
+o.method();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(property) {
     <span class="keyword">return</span> {
@@ -8890,16 +8876,15 @@ object.method();
 </table>
 </div>
 <div class="sect2">
-<h3 id="función-constructora">Función Constructora</h3>
+<h3 id="objetos-de-utilidad">Objetos de utilidad</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 60%;">
+<col style="width: 40%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Función constructora</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math"><em>Math</em></a></th>
 </tr>
 </thead>
 <tbody>
@@ -8907,11 +8892,60 @@ object.method();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Las clases se "simulan" con una función nominal que hace referencia a <strong><em>this</em></strong> como ámbito del objeto que se construye</p>
+<p><strong class="blue">Semántica</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>el operador <strong><em>new</em></strong> reserva memoria para el objeto creado, <strong><em>this</em></strong></p>
+<p>Objeto que tiene propiedades y métodos para constantes y funciones matemáticas</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/E"><em>E</em></a>, constante del <strong>número e</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/PI"><em>PI</em></a>, constante <strong>Pi</strong></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt"><em>sqrt</em></a>, <strong>raíz cuadrada</strong> de un número</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/sin"><em>sin</em></a>, <strong>seno</strong> de un número</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/abs"><em>abs</em></a>, <strong>valor absoluto</strong> de un número</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/sign"><em>sign</em></a>, <strong>signo de un número</strong> positivo, negativo o cero.</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil"><em>ceil</em></a>, <strong>entero mayor o igual más próximo</strong> a un número dado</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/round"><em>round</em></a>, número <strong>redondeado al entero más cercano</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/floor"><em>floor</em></a>, <strong>máximo entero menor o igual a un número</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/max"><em>max</em></a>, el <strong>mayor de cero o más números</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/pow"><em>pow</em></a>, <strong>base elevada al exponente</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random"><em>random</em></a>, número <strong>flotante pseudo-aleatorio dentro del rango [0, 1)</strong></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -8923,8 +8957,122 @@ object.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
+console.writeln(Math.E);  <span class="comment">// 2.718281828459045</span>
+console.writeln(Math.PI); <span class="comment">// 3.141592653589793</span>
+console.writeln(Math.sqrt(<span class="integer">2</span>)); <span class="comment">// 1.414213562373095</span>
+console.writeln(Math.sin(Math.PI / <span class="integer">2</span>)); <span class="comment">// 1</span>
+console.writeln(Math.abs(<span class="string"><span class="delimiter">'</span><span class="content">no convertible a número</span><span class="delimiter">'</span></span>)); <span class="comment">// NaN</span>
+console.writeln(Math.abs(<span class="string"><span class="delimiter">'</span><span class="content">-1</span><span class="delimiter">'</span></span>)); <span class="comment">// 1</span>
+console.writeln(Math.sign(<span class="string"><span class="delimiter">'</span><span class="content">-999</span><span class="delimiter">'</span></span>)); <span class="comment">// -1</span>
+console.writeln(Math.ceil(<span class="float">0.5</span>)); <span class="comment">// 1</span>
+console.writeln(Math.round(<span class="float">0.5</span>)); <span class="comment">// 1</span>
+console.writeln(Math.floor(<span class="float">0.5</span>)); <span class="comment">// 0</span>
+console.writeln(Math.max(-<span class="integer">1</span>, <span class="integer">1</span>)); <span class="comment">// 1</span>
+console.writeln(Math.pow(<span class="integer">2</span>, <span class="integer">10</span>)); <span class="comment">// 1024</span>
+console.writeln(Math.random()); <span class="comment">// ?</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON"><em>JSON</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Objeto <strong>JSON</strong> para la conversión de objetos de <em>JavaScript</em> a formato <em>JSON</em> y viceversa</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"><em>parse</em></a>, <strong>conversión de <em>string</em> a objeto</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"><em>stringify</em></a>, <strong>conversión de objeto a <em>string</em></strong>, <span class="red">ignorando propiedades función!!!</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let object = {
+    <span class="key">a</span>: <span class="integer">4662</span>,
+    <span class="key">b</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>,
+    <span class="key">c</span>: [<span class="predefined-constant">true</span>, <span class="predefined-constant">false</span>, <span class="predefined-constant">true</span>],
+    <span class="key">d</span>: {
+        <span class="key">x</span>: <span class="integer">1</span>,
+        <span class="key">y</span>: -<span class="integer">1</span>
+    },
+    <span class="key">e</span>: x =&gt; x+<span class="integer">1</span>
+};
+let string = JSON.stringify(object);
+console.writeln(<span class="keyword">typeof</span> string); <span class="comment">// string</span>
+console.writeln(string); <span class="comment">// {&quot;a&quot;:4662,&quot;b&quot;:&quot;campo&quot;,&quot;c&quot;:[true,false,true],&quot;d&quot;:{&quot;x&quot;:1,&quot;y&quot;:-1}}</span>
+
+object = JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;: 4662, &quot;b&quot;: &quot;campo&quot;, &quot;c&quot;: [true, false, true], &quot;d&quot;: { &quot;x&quot;: 1, &quot;y&quot;: -1}}</span><span class="delimiter">'</span></span>);
+console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
+console.writeln(object); <span class="comment">// [object Object]</span>
+<span class="keyword">for</span> (let property <span class="keyword">in</span> object) {
+    console.writeln(<span class="error">`</span><span class="predefined">$</span>{property}: <span class="predefined">$</span>{object[property]}<span class="error">`</span>); <span class="comment">// a: 4662 // b: campo // c: true,false,true // d: [object Object]</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="función-constructora">Función Constructora</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el operador <strong><em>new</em></strong> reserva memoria para el objeto creado y evalúa la función constructora suministrando el objeto recien creado a través de la dirección constante <strong><em>this</em></strong> para la construcción de propiedades de cada objeto</p>
+</li>
+<li>
+<p>La función constructora, emula la función de las clases de otros lenguajes fuertemente tipados, da de alta las propiedades en el objeto <strong><em>this</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
 const o = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
 o.method();
+console.writeln(o.constructor);
+
 
 <span class="keyword">function</span> <span class="function">Clazz</span>(property) {
     <span class="local-variable">this</span>.property = property;
@@ -8947,31 +9095,28 @@ o.method();
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Lenguaje con <strong class="blue">prototipos</strong>, donde todo objeto referencia a su prototipo para información compartida por todos los objetos de la misma "clase" y así almacenar las <strong class="blue">funciones de instancia</strong> y los <strong class="blue">miembros estáticos, atributos y/o métodos</strong></p>
+<p>Lenguaje con <strong class="blue">prototipos</strong>, donde todo objeto referencia a su función constructora desde la que se accede a un prototipo para información compartida por todos los objetos de la misma "clase" y así almacenar las <strong class="blue">funciones de instancia</strong> y los <strong class="blue">miembros estáticos, atributos y/o métodos</strong></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/prototipos.svg" alt="prototipos" width="1279" height="577">
+<img src="images/prototipos.svg" alt="prototipos" width="1111" height="577">
 </div>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/constructora.svg" alt="constructora" width="1369" height="187">
+<img src="images/constructora.svg" alt="constructora" width="1689" height="285">
 </div>
 </div></div></td>
 </tr>
@@ -8982,12 +9127,6 @@ o.method();
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Métodos en prototipos</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -9070,7 +9209,7 @@ o.method();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/7-clousure/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionConstructora/1-version/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionConstructora/2-version/app.js">solución</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/5-comportamiento/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionContructora/1-version/app.js">solución</a> - - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionContructora/2-version/app.js">solución</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -9081,18 +9220,67 @@ o.method();</code></pre>
 </table>
 </div>
 <div class="sect2">
-<h3 id="patrón-modulo">Patrón Modulo</h3>
+<h3 id="funciones-constructoras-de-utilidad">Funciones constructoras de utilidad</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date"><em>Date</em></a></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>los <em>clousures</em> permiten la creación de objetos con atributos privados como variables locales a la función constructora</p>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>momento fijo en el tiempo en un formato independiente</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Date</em>, constructor que recibe número de <strong>milisegundos transcurridos desde el 1 de Enero de 1970</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/now"><em>now</em></a>, método estático que retorna el <strong>momento actual</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString">toString</a>, <strong>cadena de caracteres</strong> correspondiente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime"><em>getTime</em></a>, <strong>valor numérico correspondiente a la hora para la fecha especificada</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate"><em>getDate</em></a>, <strong>día del mes</strong> para la fecha especificada</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay"><em>getDay</em></a>, <strong>día de la semana</strong> de la fecha especificada</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours"><em>getHours</em></a>, <strong>hora</strong> de la fecha especificada</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours"><em>setHours</em></a>, <strong>configura la hora</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/parse"><em>parse</em></a>, <strong>transforma una cadena con la representación de una fecha y hora</strong>, y devuelve el número de milisegundos</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -9101,24 +9289,86 @@ o.method();</code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">7</span>);
-object.method();
+console.writeln(Date.now()); <span class="comment">// ?</span>
+let date = <span class="keyword">new</span> Date(Date.now());
+console.writeln(date.toString()); <span class="comment">// ?</span>
+date = <span class="keyword">new</span> Date(<span class="integer">0</span>);
+console.writeln(date.toString()); <span class="comment">// Thu Jan 01 1970 01:00:00 GMT+0100 (hora estándar de Europa central)</span>
+date = <span class="keyword">new</span> Date(<span class="string"><span class="delimiter">'</span><span class="content">August 19, 1975 23:15:30</span><span class="delimiter">'</span></span>);
+console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 23:15:30 GMT+0200 (hora de verano de Europa central)</span>
+console.writeln(date.getTime()); <span class="comment">// 177714930000</span>
+console.writeln(date.getDate()); <span class="comment">// 19</span>
+console.writeln(date.getDay()); <span class="comment">// 2</span>
+console.writeln(date.getHours()); <span class="comment">// 23</span>
+date.setHours(<span class="integer">1</span>);
+console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 01:15:30 GMT+0200 (hora de verano de Europa central)</span>
+date = <span class="keyword">new</span> Date(Date.parse(<span class="string"><span class="delimiter">'</span><span class="content">August 19, 1975 23:15:30</span><span class="delimiter">'</span></span>));
+console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 01:15:30 GMT+0200 (hora de verano de Europa central)</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp"><em>RegExp</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>clases de caracteres: <strong>\d</strong> (cualquier dígito), <strong>\w</strong> (cualquier caracter alfanumérico), <strong>\s</strong> (caracter de espacio en blanco), <strong>.</strong> (cualquier carácter), <strong>\n</strong> (salto de línea), <strong>\r</strong> (retorno de carro), <strong>\t</strong> (tabulación ), <strong>\v</strong> (tabulación vertical), <strong>\f</strong> (avance de página), <strong>\0</strong> (caracter NUL), <strong>\cX</strong> (caracter de control), <strong>\xhh</strong>, <strong>\uhhhh</strong>, <strong>\uhhhhh</strong> (carácter con el código), <strong>\</strong> (escape), <strong>[\b]</strong> (caracter de retroceso)y los correspondientes opuestos en mayúsculas: <strong>\D</strong>, <strong>\W</strong>, <strong>\S</strong></p>
+</li>
+<li>
+<p>cuantificadores: <strong>*</strong> (0 o más veces), <strong>+</strong> (1 o más veces), <strong>?</strong> (0 o 1 vez), <strong>x{n}</strong> (n veces), <strong>x{n,}</strong> (al menos n veces), <strong>x{n,m}</strong> (entre n y m veces)</p>
+</li>
+<li>
+<p>grupos y rangos: <strong>x|y</strong> ("x" o "y"), <strong>[xyz]</strong> y <strong>[a-c]</strong> (cualquiera de los caracteres incluidos), <strong>[^xyz]</strong> y <strong>[^a-c]</strong> (cualquier cosa que no esté encerrada entre corchetes), <strong>(x)</strong> (grupo de captura), <strong>(?&lt;Nombre&gt;x)</strong> (grupo de captura con nombre), &#8230;&#8203;</p>
+</li>
+<li>
+<p>banderas: <strong>g</strong> (búsqueda global), <strong>i</strong> (búsqueda que no distingue entre mayúsculas y minúsculas), <strong>m</strong> (búsqueda multilínea), <strong>s</strong> (. coincida con caracteres de nueva línea), <strong>u</strong> (unicode), <strong>y</strong> (búsqueda "pegajosa")</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
-  let other = <span class="integer">0</span>;
-
-  <span class="keyword">return</span> {
-    <span class="function">method</span>: <span class="keyword">function</span> () {
-      <span class="reserved">private</span>(<span class="local-variable">this</span>);
-      console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{property} - other: <span class="predefined">$</span>{other}<span class="error">`</span>);
-    }
-  };
-
-  <span class="keyword">function</span> <span class="reserved">private</span>(object) {
-    property++;
-    other++;
-  }
-}</code></pre>
+const console = <span class="keyword">new</span> Console();
+const patternObject = <span class="keyword">new</span> RegExp(<span class="error">`</span>abc<span class="error">`</span>, <span class="error">`</span>g<span class="error">`</span>);
+console.writeln(patternObject.exec(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// abc</span>
+console.writeln(patternObject.exec(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// null</span>
+console.writeln(patternObject.test(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// true</span>
+console.writeln(patternObject.test(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// false</span>
+const patternString = <span class="regexp"><span class="delimiter">/</span><span class="content">(abc)</span><span class="delimiter">/</span><span class="modifier">gi</span></span>;
+console.writeln(patternString.exec(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// abc</span>
+console.writeln(patternString.exec(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// null</span>
+console.writeln(patternString.test(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// true</span>
+console.writeln(patternString.test(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// false</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9126,7 +9376,77 @@ object.method();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>con método privado</p>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><em>exec</em></a>, ejecuta una búsqueda por una coincidencia en una cadena devolviendo un <em>array</em> o <em>null</em></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><em>test</em></a>, ejecuta una búsqueda por una coincidencia en una cadena devolviendo un <em>boolean</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="función-constructora-object">Función constructora <em>Object</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object"><em>Object</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>función constructora para la creación de objetos</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><em>assign</em></a>, método estático para <strong>copia todas las propiedades enumerables</strong> de uno o más objetos fuente a un objeto destino</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/create"><em>create</em></a>,  método estático para <strong>crea un objeto nuevo, utilizando un objeto existente como el prototipo</strong> del nuevo objeto creado</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><em>defineProperty</em></a>, método estático que define una <strong>nueva propiedad</strong> sobre un objeto, o modifica una ya existente: <em>configurable, enumerable, value, writeable, get, set</em></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><em>keys</em></a>, método estático que devuelve un <strong>array de las propiedades <em>names</em></strong> de un objeto</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/values"><em>values</em></a>, método estático que devuelve un <strong>array con los valores correspondientes a las propiedades enumerables</strong> de un objeto</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"><em>toString</em></a>, devuelve una <strong>cadena que representa al objeto</strong></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -9135,28 +9455,287 @@ object.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const o = createObject(<span class="integer">7</span>);
-o.method();
-
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
-    let that = {
-        <span class="key">property</span>: property,
-        <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="reserved">private</span>: <span class="keyword">function</span> () {
-            <span class="local-variable">this</span>.property++;
-            <span class="local-variable">this</span>.other++;
-        }
-    };
-
-    <span class="keyword">return</span> {
-            <span class="function">method</span>: <span class="keyword">function</span> () {
-                that.<span class="reserved">private</span>();
-                console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{that.property} - other: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
-            }
-        }
-
-    }</code></pre>
+const object = { <span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span> };
+<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+  console.writeln(object[property]); <span class="comment">// 1 / 2</span>
+}
+Object.assign(object, { <span class="key">b</span>: -<span class="integer">2</span>, <span class="key">c</span>: -<span class="integer">3</span> });
+<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+  console.writeln(object[property]); <span class="comment">// 1 / -2 / -3</span>
+}
+const copy = Object.create(object);
+<span class="keyword">for</span>(let property <span class="keyword">in</span> copy){
+  console.writeln(copy[property]); <span class="comment">// 1 / -2 / -3</span>
+}
+Object.defineProperty(copy, <span class="string"><span class="delimiter">'</span><span class="content">d</span><span class="delimiter">'</span></span>, {
+  <span class="key">enumerable</span>: <span class="predefined-constant">true</span>,
+  <span class="key">configurable</span>: <span class="predefined-constant">true</span>,
+  <span class="key">writable</span>: <span class="predefined-constant">true</span>,
+  <span class="key">value</span>: <span class="string"><span class="delimiter">'</span><span class="content">valor</span><span class="delimiter">'</span></span>
+});
+<span class="keyword">for</span>(let property <span class="keyword">in</span> copy){
+  console.writeln(copy[property]); <span class="comment">// 1 / -2 / -3 / valor</span>
+}
+<span class="keyword">for</span>(let value of Object.values(copy)){
+  console.writeln(value); <span class="comment">// 1 / -2 / -3 / valor</span>
+}
+<span class="keyword">for</span>(let name of Object.keys(copy)){
+  console.writeln(name); <span class="comment">// a / b / c / d</span>
+}
+console.writeln(copy.toString());
+copy.<span class="function">toString</span> = <span class="keyword">function</span>() {
+  let string = <span class="error">`</span>{<span class="error">\</span>n<span class="error">`</span>;
+  <span class="keyword">for</span>(let property <span class="keyword">in</span> <span class="local-variable">this</span>){
+    string += <span class="error">`</span><span class="predefined">$</span>{property} = <span class="predefined">$</span>{<span class="local-variable">this</span>[property]}<span class="error">\</span>n<span class="error">`</span>;
+  }
+  <span class="keyword">return</span> <span class="error">`</span><span class="predefined">$</span>{string}}<span class="error">\</span>n<span class="error">`</span>;
+}
+console.writeln(copy.toString()); <span class="comment">// {</span></code></pre>
 </div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="función-contructora-array">Función contructora <em>Array</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array"><em>Array</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Función constructora para la creación de <em>arrays</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><em>isArray</em></a>, método estático para determinar <strong>si el valor pasado es un <em>Array</em></strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><em>from</em></a>, método estático para <strong>crear una nueva instancia de <em>Array</em></strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/of"><em>of</em></a>, método estático para <strong>crear una nueva instancia Array con un número variable de elementos</strong> pasados como argumento</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/length"><em>length</em></a>, devuelve la cantidad de elementos en esa matriz: siempre es <strong>numéricamente mayor que el índice más alto en la matriz</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toString"><em>toString</em></a>, <strong>devuelve una cadena de caracteres representando el array especificado y sus elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/join"><em>join</em></a>, <strong>une todos los elementos de una matriz en una cadena</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><em>push</em></a>, <strong>añade uno o más elementos al final de un array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"><em>unshift</em></a>, <strong>agrega uno o más elementos al inicio del array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><em>pop</em></a>, <strong>elimina el último elemento de un array y lo devuelve</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"><em>shift</em></a>, <strong>elimina el primer elemento  y lo retorna</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"><em>concat</em></a>, para <strong>unir dos o más arrays</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><em>splice</em></a>, <strong>cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><em>slice</em></a>, <strong>devuelve una copia de una parte  dentro de un nuevo array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"><em>copyWithin</em></a>, para una <strong>copia plana de una sección a otra dentro del mismo array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><em>fill</em></a>, <strong>cambia todos los elementos en un arreglo por un valor</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">includes</a>, <strong>determina si una matriz incluye un determinado elemento</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"><em>indexOf</em></a>, retorna <strong>el primer índice en el que se puede encontrar un elemento dado en el array</strong>, ó retorna -1 si el elemento no está</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/find"><em>find</em></a>, <strong>devuelve el valor del primer elemento del array que cumple la función de la prueba</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"><em>findIndex</em></a>, devuelve el <strong>índice del primer elemento de un array que cumpla con la función de la prueba</strong>, en caso contrario devuelve -1</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"><em>filter</em></a>, <strong>crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some"><em>some</em></a>, <strong>comprueba si al menos un elemento cumple con la condición implementada por la función</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><em>every</em></a>, <strong>si todos los elementos en el array satisfacen una condición</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce</a>, ejecuta una <strong>función reductora sobre cada elemento de un array, devolviendo como resultado un único valor</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight"><em>reduceRight</em></a>, aplica una función simultáneamente contra un acumulador y cada elemento de un array, <strong>de derecha a izquierda</strong>, para reducirlo a un único valor</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><em>map</em></a>, <strong>crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><em>forEach</em></a>, <strong>ejecuta la función indicada una vez por cada elemento del array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"><em>reverse</em></a>, <strong>invierte el orden de los elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><em>sort</em></a>, <strong>ordena los elementos</strong></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/tool/integers/0-scenarios/11-includes"><em>includes</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/tool/integers/0-scenarios/12-find"><em>find</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/tool/integers/0-scenarios/13-findIndex"><em>findIndex</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/tool/integers/0-scenarios/14-filter"><em>filter</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/tool/integers/0-scenarios/15-reduce"><em>reduce</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="función-constructora-function">Función constructora <em>Function</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function"><em>Function</em></a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Para objetos <em>Function</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call">call</a>, <strong>llama a una función con un valor dado this y con argumentos provistos individualmente</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">bind</a>, <strong>crea una nueva función, que cuando es llamada, asigna a su operador  this el valor entregado, con una secuencia de argumentos dados precediendo a cualquiera entregados cuando la función es llamada</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">apply</a>, <strong>invoca una determinada función asignando explícitamente el objeto this y un array</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/0-itinerario/x-binding">binding</a></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -9198,20 +9777,19 @@ const console = <span class="keyword">new</span> Console();
         <span class="local-variable">this</span>.other = <span class="integer">0</span>;
     }
 
+    <span class="error">#</span>privateMethod() {
+        <span class="local-variable">this</span>.property++;
+        <span class="local-variable">this</span>.other++;
+    }
+
     method() {
-        <span class="reserved">private</span>(object);
+        <span class="local-variable">this</span>.privateMethod();
         console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{object.property} - other: <span class="predefined">$</span>{object.other}<span class="error">`</span>);
     }
-
-    <span class="reserved">private</span>(object) {
-        object.property++;
-        object.other++;
-    }
-
 }
 
-const object = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
-object.method();</code></pre>
+const o = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
+o.method();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9233,7 +9811,7 @@ object.method();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionConstructora/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/3-clases/app.js">solución</a></p>
+<p><a href="">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/2-funcionContructora/1-version/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/3-clases/app.js">solución</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -9244,54 +9822,142 @@ object.method();</code></pre>
 </table>
 </div>
 <div class="sect2">
-<h3 id="json">JSON</h3>
+<h3 id="herencia">Herencia</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 10%;">
+<col style="width: 90%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">JSON</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Sintaxis</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong>JSON.stringify(</strong> <em>&lt;objeto&gt;</em> <strong>)</strong></p>
-</li>
-<li>
-<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong>JSON.parse(</strong> <em>&lt;cadenaCaracteres&gt;</em> <strong>)</strong></p>
+<p>Función constructora</p>
 </li>
 </ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">Person</span>(first, last, age, gender, interests) {
+  <span class="local-variable">this</span>.name = {
+    first,
+    last
+  };
+  <span class="local-variable">this</span>.age = age;
+  <span class="local-variable">this</span>.gender = gender;
+  <span class="local-variable">this</span>.interests = interests;
+};
+
+Person.prototype.<span class="function">greeting</span> = <span class="keyword">function</span>() {
+  console.writeln(<span class="error">`</span>Hi! I<span class="string"><span class="delimiter">'</span><span class="content">m ${this.name.first}.`);
+};
+
+Person.prototype.bio = function() {
+  let string = `${this.name.first} ${this.name.last} is ${this.age} years old. `;
+  let pronoun = </span><span class="delimiter">'</span></span>They like <span class="string"><span class="delimiter">'</span><span class="content">;
+  if(this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
+    pronoun = </span><span class="delimiter">'</span></span>He likes <span class="string"><span class="delimiter">'</span><span class="content">;
+  } else if(this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
+    pronoun = </span><span class="delimiter">'</span></span>She likes <span class="string"><span class="delimiter">'</span><span class="content">;
+  }
+  string += pronoun;
+
+  if(this.interests.length === 1) {
+    string += this.interests[0] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
+  } else if(this.interests.length === 2) {
+    string += this.interests[0] + </span><span class="delimiter">'</span></span> and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[1] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
+  } else {
+    for(let i = 0; i &lt; this.interests.length; i++) {
+      if(i === this.interests.length - 1) {
+        string += </span><span class="delimiter">'</span></span>and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[i] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
+      } else {
+        string += this.interests[i] + </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">;
+      }
+    }
+  }
+  console.writeln(string);
+};
+
+Person.prototype.farewell = function() {
+  console.writeln(this.name.first + </span><span class="delimiter">'</span></span> has left the building. Bye <span class="keyword">for</span> now!<span class="string"><span class="delimiter">'</span><span class="content">);
+}
+
+let person = new Person(</span><span class="delimiter">'</span></span>Tammi<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Smith<span class="string"><span class="delimiter">'</span><span class="content">, 17, </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>music<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>skiing<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>kickboxing<span class="string"><span class="delimiter">'</span><span class="content">]);
+person.greeting();
+person.bio();
+person.farewell();
+console.writeln(typeof person);
+console.writeln(person instanceof Person);
+
+function Teacher(first, last, age, gender, interests, subject) {
+  Person.call(this, first, last, age, gender, interests);
+  this.subject = subject;
+}
+
+Teacher.prototype = Object.create(Person.prototype);
+Teacher.prototype.constructor = Teacher;
+
+Teacher.prototype.greeting = function() {
+  let prefix = </span><span class="delimiter">'</span></span>Mx.<span class="string"><span class="delimiter">'</span><span class="content">;
+  if(this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
+    prefix = </span><span class="delimiter">'</span></span>Mr.<span class="string"><span class="delimiter">'</span><span class="content">;
+  } else if(this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
+    prefix = </span><span class="delimiter">'</span></span>Mrs.<span class="string"><span class="delimiter">'</span><span class="content">;
+  }
+  console.writeln(`Hello. My name is ${prefix} ${this.name.last}, and I teach ${this.subject}.`);
+};
+
+let teacher = new Teacher(</span><span class="delimiter">'</span></span>Dave<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Griffiths<span class="string"><span class="delimiter">'</span><span class="content">, 31, </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>football<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>cookery<span class="string"><span class="delimiter">'</span><span class="content">], </span><span class="delimiter">'</span></span>mathematics<span class="string"><span class="delimiter">'</span><span class="content">);
+teacher.greeting();
+teacher.bio();
+teacher.farewell();
+console.writeln(typeof teacher);
+console.writeln(teacher instanceof Person);
+console.writeln(teacher instanceof Teacher);
+
+function Student(first, last, age, gender, interests) {
+  Person.call(this, first, last, age, gender, interests);
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+Student.prototype.greeting = function() {
+  console.writeln(`Yo! I</span><span class="delimiter">'</span></span>m <span class="predefined">$</span>{<span class="local-variable">this</span>.name.first}.<span class="error">`</span>);
+};
+
+let student = <span class="keyword">new</span> Student(<span class="string"><span class="delimiter">'</span><span class="content">Liz</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Sheppard</span><span class="delimiter">'</span></span>, <span class="integer">17</span>, <span class="string"><span class="delimiter">'</span><span class="content">female</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ninjitsu</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">air cadets</span><span class="delimiter">'</span></span>]);
+student.greeting();
+student.bio();
+student.farewell();
+console.writeln(<span class="keyword">typeof</span> student);
+console.writeln(student <span class="keyword">instanceof</span> Person);
+console.writeln(student <span class="keyword">instanceof</span> Student);</code></pre>
 </div>
-</li>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p><strong class="blue">Semántica</strong></p>
+<p>Clases</p>
 <div class="ulist">
 <ul>
 <li>
-<p>la sintaxis de la <strong>notación JSON</strong> o con la misma <strong>sin comillas en los identificadores</strong> de las claves de las propiedades</p>
-</li>
-<li>
-<p><strong>JSON</strong> es un objeto con métodos/funciones para la conversión de objetos de <em>JavaScript</em> a formato <em>JSON</em> y de foramto <em>JSON</em> a objetos de <em>JavaScript</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stringify</em></strong>, de objeto a <em>string</em>, <span class="red">ignorando propiedades función!!!</span></p>
-</li>
-<li>
-<p><strong class="blue"><em>parse</em></strong>, de <em>string</em> a objeto</p>
-</li>
-</ul>
-</div>
+<p>Palabra reservada <strong>extends</strong></p>
 </li>
 </ul>
 </div>
@@ -9303,422 +9969,114 @@ object.method();</code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-let object = {
-    <span class="key">a</span>: <span class="integer">4662</span>,
-    <span class="key">b</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">campo</span><span class="delimiter">&quot;</span></span>,
-    <span class="key">c</span>: [<span class="predefined-constant">true</span>, <span class="predefined-constant">false</span>, <span class="predefined-constant">true</span>],
-    <span class="key">d</span>: {
-        <span class="key">x</span>: <span class="integer">1</span>,
-        <span class="key">y</span>: -<span class="integer">1</span>
-    },
-    <span class="key">e</span>: x =&gt; x+<span class="integer">1</span>
-};
-let string = JSON.stringify(object);
-console.writeln(<span class="keyword">typeof</span> string); <span class="comment">// string</span>
-console.writeln(string); <span class="comment">// {&quot;a&quot;:4662,&quot;b&quot;:&quot;campo&quot;,&quot;c&quot;:[true,false,true],&quot;d&quot;:{&quot;x&quot;:1,&quot;y&quot;:-1}}</span>
 
-object = JSON.parse(<span class="string"><span class="delimiter">'</span><span class="content">{&quot;a&quot;: 4662, &quot;b&quot;: &quot;campo&quot;, &quot;c&quot;: [true, false, true], &quot;d&quot;: { &quot;x&quot;: 1, &quot;y&quot;: -1}}</span><span class="delimiter">'</span></span>);
-console.writeln(<span class="keyword">typeof</span> object); <span class="comment">// object</span>
-console.writeln(object); <span class="comment">// [object Object]</span>
-<span class="keyword">for</span> (let property <span class="keyword">in</span> object) {
-    console.writeln(<span class="error">`</span><span class="predefined">$</span>{property}: <span class="predefined">$</span>{object[property]}<span class="error">`</span>); <span class="comment">// a: 4662 // b: campo // c: true,false,true // d: [object Object]</span>
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="envolturas">Envolturas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Clases predefinidas</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String">String</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number">Number</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean">Boolean</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math">Math</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp">RegExp</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date">Date</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="símbolos">Símbolos</h3>
+<span class="reserved">class</span> Person {
 
-</div>
-<div class="sect2">
-<h3 id="arrays-2">Arrays</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Métodos de <em>arrays</em></th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#5-includesv0">6-collections/5-includesv0/v0</a> : <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.5/app.js"><em>v0.5</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/6-collections/5-includes/v0.6/app.js">v0.6</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="funciones-2">Funciones</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Estado de la función</th>
-<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las funciones son objetos y pueden tener atributos</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Se declara con su uso a través de la <strong>notación punto</strong> a partir de la función</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">4</span>-objetos/<span class="integer">9</span>-funciones.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-procesos/<span class="integer">1</span>-funciones/<span class="integer">5</span>-estadoFuncion/app.js[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="herencia">Herencia</h3>
+  constructor(first, last, age, gender, interests) {
+    <span class="local-variable">this</span>.name = {
+      first,
+      last
+    };
+    <span class="local-variable">this</span>.age = age;
+    <span class="local-variable">this</span>.gender = gender;
+    <span class="local-variable">this</span>.interests = interests;
+  }
 
-</div>
-<div class="sect2">
-<h3 id="funciones-generadoras">Funciones Generadoras</h3>
+  <span class="function">greeting</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Hi! I<span class="string"><span class="delimiter">'</span><span class="content">m ${this.name.first}.`);
+  }
 
-</div>
-<div class="sect2">
-<h3 id="estructuras-de-datos">Estructuras de Datos</h3>
-<div class="sect3">
-<h4 id="set"><em>Set</em></h4>
-
-</div>
-<div class="sect3">
-<h4 id="map"><em>Map</em></h4>
-
-</div>
-<div class="sect3">
-<h4 id="stream"><em>Stream</em></h4>
-
-</div>
-<div class="sect3">
-<h4 id="comparación">Comparación</h4>
-
-</div>
-<div class="sect3">
-<h4 id="ordenación">Ordenación</h4>
-
-</div>
-</div>
-<div class="sect2">
-<h3 id="callbacks"><em>Callbacks</em></h3>
-
-</div>
-<div class="sect2">
-<h3 id="promesas">Promesas</h3>
-
-</div>
-<div class="sect2">
-<h3 id="funciones-asíncronas">Funciones Asíncronas</h3>
-
-</div>
-<div class="sect2">
-<h3 id="patrón-observadorobservado">Patrón Observador/Observado</h3>
-
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="programación-modular">Programación Modular</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="common-js"><em>Common JS</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">Modulos</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="es-modules"><em>ES Modules</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">Modulos</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="programación-con-excepciones">Programación con Excepciones</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">Excepciones</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>detección de excepciones</strong>, con sentencia <em>try</em>, se ejecuta hasta la excepción</p>
-</li>
-<li>
-<p><strong>captura de excepciones</strong>, con sentencia <em>catch</em>, se ejecuta solo en caso de una excepción durante la ejecución del <em>try</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p>*bloque <em>finally</em>, se ejecuta en cualquier caso</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>elevación/delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./0-programacionExcepciones/console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-<span class="keyword">try</span> {
-    let error = <span class="integer">5</span>/<span class="integer">0</span>;
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
-} <span class="keyword">catch</span>(exception){
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepción capturada</span><span class="delimiter">&quot;</span></span>);
-} <span class="keyword">finally</span> {
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">finally</span><span class="delimiter">&quot;</span></span>);
-}
-
-<span class="keyword">try</span> {
-    <span class="keyword">try</span> {
-        let error = <span class="integer">5</span>/<span class="integer">0</span>;
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
-    } <span class="keyword">catch</span>(exception){
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepción capturada</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">throw</span> excpetion;
+  bio = function () {
+    let string = `${this.name.first} ${this.name.last} is ${this.age} years old. `;
+    let pronoun = </span><span class="delimiter">'</span></span>They like <span class="string"><span class="delimiter">'</span><span class="content">;
+    if (this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
+      pronoun = </span><span class="delimiter">'</span></span>He likes <span class="string"><span class="delimiter">'</span><span class="content">;
+    } else if (this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
+      pronoun = </span><span class="delimiter">'</span></span>She likes <span class="string"><span class="delimiter">'</span><span class="content">;
     }
-} <span class="keyword">catch</span>(exception){
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">excepcion delegada</span><span class="delimiter">&quot;</span></span>);
-    console.writeln(exception);
+    string += pronoun;
+
+    if (this.interests.length === 1) {
+      string += this.interests[0] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
+    } else if (this.interests.length === 2) {
+      string += this.interests[0] + </span><span class="delimiter">'</span></span> and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[1] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
+    } else {
+      for (let i = 0; i &lt; this.interests.length; i++) {
+        if (i === this.interests.length - 1) {
+          string += </span><span class="delimiter">'</span></span>and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[i] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
+        } else {
+          string += this.interests[i] + </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">;
+        }
+      }
+    }
+    console.writeln(string);
+  }
+
+  farewell = function () {
+    console.writeln(this.name.first + </span><span class="delimiter">'</span></span> has left the building. Bye <span class="keyword">for</span> now!<span class="string"><span class="delimiter">'</span><span class="content">);
+  }
+
 }
 
-<span class="keyword">try</span> {
-    <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">exception elevada</span><span class="delimiter">&quot;</span></span>;
-    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
-} <span class="keyword">catch</span> (expection){
-    console.writeln(expection);
-}</code></pre>
+let person = new Person(</span><span class="delimiter">'</span></span>Tammi<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Smith<span class="string"><span class="delimiter">'</span><span class="content">, 17, </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>music<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>skiing<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>kickboxing<span class="string"><span class="delimiter">'</span><span class="content">]);
+person.greeting();
+person.bio();
+person.farewell();
+console.writeln(typeof person);
+console.writeln(person instanceof Person);
+
+class Teacher extends Person {
+
+  constructor(first, last, age, gender, interests, subject) {
+    super(first, last, age, gender, interests);
+    this.subject = subject;
+  }
+
+  greeting = function () {
+    let prefix = </span><span class="delimiter">'</span></span>Mx.<span class="string"><span class="delimiter">'</span><span class="content">;
+    if (this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
+      prefix = </span><span class="delimiter">'</span></span>Mr.<span class="string"><span class="delimiter">'</span><span class="content">;
+    } else if (this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
+      prefix = </span><span class="delimiter">'</span></span>Mrs.<span class="string"><span class="delimiter">'</span><span class="content">;
+    }
+    console.writeln(`Hello. My name is ${prefix} ${this.name.last}, and I teach ${this.subject}.`);
+  }
+
+}
+
+let teacher = new Teacher(</span><span class="delimiter">'</span></span>Dave<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Griffiths<span class="string"><span class="delimiter">'</span><span class="content">, 31, </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>football<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>cookery<span class="string"><span class="delimiter">'</span><span class="content">], </span><span class="delimiter">'</span></span>mathematics<span class="string"><span class="delimiter">'</span><span class="content">);
+teacher.greeting();
+teacher.bio();
+teacher.farewell();
+console.writeln(typeof teacher);
+console.writeln(teacher instanceof Person);
+console.writeln(teacher instanceof Teacher);
+
+class Student extends Person {
+
+  constructor(first, last, age, gender, interests) {
+    super(first, last, age, gender, interests);
+  }
+
+  greeting = function () {
+    console.writeln(`Yo! I</span><span class="delimiter">'</span></span>m <span class="predefined">$</span>{<span class="local-variable">this</span>.name.first}.<span class="error">`</span>);
+  }
+
+}
+
+let student = <span class="keyword">new</span> Student(<span class="string"><span class="delimiter">'</span><span class="content">Liz</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Sheppard</span><span class="delimiter">'</span></span>, <span class="integer">17</span>, <span class="string"><span class="delimiter">'</span><span class="content">female</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ninjitsu</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">air cadets</span><span class="delimiter">'</span></span>]);
+student.greeting();
+student.bio();
+student.farewell();
+console.writeln(<span class="keyword">typeof</span> student);
+console.writeln(student <span class="keyword">instanceof</span> Person);
+console.writeln(student <span class="keyword">instanceof</span> Student);</code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
+</div>
 </div>
 </div>
 <div class="sect1">
