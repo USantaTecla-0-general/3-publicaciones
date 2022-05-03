@@ -490,6 +490,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#función-constructora-object">Función constructora <em>Object</em></a></li>
 <li><a href="#función-contructora-array">Función contructora <em>Array</em></a></li>
 <li><a href="#función-constructora-function">Función constructora <em>Function</em></a></li>
+<li><a href="#funciones-constructoras-de-envoltura">Funciones constructoras de envoltura</a></li>
+<li><a href="#funciones-constructoras-de-estructuras-de-datos">Funciones constructoras de estructuras de datos</a></li>
+<li><a href="#símbolos">Símbolos</a></li>
+<li><a href="#iteradores">Iteradores</a></li>
+<li><a href="#generadores">Generadores</a></li>
 <li><a href="#clases">Clases</a></li>
 <li><a href="#herencia">Herencia</a></li>
 </ul>
@@ -854,7 +859,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">primitivo</strong>, para átomos de información</p>
+<p><strong class="blue">primitivo</strong>, para átomos de información sin propiedades e inmutables</p>
 </li>
 <li>
 <p><strong class="blue">array</strong>, para colecciones compuestas de datos homogéneas</p>
@@ -4805,10 +4810,7 @@ console.writeln(x); <span class="comment">// 0</span>
 <p>se crean los índices de las sentencia let</p>
 </li>
 <li>
-<p>mientras se evalua a cierto la primera expresión</p>
-</li>
-<li>
-<p>se ejecuta la sentencia y se evalúa la segunda expresión</p>
+<p>mientras se evalua a cierto la primera expresión, se ejecuta la sentencia y se evalúa la segunda expresión</p>
 </li>
 </ul>
 </div>
@@ -4834,10 +4836,10 @@ console.writeln(x); <span class="comment">// 0</span>
 console.writeln(x); <span class="comment">// 3</span>
 
 <span class="keyword">for</span> (let i = <span class="integer">0</span>; i &lt; <span class="integer">3</span>; i++)
-    console.writeln(i+<span class="integer">1</span>); <span class="comment">// 1, 2, 3</span>
+    console.writeln(i + <span class="integer">1</span>); <span class="comment">// 1, 2, 3</span>
 
-<span class="keyword">for</span> (let i = <span class="integer">3</span>; <span class="integer">0</span> &lt; i; i--)
-    console.writeln(i); <span class="comment">// 3, 2, 1</span></code></pre>
+<span class="keyword">for</span> (let i = <span class="integer">0</span>, j = <span class="integer">9</span>; i &lt; j; i++, j--)
+    console.writeln(<span class="error">`</span><span class="predefined">$</span>{i} - <span class="predefined">$</span>{j}<span class="error">`</span>); <span class="comment">// 0 - 9 / 1 - 8 / 2 - 7 / 3 - 6 / 4 - 5</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9737,6 +9739,1179 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 </li>
 </ul>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="funciones-constructoras-de-envoltura">Funciones constructoras de envoltura</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean">Boolean</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Envoltura (<em>Wrappers</em>) de valores de tipo primitivo <em>boolean</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Cuando se lanza un mensaje correspondiente a un método de instancia de la envoltura a un valor de tipo primitivo, se crea internamente un objeto, se ejecuta el mensaje retornando el valor y se destruye el objeto auxiliar</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Métodos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Boolean</em>, <span class="red">constructor desaconsejado tanto para la conversión de tipos como para la creación de objetos</span></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/toString"><em>toString()</em></a>, retorna la cadenas de caracteres <code>true</code> o <code>false</code></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/valueOf"><em>valueOf()</em></a>, retorna la cadenas de caracteres <code>true</code> o <code>false</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const expression = <span class="integer">0</span>;
+console.writeln(Boolean(expression)); <span class="comment">// false</span>
+console.writeln(<span class="keyword">new</span> Boolean(expression)); <span class="comment">// false</span>
+console.writeln(!!(expression)); <span class="comment">// false</span>
+
+console.writeln(<span class="predefined-constant">true</span>.toString()); <span class="comment">// true</span>
+console.writeln(<span class="predefined-constant">false</span>.toString()); <span class="comment">// false</span>
+console.writeln(<span class="predefined-constant">true</span>.valueOf()); <span class="comment">// true</span>
+console.writeln(<span class="predefined-constant">false</span>.valueOf()); <span class="comment">// false</span>
+
+console.writeln(<span class="keyword">new</span> Boolean().valueOf()); <span class="comment">// false</span>
+console.writeln(<span class="keyword">new</span> Boolean(<span class="predefined-constant">false</span>).valueOf()); <span class="comment">// false</span>
+console.writeln(<span class="keyword">new</span> Boolean(<span class="integer">0</span>).valueOf()); <span class="comment">// false</span>
+console.writeln(<span class="keyword">new</span> Boolean(<span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>).valueOf()); <span class="comment">// false</span>
+console.writeln(<span class="keyword">new</span> Boolean(<span class="predefined-constant">null</span>).valueOf()); <span class="comment">// false</span>
+<span class="keyword">if</span> (<span class="keyword">new</span> Boolean(<span class="predefined-constant">false</span>)){
+  console.writeln(<span class="error">`</span>Increible!!!<span class="error">`</span>); <span class="comment">// Increible!!!</span>
+}
+console.writeln(<span class="keyword">new</span> Boolean(<span class="predefined-constant">true</span>).valueOf()); <span class="comment">// true</span>
+console.writeln(<span class="keyword">new</span> Boolean(-<span class="integer">1</span>).valueOf()); <span class="comment">// true</span>
+console.writeln(<span class="keyword">new</span> Boolean(<span class="string"><span class="delimiter">'</span><span class="content">false</span><span class="delimiter">'</span></span>).valueOf()); <span class="comment">// true</span>
+console.writeln(<span class="keyword">new</span> Boolean([]).valueOf()); <span class="comment">// true</span>
+console.writeln(<span class="keyword">new</span> Boolean({}).valueOf()); <span class="comment">// true</span>
+console.writeln(<span class="keyword">new</span> Boolean(<span class="keyword">new</span> Boolean(<span class="predefined-constant">false</span>)).valueOf()); <span class="comment">// true</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number">Number</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Envoltura (<em>Wrappers</em>) de valores primitivos <em>number</em> para reunir operaciones sobre sus valores de tipo primitivo que no tienen propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Cuando se lanza un mensaje correspondiente a un método de instancia de la envoltura a un valor de tipo primitivo, se crea internamente un objeto, se ejecuta el mensaje retornando el valor y se destruye el objeto auxiliar</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY"><em>POSITIVE_INFINITY</em></a>, infinito positivo</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE"><em>MAX_VALUE</em></a>, el valor numérico positivo máximo representable</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN"><em>NaN</em></a>, equivalente a la definición global de <em>NaN</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Métodos estáticos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN"><em>isNaN(value)</em></a>, retorna <strong>si el valor pasado es <em>NaN</em></strong>. Versión más robusta de la función global <em>isNaN()</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Métodos de instancia</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Number</em>, <span class="red">constructor desaconsejado tanto para la conversión de tipos como para la creación de objetos</span></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed"><em>toFixed(decimals)</em></a>, retorna una <strong>cadena de caracteres con el número especificado de decimales</strong></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const expression = <span class="error">`</span><span class="integer">123</span><span class="error">`</span>;
+console.writeln(Number(expression)); <span class="comment">// 123</span>
+console.writeln(<span class="keyword">new</span> Number(expression)); <span class="comment">// 123</span>
+console.writeln(+(expression)); <span class="comment">// 123</span>
+
+const numObj = <span class="float">12345.6789</span>;
+console.writeln(numObj.toFixed()); <span class="comment">// 12346</span>
+console.writeln(numObj.toFixed(<span class="integer">1</span>)); <span class="comment">// 12345.7</span>
+console.writeln(numObj.toFixed(<span class="integer">6</span>)); <span class="comment">// 12345.678900</span>
+console.writeln(<span class="float">1.23e+20</span>.toFixed(<span class="integer">2</span>)); <span class="comment">// 123000000000000000000.00</span>
+console.writeln(<span class="float">1.23e-10</span>.toFixed(<span class="integer">2</span>)); <span class="comment">// 0.00</span>
+console.writeln(<span class="float">2.34</span>.toFixed(<span class="integer">1</span>)); <span class="comment">// 2.3</span>
+console.writeln(<span class="float">2.35</span>.toFixed(<span class="integer">1</span>)); <span class="comment">// 2.4</span>
+console.writeln(-<span class="float">2.34</span>.toFixed(<span class="integer">1</span>)); <span class="comment">// -2.3</span>
+console.writeln(-<span class="float">2.35</span>.toFixed(<span class="integer">1</span>)); <span class="comment">// -2.4</span>
+console.writeln((<span class="integer">2</span>).toFixed(<span class="integer">1</span>)); <span class="comment">// 2.0</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String">String</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Envoltura (<em>Wrappers</em>) de valores primitivos <em>string</em> para reunir operaciones sus valores de tipo primitivo que no tienen propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Cuando se lanza un mensaje correspondiente a un método de instancia de la envoltura a un valor de tipo primitivo, se crea internamente un objeto, se ejecuta el mensaje retornando el valor y se destruye el objeto auxiliar</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Métodos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>String</em>, <span class="red">constructor desaconsejado tanto para la conversión de tipos como para la creación de objetos</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let regExp = <span class="regexp"><span class="delimiter">/</span><span class="content">[A-E][A-E]</span><span class="delimiter">/</span><span class="modifier">gi</span></span>;
+const string = <span class="string"><span class="delimiter">&quot;</span><span class="content">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</span><span class="delimiter">&quot;</span></span>;
+console.writeln(string.match(regExp)); <span class="comment">// AB,CD,ab,cd</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="funciones-constructoras-de-estructuras-de-datos">Funciones constructoras de estructuras de datos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Set"><em>Set</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Conjuntos de valores</strong>, <span class="red">únicos, sin repeticiones de valores o referencias</span></p>
+</li>
+<li>
+<p><strong>Iterable</strong> por <em>for(&#8230;&#8203; of &#8230;&#8203;)</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size"><em>size</em></a>, retorna el número de elementos</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Métodos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set"><em>Set([iterable</a>)</em>], crea el conjunto vacío o con los elementos del iterable</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add"><em>add(item)</em></a>, añade el elemento al final del conjunto, si no está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has"><em>has(item)</em></a>, retorna si el elemento está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete"><em>delete(item)</em></a>, elimina el elemento, si está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear"><em>clear()</em></a>, elimina todos los elementos, si hubiera</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach"><em>forEach(fn)</em></a>, aplica la función a cada elemento</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values"><em>values()</em></a>, retorna un iterador de los valores en orden de inserción</p>
+</li>
+<li>
+<p><em>keys()</em>, alias del anterior</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/entries"><em>entries()</em></a>, retorna un iterador de los <em>[value, value]</em> en orden de inserción</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let set = <span class="keyword">new</span> Set();
+set.add(<span class="integer">1</span>);
+set.add(<span class="integer">1</span>);
+set.add(<span class="predefined-constant">true</span>);
+set.add(<span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>);
+set.add([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>]);
+const array = [<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>];
+set.add(array);
+set.add({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>});
+const object = {<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>};
+set.add(object);
+console.writeln(set.size); <span class="comment">// 7</span>
+<span class="keyword">for</span> (let item of set) {
+  console.writeln(item); <span class="comment">// 1 / true / cadena de caracteres / 1,true,cadena de caracteres / 1,true,cadena de caracteres / [object Object] / [object Object]</span>
+}
+console.writeln(set.has(<span class="integer">0</span>)); <span class="comment">// false</span>
+console.writeln(set.has(<span class="integer">2</span>/<span class="integer">2</span>)); <span class="comment">// true</span>
+console.writeln(set.has(<span class="predefined-constant">true</span>)); <span class="comment">// true</span>
+console.writeln(set.has(<span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>)); <span class="comment">// true</span>
+console.writeln(set.has([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>])); <span class="comment">// false</span>
+console.writeln(set.has(array)); <span class="comment">// true</span>
+console.writeln(set.has({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>})); <span class="comment">// false</span>
+console.writeln(set.has(object)); <span class="comment">// true</span>
+
+set = <span class="keyword">new</span> Set([<span class="integer">1</span>, <span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>, array, {<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>}, object]);
+console.writeln(set.size); <span class="comment">// 7</span>
+set.<span class="keyword">delete</span>(<span class="integer">1</span>);
+set.<span class="keyword">delete</span>(<span class="predefined-constant">true</span>);
+set.<span class="keyword">delete</span>(<span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>);
+set.<span class="keyword">delete</span>(array);
+set.<span class="keyword">delete</span>(object);
+console.writeln(set.size); <span class="comment">// 2</span>
+<span class="keyword">for</span> (let item of set) {
+  console.writeln(item); <span class="comment">// 1,true,cadena de caracteres / [object Object]</span>
+}
+console.writeln(set.has(<span class="integer">0</span>)); <span class="comment">// false</span>
+console.writeln(set.has(<span class="integer">2</span>/<span class="integer">2</span>)); <span class="comment">// false</span>
+console.writeln(set.has(<span class="predefined-constant">true</span>)); <span class="comment">// false</span>
+console.writeln(set.has(<span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>)); <span class="comment">// false</span>
+console.writeln(set.has(array)); <span class="comment">// false</span>
+console.writeln(set.has([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>])); <span class="comment">// false</span>
+console.writeln(set.has(object)); <span class="comment">// false</span>
+console.writeln(set.has({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>})); <span class="comment">// false</span>
+set.clear();
+console.writeln(set.size); <span class="comment">// 0</span>
+<span class="keyword">for</span> (let item of set) {
+  console.writeln(item); <span class="comment">//</span>
+}
+set = <span class="keyword">new</span> Set([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>]);
+set.forEach(item =&gt; console.writeln(item)); <span class="comment">// 1 / 2 / 3</span>
+<span class="keyword">for</span> (let item of set.keys()) {
+  console.writeln(item); <span class="comment">// 1 / 2 / 3</span>
+}
+<span class="keyword">for</span> (let item of set.values()) {
+  console.writeln(item); <span class="comment">// 1 / 2 / 3</span>
+}
+<span class="keyword">for</span> (let [key, value] of set.entries()) {
+  console.writeln(<span class="error">`</span><span class="predefined">$</span>{key}, <span class="predefined">$</span>{value}<span class="error">`</span>); <span class="comment">// 1, 1 / 2, 2 / 3, 3</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Conversión a array</strong>: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><em>Array.from(iterable)</em></a></p>
+</li>
+<li>
+<p><strong>Operador de expansión</strong>: <em>[&#8230;&#8203;&lt;set&gt;]</em></p>
+</li>
+<li>
+<p><strong>Sentencia <em>for/of</em></strong>: for(let item of &lt;set&gt;)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">for</span>(let item of Array.from(<span class="keyword">new</span> Set([<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>]))) {
+  console.writeln(item); <span class="comment">// a / b / c</span>
+}
+<span class="keyword">for</span>(let item of [...<span class="keyword">new</span> Set([<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>])]) {
+  console.writeln(item); <span class="comment">// a / b / c</span>
+}
+<span class="keyword">for</span>(let item of <span class="keyword">new</span> Set([<span class="error">`</span>a<span class="error">`</span>, <span class="error">`</span>b<span class="error">`</span>, <span class="error">`</span>c<span class="error">`</span>])){
+  console.writeln(item); <span class="comment">// a / b / c</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/0-itinerario/4-objetos/8-constructorasEstructuras/x-set"><em>operations</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"><em>WeakSet</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Set</em></strong> pero <strong class="red">solo de objetos</strong></p>
+</li>
+<li>
+<p><strong class="red">Se liberan si éstos no son referenciados por ninguna otra referencia más</strong></p>
+</li>
+<li>
+<p><strong class="red">No son iterables</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Métodos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/WeakSet"><em>WeakSet([iterable</a>)</em>], crea el conjunto vacío o con los elementos del iterable</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/add"><em>add(item)</em></a>, añade el elemento al final del conjunto, si no está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/has"><em>has(item)</em></a>, retorna si el elemento está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/delete"><em>delete(item)</em></a>, elimina el elemento, si está presente</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let weakSet = <span class="keyword">new</span> WeakSet();
+let array = [<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>];
+weakSet.add(array);
+weakSet.add(array);
+weakSet.add([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>]);
+let object = {<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>};
+weakSet.add(object);
+weakSet.add(object);
+weakSet.add({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>});
+console.writeln(weakSet.has(array)); <span class="comment">// true</span>
+console.writeln(weakSet.has([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>])); <span class="comment">// false</span>
+console.writeln(weakSet.has(object)); <span class="comment">// true</span>
+console.writeln(weakSet.has({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>})); <span class="comment">// false</span>
+
+array = <span class="predefined-constant">null</span>;
+object = <span class="predefined-constant">null</span>;
+console.writeln(weakSet.size); <span class="comment">// 0</span>
+console.writeln(weakSet.has(array)); <span class="comment">// false</span>
+console.writeln(weakSet.has([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>])); <span class="comment">// false</span>
+console.writeln(weakSet.has(object)); <span class="comment">// false</span>
+console.writeln(weakSet.has({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>})); <span class="comment">// false</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"><em>Map</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Conjuntos de (clave, valor)</strong>, <span class="red">diferentes de <em>Object</em> donde se mantienen propiedades del sistema</span>: <em>prototype</em>, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><em>WeakMap</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Map</em></strong> pero <span class="red">solo de objetos que libera si éstos no son referenciados por ningún objeto más</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="símbolos">Símbolos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tipo de datos cuyos <strong>valores son únicos e immutables definidos por el desarrollador</strong> (p.e.: <em>red, green, blue; north, east, west, south</em>; &#8230;&#8203;)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">evitan validaciones de cadenas abiertas a cualquier valor</span></p>
+</li>
+<li>
+<p>están <strong>asociados a una posible descripción</strong>, <em>string</em>, o <em>undefined</em></p>
+</li>
+<li>
+<p><strong>solo son iguales a sí mismos</strong>, son irrepetibles aunque tengan la misma descripción</p>
+</li>
+<li>
+<p><strong>son tipos primitivos</strong> aunque <span class="red">se parecen a objetos</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Propiedades</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>para iteradores: <em>iterator</em></p>
+</li>
+<li>
+<p>para expresiones regulares: <em>match, replace, search, split</em></p>
+</li>
+<li>
+<p>otros: <em>hasInstance, isConcactSpreadable, unscpables, species, toPrimitive, toStringTag</em></p>
+</li>
+<li>
+<p>length, siempre retorna 0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Métodos estáticos</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for"><em>for</em></a>, retorna un nuevo símbolo asociado a la descripción dada añadiendolo al registro global de símbolos o devolviendo el previamente añadido si existira, <em>singleton</em>, único!</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/keyFor"><em>keyFor</em></a>, retorna el símbolo asociado a la descripción del registro global de símbolos o <em>undefined</em> si no existiera</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+console.writeln(Symbol); <span class="comment">// function Symbol() ...</span>
+console.writeln(<span class="keyword">typeof</span> Symbol); <span class="comment">// function</span>
+ <span class="comment">// let symbol = new Symbol(); // TypeError</span>
+console.writeln(<span class="keyword">typeof</span> Symbol()); <span class="comment">// symbol</span>
+console.writeln(Symbol() <span class="keyword">instanceof</span> Symbol); <span class="comment">// false</span>
+
+let withoutDescriptionSymbol1 = Symbol();
+console.writeln(withoutDescriptionSymbol1.toString()); <span class="comment">// Symbol()</span>
+console.writeln(<span class="keyword">typeof</span> withoutDescriptionSymbol1); <span class="comment">// symbol</span>
+let withoutDescriptionSymbol2 = Symbol();
+console.writeln(withoutDescriptionSymbol2.toString()); <span class="comment">// Symbol()</span>
+console.writeln(<span class="keyword">typeof</span> withoutDescriptionSymbol2); <span class="comment">// symbol</span>
+console.writeln(withoutDescriptionSymbol1 === withoutDescriptionSymbol2); <span class="comment">// false</span>
+
+let localSymbol1 = Symbol(<span class="error">`</span>local description<span class="error">`</span>);
+console.writeln(localSymbol1.toString()); <span class="comment">// Symbol(local description)</span>
+console.writeln(<span class="keyword">typeof</span> localSymbol1); <span class="comment">// symbol</span>
+let localSymbol2 = Symbol(<span class="error">`</span>local description<span class="error">`</span>);
+console.writeln(localSymbol2.toString()); <span class="comment">// Symbol(local description)</span>
+console.writeln(<span class="keyword">typeof</span> localSymbol2); <span class="comment">// symbol</span>
+console.writeln(localSymbol1 === localSymbol2); <span class="comment">// false</span>
+
+let globalSymbol1 = Symbol.<span class="keyword">for</span>(<span class="error">`</span>global description<span class="error">`</span>);
+console.writeln(globalSymbol1.toString()); <span class="comment">// Symbol(global description)</span>
+console.writeln(<span class="keyword">typeof</span> globalSymbol1); <span class="comment">// symbol</span>
+let globalSymbol2 = Symbol.<span class="keyword">for</span>(<span class="error">`</span>global description<span class="error">`</span>);
+console.writeln(globalSymbol2.toString()); <span class="comment">// Symbol(global description)</span>
+console.writeln(<span class="keyword">typeof</span> globalSymbol2); <span class="comment">// symbol</span>
+console.writeln(globalSymbol1 === globalSymbol2); <span class="comment">// true</span>
+
+console.writeln(Symbol.keyFor(withoutDescriptionSymbol1) === <span class="predefined-constant">undefined</span>); <span class="comment">// true</span>
+console.writeln(Symbol.keyFor(withoutDescriptionSymbol2) === <span class="predefined-constant">undefined</span>); <span class="comment">// true</span>
+console.writeln(Symbol.keyFor(localSymbol1) === <span class="predefined-constant">undefined</span>); <span class="comment">// true</span>
+console.writeln(Symbol.keyFor(localSymbol2) === <span class="predefined-constant">undefined</span>); <span class="comment">// true</span>
+console.writeln(Symbol.keyFor(globalSymbol1).toString()); <span class="comment">// Symbol(global description)</span>
+console.writeln(Symbol.keyFor(globalSymbol2).toString()); <span class="comment">// Symbol(global description)</span>
+
+console.writeln(Symbol.keyFor(Symbol.iterator) === <span class="predefined-constant">undefined</span>); <span class="comment">// true</span>
+console.writeln(Symbol.iterator.toString()); <span class="comment">// Symbol(Symbol.iterator)</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Propiedades símbolo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">evitan colisiones con propiedades cuya clave es un <em>string</em></span></p>
+</li>
+<li>
+<p><strong>si son claves de propiedades de objetos no se contemplan en la sentencia for/in</strong>, como propiedades "internas"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const propertySymbol = Symbol(<span class="error">`</span>symbol<span class="error">`</span>);
+const functionSymbol = Symbol(<span class="error">`</span>symbol<span class="error">`</span>);
+let object = {
+  <span class="key">property</span> : <span class="integer">666</span>,
+  <span class="keyword">function</span> : () =&gt; <span class="error">`</span>retorno de propiedad identificador<span class="error">`</span>,
+  [propertySymbol] : <span class="integer">333</span>,
+  [functionSymbol] : () =&gt; <span class="error">`</span>retorno de propiedad s<span class="error">í</span>mbolo<span class="error">`</span>
+};
+<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+  console.writeln(object[property]); <span class="comment">// 666 / () =&gt; `retorno de propiedad identificador`</span>
+}
+console.writeln(object[propertySymbol]); <span class="comment">// 333</span>
+console.writeln(<span class="keyword">typeof</span> object[propertySymbol]); <span class="comment">// number</span>
+
+console.writeln(object[functionSymbol]); <span class="comment">// () =&gt; `retorno de propiedad símbolo`</span>
+console.writeln(<span class="keyword">typeof</span> object[functionSymbol]); <span class="comment">// function</span>
+
+console.writeln(object[functionSymbol]()); <span class="comment">// retorno de propiedad símbolo</span>
+console.writeln(<span class="keyword">typeof</span> object[functionSymbol]()); <span class="comment">// string</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="iteradores">Iteradores</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators#iteradores">Iterator</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Objeto que <strong>permite recorrer una colección de valores e indicar su finalización</strong> a través de su <strong>propiedad función <em>next()</em></strong> que retorna un objeto con la siguiente estructura:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>propiedad <em>value</em> con el <strong>valor actual en la secuencia</strong> de iteración.</p>
+</li>
+<li>
+<p>propiedad <em>done</em>: es <em>true</em> determina si <strong>el último valor de la secuencia ya fue consumido</strong>. Es <em>false</em> en caso contrario</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="red">su creación require una programación meticulosa ya que necesitan <strong>mantener su estado interno explícitamente</strong></span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">getIterator</span>(iterable) {
+  let index = <span class="integer">0</span>;
+
+  <span class="keyword">return</span> {
+    <span class="function">next</span>: <span class="keyword">function</span> () {
+      const item = {
+        <span class="key">done</span>: index == iterable.length
+      };
+      <span class="keyword">if</span> (!item.done) {
+        item.value = iterable[index];
+        index++;
+      }
+      <span class="keyword">return</span> item;
+    }
+  }
+}
+
+<span class="keyword">function</span> <span class="function">writelnWhile</span>(iterable) {
+  const iterator = getIterator(iterable);
+  let item = iterator.next();
+  let msg = <span class="error">`</span><span class="error">`</span>;
+  <span class="keyword">while</span> (!item.done) {
+    msg += <span class="error">`</span><span class="predefined">$</span>{item.value}, <span class="error">`</span>;
+    item = iterator.next();
+  }
+  console.writeln(<span class="error">`</span>:<span class="predefined">$</span>{msg.slice(<span class="integer">0</span>,msg.length-<span class="integer">2</span>)}.<span class="error">`</span>);
+}
+writelnWhile([]); <span class="comment">// :.</span>
+writelnWhile([<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>]); <span class="comment">// :1, 2, 3, 4, 5.</span>
+writelnWhile(<span class="error">`</span><span class="error">`</span>); <span class="comment">// :.</span>
+writelnWhile(<span class="error">`</span>hola<span class="error">`</span>); <span class="comment">// :h, o, l, a.</span>
+
+<span class="keyword">function</span> <span class="function">writelnDoWhile</span>(iterable) {
+  const iterator = getIterator(iterable);
+  let item;
+  let msg = <span class="error">`</span><span class="error">`</span>;
+  <span class="keyword">do</span> {
+    item = iterator.next();
+    <span class="keyword">if</span> (!item.done) {
+      msg += <span class="error">`</span><span class="predefined">$</span>{item.value}, <span class="error">`</span>;
+    }
+  } <span class="keyword">while</span> (!item.done);
+  console.writeln(<span class="error">`</span>:<span class="predefined">$</span>{msg.slice(<span class="integer">0</span>,msg.length-<span class="integer">2</span>)}.<span class="error">`</span>);
+}
+writelnDoWhile([]); <span class="comment">// :.</span>
+writelnDoWhile([<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>]); <span class="comment">// :1, 2, 3, 4, 5.</span>
+writelnDoWhile(<span class="error">`</span><span class="error">`</span>); <span class="comment">// :.</span>
+writelnDoWhile(<span class="error">`</span>hola<span class="error">`</span>); <span class="comment">// :h, o, l, a.</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/12-iteradores/x-fibonacci/0-iterador/app.js"><em>Fibonacci</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Iteration_protocols#el_protocolo_iterable">Iterables</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para disfrutar de:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el <strong>operador de expansión</strong> (<em>&#8230;&#8203;</em>) y</p>
+</li>
+<li>
+<p>la <strong>sentencia <em>for/of</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>es necesario que la <strong>función iteradora que retorna el objeto con la propiedad <em>next()</em></strong> sea una <strong>propiedad del objeto con clave <em>Symbol.iterator</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span> <span class="function">writelnSymbol</span>(iterable) {
+  const iterator = iterable[Symbol.iterator]();
+  let item = iterator.next();
+  let msg = <span class="error">`</span><span class="error">`</span>;
+  <span class="keyword">while</span> (!item.done) {
+    msg += <span class="error">`</span><span class="predefined">$</span>{item.value}, <span class="error">`</span>;
+    item = iterator.next();
+  }
+  console.writeln(<span class="error">`</span>:<span class="predefined">$</span>{msg.slice(<span class="integer">0</span>,msg.length-<span class="integer">2</span>)}.<span class="error">`</span>);
+}
+writelnSymbol([]); <span class="comment">// :.</span>
+writelnSymbol([<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>]); <span class="comment">// :1, 2, 3, 4, 5.</span>
+writelnSymbol(<span class="error">`</span><span class="error">`</span>); <span class="comment">// :.</span>
+writelnSymbol(<span class="error">`</span>hola<span class="error">`</span>); <span class="comment">// :h, o, l, a.</span>
+writelnSymbol(<span class="keyword">new</span> Set()); <span class="comment">// :.</span>
+writelnSymbol(<span class="keyword">new</span> Set([<span class="integer">1</span>, <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>])); <span class="comment">// :1, 2, 3, 4, 5.</span>
+writelnSymbol(<span class="keyword">new</span> Map([])); <span class="comment">// :.</span>
+writelnSymbol(<span class="keyword">new</span> Map([[<span class="integer">1</span>, <span class="error">`</span>a<span class="error">`</span>], [<span class="integer">2</span>, <span class="error">`</span>b<span class="error">`</span>], [<span class="integer">3</span>, <span class="error">`</span>c<span class="error">`</span>], [<span class="integer">4</span>, <span class="error">`</span>d<span class="error">`</span>], [<span class="integer">5</span>, <span class="error">`</span>e<span class="error">`</span>]])); <span class="comment">// :1,a, 2,b, 3,c, 4,d, 5,e.</span>
+
+<span class="keyword">function</span> <span class="function">writelnForOf</span>(iterable) {
+  let msg = <span class="error">`</span><span class="error">`</span>;
+  <span class="keyword">for</span> (let item of [...iterable]) {
+    msg += <span class="error">`</span><span class="predefined">$</span>{item}, <span class="error">`</span>;
+  }
+  console.writeln(<span class="error">`</span>:<span class="predefined">$</span>{msg.slice(<span class="integer">0</span>,msg.length-<span class="integer">2</span>)}.<span class="error">`</span>);
+}
+writelnForOf([]); <span class="comment">// :.</span>
+writelnForOf([<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>]); <span class="comment">// :1, 2, 3, 4, 5.</span>
+writelnForOf(<span class="error">`</span><span class="error">`</span>); <span class="comment">// :.</span>
+writelnForOf(<span class="error">`</span>hola<span class="error">`</span>); <span class="comment">// :h, o, l, a.</span>
+writelnForOf(<span class="keyword">new</span> Set()); <span class="comment">// :.</span>
+writelnForOf(<span class="keyword">new</span> Set([<span class="integer">9</span>, <span class="integer">9</span>, <span class="integer">9</span>, <span class="integer">8</span>, <span class="integer">8</span>, <span class="integer">7</span>])); <span class="comment">// :9, 8, 7.</span>
+writelnForOf(<span class="keyword">new</span> Map([])); <span class="comment">// :.</span>
+writelnForOf(<span class="keyword">new</span> Map([[<span class="integer">1</span>, <span class="error">`</span>a<span class="error">`</span>], [<span class="integer">2</span>, <span class="error">`</span>b<span class="error">`</span>], [<span class="integer">3</span>, <span class="error">`</span>c<span class="error">`</span>], [<span class="integer">4</span>, <span class="error">`</span>d<span class="error">`</span>], [<span class="integer">5</span>, <span class="error">`</span>e<span class="error">`</span>]])); <span class="comment">// :1,a, 2,b, 3,c, 4,d, 5,e.</span>
+
+let array;
+array = [...<span class="keyword">new</span> Set([<span class="integer">9</span>, <span class="integer">9</span>, <span class="integer">9</span>, <span class="integer">8</span>, <span class="integer">8</span>, <span class="integer">7</span>])];
+writelnForOf(array); <span class="comment">// :9, 8, 7.</span>
+array = [...<span class="keyword">new</span> Map([[<span class="integer">1</span>, <span class="error">`</span>a<span class="error">`</span>], [<span class="integer">2</span>, <span class="error">`</span>b<span class="error">`</span>], [<span class="integer">3</span>, <span class="error">`</span>c<span class="error">`</span>], [<span class="integer">4</span>, <span class="error">`</span>d<span class="error">`</span>], [<span class="integer">5</span>, <span class="error">`</span>e<span class="error">`</span>]])];
+writelnForOf(array); <span class="comment">// :1,a, 2,b, 3,c, 4,d, 5,e.</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/12-iteradores/x-fibonacci/1-iterable/app.js"><em>Fibonacci</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="generadores">Generadores</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators#iteradores"><em>Generator</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;declaracionFuncion&gt;</em> <strong class="red">::=</strong> <strong>function</strong> <span class="bold"><strong></span> <em>&lt;identificador&gt;</em> *(</strong> <em>&lt;patron&gt;</em> <strong class="red">[</strong> <strong>=</strong> &lt;literal&gt; <strong class="red">]</strong> <strong class="red">{</strong> <strong>,</strong> <em>&lt;patron&gt;</em> <strong class="red">[</strong> <strong>=</strong> &lt;literal&gt; <strong class="red">]</strong> <strong class="red">}</strong> <strong>)</strong> <em>&lt;sentenciaSecuencial&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong> <strong>yield</strong> <em>&lt;expresión&gt;</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>son una alternativa poderosa a los iteradores, <strong class="green">azucar sintáctico</strong></p>
+</li>
+<li>
+<p>permiten definir un algoritmo iterativo al escribir una sola función que puede mantener su propio estado</p>
+</li>
+<li>
+<p>función generadora es un tipo especial de función que sirve como una fábrica de iteradores</p>
+</li>
+<li>
+<p>Cuando se ejecuta, regresa un nuevo objeto Generador</p>
+</li>
+<li>
+<p>la sentencia <strong><em>yield</em></strong> pausa la ejecución que continuará con la siguiente llamada del método <em>next(&lt;value&gt;)</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>retorna en parámetro del método</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/generadores.png" alt="generadores">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">function</span>* generator () {
+  yield <span class="integer">1</span>;
+  yield <span class="integer">2</span>;
+  yield <span class="integer">3</span>;
+}
+const iterator = generator();
+let item = iterator.next();
+<span class="keyword">while</span> (!item.done){
+  console.writeln(item.value); <span class="comment">// 1,2,3</span>
+  item = iterator.next();
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/13-generadores/x-indexGenerator/app.js"><em>indexGenerator</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Fibonacci</em>: <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/13-generadores/x-fibonacci/0-generator/app.js"><em>unlimited</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/13-generadores/x-fibonacci/1-reset/app.js"><em>reinicializable</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/13-generadores/x-fibonacci/2-limited/app.js"><em>limited</em></a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
