@@ -5419,33 +5419,104 @@ console.writeln();</code></pre>
 
 const console = <span class="keyword">new</span> Console();
 console.writeln([]); <span class="comment">//</span>
-console.writeln([<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>]); <span class="comment">// 1,2,3,4,5</span>
+console.writeln([<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>]); <span class="comment">// 1,2,3,4,5</span>
 console.writeln([<span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span>]); <span class="comment">// Javascript,Java,Scala</span>
 console.writeln([<span class="predefined-constant">false</span>, <span class="predefined-constant">true</span>]); <span class="comment">// false,true</span>
 console.writeln([<span class="predefined-constant">undefined</span>]); <span class="comment">//</span>
 let x = <span class="string"><span class="delimiter">&quot;</span><span class="content">un valor</span><span class="delimiter">&quot;</span></span>;
-console.writeln([<span class="integer">7</span>, <span class="predefined-constant">undefined</span>, x, <span class="integer">5</span>+<span class="integer">6</span>&gt;<span class="integer">5</span>-<span class="integer">6</span>]); <span class="comment">// 7,,un valor,true</span>
+console.writeln([<span class="integer">7</span>, <span class="predefined-constant">undefined</span>, x, <span class="integer">5</span> + <span class="integer">6</span> &gt; <span class="integer">5</span> - <span class="integer">6</span>]); <span class="comment">// 7,,un valor,true</span>
 
 console.writeln([
-    [<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">e</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">i</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">u</span><span class="delimiter">&quot;</span></span>],
-    [<span class="string"><span class="delimiter">&quot;</span><span class="content">A</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">E</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">I</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">O</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">U</span><span class="delimiter">&quot;</span></span>]]); <span class="comment">// a,e,i,o,u,A,E,I,O,U</span>
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">e</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">i</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">u</span><span class="delimiter">&quot;</span></span>],
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content">A</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">E</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">I</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">O</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">U</span><span class="delimiter">&quot;</span></span>]]); <span class="comment">// a,e,i,o,u,A,E,I,O,U</span>
 console.writeln([
-    [<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>],
-    [<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>],
-    [<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>],
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>],
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">o</span><span class="delimiter">&quot;</span></span>],
+    [<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>],
 ]); <span class="comment">// x, ,o,x,o,o, , ,x</span>
 console.writeln([
     [
-        [<span class="integer">0</span>,<span class="integer">0</span>,<span class="integer">0</span>],
-        [<span class="integer">0</span>,<span class="integer">0</span>],
+        [<span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>],
+        [<span class="integer">0</span>, <span class="integer">0</span>],
         [<span class="integer">0</span>],
     ],
     [
-        <span class="predefined-constant">null</span>,
-        [<span class="predefined-constant">null</span>],
-        [<span class="predefined-constant">null</span>,<span class="predefined-constant">null</span>],
+        <span class="integer">1</span>,
+        [<span class="integer">2</span>],
+        [<span class="integer">3</span>, <span class="integer">4</span>],
     ]
-]); <span class="comment">// 0,0,0,0,0,0,,,,</span></code></pre>
+]); <span class="comment">// 0,0,0,0,0,0,1,2,3,4</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Referencias y null</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;literal&gt;</em> <strong class="red">::=</strong> <strong>null</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>las variables/constantes declaradas <span class="red">no almacenan el valor compuesto del array, como ocurre con los tipos primitivos</span>, sino que <strong>almancenan la dirección/"referencia" a la memoria donde se almacenan los valores del tipo compuesto</strong></p>
+</li>
+<li>
+<p>la dirección <strong><em>null</em></strong> es <strong>aquella dirección donde no hay valores</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>null</em> es un <strong>valor del tipo <em>null</em></strong>, con ese único valor</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let array1 = [<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>];
+console.writeln(array1); <span class="comment">// 1,2,3</span>
+let array2 = array1;
+array1[<span class="integer">1</span>] = <span class="integer">666</span>;
+console.writeln(array1); <span class="comment">// 1,666,3</span>
+console.writeln(array2); <span class="comment">// 1,666,3</span>
+console.writeln(array1 == array2); <span class="comment">// true</span>
+array1 = [<span class="integer">1</span>, <span class="integer">666</span>, <span class="integer">3</span>];
+console.writeln(array1); <span class="comment">// 1,666,3</span>
+console.writeln(array2); <span class="comment">// 1,666,3</span>
+console.writeln(array1 == array2); <span class="comment">// false</span>
+array2[<span class="integer">1</span>] = <span class="integer">0</span>;
+console.writeln(array1); <span class="comment">// 1,0,3</span>
+console.writeln(array2); <span class="comment">// 1,666,3</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -10820,7 +10891,7 @@ writelnForOf(array); <span class="comment">// :1,a, 2,b, 3,c, 4,d, 5,e.</span></
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">Sintaxis</strong></p>
@@ -10886,6 +10957,29 @@ let item = iterator.next();
 <span class="keyword">while</span> (!item.done){
   console.writeln(item.value); <span class="comment">// 1,2,3</span>
   item = iterator.next();
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const iterableObject = {
+  [Symbol.iterator] : <span class="keyword">function</span>* () {
+    yield <span class="integer">1</span>;
+    yield <span class="integer">2</span>;
+    yield <span class="integer">3</span>;
+  }
+};
+
+<span class="keyword">for</span> (let item of iterableObject) {
+  console.writeln(item); <span class="comment">// 1,2,3</span>
+}
+<span class="keyword">for</span> (let item of [...iterableObject, ...iterableObject]) {
+  console.writeln(item); <span class="comment">// 1,2,3,1,2,3</span>
 }</code></pre>
 </div>
 </div></div></td>
