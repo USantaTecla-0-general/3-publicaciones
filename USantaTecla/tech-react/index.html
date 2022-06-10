@@ -475,7 +475,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#perforación">Perforación</a></li>
 </ul>
 </li>
-<li><a href="#condicionales">Condicionales</a></li>
+<li><a href="#condicionales">Condicionales</a>
+<ul class="sectlevel2">
+<li><a href="#sentencia-if">Sentencia <em>If</em></a></li>
+<li><a href="#operador-ternario">Operador Ternario</a></li>
+<li><a href="#operador-y-lógico">Operador Y-lógico</a></li>
+<li><a href="#valor-null">Valor <em>null</em></a></li>
+</ul>
+</li>
 <li><a href="#listados">Listados</a></li>
 <li><a href="#componentes-de-orden-superior">Componentes de Orden Superior</a></li>
 <li><a href="#css">CSS</a>
@@ -879,6 +886,18 @@ npm run dev</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><strong><em>prop_types</em></strong> necesaria para las propiedades</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>npm i --save prop-types</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong><em>sass</em></strong> necesaria para los estilos</p>
 </li>
 </ul>
@@ -898,18 +917,6 @@ npm run dev</code></pre>
 <div class="literalblock">
 <div class="content">
 <pre>npm i --save styled-components</pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>prop_types</em></strong> necesaria para las propiedades</p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>npm i --save prop-types</pre>
 </div>
 </div></div></td>
 </tr>
@@ -2042,12 +2049,15 @@ export default Table;</pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="red">A medida que una aplicación crece y esta empieza cada vez más a manejar un mayor volumen de datos, y por tanto hay un mayor número de componentes, crece la posibilidad de encontrarse con errores de verificación de tipos que afectan al comportamiento de la aplicación</span>.</p>
+<p><span class="red">A medida que una aplicación crece, ésta empieza cada vez más a manejar un <strong>mayor volumen</strong> de datos y, por tanto, hay un mayor número de componentes, crece la posibilidad de encontrarse con <strong>errores de verificación de tipos</strong> que afectan al comportamiento de la aplicación</span>.</p>
 </li>
 <li>
 <p>Por ello <em>React</em> incorpora un <strong class="green">sistema de validación para las propiedades que reciben los componentes mediante la biblioteca <em>propTypes</em></strong></p>
 <div class="ulist">
 <ul>
+<li>
+<p><span class="red">Requiere instalación particular</span></p>
+</li>
 <li>
 <p>Es importante remarcar que los <strong class="red">incumplimientos especificados mediante <em>propTypes</em> (propiedad obligatoria, &#8230;&#8203;) no van a interrumpir la ejecución de la aplicación</strong>, solo mostrará por <strong>consola de manera informativa</strong></p>
 <div class="ulist">
@@ -2422,88 +2432,49 @@ const TableBody = ({ rows }) =&gt;
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>La representación condicional es un término que describe la capacidad de renderizar diferentes elementos o componentes basados en una condición. Este concepto se aplica a menudo en los siguientes escenarios:</p>
+<p>La representación condicional es un término que describe la <strong>capacidad de renderizar diferentes elementos o componentes basados en una condición</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Renderización de datos externos desde una API.</p>
-</li>
-<li>
-<p>Mostrar u ocultar elementos.</p>
-</li>
-<li>
-<p>Alternar la funcionalidad de la aplicación.</p>
-</li>
-<li>
-<p>Implementación de niveles de permiso.</p>
-</li>
-<li>
-<p>Manejar la autenticación y la autorización.</p>
+<p>Este concepto se aplica a menudo en los siguientes <strong>escenarios</strong>:</p>
 </li>
 </ul>
 </div>
 </li>
-<li>
-<p>El renderizado condicional en <strong>React</strong> funciona de la misma forma que lo hacen las condiciones en <strong>JavaScript</strong>. Puedes usar el condicional <strong><strong><code>if</code></strong></strong> o el <strong>operador ternario</strong> para crear elementos dinámicamente en base al valor del estado o las propiedades que recibe el componente.</p>
-<div class="ulist">
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los if complejos deben estar fuera del return por rendimiento.</p>
+<p><strong>Renderización de datos externos</strong> desde una API</p>
 </li>
 <li>
-<p>Para favorecer la reusabilidad, el comportamiento de la función que envuelve al if, puede hacerse en otro componente.</p>
+<p><strong>Mostrar u ocultar elementos</strong></p>
+</li>
+<li>
+<p><strong>Alternar la funcionalidad</strong> de la aplicación</p>
+</li>
+<li>
+<p>Implementación de <strong>niveles de permiso</strong></p>
+</li>
+<li>
+<p>Manejar la <strong>autenticación y autorización</strong></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
-
-        const componentCondition = (value) =&gt; {
-                <span class="keyword">if</span>(value) <span class="keyword">return</span> <span class="tag">&lt;ComponentTrue</span> <span class="tag">/&gt;</span>
-                <span class="keyword">return</span> <span class="tag">&lt;ComponentFalse</span> <span class="tag">/&gt;</span>
-        }
-
-        <span class="keyword">return</span> &lt;&gt;
-                { componentCondition(props.value) }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;
-}</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
-        <span class="keyword">return</span> &lt;&gt;
-                { props.value ? <span class="tag">&lt;ComponentTrue</span> <span class="tag">/&gt;</span> : <span class="tag">&lt;ComponentFalse</span> <span class="tag">/&gt;</span> }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;
-}</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
-        <span class="keyword">return</span> &lt;&gt;
-                { props.value &amp;&amp; <span class="tag">&lt;ComponentTrue</span> <span class="tag">/&gt;</span> }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;
-}</span></span></code></pre>
-</div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="sentencia-if">Sentencia <em>If</em></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -2514,22 +2485,227 @@ const TableBody = ({ rows }) =&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Evitar el ciclo de vida del componente que no debe renderizarse porque no cumple la condición</p>
+<p>El renderizado condicional en <em>React</em> funciona de <strong>la misma forma que lo hacen las condiciones en <em>JavaScript</em></strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Puedes usar el condicional <em>if</em> para <strong>crear elementos dinámicamente en base al valor del estado o las propiedades que recibe el componente</strong>.</p>
+</li>
+<li>
+<p>El componente <em>App</em> contiene un componente privado, el componente <em>NoContentInTable</em>, el cual devuelve un mensaje indicando que la tabla está vacía.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La función <em>checkEmptyTable</em> hará la comprobación dado el valor de la constante <em>rows</em> para saber si debe renderizar el componente <em>Table</em> o el componente <em>NoContentInTable</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Los <span class="red"><em>if</em> complejos deben estar fuera del <em>return</em> del componente por rendimiento</span>.</p>
+</li>
+<li>
+<p>Para favorecer la <span class="green">reusabilidad, el comportamiento de la función que envuelve al <em>if</em>, puede hacerse en otro componente</span>.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
-        <span class="keyword">return</span> &lt;&gt;
-                { props.value &amp;&amp; <span class="tag">&lt;ComponentTrue</span> <span class="tag">/&gt;</span> }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;
-}</span></span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> Table from <span class="string"><span class="delimiter">'</span><span class="content">./Table</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableBody from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableBody</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableColumns from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableColumns</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableHead from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableHead</span><span class="delimiter">'</span></span>;
+
+const App = () =&gt; {
+  const columns = [<span class="string"><span class="delimiter">'</span><span class="content">Id</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Nombre</span><span class="delimiter">'</span></span>];
+  const rows = [];
+
+  const checkEmptyTable = () =&gt; {
+    <span class="keyword">if</span> (!rows.length) {
+      <span class="keyword">return</span> <span class="tag">&lt;NoContentInTable</span> <span class="tag">/&gt;</span>;
+    }
+    <span class="keyword">return</span> <span class="tag">&lt;Table&gt;</span>
+      <span class="tag">&lt;TableHead&gt;</span>
+        <span class="tag">&lt;TableColumns</span> <span class="attribute-name">columns</span>=<span class="error">{</span><span class="attribute-value">columns</span><span class="error">}</span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;/TableHead&gt;</span>
+      <span class="tag">&lt;TableBody</span> <span class="attribute-name">rows</span>=<span class="error">{</span><span class="attribute-value">rows</span><span class="error">}</span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/Table&gt;</span>;
+  }
+
+  const NoContentInTable = () =&gt;
+    <span class="tag">&lt;span&gt;</span>La tabla está vacia.<span class="tag">&lt;/span&gt;</span>;
+
+
+  <span class="keyword">return</span> &lt;&gt;
+    <span class="tag">&lt;h1&gt;</span>React Course<span class="tag">&lt;/h1&gt;</span>
+    {checkEmptyTable()}
+  &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;;
+}
+
+export default App;</span></span></code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="operador-ternario">Operador Ternario</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Mediante un operador ternario podemos acometer el <strong class="green">mismo resultado simplificando el componente</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> Table from <span class="string"><span class="delimiter">'</span><span class="content">./Table/Table</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableBody from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableBody</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableColumns from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableColumns</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableHead from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableHead</span><span class="delimiter">'</span></span>;
+
+const App = () =&gt; {
+  const columns = [ <span class="string"><span class="delimiter">'</span><span class="content">Id</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Nombre</span><span class="delimiter">'</span></span> ];
+  const rows = [];
+
+  const NoContentInTable = () =&gt;
+    <span class="tag">&lt;span&gt;</span>La tabla está vacia.<span class="tag">&lt;/span&gt;</span>;
+
+  <span class="keyword">return</span> &lt;&gt;
+    <span class="tag">&lt;h1&gt;</span>React Course<span class="tag">&lt;/h1&gt;</span>
+    {
+      !rows.length
+      ? <span class="tag">&lt;NoContentInTable</span> <span class="tag">/&gt;</span>
+      : <span class="tag">&lt;Table&gt;</span>
+          <span class="tag">&lt;TableHead&gt;</span>
+            <span class="tag">&lt;TableColumns</span> <span class="attribute-name">columns</span>=<span class="error">{</span> <span class="attribute-value">columns</span> <span class="error">}</span> <span class="tag">/&gt;</span>
+          <span class="tag">&lt;/TableHead&gt;</span>
+          <span class="tag">&lt;TableBody</span> <span class="attribute-name">rows</span>=<span class="error">{</span> <span class="attribute-value">rows</span> <span class="error">}</span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/Table&gt;</span>
+    }
+  &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;;
+}
+
+export default App;</span></span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="operador-y-lógico">Operador Y-lógico</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con el operador y-lógico (&amp;&amp;), con su <strong>evaluación con cortocircuito, podemos evitar renderizar un componente según la existencia de un valor o propiedad</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La constante <em>rows</em> tiene el valor <em>null</em> en el componente <em>App</em>, debido a que condicionalmente <em>null</em> se convierte en false por coerción de tipos, el componente <em>Table</em> no será renderizado.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> Table from <span class="string"><span class="delimiter">'</span><span class="content">./Table/Table</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableBody from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableBody</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableColumns from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableColumns</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableHead from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableHead</span><span class="delimiter">'</span></span>;
+
+const App = () =&gt; {
+  const columns = [ <span class="string"><span class="delimiter">'</span><span class="content">Id</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Nombre</span><span class="delimiter">'</span></span> ];
+  const rows = <span class="predefined-constant">null</span>;
+
+  <span class="keyword">return</span> &lt;&gt;
+    <span class="tag">&lt;h1&gt;</span>React Course<span class="tag">&lt;/h1&gt;</span>
+    {
+      rows &amp;&amp;
+      <span class="tag">&lt;Table&gt;</span>
+        <span class="tag">&lt;TableHead&gt;</span>
+          <span class="tag">&lt;TableColumns</span> <span class="attribute-name">columns</span>=<span class="error">{</span> <span class="attribute-value">columns</span> <span class="error">}</span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/TableHead&gt;</span>
+        <span class="tag">&lt;TableBody</span> <span class="attribute-name">rows</span>=<span class="error">{</span> <span class="attribute-value">rows</span> <span class="error">}</span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;/Table&gt;</span>
+    }
+  &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;;
+}
+
+export default App;</span></span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="valor-null">Valor <em>null</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Otra de las utilidades del uso de condicionales es <strong>evitar el ciclo de vida del componente, no será renderizado y su ciclo de vida será detenido</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una validación muy común al trabajar con la propiedad <em>children</em> es
+<span class="green"><em>{ children &amp;&amp; children }</em> para renderizar los hijos si existen y evitar errores si estos no están presentes</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> TableRow from <span class="string"><span class="delimiter">&quot;</span><span class="content">./TableRow</span><span class="delimiter">&quot;</span></span>;
+
+const TableBody = ({ rows }) =&gt; {
+  <span class="keyword">if</span>(!rows) {
+    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+  }
+  <span class="keyword">return</span> <span class="tag">&lt;tbody&gt;</span>
+    {
+      rows.map(row =<span class="error">&gt;</span>
+        <span class="tag">&lt;TableRow</span> <span class="attribute-name">key</span>=<span class="error">{</span> <span class="attribute-value">row.id</span> <span class="error">}</span> <span class="attribute-name">row</span>=<span class="error">{</span> <span class="attribute-value">row</span> <span class="error">}</span> <span class="tag">/&gt;</span>)
+    }
+  <span class="tag">&lt;/tbody&gt;</span>;
+}
+
+<span class="reserved">export</span> <span class="keyword">default</span> TableBody;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2537,6 +2713,45 @@ const TableBody = ({ rows }) =&gt;
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una <strong>colección de elementos o componentes, puede ser representada en <em>JSX</em> haciendo uso de la función <em>map</em> de <em>JavaScript</em></strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La función de orden superior <em>map</em> retorna el array de componentes de los elementos que forman las filas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> TableRow from <span class="string"><span class="delimiter">&quot;</span><span class="content">./TableRow</span><span class="delimiter">&quot;</span></span>;
+
+const TableBody = ({ rows }) =&gt;
+  <span class="tag">&lt;tbody&gt;</span>
+    {
+      rows.map(row =<span class="error">&gt;</span>
+        <span class="tag">&lt;TableRow</span> <span class="attribute-name">key</span>=<span class="error">{</span> <span class="attribute-value">row.id</span> <span class="error">}</span> <span class="attribute-name">row</span>=<span class="error">{</span> <span class="attribute-value">row</span> <span class="error">}</span> <span class="tag">/&gt;</span>)
+    }
+  <span class="tag">&lt;/tbody&gt;</span>;
+
+<span class="reserved">export</span> <span class="keyword">default</span> TableBody;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
@@ -2545,59 +2760,150 @@ const TableBody = ({ rows }) =&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>La propiedad key es obligatoria en los componentes dentro de bucles para que React de manera eficiente sepa trabajar con ellos.</p>
+<p>Todos los elementos y componentes hacen uso de la <strong class="red">propiedad <em>key</em> de manera interna, siendo obligatorio especificar dicha propiedad en los elementos y componentes dentro de bucles</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se extraen los datos de las filas a un fichero <em>JSON</em>, el cual es importado y es tratado con la función de orden superior <em>reduce</em> para obtener el formato necesario por la tabla.</p>
+</li>
+<li>
+<p><strong class="red">Siempre debe ser única entre renderizados dentro del ámbito del bucle</strong>, de lo contrario el rendimiento del renderizado puede verse afectado.</p>
+</li>
+<li>
+<p>La prop <em>key</em> <strong>permite controlar las instancias de los componentes cada vez que se renderizan</strong>, llamando a las funciones para recuperar los nuevos elementos que utiliza para actualizar el DOM, si devuelve los mismos tipos de elementos identificados por la propiedad <em>key</em> <strong>mantiene esos nodos del DOM, aunque todas las <em>props</em> hayan cambiado</strong>.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> Table from <span class="string"><span class="delimiter">'</span><span class="content">./Table/Table</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableBody from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableBody</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableColumns from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableColumns</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableHead from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableHead</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> countries from <span class="string"><span class="delimiter">'</span><span class="content">../countries.json</span><span class="delimiter">'</span></span>;
 
-        const countries = [{<span class="key"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>: <span class="integer">1</span>, <span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Spain</span><span class="delimiter">'</span></span>}, {<span class="key"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>: <span class="integer">2</span>, <span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Andorra</span><span class="delimiter">'</span></span>},{<span class="key"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>: <span class="integer">3</span>, <span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Portugal</span><span class="delimiter">'</span></span>}];
+const App = () =&gt; {
+  const columns = [<span class="string"><span class="delimiter">'</span><span class="content">Id</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Nombre</span><span class="delimiter">'</span></span>];
+  const rows = () =&gt;
+    countries.reduce((acc, country) =&gt; {
+      acc.push({
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: country.cca2,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: country.name.common
+      })
+      <span class="keyword">return</span> acc;
+    }, []);
 
-        <span class="keyword">return</span> &lt;&gt;
-                { countries.map((country) =&gt; <span class="tag">&lt;Country</span> <span class="attribute-name">key</span>=<span class="error">{</span><span class="attribute-value">country.id</span><span class="error">}</span> <span class="attribute-name">name</span>=<span class="error">{</span><span class="attribute-value">country.name</span><span class="error">}</span> <span class="tag">/&gt;</span>) }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
+  <span class="keyword">return</span> &lt;&gt;
+    <span class="tag">&lt;h1&gt;</span>React Course<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;Table&gt;</span>
+      <span class="tag">&lt;TableHead&gt;</span>
+        <span class="tag">&lt;TableColumns</span> <span class="attribute-name">columns</span>=<span class="error">{</span><span class="attribute-value">columns</span><span class="error">}</span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;/TableHead&gt;</span>
+      <span class="tag">&lt;TableBody</span> <span class="attribute-name">rows</span>=<span class="error">{</span><span class="attribute-value">rows</span><span class="error">(</span><span class="error">)</span><span class="error">}</span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/Table&gt;</span>
+  &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;;
+}
 
-        const countries = [{<span class="key"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>: <span class="integer">1</span>, <span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Spain</span><span class="delimiter">'</span></span>}, {<span class="key"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>: <span class="integer">2</span>, <span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Andorra</span><span class="delimiter">'</span></span>},{<span class="key"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>: <span class="integer">3</span>, <span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Portugal</span><span class="delimiter">'</span></span>}];
-
-        <span class="keyword">return</span> &lt;&gt;
-                { countries.map((country) =&gt; <span class="tag">&lt;Country</span> <span class="attribute-name">key</span>=<span class="error">{</span><span class="attribute-value">country.id</span><span class="error">}</span> <span class="attribute-name">name</span>=<span class="error">{</span><span class="attribute-value">country.name</span><span class="error">}</span> <span class="tag">/&gt;</span>) }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const Componente = (props) =&gt; {
-
-        const countries = [{<span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Spain</span><span class="delimiter">'</span></span>}, {<span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Andorra</span><span class="delimiter">'</span></span>},{<span class="key"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">Portugal</span><span class="delimiter">'</span></span>}];
-
-        const countriesList =
-                countries.map((country) =&gt; <span class="tag">&lt;Country</span> <span class="attribute-name">key</span>=<span class="error">{</span><span class="attribute-value">country.name</span><span class="error">}</span> <span class="attribute-name">data</span>=<span class="error">{</span><span class="attribute-value">country</span><span class="error">}</span> <span class="tag">/&gt;</span>);
-
-
-        <span class="keyword">return</span> &lt;&gt;
-                { countriesList }
-        &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;
-}</span></span></code></pre>
+export default App;</span></span></code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
 </table>
 </div>
 </div>
 <div class="sect1">
 <h2 id="componentes-de-orden-superior">Componentes de Orden Superior</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un componente de orden superior (HOC) es una <strong>técnica avanzada para reutilizar la lógica en los componentes</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los componentes toman <strong>uno o más componentes como argumentos, y devuelven un nuevo componente actualizado</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>similares a las funciones de orden superior, que toman algunas funciones como argumento y producen una nueva función</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Por convención de nombres, <strong>utilizan el prefijo <em>With</em> en <em>PascalCase</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><em>Decorator</em> es un patrón de diseño estructural</strong> que te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const WithProtected = Component =&gt; props =&gt; {
+  const { isProtected, ...properties } = props;
+  <span class="keyword">return</span> !isProtected
+    ? <span class="tag">&lt;Component</span> <span class="error">{</span><span class="attribute-name">...properties</span><span class="error">}</span> <span class="tag">/&gt;</span>
+    : <span class="tag">&lt;span&gt;</span>El componente está protegido...<span class="tag">&lt;/span&gt;</span>
+}
 
+<span class="reserved">export</span> <span class="keyword">default</span> WithProtected;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> Table from <span class="string"><span class="delimiter">'</span><span class="content">./Table/Table</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableBody from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableBody</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableColumns from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableColumns</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> TableHead from <span class="string"><span class="delimiter">'</span><span class="content">./Table/TableHead</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> WithProtected from <span class="string"><span class="delimiter">'</span><span class="content">./WithProtected/WithProtected</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> countries from <span class="string"><span class="delimiter">'</span><span class="content">../countries.json</span><span class="delimiter">'</span></span>;
+
+const ProtectedTable = WithProtected(Table);
+
+const App = () =&gt; {
+  const columns = [ <span class="string"><span class="delimiter">'</span><span class="content">Id</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Nombre</span><span class="delimiter">'</span></span> ];
+  const rows = () =&gt; countries.reduce((acc, country) =&gt; {
+    acc.push({
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>: country.cca2,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: country.name.common
+    })
+    <span class="keyword">return</span> acc;
+  }, []);
+
+  <span class="keyword">return</span> &lt;&gt;
+    <span class="tag">&lt;h1&gt;</span>React Course<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;ProtectedTable</span> <span class="attribute-name">isProtected</span>=<span class="error">{</span> <span class="attribute-value">false</span> <span class="error">}</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;TableHead&gt;</span>
+        <span class="tag">&lt;TableColumns</span> <span class="attribute-name">columns</span>=<span class="error">{</span> <span class="attribute-value">columns</span> <span class="error">}</span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;/TableHead&gt;</span>
+      <span class="tag">&lt;TableBody</span> <span class="attribute-name">rows</span>=<span class="error">{</span> <span class="attribute-value">rows</span><span class="error">(</span><span class="error">)</span> <span class="error">}</span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/ProtectedTable&gt;</span>
+  &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">&gt;;
+}
+
+export default App;</span></span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2611,6 +2917,11 @@ const TableBody = ({ rows }) =&gt;
 <col style="width: 20%;">
 <col style="width: 20%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="5"><span class="red">Con biblioteca <strong><em>sass</em></strong>!!!</span></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2655,16 +2966,76 @@ const TableBody = ({ rows }) =&gt;
 </ul>
 </div>
 </li>
+<li>
+<p><em>./src/components/Table/Table.jsx</em></p>
+</li>
 </ul>
 </div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="css"><span class="tag">Unresolved</span> <span class="tag">directive</span> <span class="tag">in</span> <span class="float">4</span><span class="tag">-como</span>/<span class="float">8</span><span class="tag">-css</span>/<span class="float">1</span><span class="tag">-global</span><span class="class">.adoc</span> <span class="error">-</span> <span class="tag">include</span>::../../../../../../<span class="tag">src</span>/<span class="float">0</span><span class="tag">-itinerario</span>/<span class="float">3</span><span class="tag">-css</span>/<span class="float">1</span><span class="tag">-global</span>/<span class="tag">app</span>/<span class="tag">src</span>/<span class="tag">styles</span><span class="class">.scss</span>[]</code></pre>
+<pre>const Table = ({ children }) =&gt;
+  &lt;table className="my-table"&gt;
+    { children }
+  &lt;/table&gt;;
+
+export default Table;</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>./src/styles.scss</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>.my-table {
+    background-color: #b8b8b8;
+}</pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>./src/components/App.jsx</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">8</span>-css/<span class="integer">1</span>-global.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-css/<span class="integer">1</span>-global/app/src/main.jsx[]</code></pre>
+<pre>import Table from './Table/Table';
+import TableBody from './Table/TableBody';
+import TableColumns from './Table/TableColumns';
+import TableHead from './Table/TableHead';
+import countries from '../countries.json';
+import '../styles.scss';
+
+const App = () =&gt; {
+  const columns = [ 'Id', 'Nombre' ];
+  const rows = () =&gt;
+    countries.reduce((acc, country) =&gt; {
+      if(country.population &gt;= 100000) {
+        acc.push({
+          "id": country.cca2,
+          "name": country.name.common
+        });
+      }
+      return acc;
+    }, []);
+
+  return &lt;&gt;
+    &lt;h1&gt;React Course&lt;/h1&gt;
+    &lt;Table&gt;
+      &lt;TableHead&gt;
+        &lt;TableColumns columns={ columns } /&gt;
+      &lt;/TableHead&gt;
+      &lt;TableBody rows={ rows() } /&gt;
+    &lt;/Table&gt;
+  &lt;/&gt;;
+}
+
+export default App;</pre>
 </div>
 </div></div></td>
 </tr>
@@ -2675,8 +3046,8 @@ const TableBody = ({ rows }) =&gt;
 <h3 id="css-en-línea">CSS en Línea</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 60%;">
+<col style="width: 40%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2710,9 +3081,25 @@ const TableBody = ({ rows }) =&gt;
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>./src/components/Table/Table.jsx</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">8</span>-css/<span class="integer">2</span>-enLinea.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-css/<span class="integer">2</span>-enLinea/app/src/main.jsx[]</code></pre>
+<pre>const Table = ({ children }) =&gt;
+  &lt;table style={
+    {
+      backgroundColor: '#b8b8b8'
+    }
+  }&gt;
+    { children }
+  &lt;/table&gt;;
+
+export default Table;</pre>
 </div>
 </div></div></td>
 </tr>
@@ -2723,8 +3110,8 @@ const TableBody = ({ rows }) =&gt;
 <h3 id="módulos-css">Módulos CSS</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 55%;">
+<col style="width: 45%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2747,15 +3134,38 @@ const TableBody = ({ rows }) =&gt;
 </div>
 </li>
 </ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="css"><span class="tag">Unresolved</span> <span class="tag">directive</span> <span class="tag">in</span> <span class="float">4</span><span class="tag">-como</span>/<span class="float">8</span><span class="tag">-css</span>/<span class="float">3</span><span class="tag">-modulos</span><span class="class">.adoc</span> <span class="error">-</span> <span class="tag">include</span>::../../../../../../<span class="tag">src</span>/<span class="float">0</span><span class="tag">-itinerario</span>/<span class="float">3</span><span class="tag">-css</span>/<span class="float">3</span><span class="tag">-modulos</span>/<span class="tag">app</span>/<span class="tag">src</span>/<span class="tag">Table</span><span class="class">.module</span><span class="class">.scss</span>[]</code></pre>
-</div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>./src/components/Table/Table.jsx</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">8</span>-css/<span class="integer">3</span>-modulos.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-css/<span class="integer">3</span>-modulos/app/src/main.jsx[]</code></pre>
+<pre>import styles from "./Table.module.scss"
+
+const Table = ({ children }) =&gt;
+  &lt;table className={ styles.myTable }&gt;
+    { children }
+  &lt;/table&gt;;
+
+export default Table;</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>./src/components/Table/Table..module.scss</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>.myTable {
+    background-color: #b8b8b8;
+}</pre>
 </div>
 </div></div></td>
 </tr>
@@ -2770,6 +3180,11 @@ const TableBody = ({ rows }) =&gt;
 <col style="width: 50%;">
 </colgroup>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><span class="red">Con biblioteca <strong><em>styled-components</em></strong>!!!</span></p>
+</div></div></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -2796,9 +3211,47 @@ const TableBody = ({ rows }) =&gt;
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p>Beneficios:</p>
-<div class="ulist">
+<p><em>./src/components/Table/Table.jsx</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>import styled from 'styled-components';
+
+const MyStyledTable = styled.table`
+  background-color: #b8b8b8;
+`;
+
+const Table = ({ children }) =&gt;
+  &lt;MyStyledTable&gt;
+    { children }
+  &lt;/MyStyledTable&gt;;
+
+export default Table;</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><span class="green">Beneficios</span>:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="green">Modularidad pensando en componentes</strong>, no es necesario que los usuarios tengan que <strong>mantener un montón de hojas de estilo</strong></p>
@@ -2810,10 +3263,14 @@ const TableBody = ({ rows }) =&gt;
 <p><strong class="green">Verdadero aislamiento de reglas</strong>. Los selectores de ámbito no son suficientes. CSS tiene propiedades que se heredan automáticamente del elemento padre, si no se definen explícitamente.</p>
 </li>
 <li>
-<p><strong class="green">Selectores de ámbito</strong>. CSS sólo tiene un espacio de nombres global. Es imposible evitar colisiones de selectores en aplicaciones no triviales. <strong>CSS</strong> en <strong>JavaScript</strong> genera <strong>nombres</strong> de clase <strong>únicos</strong> por defecto cuando se compila a CSS.</p>
-</li>
-<li>
 <p><strong class="green">Prefijación de proveedores</strong>. Las <strong>reglas <em>CSS</em> están prefijadas automáticamente por el proveedor</strong>, por lo que los desarrolladores no tienen que pensar en ello</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Selectores de ámbito</strong>. CSS sólo tiene un espacio de nombres global. Es imposible evitar colisiones de selectores en aplicaciones no triviales. <strong>CSS</strong> en <strong>JavaScript</strong> genera <strong>nombres</strong> de clase <strong>únicos</strong> por defecto cuando se compila a CSS.</p>
 </li>
 <li>
 <p><strong class="green">Compartir código fácilmente</strong>, constantes y funciones entre <em>JavaScript</em> y <em>CSS</em></p>
@@ -2825,14 +3282,6 @@ const TableBody = ({ rows }) =&gt;
 <p><strong class="green">Eliminación de código muerto</strong></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">8</span>-css/<span class="integer">4</span>-enJavascript.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">3</span>-css/<span class="integer">4</span>-enJavascript/app/src/main.jsx[]</code></pre>
-</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -2847,11 +3296,40 @@ const TableBody = ({ rows }) =&gt;
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Si el componente ya esta creado y no es posible crearlo con styled-component, podemos envolver el componente utilizando la función styled y aplicar los estilos. El componente envuelto recibe por parámetro la clase con los estilos, esta debe usarse en la propiedad className del componente envuelto.</p>
+<p>Si el componente <span class="red">ya esta creado y no es posible crearlo con <em>styled-component</em></span>, podemos envolver el componente utilizando la <strong class="blue">función <em>styled</em></strong> y aplicar los estilos.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El componente envuelto <strong>recibe por parámetro la clase con los estilos</strong>, esta debe usarse en la <strong>propiedad <em>className</em> del componente envuelto</strong>.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>./src/components/Table/Table.jsx</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>import styled from 'styled-components';
+
+const Table = ({ className, children }) =&gt;
+  &lt;table className={ className }&gt;
+    { children }
+  &lt;/table&gt;;
+
+const MyStyledTable = styled(Table)`
+  background-color: #b8b8b8;
+`;
+
+export default MyStyledTable;</pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
