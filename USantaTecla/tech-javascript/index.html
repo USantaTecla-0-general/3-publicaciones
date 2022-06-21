@@ -483,8 +483,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#objetos">Objetos</a></li>
 <li><a href="#objetos-de-utilidad">Objetos de utilidad</a></li>
-<li><a href="#objetos-con-clousures">Objetos con <em>Clousures</em></a></li>
-<li><a href="#funciones-factoría">Funciones Factoría</a></li>
 <li><a href="#funciones-constructoras">Funciones Constructoras</a></li>
 <li><a href="#funciones-constructoras-de-utilidad">Funciones constructoras de utilidad</a></li>
 <li><a href="#función-constructora-object">Función constructora <em>Object</em></a></li>
@@ -7375,19 +7373,20 @@ console.writeln(flechaSoloRetorno(<span class="integer">1</span>));
 console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, (x) =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
 console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; { <span class="keyword">return</span> <span class="integer">2</span>*x; }));
 console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, x =&gt; <span class="integer">2</span>*x));
-console.writeln(sumatorio(<span class="integer">1</span>, <span class="integer">10</span>, <span class="reserved">double</span>));
 
-<span class="keyword">function</span> <span class="function">sum</span>(from, to, next) {
+<span class="keyword">function</span> <span class="function">sum</span>(from, to, operation) {
   let result = <span class="integer">0</span>;
   <span class="keyword">for</span>(let i=from; i&lt;=to; i++){
-                result += next(i);
+                result += operation(i);
   }
   <span class="keyword">return</span> result;
 }
 
 let <span class="reserved">double</span> = <span class="keyword">function</span>(x) {
   <span class="keyword">return</span> <span class="integer">2</span>*x;
-}</code></pre>
+}
+
+console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</span>, <span class="reserved">double</span>));</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8058,6 +8057,16 @@ console.writeln(<span class="keyword">typeof</span> object); <span class="commen
 <ul>
 <li>
 <p>Funciones libres reciben y retornan objetos manipulandolos oportunamente</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El propio objeto solo aporta datos, sin comportamiento</p>
+</li>
+<li>
+<p>Funciones privadas quedarán como tal en el ámbito de la función</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -8108,6 +8117,13 @@ method(o);
 <ul>
 <li>
 <p>Las funciones son propiedades del propio objeto</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Funciones privadas quedarán como tal en el ámbito de la función</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -8123,14 +8139,14 @@ o.method();
     let returned = {
         <span class="key">property</span>: property,
         <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="function">method</span> : <span class="keyword">function</span> () {
+        <span class="function">method</span>: <span class="keyword">function</span> () {
             <span class="reserved">private</span>(returned);
             console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{returned.property} - other: <span class="predefined">$</span>{returned.other}<span class="error">`</span>);
         }
     };
     <span class="keyword">return</span> returned;
 
-    <span class="keyword">function</span> <span class="reserved">private</span>(object){
+    <span class="keyword">function</span> <span class="reserved">private</span>(object) {
         object.property++;
         object.other++;
     }
@@ -8157,6 +8173,13 @@ o.method();
 <ul>
 <li>
 <p><em>this</em> es una constante, no asignable, con la dirección al propio objeto que reciba el mensaje correspondiente al método que se esté ejecutando</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Funciones privadas quedarán como tal en el ámbito de la función</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -8170,9 +8193,9 @@ o.method();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(property) {
     <span class="keyword">return</span> {
-        <span class="key">property</span>: property,
+        property,
         <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="function">method</span>: <span class="keyword">function</span> () {
+        method () {
             <span class="reserved">private</span>(<span class="local-variable">this</span>);
             console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{<span class="local-variable">this</span>.property} - other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
         }
@@ -8183,6 +8206,112 @@ o.method();
         object.other++;
     }
 }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>clousure</em></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los atributos quedan en el contexto de la función de orden superior que devuelve otro objeto con las funciones válidas sobre el <strong>primer contexto persistente por <em>clousure</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Funciones privadas quedarán como tal en el ámbito de la función</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const object = createObject(<span class="integer">7</span>);
+object.method();
+
+<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+  let other = <span class="integer">0</span>;
+
+  <span class="keyword">return</span> {
+    <span class="function">method</span>: <span class="keyword">function</span> () {
+      <span class="reserved">private</span>(<span class="local-variable">this</span>);
+      console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{property} - other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+    }
+  };
+
+  <span class="keyword">function</span> <span class="reserved">private</span>(object) {
+    property++;
+    other++;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Patrón Factoria</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se crea un objeto con los métodos privados por un lado y otro objeto que se retorna con los métodos públicos propios de la clase</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const o = createObject(<span class="integer">7</span>);
+o.method();
+
+<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+    let that = {
+        <span class="key">property</span>: property,
+        <span class="key">other</span>: <span class="integer">0</span>,
+        <span class="reserved">private</span>: <span class="keyword">function</span> () {
+            <span class="local-variable">this</span>.property++;
+            <span class="local-variable">this</span>.other++;
+        }
+    };
+
+    <span class="keyword">return</span> {
+            <span class="function">method</span>: <span class="keyword">function</span> () {
+                that.<span class="reserved">private</span>();
+                console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{that.property} - other: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
+            }
+        }
+
+    }</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8204,11 +8333,17 @@ o.method();
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/4-estructuras/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/5-comportamiento/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/6-this/app.js">solución</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#0-fraction">interval</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/4-estructuras/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/5-comportamiento/app.js">solución</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/value/interval/x-scenario/4-objetos/1-objetos/6-this/app.js">solución</a></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic">game-ticTacToe</a> : <a href="https://github.com/USantaTecla-tech-javascript/game-ticTacToe/blob/master/2-objetos/v0.0/app.js"><em>solución</em></a> - <a href="https://github.com/USantaTecla-tech-javascript/game-ticTacToe/blob/master/2-objetos/v0.1/app.js">solución</a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -8385,116 +8520,6 @@ console.writeln(object); <span class="comment">// [object Object]</span>
 </table>
 </div>
 <div class="sect2">
-<h3 id="objetos-con-clousures">Objetos con <em>Clousures</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>xxx</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">include::[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="funciones-factoría">Funciones Factoría</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>los <em>clousures</em> permiten la creación de objetos con atributos privados como variables locales a la función constructora</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-const o = createObject(<span class="integer">7</span>);
-o.method();
-
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
-    let that = {
-        <span class="key">property</span>: property,
-        <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="reserved">private</span>: <span class="keyword">function</span> () {
-            <span class="local-variable">this</span>.property++;
-            <span class="local-variable">this</span>.other++;
-        }
-    };
-
-    <span class="keyword">return</span> {
-            <span class="function">method</span>: <span class="keyword">function</span> () {
-                that.<span class="reserved">private</span>();
-                console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{that.property} - other: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
-            }
-        }
-
-    }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>con método privado</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-const o = createObject(<span class="integer">7</span>);
-o.method();
-
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
-    let that = {
-        <span class="key">property</span>: property,
-        <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="reserved">private</span>: <span class="keyword">function</span> () {
-            <span class="local-variable">this</span>.property++;
-            <span class="local-variable">this</span>.other++;
-        }
-    };
-
-    <span class="keyword">return</span> {
-            <span class="function">method</span>: <span class="keyword">function</span> () {
-                that.<span class="reserved">private</span>();
-                console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{that.property} - other: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
-            }
-        }
-
-    }</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="funciones-constructoras">Funciones Constructoras</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -8520,8 +8545,6 @@ o.method();
 const console = <span class="keyword">new</span> Console();
 const o = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
 o.method();
-console.writeln(o.constructor);
-
 
 <span class="keyword">function</span> <span class="function">Clazz</span>(property) {
     <span class="local-variable">this</span>.property = property;
