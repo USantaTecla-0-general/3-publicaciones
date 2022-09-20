@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="238px" preserveAspectRatio="none" style="width:401px;height:238px;background:#FFFFFF;" version="1.1" viewBox="0 0 401 238" width="401px" zoomAndPan="magnify"><defs/><g><!--MD5=[22bd0601469f1755d32a4b952e778094]
+cluster machine--><g id="cluster_machine"><polygon fill="none" points="16,16,26,6,188,6,188,211,178,221,16,221,16,16" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="178" x2="188" y1="16" y2="6"/><line style="stroke:#181818;stroke-width:1.0;" x1="16" x2="178" y1="16" y2="16"/><line style="stroke:#181818;stroke-width:1.0;" x1="178" x2="178" y1="16" y2="221"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="84" x="56" y="31.9951">machine X</text></g><!--MD5=[69478a030e4ea8323e43f7b35bb9d2ad]
+cluster machine2--><g id="cluster_machine2"><polygon fill="none" points="212,16,222,6,384,6,384,211,374,221,212,221,212,16" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="374" x2="384" y1="16" y2="6"/><line style="stroke:#181818;stroke-width:1.0;" x1="212" x2="374" y1="16" y2="16"/><line style="stroke:#181818;stroke-width:1.0;" x1="374" x2="374" y1="16" y2="221"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="83" x="252.5" y="31.9951">machine Y</text></g><!--MD5=[5f993a22df5c41073f560734047eb212]
+entity interprete--><g id="elem_interprete"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="140" x="32" y="46"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="152" y="51"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="150" y="53"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="150" y="57"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="47" y="78.9951">interprete XA</text></g><!--MD5=[f69d0cb0505d19e89266c685e1b9b035]
+entity in--><g id="elem_in"><path d="M60.5,154.5 L60.5,202.0938 A2.5,2.5 0 0 0 63,204.5938 L141,204.5938 A2.5,2.5 0 0 0 143.5,202.0938 L143.5,162 L133.5,152 L63,152 A2.5,2.5 0 0 0 60.5,154.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M133.5,152 L133.5,159.5 A2.5,2.5 0 0 0 136,162 L143.5,162 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="53" x="75.5" y="174.9951">«code»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="70.5" y="191.292">prog.ext</text></g><!--MD5=[c709e3514bc9e3c98ac77a95321257f2]
+entity interprete2--><g id="elem_interprete2"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="228.5" y="46"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="347.5" y="51"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="345.5" y="53"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="345.5" y="57"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="243.5" y="78.9951">interprete YA</text></g><!--MD5=[7aa09036268b330a2c9e304b18000277]
+entity in2--><g id="elem_in2"><path d="M256.5,154.5 L256.5,202.0938 A2.5,2.5 0 0 0 259,204.5938 L337,204.5938 A2.5,2.5 0 0 0 339.5,202.0938 L339.5,162 L329.5,152 L259,152 A2.5,2.5 0 0 0 256.5,154.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M329.5,152 L329.5,159.5 A2.5,2.5 0 0 0 332,162 L339.5,162 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="53" x="271.5" y="174.9951">«code»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="266.5" y="191.292">prog.ext</text></g><!--MD5=[6a676f37c82ee93f58dafd651cd84f56]
+link interprete to in--><g id="link_interprete_in"><path d="M102,92.014 C102,107.712 102,129.037 102,146.4613 " fill="none" id="interprete-to-in" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="102,151.7329,106,142.7329,102,146.7329,98,142.7329,102,151.7329" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b21279c3862f1e54d6051fb4c56bede8]
+link interprete2 to in2--><g id="link_interprete2_in2"><path d="M298,92.014 C298,107.712 298,129.037 298,146.4613 " fill="none" id="interprete2-to-in2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="298,151.7329,302,142.7329,298,146.7329,294,142.7329,298,151.7329" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[6464809e637b4b628e41286d8009431c]
+@startuml
+node machine as "machine X" {
+
+component interprete as "interprete XA"
+file in as "prog.ext" <<code>>
+
+interprete -down-> in
+
+
+}
+
+node machine2 as "machine Y" {
+
+component interprete2 as "interprete YA" 
+file in2 as "prog.ext" <<code>>
+
+interprete2 -down-> in2
+
+
+}
+@enduml
+
+PlantUML version 1.2022.8beta2(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
