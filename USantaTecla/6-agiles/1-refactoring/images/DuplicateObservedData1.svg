@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="245px" preserveAspectRatio="none" style="width:238px;height:245px;background:#222222;" version="1.1" viewBox="0 0 238 245" width="238px" zoomAndPan="magnify"><defs/><g><!--class IntervalWindow--><rect fill="#222222" height="226.793" id="IntervalWindow" style="stroke: #A9A9A9; stroke-width: 3.0;" width="221" x="6" y="8"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="180" x="26.5" y="34.1074">Interval Window</text><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="7" x2="226" y1="46.1133" y2="46.1133"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="189" x="13" y="66.1938">startField: TextField</text><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="171" x="13" y="87.7788">endField: TextField</text><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="198" x="13" y="109.3638">lengthField: TextField</text><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="7" x2="226" y1="118.8682" y2="118.8682"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="198" x="13" y="138.9487">StartField_FocusLost()</text><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="180" x="13" y="160.5337">EndField_FocusLost()</text><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="207" x="13" y="182.1187">LengthField_FocusLost()</text><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="153" x="13" y="203.7036">calculateLength()</text><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="126" x="13" y="225.2886">calculateEnd()</text><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+hide circle
+hide stereotype
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+class "Interval Window" as IntervalWindow {
+startField: TextField
+endField: TextField
+lengthField: TextField
+StartField_FocusLost()
+EndField_FocusLost()
+LengthField_FocusLost()
+calculateLength()
+calculateEnd()
+}
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.8+10-LTS
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

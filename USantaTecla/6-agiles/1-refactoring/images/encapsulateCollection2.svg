@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="137px" preserveAspectRatio="none" style="width:315px;height:137px;background:#222222;" version="1.1" viewBox="0 0 315 137" width="315px" zoomAndPan="magnify"><defs/><g><!--class Person--><rect fill="#222222" height="118.8682" id="Person" style="stroke: #A9A9A9; stroke-width: 3.0;" width="298" x="6" y="8"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="119" y="34.1074">Person</text><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="7" x2="303" y1="46.1133" y2="46.1133"/><line style="stroke: #A9A9A9; stroke-width: 3.0;" x1="7" x2="303" y1="54.1133" y2="54.1133"/><ellipse cx="17" cy="70.4058" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="270" x="27" y="74.1938">getCourses():Unmodificable Set</text><ellipse cx="17" cy="91.9907" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="171" x="27" y="95.7788">addCourses(:Course)</text><ellipse cx="17" cy="113.5757" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="189" x="27" y="117.3638">removeCourse(:Course)</text><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+hide circle
+hide stereotype
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+class Person {
++ getCourses():Unmodificable Set
++ addCourses(:Course)
++ removeCourse(:Course)
+}
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.8+10-LTS
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

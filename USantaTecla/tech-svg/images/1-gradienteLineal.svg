@@ -1,0 +1,25 @@
+<svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="verticalGradient" 
+        x1="0%" x2="100%" y1="0%" y2="0%" spreadMethod="pad">
+      <stop offset="25%" stop-color="red" />
+      <stop offset="75%" stop-color="green" />
+    </linearGradient>
+    <linearGradient id="horizontalGradient" 
+        x1="0%" x2="0%" y1="100%" y2="0%" spreadMethod="pad">
+      <stop offset="10%" stop-color="red" stop-opacity="1" />
+      <stop offset="90%" stop-color="green" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="obliqueGradient" 
+        x1="0%" x2="100%" y1="100%" y2="0%" spreadMethod="pad">
+      <stop offset="10%" stop-color="#00cc00" stop-opacity="1" />
+      <stop offset="30%" stop-color="#006600" stop-opacity="1" />
+      <stop offset="70%" stop-color="#cc0000" stop-opacity="1" />
+      <stop offset="90%" stop-color="#000099" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  <path d="M50 25 H100 V75 H50 Z" fill="url(#verticalGradient)" stroke="black" />
+  <path d="M75 50 L50 125 H100 Z" fill="url(#horizontalGradient)" stroke="black" />
+  <path d="M-1000 100 H1000" stroke="black" />
+  <path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="url(#obliqueGradient)" stroke="black" />
+</svg>

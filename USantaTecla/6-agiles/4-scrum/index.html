@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.8">
+<meta name="author" content="Universo Santa Tecla">
+<title>Scrum</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="book">
+<div id="header">
+<h1>Scrum</h1>
+<div class="details">
+<span id="author" class="author">Universo Santa Tecla</span><br>
+<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
+<span id="revnumber">version 0.0.1</span>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Índice</div>
+<ul class="sectlevel1">
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
+<li><a href="#qué"><strong>¿Qué?</strong></a></li>
+<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
+<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
+<li><a href="#roles">Roles</a></li>
+<li><a href="#artefactos">Artefactos</a></li>
+<li><a href="#actividades">Actividades</a>
+<ul class="sectlevel2">
+<li><a href="#duración-del-sprint">Duración del Sprint</a></li>
+<li><a href="#planificación-del-sprint">Planificación del Sprint</a></li>
+<li><a href="#realización-del-sprint">Realización del Sprint</a></li>
+<li><a href="#demo-del-sprint">Demo del Sprint</a></li>
+<li><a href="#retrospectiva-del-sprint">Retrospectiva del Sprint</a></li>
+</ul>
+</li>
+<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
+<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
+<li><a href="#ponente">Ponente</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">ámbito incumplido</strong> y/o</p>
+</li>
+<li>
+<p><strong class="red">tiempo incumplido</strong> y/o</p>
+</li>
+<li>
+<p><strong class="red">coste incumplido</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Cascada</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Ágil</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="red"><strong>Orientadas al proceso</strong></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Un gran proyecto</span></p>
+</li>
+<li>
+<p><span class="red">Proceso secuencial</span></p>
+</li>
+<li>
+<p><span class="red">Estructurado</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green"><strong>Orientadas a las personas</strong></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green">Muchos pequeños proyectos</span></p>
+</li>
+<li>
+<p><strong class="red">Proceso iterativo e incremental</strong>. Fases en paralelo</p>
+</li>
+<li>
+<p><span class="green">Flexible. Adaptable. Mejora continua</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="red"><strong>Desarrollo Predictivo</strong></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Plazos y costes son conocidos al principio</span></p>
+</li>
+<li>
+<p><span class="red">Grandes y pocas entregas de software</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green"><strong>Desarrollo Adaptativo</strong></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green">Ámbito y costes varían según evoluciona el proyecto</span></p>
+</li>
+<li>
+<p><span class="green">Entregas pequeñas y frecuentes de software, que siempre aportan valor</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="red"><strong>Orientadas a la documentación</strong></span>. Proyecto bien documentado con modelos gráficos (<strong class="red">UML</strong>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Buena definición de requisitos al principio</span></p>
+</li>
+<li>
+<p><span class="red">El usuario participa fundamentalmente en la fase inicial de toma de requisitos</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green"><strong>Orientado al código</strong></span>. La <strong class="red">documentación no es prioritaria</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green">Los requisitos se van desgranando cuando se van a abordar</span></p>
+</li>
+<li>
+<p><span class="green">El usuario está involucrado constantemente en el proyecto. Comunicación fluida</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="red">Adecuado para situaciones dónde los cambios no son frecuentes</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">Adecuado cuando el usuario no conoce al detalle todas las necesidades al principio, y, además, serán cambiantes</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qué"><strong>¿Qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="quoteblock">
+<blockquote>
+Scrum es un <strong class="blue">marco ligero que ayuda a las personas, equipos y organizaciones a generar valor a través de soluciones adaptables para problemas complejos</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Ken Schwaber & Jeff Sutherland<br>
+<cite>La Guía Scrum</cite>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En pocas palabras, <strong>Scrum</strong> requiere un <strong>Scrum Master</strong> para fomentar un entorno donde:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1. Un <strong class="blue">propietario del producto (<em>Product Owner</em>) ordena el trabajo de un problema complejo en un Product Backlog</strong>.</p>
+</li>
+<li>
+<p>2. El <strong class="blue">equipo de Scrum convierte una selección del trabajo en un Incremento de valor durante un Sprint.</strong></p>
+</li>
+<li>
+<p>3. El <strong class="blue">equipo de Scrum y sus partes interesadas (<em>stakeholders</em>) inspeccionan los resultados y realizan los ajustes necesarios para el próximo Sprint</strong>.</p>
+</li>
+<li>
+<p>4. <strong class="blue">Repetir</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum es <strong class="blue">simple</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pruébalo tal cual y determine si su filosofía, teoría y estructura ayudan a alcanzar metas y crear valor.
+El marco de Scrum es <strong class="blue">deliberadamente incompleto</strong>, solo define las partes necesarias para implementar la teoría de Scrum.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Scrum se basa en <strong class="blue">la inteligencia colectiva de las personas que lo utilizan</strong>.
+En lugar de proporcionar a las personas <strong class="red">instrucciones detalladas</strong>, las reglas de Scrum <strong class="blue">guían sus relaciones e interacciones</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">ámbito cumplido</strong> y</p>
+</li>
+<li>
+<p><strong class="green">tiempo cumplido</strong> y</p>
+</li>
+<li>
+<p><strong class="green">coste cumplido</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cómo"><strong>¿Cómo?</strong></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="roles">Roles</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 37.3737%;">
+<col style="width: 25.2525%;">
+<col style="width: 37.3738%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">El Dueño de Producto</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">El Equipo</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">El Scrum Master</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Responsable de las <strong class="blue">pérdidas y ganancias del producto</strong>, asumiendo que es un producto comercial, por tanto, <strong class="blue">maximiza el retorno de inversión</strong> (<strong>ROI</strong>, <em>return of investment</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">identificando las funcionalidades</strong> del producto,</p>
+</li>
+<li>
+<p>poniéndolas en una <strong class="blue">lista priorizada de funcionalidades</strong>, decidiendo cuales deberían ir al principio de la lista para el siguiente Sprint, y</p>
+</li>
+<li>
+<p><strong>re-priorizando y refinando continuamente la lista</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Coincide con el cliente</strong> en aplicaciones internas.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En otras, el cliente podría <strong class="blue">ser millones de personas</strong> con diferentes necesidades, en cuyo caso, es parecido al rol de <strong class="blue">jefe de producto/marketing</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Es <strong class="red">diferente al tradicional</strong> jefe de proyecto porque <strong class="blue">interactúa activa y frecuentemente con el equipo, revisando el resultado en cada iteración, en vez de delegar las decisiones de desarrollo</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Construye el producto que va a usar el cliente</strong></p>
+</li>
+<li>
+<p><strong class="blue">“Multi-funcional”</strong>, tiene todas las competencias y habilidades necesarias para entregar un producto potencialmente distribuible en cada Sprint</p>
+</li>
+<li>
+<p><strong class="blue">“Auto-organizado”</strong> (auto-gestionado), con un alto grado de autonomía y responsabilidad. En Scrum, los equipos se auto-organizan <strong class="red">en vez de ser dirigidos por un jefe</strong>. El equipo decide a que se compromete, y cómo hacer lo mejor para cumplir con lo comprometido</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Ayuda al grupo del producto a aprender y aplicar Scrum</strong> para conseguir valor de negocio. Hace lo que sea necesario para ayudar a que el equipo tenga éxito.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No es el jefe del equipo o jefe de proyecto</strong>; <strong class="blue">sirve al equipo</strong>, le protege de interferencias del exterior, y enseña y guía al Dueño del Producto y al equipo en el uso fructífero de Scrum.</p>
+</li>
+<li>
+<p><strong class="blue">Asegura de que todo el mundo entienda y siga las prácticas</strong> y ayuda a llevar a la organización, a través de los cambios necesarios y frecuentemente difíciles, a conseguir el éxito con el desarrollo ágil.</p>
+</li>
+<li>
+<p><strong class="red">No puede ser también el Dueño del Producto</strong> porque a veces el Scrum Master necesitará pararle los pies, <strong class="red">ni jefe de proyecto</strong> porque no le dice a la gente las tareas que tienen asignadas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se conoce al equipo como los <strong class="blue">“Cerdos”</strong> y a todos los demás como <strong class="blue">“Gallinas”</strong></p>
+</li>
+<li>
+<p><em>un cerdo y una gallina que están hablando sobre abrir un restaurante llamado “Huevos con jamón”, y el cerdo no lo ve claro porque “él estaría comprometido, pero la gallina solo estaría implicada”</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="artefactos">Artefactos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 80%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Pila de Producto (<em>Product Backlog</em>)</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Pila del Sprint (<em>Sprint Backlog</em>)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es el corazón de Scrum, es <strong class="blue">donde empieza todo</strong>.</p>
+</li>
+<li>
+<p>Es, básicamente, una <strong class="red">lista priorizada de requisitos o funcionalidades, o lo que sea</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cosas que el cliente quiere, descritas usando la terminología del cliente.</p>
+</li>
+<li>
+<p>Llamamos a esto <strong class="blue">historias de usuario</strong>, o a veces simplemente [blue]elementos de la Pila del Producto.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>El <span class="blue"><strong>Dueño de Producto debería concentrarse en los objetivos de negocio</strong></span>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Otras personas aparte del Dueño de Producto (implicados <em class="blue"><strong>stakeholders</strong></em>) <strong class="blue">pueden añadir sus historias a la Pila de Producto</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pero <strong class="red">no pueden asignarles niveles de importancia</strong>, ese es un cometido exclusivo del Dueño de Producto.</p>
+</li>
+<li>
+<p><strong class="red">Tampoco pueden establecer estimaciones</strong>, ese es un cometido exclusivo del equipo. El equipo está normalmente mejor capacitado para averiguar como resolver algo.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Representa <strong class="blue">las historias a las que el equipo se compromete durante este Sprint</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">equipo decide cuántas historias incluirá en el Sprint</strong>.</p>
+</li>
+<li>
+<p><strong class="red">No el Dueño de Producto ni nadie más</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actividades">Actividades</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>do {</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Planificación del Sprint</strong> (\~1 día)</p>
+</li>
+<li>
+<p><strong>Desarrollo del Sprint</strong> (\~13 días)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>for(int i=0; i&lt;13; i++) {</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Daily Meeting</strong> (\~15 minutos)</p>
+</li>
+<li>
+<p><strong>Test-driven Development</strong> (\~7:45 horas)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>}</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Demostración del Sprint</strong> (\~½ día)</p>
+</li>
+<li>
+<p><strong>Retrospectiva del Sprint</strong> (\~½día)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>} (<strong>ProductBacklog</strong> != vacio)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/actividades.png" alt="actividades"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="duración-del-sprint">Duración del Sprint</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">Sprints cortos están bien</strong>. Permiten a la compañía ser “ágil”, es decir,</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">cambiar de dirección frecuentemente</strong> &#8658;</p>
+</li>
+<li>
+<p><strong class="blue">ciclo de feedback corto</strong> &#8658;</p>
+</li>
+<li>
+<p><strong class="blue">más entregas y más frecuentes</strong> &#8658;</p>
+</li>
+<li>
+<p><strong class="blue">más feedback del cliente</strong> &#8658;</p>
+</li>
+<li>
+<p><strong class="blue">menos tiempo desarrollando en dirección incorrecta</strong> &#8658;</p>
+</li>
+<li>
+<p><strong class="blue">aprender y mejorar más rápido</strong>, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Generalmente, <strong class="blue">los Dueños de Producto prefieren los Sprints cortos y a los desarrolladores les gustan los Sprints largos</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Así que la duración del Sprint es un valor de compromiso. Hemos experimentados con varias duraciones y encontramos <strong class="red">nuestra duración favorita es 3 semanas</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">Sprints largos tampoco están mal</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El equipo tiene <span class="blue">más tiempo para conseguir impulso</span>,</p>
+</li>
+<li>
+<p>tienen <span class="blue">más espacio para recuperarse de los problemas</span> que surjan y aun así cumplir la meta del Sprint,</p>
+</li>
+<li>
+<p>tiene <span class="blue">menos carga de gestión</span> en términos de reuniones de planificación de Sprints, Demos, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="planificación-del-sprint">Planificación del Sprint</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="8"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La planificación de Sprint es una <strong class="blue">reunión crítica, probablemente la más importante de Scrum</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una planificación de Sprint mal ejecutada <strong class="red">puede arruinar por completo todo</strong> el Sprint.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Participantes de la Planificación</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><em>¿quién?</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Propósito de la Planificación</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><em>¿para qué?</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Agenda de la Planificación</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><em>¿cuándo?</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Meta de la Planificación</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><em>¿por qué?</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Tarjetas de Historias de Usuario</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top" rowspan="3"><div class="content"><div class="paragraph">
+<p><em>¿cómo?</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Tareas de la Pila del Sprint</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Negociación de la Planificación</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Comunicación de la Planificación</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><em>¿dónde?</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="participantes-de-la-planificación">Participantes de la Planificación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La razón por la que <strong class="blue">el equipo y el Dueño de Producto</strong> deben asistir a la planificación de Sprint es que cada historia contiene <strong class="blue">tres variables</strong> que son muy dependientes unas de otras:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">alcance y la importancia los fija el Dueño de Producto</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>“The <strong class="blue">developers have different priorities</strong> for many of the stories. They may <strong class="blue">suggest that the priority of a story be changed based on its technical risk or because it is complementary to another story</strong>. The <strong class="blue">customer team listens to their opinions but then prioritizes stories in the manner that maximizes the value delivered to the organization</strong>.”</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La <strong class="blue">estimación la proporciona el equipo</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Durante una planificación de Sprint, <strong class="blue">estas variables sufren un ajuste fino y continuo a través del diálogo</strong> cara a cara entre el equipo y el Dueño de Producto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Normalmente, el <strong class="blue">Dueño de Producto comienza la reunión resumiendo cuál es su meta para el Sprint y las historias más importantes</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A continuación, <strong class="blue">el equipo las repasa y les asigna una estimación, comenzando con la más importante</strong>. Conforme van haciéndolo, aparecerán dudas importantes respecto al alcance:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En algunos casos, <strong class="blue">las respuestas sorprenderán al equipo y les obligarán a cambiar sus estimaciones</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>“<em>esta historia sobre ‘borrar usuario’, ¿incluye repasar todas las transacciones pendientes del usuario y cancelarlas?</em>”.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>En algunos casos, la <strong class="blue">estimación para una historia no será la que el Dueño de Producto esperaba</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Esto puede forzarle a <strong class="blue">cambiar la importancia de la historia o su alcance</strong>, lo que obligará al equipo a re-estimarla, etc., etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="propósito-de-la-planificación">Propósito de la Planificación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El propósito de la planificación de Sprint es <strong class="blue">proporcionar al equipo suficiente información como para que puedan trabajar en paz y sin interrupciones durante unas pocas semanas, y para ofrecer al Dueño de Producto suficiente confianza como para permitírselo</strong>. Una planificación de Sprint produce, concretamente:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>1. Una <strong class="blue">meta</strong> del Sprint</p>
+</li>
+<li>
+<p>2. Una <strong class="blue">lista de miembros</strong> (y su <strong class="blue">nivel de dedicación</strong>, si no es del 100%)</p>
+</li>
+<li>
+<p>3. Una <strong class="blue">Pila de Sprint</strong> (lista de historias incluidas en el Sprint)</p>
+</li>
+<li>
+<p>4. Un <strong class="blue">lugar y momento</strong> definidos para el ScrumDiario.</p>
+</li>
+<li>
+<p>5. Una <strong class="blue">fecha concreta</strong> para la Demo del Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="agenda-de-la-planificación">Agenda de la Planificación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>13:00 –13:30.</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El Dueño de Producto <strong class="blue">comenta la meta</strong> del Sprint y <strong class="blue">resume la Pila de Producto</strong>.</p>
+</li>
+<li>
+<p>Se establece un <strong class="blue">lugar, fecha y hora para la Demo</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>13:30 –15:00.</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">equipo da estimaciones de tiempo, y divide los elementos tanto como sea necesario</strong>.</p>
+</li>
+<li>
+<p>El <strong class="blue">Dueño de Producto actualiza los ratios de importancia</strong>.</p>
+</li>
+<li>
+<p>Se clarifican los elementos. Para todos los elementos de alta importancia <strong class="blue">se establece el “Como probarlo”</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>15:00 –17:00.</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El equipo <strong class="blue">selecciona las historias que se incluirán en el Sprint</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se realizan cálculos de velocidad para chequear si es factible.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">Scrum Master puede ampliar o acortar</strong> los periodos según sea necesario conforme progresa la reunión pero a priori es cerrada (<em>time-boxed</em>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="meta-de-la-planificación">Meta de la Planificación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La meta de Sprint debería responder a la <strong class="blue">pregunta fundamental</strong>:
+<em class="blue"><strong>¿Por qué hacemos este Sprint?</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>De hecho, una forma de obtener la meta del <strong class="blue">Dueño de Producto</strong> es precisamente hacerle esa misma pregunta.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lo importante es que esté <strong class="blue">descrito en términos de negocio</strong>. Eso significa en términos en los que la gente de fuera del equipo lo pueda entender.</p>
+</li>
+<li>
+<p>La meta debería ser algo que <strong class="blue">no se haya logrado aun</strong>.</p>
+</li>
+<li>
+<p>La meta del Sprint puede <strong class="blue">parece bastante tonta y artificial</strong> durante la planificación de Sprint, pero muchas veces <strong class="blue">resulta útil</strong> a mediados de Sprint, <strong class="blue">cuando la gente comienza a sentirse confusa</strong> acerca de lo que deberían estar haciendo.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tarjetas-de-historias-de-usuario">Tarjetas de Historias de Usuario</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ElementoDePila.png" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TarjetasPared.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Crear tarjetas y ponerlas en la pared (o en una mesa grande). Una solución que funciona mucho mejor. En cualquier caso, una vez que las tarjetas están en la pared puedes <strong class="blue">ignorar el ratio de importancia y en lugar de ello usar el orden físico para indicar la importancia relativa. Si el dueño de producto cambia dos historias de sitio no pierdas el tiempo actualizando los ratios de importancia en la tarjeta</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Este es un <strong class="blue">interfaz muy superior</strong>, comparado con un ordenador y un proyector, debido a que:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">gente se pone de pie y camina alrededor y se mantienen despiertos y alerta más tiempo</strong></p>
+</li>
+<li>
+<p><strong class="blue">Todo el mundo se siente personalmente más involucrado</strong> (y no solamente el tipo del teclado)</p>
+</li>
+<li>
+<p>Se pueden <strong class="blue">editar múltiples historias simultáneamente</strong></p>
+</li>
+<li>
+<p><strong class="blue">Repriorizar es trivial</strong> –simplemente se trata de mover las tarjetas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">El Dueño de Producto imprime los elementos</strong> de Jira [gestor de tareas] más importantes, los trae a la reunión de planificación de Sprint y los coloca en la pared junto al resto de historias (especificando así implícitamente la prioridad de estos elementos comparados con las otras historias).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es importante que el dueño de producto y el equipo estén de acuerdo en una <strong class="blue">definición clara de “terminado”</strong>. ¿Está terminada una historia cuando todo el código ha sido chequeado? ¿O cuando se ha instalado en un entorno de pre-producción y ha sido verificada por un equipo de pruebas de integración? A veces debemos conformarnos con “<strong class="blue">instalado en preproducción y lista para las pruebas de aceptación</strong>”.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Tras la reunión de planificación de Sprint, el <strong class="blue">Scrum Master actualiza manualmente la Pila de Producto en Excel</strong> respecto a cualquier cambio que se haya realizado sobre las tarjetas de historia físicas.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sí, es una pequeña molestia administrativa, pero lo encontramos perfectamente asumible considerando cuánto más eficiente es la reunión de planificación de Sprint utilizando tarjetas físicas.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Errores heredados del Sprint anterior</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">La corrección de errores se considera algo fuera del Sprint</strong>. Entonces simplemente se asume que el equipo pasará parte de su tiempo arreglando los errores.</p>
+</li>
+<li>
+<p>El equipo mantiene un <strong class="red">factor de dedicación suficientemente bajo (por ejemplo, el 50%)</strong> para asegurar que tienen tiempo suficiente para arreglar errores.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tareas-de-la-pila-del-sprint">Tareas de la Pila del Sprint</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las estimaciones de tiempo son normalmente más fáciles de hacer (y más exactas) si una historia se subdivide en tareas. Puedes hacer que el equipo se divida en parejas y que cada una subdivida una historia en paralelo. Físicamente, hacemos esto añadiendo pequeñas notas post-it bajo cada historia, de forma que cada post-it representa una tarea dentro de dicha historia.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TareasPared.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">¿Cuál es la diferencia entre historias y tareas?</strong> Una pregunta muy válida. La diferencia es muy simple. Las <strong class="blue">historias son entregables de los que el Dueño de Producto se preocupa. Las tareas son no-entregables, o aspectos de los que el Dueño de Producto no se preocupa</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los equipos que están empezando con Scrum son reticentes a perder tiempo dividiendo un montón de historias en tareas desde el principio. Algunos <strong class="red">piensan que es una aproximación tipo “cascada”</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Para historias que se entienden bien, <strong class="blue">es tan fácil hacer esto desde el principio como hacerlo más tarde</strong></p>
+</li>
+<li>
+<p>Este tipo de <strong class="blue">división frecuentemente revela trabajo adicional</strong> que hace que las estimaciones suban, con lo que se consigue un plan de Sprint más realista.</p>
+</li>
+<li>
+<p>Este tipo de división desde el principio hace que los Scrum diarios sean notablemente más eficientes.</p>
+</li>
+<li>
+<p>Incluso si la división es inexacta y cambia una vez que empezamos, todas las ventajas anteriormente mencionadas siguen siendo válidas.</p>
+</li>
+<li>
+<p>En la práctica significa que la <strong class="red">primera tarea para casi todas las historias es “escribir una prueba” y la última es “refactorizar” (es decir, mejorar la legibilidad del código y eliminar la duplicación)</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">No actualizamos la Pila de Producto</strong> en Excel respecto a nuestra división en tareas por dos razones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">división en tareas suele ser bastante volátil</strong>, es decir, se cambia y se refina con frecuencia durante el Sprint, así que es bastante molesto mantener la Pila de Producto en el Excel.</p>
+</li>
+<li>
+<p>De todas formas, el Dueño de Producto no necesita estar involucrado a ese nivel de detalle.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">La estimación es una labor de equipo</strong>: todos los miembros del equipo deben involucrarse en estimar cada historia. ¿Por qué?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A la hora de planificar, normalmente <strong class="blue">no sabemos exactamente quién implementará</strong> qué partes de cada historia.</p>
+</li>
+<li>
+<p>Las historias normalmente <strong class="blue">involucran a bastantes personas y de diferentes áreas de experiencia</strong> (diseño de interfaz de usuario, programación, pruebas, etc.).</p>
+</li>
+<li>
+<p>Cuando pedimos a todo el mundo que de estimaciones muchas veces <strong class="blue">encontramos discrepancias</strong> en las que dos miembros del equipo tienen estimaciones tremendamente distintas sobre la misma historia. Es <strong class="blue">mejor descubrir tales cosas al principio</strong>.</p>
+</li>
+<li>
+<p>Para poder proporcionar una estimación, un miembro del equipo necesita comprender de alguna forma de qué trata la historia. Pidiendo a todo el mundo que estime la historia nos aseguramos de que cada miembro del equipo comprende de qué trata cada elemento. Esto incrementa las <strong class="blue">posibilidades de que unos miembros del equipo ayuden a otros durante el Sprint</strong>. También mejora las posibilidades de que aparezcan pronto las preguntas importantes sobre cada historia.</p>
+</li>
+<li>
+<p>Si pides al equipo que proporcione una estimación, normalmente la persona que <strong class="red">entiende mejor la historia será el primero en soltar una. Desafortunadamente, esto afectará severamente a las estimaciones de los demás</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p><strong class="blue">Planning poker</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cada miembro del equipo cuenta con una baraja de <strong class="blue">11 cartas: 0, ½, 1, 2, 3, 5, 8, 13, 20, 40 y 100</strong>. Cada vez que hay que estimar una historia, <strong class="blue">cada miembro del equipo selecciona una carta que representa su estimación de tiempo (en puntos de historia) y la coloca boca abajo en la mesa</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date cuenta de que la <strong class="blue">secuencia de números no es lineal</strong>. ¿Por qué? Esto es para <strong class="blue">evitar una falsa sensación de exactitud para las estimaciones de tiempo más grandes</strong>. Si una historia se estima aproximadamente en 20 puntos, no es relevante discutir si deberían ser, 18 o 21. Todo lo que sabemos es que es una historia grande y es difícil de estimar. Así que 20 es nuestra idea aproximada.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cuando todos los miembros del equipo han preparado sus cartas, <strong class="blue">se les da la vuelta al mismo tiempo</strong>. Así obligamos a cada miembro del equipo a pensar por si mismo en lugar de seguir la estimación de otro.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si <strong class="blue">hay mucha discrepancia entre dos estimaciones, el equipo discute las diferencias y trata de construir una imagen común del trabajo necesario para la historia. Pueden hacer algún tipo de división en tareas.</strong></p>
+</li>
+<li>
+<p>Después, el equipo <strong class="blue">estima de nuevo</strong>. Este bucle se <strong class="blue">repite</strong> hasta que la estimación de tiempo converge, es decir, que todas las <strong class="blue">estimaciones sean aproximadamente las mismas</strong> para esa historia.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Es importante que los miembros del equipo recuerden que deben <strong class="red">estimar el total de tiempo necesario para la historia. No solamente “su” parte del trabajo</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Normalmente buscamos historias con <strong class="red">estimaciones de 2 a 8 días/hombre</strong>. Nuestra velocidad es usualmente 40-60 para un equipo típico, así que eso nos da para unas 10 historias por Sprint. A veces sólo 5, y a veces hasta 15. Es un número de tarjetas gestionable con el que trabajar.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las historias <strong class="blue">no deberían ser demasiado pequeñas ni demasiado grandes</strong> (en términos de estimación).</p>
+</li>
+<li>
+<p>Si tienes un montón de historias de 0.5 puntos probablemente vas a ser una víctima de la <strong class="blue">micro-gestión</strong>.</p>
+</li>
+<li>
+<p>Por otra parte, <strong class="blue">una historia de 40 puntos corre un importante riesgo</strong> de acabar parcialmente completa, lo que no aporta valor a tu empresa y simplemente incremente la administración. Lo que es más, si tu velocidad estimada es 70 y tus dos historias más prioritarias pesan 40 puntos cada una, la planificación se vuelve difícil. <strong class="blue">Tienes que elegir entre comprometerte a más de lo que deberías</strong> (escoger las dos historias) <strong class="blue">o a menos</strong> (elegir sólo una).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="negociación-de-la-planificación">Negociación de la Planificación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">equipo decide cuántas historias incluirá en el Sprint</strong>. No el Dueño de Producto ni nadie más.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La Pila de Sprint de la derecha es una instantánea de las historias la Pila de Producto. Representa las historias a las que el equipo se compromete durante este Sprint.</p>
+</li>
+<li>
+<p><strong class="blue">Cada rectángulo representa una historia, ordenadas por importancia</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La historia más importante está al principio de la lista.</p>
+</li>
+<li>
+<p>El tamaño de cada rectángulo representa el tamaño de la historia (es decir, el tiempo estimado en puntos de historia).</p>
+</li>
+<li>
+<p>La altura del corchete azul representa la velocidad estimada del equipo, es decir, cuántos puntos de historia cree el equipo que puede completar durante el próximo Sprint.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Planificación.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Métodos de Cálculo de la Velocidad estimada del Equipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Estimando a <strong class="red">ojo de buen cubero</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Estimando usando <strong class="blue">cálculos de velocidad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong>Fundamentos</strong>:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una manera muy fácil de estimar la velocidad es <strong class="blue">revisar la historia del equipo</strong>. ¿Cuál fue su velocidad durante los últimos Sprints? Y entonces <strong class="blue">asumir que la velocidad será más o menos la misma en el próximo Sprint</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Esta técnica se conoce como el <strong class="blue"><em>tiempo que hizo ayer</em></strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Solo es <strong class="blue">factible para equipos que ya han hecho algunos Sprints</strong> (de forma que haya estadísticas disponibles) y que harán el <strong class="blue">próximo Sprint más o menos de la misma manera</strong>, con <strong class="blue">el mismo tamaño de equipo</strong>, las <strong class="blue">mismas condiciones de trabajo</strong>, etc. Este, claro está, <strong class="red">no siempre es el caso</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El siguiente gráfico muestra un ejemplo de velocidad estimada al principio de un Sprint y la velocidad real al final de dicho Sprint. Cada rectángulo es una historia, y el número interior es la estimación inicial de dicha historia.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ComienzoDeSprint.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>¿Es esta nuestra velocidad estimada? No, porque nuestra unidad de estimación son <strong class="blue">puntos de historia lo que, en nuestro caso, corresponde más o menos a “días-hombre ideales”</strong>. Un día-hombre ideal es un día perfectamente efectivo, sin distracciones, lo cuál es raro. Lo que es más, debemos tener en cuenta cosas como trabajo no planificado que se añade al Sprint (enfermos, &#8230;&#8203;)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>                       Velocidad Real Anterior
+Factor de dedicación =------------------------
+                        Dias Hombre Anterior</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Digamos que en el último Sprint se completaron 18 puntos de historia utilizando un equipo de 3 personas formado por X, Y y Z trabajando las tres semanas hasta un total de 45 días-hombre</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>                       18 puntos de historia
+Factor de dedicacion = ---------------------- =40%
+                          45 dias - Hombre</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Digamos que estamos planificando un Sprint de 3 semanas (15 días laborables) con un equipo de 4 personas. X estará de vacaciones 2 días. Y sólo estará disponible al 50% y estará un día de vacaciones. Poniéndolo todo junto &#8230;&#8203; 50 días-hombre</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Velocidad estimada = Factor de dedicación * Días-hombre próximo</strong></p>
+</li>
+<li>
+<p><strong>Velocidad estimada = 40% * 50 días-hombre = 20 puntos de historia</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 45%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Velocidad estimada del equipo</strong>: es una medida de “cantidad de trabajo realizado”, donde cada elemento se evalúa en función de su estimación inicial.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se trata de un número <strong class="blue">bastante aproximado</strong>. Pero aun así es bastante útil, especialmente si lo comparamos con “nada en absoluto”. Proporciona algunos verdades crudas: “sean cuales sean las razones, aquí está la diferencia aproximada entre cuánto pensábamos que podríamos hacer y cuánto hicimos en realidad”.</p>
+</li>
+<li>
+<p>El <strong class="blue">factor de dedicación “por defecto”</strong> que usamos para equipos nuevos es habitualmente el 70%.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si una nueva persona se une a este Sprint deberías reducir su factor de dedicación para <strong class="blue">tener en cuenta su formación</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Siempre que sea posible, <strong class="blue">ten en cuenta varios Sprints y saca medias</strong> para conseguir estimaciones más acertadas.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si el <strong class="blue">último Sprint fue especialmente malo</strong> porque la mayoría del equipo estuvo enfermo una semana, entonces podría ser adecuado <strong class="blue">asumir que no volverás a tener tan mala suerte</strong> y podrías estimar un factor de dedicación mayor el próximo Sprint.</p>
+</li>
+<li>
+<p>Si el equipo ha instalado recientemente un sistema super-rápido de compilación continua probablemente también podrás <strong class="blue">incrementar el factor de dedicación</strong> gracias a ello.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Nota que la <strong class="blue">velocidad real esta basada en las estimaciones iniciales</strong> de cada historia. <strong class="blue">Cualquier actualización a la estimación de la historia realizada durante el Sprint es ignorada</strong>.</p>
+</li>
+<li>
+<p>¿Qué ocurre <strong class="blue">si el equipo es completamente Nuevo y no tienes ninguna estadística</strong>? Mira al factor de dedicación de <strong class="blue">otros equipos en circunstancias similares</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>¿Qué pasa <strong class="blue">si no tienes otros equipos en los que fijarte</strong>? Adivina un factor de dedicación. Las buenas noticias son que <strong class="blue">sólo deberás adivinar para el primer Sprint</strong>. Después, tendrás estadísticas que podrás ir midiendo continuamente para aproximar mejor el factor de dedicación y la velocidad estimada.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>¿Qué pasa con las <strong class="blue">historias que casi se consiguieron durante el Sprint</strong>? ¿Por qué no conseguimos algunos puntos por ellas en la velocidad real? Esto es así para reforzar el hecho de que Scrum gira en torno al concepto de conseguir que las cosas se hagan completamente, hasta un estado de “potencialmente entregable”. <strong class="blue">El valor de las cosas medio hechas es cero</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una de las principales actividades durante la planificación de Sprint es decidir <strong class="blue">qué historias se incluyen en el Sprint</strong>. Más específicamente, qué historias de la Pila de Producto copiar en la Pila de Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Supongamos que tenemos la siguiente situación durante una reunión de planificación de Sprint.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al Dueño de Producto no le gusta que la historia D no se vaya a incluir en el Sprint. ¿Cuáles son sus opciones durante la reunión de planificación de Sprint?</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Planificación2.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una es re-priorizar. Si le da al elemento D la mayor importancia, el equipo se verá obligado a añadirlo al Sprint en primer lugar (descartando en ese caso la historia C).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Opcion1.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La segunda opción es cambiar el alcance –reducir el alcance de la historia A hasta que el equipo crea que la historia D podría caber en el Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Opcion2.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La tercera sería dividir una historia. El Dueño de Producto podría decidir que hay algunos aspectos de la historia A que no son tan importantes, así que dividiría la historia A en dos historia A1 y A2 con diferentes niveles de importancia.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Opcion3.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="comunicación-de-la-planificación">Comunicación de la Planificación</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 25%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Planificación3.png" alt="Planificación3"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Página de información de Sprint. Tan pronto como sea posible <strong class="blue">tras la reunión de planificación de Sprint</strong>, el <strong class="blue">Scrum Master crea esta página</strong>, la pone en el Wiki, manda un spam e imprime la <strong class="blue">página de información de Sprint y la pega en la pared de la sala de desarrollo</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cuando el Sprint se acerca a su final, el <strong class="blue">Scrum Master recuerda a todo el mundo que se acerca la demo</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Planificación4.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="realización-del-sprint">Realización del Sprint</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Busca una <strong class="blue">pared que no esté usada por lo menos de 2x2 metros</strong>, o 3x2 para un equipo grande y entonces haz esto:</p>
+</li>
+<li>
+<p>Después del primer Scrum, el tablón puede aparecer así. Como <strong class="blue">puedes ver, tres tareas están “en proceso”</strong>, es decir, el equipo estará trabajando en estos elementos hoy.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A veces, para <strong class="red">equipos más grandes, una tarea queda atascada “en progreso” porque nadie recuerda quién estaba trabajando en ella</strong>. Si esto ocurre a menudo en un equipo, usualmente introducimos políticas como etiquetar cada tarea enprogresocon el nombre de la persona que la ha emprendido. :</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Unos días más tarde el tablón puede aparecer de la siguiente manera. <strong class="blue">Tenemos tres elementos no planificados</strong>, como puede verse abajo a la derecha. Esto es útil para <strong class="blue">recordar cuando hagamos retrospectiva del Sprint</strong>.</p>
+</li>
+<li>
+<p>Como puede observarse, se ha completado la historia “Depósito” (es decir, ha sido chequeada en el repositorio de código fuente, testeada, refactorizada, etcétera). La herramienta de migración (segunda historia) está parcialmente completada. La tercera historia (“backofficelogin”) ha comenzado, y la cuarta (“backofficeuseradmin.”) no ha empezado aun.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/RelazacionDelSprint.png" alt="RelazacionDelSprint"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/RelazacionDelSprint2.png" alt="RelazacionDelSprint2"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/RelazacionDelSprint3.png" alt="RelazacionDelSprint3"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="burndown">Burndown</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En el primer día del Sprint, 1 de Agosto, el equipo estimó que habían aproximadamente 70 puntos de historia en los que trabajar. Esta era, consecuentemente, la velocidad estimada para todo el Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Burndown.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El 16 de Agosto el equipo estima que quedan aproximadamente 15 puntos de historia por hacer. La línea de puntos nos muestra que estamos incluso algo avanzados respecto a la planificación, es decir, que a este paso completaríamos todo al final del Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Burndown2.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Burndown3.png" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Burndown4.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sala-de-equipo">Sala de Equipo</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>No hay mejor manera para obtener una visión general del sistema que estar de pie en la esquina de diseño y <strong class="blue">observar ambas paredes, entonces echar un vistazo en el ordenador y probar la última compilación del sistema</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La “pared de diseño” es sólo una <strong class="blue">pizarra grande que contiene los garabateos más importantes sobre el diseño y la documentación impresa más importante</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Burndown5.png" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>No hay mejor manera cuando se trata de asientos y disposición de mesas, hay una cosa en la que nunca puede hacerse demasiado énfasis: <strong class="blue">¡Sienta al equipo junto!</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Audibilidad</strong>: cualquier miembro del equipo puede hablar con cualquier otro sin tener que levantarse de su sitio.</p>
+</li>
+<li>
+<p><strong class="blue">Visibilidad</strong>: todo el mundo puede ver a los demás. Todo el mundo puede ver el tablón de tareas. No necesariamente tan de cerca como para poder leerlo, pero si por lo menos verlo.</p>
+</li>
+<li>
+<p><strong class="blue">Aislamiento</strong>: si todo el equipo necesitase levantarse y agruparse para una animada y espontánea discusión sobre el diseño, nadie fuera del equipo está tan cerca como para ser molestado. Y viceversa.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>[blue]El Dueño de Producto</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>debería estar <strong class="blue">suficientemente cerca como para que el equipo pueda caminar hasta donde está y preguntarle algo, y para que él pueda acercarse al tablón de tareas</strong>.</p>
+</li>
+<li>
+<p>Pero <strong class="blue">no debería sentársele junto al equipo</strong>. ¿Por qué? Porque lo más probable es que <strong class="red">no sea capaz de controlarse e interrumpa constantemente entrometiéndose en cualquier detalle</strong>, y el equipo no podrá “fluir” adecuadamente (es decir, alcanzar un estado centrado, autogestionadoe hiperproductivo)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="scrum-diario">Scrum diario</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Empiezan <strong class="blue">exactamente a su hora, cada día en el mismo sitio</strong>. Las reuniones de pie, ya que eso reduce el <strong class="blue">riesgo de sobrepasar los 15 minutos</strong>.</p>
+</li>
+<li>
+<p>Se <strong>actualiza el tablón de tareas</strong> durante los Scrum diarios.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Conforme cada persona describe lo que hizo el día anterior y lo que hará hoy, <strong class="blue">mueve los post-it en el tablón</strong>. Si no tiene nada que hacer, están disponible para dar ayuda en programación por parejas.</p>
+</li>
+<li>
+<p>Conforme describe <strong class="blue">elementos no planificados</strong>, <strong class="blue">pone un pos-it nuevo</strong> para cada uno de ellos.</p>
+</li>
+<li>
+<p>Conforme actualiza sus estimaciones, escribe una <strong class="blue">nueva estimación en el post-it correspondiente y tacha la anterior estimación</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>El Scrum Master</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>hace todo esto mientras los demás hablan (<strong class="blue">mueve post-it, re-estima, elementos no planificados</strong>).</p>
+</li>
+<li>
+<p>Inmediatamente tras el Scrum diario, suma todas las estimaciones de tiempo (ignorando los de la columna “terminado”) y <strong class="blue">dibuja un nuevo punto en el burn-down</strong> de Sprint</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="demo-del-sprint">Demo del Sprint</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Objetivos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Contenidos</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El equipo obtiene <strong class="blue">reconocimiento por sus logros</strong>. Se sienten bien.</p>
+</li>
+<li>
+<p><strong class="blue">Otras personas se enteran</strong> de lo que está haciendo el equipo.</p>
+</li>
+<li>
+<p>La demo consigue <strong class="blue">feedback vital de los interesados</strong>.</p>
+</li>
+<li>
+<p>Hacer una demo <strong class="blue">fuerza al equipo a acabar realmente las cosas y entregarlas</strong> (incluso aunque sea sólo en entorno de pruebas).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Sin las demos, seguimos consiguiendo enormes montones de cosas terminadas al 99%</strong>.</p>
+</li>
+<li>
+<p>Con las demos puede que consigamos menos cosas terminadas, pero estas están realmente terminadas, lo que (en nuestro caso) es mucho mejor que tener una enorme pila de cosas que están más o menos listas y que se pulirán en el próximo Sprint.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Si un equipo se ve obligado a hacer una demo de Sprint, incluso aunque no tengan mucho que realmente esté funcionando, la demo será embarazosa. El <strong class="red">equipo tartamudeará y tropezará mientras hace la demo y el aplauso de después será frío</strong>. La gente sentirá un poco de pena por el equipo, algunos se enfadarán con ellos por hacerles perder el tiempo con una demo pésima. Esto duele, pero el efecto es similar al de una amarga medicina.</p>
+</li>
+<li>
+<p>En el próximo Sprint, el equipo intentará por todos los medios tener cosas terminadas. Sentirán algo como <strong class="green">“bueno, puede que sólo podamos demostrar dos historias el próximo Sprint en vez de cinco, pero maldita sea, ¡esta vez *VA A FUNCIONAR!</strong>”*. El equipo sabe que tendrán que hacer una demo pase lo que pase, lo que incrementa significativamente las posibilidades de que haya algo útil que demostrar. He visto como esto ocurría varias veces.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Asegúrate de presentar claramente el <strong class="blue">objetivo del Sprint</strong>. Si hay personas en la demo que no saben nada sobre tu producto, tomate un par de minutos para describirlo.</p>
+</li>
+<li>
+<p><strong class="blue">No pierdas mucho tiempo preparando la demo</strong>. Mantén el paso rápido, es decir, concentra tu preparación en hacer que la demo sea rápida en lugar de bonita.</p>
+</li>
+<li>
+<p>Mantén <strong class="blue">la demo a nivel de negocio</strong>, deja los detalles técnicos aparte. Concéntrate en “qué hemos hecho” en lugar de “cómo lo hemos hecho”.</p>
+</li>
+<li>
+<p>En la medida de lo posible, deja que la <strong class="blue">audiencia pruebe el producto por si misma</strong>.</p>
+</li>
+<li>
+<p><strong class="blue">No muestres un montón de pequeños errores solucionados y funcionalidades triviales</strong>. Menciónalos, pero no los muestres, ya que normalmente se tarda mucho y desvía la atención de las historias.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="retrospectiva-del-sprint">Retrospectiva del Sprint</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong class="blue">retrospectivas son extremadamente útiles</strong>. De hecho, se diría que es el segundo evento más importante de Scrum ya que ¡es la mejor oportunidad para mejorar!</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la idea viene “del equipo”, es decir, surge durante la retrospectiva y a todo el mundo se le <strong class="blue">permite contribuir y discutir las ideas</strong></p>
+</li>
+<li>
+<p><strong class="red">Sin las retrospectivas encontrarás que el equipo sigue cometiendo los mismos errores una y otra vez</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Reservamos 1-3 horas</strong>, dependiendo de cuánta discusión esperemos con el <strong class="blue">Dueño de Producto, el equipo y el Scrum Master</strong>.</p>
+</li>
+<li>
+<p>Normalmente <strong class="blue">no hacemos retrospectivas en la sala del equipo</strong>, ya que la atención de la gente suele diluirse.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El <strong class="blue">Scrum Master muestra la Pila de Sprint</strong> y, con ayuda del equipo, <strong class="blue">resume el Sprint. Eventos importantes, decisiones, etc.</strong></p>
+</li>
+<li>
+<p><strong>Cada persona tiene una oportunidad de decir</strong>, sin ser interrumpida, qué piensan que ha ido bien, que podría haber ido mejor y que piensan que debería hacerse de forma diferente en el próximo Sprint.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Deberíamos haber pasado más tiempo dividiendo historias en subhistoriasy tareas</em></p>
+</li>
+<li>
+<p><em>Demasiadas distracciones</em></p>
+</li>
+<li>
+<p><em>Nos sobre-comprometimos y sólo hicimos la mitad</em></p>
+</li>
+<li>
+<p><em>Nuestro entorno de oficina es demasiado ruidoso y desordenado</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Observamos la velocidad estimada frente a la real</strong>. Si hay una gran diferencia, intentamos analizar por qué.</p>
+</li>
+<li>
+<p>El <strong class="blue">Scrum Master trata de resumir las sugerencias concretas</strong> sobre qué puede hacerse mejor el próximo Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Contenido.png" alt="Contenido"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Después de que el equipo genere todas estas ideas en post-its, utilizan <strong class="blue">“votación por puntos” para determinar en qué mejoras centrarse el próximo Sprint</strong>. Cada miembro del equipo tiene tres imanes y se les invita a votar sobre cualquier mejora en la que les gustaría trabajar en el próximo Sprint. Cada miembro del equipo distribuye los imanes como quiera, incluso colocando los tres en el mismo elemento.</p>
+</li>
+<li>
+<p>Basándonos en esto, <strong class="blue">seleccionamos 5 mejoras de procesos</strong> en los que concentrarse y los evaluamos en la siguiente retrospectiva. Es importante no ser demasiado ambicioso. Concéntrate en unas pocas mejoras en cada Sprint.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sintesis"><strong>Sintesis</strong></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Obra, Autor y Editor</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+<th class="tableblock halign-left valign-top">Obra, Autor y Editor</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Refactoring (Pearson Addison-Wesley Signature Series)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Fowler Martin</strong></p>
+</li>
+<li>
+<p>Financial Times Prentice Hall; Edición: 01 (28 de noviembre de 2018)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Refectoring.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Test Driven Development. By Example (The Addison-Wesley Signature Series</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Beck Kent</strong></p>
+</li>
+<li>
+<p>Addison Wesley; Edición: 01 (8 de noviembre de 2002)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Extreme Programming Explained: Embrace Change: Embracing Change</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Kent Beck</strong>, <strong>Cynthia Andres</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Extreme.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Planning Extreme Programming (The Xp Series)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Beck Kent</strong>,  <strong>Fowler Martin</strong></p>
+</li>
+<li>
+<p>Addison Wesley; Edición: 01 (16 de octubre de 2000)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Planning.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum and XP from the Trenches (Enterprise Software Development)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Henrik Kniberg</strong></p>
+</li>
+<li>
+<p>Lulu.com; Edición: 1 (4 de octubre de 2007)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Scrum.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum: El revolucionario método para trabajar el doble en la mitad de tiempo</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Jeff Sutherland</strong>,</p>
+</li>
+<li>
+<p>Editorial Ariel (20 de enero de 2015)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ScrumElRevolucionario.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Refactoring Databases: Evolutionary Database Design</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Scott J Ambler</strong>, <strong>Pramod J. Sadalage</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Professional; Edición: 1 (13 de marzo de 2006)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/RefactoringDatabases.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>User Stories Applied: For Agile Software Development</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cohn, M.</strong></p>
+</li>
+<li>
+<p>Addison Wesley, 2004</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/UserStoriesAppliedForAgileSoftwareDevelopment.jpg" alt="UserStoriesAppliedForAgileSoftwareDevelopment"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum y XP desde las trincheras</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Henrik Kniberg</strong>. Prólogos de <strong>Jeff Sutherland</strong> y <strong>Mike Cohn</strong></p>
+</li>
+<li>
+<p>proyectalis.com</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ScrumXPTrenches.jpg" alt="ScrumXPTrenches"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Diseño Ágil con TDD</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Carlos Blé Jurado</strong></p>
+</li>
+<li>
+<p>Lulu.com</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/DisenoAgilconTDD.jpg" alt="DisenoAgilconTDD"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ponente">Ponente</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Luis Fernández Muñoz</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Formador/Consultor</em></p>
+</li>
+<li>
+<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
+</li>
+<li>
+<p><em>Ingeniero en Informática por la UMA</em></p>
+</li>
+<li>
+<p><em>Diplomado en Informática por la UPM</em></p>
+</li>
+<li>
+<p><em>Profesor Titular de ETSISI de la UPM</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 0.0.1<br>
+Last updated 2021-11-15 09:31:54 +0100
+</div>
+</div>
+<script>
+                let speed = 50;
+                
+                function typeWriter(v) {
+                  let i = v.getAttribute("typewriter-index")
+                  let txt = v.getAttribute("typewriter-original")
+                  
+                  if (i < txt.length) {
+                    v.getElementsByTagName("P")[0].innerHTML += txt.charAt(i);
+                    i++;
+                    v.setAttribute("typewriter-index", i)                        
+                  }else{
+                    if( ++i > txt.length+30 ){
+                        v.setAttribute("typewriter-index", 0)
+                        v.getElementsByTagName("P")[0].innerHTML = ''
+                    }
+                  }
+                }
+                
+                function typeWriterAll(){
+                    [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                        typeWriter(v)
+                    })
+                    setTimeout(typeWriterAll, speed);
+                }
+                                    
+                [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                    v.setAttribute("typewriter-original", v.innerText)
+                    v.setAttribute("typewriter-index", 0)
+                    v.getElementsByTagName("P")[0].innerHTML = ''
+                })
+                
+                setTimeout(typeWriterAll, speed);
+                
+                </script>
+</html>
