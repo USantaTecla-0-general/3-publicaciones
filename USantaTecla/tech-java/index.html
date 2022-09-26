@@ -551,7 +551,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#expresiones">Expresiones</a></li>
 </ul>
 </li>
-<li><a href="#programación-estructurada">Programación Estructurada</a></li>
+<li><a href="#programación-estructurada">Programación Estructurada</a>
+<ul class="sectlevel2">
+<li><a href="#sentencias-alternativas">Sentencias Alternativas</a></li>
+<li><a href="#sentencias-iterativas">Sentencias Iterativas</a></li>
+<li><a href="#sentencia-secuencial">Sentencia Secuencial</a></li>
+</ul>
+</li>
 <li><a href="#programación-basada-a-objetos">Programación Basada a Objetos</a></li>
 <li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a></li>
 <li><a href="#programación-modular">Programación Modular</a></li>
@@ -2815,16 +2821,6 @@ cualquier sistema operativo</p>
 </ul>
 </div></div></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -2944,11 +2940,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -3394,13 +3385,6 @@ cualquier sistema operativo</p>
 <th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
 </table>
 </div>
 <div class="sect3">
@@ -3755,7 +3739,724 @@ cualquier sistema operativo</p>
 <div class="sect1">
 <h2 id="programación-estructurada">Programación Estructurada</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Sentencias alternativas</span></th>
+<th class="tableblock halign-left valign-top"><span class="blue">Sentencias iterativas</span></th>
+<th class="tableblock halign-left valign-top"><span class="blue">Sentencia secuencial</span></th>
+<th class="tableblock halign-left valign-top"><span class="blue"><em>Arrays</em></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">Sentencias <em>if</em> y <em>switch</em></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">Sentencias <em>while</em>, <em>do/while</em>, <em>for</em></span> (<span class="red">ni <em>"break"</em> ni <em>continue</em></span>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">Sentencia con ámbitos de bloque y colisión y ocultación de identificadores</span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">Colección homogénea de datos, creación, modificaciones y consultas</span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="sentencias-alternativas">Sentencias Alternativas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Sentencia Alternativa</span></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong> <em>&lt;sentenciaAlternativa&gt;</em> <strong class="red">|</strong> <em>&lt;sentenciaAlternativaMultiple&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;sentenciaAlternativa&gt;</em> <strong class="red">::=</strong> <strong>if (</strong> <em>&lt;expresion&gt;</em> <strong>)</strong> <em>&lt;sentencia&gt;</em>  <strong class="red">[</strong> <strong>else</strong> <em>&lt;sentencia&gt;</em> <strong class="red">]</strong> <strong>;</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>&lt;sentenciaAlternativaMultiple&gt;</em> <strong class="red">::=</strong> <strong>switch (</strong> <em>&lt;expresion&gt;</em> <strong>) {</strong> <strong class="red">{</strong> <strong>case</strong> <em>&lt;literal&gt;</em> <strong>:</strong> <strong class="red">{</strong> <em>&lt;sentencia&gt;</em> <strong class="red">|</strong> <strong>break;</strong> <strong class="red">}</strong> <strong class="red">}</strong> <strong class="red">[</strong> <strong>default:</strong> <strong class="red">{</strong> <em>&lt;sentencia&gt;</em> <strong class="red">|</strong> <strong>break;</strong> <strong class="red">}</strong> <strong class="red">]</strong> <strong>}</strong> <strong>;</strong></p>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sentencia alternativa</strong>, si se cumple la condición, ejecuta la sentencia</p>
+</li>
+<li>
+<p><strong>Sentencia alternativa compuesta</strong>, si se cumple la condicion, ejecuta la primera sentencia, en caso contrario la segunda sentencia</p>
+</li>
+<li>
+<p><strong>Sentencia alternativa múltiple</strong>, con ramas restringidas a casos concretos de valores, ejecuta desde la igualdad con la evaluación de la expresión hasta el final de la sentencia</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>break</strong>, termina la ejecución de la sentencia (p.e.: <em>for, &#8230;&#8203;</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No recomendado en ninguna otra situación</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a1_alternativa</span>;
 
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+    
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        <span class="type">int</span> x = <span class="integer">0</span>;
+
+        <span class="keyword">if</span> (x&gt;=<span class="integer">0</span>)
+            x++;
+        console.writeln(x); <span class="comment">// 1</span>
+                    
+        <span class="keyword">if</span> (x&gt;<span class="integer">1</span>)
+            x++;
+        <span class="keyword">else</span>
+            x--;
+        console.writeln(x); <span class="comment">// 0</span>
+        
+        <span class="keyword">switch</span>(x){
+            <span class="keyword">case</span> <span class="integer">3</span>:
+                console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">esperado</span><span class="delimiter">&quot;</span></span>); <span class="comment">// </span>
+                <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="integer">2</span>:
+                console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">vulgar</span><span class="delimiter">&quot;</span></span>); <span class="comment">// </span>
+            <span class="keyword">case</span> <span class="integer">0</span>:
+            <span class="keyword">case</span> <span class="integer">1</span>:
+                console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">mágico</span><span class="delimiter">&quot;</span></span>); <span class="comment">// mágico</span>
+                <span class="keyword">break</span>;
+            <span class="keyword">default</span>:
+                console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">otro</span><span class="delimiter">&quot;</span></span>); <span class="comment">//    </span>
+        }
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/0-time.md#2-sibilingsv0">0-time/2-sibilings/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a0_time/a2_sibilings/v0_1/App.java"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a0_time/a2_sibilings/v0_2/App.java">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#3-even">3-numbers/3-even/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a3_even/v0_05/App.java"><em>v0.05</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a3_even/v0_2/App.java">v0.2</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a3_even/v0_3/App.java">v0.3</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a3_even/v0_4/App.java">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#4-absolutevalue">3-numbers/4-absoluteValue/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a4_absoluteValue/v0_2/App.java"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a4_absoluteValue/v0_3/App.java">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sentencias-iterativas">Sentencias Iterativas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Sentencia Iterativa</span></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong> <em>&lt;sentenciaIterativa&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;sentenciaIterativa&gt;</em> <strong class="red">::=</strong> <em>&lt;sentenciaWhile&gt;</em> <strong class="red">|</strong> <em>&lt;sentenciaDoWhile&gt;</em> <strong class="red">|</strong> <em>&lt;sentenciaFor&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;sentenciaWhile&gt;</em> <strong class="red">::=</strong> <strong>while</strong> <strong>(</strong> <em>&lt;expresion&gt;</em> <strong>)</strong> <em>&lt;sentencia&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;sentenciaDoWhile&gt;</em> <strong class="red">::=</strong> <strong>do</strong> <strong>{</strong> <em>&lt;sentencia&gt;</em> <strong>}</strong> <strong>while</strong> <strong>(</strong> <em>&lt;expresion&gt;</em> <strong>)</strong> <strong>;</strong></p>
+</li>
+<li>
+<p><em>&lt;sentenciaFor&gt;</em> <strong class="red">::=</strong> <strong>for</strong> <strong>(</strong> <strong class="red">[</strong> <em>&lt;sentenciaLet&gt;</em> <strong class="red">]</strong> <strong class="red">[</strong> <em>&lt;expresion&gt;</em> <strong class="red">]</strong> <strong>;</strong> <strong class="red">[</strong> <em>&lt;expresion&gt;</em> <strong class="red">]</strong> <strong>)</strong> <em>&lt;sentencia&gt;</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sentencia <em>while</em></strong>, mientras se evalúa la expresión a cierto, ejecuta la sentencia de 0 a n veces</p>
+</li>
+<li>
+<p><strong>Sentencia <em>do-while</em></strong>, ejecuta la sentencia mientras se evalúa la expresión a cierto de 1 a n veces</p>
+</li>
+<li>
+<p><strong>Sentencia <em>for</em></strong>,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se crean los índices de las sentencia let</p>
+</li>
+<li>
+<p>mientras se evalua a cierto la primera expresión, se ejecuta la sentencia y se evalúa la segunda expresión</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a2_iterativa</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        <span class="type">int</span> x = <span class="integer">3</span>;
+        <span class="keyword">while</span> (x &gt; <span class="integer">0</span>)
+            x--;
+        console.writeln(x); <span class="comment">// 0</span>
+
+        <span class="keyword">do</span> {
+            x++;
+        } <span class="keyword">while</span> (x &lt; <span class="integer">3</span>);
+        console.writeln(x); <span class="comment">// 3</span>
+
+        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>, j = <span class="integer">9</span>; i &lt; j; i++, j--)
+            console.writeln(i + <span class="string"><span class="delimiter">&quot;</span><span class="content"> - </span><span class="delimiter">&quot;</span></span> + j); <span class="comment">// 0 - 9 / 1 - 8 / 2 - 7 / 3 - 6 / 4 - 5</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#4-validationv0">4-validation</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a4_validation/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#0-multiplicationtable">3-numbers/0-multiplicationTable/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#9-factorialv0">3-numbers/9-factorial/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a9_factorial/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sentencia-secuencial">Sentencia Secuencial</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Sentencia Secuencial</span></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong> <em>&lt;sentenciaSecuencial&gt;</em></p>
+</li>
+<li>
+<p><em>&lt;sentenciaSecuencial&gt;</em> <strong class="red">::=</strong> <strong>{</strong> <strong class="red">{</strong> <em>&lt;sentencia&gt;</em> <strong class="red">}+</strong> <strong>}</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Su ejecución (espacio/tiempo) ejecuta secuencialmente las sentencias anidadas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>cuando termina la ejecución de la sentencia, se destruyen todas las posibles variables y constantes creadas internamente</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a3_secuencial.a1_sinVariables</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    {
+      console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">- Inicio secuencial</span><span class="delimiter">&quot;</span></span>);
+      {
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">  - Inicio secuencial interno</span><span class="delimiter">&quot;</span></span>);
+        {
+          console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">    - Hasta el infinito</span><span class="delimiter">&quot;</span></span>);
+          console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">    - y más allá ... no!</span><span class="delimiter">&quot;</span></span>);
+        }
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">  - Fin secuencial interno</span><span class="delimiter">&quot;</span></span>);
+      }
+      console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">- Fin secuencial</span><span class="delimiter">&quot;</span></span>);
+    }
+
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">- Inicio secuencial</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">  - Inicio secuencial interno</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">    - Hasta el infinito</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">    - y más allá ... no!</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">  - Fin secuencial interno</span><span class="delimiter">&quot;</span></span>);
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">- Fin secuencial</span><span class="delimiter">&quot;</span></span>);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Ámbito de bloque</span></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Define un <strong>ámbito léxico</strong> (espacio) desde su apertura ({) hasta su cierre (})</p>
+<div class="ulist">
+<ul>
+<li>
+<p>puede contener declaración de variables y constantes accesibles desde su declaración hasta el cierre del ámbito léxico</p>
+</li>
+<li>
+<p>pero dos variables <strong class="red">no pueden tener igual nombre en el mismo ámbito léxico</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Reglas de <strong>acceso a variables y/o constantes</strong> desde las expresiones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>una variable o constante mencionada, se busca en su ámbito léxico hacia atras, si no se encontrara, se busca en el ámbito léxico superior hacia atrás, recursivamente hasta encontrarla &#8230;&#8203;</p>
+</li>
+<li>
+<p>en caso contrario, se considerará como asignación o acceso desde una expresión a una <strong class="red">variable del ámbito global</strong> creada en última instancia (sentencia <em>var</em>)</p>
+</li>
+<li>
+<p><span class="green">Siempre de dentro hacia afuera!</span>, según sus <strong class="blue">ámbito léxico</strong>, desde la apertura hasta su cierre</p>
+</li>
+<li>
+<p><span class="red">Nunca desde fuera hacia dentro!!!</span>, <strong class="green">ocultación de información</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a3_secuencial.a2_conVariables</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    <span class="type">int</span> nivel0 = <span class="integer">100</span>;
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+     <span class="comment">// nivel2++;</span>
+     <span class="comment">// console.writeln(nivel2);</span>
+     <span class="comment">// nivel1++;</span>
+     <span class="comment">// console.writeln(nivel1);</span>
+    nivel0++;
+    console.writeln(nivel0); <span class="comment">// 101</span>
+    
+    {
+      <span class="type">int</span> nivel1 = <span class="integer">200</span>;    
+      console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+      <span class="comment">// nivel2++;</span>
+      <span class="comment">// console.writeln(nivel2);</span>
+      nivel1++;
+      console.writeln(nivel1); <span class="comment">// 201</span>
+      nivel0++;
+      console.writeln(nivel0); <span class="comment">// 102</span>
+    
+      {
+        <span class="type">int</span> nivel2 = <span class="integer">300</span>;
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+        nivel2++;
+        console.writeln(nivel2); <span class="comment">// 301</span>
+        nivel1++;
+        console.writeln(nivel1); <span class="comment">// 202</span>
+        nivel0++;
+        console.writeln(nivel0); <span class="comment">// 103</span>
+      }    
+       console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+      <span class="comment">// nivel2++;</span>
+      <span class="comment">// console.writeln(nivel2);</span>
+      nivel1++;
+      console.writeln(nivel1); <span class="comment">// 203</span>
+      nivel0++;
+      console.writeln(nivel0); <span class="comment">// 104</span>
+    }
+    console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+     <span class="comment">// nivel2++;</span>
+     <span class="comment">// console.writeln(nivel2);</span>
+     <span class="comment">// nivel1++;</span>
+     <span class="comment">// console.writeln(nivel1);</span>
+    nivel0++;
+    console.writeln(nivel0); <span class="comment">// 105</span>
+    
+    {
+      console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+     <span class="comment">// nivel2++;</span>
+     <span class="comment">// console.writeln(nivel2);</span>
+     <span class="comment">// nivel1++;</span>
+     <span class="comment">// console.writeln(nivel1);</span>
+      nivel0++;
+      console.writeln(nivel0); <span class="comment">// 106</span>
+    }    
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Ámbito de bloque</span></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Permite la ejecucuión alternativa o iterativa de varias sentencias</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a3_secuencial.a4_agrupacion</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    <span class="type">int</span> x = <span class="integer">3</span>;
+    <span class="keyword">while</span> (x &gt; <span class="integer">0</span>) {
+      console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 3, 2, 1,</span>
+      x--;
+    }
+    console.writeln(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>); <span class="comment">// 0.</span>
+    
+    <span class="keyword">do</span> {
+      console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 0, 1, 2,</span>
+      x++;
+    } <span class="keyword">while</span> (x &lt; <span class="integer">3</span>);
+    console.writeln(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>); <span class="comment">// 3.</span>
+    
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; x; i++){
+      console.write(i + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span>); 
+      console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); 
+    }
+    console.writeln(); <span class="comment">// 0: 3, 1: 3, 2: 3,</span>
+    
+    <span class="keyword">for</span> (<span class="type">int</span> i = x; <span class="integer">0</span> &lt; i; i--){
+      console.write(i + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span>); 
+      console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); 
+    }
+    console.writeln(); <span class="comment">// 3: 3, 2: 3, 1: 3,</span>
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/0-time.md#3-sumtimesv00">3-sumTimes/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a0_time/a3_sumTimes/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/1-space.md#2-trianglev0">1-space/2-triangle/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a1_space/a2_triangle/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a1_space/a2_triangle/v0_1/App.java">v0.1</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a1_space/a2_triangle/v0_2/App.java">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#1-echov1">2-texts/1-echo/v1</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a1_echo/v1_1/App.java"><em>v1.1</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a1_echo/v1_2/App.java">v1.2</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#0-multiplicationtable">3-numbers/0-multiplicationTable/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_1/App.java">v0.1</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_2/App.java">v0.2</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_3/App.java">v0.3</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java">v0.4</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#6-prime">3-numbers/6-prime/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a6_prime/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#6-primev1">3-numbers/6-prime/v1</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a6_prime/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#6-primev2">3-numbers/6-prime/v2</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a6_prime/v2_0/App.java">v2.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#7-perfectv0">3-numbers/7-perfect/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a7_perfect/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#8-friendsv0">3-numbers/8-friends/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a8_friends/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#8-friendsv1">3-numbers/8-friends/v1</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a8_friends/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#10-fibonacci">3-numbers/10-fibonacci/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a10_fibonacci/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#11-power">3-numbers/11-power/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a11_power/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#0-digits">4-numberingSystems/0-digits/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a0_digits/v0_2/App.java"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a0_digits/v0_3/App.java">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#3-binaryToDecimalv1">4-numberingSystems/3-binaryToDecimal/v1</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a3_binaryToDecimal/v0_0/App.java"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a3_binaryToDecimal/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#4-decimaltobinaryv1">4-numberingSystems/4-decimalToBinary/v1</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a4_decimalToBinary/v0_1/App.java"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a4_decimalToBinary/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">

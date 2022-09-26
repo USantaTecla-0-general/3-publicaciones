@@ -566,7 +566,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/contexto.svg" alt="contexto" width="1717" height="1022">
+<img src="images/contexto.svg" alt="contexto" width="275" height="285">
 </div>
 </div>
 </div>
@@ -1016,7 +1016,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/como.svg" alt="como" width="576" height="1047">
+<img src="images/como.svg" alt="como" width="275" height="226">
 </div>
 </div></div></td>
 </tr>
@@ -1361,7 +1361,7 @@ console.writeln(<span class="string"><span class="delimiter">'</span><span class
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/1-tiposPrimitivos-tiposPrimitivos.svg" alt="1 tiposPrimitivos tiposPrimitivos" width="712" height="771">
+<img src="images/1-tiposPrimitivos-tiposPrimitivos.svg" alt="1 tiposPrimitivos tiposPrimitivos" width="303" height="271">
 </div>
 </div>
 <div class="ulist">
@@ -3054,7 +3054,7 @@ console.writeln(crazyVariable); <span class="comment">// undefined</span></code>
 <h3 id="operadores">Operadores</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/3-operadores-tiposPrimitivos.svg" alt="3 operadores tiposPrimitivos" width="1159" height="766">
+<img src="images/3-operadores-tiposPrimitivos.svg" alt="3 operadores tiposPrimitivos" width="275" height="226">
 </div>
 </div>
 <div class="sect3">
@@ -6309,7 +6309,7 @@ auxiliar(); <span class="comment">// última definición</span>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ambito.svg" alt="ambito" width="276" height="261">
+<img src="images/ambito.svg" alt="ambito" width="275" height="226">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -7455,7 +7455,7 @@ console.writeln(sum(<span class="integer">1</span>, <span class="integer">10</sp
 const console = <span class="keyword">new</span> Console();
 <span class="keyword">function</span> <span class="function">incGenerator</span>(initial) {
   let counter = initial;
-  <span class="keyword">return</span> next;
+  <span class="keyword">return</span> { next };
 
   <span class="keyword">function</span> <span class="function">next</span>() {
     counter++;
@@ -7464,13 +7464,14 @@ const console = <span class="keyword">new</span> Console();
 }
 
 const incX = incGenerator(<span class="integer">0</span>);
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 1</span>
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 2</span>
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX.next()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX.next()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incX.next()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(incX.counter);
 const incY = incGenerator(<span class="integer">1</span>);
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 2</span>
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 3</span>
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY()}<span class="error">`</span>); <span class="comment">// 4</span></code></pre>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY.next()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY.next()}<span class="error">`</span>); <span class="comment">// 3</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{incY.next()}<span class="error">`</span>); <span class="comment">// 4</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8132,23 +8133,26 @@ method(o);
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const o = createObject(<span class="integer">7</span>);
-o.method();
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();
 
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+<span class="keyword">function</span> <span class="function">createObject</span>(parameter) {
     let returned = {
-        <span class="key">property</span>: property,
-        <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="function">method</span>: <span class="keyword">function</span> () {
-            <span class="reserved">private</span>(returned);
-            console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{returned.property} - other: <span class="predefined">$</span>{returned.other}<span class="error">`</span>);
+        <span class="key">publicAttributeX</span>: parameter,
+        <span class="key">publicAttributeY</span>: <span class="integer">0</span>,
+        <span class="function">publicInstanceMethod</span>: <span class="keyword">function</span> () {
+            privateFunction(returned);
+            console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{returned.publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{returned.publicAttributeY}<span class="error">`</span>);
         }
     };
     <span class="keyword">return</span> returned;
 
-    <span class="keyword">function</span> <span class="reserved">private</span>(object) {
-        object.property++;
-        object.other++;
+    <span class="keyword">function</span> <span class="function">privateFunction</span>(object) {
+        object.publicAttributeX++;
+        object.publicAttributeY++;
     }
 }</code></pre>
 </div>
@@ -8188,22 +8192,25 @@ o.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const o = createObject(<span class="integer">7</span>);
-o.method();
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();
 
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+<span class="keyword">function</span> <span class="function">createObject</span>(parameter) {
     <span class="keyword">return</span> {
-        property,
-        <span class="key">other</span>: <span class="integer">0</span>,
-        method () {
-            <span class="reserved">private</span>(<span class="local-variable">this</span>);
-            console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{<span class="local-variable">this</span>.property} - other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+        <span class="key">publicAttributeX</span>: parameter,
+        <span class="key">publicAttributeY</span>: <span class="integer">0</span>,
+        <span class="function">publicInstanceMethod</span>: <span class="keyword">function</span> () {
+            privateFunction(<span class="local-variable">this</span>);
+            console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeY}<span class="error">`</span>);
         }
     };
 
-    <span class="keyword">function</span> <span class="reserved">private</span>(object) {
-        object.property++;
-        object.other++;
+    <span class="keyword">function</span> <span class="function">privateFunction</span>(object) {
+        object.publicAttributeX++;
+        object.publicAttributeY++;
     }
 }</code></pre>
 </div>
@@ -8243,22 +8250,24 @@ o.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">7</span>);
-object.method();
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.privateAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>); <span class="comment">// Warning!!!</span>
+object.publicInstanceMethod();
 
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
-  let other = <span class="integer">0</span>;
-
+<span class="keyword">function</span> <span class="function">createObject</span>(privateAttributeX) {
+  let privateAttributeY = <span class="integer">0</span>;
   <span class="keyword">return</span> {
-    <span class="function">method</span>: <span class="keyword">function</span> () {
-      <span class="reserved">private</span>(<span class="local-variable">this</span>);
-      console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{property} - other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+    <span class="function">publicInstanceMethod</span>: <span class="keyword">function</span> () {
+      privateFunction();
+      console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{privateAttributeY}<span class="error">`</span>);
     }
   };
 
-  <span class="keyword">function</span> <span class="reserved">private</span>(object) {
-    property++;
-    other++;
+  <span class="keyword">function</span> <span class="function">privateFunction</span>() {
+    privateAttributeX++;
+    privateAttributeY++;
   }
 }</code></pre>
 </div>
@@ -8291,27 +8300,28 @@ object.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const o = createObject(<span class="integer">7</span>);
-o.method();
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.privateAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();
 
-<span class="keyword">function</span> <span class="function">createObject</span>(property) {
+<span class="keyword">function</span> <span class="function">createObject</span>(parameter) {
     let that = {
-        <span class="key">property</span>: property,
-        <span class="key">other</span>: <span class="integer">0</span>,
-        <span class="reserved">private</span>: <span class="keyword">function</span> () {
-            <span class="local-variable">this</span>.property++;
-            <span class="local-variable">this</span>.other++;
+        <span class="key">privateAttributeX</span>: parameter,
+        <span class="key">privateAttributeY</span>: <span class="integer">0</span>,
+        <span class="function">privateMethod</span>: <span class="keyword">function</span> () {
+            <span class="local-variable">this</span>.privateAttributeX++;
+            <span class="local-variable">this</span>.privateAttributeY++;
         }
-    };
-
+    }
     <span class="keyword">return</span> {
-            <span class="function">method</span>: <span class="keyword">function</span> () {
-                that.<span class="reserved">private</span>();
-                console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{that.property} - other: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
-            }
+        <span class="function">publicInstanceMethod</span>: <span class="keyword">function</span> () {
+            that.privateMethod();
+            console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{that.privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{that.privateAttributeY}<span class="error">`</span>);
         }
-
-    }</code></pre>
+    }
+};</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8543,22 +8553,58 @@ console.writeln(object); <span class="comment">// [object Object]</span>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const o = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
-o.method();
+const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();
 
-<span class="keyword">function</span> <span class="function">Clazz</span>(property) {
-    <span class="local-variable">this</span>.property = property;
-    <span class="local-variable">this</span>.other = <span class="integer">0</span>;
-    <span class="local-variable">this</span>.<span class="function">method</span> = <span class="keyword">function</span> () {
-        <span class="reserved">private</span>(<span class="local-variable">this</span>);
-        console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{<span class="local-variable">this</span>.property} - other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+<span class="keyword">function</span> <span class="function">Clazz</span>(parameter) {
+    <span class="local-variable">this</span>.publicAttributeX = parameter;
+    <span class="local-variable">this</span>.publicAttributeY = <span class="integer">0</span>;
+    <span class="local-variable">this</span>.<span class="function">publicInstanceMethod</span> = <span class="keyword">function</span> () {
+            privateFunction(<span class="local-variable">this</span>);
+            console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeY}<span class="error">`</span>);
+        }
+
+    <span class="keyword">function</span> <span class="function">privateFunction</span>(object) {
+        object.publicAttributeX++;
+        object.publicAttributeY++;
     }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>con <em>clousures</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
-    <span class="keyword">function</span> <span class="reserved">private</span>(object) {
-        object.property++;
-        object.other++;
+const console = <span class="keyword">new</span> Console();
+const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.privateAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(privateAttributeX) {
+    let privateAttributeY = <span class="integer">0</span>;
+    <span class="local-variable">this</span>.<span class="function">publicInstanceMethod</span> = <span class="keyword">function</span> () {
+            privateFunction();
+            console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{privateAttributeY}<span class="error">`</span>);
+        }
+
+    <span class="keyword">function</span> <span class="function">privateFunction</span>() {
+        privateAttributeX++;
+        privateAttributeY++;
     }
-
 }</code></pre>
 </div>
 </div></div></td>
@@ -8581,14 +8627,14 @@ o.method();
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/prototipos.svg" alt="prototipos" width="1111" height="577">
+<img src="images/diagramaPrototipos.svg" alt="diagramaPrototipos">
 </div>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/constructora.svg" alt="constructora" width="1689" height="285">
+<img src="images/diagramaConstructora.svg" alt="diagramaConstructora">
 </div>
 </div></div></td>
 </tr>
@@ -8620,23 +8666,27 @@ o.method();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-<span class="keyword">function</span> <span class="function">Clazz</span>(property) {
-    <span class="local-variable">this</span>.property = property;
-    <span class="local-variable">this</span>.other = <span class="integer">0</span>;
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(parameter) {
+    <span class="local-variable">this</span>.publicAttributeX = parameter;
+    <span class="local-variable">this</span>.publicAttributeY = <span class="integer">0</span>;
 }
 
-Clazz.prototype.<span class="function">method</span> = <span class="keyword">function</span> () {
-    <span class="reserved">private</span>(<span class="local-variable">this</span>);
-    console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{<span class="local-variable">this</span>.property} - other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+Clazz.prototype.<span class="function">publicInstanceMethod</span> = <span class="keyword">function</span> () {
+    privateFunction(<span class="local-variable">this</span>);
+    console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeY}<span class="error">`</span>);
+
+    <span class="keyword">function</span> <span class="function">privateFunction</span>(object) {
+        object.publicAttributeX++;
+        object.publicAttributeY++;
+    }
 }
 
-<span class="reserved">private</span> = <span class="keyword">function</span> (object) {
-    object.property++;
-    object.other++;
-};
-
-const o = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
-o.method();</code></pre>
+const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12258,7 +12308,7 @@ console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n p
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/evenOdd.svg" alt="evenOdd" width="97" height="520">
+<img src="images/evenOdd.svg" alt="evenOdd" width="275" height="226">
 </div>
 </div></div></td>
 </tr>
@@ -12355,7 +12405,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/acumulacionRecurisiva2.svg" alt="acumulacionRecurisiva2" width="163" height="288">
+<img src="images/acumulacionRecurisiva2.svg" alt="acumulacionRecurisiva2" width="275" height="226">
 </div>
 </div></div></td>
 </tr>
@@ -12432,7 +12482,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/acumulacionRecurisiva.svg" alt="acumulacionRecurisiva" width="133" height="636">
+<img src="images/acumulacionRecurisiva.svg" alt="acumulacionRecurisiva" width="275" height="226">
 </div>
 </div></div></td>
 </tr>
