@@ -556,6 +556,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#sentencias-alternativas">Sentencias Alternativas</a></li>
 <li><a href="#sentencias-iterativas">Sentencias Iterativas</a></li>
 <li><a href="#sentencia-secuencial">Sentencia Secuencial</a></li>
+<li><a href="#tablas">Tablas</a></li>
 </ul>
 </li>
 <li><a href="#programación-basada-a-objetos">Programación Basada a Objetos</a></li>
@@ -2600,13 +2601,13 @@ cualquier sistema operativo</p>
 <p><strong class="blue">almacenar un único valor</strong>, y posteriormente,</p>
 </li>
 <li>
-<p><strong class="blue">consultar/referenciar/mencionar</strong> y/o</p>
+<p><strong class="blue">consultar su valor</strong> si <span class="red">ha sido inicializada o asignada previamente</span> y</p>
 </li>
 <li>
-<p><strong class="blue">asignar con la evalución de una expresión</strong></p>
+<p><strong class="blue">modificar su valor mediante la asignación del valor de la evalución de una expresión</strong>,</p>
 </li>
 <li>
-<p><strong class="blue">desde la línea de la declaración hasta el final del ámbito</strong></p>
+<p><strong class="blue">desde la línea de la declaración hasta el final del ámbito que encierra la declaración</strong></p>
 </li>
 </ul>
 </div>
@@ -4452,6 +4453,544 @@ cualquier sistema operativo</p>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="tablas">Tablas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Creación</span></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong class="red">[</strong> <strong>new</strong> <em>&lt;tipo&gt;</em> <strong>[</strong> <strong>]</strong> <strong class="red">+</strong> <strong class="red">]</strong> <strong>{</strong> <strong class="red">[</strong> <em>&lt;expresion&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;expresion&gt;</em> <strong class="red">}</strong> <strong class="red">]</strong> <strong>}</strong> <strong class="red">|</strong> <strong>new</strong> <em>&lt;tipo&gt;</em> <strong>[</strong> <em>&lt;expresion&gt;</em> <strong>]</strong> <strong class="red">+</strong> <strong>[</strong> <strong>]</strong> <strong class="red">*</strong></p>
+</li>
+<li>
+<p><em>&lt;sentenciaFor&gt;</em> <strong class="red">::=</strong> <strong>for</strong> <strong>(</strong> <em>&lt;tipo&gt;</em> <em>&lt;identificador&gt;</em> <strong>:</strong> <em>&lt;expresión&gt;</em> <strong>)</strong> <em>&lt;sentencia&gt;</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El operador <strong class="blue"><em>new</em></strong> es unario prefijo cuyos operandos son tipo de tablas y devuelve la <strong class="blue">dirección de memoria donde se ha reservado el espacio para dicha tabla</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>su nivel de precedencia es igual al de los operadores unarios.</p>
+</li>
+<li>
+<p>donde el vector se crea con n elementos inicializados con 0, false o '\0' los tipos numéricos, lógicos o caracteres respectivamente o con los valores de la evaluación de las expresiones correspondientes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tipo de dato <strong>estructurado/compuesto</strong> que permite almacenar un conjunto de datos <strong>bajo un mismo identificador</strong>, tabla, vector, matriz, retícula, rejilla, &#8230;&#8203; <em>array</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cada uno de los <strong>elementos</strong> que componen un vector pueden ser de cualquier tipo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>tipo primitivo</strong>, <em>number, string, boolean, undefined</em>;</p>
+</li>
+<li>
+<p>tipo estructurado/compuesto como los propios <strong>arrays</strong> pudiendo construir arrays de arrays de tipos primitivos, tablas bidimensionales, &#8230;&#8203; arrays de arrays de &#8230;&#8203; de tipos primitivos, <strong>tablas n-dimensionales</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Recomendado que sea una <strong class="green">colección de elementos homogéneos, todos ellos del mismo tipo y de la misma naturaleza</strong>: <span class="red">no combinar 5 contadores y un acumulador</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a1_creacion</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}); <span class="comment">//</span>
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }); <span class="comment">// 1 2 3 4 5</span>
+        <span class="keyword">for</span> (<span class="predefined-type">String</span> x : <span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span> { <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span> }) {
+            console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+        }
+        console.writeln(); <span class="comment">// Javascript, Java, Scala</span>
+        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span> { <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span> }); <span class="comment">// Javascript Java Scala</span>
+        <span class="keyword">for</span> (<span class="type">boolean</span> value : <span class="keyword">new</span> <span class="type">boolean</span><span class="type">[]</span> { <span class="predefined-constant">false</span>, <span class="predefined-constant">true</span> }) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+        }
+        console.writeln(); <span class="comment">// false, true</span>
+        <span class="type">boolean</span> b = <span class="predefined-constant">false</span>;
+        <span class="keyword">for</span> (<span class="type">boolean</span> x : <span class="keyword">new</span> <span class="type">boolean</span><span class="type">[]</span> { <span class="predefined-constant">true</span>, b, <span class="integer">5</span> + <span class="integer">6</span> &gt; <span class="integer">5</span> - <span class="integer">6</span> }) {
+            console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+        }
+        console.writeln(); <span class="comment">// true, false, true,</span>
+
+        <span class="keyword">for</span> (<span class="type">char</span><span class="type">[]</span> vowels : <span class="keyword">new</span> <span class="type">char</span><span class="type">[]</span><span class="type">[]</span> {
+                { <span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">e</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">i</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">u</span><span class="delimiter">'</span></span> },
+                { <span class="string"><span class="delimiter">'</span><span class="content">A</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">E</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">I</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">O</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">U</span><span class="delimiter">'</span></span> } }) {
+            <span class="keyword">for</span> (<span class="type">char</span> vowel : vowels) {
+                console.write(vowel + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            }
+            console.writeln();
+        }
+        <span class="comment">// a, e, i, o, u,</span>
+        <span class="comment">// A, E, I, O, U</span>
+
+        <span class="keyword">for</span> (<span class="type">char</span><span class="type">[]</span> row : <span class="keyword">new</span> <span class="type">char</span><span class="type">[]</span><span class="type">[]</span> {
+                { <span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span> },
+                { <span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span> },
+                { <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span> } }) {
+            <span class="keyword">for</span> (<span class="type">char</span> token : row) {
+                console.write(token + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            }
+            console.writeln();
+        }
+        console.writeln(); <span class="comment">// x, ,o</span>
+        <span class="comment">// x,o,o,</span>
+        <span class="comment">// , ,x</span>
+
+        <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span><span class="type">[]</span> tableData : <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span><span class="type">[]</span><span class="type">[]</span> {
+                {
+                        { <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span> },
+                        { <span class="integer">0</span>, <span class="integer">0</span> },
+                        { <span class="integer">0</span> } },
+                {
+                        {},
+                        { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span> } } }) {
+            <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span> rowData : tableData) {
+                <span class="keyword">for</span> (<span class="type">int</span> value : rowData) {
+                    console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+                }
+            }
+        }
+        console.writeln(); <span class="comment">// 0,0,0,0,0,0,1,2,3,4</span>
+        
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span>[<span class="integer">3</span> * <span class="integer">2</span>]); <span class="comment">// 0 0 0 0 0 0</span>
+        <span class="type">int</span> length = <span class="integer">3</span>;
+        <span class="keyword">for</span>(<span class="type">boolean</span><span class="type">[]</span> row : <span class="keyword">new</span> <span class="type">boolean</span>[length][<span class="integer">2</span>]){
+            console.writeln(row); 
+        }
+        <span class="comment">// false false</span>
+        <span class="comment">// false false</span>
+        <span class="comment">// false false</span>
+        
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Acceso a elementos</th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;expresión&gt;</em> <strong class="red">::=</strong> <em>&lt;expresión&gt;</em> <strong>[</strong> <em>&lt;expresión&gt;</em> <strong>]</strong></p>
+</li>
+<li>
+<p><em>&lt;expresión&gt;</em> <strong class="red">::=</strong> <em>&lt;expresión&gt;</em> <strong>.length</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mediante la <strong>indexación</strong> del <em>array</em> dado por la primera expresión con la posición deseada a través de la segunda expresión entera comenzando por <strong>0 para el primer elemento</strong></p>
+</li>
+<li>
+<p>mediante la propiedad <em><strong>length</strong></em> se accede a la cantidad del elementos del <em>array</em> dado por la expresión, <strong>uno más del índice del último elemento porque empieza por 0</strong></p>
+</li>
+<li>
+<p>sentencias <em>for</em> especiales para <em>arrays</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>donde la variable declarada tomará cada uno de los valores del <em>array</em> en el orden natural</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a2_acceso</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">0</span>]); <span class="comment">// 1</span>
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">4</span>]); <span class="comment">// 5</span>
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">5</span>]); <span class="comment">// ERROR</span>
+        <span class="type">int</span><span class="type">[]</span> array = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> };
+        console.writeln(array[<span class="integer">0</span>]); <span class="comment">// 1</span>
+        console.writeln(array[<span class="integer">4</span>]); <span class="comment">// 5</span>
+        <span class="comment">// console.writeln(array[5]); // ERROR!!!</span>
+
+        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> }, 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">0</span>][<span class="integer">0</span>]); <span class="comment">// a</span>
+        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> }, 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">1</span>]); <span class="comment">// x - y - z</span>
+
+        console.writeln();
+        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">0</span>, <span class="integer">1</span>, <span class="integer">2</span> }.length); <span class="comment">// 3</span>
+        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span> }, 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">0</span>].length); <span class="comment">// 1</span>
+        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span> }, 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">1</span>].length); <span class="comment">// 3</span>
+        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span> }, 
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }.length); <span class="comment">// 2</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Referencias</th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;sentencia&gt;</em> <strong class="red">::=</strong>  <strong class="red">(</strong> <strong>byte</strong> <strong class="red">|</strong> <strong>short</strong> <strong class="red">|</strong> <strong>int</strong> <strong class="red">|</strong> <strong>long</strong> <strong class="red">|</strong> <strong>float</strong> <strong class="red">|</strong> <strong>double</strong> <strong class="red">|</strong> <strong>char</strong> <strong class="red">|</strong> <strong>String</strong> <strong class="red">|</strong> <strong>boolean</strong> <strong class="red">)</strong> <strong class="red">(</strong> <strong>[</strong> <strong>]</strong> <strong class="red">)</strong> <strong class="red">\+</strong>  <em>&lt;identificador&gt;</em> <strong class="red">[</strong> <strong>=</strong> <em>&lt;expresion&gt;</em> <strong>* [red]</strong>]*</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>son variables/constantes declaradas <span class="red">no almacenan el valor compuesto del array, como ocurre con los tipos primitivos</span>, sino que <strong>almancenan la dirección/"referencia" a la memoria donde se almacenan los valores del tipo compuesto</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a3_referencia</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        <span class="type">int</span> primitive1 = <span class="integer">1</span>;
+        <span class="type">int</span> primitive2 = primitive1;
+        console.writeln(primitive1); <span class="comment">// 1</span>
+        console.writeln(primitive2); <span class="comment">// 1</span>
+        primitive2 = <span class="integer">2</span>;
+        console.writeln(primitive1); <span class="comment">// 1</span>
+        console.writeln(primitive2); <span class="comment">// 2</span>
+
+        <span class="type">int</span><span class="type">[]</span> array1 = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span> };
+        <span class="type">int</span><span class="type">[]</span> array2 = array1;
+        console.writeln(array1); <span class="comment">// 1,2,3</span>
+        console.writeln(array2); <span class="comment">// 1,2,3</span>
+        array1[<span class="integer">1</span>] = <span class="integer">666</span>;
+        console.writeln(array1); <span class="comment">// 1,666,3</span>
+        console.writeln(array2); <span class="comment">// 1,666,3</span>
+
+        console.writeln(array1 == array2); <span class="comment">// true</span>
+        array1 = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">666</span>, <span class="integer">3</span> };
+        console.writeln(array1); <span class="comment">// 1,666,3</span>
+        console.writeln(array2); <span class="comment">// 1,666,3</span>
+
+        console.writeln(array1 == array2); <span class="comment">// false</span>
+        array2[<span class="integer">1</span>] = <span class="integer">0</span>;
+        console.writeln(array1); <span class="comment">// 1,666,3</span>
+        console.writeln(array2); <span class="comment">// 1,0,3</span>
+        <span class="keyword">for</span> (<span class="type">int</span> value : array1) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+        }
+        console.writeln();
+        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; array1.length; i++) {
+            console.write(array1[i] + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+        }
+        console.writeln();
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Modificación de elementos</th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;sentAsignacion&gt;</em> <strong class="red">::=</strong> <em>&lt;expresión&gt;</em> <strong>[</strong> <em>&lt;expresión&gt;</em> <strong>]</strong> = <em>&lt;expresión&gt;</em> <strong>;</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mediante la asignación del valor de la evaluación de una expresión (3), en la posición indexada mediante el valor entero de la expresión (2) del <em>array</em> dado por la primera expresión (1)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a4_modificacion</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    <span class="type">int</span><span class="type">[]</span> array = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> };
+    console.writeln(array + <span class="string"><span class="delimiter">&quot;</span><span class="content"> con </span><span class="delimiter">&quot;</span></span> + array.length); <span class="comment">// 1,2,3,4,5 con 5 items</span>
+
+    <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> bidimensional = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> {
+        { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span> },
+        { <span class="integer">0</span> },
+        { <span class="integer">9</span>, <span class="integer">8</span>, <span class="integer">7</span> }
+    };
+    <span class="type">int</span><span class="type">[]</span> temp = bidimensional[<span class="integer">0</span>];
+    bidimensional[<span class="integer">0</span>] = bidimensional[<span class="integer">1</span>];
+    bidimensional[<span class="integer">1</span>] = bidimensional[<span class="integer">2</span>];
+    bidimensional[<span class="integer">2</span>] = temp;
+    <span class="keyword">for</span>(<span class="type">int</span><span class="type">[]</span> unidimensional : bidimensional){
+      <span class="keyword">for</span>(<span class="type">int</span> atom : unidimensional){
+        console.writeln(atom);
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Valor <strong class="blue"><em>null</em></strong></th>
+<th class="tableblock halign-left valign-top"><em>java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;literal&gt;</em> <strong class="red">::=</strong> <strong>null</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Semántica</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la dirección <strong><em>null</em></strong> es el valor de <strong>aquella dirección donde no hay valores</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a5_null</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> array = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> { { <span class="integer">1</span>, <span class="integer">666</span>, <span class="integer">3</span> }, <span class="predefined-constant">null</span>, { <span class="integer">0</span> } };
+    <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span> row : array) {
+      <span class="keyword">if</span> (row != <span class="predefined-constant">null</span>) {
+        <span class="keyword">for</span> (<span class="type">int</span> value : row) {
+          console.writeln(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3, 0</span>
+        }
+      }
+    }
+    array[<span class="integer">2</span>] = <span class="predefined-constant">null</span>;
+    array[<span class="integer">1</span>] = array[<span class="integer">0</span>];
+    <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span> row : array) {
+      <span class="keyword">if</span> (row != <span class="predefined-constant">null</span>) {
+        <span class="keyword">for</span> (<span class="type">int</span> value : row) {
+          console.writeln(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3, 1, 666, 3,  </span>
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#5-changecoinsv1">3-numbers/5-changeCoins/v1</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a5_changeCoins/v1_1/App.java"><em>v1.1</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a5_changeCoins/v1_2/App.java">v1.2</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/1-space.md#2-trianglev0">1-space/2-triangle/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a1_space/a2_triangle/v0_2/App.java"><em>v0.2</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a1_space/a2_triangle/v0_3/App.java">v0.3</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/4-numberingSystems.md#0-digits">4-numberingSystems/0-digits/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a0_digits/v0_1/App.java"><em>v0.1</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a4_numberingSystems/a0_digits/v0_2/App.java">v0.2</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#3-matrixtranspose">6-collections/3-matrixTranspose/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a6_collections/a3_matrixTranspose/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
