@@ -484,11 +484,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#objetos">Objetos</a></li>
 <li><a href="#objetos-de-utilidad">Objetos de utilidad</a></li>
 <li><a href="#funciones-constructoras">Funciones Constructoras</a></li>
-<li><a href="#funciones-constructoras-de-envoltura">Funciones constructoras de envoltura</a></li>
 <li><a href="#funciones-constructoras-de-utilidad">Funciones constructoras de utilidad</a></li>
-<li><a href="#función-contructora-array">Función contructora <em>Array</em></a></li>
+<li><a href="#funciones-constructoras-de-envoltura">Funciones constructoras de envoltura</a></li>
 <li><a href="#funciones-constructoras-de-estructuras-de-datos">Funciones constructoras de estructuras de datos</a></li>
 <li><a href="#función-constructora-object">Función constructora <em>Object</em></a></li>
+<li><a href="#función-contructora-array">Función contructora <em>Array</em></a></li>
 <li><a href="#función-constructora-function">Función constructora <em>Function</em></a></li>
 <li><a href="#clases">Clases</a></li>
 <li><a href="#herencia">Herencia</a></li>
@@ -8133,11 +8133,6 @@ method(o);
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.publicAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
-object.publicInstanceMethod();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(parameter) {
     let returned = {
@@ -8154,7 +8149,13 @@ object.publicInstanceMethod();
         object.publicAttributeX++;
         object.publicAttributeY++;
     }
-}</code></pre>
+}
+
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8192,11 +8193,6 @@ object.publicInstanceMethod();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.publicAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
-object.publicInstanceMethod();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(parameter) {
     <span class="keyword">return</span> {
@@ -8212,7 +8208,13 @@ object.publicInstanceMethod();
         object.publicAttributeX++;
         object.publicAttributeY++;
     }
-}</code></pre>
+}
+
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8250,11 +8252,6 @@ object.publicInstanceMethod();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.privateAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>); <span class="comment">// Warning!!!</span>
-object.publicInstanceMethod();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(privateAttributeX) {
   let privateAttributeY = <span class="integer">0</span>;
@@ -8269,7 +8266,13 @@ object.publicInstanceMethod();
     privateAttributeX++;
     privateAttributeY++;
   }
-}</code></pre>
+}
+
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.privateAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>); <span class="comment">// Warning!!!</span>
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8300,11 +8303,6 @@ object.publicInstanceMethod();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = createObject(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.privateAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>);
-object.publicInstanceMethod();
 
 <span class="keyword">function</span> <span class="function">createObject</span>(parameter) {
     let that = {
@@ -8321,7 +8319,69 @@ object.publicInstanceMethod();
             console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{that.privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{that.privateAttributeY}<span class="error">`</span>);
         }
     }
-};</code></pre>
+};
+
+const object = createObject(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.privateAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>);
+object.publicInstanceMethod();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funciones como objetos</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Funciones son objetos susceptibles de poseer propiedades y funciones a su vez</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Aplicaciones: funciones generadoras, atributos y funciones de clase, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+ <span class="comment">// function next() {</span>
+ <span class="comment">//     next.counter++;</span>
+ <span class="comment">//     return next.counter</span>
+ <span class="comment">// }</span>
+<span class="function">next</span> = <span class="keyword">function</span> () {
+    next.counter++;
+    <span class="keyword">return</span> next.counter
+}
+next.counter = <span class="integer">0</span>;
+next.<span class="function">reset</span> = <span class="keyword">function</span>() {
+    next.counter = <span class="integer">0</span>;
+}
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{next()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{next()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{next()}<span class="error">`</span>); <span class="comment">// 3</span>
+next.reset();
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{next()}<span class="error">`</span>); <span class="comment">// 1</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{next()}<span class="error">`</span>); <span class="comment">// 2</span>
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{next()}<span class="error">`</span>); <span class="comment">// 3</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8553,25 +8613,34 @@ console.writeln(object); <span class="comment">// [object Object]</span>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.publicAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
-object.publicInstanceMethod();
-
 <span class="keyword">function</span> <span class="function">Clazz</span>(parameter) {
     <span class="local-variable">this</span>.publicAttributeX = parameter;
     <span class="local-variable">this</span>.publicAttributeY = <span class="integer">0</span>;
     <span class="local-variable">this</span>.<span class="function">publicInstanceMethod</span> = <span class="keyword">function</span> () {
             privateFunction(<span class="local-variable">this</span>);
             console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeY}<span class="error">`</span>);
+            console.writeln(<span class="error">`</span>publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
         }
 
     <span class="keyword">function</span> <span class="function">privateFunction</span>(object) {
         object.publicAttributeX++;
         object.publicAttributeY++;
     }
-}</code></pre>
+}
+
+Clazz.publicClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
+Clazz.<span class="function">publicClazzMethod</span> = <span class="keyword">function</span>(value){
+    Clazz.publicClazzAttribute = value;
+}
+
+const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+console.writeln(<span class="error">`</span>Clazz.publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
+object.publicInstanceMethod();
+Clazz.publicClazzMethod(<span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>);
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8588,24 +8657,34 @@ object.publicInstanceMethod();
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.privateAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.privateAttributeX: <span class="predefined">$</span>{object.privateAttributeX}<span class="error">`</span>);
-object.publicInstanceMethod();
 
 <span class="keyword">function</span> <span class="function">Clazz</span>(privateAttributeX) {
     let privateAttributeY = <span class="integer">0</span>;
     <span class="local-variable">this</span>.<span class="function">publicInstanceMethod</span> = <span class="keyword">function</span> () {
             privateFunction();
             console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{privateAttributeY}<span class="error">`</span>);
+            console.writeln(<span class="error">`</span>publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
         }
 
     <span class="keyword">function</span> <span class="function">privateFunction</span>() {
         privateAttributeX++;
         privateAttributeY++;
     }
-}</code></pre>
+}
+
+Clazz.publicClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
+Clazz.<span class="function">publicClazzMethod</span> = <span class="keyword">function</span>(value){
+    Clazz.publicClazzAttribute = value;
+}
+
+const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+console.writeln(<span class="error">`</span>Clazz.publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
+object.publicInstanceMethod();
+Clazz.publicClazzMethod(<span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>);
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -8675,6 +8754,7 @@ const console = <span class="keyword">new</span> Console();
 Clazz.prototype.<span class="function">publicInstanceMethod</span> = <span class="keyword">function</span> () {
     privateFunction(<span class="local-variable">this</span>);
     console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeY}<span class="error">`</span>);
+    console.writeln(<span class="error">`</span>publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
 
     <span class="keyword">function</span> <span class="function">privateFunction</span>(object) {
         object.publicAttributeX++;
@@ -8682,10 +8762,18 @@ Clazz.prototype.<span class="function">publicInstanceMethod</span> = <span class
     }
 }
 
+Clazz.publicClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
+Clazz.<span class="function">publicClazzMethod</span> = <span class="keyword">function</span>(value){
+    Clazz.publicClazzAttribute = value;
+}
+
 const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
 object.publicInstanceMethod();
 object.publicAttributeX = <span class="integer">666</span>;
 console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+console.writeln(<span class="error">`</span>Clazz.publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
+object.publicInstanceMethod();
+Clazz.publicClazzMethod(<span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>);
 object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
@@ -8737,6 +8825,181 @@ object.publicInstanceMethod();</code></pre>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="funciones-constructoras-de-utilidad">Funciones constructoras de utilidad</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date"><em>Date</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>momento fijo en el tiempo en un formato independiente</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Date</em>, constructor que recibe número de <strong>milisegundos transcurridos desde el 1 de Enero de 1970</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/now"><em>now</em></a>, método estático que retorna el <strong>momento actual</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString">toString</a>, <strong>cadena de caracteres</strong> correspondiente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime"><em>getTime</em></a>, <strong>valor numérico correspondiente a la hora para la fecha especificada</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate"><em>getDate</em></a>, <strong>día del mes</strong> para la fecha especificada</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay"><em>getDay</em></a>, <strong>día de la semana</strong> de la fecha especificada</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours"><em>getHours</em></a>, <strong>hora</strong> de la fecha especificada</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours"><em>setHours</em></a>, <strong>configura la hora</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/parse"><em>parse</em></a>, <strong>transforma una cadena con la representación de una fecha y hora</strong>, y devuelve el número de milisegundos</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+console.writeln(Date.now()); <span class="comment">// ?</span>
+let date = <span class="keyword">new</span> Date(Date.now());
+console.writeln(date.toString()); <span class="comment">// ?</span>
+date = <span class="keyword">new</span> Date(<span class="integer">0</span>);
+console.writeln(date.toString()); <span class="comment">// Thu Jan 01 1970 01:00:00 GMT+0100 (hora estándar de Europa central)</span>
+date = <span class="keyword">new</span> Date(<span class="string"><span class="delimiter">'</span><span class="content">August 19, 1975 23:15:30</span><span class="delimiter">'</span></span>);
+console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 23:15:30 GMT+0200 (hora de verano de Europa central)</span>
+console.writeln(date.getTime()); <span class="comment">// 177714930000</span>
+console.writeln(date.getDate()); <span class="comment">// 19</span>
+console.writeln(date.getDay()); <span class="comment">// 2</span>
+console.writeln(date.getHours()); <span class="comment">// 23</span>
+date.setHours(<span class="integer">1</span>);
+console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 01:15:30 GMT+0200 (hora de verano de Europa central)</span>
+date = <span class="keyword">new</span> Date(Date.parse(<span class="string"><span class="delimiter">'</span><span class="content">August 19, 1975 23:15:30</span><span class="delimiter">'</span></span>));
+console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 01:15:30 GMT+0200 (hora de verano de Europa central)</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp"><em>RegExp</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>clases de caracteres: <strong>\d</strong> (cualquier dígito), <strong>\w</strong> (cualquier caracter alfanumérico), <strong>\s</strong> (caracter de espacio en blanco), <strong>.</strong> (cualquier carácter), <strong>\n</strong> (salto de línea), <strong>\r</strong> (retorno de carro), <strong>\t</strong> (tabulación ), <strong>\v</strong> (tabulación vertical), <strong>\f</strong> (avance de página), <strong>\0</strong> (caracter NUL), <strong>\cX</strong> (caracter de control), <strong>\xhh</strong>, <strong>\uhhhh</strong>, <strong>\uhhhhh</strong> (carácter con el código), <strong>\</strong> (escape), <strong>[\b]</strong> (caracter de retroceso)y los correspondientes opuestos en mayúsculas: <strong>\D</strong>, <strong>\W</strong>, <strong>\S</strong></p>
+</li>
+<li>
+<p>cuantificadores: <strong>*</strong> (0 o más veces), <strong>+</strong> (1 o más veces), <strong>?</strong> (0 o 1 vez), <strong>x{n}</strong> (n veces), <strong>x{n,}</strong> (al menos n veces), <strong>x{n,m}</strong> (entre n y m veces)</p>
+</li>
+<li>
+<p>grupos y rangos: <strong>x|y</strong> ("x" o "y"), <strong>[xyz]</strong> y <strong>[a-c]</strong> (cualquiera de los caracteres incluidos), <strong>[^xyz]</strong> y <strong>[^a-c]</strong> (cualquier cosa que no esté encerrada entre corchetes), <strong>(x)</strong> (grupo de captura), <strong>(?&lt;Nombre&gt;x)</strong> (grupo de captura con nombre), &#8230;&#8203;</p>
+</li>
+<li>
+<p>banderas: <strong>g</strong> (búsqueda global), <strong>i</strong> (búsqueda que no distingue entre mayúsculas y minúsculas), <strong>m</strong> (búsqueda multilínea), <strong>s</strong> (. coincida con caracteres de nueva línea), <strong>u</strong> (unicode), <strong>y</strong> (búsqueda "pegajosa")</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+const patternObject = <span class="keyword">new</span> RegExp(<span class="error">`</span>abc<span class="error">`</span>, <span class="error">`</span>g<span class="error">`</span>);
+console.writeln(patternObject.exec(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// abc</span>
+console.writeln(patternObject.exec(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// null</span>
+console.writeln(patternObject.test(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// true</span>
+console.writeln(patternObject.test(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// false</span>
+const patternString = <span class="regexp"><span class="delimiter">/</span><span class="content">(abc)</span><span class="delimiter">/</span><span class="modifier">gi</span></span>;
+console.writeln(patternString.exec(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// abc</span>
+console.writeln(patternString.exec(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// null</span>
+console.writeln(patternString.test(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// true</span>
+console.writeln(patternString.test(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// false</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><em>exec</em></a>, ejecuta una búsqueda por una coincidencia en una cadena devolviendo un <em>array</em> o <em>null</em></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><em>test</em></a>, ejecuta una búsqueda por una coincidencia en una cadena devolviendo un <em>boolean</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -9006,375 +9269,6 @@ let regExp = <span class="regexp"><span class="delimiter">/</span><span class="c
 const string = <span class="string"><span class="delimiter">&quot;</span><span class="content">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</span><span class="delimiter">&quot;</span></span>;
 console.writeln(string.match(regExp)); <span class="comment">// AB,CD,ab,cd</span></code></pre>
 </div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="funciones-constructoras-de-utilidad">Funciones constructoras de utilidad</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date"><em>Date</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Semántica</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>momento fijo en el tiempo en un formato independiente</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="blue">Interfaz</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Date</em>, constructor que recibe número de <strong>milisegundos transcurridos desde el 1 de Enero de 1970</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/now"><em>now</em></a>, método estático que retorna el <strong>momento actual</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString">toString</a>, <strong>cadena de caracteres</strong> correspondiente</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime"><em>getTime</em></a>, <strong>valor numérico correspondiente a la hora para la fecha especificada</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate"><em>getDate</em></a>, <strong>día del mes</strong> para la fecha especificada</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay"><em>getDay</em></a>, <strong>día de la semana</strong> de la fecha especificada</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours"><em>getHours</em></a>, <strong>hora</strong> de la fecha especificada</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours"><em>setHours</em></a>, <strong>configura la hora</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/parse"><em>parse</em></a>, <strong>transforma una cadena con la representación de una fecha y hora</strong>, y devuelve el número de milisegundos</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-console.writeln(Date.now()); <span class="comment">// ?</span>
-let date = <span class="keyword">new</span> Date(Date.now());
-console.writeln(date.toString()); <span class="comment">// ?</span>
-date = <span class="keyword">new</span> Date(<span class="integer">0</span>);
-console.writeln(date.toString()); <span class="comment">// Thu Jan 01 1970 01:00:00 GMT+0100 (hora estándar de Europa central)</span>
-date = <span class="keyword">new</span> Date(<span class="string"><span class="delimiter">'</span><span class="content">August 19, 1975 23:15:30</span><span class="delimiter">'</span></span>);
-console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 23:15:30 GMT+0200 (hora de verano de Europa central)</span>
-console.writeln(date.getTime()); <span class="comment">// 177714930000</span>
-console.writeln(date.getDate()); <span class="comment">// 19</span>
-console.writeln(date.getDay()); <span class="comment">// 2</span>
-console.writeln(date.getHours()); <span class="comment">// 23</span>
-date.setHours(<span class="integer">1</span>);
-console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 01:15:30 GMT+0200 (hora de verano de Europa central)</span>
-date = <span class="keyword">new</span> Date(Date.parse(<span class="string"><span class="delimiter">'</span><span class="content">August 19, 1975 23:15:30</span><span class="delimiter">'</span></span>));
-console.writeln(date.toString()); <span class="comment">// Tue Aug 19 1975 01:15:30 GMT+0200 (hora de verano de Europa central)</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp"><em>RegExp</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Semántica</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas</p>
-<div class="ulist">
-<ul>
-<li>
-<p>clases de caracteres: <strong>\d</strong> (cualquier dígito), <strong>\w</strong> (cualquier caracter alfanumérico), <strong>\s</strong> (caracter de espacio en blanco), <strong>.</strong> (cualquier carácter), <strong>\n</strong> (salto de línea), <strong>\r</strong> (retorno de carro), <strong>\t</strong> (tabulación ), <strong>\v</strong> (tabulación vertical), <strong>\f</strong> (avance de página), <strong>\0</strong> (caracter NUL), <strong>\cX</strong> (caracter de control), <strong>\xhh</strong>, <strong>\uhhhh</strong>, <strong>\uhhhhh</strong> (carácter con el código), <strong>\</strong> (escape), <strong>[\b]</strong> (caracter de retroceso)y los correspondientes opuestos en mayúsculas: <strong>\D</strong>, <strong>\W</strong>, <strong>\S</strong></p>
-</li>
-<li>
-<p>cuantificadores: <strong>*</strong> (0 o más veces), <strong>+</strong> (1 o más veces), <strong>?</strong> (0 o 1 vez), <strong>x{n}</strong> (n veces), <strong>x{n,}</strong> (al menos n veces), <strong>x{n,m}</strong> (entre n y m veces)</p>
-</li>
-<li>
-<p>grupos y rangos: <strong>x|y</strong> ("x" o "y"), <strong>[xyz]</strong> y <strong>[a-c]</strong> (cualquiera de los caracteres incluidos), <strong>[^xyz]</strong> y <strong>[^a-c]</strong> (cualquier cosa que no esté encerrada entre corchetes), <strong>(x)</strong> (grupo de captura), <strong>(?&lt;Nombre&gt;x)</strong> (grupo de captura con nombre), &#8230;&#8203;</p>
-</li>
-<li>
-<p>banderas: <strong>g</strong> (búsqueda global), <strong>i</strong> (búsqueda que no distingue entre mayúsculas y minúsculas), <strong>m</strong> (búsqueda multilínea), <strong>s</strong> (. coincida con caracteres de nueva línea), <strong>u</strong> (unicode), <strong>y</strong> (búsqueda "pegajosa")</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-const patternObject = <span class="keyword">new</span> RegExp(<span class="error">`</span>abc<span class="error">`</span>, <span class="error">`</span>g<span class="error">`</span>);
-console.writeln(patternObject.exec(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// abc</span>
-console.writeln(patternObject.exec(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// null</span>
-console.writeln(patternObject.test(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// true</span>
-console.writeln(patternObject.test(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// false</span>
-const patternString = <span class="regexp"><span class="delimiter">/</span><span class="content">(abc)</span><span class="delimiter">/</span><span class="modifier">gi</span></span>;
-console.writeln(patternString.exec(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// abc</span>
-console.writeln(patternString.exec(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// null</span>
-console.writeln(patternString.test(<span class="error">`</span>ABCabcdef<span class="error">`</span>)); <span class="comment">// true</span>
-console.writeln(patternString.test(<span class="error">`</span>A B C a b c d e f<span class="error">`</span>)); <span class="comment">// false</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Interfaz</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><em>exec</em></a>, ejecuta una búsqueda por una coincidencia en una cadena devolviendo un <em>array</em> o <em>null</em></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><em>test</em></a>, ejecuta una búsqueda por una coincidencia en una cadena devolviendo un <em>boolean</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="función-contructora-array">Función contructora <em>Array</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array"><em>Array</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Semántica</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Función constructora para la creación de <em>arrays</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="blue">Interfaz</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><em>isArray</em></a>, método estático para determinar <strong>si el valor pasado es un <em>Array</em></strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><em>from</em></a>, método estático para <strong>crear una nueva instancia de <em>Array</em></strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/of"><em>of</em></a>, método estático para <strong>crear una nueva instancia Array con un número variable de elementos</strong> pasados como argumento</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/length"><em>length</em></a>, devuelve la cantidad de elementos en esa matriz: siempre es <strong>numéricamente mayor que el índice más alto en la matriz</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toString"><em>toString</em></a>, <strong>devuelve una cadena de caracteres representando el array especificado y sus elementos</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/join"><em>join</em></a>, <strong>une todos los elementos de una matriz en una cadena</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><em>push</em></a>, <strong>añade uno o más elementos al final de un array</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"><em>unshift</em></a>, <strong>agrega uno o más elementos al inicio del array</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><em>pop</em></a>, <strong>elimina el último elemento de un array y lo devuelve</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"><em>shift</em></a>, <strong>elimina el primer elemento  y lo retorna</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"><em>concat</em></a>, para <strong>unir dos o más arrays</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><em>splice</em></a>, <strong>cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><em>slice</em></a>, <strong>devuelve una copia de una parte  dentro de un nuevo array</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"><em>copyWithin</em></a>, para una <strong>copia plana de una sección a otra dentro del mismo array</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><em>fill</em></a>, <strong>cambia todos los elementos en un arreglo por un valor</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">includes</a>, <strong>determina si una matriz incluye un determinado elemento</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"><em>indexOf</em></a>, retorna <strong>el primer índice en el que se puede encontrar un elemento dado en el array</strong>, ó retorna -1 si el elemento no está</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/find"><em>find</em></a>, <strong>devuelve el valor del primer elemento del array que cumple la función de la prueba</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"><em>findIndex</em></a>, devuelve el <strong>índice del primer elemento de un array que cumpla con la función de la prueba</strong>, en caso contrario devuelve -1</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"><em>filter</em></a>, <strong>crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some"><em>some</em></a>, <strong>comprueba si al menos un elemento cumple con la condición implementada por la función</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><em>every</em></a>, <strong>si todos los elementos en el array satisfacen una condición</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce</a>, ejecuta una <strong>función reductora sobre cada elemento de un array, devolviendo como resultado un único valor</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight"><em>reduceRight</em></a>, aplica una función simultáneamente contra un acumulador y cada elemento de un array, <strong>de derecha a izquierda</strong>, para reducirlo a un único valor</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><em>map</em></a>, <strong>crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><em>forEach</em></a>, <strong>ejecuta la función indicada una vez por cada elemento del array</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"><em>reverse</em></a>, <strong>invierte el orden de los elementos</strong></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><em>sort</em></a>, <strong>ordena los elementos</strong></p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-let array = [];
-array.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>);
-array.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">otro</span><span class="delimiter">&quot;</span></span>);
-array.push(<span class="predefined-constant">false</span>);
-console.writeln(array); <span class="comment">// escondido,otro,false</span>
-console.writeln(array.find(x =&gt; x === <span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>)); <span class="comment">// escondido</span>
-console.writeln(array.pop()); <span class="comment">// false</span>
-console.writeln(array.pop()); <span class="comment">// otro</span>
-console.writeln(array.pop()); <span class="comment">// escondido</span>
-console.writeln(array); <span class="comment">//</span>
-console.writeln(array.find(x =&gt; x === <span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>)); <span class="comment">//</span>
-
-let tt = [<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>, <span class="integer">6</span>, <span class="integer">7</span>, <span class="integer">8</span>, <span class="integer">9</span>, <span class="integer">10</span>];
-console.writeln(tt.indexOf(<span class="integer">7</span>)); <span class="comment">// 6</span>
-console.writeln(tt.splice(<span class="integer">7</span>, <span class="integer">2</span>)); <span class="comment">// 8,9</span>
-console.writeln(tt); <span class="comment">// 1,2,3,4,5,6,7,10</span>
-console.writeln(tt.find(x =&gt; x &gt; <span class="integer">5</span>)); <span class="comment">// 6</span>
-console.writeln(tt.map(x =&gt; x &gt; <span class="integer">5</span>)); <span class="comment">// false,false,false,false,false,true,true,true</span>
-
-let t = [<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>];
-console.writeln(t); <span class="comment">// 1,2,3,4</span>
-console.writeln(t.map(value =&gt; value ** <span class="integer">2</span>));  <span class="comment">// 1,4,9,16</span>
-array.forEach((value, index, t) =&gt; t[index] = value + <span class="integer">1</span>);
-console.writeln(t);  <span class="comment">// 1,2,3,4</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/11-includes/4-objetos/3-arraysComoObjetos/app.js"><em>includes</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/4-objetos/3-arraysComoObjetos/app.js"><em>findIndex</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/14-filter/4-objetos/3-arraysComoObjetos/app.js"><em>filter</em></a></p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -9767,8 +9661,8 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 <h3 id="función-constructora-object">Función constructora <em>Object</em></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <thead>
 <tr>
@@ -9797,19 +9691,19 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><em>assign</em></a>, método estático para <strong>copia todas las propiedades enumerables</strong> de uno o más objetos fuente a un objeto destino</p>
 </li>
 <li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/create"><em>create</em></a>,  método estático para <strong>crea un objeto nuevo, utilizando un objeto existente como el prototipo</strong> del nuevo objeto creado</p>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames"><em>values</em></a>, método estático que devuelve un <strong>array con los valores correspondientes a las propiedades enumerables</strong> de un objeto</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><em>getOwnPropertyNames</em></a>, método estático que devuelve un <strong>array de cadenas de caracteres con los nombres de las propiedades</strong> de un objeto</p>
 </li>
 <li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><em>defineProperty</em></a>, método estático que define una <strong>nueva propiedad</strong> sobre un objeto, o modifica una ya existente: <em>configurable, enumerable, value, writeable, get, set</em></p>
 </li>
 <li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><em>keys</em></a>, método estático que devuelve un <strong>array de las propiedades <em>names</em></strong> de un objeto</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/values"><em>values</em></a>, método estático que devuelve un <strong>array con los valores correspondientes a las propiedades enumerables</strong> de un objeto</p>
-</li>
-<li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"><em>toString</em></a>, devuelve una <strong>cadena que representa al objeto</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/create"><em>create</em></a>,  método estático para <strong>crea un objeto nuevo, utilizando un objeto existente como el prototipo</strong> del nuevo objeto creado</p>
 </li>
 <li>
 <p>&#8230;&#8203;</p>
@@ -9828,14 +9722,21 @@ const object = { <span class="key">a</span>: <span class="integer">1</span>, <sp
 <span class="keyword">for</span>(let property <span class="keyword">in</span> object){
   console.writeln(object[property]); <span class="comment">// 1 / 2</span>
 }
+console.writeln(Object.getOwnPropertyNames(object)); <span class="comment">// a,b</span>
+
 Object.assign(object, { <span class="key">b</span>: -<span class="integer">2</span>, <span class="key">c</span>: -<span class="integer">3</span> });
 <span class="keyword">for</span>(let property <span class="keyword">in</span> object){
   console.writeln(object[property]); <span class="comment">// 1 / -2 / -3</span>
 }
-const copy = Object.create(object);
+console.writeln(Object.getOwnPropertyNames(object)); <span class="comment">// a,b,c</span>
+
+let copy = {};
+Object.assign(copy, object);
 <span class="keyword">for</span>(let property <span class="keyword">in</span> copy){
   console.writeln(copy[property]); <span class="comment">// 1 / -2 / -3</span>
 }
+console.writeln(Object.getOwnPropertyNames(copy)); <span class="comment">// a,b,c</span>
+
 Object.defineProperty(copy, <span class="string"><span class="delimiter">'</span><span class="content">d</span><span class="delimiter">'</span></span>, {
   <span class="key">enumerable</span>: <span class="predefined-constant">true</span>,
   <span class="key">configurable</span>: <span class="predefined-constant">true</span>,
@@ -9845,13 +9746,9 @@ Object.defineProperty(copy, <span class="string"><span class="delimiter">'</span
 <span class="keyword">for</span>(let property <span class="keyword">in</span> copy){
   console.writeln(copy[property]); <span class="comment">// 1 / -2 / -3 / valor</span>
 }
-<span class="keyword">for</span>(let value of Object.values(copy)){
-  console.writeln(value); <span class="comment">// 1 / -2 / -3 / valor</span>
-}
-<span class="keyword">for</span>(let name of Object.keys(copy)){
-  console.writeln(name); <span class="comment">// a / b / c / d</span>
-}
-console.writeln(copy.toString());
+console.writeln(Object.getOwnPropertyNames(copy)); <span class="comment">// a,b,c,d</span>
+
+console.writeln(copy.toString()); <span class="comment">// [object Object]</span>
 copy.<span class="function">toString</span> = <span class="keyword">function</span>() {
   let string = <span class="error">`</span>{<span class="error">\</span>n<span class="error">`</span>;
   <span class="keyword">for</span>(let property <span class="keyword">in</span> <span class="local-variable">this</span>){
@@ -9859,8 +9756,214 @@ copy.<span class="function">toString</span> = <span class="keyword">function</sp
   }
   <span class="keyword">return</span> <span class="error">`</span><span class="predefined">$</span>{string}}<span class="error">\</span>n<span class="error">`</span>;
 }
-console.writeln(copy.toString()); <span class="comment">// {</span></code></pre>
+console.writeln(copy.toString()); <span class="comment">// {</span>
+ <span class="comment">// d = valor</span>
+ <span class="comment">// toString = function() {</span>
+ <span class="comment">//   let string = `{\n`;</span>
+ <span class="comment">//   for(let property in this){</span>
+ <span class="comment">//     string += `${property} = ${this[property]}\n`;</span>
+ <span class="comment">//   }</span>
+ <span class="comment">//   return `${string}}\n`;</span>
+ <span class="comment">// }</span>
+ <span class="comment">// a = 1</span>
+ <span class="comment">// b = -2</span>
+ <span class="comment">// c = -3</span>
+ <span class="comment">// }</span></code></pre>
 </div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="función-contructora-array">Función contructora <em>Array</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array"><em>Array</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Semántica</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Función constructora para la creación de <em>arrays</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><em>isArray</em></a>, método estático para determinar <strong>si el valor pasado es un <em>Array</em></strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><em>from</em></a>, método estático para <strong>crear una nueva instancia de <em>Array</em></strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/of"><em>of</em></a>, método estático para <strong>crear una nueva instancia Array con un número variable de elementos</strong> pasados como argumento</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/length"><em>length</em></a>, devuelve la cantidad de elementos en esa matriz: siempre es <strong>numéricamente mayor que el índice más alto en la matriz</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toString"><em>toString</em></a>, <strong>devuelve una cadena de caracteres representando el array especificado y sus elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/join"><em>join</em></a>, <strong>une todos los elementos de una matriz en una cadena</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><em>push</em></a>, <strong>añade uno o más elementos al final de un array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"><em>unshift</em></a>, <strong>agrega uno o más elementos al inicio del array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><em>pop</em></a>, <strong>elimina el último elemento de un array y lo devuelve</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"><em>shift</em></a>, <strong>elimina el primer elemento  y lo retorna</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"><em>concat</em></a>, para <strong>unir dos o más arrays</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><em>splice</em></a>, <strong>cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><em>slice</em></a>, <strong>devuelve una copia de una parte  dentro de un nuevo array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"><em>copyWithin</em></a>, para una <strong>copia plana de una sección a otra dentro del mismo array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><em>fill</em></a>, <strong>cambia todos los elementos en un arreglo por un valor</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">includes</a>, <strong>determina si una matriz incluye un determinado elemento</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"><em>indexOf</em></a>, retorna <strong>el primer índice en el que se puede encontrar un elemento dado en el array</strong>, ó retorna -1 si el elemento no está</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/find"><em>find</em></a>, <strong>devuelve el valor del primer elemento del array que cumple la función de la prueba</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"><em>findIndex</em></a>, devuelve el <strong>índice del primer elemento de un array que cumpla con la función de la prueba</strong>, en caso contrario devuelve -1</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"><em>filter</em></a>, <strong>crea un nuevo array con todos los elementos que cumplan la condición implementada por la función dada</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some"><em>some</em></a>, <strong>comprueba si al menos un elemento cumple con la condición implementada por la función</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><em>every</em></a>, <strong>si todos los elementos en el array satisfacen una condición</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce</a>, ejecuta una <strong>función reductora sobre cada elemento de un array, devolviendo como resultado un único valor</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight"><em>reduceRight</em></a>, aplica una función simultáneamente contra un acumulador y cada elemento de un array, <strong>de derecha a izquierda</strong>, para reducirlo a un único valor</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><em>map</em></a>, <strong>crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><em>forEach</em></a>, <strong>ejecuta la función indicada una vez por cada elemento del array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"><em>reverse</em></a>, <strong>invierte el orden de los elementos</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><em>sort</em></a>, <strong>ordena los elementos</strong></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+let array = [];
+array.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>);
+array.push(<span class="string"><span class="delimiter">&quot;</span><span class="content">otro</span><span class="delimiter">&quot;</span></span>);
+array.push(<span class="predefined-constant">false</span>);
+console.writeln(array); <span class="comment">// escondido,otro,false</span>
+console.writeln(array.find(x =&gt; x === <span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>)); <span class="comment">// escondido</span>
+console.writeln(array.pop()); <span class="comment">// false</span>
+console.writeln(array.pop()); <span class="comment">// otro</span>
+console.writeln(array.pop()); <span class="comment">// escondido</span>
+console.writeln(array); <span class="comment">//</span>
+console.writeln(array.find(x =&gt; x === <span class="string"><span class="delimiter">&quot;</span><span class="content">escondido</span><span class="delimiter">&quot;</span></span>)); <span class="comment">//</span>
+
+let tt = [<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span>, <span class="integer">6</span>, <span class="integer">7</span>, <span class="integer">8</span>, <span class="integer">9</span>, <span class="integer">10</span>];
+console.writeln(tt.indexOf(<span class="integer">7</span>)); <span class="comment">// 6</span>
+console.writeln(tt.splice(<span class="integer">7</span>, <span class="integer">2</span>)); <span class="comment">// 8,9</span>
+console.writeln(tt); <span class="comment">// 1,2,3,4,5,6,7,10</span>
+console.writeln(tt.find(x =&gt; x &gt; <span class="integer">5</span>)); <span class="comment">// 6</span>
+console.writeln(tt.map(x =&gt; x &gt; <span class="integer">5</span>)); <span class="comment">// false,false,false,false,false,true,true,true</span>
+
+let t = [<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>];
+console.writeln(t); <span class="comment">// 1,2,3,4</span>
+console.writeln(t.map(value =&gt; value ** <span class="integer">2</span>));  <span class="comment">// 1,4,9,16</span>
+array.forEach((value, index, t) =&gt; t[index] = value + <span class="integer">1</span>);
+console.writeln(t);  <span class="comment">// 1,2,3,4</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/11-includes/4-objetos/3-arraysComoObjetos/app.js"><em>includes</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/13-findIndex/4-objetos/3-arraysComoObjetos/app.js"><em>findIndex</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/tool/texts/0-scenarios/14-filter/4-objetos/3-arraysComoObjetos/app.js"><em>filter</em></a></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -9954,24 +10057,40 @@ const console = <span class="keyword">new</span> Console();
 
 <span class="reserved">class</span> Clazz {
 
-    constructor(property){
-        <span class="local-variable">this</span>.property = property;
-        <span class="local-variable">this</span>.other = <span class="integer">0</span>;
+    <span class="error">#</span>publicAttributeX;
+    <span class="error">#</span>publicAttributeY;
+
+    constructor(property) {
+        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeX = property;
+        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeY = <span class="integer">0</span>;
     }
 
     <span class="error">#</span>privateMethod() {
-        <span class="local-variable">this</span>.property++;
-        <span class="local-variable">this</span>.other++;
+        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeX++;
+        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeY++;
     }
 
-    method() {
-        <span class="local-variable">this</span>.privateMethod();
-        console.writeln(<span class="error">`</span>property: <span class="predefined">$</span>{object.property} - other: <span class="predefined">$</span>{object.other}<span class="error">`</span>);
+    publicInstanceMethod() {
+        <span class="local-variable">this</span>.<span class="error">#</span>privateMethod();
+        console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>publicAttributeY}<span class="error">`</span>);
+        console.writeln(<span class="error">`</span>publicClazzAttribute: <span class="predefined">$</span>{Clazz.<span class="error">#</span>publicClazzAttribute}<span class="error">`</span>);
     }
-}
 
-const o = <span class="keyword">new</span> Clazz(<span class="integer">7</span>);
-o.method();</code></pre>
+    <span class="reserved">static</span> <span class="error">#</span>publicClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
+
+    <span class="reserved">static</span> publicClazzMethod(value){
+        Clazz.<span class="error">#</span>publicClazzAttribute = value;
+    }
+};
+
+const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+console.writeln(<span class="error">`</span>Clazz.publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
+object.publicInstanceMethod();
+Clazz.publicClazzMethod(<span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>);
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
