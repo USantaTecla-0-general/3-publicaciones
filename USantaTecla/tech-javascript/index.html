@@ -9312,6 +9312,9 @@ console.writeln(string.match(regExp)); <span class="comment">// AB,CD,ab,cd</spa
 <div class="ulist">
 <ul>
 <li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set"><em>Set([iterable</a>)</em>], crea el conjunto vacío o con los elementos del iterable</p>
+</li>
+<li>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size"><em>size</em></a>, retorna el número de elementos</p>
 </li>
 </ul>
@@ -9321,9 +9324,6 @@ console.writeln(string.match(regExp)); <span class="comment">// AB,CD,ab,cd</spa
 <p>Métodos</p>
 <div class="ulist">
 <ul>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set"><em>Set([iterable</a>)</em>], crea el conjunto vacío o con los elementos del iterable</p>
-</li>
 <li>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add"><em>add(item)</em></a>, añade el elemento al final del conjunto, si no está presente</p>
 </li>
@@ -9340,7 +9340,7 @@ console.writeln(string.match(regExp)); <span class="comment">// AB,CD,ab,cd</spa
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach"><em>forEach(fn)</em></a>, aplica la función a cada elemento</p>
 </li>
 <li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values"><em>values()</em></a>, retorna un iterador de los valores en orden de inserción</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values"><em>values()</em></a>, retorna un <em>array</em> de los valores</p>
 </li>
 <li>
 <p><em>keys()</em>, alias del anterior</p>
@@ -9580,8 +9580,8 @@ console.writeln(weakSet.has({<span class="key">a</span>: <span class="integer">1
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <thead>
 <tr>
@@ -9599,11 +9599,65 @@ console.writeln(weakSet.has({<span class="key">a</span>: <span class="integer">1
 <li>
 <p><strong>Conjuntos de (clave, valor)</strong>, <span class="red">diferentes de <em>Object</em> donde se mantienen propiedades del sistema</span>: <em>prototype</em>, &#8230;&#8203;</p>
 </li>
+<li>
+<p><strong>Iterable</strong> por <em>for(&#8230;&#8203; of &#8230;&#8203;)</em></p>
+</li>
 </ul>
 </div>
 </li>
 <li>
 <p><strong class="blue">Interfaz</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size"><em>size</em></a>, retorna el número de elementos</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Métodos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/Map"><em>Map(iterable)</em></a>, crea el conjunto vacío o con los elementos del iterable</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set"><em>set</em></a>, añade el elemento al final del conjunto, si no está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has"><em>has(key)</em></a>, retorna si el elemento está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get"><em>get(key)</em></a>, retorna el elemento si está presente, <em>null</em> en caso contrario</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete"><em>delete(key)</em></a>, elimina el elemento, si está presente</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear"><em>clear()</em></a>, elimina todos los elementos, si hubiera</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries"><em>entries</em></a>, retorna un iterador de los valores en orden de inserción</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values"><em>values()</em></a>, retorna un <em>array</em> de los valores</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys"><em>keys()</em></a>, retorna un <em>array</em> de las claves</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach"><em>forEach(funcion)</em></a>, aplica la función a cada elemento</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -9611,7 +9665,30 @@ console.writeln(weakSet.has({<span class="key">a</span>: <span class="integer">1
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
-const console = <span class="keyword">new</span> Console();</code></pre>
+const console = <span class="keyword">new</span> Console();
+let map = <span class="keyword">new</span> Map()
+map.set(<span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span>, {<span class="key">a</span>: <span class="integer">1111</span>, <span class="key">b</span>: <span class="integer">2222</span>});
+console.writeln(map.has(<span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span>)); <span class="comment">// true</span>
+console.writeln(map.get(<span class="string"><span class="delimiter">'</span><span class="content">y</span><span class="delimiter">'</span></span>)) <span class="comment">// undefined</span>
+map.set(<span class="string"><span class="delimiter">'</span><span class="content">y</span><span class="delimiter">'</span></span>, {<span class="key">a</span>: <span class="integer">3333</span>, <span class="key">b</span>: <span class="integer">4444</span>});
+console.writeln(map.get(<span class="string"><span class="delimiter">'</span><span class="content">y</span><span class="delimiter">'</span></span>)); <span class="comment">// [object Object]</span>
+console.writeln(map.<span class="keyword">delete</span>(<span class="string"><span class="delimiter">'</span><span class="content">z</span><span class="delimiter">'</span></span>)); <span class="comment">// false</span>
+console.writeln(map.<span class="keyword">delete</span>(<span class="string"><span class="delimiter">'</span><span class="content">y</span><span class="delimiter">'</span></span>)) <span class="comment">// true</span>
+console.writeln(map.size) <span class="comment">// 1</span>
+
+<span class="keyword">new</span> Map([[<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>, <span class="integer">3</span>], [<span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>, {}], [<span class="string"><span class="delimiter">'</span><span class="content">baz</span><span class="delimiter">'</span></span>, <span class="predefined-constant">undefined</span>]])
+map = <span class="keyword">new</span> Map([[<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>, <span class="integer">1</span>], [<span class="string"><span class="delimiter">'</span><span class="content">b</span><span class="delimiter">'</span></span>, <span class="integer">2</span>], [<span class="string"><span class="delimiter">'</span><span class="content">c</span><span class="delimiter">'</span></span>, <span class="integer">3</span>], ]);
+map.forEach((value, key, map) =&gt;
+    { console.writeln(<span class="error">`</span>map.get(<span class="string"><span class="delimiter">'</span><span class="content">${key}</span><span class="delimiter">'</span></span>) = <span class="predefined">$</span>{value}<span class="error">`</span>) });
+<span class="keyword">for</span> (let item of map.keys()) {
+  console.writeln(item); <span class="comment">// a / b / c</span>
+}
+<span class="keyword">for</span> (let item of map.values()) {
+  console.writeln(item); <span class="comment">// 1 / 2 / 3</span>
+}
+<span class="keyword">for</span> (let [key, value] of map.entries()) {
+  console.writeln(<span class="error">`</span><span class="predefined">$</span>{key}, <span class="predefined">$</span>{value}<span class="error">`</span>); <span class="comment">// a, 1 / b, 2 / c, 3</span>
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9650,7 +9727,27 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
-const console = <span class="keyword">new</span> Console();</code></pre>
+const console = <span class="keyword">new</span> Console();
+let weakMap = <span class="keyword">new</span> WeakMap();
+let array = [<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>];
+weakMap.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, array);
+weakMap.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, array);
+weakMap.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span>, [<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>]);
+let object = {<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>};
+weakMap.add(<span class="string"><span class="delimiter">&quot;</span><span class="content">d</span><span class="delimiter">&quot;</span></span>, object);
+weakMap.add(<span class="string"><span class="delimiter">&quot;</span><span class="content">e</span><span class="delimiter">&quot;</span></span>, {<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>});
+console.writeln(weakMap.has(array)); <span class="comment">// true</span>
+console.writeln(weakMap.has([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>])); <span class="comment">// false</span>
+console.writeln(weakMap.has(object)); <span class="comment">// true</span>
+console.writeln(weakMap.has({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>})); <span class="comment">// false</span>
+
+array = <span class="predefined-constant">null</span>;
+object = <span class="predefined-constant">null</span>;
+console.writeln(weakMap.size); <span class="comment">// 0</span>
+console.writeln(weakMap.has(array)); <span class="comment">// false</span>
+console.writeln(weakMap.has([<span class="integer">1</span>, <span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">'</span><span class="content">cadena de caracteres</span><span class="delimiter">'</span></span>])); <span class="comment">// false</span>
+console.writeln(weakMap.has(object)); <span class="comment">// false</span>
+console.writeln(weakMap.has({<span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span>})); <span class="comment">// false</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9661,8 +9758,8 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 <h3 id="función-constructora-object">Función constructora <em>Object</em></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -9688,13 +9785,13 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><em>assign</em></a>, método estático para <strong>copia todas las propiedades enumerables</strong> de uno o más objetos fuente a un objeto destino</p>
-</li>
-<li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames"><em>values</em></a>, método estático que devuelve un <strong>array con los valores correspondientes a las propiedades enumerables</strong> de un objeto</p>
 </li>
 <li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><em>getOwnPropertyNames</em></a>, método estático que devuelve un <strong>array de cadenas de caracteres con los nombres de las propiedades</strong> de un objeto</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><em>assign</em></a>, método estático para <strong>copia todas las propiedades enumerables</strong> de uno o más objetos fuente a un objeto destino</p>
 </li>
 <li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><em>defineProperty</em></a>, método estático que define una <strong>nueva propiedad</strong> sobre un objeto, o modifica una ya existente: <em>configurable, enumerable, value, writeable, get, set</em></p>
@@ -9718,23 +9815,20 @@ const console = <span class="keyword">new</span> Console();</code></pre>
 <pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
 
 const console = <span class="keyword">new</span> Console();
-const object = { <span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span> };
-<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
+let object = { <span class="key">a</span>: <span class="integer">1</span>, <span class="key">b</span>: <span class="integer">2</span> };
+<span class="keyword">for</span> (let property <span class="keyword">in</span> object) {
   console.writeln(object[property]); <span class="comment">// 1 / 2</span>
 }
+console.writeln(Object.values(object)); <span class="comment">// 1, 2</span>
 console.writeln(Object.getOwnPropertyNames(object)); <span class="comment">// a,b</span>
 
 Object.assign(object, { <span class="key">b</span>: -<span class="integer">2</span>, <span class="key">c</span>: -<span class="integer">3</span> });
-<span class="keyword">for</span>(let property <span class="keyword">in</span> object){
-  console.writeln(object[property]); <span class="comment">// 1 / -2 / -3</span>
-}
+console.writeln(Object.values(object)); <span class="comment">// 1, -2, 3</span>
 console.writeln(Object.getOwnPropertyNames(object)); <span class="comment">// a,b,c</span>
 
 let copy = {};
 Object.assign(copy, object);
-<span class="keyword">for</span>(let property <span class="keyword">in</span> copy){
-  console.writeln(copy[property]); <span class="comment">// 1 / -2 / -3</span>
-}
+console.writeln(Object.values(copy)); <span class="comment">// 1, -2, 3</span>
 console.writeln(Object.getOwnPropertyNames(copy)); <span class="comment">// a,b,c</span>
 
 Object.defineProperty(copy, <span class="string"><span class="delimiter">'</span><span class="content">d</span><span class="delimiter">'</span></span>, {
@@ -9743,15 +9837,14 @@ Object.defineProperty(copy, <span class="string"><span class="delimiter">'</span
   <span class="key">writable</span>: <span class="predefined-constant">true</span>,
   <span class="key">value</span>: <span class="string"><span class="delimiter">'</span><span class="content">valor</span><span class="delimiter">'</span></span>
 });
-<span class="keyword">for</span>(let property <span class="keyword">in</span> copy){
-  console.writeln(copy[property]); <span class="comment">// 1 / -2 / -3 / valor</span>
-}
+
+console.writeln(Object.values(copy)); <span class="comment">// 1, -2, 3</span>
 console.writeln(Object.getOwnPropertyNames(copy)); <span class="comment">// a,b,c,d</span>
 
 console.writeln(copy.toString()); <span class="comment">// [object Object]</span>
-copy.<span class="function">toString</span> = <span class="keyword">function</span>() {
+copy.<span class="function">toString</span> = <span class="keyword">function</span> () {
   let string = <span class="error">`</span>{<span class="error">\</span>n<span class="error">`</span>;
-  <span class="keyword">for</span>(let property <span class="keyword">in</span> <span class="local-variable">this</span>){
+  <span class="keyword">for</span> (let property <span class="keyword">in</span> <span class="local-variable">this</span>) {
     string += <span class="error">`</span><span class="predefined">$</span>{property} = <span class="predefined">$</span>{<span class="local-variable">this</span>[property]}<span class="error">\</span>n<span class="error">`</span>;
   }
   <span class="keyword">return</span> <span class="error">`</span><span class="predefined">$</span>{string}}<span class="error">\</span>n<span class="error">`</span>;
@@ -9768,7 +9861,25 @@ console.writeln(copy.toString()); <span class="comment">// {</span>
  <span class="comment">// a = 1</span>
  <span class="comment">// b = -2</span>
  <span class="comment">// c = -3</span>
- <span class="comment">// }</span></code></pre>
+ <span class="comment">// }</span>
+
+<span class="keyword">function</span> <span class="function">createObject</span>(value) {
+  <span class="local-variable">this</span>.attribute = value;
+}
+createObject.prototype.<span class="function">write</span> = <span class="keyword">function</span> () {
+  console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}.<span class="error">`</span>);
+}
+
+object = <span class="keyword">new</span> createObject(<span class="predefined-constant">true</span>);
+object.write(); <span class="comment">// this.attribute: true.</span>
+console.writeln(Object.values(object)); <span class="comment">// true</span>
+console.writeln(Object.getOwnPropertyNames(object)); <span class="comment">// attribute</span>
+
+copy = Object.create(object);
+copy.attribute = <span class="predefined-constant">false</span>;
+copy.write(); <span class="comment">// this.attribute: false.</span>
+console.writeln(Object.values(copy)); <span class="comment">// false</span>
+console.writeln(Object.getOwnPropertyNames(copy)); <span class="comment">// attribute</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -9973,8 +10084,8 @@ console.writeln(t);  <span class="comment">// 1,2,3,4</span></code></pre>
 <h3 id="función-constructora-function">Función constructora <em>Function</em></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
@@ -9999,13 +10110,13 @@ console.writeln(t);  <span class="comment">// 1,2,3,4</span></code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call">call</a>, <strong>llama a una función con un valor dado this y con argumentos provistos individualmente</strong></p>
-</li>
-<li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">bind</a>, <strong>crea una nueva función, que cuando es llamada, asigna a su operador  this el valor entregado, con una secuencia de argumentos dados precediendo a cualquiera entregados cuando la función es llamada</strong></p>
 </li>
 <li>
 <p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">apply</a>, <strong>invoca una determinada función asignando explícitamente el objeto this y un array</strong></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Function/call">call</a>, <strong>llama a una función con un valor dado this y con argumentos provistos individualmente</strong></p>
 </li>
 </ul>
 </div>
@@ -10015,12 +10126,44 @@ console.writeln(t);  <span class="comment">// 1,2,3,4</span></code></pre>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-javascript/src/tree/master/0-itinerario/x-binding">binding</a></p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+let object = {
+    <span class="key">attribute</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Value</span><span class="delimiter">&quot;</span></span>,
+    write() {
+        console.write(<span class="error">`</span>attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+    }
+};
+
+let <span class="function">superior</span> = <span class="keyword">function</span> (part){
+    console.write(<span class="error">`</span>Antes [ <span class="error">`</span>);
+    part();
+    console.writeln(<span class="error">`</span> ] Despues<span class="error">`</span>);
+}
+superior(object.write, <span class="integer">1000</span>); <span class="comment">// Antes [ attribute: undefined ] Despues</span>
+superior(<span class="keyword">function</span> () {
+    object.write(); <span class="comment">// Antes [ attribute: Value ] Despues</span>
+}, <span class="integer">1000</span>);
+superior(() =&gt; object.write(), <span class="integer">1000</span>); <span class="comment">// Antes [ attribute: Value ] Despues</span>
+let funcUser = object.write.bind(object);
+superior(funcUser, <span class="integer">1000</span>); <span class="comment">// Antes [ attribute: Value ] Despues</span>
+
+let numbers = [<span class="integer">5</span>, <span class="integer">6</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">7</span>];
+let max = Math.max(...numbers);
+let min = Math.min(...numbers);
+console.writeln(<span class="error">`</span>Max: <span class="predefined">$</span>{max} - Min: <span class="predefined">$</span>{min}<span class="error">`</span>); <span class="comment">// Max: 7 - Min: 2</span>
+max = Math.max.apply(<span class="predefined-constant">null</span>, numbers);
+min = Math.min.apply(<span class="predefined-constant">null</span>, numbers);
+console.writeln(<span class="error">`</span>Max: <span class="predefined">$</span>{max} - Min: <span class="predefined">$</span>{min}<span class="error">`</span>); <span class="comment">// Max: 7 - Min: 2</span>
+[max, min] = [Math.max, Math.min].map(f =&gt; f.apply(<span class="predefined-constant">null</span>, numbers));
+console.writeln(<span class="error">`</span>Max: <span class="predefined">$</span>{max} - Min: <span class="predefined">$</span>{min}<span class="error">`</span>); <span class="comment">// Max: 7 - Min: 2</span>
+[max, min] = [Math.max, Math.min].map(f =&gt; f(...numbers));
+console.writeln(<span class="error">`</span>Max: <span class="predefined">$</span>{max} - Min: <span class="predefined">$</span>{min}<span class="error">`</span>); <span class="comment">// Max: 7 - Min: 2</span></code></pre>
+</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -10030,19 +10173,48 @@ console.writeln(t);  <span class="comment">// 1,2,3,4</span></code></pre>
 <h3 id="clases">Clases</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Notación sintáctica "orientada a objetos" más compacta y legible que su homologa la función constructora "orientada a procesos"</p>
+<p><strong class="blue">Notación sintáctica "orientada a objetos"</strong> más compacta y legible que su homologa la <strong class="red">función constructora "orientada a procesos"</strong></p>
 <div class="ulist">
 <ul>
 <li>
 <p><strong class="red">No sufren hoisting</strong></p>
+</li>
+<li>
+<p>el <strong class="blue">caracter de instancia o de clase de un miembro</strong> depende de la presencia o no de la palabra reservada <em><strong>static</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>el miembro estático es global, compartido por todos los objetos de la clase y no requiere la existencia de objetos para su gestión (acceso, ejecución, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>los <strong class="blue">métodos estáticos solo tienen acceso a los atributos estáticos</strong></p>
+</li>
+<li>
+<p>los <strong class="blue">métodos de instancia tienen acceso a los atributos de instancia y estáticos</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>el <strong class="blue">caracter privado de un miembro</strong>, atributo o método, estático o no, antepone el caracter <em><strong>#</strong></em> como parte del identificador del miembro</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el miembro privado es solo accesible en el ámbito de la clase</p>
+</li>
+<li>
+<p>el miembro público es accesible en cualquier ámbito</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -10057,40 +10229,35 @@ const console = <span class="keyword">new</span> Console();
 
 <span class="reserved">class</span> Clazz {
 
-    <span class="error">#</span>publicAttributeX;
-    <span class="error">#</span>publicAttributeY;
+    <span class="error">#</span>privateAttributeX;
+    <span class="error">#</span>privateAttributeY;
+    <span class="reserved">static</span> <span class="error">#</span>privateClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
 
     constructor(property) {
-        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeX = property;
-        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeY = <span class="integer">0</span>;
+        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeX = property;
+        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeY = <span class="integer">0</span>;
     }
 
-    <span class="error">#</span>privateMethod() {
-        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeX++;
-        <span class="local-variable">this</span>.<span class="error">#</span>publicAttributeY++;
+    <span class="error">#</span>privateInstanceMethod() {
+        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeX++;
+        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeY++;
     }
 
     publicInstanceMethod() {
-        <span class="local-variable">this</span>.<span class="error">#</span>privateMethod();
-        console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>publicAttributeX} - publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>publicAttributeY}<span class="error">`</span>);
-        console.writeln(<span class="error">`</span>publicClazzAttribute: <span class="predefined">$</span>{Clazz.<span class="error">#</span>publicClazzAttribute}<span class="error">`</span>);
+        <span class="local-variable">this</span>.<span class="error">#</span>privateInstanceMethod();
+        console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>privateAttributeY}<span class="error">`</span>);
+        console.writeln(<span class="error">`</span>privateClazzAttribute: <span class="predefined">$</span>{Clazz.<span class="error">#</span>privateClazzAttribute}<span class="error">`</span>);
     }
 
-    <span class="reserved">static</span> <span class="error">#</span>publicClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
-
     <span class="reserved">static</span> publicClazzMethod(value){
-        Clazz.<span class="error">#</span>publicClazzAttribute = value;
+        Clazz.<span class="error">#</span>privateClazzAttribute = value;
     }
 };
 
 const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
-object.publicInstanceMethod();
-object.publicAttributeX = <span class="integer">666</span>;
-console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
-console.writeln(<span class="error">`</span>Clazz.publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
-object.publicInstanceMethod();
+object.publicInstanceMethod(); <span class="comment">// privateAttributeX: 2 - privateAttributeY: 1 / privateClazzAttribute: global</span>
 Clazz.publicClazzMethod(<span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>);
-object.publicInstanceMethod();</code></pre>
+object.publicInstanceMethod(); <span class="comment">// privateAttributeX: 3 - privateAttributeY: 2 / privateClazzAttribute: nuevo</span></code></pre>
 </div>
 </div></div></td>
 </tr>
