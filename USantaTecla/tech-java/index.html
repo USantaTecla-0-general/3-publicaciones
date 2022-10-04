@@ -559,7 +559,19 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#tablas">Tablas</a></li>
 </ul>
 </li>
-<li><a href="#programación-basada-a-objetos">Programación Basada a Objetos</a></li>
+<li><a href="#programación-basada-a-objetos">Programación Basada a Objetos</a>
+<ul class="sectlevel2">
+<li><a href="#vista-pública-de-las-clases">Vista Pública de las Clases</a></li>
+<li><a href="#vista-pública-de-los-objetos">Vista Pública de los Objetos</a></li>
+<li><a href="#vista-privada-de-las-clases">Vista privada de las Clases</a></li>
+<li><a href="#vista-privada-de-los-objetos">Vista Privada de los Objetos</a></li>
+<li><a href="#miembros-de-clase">Miembros de Clase</a></li>
+<li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
+<li><a href="#clases-de-recubrimiento">Clases de Recubrimiento</a></li>
+<li><a href="#enumerados">Enumerados</a></li>
+<li><a href="#síntesis">Síntesis</a></li>
+</ul>
+</li>
 <li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a></li>
 <li><a href="#programación-modular">Programación Modular</a></li>
 <li><a href="#programación-con-aserciones-y-excepciones">Programación con Aserciones y Excepciones</a></li>
@@ -5001,7 +5013,479 @@ cualquier sistema operativo</p>
 <div class="sect1">
 <h2 id="programación-basada-a-objetos">Programación Basada a Objetos</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="vista-pública-de-las-clases">Vista Pública de las Clases</h3>
 
+</div>
+<div class="sect2">
+<h3 id="vista-pública-de-los-objetos">Vista Pública de los Objetos</h3>
+
+</div>
+<div class="sect2">
+<h3 id="vista-privada-de-las-clases">Vista privada de las Clases</h3>
+
+</div>
+<div class="sect2">
+<h3 id="vista-privada-de-los-objetos">Vista Privada de los Objetos</h3>
+
+</div>
+<div class="sect2">
+<h3 id="miembros-de-clase">Miembros de Clase</h3>
+
+</div>
+<div class="sect2">
+<h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
+
+</div>
+<div class="sect2">
+<h3 id="clases-de-recubrimiento">Clases de Recubrimiento</h3>
+
+</div>
+<div class="sect2">
+<h3 id="enumerados">Enumerados</h3>
+
+</div>
+<div class="sect2">
+<h3 id="síntesis">Síntesis</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Clases con miembros, atributos y métodos, públicos y privados</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En la implantación de la clase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Métodos de instancia, públicos o privados, acceden a miembros públicos o privados de instancia o estáticos</p>
+</li>
+<li>
+<p>Métodos estáticos, públicos o privados, acceden a miembros públicos o privados estáticos</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Fuera de la implantación de la clase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se accede a cualquier miembro, atributo o método, de instancia o estático público</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_clazz</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="type">class</span> <span class="class">Clazz</span> {
+    
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> PUBLIC_CONSTANT = <span class="integer">0</span>;
+    <span class="directive">private</span> <span class="directive">static</span> <span class="type">int</span> PRIVATE_CONSTANT = <span class="integer">1</span>;
+    <span class="directive">public</span> <span class="type">int</span> publicAtributte;
+    <span class="directive">private</span> <span class="type">int</span> privateAtributte;
+
+    <span class="directive">public</span> Clazz(<span class="type">int</span> value){
+        <span class="local-variable">this</span>.publicAtributte = <span class="integer">2</span>;
+        <span class="local-variable">this</span>.privateAtributte = value;
+    }
+
+    <span class="directive">private</span> Clazz(){
+        <span class="local-variable">this</span>(<span class="integer">3</span>);
+        <span class="comment">// ...</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> publicInstnaceMethod() {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
+        <span class="local-variable">this</span>.privateInstnaceMethod();
+        Clazz.publicStaticMethod();
+        Clazz.privateStaticMethod();
+    }
+
+    <span class="directive">private</span> <span class="type">void</span> privateInstnaceMethod() {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
+        Clazz.publicStaticMethod();
+        Clazz.privateStaticMethod();
+    }
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> publicStaticMethod() {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicStaticMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicStaticMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        <span class="comment">// console.writeln(&quot;publicStaticMethod.publicAtributte: &quot; + this.publicAtributte);</span>
+        <span class="comment">// console.writeln(&quot;publicStaticMethod.privateAtributte: &quot; + this.privateAtributte);</span>
+        <span class="comment">// this.privateInstnaceMethod();</span>
+        Clazz.privateStaticMethod();
+    }
+
+    <span class="directive">private</span> <span class="directive">static</span> <span class="type">void</span> privateStaticMethod() {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateStaticMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateStaticMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        <span class="comment">// console.writeln(&quot;privateStaticMethod.publicAtributte: &quot; + this.publicAtributte);</span>
+        <span class="comment">// console.writeln(&quot;privateStaticMethod.privateAtributte: &quot; + this.privateAtributte);</span>
+    }
+    
+}
+
+<span class="type">class</span> <span class="class">Client</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        Clazz object = <span class="keyword">new</span> Clazz(<span class="integer">0</span>);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">main.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        <span class="comment">// console.writeln(&quot;main.PRIVATE_CONSTANT: &quot; + Clazz.PRIVATE_CONSTANT);</span>
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">main.publicAtributte: </span><span class="delimiter">&quot;</span></span> + object.publicAtributte);
+        <span class="comment">// console.writeln(&quot;main.privateAtributte: &quot; + object.privateAtributte);</span>
+        object.publicInstnaceMethod();
+        <span class="comment">// object.privateInstnaceMethod();</span>
+        Clazz.publicStaticMethod();
+        <span class="comment">// Clazz.privateStaticMethod();</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los métodos pueden generar nueva información (retorno) y recibir información (parámetros)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Argumentos</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sobrecarga</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Retorno</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_method</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="type">class</span> <span class="class">X</span> {
+}
+
+<span class="type">class</span> <span class="class">Clazz</span> {
+
+    <span class="directive">private</span> <span class="type">int</span> primitive;
+    <span class="directive">private</span> <span class="type">int</span><span class="type">[]</span> primitiveArray;
+    <span class="directive">private</span> X object;
+    <span class="directive">private</span> X<span class="type">[]</span> objectArray;
+
+    <span class="directive">public</span> <span class="type">void</span> methodWithoutArguments() {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span> primitive, <span class="type">int</span><span class="type">[]</span> primitiveArray, X object, X<span class="type">[]</span> objectArray) {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span> primitive, <span class="type">int</span><span class="type">[]</span> primitiveArray, X object) {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span><span class="type">[]</span> primitiveArray, X object, X<span class="type">[]</span> objectArray, <span class="type">int</span> primitive) {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">int</span> methodReturPrimitive() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="integer">0</span>;
+    }
+
+    <span class="directive">public</span> <span class="type">int</span><span class="type">[]</span> methodReturPrimitiveArray() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {};
+    }
+
+    <span class="directive">public</span> X methodReturObject() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> X();
+    }
+
+    <span class="directive">public</span> X<span class="type">[]</span> methodReturObjectArray() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> X<span class="type">[]</span> {};
+    }
+
+}
+
+<span class="type">class</span> <span class="class">Client</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        Clazz object = <span class="keyword">new</span> Clazz();
+        object.methodWithoutArguments();
+        object.methodWitArguments(<span class="integer">0</span>, <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X(), <span class="keyword">new</span> X<span class="type">[]</span> {});
+        object.methodWitArguments(<span class="integer">0</span>, <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X());
+        object.methodWitArguments(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X(), <span class="keyword">new</span> X<span class="type">[]</span> {}, <span class="integer">0</span>);
+        X x = object.methodReturObject();
+        X<span class="type">[]</span> xs = object.methodReturObjectArray();
+        <span class="type">int</span> primitive = object.methodReturPrimitive();
+        <span class="type">int</span><span class="type">[]</span> primitiveArray = object.methodReturPrimitiveArray();
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los enumerados son clases que enumeran la existencia de todos sus objetos impidiendo la creación de posteriores instanciaciones</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor privado</p>
+</li>
+<li>
+<p>Disfruta de métodos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>values()</em>, método estáticco que retorna un <em>array</em> con todos los objetos enumerados según su enumeración</p>
+</li>
+<li>
+<p><em>ordinal()</em>, método de instancia que retorna la posicion (0, 1, &#8230;&#8203;) dentro de la enumeración</p>
+</li>
+<li>
+<p><em>name()</em>, método de instancia que retorna un String con el identificador del enumerado</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_enum.a_enum</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="type">enum</span> Enun {
+    OBJECT_1(<span class="integer">1</span>),
+    OBJECT_2(<span class="integer">2</span>),
+    OBJECT_3(<span class="integer">3</span>);
+
+    <span class="directive">private</span> <span class="type">int</span> atributte;
+
+    <span class="directive">private</span> Enun(<span class="type">int</span> value){
+        <span class="local-variable">this</span>.atributte = value;
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> method() {
+        <span class="keyword">new</span> Console().writeln(<span class="local-variable">this</span>.atributte);
+    }
+    
+}
+
+<span class="type">class</span> <span class="class">EnunClient</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        Console console = <span class="keyword">new</span> Console();
+        Enun.OBJECT_1.method();
+        <span class="keyword">for</span>(Enun object : Enun.values()){
+            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">name: </span><span class="delimiter">&quot;</span></span> + object.name());
+            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">ordinal: </span><span class="delimiter">&quot;</span></span> + object.ordinal());
+            object.method();
+        }
+        <span class="comment">// Enun object = new Enun(0); ERROR</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cada enumerado sería un objeto de la clase público y estático</p>
+</li>
+<li>
+<p>las funciones <em>values</em>, <em>ordinal</em> y <em>name</em> se generan siempre igual</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_enum.a_clazz</span>;
+
+<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
+
+<span class="type">class</span> <span class="class">Enun</span> {
+    <span class="directive">public</span> <span class="directive">static</span> Enun OBJECT_1 = <span class="keyword">new</span> Enun(<span class="integer">1</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_1</span><span class="delimiter">&quot;</span></span>);
+    <span class="directive">public</span> <span class="directive">static</span> Enun OBJECT_2 = <span class="keyword">new</span> Enun(<span class="integer">2</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_2</span><span class="delimiter">&quot;</span></span>);
+    <span class="directive">public</span> <span class="directive">static</span> Enun OBJECT_3 = <span class="keyword">new</span> Enun(<span class="integer">3</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_3</span><span class="delimiter">&quot;</span></span>);
+    <span class="directive">private</span> <span class="directive">static</span> Enun<span class="type">[]</span> VALUES = <span class="keyword">new</span> Enun<span class="type">[]</span>{ Enun.OBJECT_1, Enun.OBJECT_2, Enun.OBJECT_3 };
+
+    <span class="directive">private</span> <span class="type">int</span> atributte;
+    <span class="directive">private</span> <span class="predefined-type">String</span> name;
+
+    <span class="directive">private</span> Enun(<span class="type">int</span> value, <span class="predefined-type">String</span> name){
+        <span class="local-variable">this</span>.atributte = value;
+        <span class="local-variable">this</span>.name = name;
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> method() {
+        <span class="keyword">new</span> Console().writeln(<span class="local-variable">this</span>.atributte);
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> name() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.name;
+    }
+
+    <span class="directive">public</span> <span class="type">int</span> ordinal(){
+        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="integer">0</span>; i&lt; Enun.VALUES.length; i++){
+            <span class="keyword">if</span> (Enun.VALUES[i] == <span class="local-variable">this</span>){
+                <span class="keyword">return</span> i;
+            }
+        }
+        <span class="keyword">return</span> -<span class="integer">1</span>;
+    }
+
+    <span class="directive">public</span> <span class="directive">static</span> Enun<span class="type">[]</span> values() {
+        <span class="keyword">return</span> Enun.VALUES;
+    }
+}
+
+<span class="type">class</span> <span class="class">ClassClient</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        Console console = <span class="keyword">new</span> Console();
+        Enun.OBJECT_1.method();
+        <span class="keyword">for</span>(Enun object : Enun.values()){
+            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">name: </span><span class="delimiter">&quot;</span></span> + object.name());
+            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">ordinal: </span><span class="delimiter">&quot;</span></span> + object.ordinal());
+            object.method();
+        }
+        <span class="comment">// Enun object = new Enun(0); ERROR</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/managers/services/v0_0"><em>servicesContract</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>ticTacToe.models.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-general/0-domains/blob/master/games/ticTacToe/1-domain/README.md">domain</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-0-general/0-domains/blob/master/games/ticTacToe/4-programming/1-basic/README.md">requirements</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/domainModel/basic/README.md">design</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla"><em>src</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
