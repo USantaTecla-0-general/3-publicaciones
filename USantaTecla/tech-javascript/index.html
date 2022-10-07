@@ -491,6 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#función-contructora-array">Función contructora <em>Array</em></a></li>
 <li><a href="#función-constructora-function">Función constructora <em>Function</em></a></li>
 <li><a href="#clases">Clases</a></li>
+<li><a href="#this"><em>this</em></a></li>
 <li><a href="#herencia">Herencia</a></li>
 <li><a href="#símbolos">Símbolos</a></li>
 <li><a href="#iteradores">Iteradores</a></li>
@@ -10288,6 +10289,476 @@ object.publicInstanceMethod(); <span class="comment">// privateAttributeX: 3 - p
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="this"><em>this</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 38.8349%;">
+<col style="width: 36.8932%;">
+<col style="width: 24.2719%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El valor de <strong class="blue"><em>this</em></strong> es una <strong class="blue">referencia constante con la direccción a un objeto</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El proceso donde this toma un valor, se le conoce como enlazamiento (<em>binding</em>), <strong class="blue">enlace</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ese objeto se determina <strong>dependiendo del contexto donde se esta ejecutando el código</strong> tomando en cuenta como condiciones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el lugar <strong>donde es creada</strong> la función: dentro de una clase, un objeto, global, &#8230;&#8203;</p>
+</li>
+<li>
+<p>las <strong>modificaciones</strong> que haya sufrido la función.</p>
+</li>
+<li>
+<p>el lugar <strong>donde es invocada</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Tipos de enlace de mayor a menor prioridad</strong> en el proceso de enlace para la resolución del valor de <em>this</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Enlace léxico</strong> (<em class="blue">Lexical Binding</em>) para las <strong>funciones de flecha</strong></p>
+</li>
+<li>
+<p><strong class="blue">Enlace de instanciación</strong> (<em class="blue">New Binding</em>) para las <strong>funciones constructoras</strong></p>
+</li>
+<li>
+<p><strong class="blue">Enlace explícito</strong> (<em class="blue">Explicit Binding</em>), para la <strong>invocación indirecta</strong> con <em>call</em>, <em>apply</em> o <em>bind</em></p>
+</li>
+<li>
+<p><strong class="blue">Enlace implícito</strong> (<em class="blue">Implicit Binding</em>), para la <strong>invocación de métodos</strong>, paso de mensajes a objetos</p>
+</li>
+<li>
+<p><strong class="blue">Enlace por defecto</strong> (<em class="blue">Default Binding</em>), para la <strong>invocación de funciones</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se <strong class="blue">comporta de forma diferente dependiendo del modo de ejecución</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Modo Estricto</strong> (<em class="green">strict mode</em>),</p>
+<div class="ulist">
+<ul>
+<li>
+<p>por <strong>defecto en <em>node.js</em></strong> y, en otro caso,</p>
+</li>
+<li>
+<p><strong>configurable con la cadena <em>"use strict"</em> al prinicipio</strong> del fichero de código</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="red">Modo Descuidado</strong> (<em class="red">sloppy mode</em>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="enlace-por-defecto">Enlace por Defecto</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Resuelto en la invocación a funciones "libres", no métodos, donde <em>this</em> es <em>undefined</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Es una función, no existe ningún objeto que le de ningún contexto</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="string"><span class="delimiter">&quot;</span><span class="content">use stric</span><span class="delimiter">&quot;</span></span>
+
+const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">zunction</span>(parameter){
+    console.writeln(<span class="error">`</span>parameter: <span class="predefined">$</span>{parameter}<span class="error">`</span>);
+    <span class="comment">// console.writeln(this); // ERROR</span>
+}
+
+zunction(<span class="error">`</span>lo que sea<span class="error">`</span>); <span class="comment">// parameter: lo que sea</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="enlace-implícito">Enlace Implícito</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Resuelto en el paso de mensajes a objetos, invocación de métodos sobre objetos, donde <em>this</em> es la dirección al objeto que recibe el mensaje correspondiente al método que se esté invocando</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(parameter){
+  <span class="local-variable">this</span>.attribute = parameter;
+
+  <span class="local-variable">this</span>.<span class="function">method</span> = <span class="keyword">function</span>() {
+      console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+  }
+
+}
+
+let object = <span class="keyword">new</span> Clazz(<span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span>);
+object.method(); <span class="comment">// this.attribute: nada</span>
+<span class="keyword">new</span> Clazz(<span class="error">`</span>lo que sea<span class="error">`</span>).method(); <span class="comment">// this.attribute: lo que sea</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(parameter){
+  <span class="local-variable">this</span>.attribute = parameter;
+
+  <span class="local-variable">this</span>.method = () =&gt; {
+      console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+  }
+
+}
+
+let object = <span class="keyword">new</span> Clazz(<span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span>);
+object.method(); <span class="comment">// this.attribute: nada</span>
+<span class="keyword">new</span> Clazz(<span class="error">`</span>lo que sea<span class="error">`</span>).method(); <span class="comment">// this.attribute: lo que sea</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Clazz{
+
+  constructor(parameter){
+    <span class="local-variable">this</span>.attribute = parameter;
+  }
+
+  method() {
+      console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+  }
+
+}
+
+let object = <span class="keyword">new</span> Clazz(<span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span>);
+object.method(); <span class="comment">// this.attribute: nada</span>
+<span class="keyword">new</span> Clazz(<span class="error">`</span>lo que sea<span class="error">`</span>).method(); <span class="comment">// this.attribute: lo que sea</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="enlace-explícito">Enlace Explícito</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Resuelto en la invocación indirecta mediante los métodos <em>call, apply, bind</em>, &#8230;&#8203; de todo objeto/función, donde <em>this</em> tomará el valor del argumento suministrado</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">zunction</span>(value){
+  console.write(<span class="error">`</span>value: <span class="predefined">$</span>{value}. <span class="error">`</span>);
+  console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+}
+
+let object1 = {
+  <span class="key">attribute</span> : <span class="error">`</span>lo que sea<span class="error">`</span>
+};
+
+zunction.call(object1, <span class="error">`</span>algo<span class="error">`</span>); <span class="comment">// value: algo. this.attribute: lo que sea</span>
+zunction.apply(object1, [<span class="error">`</span>algo<span class="error">`</span>]); <span class="comment">// value: algo. this.attribute: lo que sea</span>
+let bindedZunction = zunction.bind(object1);
+bindedZunction(<span class="error">`</span>algo<span class="error">`</span>); <span class="comment">// value: algo. this.attribute: lo que sea</span>
+
+let object2 = {
+  <span class="key">attribute</span> : <span class="error">`</span>nada<span class="error">`</span>
+};
+
+zunction.call(object2, <span class="error">`</span>algo<span class="error">`</span>); <span class="comment">// value: algo. this.attribute: nada</span>
+zunction.apply(object2, [<span class="error">`</span>algo<span class="error">`</span>]); <span class="comment">// value: algo. this.attribute: nada</span>
+bindedZunction = zunction.bind(object2);
+bindedZunction(<span class="error">`</span>algo<span class="error">`</span>); <span class="comment">// value: algo. this.attribute: nada</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">highOrderFunction</span>(zunction){
+  <span class="keyword">for</span>(let value of [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>]){
+    zunction(value);
+  }
+}
+
+<span class="reserved">class</span> Clazz {
+
+  <span class="error">#</span>attribute;
+
+  constructor(value){
+    <span class="local-variable">this</span>.<span class="error">#</span>attribute = value;
+  }
+
+  method(value){
+    console.writeln(<span class="local-variable">this</span>.<span class="error">#</span>attribute);
+    console.writeln(value);
+  }
+
+  goodMethod() {
+    highOrderFunction(<span class="local-variable">this</span>.method.bind(<span class="local-variable">this</span>));
+  }
+
+  badMethod(){
+    <span class="comment">// highOrderFunction(this.method) // ERROR undefined</span>
+    <span class="comment">// highOrderFunction(X.method) // ERROR undefined</span>
+  }
+
+}
+
+let object = <span class="keyword">new</span> Clazz(<span class="error">`</span>lo que sea<span class="error">`</span>);
+object.goodMethod();
+object.badMethod();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="enlace-con-new">Enlace con <em>new</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Resuelto en la creación de objetos mediante funciones constructoras, donde <em>this</em> es la dirección al objeto creado por el operador <em>new</em> para que la función constructora inicialice el objeto con las propiedades que considere oportuna</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+let object = <span class="keyword">new</span> <span class="keyword">function</span>(value){
+  <span class="local-variable">this</span>.attribute = value;
+}(<span class="error">`</span>lo que sea<span class="error">`</span>);
+console.writeln(<span class="error">`</span>object.attribute: <span class="predefined">$</span>{object.attribute}<span class="error">`</span>); <span class="comment">// object.attribute: lo que sea</span>
+
+<span class="keyword">function</span> <span class="function">Clazz</span>(value){
+  <span class="local-variable">this</span>.attribute = value;
+}
+console.writeln(<span class="error">`</span>object.attribute: <span class="predefined">$</span>{<span class="keyword">new</span> Clazz(<span class="error">`</span>nada<span class="error">`</span>).attribute}<span class="error">`</span>); <span class="comment">// object.attribute: nada</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="enlace-léxico">Enlace léxico</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Resuelto en la invocación de funciones flecha, donde <em>this</em> es la dirección que tenga en el contexto que encierra la definición de la función flecha</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>() {
+  <span class="local-variable">this</span>.attribute = <span class="error">`</span>lo que sea<span class="error">`</span>;
+  <span class="local-variable">this</span>.<span class="function">set</span> = <span class="keyword">function</span>(object){
+    object.<span class="function">method</span> = <span class="keyword">function</span>(){
+      console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+    }
+  }
+}
+
+let setterObject = <span class="keyword">new</span> Clazz();
+let settedObject = {};
+setterObject.set(settedObject);
+settedObject.method(); <span class="comment">// this.attribute: undefined</span>
+settedObject.attribute = <span class="error">`</span>nada<span class="error">`</span>;
+settedObject.method(); <span class="comment">// this.attribute: nada</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>() {
+  <span class="local-variable">this</span>.attribute = <span class="error">`</span>lo que sea<span class="error">`</span>;
+  <span class="local-variable">this</span>.<span class="function">set</span> = <span class="keyword">function</span>(object){
+    let that = <span class="local-variable">this</span>;
+    object.<span class="function">method</span> = <span class="keyword">function</span>(){
+      console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{that.attribute}<span class="error">`</span>);
+    }
+  }
+}
+
+let setterObject = <span class="keyword">new</span> Clazz();
+let settedObject = {};
+setterObject.set(settedObject);
+settedObject.method(); <span class="comment">// this.attribute: lo que sea</span>
+settedObject.attribute = <span class="error">`</span>nada<span class="error">`</span>;
+settedObject.method(); <span class="comment">// this.attribute: lo que sea</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">Clazz</span>() {
+  <span class="local-variable">this</span>.attribute = <span class="error">`</span>lo que sea<span class="error">`</span>;
+  <span class="local-variable">this</span>.<span class="function">set</span> = <span class="keyword">function</span>(object){
+    object.method = () =&gt; {
+      console.writeln(<span class="error">`</span><span class="local-variable">this</span>.attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+    }
+  }
+}
+
+let setterObject = <span class="keyword">new</span> Clazz();
+let settedObject = {};
+setterObject.set(settedObject);
+settedObject.method(); <span class="comment">// this.attribute: lo que sea</span>
+settedObject.attribute = <span class="error">`</span>nada<span class="error">`</span>;
+settedObject.method(); <span class="comment">// this.attribute: lo que sea</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="herencia">Herencia</h3>
