@@ -10177,14 +10177,22 @@ console.writeln(<span class="error">`</span>Max: <span class="predefined">$</spa
 <col style="width: 35%;">
 <col style="width: 65%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Definición de clases</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Notación sintáctica "orientada a objetos"</strong> más compacta y legible que su homologa la <strong class="red">función constructora "orientada a procesos"</strong></p>
+<p><strong class="blue">Notación sintáctica "orientada a clases"</strong> más compacta y legible que su homologa la <strong class="red">función constructora "orientada a procesos"</strong>, pero internamente el motor construye los <strong class="blue">prototipos correspondientes</strong></p>
 <div class="ulist">
 <ul>
+<li>
+<p><strong class="green"><em>strict mode</em></strong></p>
+</li>
 <li>
 <p><strong class="red">No sufren hoisting</strong></p>
 </li>
@@ -10230,35 +10238,46 @@ const console = <span class="keyword">new</span> Console();
 
 <span class="reserved">class</span> Clazz {
 
-    <span class="error">#</span>privateAttributeX;
-    <span class="error">#</span>privateAttributeY;
-    <span class="reserved">static</span> <span class="error">#</span>privateClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
+    publicAttributeX
+    publicAttributeY
+    <span class="error">#</span>privateAttribute
 
-    constructor(property) {
-        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeX = property;
-        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeY = <span class="integer">0</span>;
-    }
-
-    <span class="error">#</span>privateInstanceMethod() {
-        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeX++;
-        <span class="local-variable">this</span>.<span class="error">#</span>privateAttributeY++;
+    constructor(parameter) {
+        <span class="local-variable">this</span>.publicAttributeX = parameter;
+        <span class="local-variable">this</span>.publicAttributeY = <span class="integer">0</span>;
+        <span class="local-variable">this</span>.<span class="error">#</span>privateAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>;
     }
 
     publicInstanceMethod() {
         <span class="local-variable">this</span>.<span class="error">#</span>privateInstanceMethod();
-        console.writeln(<span class="error">`</span>privateAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>privateAttributeX} - privateAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>privateAttributeY}<span class="error">`</span>);
-        console.writeln(<span class="error">`</span>privateClazzAttribute: <span class="predefined">$</span>{Clazz.<span class="error">#</span>privateClazzAttribute}<span class="error">`</span>);
+        console.writeln(<span class="error">`</span>publicAttributeX: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeX} - <span class="error">#</span>publicAttributeY: <span class="predefined">$</span>{<span class="local-variable">this</span>.publicAttributeY}<span class="error">`</span>);
+        console.writeln(<span class="error">`</span>publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
     }
 
-    <span class="reserved">static</span> publicClazzMethod(value){
+    <span class="error">#</span>privateInstanceMethod() {
+        <span class="local-variable">this</span>.publicAttributeX++;
+        <span class="local-variable">this</span>.publicAttributeY++;
+    }
+
+    <span class="reserved">static</span> publicClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">global</span><span class="delimiter">&quot;</span></span>;
+    <span class="reserved">static</span> <span class="function">publicClazzMethod</span> = <span class="keyword">function</span> (value) {
+        Clazz.publicClazzAttribute = value;
+        Clazz.<span class="error">#</span>privateClazzMethod(<span class="integer">0</span>);
+    }
+    <span class="reserved">static</span> <span class="error">#</span>privateClazzAttribute = <span class="string"><span class="delimiter">&quot;</span><span class="content">particular</span><span class="delimiter">&quot;</span></span>;
+    <span class="reserved">static</span> <span class="error">#</span><span class="function">privateClazzMethod</span> = <span class="keyword">function</span> (value) {
         Clazz.<span class="error">#</span>privateClazzAttribute = value;
     }
-};
+}
 
 const object = <span class="keyword">new</span> Clazz(<span class="integer">1</span>);
-object.publicInstanceMethod(); <span class="comment">// privateAttributeX: 2 - privateAttributeY: 1 / privateClazzAttribute: global</span>
+object.publicInstanceMethod();
+object.publicAttributeX = <span class="integer">666</span>;
+console.writeln(<span class="error">`</span>object.publicAttributeX: <span class="predefined">$</span>{object.publicAttributeX}<span class="error">`</span>);
+console.writeln(<span class="error">`</span>Clazz.publicClazzAttribute: <span class="predefined">$</span>{Clazz.publicClazzAttribute}<span class="error">`</span>);
+object.publicInstanceMethod();
 Clazz.publicClazzMethod(<span class="string"><span class="delimiter">&quot;</span><span class="content">nuevo</span><span class="delimiter">&quot;</span></span>);
-object.publicInstanceMethod(); <span class="comment">// privateAttributeX: 3 - privateAttributeY: 2 / privateClazzAttribute: nuevo</span></code></pre>
+object.publicInstanceMethod();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -10284,8 +10303,146 @@ object.publicInstanceMethod(); <span class="comment">// privateAttributeX: 3 - p
 </li>
 </ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-general/0-domains/tree/master/games/connect4/4-requirements/1-basic">connect4</a> : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/game/connect4/models/app.js"><em>solución</em></a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Accesores y Configuradores</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Conversión implicita en la invocación a un método función como si fuera una propiedad de datos</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>get</em></strong>, antecede al nombre del método función y su invocación no conlleva paréntesis, como en el acceso a las propiedades de datos</p>
+</li>
+<li>
+<p><strong class="blue"><em>set</em></strong>, antecede al nombre del método función y su invocacion será por asignación, como en la asignación a las propiedades de datos</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Person {
+
+  <span class="error">#</span>name;
+  <span class="error">#</span>surname;
+
+    constructor(string){
+      <span class="local-variable">this</span>.completeName = string;
+    }
+
+    get completeName() {
+      <span class="keyword">return</span> <span class="error">`</span><span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>name} <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>surname}<span class="error">`</span>
+    }
+
+    set completeName(string) {
+      const words = string.split(<span class="error">`</span> <span class="error">`</span>);
+      <span class="local-variable">this</span>.<span class="error">#</span>name = words[<span class="integer">0</span>] ?? <span class="error">`</span> <span class="error">`</span>;
+      <span class="local-variable">this</span>.<span class="error">#</span>surname = words[<span class="integer">1</span>] ?? <span class="error">`</span> <span class="error">`</span>;
+    }
+
+  }
+
+  let javascript = <span class="keyword">new</span> Person(<span class="error">`</span>Eich Brendan<span class="error">`</span>)
+  console.writeln(javascript.completeName);
+  let java = <span class="keyword">new</span> Person(<span class="error">`</span><span class="error">`</span>);
+  java.completeName = <span class="error">`</span>James Gosling<span class="error">`</span>;
+  console.writeln(java.completeName);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Expresiones de clases</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">La implantación interna de las clases son funciones constructoras con prototipos, &#8230;&#8203;</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">definción de una clase</strong> implica la <strong class="blue">definición de una variable</strong> asignada con <strong class="blue">la dirección de la función construtora correspondiente</strong></p>
+</li>
+<li>
+<p>Un <strong class="blue">expresión de clase</strong> devuelve <strong class="blue">la dirección de la función constructora correspondiente</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Clazz {
+
+    constructor(string){
+        <span class="local-variable">this</span>.attribute = string;
+    }
+    method() {
+        console.writeln(<span class="local-variable">this</span>.attribute);
+    }
+}
+
+let object = <span class="keyword">new</span> Clazz(<span class="error">`</span>Declaracion<span class="error">`</span>);
+object.method();
+
+let clazz = <span class="reserved">class</span> {
+
+    constructor(string){
+        <span class="local-variable">this</span>.attribute = string;
+    }
+    method() {
+        console.writeln(<span class="local-variable">this</span>.attribute);
+    }
+}
+
+object = <span class="keyword">new</span> clazz(<span class="error">`</span>Expresion<span class="error">`</span>);
+object.method();
+<span class="keyword">new</span> clazz(<span class="error">`</span>Expresion<span class="error">`</span>).method();</code></pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -10764,8 +10921,8 @@ settedObject.method(); <span class="comment">// this.attribute: lo que sea</span
 <h3 id="herencia">Herencia</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 10%;">
-<col style="width: 90%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <tbody>
 <tr>
@@ -10782,101 +10939,57 @@ settedObject.method(); <span class="comment">// this.attribute: lo que sea</span
 
 const console = <span class="keyword">new</span> Console();
 
-<span class="keyword">function</span> <span class="function">Person</span>(first, last, age, gender, interests) {
-  <span class="local-variable">this</span>.name = {
-    first,
-    last
-  };
-  <span class="local-variable">this</span>.age = age;
-  <span class="local-variable">this</span>.gender = gender;
-  <span class="local-variable">this</span>.interests = interests;
-};
-
-Person.prototype.<span class="function">greeting</span> = <span class="keyword">function</span>() {
-  console.writeln(<span class="error">`</span>Hi! I<span class="string"><span class="delimiter">'</span><span class="content">m ${this.name.first}.`);
-};
-
-Person.prototype.bio = function() {
-  let string = `${this.name.first} ${this.name.last} is ${this.age} years old. `;
-  let pronoun = </span><span class="delimiter">'</span></span>They like <span class="string"><span class="delimiter">'</span><span class="content">;
-  if(this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
-    pronoun = </span><span class="delimiter">'</span></span>He likes <span class="string"><span class="delimiter">'</span><span class="content">;
-  } else if(this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
-    pronoun = </span><span class="delimiter">'</span></span>She likes <span class="string"><span class="delimiter">'</span><span class="content">;
-  }
-  string += pronoun;
-
-  if(this.interests.length === 1) {
-    string += this.interests[0] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
-  } else if(this.interests.length === 2) {
-    string += this.interests[0] + </span><span class="delimiter">'</span></span> and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[1] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
-  } else {
-    for(let i = 0; i &lt; this.interests.length; i++) {
-      if(i === this.interests.length - 1) {
-        string += </span><span class="delimiter">'</span></span>and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[i] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
-      } else {
-        string += this.interests[i] + </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">;
-      }
-    }
-  }
-  console.writeln(string);
-};
-
-Person.prototype.farewell = function() {
-  console.writeln(this.name.first + </span><span class="delimiter">'</span></span> has left the building. Bye <span class="keyword">for</span> now!<span class="string"><span class="delimiter">'</span><span class="content">);
+<span class="keyword">function</span> <span class="function">Base</span>(parameter) {
+    <span class="local-variable">this</span>.attribute = parameter;
 }
 
-let person = new Person(</span><span class="delimiter">'</span></span>Tammi<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Smith<span class="string"><span class="delimiter">'</span><span class="content">, 17, </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>music<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>skiing<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>kickboxing<span class="string"><span class="delimiter">'</span><span class="content">]);
-person.greeting();
-person.bio();
-person.farewell();
-console.writeln(typeof person);
-console.writeln(person instanceof Person);
-
-function Teacher(first, last, age, gender, interests, subject) {
-  Person.call(this, first, last, age, gender, interests);
-  this.subject = subject;
-}
-
-Teacher.prototype = Object.create(Person.prototype);
-Teacher.prototype.constructor = Teacher;
-
-Teacher.prototype.greeting = function() {
-  let prefix = </span><span class="delimiter">'</span></span>Mx.<span class="string"><span class="delimiter">'</span><span class="content">;
-  if(this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
-    prefix = </span><span class="delimiter">'</span></span>Mr.<span class="string"><span class="delimiter">'</span><span class="content">;
-  } else if(this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
-    prefix = </span><span class="delimiter">'</span></span>Mrs.<span class="string"><span class="delimiter">'</span><span class="content">;
-  }
-  console.writeln(`Hello. My name is ${prefix} ${this.name.last}, and I teach ${this.subject}.`);
+Base.prototype.<span class="function">methodA</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
 };
 
-let teacher = new Teacher(</span><span class="delimiter">'</span></span>Dave<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Griffiths<span class="string"><span class="delimiter">'</span><span class="content">, 31, </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>football<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>cookery<span class="string"><span class="delimiter">'</span><span class="content">], </span><span class="delimiter">'</span></span>mathematics<span class="string"><span class="delimiter">'</span><span class="content">);
-teacher.greeting();
-teacher.bio();
-teacher.farewell();
-console.writeln(typeof teacher);
-console.writeln(teacher instanceof Person);
-console.writeln(teacher instanceof Teacher);
-
-function Student(first, last, age, gender, interests) {
-  Person.call(this, first, last, age, gender, interests);
-}
-
-Student.prototype = Object.create(Person.prototype);
-Student.prototype.constructor = Student;
-
-Student.prototype.greeting = function() {
-  console.writeln(`Yo! I</span><span class="delimiter">'</span></span>m <span class="predefined">$</span>{<span class="local-variable">this</span>.name.first}.<span class="error">`</span>);
+Base.prototype.<span class="function">methodB</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
 };
 
-let student = <span class="keyword">new</span> Student(<span class="string"><span class="delimiter">'</span><span class="content">Liz</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Sheppard</span><span class="delimiter">'</span></span>, <span class="integer">17</span>, <span class="string"><span class="delimiter">'</span><span class="content">female</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ninjitsu</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">air cadets</span><span class="delimiter">'</span></span>]);
-student.greeting();
-student.bio();
-student.farewell();
-console.writeln(<span class="keyword">typeof</span> student);
-console.writeln(student <span class="keyword">instanceof</span> Person);
-console.writeln(student <span class="keyword">instanceof</span> Student);</code></pre>
+Base.prototype.<span class="function">methodC</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.attribute}<span class="error">`</span>);
+};
+
+<span class="keyword">function</span> <span class="function">Derived</span>(parameter, other) {
+    Base.call(<span class="local-variable">this</span>, parameter);
+    <span class="local-variable">this</span>.other = other;
+}
+
+Derived.prototype = Object.create(Base.prototype);
+Derived.prototype.constructor = Derived;
+
+Derived.prototype.<span class="function">methodB</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Derived - B: other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+    Base.prototype.methodB.call(<span class="local-variable">this</span>);
+};
+
+Derived.prototype.<span class="function">methodC</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Derived - C: other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+};
+
+Derived.prototype.<span class="function">methodD</span> = <span class="keyword">function</span> () {
+    console.writeln(<span class="error">`</span>Derived - D: other: <span class="predefined">$</span>{<span class="local-variable">this</span>.other}<span class="error">`</span>);
+};
+
+let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+console.writeln(object <span class="keyword">instanceof</span> Base);
+console.writeln(object <span class="keyword">instanceof</span> Derived);
+
+object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+object.methodD();
+console.writeln(object <span class="keyword">instanceof</span> Base);
+console.writeln(object <span class="keyword">instanceof</span> Derived);</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -10884,22 +10997,15 @@ console.writeln(student <span class="keyword">instanceof</span> Student);</code>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 10%;">
-<col style="width: 90%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Clases</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Palabra reservada <strong>extends</strong></p>
-</li>
-</ul>
-</div>
+<p>Clousures</p>
 </li>
 </ul>
 </div></div></td>
@@ -10909,107 +11015,218 @@ console.writeln(student <span class="keyword">instanceof</span> Student);</code>
 
 const console = <span class="keyword">new</span> Console();
 
-<span class="reserved">class</span> Person {
+<span class="keyword">function</span> <span class="function">Base</span>(attribute) {
 
-  constructor(first, last, age, gender, interests) {
-    <span class="local-variable">this</span>.name = {
-      first,
-      last
+    let <span class="function">methodA</span> = <span class="keyword">function</span> () {
+        console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{attribute}<span class="error">`</span>);
     };
-    <span class="local-variable">this</span>.age = age;
-    <span class="local-variable">this</span>.gender = gender;
-    <span class="local-variable">this</span>.interests = interests;
-  }
 
-  <span class="function">greeting</span> = <span class="keyword">function</span> () {
-    console.writeln(<span class="error">`</span>Hi! I<span class="string"><span class="delimiter">'</span><span class="content">m ${this.name.first}.`);
-  }
+    let <span class="function">methodB</span> = <span class="keyword">function</span> () {
+        console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{attribute}<span class="error">`</span>);
+    };
 
-  bio = function () {
-    let string = `${this.name.first} ${this.name.last} is ${this.age} years old. `;
-    let pronoun = </span><span class="delimiter">'</span></span>They like <span class="string"><span class="delimiter">'</span><span class="content">;
-    if (this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
-      pronoun = </span><span class="delimiter">'</span></span>He likes <span class="string"><span class="delimiter">'</span><span class="content">;
-    } else if (this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
-      pronoun = </span><span class="delimiter">'</span></span>She likes <span class="string"><span class="delimiter">'</span><span class="content">;
+    let <span class="function">methodC</span> = <span class="keyword">function</span> () {
+        console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{attribute}<span class="error">`</span>);
+    };
+
+    <span class="keyword">return</span> {
+        methodA,
+        methodB,
+        methodC
     }
-    string += pronoun;
+}
 
-    if (this.interests.length === 1) {
-      string += this.interests[0] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
-    } else if (this.interests.length === 2) {
-      string += this.interests[0] + </span><span class="delimiter">'</span></span> and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[1] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
-    } else {
-      for (let i = 0; i &lt; this.interests.length; i++) {
-        if (i === this.interests.length - 1) {
-          string += </span><span class="delimiter">'</span></span>and <span class="string"><span class="delimiter">'</span><span class="content"> + this.interests[i] + </span><span class="delimiter">'</span></span>.<span class="string"><span class="delimiter">'</span><span class="content">;
-        } else {
-          string += this.interests[i] + </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">;
+<span class="keyword">function</span> <span class="function">Derived</span>(attribute, other) {
+    let returned = <span class="keyword">new</span> Base(attribute)
+
+    let <span class="function">methodB</span> = <span class="keyword">function</span> () {
+        console.writeln(<span class="error">`</span>Derived - B: other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+        returned.methodB.call(<span class="local-variable">this</span>);
+    };
+
+    let <span class="function">methodC</span> = <span class="keyword">function</span> () {
+        console.writeln(<span class="error">`</span>Derived - C: other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+    };
+
+    let <span class="function">methodD</span> = <span class="keyword">function</span> () {
+        console.writeln(<span class="error">`</span>Derived - D: other: <span class="predefined">$</span>{other}<span class="error">`</span>);
+    };
+
+    <span class="keyword">return</span> {
+        ...returned,
+        ... {
+            methodB,
+            methodC,
+            methodD
         }
-      }
     }
-    console.writeln(string);
-  }
+}
 
-  farewell = function () {
-    console.writeln(this.name.first + </span><span class="delimiter">'</span></span> has left the building. Bye <span class="keyword">for</span> now!<span class="string"><span class="delimiter">'</span><span class="content">);
-  }
+let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+
+object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+object.methodD();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Factoria</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+let <span class="function">Base</span> = <span class="keyword">function</span> (parameter) {
+    let that = {
+        <span class="key">attribute</span>: parameter,
+    };
+
+    <span class="keyword">return</span> {
+        methodA() {
+            console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{that.attribute}<span class="error">`</span>);
+        },
+        methodB() {
+            console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{that.attribute}<span class="error">`</span>);
+        },
+        methodC() {
+            console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{that.attribute}<span class="error">`</span>);
+        }
+    };
 
 }
 
-let person = new Person(</span><span class="delimiter">'</span></span>Tammi<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Smith<span class="string"><span class="delimiter">'</span><span class="content">, 17, </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>music<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>skiing<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>kickboxing<span class="string"><span class="delimiter">'</span><span class="content">]);
-person.greeting();
-person.bio();
-person.farewell();
-console.writeln(typeof person);
-console.writeln(person instanceof Person);
+let <span class="function">Derived</span> = <span class="keyword">function</span> (parameter, other) {
+    let that = {
+            <span class="key">other</span>: other
+        };
 
-class Teacher extends Person {
+    <span class="keyword">return</span> Object.assign({},
+        Base(parameter),
+        {
+        methodB() {
+            console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
+        },
+        methodC() {
+            console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
+        },
+        methodD() {
+            console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
+        }
+    });
+}
 
-  constructor(first, last, age, gender, interests, subject) {
-    super(first, last, age, gender, interests);
-    this.subject = subject;
-  }
+let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
 
-  greeting = function () {
-    let prefix = </span><span class="delimiter">'</span></span>Mx.<span class="string"><span class="delimiter">'</span><span class="content">;
-    if (this.gender === </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Male<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>m<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>M<span class="string"><span class="delimiter">'</span><span class="content">) {
-      prefix = </span><span class="delimiter">'</span></span>Mr.<span class="string"><span class="delimiter">'</span><span class="content">;
-    } else if (this.gender === </span><span class="delimiter">'</span></span>female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>Female<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>f<span class="string"><span class="delimiter">'</span><span class="content"> || this.gender === </span><span class="delimiter">'</span></span>F<span class="string"><span class="delimiter">'</span><span class="content">) {
-      prefix = </span><span class="delimiter">'</span></span>Mrs.<span class="string"><span class="delimiter">'</span><span class="content">;
+object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+object.methodD();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Clases</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Base {
+
+    <span class="error">#</span>attribute
+
+    constructor(parameter) {
+        <span class="local-variable">this</span>.<span class="error">#</span>attribute = parameter;
     }
-    console.writeln(`Hello. My name is ${prefix} ${this.name.last}, and I teach ${this.subject}.`);
-  }
+
+    methodA() {
+        console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodB() {
+        console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodC() {
+        console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
 
 }
 
-let teacher = new Teacher(</span><span class="delimiter">'</span></span>Dave<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>Griffiths<span class="string"><span class="delimiter">'</span><span class="content">, 31, </span><span class="delimiter">'</span></span>male<span class="string"><span class="delimiter">'</span><span class="content">, [</span><span class="delimiter">'</span></span>football<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>cookery<span class="string"><span class="delimiter">'</span><span class="content">], </span><span class="delimiter">'</span></span>mathematics<span class="string"><span class="delimiter">'</span><span class="content">);
-teacher.greeting();
-teacher.bio();
-teacher.farewell();
-console.writeln(typeof teacher);
-console.writeln(teacher instanceof Person);
-console.writeln(teacher instanceof Teacher);
+<span class="reserved">class</span> Derived <span class="reserved">extends</span> Base {
 
-class Student extends Person {
+    <span class="error">#</span>attribute;
 
-  constructor(first, last, age, gender, interests) {
-    super(first, last, age, gender, interests);
-  }
+    constructor(parameter, other){
+        <span class="reserved">super</span>(parameter);
+        <span class="local-variable">this</span>.<span class="error">#</span>attribute = other;
+    }
 
-  greeting = function () {
-    console.writeln(`Yo! I</span><span class="delimiter">'</span></span>m <span class="predefined">$</span>{<span class="local-variable">this</span>.name.first}.<span class="error">`</span>);
-  }
+    methodB() {
+        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+        <span class="reserved">super</span>.methodB();
+        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
 
+    methodC() {
+        console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodD() {
+        console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
 }
 
-let student = <span class="keyword">new</span> Student(<span class="string"><span class="delimiter">'</span><span class="content">Liz</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">Sheppard</span><span class="delimiter">'</span></span>, <span class="integer">17</span>, <span class="string"><span class="delimiter">'</span><span class="content">female</span><span class="delimiter">'</span></span>, [<span class="string"><span class="delimiter">'</span><span class="content">ninjitsu</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">air cadets</span><span class="delimiter">'</span></span>]);
-student.greeting();
-student.bio();
-student.farewell();
-console.writeln(<span class="keyword">typeof</span> student);
-console.writeln(student <span class="keyword">instanceof</span> Person);
-console.writeln(student <span class="keyword">instanceof</span> Student);</code></pre>
+let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+
+object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+object.methodD();</code></pre>
 </div>
 </div></div></td>
 </tr>
