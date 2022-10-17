@@ -10921,15 +10921,158 @@ settedObject.method(); <span class="comment">// this.attribute: lo que sea</span
 <h3 id="herencia">Herencia</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con Clases</th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Función constructora</p>
+<p><strong class="blue"><em>extends</em></strong> es la palabra clave para que <strong>una clase se especialice a partir de la transminisión de propiedades públicas y privadas de la clase base</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La clase derivada puede <strong>añadir propiedades</strong>, atributos y métodos, pero no el constructor</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong>constructor</strong> de la clase derivada <strong>debe invocar como primera sentencia el constructor de la clase base</strong> para la inicialización de los sus atributos mediante:</p>
+</li>
+<li>
+<p><strong>super</strong> <strong>(</strong> <em>&lt;expresion&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;expresion&gt;</em> <strong class="red">}</strong> <strong>);</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La <strong>clase derivada puede redefinir los métodos transmitidos desde la clase padre</strong> definiendo un nuevo método con el mismo nombre</p>
+<div class="ulist">
+<ul>
+<li>
+<p>en cualquier caso, se puede invocar opcionalmente al método <strong>con el comportamiento de la clase padre</strong> mediante:</p>
+</li>
+<li>
+<p><strong>super.</strong> <em>&lt;identificador&gt;</em> <strong>(</strong> <em>&lt;expresion&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;expresion&gt;</em> <strong class="red">}</strong> <strong>)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Base {
+
+    <span class="error">#</span>attribute
+
+    constructor(parameter) {
+        <span class="local-variable">this</span>.<span class="error">#</span>attribute = parameter;
+    }
+
+    methodA() {
+        console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodB() {
+        console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodC() {
+        console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+}
+
+<span class="reserved">class</span> Derived <span class="reserved">extends</span> Base {
+
+    <span class="error">#</span>attribute;
+
+    constructor(parameter, other){
+        <span class="reserved">super</span>(parameter);
+        <span class="local-variable">this</span>.<span class="error">#</span>attribute = other;
+    }
+
+    methodB() {
+        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+        <span class="reserved">super</span>.methodB();
+        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodC() {
+        console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodD() {
+        console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+}
+
+let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+
+object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+object.methodD();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con Funciones Constructoras</th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong>función constructora derivada debe llamar explícitamente lo primero a la función constructora de la clase base</strong> enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos, para que inicialize con las propiedades heredadas</p>
+</li>
+<li>
+<p>El <strong>prototipo de la clase derivada se inicializa con una copia de todos los métodos del prototipo de la clase base</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>manteniendo el construtor de su prototipo a la funcion constructora especializada</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Posteriormente, podrá <strong>añadir propiedades</strong>, atributos y métodos, accediendo a todas sus las propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el caso de <strong>redefinición de métodos</strong>, para disfrutar del comportamiento de la calse base se debe <strong>invocar explícitamente a la propiedad función anulada de la clase</strong> base enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -10997,15 +11140,34 @@ console.writeln(object <span class="keyword">instanceof</span> Derived);</code><
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con <em>Clousures</em></th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Clousures</p>
+<p>La función de la clase derivada <strong>llama a la función de la clase base para obtener un objeto con la inicialización de todas las propiedades heredadas</strong>, atributos y métodos, suministrando los posibles argumentos</p>
+</li>
+<li>
+<p>La función de la clase derivada se especializa <strong>añadiendo las funciones deseadas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el caso de <strong>redefinición de métodos</strong>, para disfrutar del comportamiento de la calse base se debe <strong>invocar explícitamente a la propiedad función anulada de la clase</strong> base enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La función <strong>retorna con esparcimiento el objeto de la clase base junto con otro objeto conformado con los métodos públicos</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -11079,15 +11241,28 @@ object.methodD();</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con patrón Factoria</th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Factoria</p>
+<p>La función factoría de la clase dereivada retorna un objeto con la copia de todos las propiedades del objeto inicializado por la función factoria de la clase base junto con las propiedades añadidas en la clase derivada</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el caso de <strong>redefinición de métodos</strong>, para disfrutar del comportamiento de la calse base se debe <strong>invocar explícitamente a la propiedad función anulada de la clase</strong> base enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -11117,15 +11292,17 @@ let <span class="function">Base</span> = <span class="keyword">function</span> (
 }
 
 let <span class="function">Derived</span> = <span class="keyword">function</span> (parameter, other) {
+    let base = Base(parameter);
     let that = {
             <span class="key">other</span>: other
         };
 
     <span class="keyword">return</span> Object.assign({},
-        Base(parameter),
+        base,
         {
         methodB() {
             console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
+            base.methodB.call(<span class="local-variable">this</span>);
         },
         methodC() {
             console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
@@ -11134,87 +11311,6 @@ let <span class="function">Derived</span> = <span class="keyword">function</span
             console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
         }
     });
-}
-
-let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
-object.methodA();
-object.methodB();
-object.methodC();
-
-object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
-object.methodA();
-object.methodB();
-object.methodC();
-object.methodD();</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clases</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-
-<span class="reserved">class</span> Base {
-
-    <span class="error">#</span>attribute
-
-    constructor(parameter) {
-        <span class="local-variable">this</span>.<span class="error">#</span>attribute = parameter;
-    }
-
-    methodA() {
-        console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodB() {
-        console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodC() {
-        console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-}
-
-<span class="reserved">class</span> Derived <span class="reserved">extends</span> Base {
-
-    <span class="error">#</span>attribute;
-
-    constructor(parameter, other){
-        <span class="reserved">super</span>(parameter);
-        <span class="local-variable">this</span>.<span class="error">#</span>attribute = other;
-    }
-
-    methodB() {
-        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-        <span class="reserved">super</span>.methodB();
-        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodC() {
-        console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodD() {
-        console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
 }
 
 let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
