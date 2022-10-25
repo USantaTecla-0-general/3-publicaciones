@@ -2006,7 +2006,7 @@ cualquier sistema operativo</p>
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">cadena de caracteres con comillas dobles 'con comillas simples' dentro</span><span class="delimiter">&quot;</span></span>); <span class="comment">// cadena de caracteres con comillas dobles 'con comillas simples' dentro</span>
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">cadena de caracteres</span><span class="char">\n</span><span class="content">con salto de línea y </span><span class="char">\t</span><span class="content">tabulador</span><span class="delimiter">&quot;</span></span>); <span class="comment">// cadena de caracteres</span>
         <span class="comment">// con salto de línea y    tabulador</span>
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Qué </span><span class="char">\&quot;</span><span class="content">incomodo</span><span class="char">\&quot;</span><span class="content"> usar comillas con 'escape'!!!</span><span class="delimiter">&quot;</span></span>); <span class="comment">// Qué &quot;comodo&quot; usar comillas con normalidad sin 'escaparlas'!!!</span>
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Qué </span><span class="char">\&quot;</span><span class="content">incomodo</span><span class="char">\&quot;</span><span class="content"> usar comillas con 'quit'!!!</span><span class="delimiter">&quot;</span></span>); <span class="comment">// Qué &quot;comodo&quot; usar comillas con normalidad sin 'escaparlas'!!!</span>
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>); <span class="comment">//  </span>
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1</span>
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">123</span><span class="delimiter">&quot;</span></span>); <span class="comment">// 123</span>
@@ -5114,10 +5114,10 @@ cualquier sistema operativo</p>
     <span class="directive">public</span> <span class="type">void</span> publicInstnaceMethod() {
         Console console = <span class="keyword">new</span> Console();
         console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod.privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
         <span class="local-variable">this</span>.privateInstnaceMethod();
         Clazz.publicStaticMethod();
         Clazz.privateStaticMethod();
@@ -5126,10 +5126,10 @@ cualquier sistema operativo</p>
     <span class="directive">private</span> <span class="type">void</span> privateInstnaceMethod() {
         Console console = <span class="keyword">new</span> Console();
         console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod.privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
         Clazz.publicStaticMethod();
         Clazz.privateStaticMethod();
     }
@@ -5137,21 +5137,22 @@ cualquier sistema operativo</p>
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> publicStaticMethod() {
         Console console = <span class="keyword">new</span> Console();
         console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicStaticMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicStaticMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        <span class="comment">// console.writeln(&quot;publicStaticMethod.publicAtributte: &quot; + this.publicAtributte);</span>
-        <span class="comment">// console.writeln(&quot;publicStaticMethod.privateAtributte: &quot; + this.privateAtributte);</span>
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : publicAtributte: &quot; + this.publicAtributte);</span>
+        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : privateAtributte: &quot; + this.privateAtributte);</span>
         <span class="comment">// this.privateInstnaceMethod();</span>
+        <span class="comment">// Clazz.publicStaticMethod();</span>
         Clazz.privateStaticMethod();
     }
 
     <span class="directive">private</span> <span class="directive">static</span> <span class="type">void</span> privateStaticMethod() {
         Console console = <span class="keyword">new</span> Console();
         console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateStaticMethod.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateStaticMethod.PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        <span class="comment">// console.writeln(&quot;privateStaticMethod.publicAtributte: &quot; + this.publicAtributte);</span>
-        <span class="comment">// console.writeln(&quot;privateStaticMethod.privateAtributte: &quot; + this.privateAtributte);</span>
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
+        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : publicAtributte: &quot; + this.publicAtributte);</span>
+        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : privateAtributte: &quot; + this.privateAtributte);</span>
     }
     
 }
@@ -5491,7 +5492,56 @@ cualquier sistema operativo</p>
 <div class="sect1">
 <h2 id="programación-orientada-a-objetos">Programación Orientada a Objetos</h2>
 <div class="sectionbody">
-
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas">lists</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/lists.svg" alt="lists" width="665" height="1055">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers">dispenser</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/dispenser.svg" alt="dispenser" width="1653" height="930">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu">menus</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/menus.svg" alt="menus" width="1093" height="1324">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -5603,7 +5653,7 @@ cualquier sistema operativo</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-09-12 20:57:25 +0200
+Last updated 2022-10-16 16:35:28 +0200
 </div>
 </div>
 <script>
