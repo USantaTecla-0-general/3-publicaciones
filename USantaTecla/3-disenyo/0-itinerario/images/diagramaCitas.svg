@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2483px" preserveAspectRatio="none" style="width:1262px;height:2483px;background:#222222;" version="1.1" viewBox="0 0 1262 2483" width="1262px" zoomAndPan="magnify"><defs/><g><rect fill="#FFA500" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="605" y="479.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="605" x2="694" y1="509.1094" y2="509.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="616" y="500.0332">smell state</text><path d="M169.5,196 L169.5,813.0078 A0,0 0 0 0 169.5,813.0078 L569.5,813.0078 A0,0 0 0 0 569.5,813.0078 L569.5,508.5 L604.9,504.5 L569.5,500.5 L569.5,206 L559.5,196 L169.5,196 A0,0 0 0 0 169.5,196 " fill="#FFA500" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M559.5,196 L559.5,206 L569.5,206 L559.5,196 " fill="#FFA500" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="348" x="176.5" y="215.4951">"Si tienes una función o procedimiento con diez parámetros,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="204" x="176.5" y="231.8467">probablemente hayas olvidado uno"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="264" x="176.5" y="248.1982">-- Alan Perlis, MIT, catedrático, director ACM,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="176.5" y="264.5498">Premio Turing, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="180.5" y="280.9014"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="363" x="176.5" y="297.2529">“Si tienes muchos casos especiales, algo estás haciendo mal”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="377" x="176.5" y="313.6045">-- Craig Zerouni, miembro de BAFTA, ACM/SIGGRAPH, IEEE, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="180.5" y="329.9561"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="319" x="176.5" y="346.3076">"Está bien investigar y resolver misteriosos asesinatos,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="364" x="176.5" y="362.6592">pero no deberías necesitar hacerlo con el código. Simplemente</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="125" x="176.5" y="379.0107">deberías poder leerlo"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="352" x="176.5" y="395.3623">-- Steve McConnell, Rapid Development, Software Estimation</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="366" x="176.5" y="411.7139">y Code Complete, una de las tres personas más influyentes, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="180.5" y="428.0654"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="333" x="176.5" y="444.417">"Es raro que mantener el código de otro desarrollador sea</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="313" x="176.5" y="460.7686">como entrar en un edificio de gran diseño que admiras</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="327" x="176.5" y="477.1201">mientras paseas por él y planeas cómo añadirle un ala o</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="362" x="176.5" y="493.4717">algún elemento decorativo. Lo más frecuente es que sea como</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="334" x="176.5" y="509.8232">tirarse de cabeza a un gran montón de basura maloliente"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="82" x="176.5" y="526.1748">-- Bill Venners</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="180.5" y="542.5264"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="317" x="176.5" y="558.8779">"La mayoría del software actual es muy parecido a una</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="323" x="176.5" y="575.2295">pirámide egipcia, con millones de ladrillos puestos unos</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="329" x="176.5" y="591.5811">encima de otros sin una estructura integral, simplemente</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="308" x="176.5" y="607.9326">realizada a base de fuerza bruta y miles de esclavos"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="222" x="176.5" y="624.2842">-- Alan Kay, Xerox, Atari, ..., Smalltalk</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="180.5" y="640.6357"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="353" x="176.5" y="656.9873">"Se dice que las grandes disciplinas científicas son ejemplos</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="310" x="176.5" y="673.3389">de gigantes subidos a los hombros de otros gigantes.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="345" x="176.5" y="689.6904">También se dice que la industria del software es un ejemplo</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="349" x="176.5" y="706.042">de enanos subidos a los dedos de los pies de otros enanos"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="279" x="176.5" y="722.3936">-- Alan Cooper, Microsoft, VisualBasic, Ruby, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="180.5" y="738.7451"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="371" x="176.5" y="755.0967">"La gestión manual de bloques de memoria en C es como hacer</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="360" x="176.5" y="771.4482">malabarismos con pastillas de jabón en la ducha de la prisión:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="244" x="176.5" y="787.7998">todo diversión hasta que cometes un fallo"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="254" x="176.5" y="804.1514">-- Un usuario anónimo de un foro Usenetend</text><rect fill="#228B22" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="91" x="458" y="2080.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="458" x2="549" y1="2110.1094" y2="2110.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="469" y="2101.0332">clean state</text><path d="M6,1846 L6,2364.8984 A0,0 0 0 0 6,2364.8984 L423,2364.8984 A0,0 0 0 0 423,2364.8984 L423,2109.5 L457.94,2105.5 L423,2101.5 L423,1856 L413,1846 L6,1846 A0,0 0 0 0 6,1846 " fill="#228B22" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M413,1846 L413,1856 L423,1856 L413,1846 " fill="#228B22" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="387" x="13" y="1865.4951">"Los programas deben ser escritos para que los lean las personas,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="341" x="13" y="1881.8467">y sólo incidentalmente, para que lo ejecuten las máquinas"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="143" x="13" y="1898.1982">-- Abelson and Sussman</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="1914.5498"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="350" x="13" y="1930.9014">"La mayoría de ustedes están familiarizados con las virtudes</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="368" x="13" y="1947.2529">del programador. Son tres, por supuesto: pereza, impaciencia y</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="110" x="13" y="1963.6045">orgullo desmedido"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="13" y="1979.9561">-- Larry Wall, Perl</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="1996.3076"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="295" x="13" y="2012.6592">“La simplicidad es un prerequisito para la fiabilidad”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="342" x="13" y="2029.0107">-- E. W. Dijkstra, programación estructurada, concurrencia,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="118" x="13" y="2045.3623">Premio Turing 72, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="2061.7139"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="351" x="13" y="2078.0654">"La simplicidad llevada al extremo se convierte en elegancia"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="82" x="13" y="2094.417">-- Jon Franklin</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="2110.7686"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="378" x="13" y="2127.1201">“La belleza es más importante en informática que en ninguna otra</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="305" x="13" y="2143.4717">tecnología debido a la gran complejidad del software.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="324" x="13" y="2159.8232">La belleza es la defensa definitiva contra la complejidad”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="371" x="13" y="2176.1748">-- David Gelernter, computación paralela, universidad de Yale, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="2192.5264"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="334" x="13" y="2208.8779">“Simplicidad: el arte esencial de maximizar la cantidad de</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="117" x="13" y="2225.2295">trabajo no realizado”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="97" x="13" y="2241.5811">-- Manifiesto Ágil</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="2257.9326"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="354" x="13" y="2274.2842">“Uno de mis días más productivos fue aquél en el que eliminé</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="130" x="13" y="2290.6357">1000 líneas de código”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="394" x="13" y="2306.9873">-- Ken Thompson, lenguaje B, previo a C, AT&amp;T Bell Laboratories, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="17" y="2323.3389"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="224" x="13" y="2339.6904">“Código eliminado es código depurado”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="71" x="13" y="2356.042">-- Jeff Sickel</text><rect fill="#DC143C" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="95" x="748" y="2080.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="748" x2="843" y1="2110.1094" y2="2110.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="73" x="759" y="2101.0332">out?!! state</text><ellipse cx="649.5" cy="18" fill="#000000" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><polygon fill="#FEFECE" points="649.5,900,661.5,912,649.5,924,637.5,912,649.5,900" style="stroke: #A80036; stroke-width: 1.5;"/><ellipse cx="566.5" cy="2462" fill="none" rx="10" ry="10" style="stroke: #000000; stroke-width: 1.0;"/><ellipse cx="567" cy="2462.5" fill="#000000" rx="6" ry="6" style="stroke: none; stroke-width: 1.0;"/><path d="M878.5,2001.5 L878.5,2101.5 L843.31,2105.5 L878.5,2109.5 L878.5,2209.7188 A0,0 0 0 0 878.5,2209.7188 L1192.5,2209.7188 A0,0 0 0 0 1192.5,2209.7188 L1192.5,2011.5 L1182.5,2001.5 L878.5,2001.5 A0,0 0 0 0 878.5,2001.5 " fill="#DC143C" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1182.5,2001.5 L1182.5,2011.5 L1192.5,2011.5 L1182.5,2001.5 " fill="#DC143C" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="265" x="885.5" y="2020.9951">"Es inevitable que la gente programe mal, y la</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="291" x="885.5" y="2037.3467">formación no mejorará sustancialmente las cosas.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="221" x="885.5" y="2053.6982">Tenemos que aprender a vivir con ello"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="264" x="885.5" y="2070.0498">-- Alan Perlis, MIT, catedrático, director ACM,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="885.5" y="2086.4014">Premio Turing, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="889.5" y="2102.7529"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="273" x="885.5" y="2119.1045">"La formación en informática no puede convertir</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="262" x="885.5" y="2135.4561">a nadie en experto programador, de la misma</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="273" x="885.5" y="2151.8076">forma que estudiar pinceles y pigmentos puede</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="194" x="885.5" y="2168.1592">hacer a alguien un experto pintor"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="247" x="885.5" y="2184.5107">-- Eric Raymond, La catedral y el bazar, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="251" x="885.5" y="2200.8623">Movimiento Open Source, anarcocapitalista</text><!--link *start to State1--><path d="M649.5,28.25 C649.5,84.29 649.5,379.27 649.5,474.11 " fill="none" id="*start-State1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="649.5,479.27,653.5,470.27,649.5,474.27,645.5,470.27,649.5,479.27" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="252" x="651.5" y="93.1074">formación autodidacta</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="687.5" y="119.2207">, profesional o</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="156" x="699.5" y="145.334">universitaria</text><!--link State1 to State1--><path d="M658.86,479.19 C686.78,417.52 729,425.95 729,504.5 C729,581.05 688.89,591.01 661.01,534.38 " fill="none" id="State1-State1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="658.86,529.81,659.0684,539.6567,660.9869,534.3351,666.3085,536.2536,658.86,529.81" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M734,278 L734,731 L1070,731 L1070,288 L1060,278 L734,278 " fill="#FFA500" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1060,278 L1060,288 L1070,288 L1060,278 " fill="#FFA500" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="241" x="741" y="297.4951">“Copiar código de internet y pegarlo en un</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="243" x="741" y="313.8467">sistema para producción es como usar un</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="741" y="330.1982">chicle encontrado en la calle”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="741" y="346.5498">-- Mike Johnson</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="745" y="362.9014"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="278" x="741" y="379.2529">"La complejidad es destructiva. Chupa la sangre</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="270" x="741" y="395.6045">de los desarrolladores, hace que los productos</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="261" x="741" y="411.9561">sean difíciles de planificar, construir y probar,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="268" x="741" y="428.3076">introduce problemas de seguridad y provoca la</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="284" x="741" y="444.6592">frustración de usuarios finales y administradores"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="255" x="741" y="461.0107">-- Ray Ozzie, Lotus, arquitecto Microsoft, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="745" y="477.3623"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="294" x="741" y="493.7139">"Programar sin una arquitectura o diseño en mente</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="286" x="741" y="510.0654">es como explorar una gruta sólo con una linterna:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="288" x="741" y="526.417">no sabes dónde estás, dónde has estado ni hacia</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="741" y="542.7686">dónde vas"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="293" x="741" y="559.1201">-- Danny Thorpe, Borland, Delphi, Visual Studio, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="745" y="575.4717"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="267" x="741" y="591.8232">"No puedes crear un gran software sin un gran</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="283" x="741" y="608.1748">equipo, y la mayoría de los equipos de desarrollo</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="254" x="741" y="624.5264">se comportan como familias disfuncionales"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="246" x="741" y="640.8779">-- Jim McCarthy, inteligencia artificial, MIT,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="741" y="657.2295">Premio Turing, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="745" y="673.5811"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="313" x="741" y="689.9326">“Nada es más permanente que una solución temporal”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="146" x="741" y="706.2842">-- Primera ley de Thomas</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="745" y="722.6357"/><!--link State1 to c--><path d="M649.5,529.65 C649.5,604.46 649.5,831.1 649.5,894.41 " fill="none" id="State1-c" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="649.5,899.69,653.5,890.69,649.5,894.69,645.5,890.69,649.5,899.69" style="stroke: #A80036; stroke-width: 1.0;"/><!--link c to State2--><path d="M639.03,913.77 C597.7,917.07 446.72,931.43 418.5,967 C187.6,1258.1 331.46,1441.78 418.5,1803 C423.53,1823.87 433.02,1825.88 440.5,1846 C470.48,1926.62 490.18,2026.73 498.69,2075.32 " fill="none" id="c-State2" style="stroke: #228B22; stroke-width: 1.0;"/><polygon fill="#228B22" points="499.58,2080.42,502.0057,2070.8745,498.7372,2075.4915,494.1201,2072.2231,499.58,2080.42" style="stroke: #228B22; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="537" y="989.1074">cuando tú digas</text><path d="M423.5,1002.1133 L423.5,1798.1133 L830.5,1798.1133 L830.5,1012.1133 L820.5,1002.1133 L423.5,1002.1133 " fill="#228B22" style="stroke: #228B22; stroke-width: 1.0;"/><path d="M820.5,1002.1133 L820.5,1012.1133 L830.5,1012.1133 L820.5,1002.1133 " fill="#228B22" style="stroke: #228B22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="374" x="430.5" y="1021.6084">"Tenemos que cambiar la tradicional actitud ante la construcción</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="349" x="430.5" y="1037.96">de software. En vez de pensar que nuestra principal tarea es</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="371" x="430.5" y="1054.3115">indicar a un ordenador qué hacer, concentrémonos en explicar a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="311" x="430.5" y="1070.6631">las personas lo que queremos que el ordenador haga"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="276" x="430.5" y="1087.0146">-- Donald E. Knuth, TEX, análisis de algoritmos,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="132" x="430.5" y="1103.3662">Premio Turing 1974, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1119.7178"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="305" x="430.5" y="1136.0693">“El reto principal de los científicos informáticos es no</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="310" x="430.5" y="1152.4209">confundirse con la complejidad de su propia creación”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="342" x="430.5" y="1168.7725">-- E. W. Dijkstra, programación estructurada, concurrencia,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="118" x="430.5" y="1185.124">Premio Turing 72, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1201.4756"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="344" x="430.5" y="1217.8271">"Controlar la complejidad es la esencia de la programación"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="258" x="430.5" y="1234.1787">-- Brian Kernigan, sistema operativo UNIX, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1250.5303"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="346" x="430.5" y="1266.8818">"Primero resuelve el problema. Entonces, escribe el código"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="430.5" y="1283.2334">-- John Johnson</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1299.585"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="384" x="430.5" y="1315.9365">"Los buenos programadores usan sus cerebros, pero unas buenas</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="341" x="430.5" y="1332.2881">directrices nos ahorran de tener que hacerlo en cada caso"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="127" x="430.5" y="1348.6396">-- Francis Glassborow</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1364.9912"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="368" x="430.5" y="1381.3428">“Se trata más de ser suficientemente bueno que de ser bueno o</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="430.5" y="1397.6943">malo”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="325" x="430.5" y="1414.0459">-- James Bach, Lessons Learned in Software Testing, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1430.3975"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="320" x="430.5" y="1446.749">“La calidad es gratis, pero sólo para aquellos que están</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="203" x="430.5" y="1463.1006">dispuestos a pagar mucho por ella”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="236" x="430.5" y="1479.4521">-- Tom deMarco, AT&amp;T Bell Laboratories,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="140" x="430.5" y="1495.8037">análisis estrucutrado, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1512.1553"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="373" x="430.5" y="1528.5068">“Hay únicamente dos problemas realmente duros en informática:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="344" x="430.5" y="1544.8584">el primero es la invalidación de cachés, y el segundo darles</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="192" x="430.5" y="1561.21">nombres apropiados a las cosas”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="162" x="430.5" y="1577.5615">-- Phil Karlton, Netscape, ...</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1593.9131"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="338" x="430.5" y="1610.2646">“El objetivo es entregar código limpio que funcione… ahora”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="364" x="430.5" y="1626.6162">-- Kent Beck, eXtreme Programming, patrones de diseño, TDD,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="430.5" y="1642.9678">... Smalltalk</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1659.3193"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="311" x="430.5" y="1675.6709">"Antes de que un software sea reutilizable debería ser</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="430.5" y="1692.0225">utilizable"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="245" x="430.5" y="1708.374">-- Ralph Johnson, GoF de Design Patterns</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="434.5" y="1724.7256"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="368" x="430.5" y="1741.0771">"Codifica siempre como si la persona que finalmente mantendrá</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="342" x="430.5" y="1757.4287">tu código fuera un psicópata violento que sabe dónde vives"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="277" x="430.5" y="1773.7803">-- Rick Osborne o Martin Golding o John Woods</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="136" x="430.5" y="1790.1318">o Damian Conway, Perl</text><!--link State2 to *end--><path d="M507.78,2130.59 C519.94,2198.99 554.4,2392.94 564,2446.91 " fill="none" id="State2-*end" style="stroke: #228B22; stroke-width: 1.0;"/><polygon fill="#228B22" points="564.89,2451.96,567.2571,2442.3998,564.017,2447.0368,559.38,2443.7967,564.89,2451.96" style="stroke: #228B22; stroke-width: 1.0;"/><!--link c to State3--><path d="M659.33,914.24 C695.03,918.99 816.97,937.17 839.5,967 C975.9,1147.57 833.05,1915.39 801.41,2075.26 " fill="none" id="c-State3" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="800.42,2080.25,806.0938,2072.1997,801.3923,2075.3455,798.2466,2070.644,800.42,2080.25" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="986" y="1160.6074">cuando te digan</text><path d="M901.5,1173.6133 L901.5,1626.6133 L1250.5,1626.6133 L1250.5,1183.6133 L1240.5,1173.6133 L901.5,1173.6133 " fill="#DC143C" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1240.5,1173.6133 L1240.5,1183.6133 L1250.5,1183.6133 L1240.5,1173.6133 " fill="#DC143C" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="258" x="908.5" y="1193.1084">"Un gran operario de tornos vale varias veces</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="284" x="908.5" y="1209.46">más que un operario medio, pero un gran escritor</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="251" x="908.5" y="1225.8115">de código vale 10.000 veces el precio de un</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="118" x="908.5" y="1242.1631">desarrollador medio"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="130" x="908.5" y="1258.5146">-- Bill Gates, Microsoft</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="912.5" y="1274.8662"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="286" x="908.5" y="1291.2178">"Un hacker puede ser capaz de producir, en unos</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="260" x="908.5" y="1307.5693">pocos meses, algo que un pequeño grupo de</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="257" x="908.5" y="1323.9209">desarrolladores (digamos de 7 u 8 personas)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="276" x="908.5" y="1340.2725">podría tener trabajado duramente juntos más de</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="291" x="908.5" y="1356.624">un año. IBM solía decir que ciertos programadores</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="278" x="908.5" y="1372.9756">podían ser 100 veces más productivos que otros</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="908.5" y="1389.3271">trabajadores, o más"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="98" x="908.5" y="1405.6787">-- Peter Seebach</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="912.5" y="1422.0303"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="326" x="908.5" y="1438.3818">"Los mejores programadores no son sólo marginalmente</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="282" x="908.5" y="1454.7334">mejores que los buenos. Se trata de un orden de</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="279" x="908.5" y="1471.085">magnitud mayor, medida por cualquier estándar:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="249" x="908.5" y="1487.4365">creatividad conceptual, velocidad, ingenio o</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="212" x="908.5" y="1503.7881">habilidad para solucionar problemas"</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="908.5" y="1520.1396">-- Randall E. Stross</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="912.5" y="1536.4912"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="264" x="908.5" y="1552.8428">“Eliminar a un mal desarrollador del equipo de</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="302" x="908.5" y="1569.1943">un proyecto es a menudo más productivo que añadir</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="135" x="908.5" y="1585.5459">un desarrollador bueno”</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="238" x="908.5" y="1601.8975">-- Tom DeMarco, AT&amp;T Bell Laboratories,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="140" x="908.5" y="1618.249">análisis estrucutrado, ...</text><!--link State3 to *end--><path d="M779.94,2130.59 C735.18,2199.87 607.22,2397.96 574.3,2448.93 " fill="none" id="State3-*end" style="stroke: #DC143C; stroke-width: 1.0;"/><polygon fill="#DC143C" points="571.58,2453.13,579.8245,2447.7422,574.2939,2448.9306,573.1055,2443.4,571.58,2453.13" style="stroke: #DC143C; stroke-width: 1.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    BorderColor #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+state State1 as "smell state"  #ffa500
+note left of State1 #ffa500
+"Si tienes una función o procedimiento con diez parámetros,
+probablemente hayas olvidado uno"
+- - Alan Perlis, MIT, catedrático, director ACM,
+Premio Turing, ...
+
+“Si tienes muchos casos especiales, algo estás haciendo mal”
+- - Craig Zerouni, miembro de BAFTA, ACM/SIGGRAPH, IEEE, ...
+
+"Está bien investigar y resolver misteriosos asesinatos,
+pero no deberías necesitar hacerlo con el código. Simplemente
+deberías poder leerlo"
+- - Steve McConnell, Rapid Development, Software Estimation
+y Code Complete, una de las tres personas más influyentes, ...
+
+"Es raro que mantener el código de otro desarrollador sea
+como entrar en un edificio de gran diseño que admiras
+mientras paseas por él y planeas cómo añadirle un ala o
+algún elemento decorativo. Lo más frecuente es que sea como
+tirarse de cabeza a un gran montón de basura maloliente"
+- - Bill Venners
+
+"La mayoría del software actual es muy parecido a una
+pirámide egipcia, con millones de ladrillos puestos unos
+encima de otros sin una estructura integral, simplemente
+realizada a base de fuerza bruta y miles de esclavos"
+- - Alan Kay, Xerox, Atari, ..., Smalltalk
+
+"Se dice que las grandes disciplinas científicas son ejemplos
+de gigantes subidos a los hombros de otros gigantes.
+También se dice que la industria del software es un ejemplo
+de enanos subidos a los dedos de los pies de otros enanos"
+- - Alan Cooper, Microsoft, VisualBasic, Ruby, ...
+
+"La gestión manual de bloques de memoria en C es como hacer
+malabarismos con pastillas de jabón en la ducha de la prisión:
+todo diversión hasta que cometes un fallo"
+- - Un usuario anónimo de un foro Usenetend
+end note
+
+state State2 as "clean state" #228B22
+note left of State2 #228B22
+"Los programas deben ser escritos para que los lean las personas,
+y sólo incidentalmente, para que lo ejecuten las máquinas"
+- - Abelson and Sussman
+
+"La mayoría de ustedes están familiarizados con las virtudes
+del programador. Son tres, por supuesto: pereza, impaciencia y
+orgullo desmedido"
+- - Larry Wall, Perl
+
+“La simplicidad es un prerequisito para la fiabilidad”
+- - E. W. Dijkstra, programación estructurada, concurrencia,
+Premio Turing 72, ...
+
+"La simplicidad llevada al extremo se convierte en elegancia"
+- - Jon Franklin
+
+“La belleza es más importante en informática que en ninguna otra
+tecnología debido a la gran complejidad del software.
+La belleza es la defensa definitiva contra la complejidad”
+- - David Gelernter, computación paralela, universidad de Yale, ...
+
+“Simplicidad: el arte esencial de maximizar la cantidad de
+trabajo no realizado”
+- - Manifiesto Ágil
+
+“Uno de mis días más productivos fue aquél en el que eliminé
+1000 líneas de código”
+- - Ken Thompson, lenguaje B, previo a C, AT&T Bell Laboratories, ...
+
+“Código eliminado es código depurado”
+- - Jeff Sickel
+end note
+
+state State3 as "out?!! state" #DC143C
+[*] - -> State1 : formación autodidacta\n, profesional o\nuniversitaria
+
+state c <<choice>>
+State1 - -> State1
+note on link #ffa500
+“Copiar código de internet y pegarlo en un
+sistema para producción es como usar un
+chicle encontrado en la calle”
+- - Mike Johnson
+
+"La complejidad es destructiva. Chupa la sangre
+de los desarrolladores, hace que los productos
+sean difíciles de planificar, construir y probar,
+introduce problemas de seguridad y provoca la
+frustración de usuarios finales y administradores"
+- - Ray Ozzie, Lotus, arquitecto Microsoft, ...
+
+"Programar sin una arquitectura o diseño en mente
+es como explorar una gruta sólo con una linterna:
+no sabes dónde estás, dónde has estado ni hacia
+dónde vas"
+- - Danny Thorpe, Borland, Delphi, Visual Studio, ...
+
+"No puedes crear un gran software sin un gran
+equipo, y la mayoría de los equipos de desarrollo
+se comportan como familias disfuncionales"
+- - Jim McCarthy, inteligencia artificial, MIT,
+Premio Turing, ...
+
+“Nada es más permanente que una solución temporal”
+- - Primera ley de Thomas
+
+end note
+
+State1 -down-> c
+c -down[#228B22]-> State2 :cuando tú digas
+note on link #228B22
+"Tenemos que cambiar la tradicional actitud ante la construcción
+de software. En vez de pensar que nuestra principal tarea es
+indicar a un ordenador qué hacer, concentrémonos en explicar a
+las personas lo que queremos que el ordenador haga"
+- - Donald E. Knuth, TEX, análisis de algoritmos,
+Premio Turing 1974, ...
+
+“El reto principal de los científicos informáticos es no
+confundirse con la complejidad de su propia creación”
+- - E. W. Dijkstra, programación estructurada, concurrencia,
+Premio Turing 72, ...
+
+"Controlar la complejidad es la esencia de la programación"
+- - Brian Kernigan, sistema operativo UNIX, ...
+
+"Primero resuelve el problema. Entonces, escribe el código"
+- - John Johnson
+
+"Los buenos programadores usan sus cerebros, pero unas buenas
+directrices nos ahorran de tener que hacerlo en cada caso"
+- - Francis Glassborow
+
+“Se trata más de ser suficientemente bueno que de ser bueno o
+malo”
+- - James Bach, Lessons Learned in Software Testing, ...
+
+“La calidad es gratis, pero sólo para aquellos que están
+dispuestos a pagar mucho por ella”
+- - Tom deMarco, AT&T Bell Laboratories,
+análisis estrucutrado, ...
+
+“Hay únicamente dos problemas realmente duros en informática:
+el primero es la invalidación de cachés, y el segundo darles
+nombres apropiados a las cosas”
+- - Phil Karlton, Netscape, ...
+
+“El objetivo es entregar código limpio que funcione… ahora”
+- - Kent Beck, eXtreme Programming, patrones de diseño, TDD,
+... Smalltalk
+
+"Antes de que un software sea reutilizable debería ser
+utilizable"
+- - Ralph Johnson, GoF de Design Patterns
+
+"Codifica siempre como si la persona que finalmente mantendrá
+tu código fuera un psicópata violento que sabe dónde vives"
+- - Rick Osborne o Martin Golding o John Woods
+o Damian Conway, Perl
+end note
+
+State2 -[#228B22]-> [*]
+
+c -down-> State3 :cuando te digan
+
+note on link #DC143C
+"Un gran operario de tornos vale varias veces
+más que un operario medio, pero un gran escritor
+de código vale 10.000 veces el precio de un
+desarrollador medio"
+- - Bill Gates, Microsoft
+
+"Un hacker puede ser capaz de producir, en unos
+pocos meses, algo que un pequeño grupo de
+desarrolladores (digamos de 7 u 8 personas)
+podría tener trabajado duramente juntos más de
+un año. IBM solía decir que ciertos programadores
+podían ser 100 veces más productivos que otros
+trabajadores, o más"
+- - Peter Seebach
+
+"Los mejores programadores no son sólo marginalmente
+mejores que los buenos. Se trata de un orden de
+magnitud mayor, medida por cualquier estándar:
+creatividad conceptual, velocidad, ingenio o
+habilidad para solucionar problemas"
+- - Randall E. Stross
+
+“Eliminar a un mal desarrollador del equipo de
+un proyecto es a menudo más productivo que añadir
+un desarrollador bueno”
+- - Tom DeMarco, AT&T Bell Laboratories,
+análisis estrucutrado, ...
+end note
+State3 -down[#DC143C]-> [*]
+note right of State3 #DC143C
+"Es inevitable que la gente programe mal, y la
+formación no mejorará sustancialmente las cosas.
+Tenemos que aprender a vivir con ello"
+- - Alan Perlis, MIT, catedrático, director ACM,
+Premio Turing, ...
+
+"La formación en informática no puede convertir
+a nadie en experto programador, de la misma
+forma que estudiar pinceles y pigmentos puede
+hacer a alguien un experto pintor"
+- - Eric Raymond, La catedral y el bazar, ...
+Movimiento Open Source, anarcocapitalista
+end note
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

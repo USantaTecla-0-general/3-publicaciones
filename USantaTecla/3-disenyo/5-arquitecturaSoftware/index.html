@@ -1,0 +1,4581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.8">
+<meta name="author" content="Santa Tecla">
+<title>Arquitectura del Software</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="book">
+<div id="header">
+<h1>Arquitectura del Software</h1>
+<div class="details">
+<span id="author" class="author">Santa Tecla</span><br>
+<span id="email" class="email"><a href="mailto:parqueNaturalSantaTecla@gmail.com">parqueNaturalSantaTecla@gmail.com</a></span><br>
+<span id="revnumber">version 0.0.1</span>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Índice</div>
+<ul class="sectlevel1">
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
+<li><a href="#arquitectura">Arquitectura</a></li>
+<li><a href="#qué"><strong>¿Qué?</strong></a></li>
+<li><a href="#arquitectura-del-sistema">Arquitectura del Sistema</a></li>
+<li><a href="#arquitectura-del-software">Arquitectura del Software</a></li>
+<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
+<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
+<li><a href="#principios-de-paquetes">Principios de Paquetes</a>
+<ul class="sectlevel2">
+<li><a href="#principios-de-acoplamiento">Principios de Acoplamiento</a></li>
+<li><a href="#principios-de-cohesión">Principios de Cohesión</a></li>
+<li><a href="#resumen">Resumen</a></li>
+</ul>
+</li>
+<li><a href="#actores-y-atributos-de-la-arquitectura">Actores y Atributos de la Arquitectura</a></li>
+<li><a href="#documentación-de-la-arquitectura">Documentación de la Arquitectura</a>
+<ul class="sectlevel2">
+<li><a href="#41-vistas">4+1 Vistas</a></li>
+</ul>
+</li>
+<li><a href="#estilos-arquitectónicos">Estilos Arquitectónicos</a>
+<ul class="sectlevel2">
+<li><a href="#arquitecturas-estructurales">Arquitecturas Estructurales</a></li>
+<li><a href="#arquitecturas-de-persistencia">Arquitecturas de Persistencia</a></li>
+<li><a href="#arquitecturas-adaptables">Arquitecturas Adaptables</a></li>
+<li><a href="#arquitecturas-de-interacción">Arquitecturas de Interacción</a></li>
+</ul>
+</li>
+<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
+<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
+<li><a href="#ponente">Ponente</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">ámbito incumplido</strong> y/o</p>
+</li>
+<li>
+<p><strong class="red">tiempo incumplido</strong> y/o</p>
+</li>
+<li>
+<p><strong class="red">coste incumplido</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="arquitectura">Arquitectura</h2>
+<div class="sectionbody">
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arquitectura.png" alt="arquitectura"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Construcción sencilla</th>
+<th class="tableblock halign-left valign-top">Construcción compleja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/casaPerro.png" alt="casaPerro"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/casaLujo.png" alt="casaLujo"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Requiere</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Modelado sencillo</p>
+</li>
+<li>
+<p>Proceso sencillo</p>
+</li>
+<li>
+<p>Técnicas sencillas</p>
+</li>
+<li>
+<p>Herramientas sencillas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Requiere</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Modelado complejo</strong></p>
+</li>
+<li>
+<p><strong>Proceso complejo</strong></p>
+</li>
+<li>
+<p><strong>Técnicas complejas</strong></p>
+</li>
+<li>
+<p><strong>Herramientas complejas</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><a href="https://josehuerta.es/gestion/proyectos/la-metafora-de-la-construccion-y-la-programacion"><strong class="red">Crítica</strong></a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qué"><strong>¿Qué?</strong></h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+La industria del software se complace en tomar palabras y estirarlas en un <strong class="red">sin número de significados sutilmente contradictorios</strong>. Uno de los mayores afectados es la "arquitectura". Tiendo a ver la  arquitectura como una de esas palabras que suenan impresionantes, usadas principalmente para indicar que estamos hablando de algo que es importante
+</blockquote>
+<div class="attribution">
+&#8212; Martin Fowler<br>
+<cite>Software Architecture</cite>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="arquitectura-del-sistema">Arquitectura del Sistema</h2>
+<div class="sectionbody">
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">Arquitectura del sistema</strong> selecciona un conjunto de bloques de construcción funcionales, <strong class="blue">hardware</strong>, <strong class="blue">software</strong>, <strong class="blue">firmware</strong>, etc.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los bloques de construcción que son <strong class="blue">componentes software</strong> tienen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>un conjunto de <strong class="blue">casos de uso</strong>, <strong class="blue">clases relacionadas</strong>, <strong class="blue">datos</strong>, etc</p>
+</li>
+<li>
+<p>La <strong class="blue">Arquitectura del software</strong> se centra en <span class="green"><strong>paquetes</strong></span>, no se centra en los <span class="red">detalles de implementación</span> o la aplicación de <span class="red">patrones de diseño, a nivel de clases</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/arquitecturaSistema.svg" alt="arquitecturaSistema" width="444" height="799">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="arquitectura-del-software">Arquitectura del Software</h2>
+<div class="sectionbody">
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="quoteblock">
+<blockquote>
+<strong class="blue">Analogía con la arquitectura de edificios</strong>, proponemos el siguiente <strong class="blue">modelo</strong> de arquitectura del software con tres clases de elementos arquitecturales: <strong class="blue">elementos de procesamiento</strong>, componentes que suministran la transformación de los elementos de datos; <strong class="blue">elementos de datos</strong>, contienen la información usada y transformada; y <strong class="blue">conexiones entre elementos</strong>, son el pegamento que une juntas las diferentes piezas de la arquitectura,los cuales pueden ser tanto de procesamiento, de datos o de ambos
+</blockquote>
+<div class="attribution">
+&#8212; Perry y Wolf
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+La arquitectura de un sistema de software intensivo es la estructura o <strong class="blue">estructuras</strong> del sistema, que comprenden <strong class="blue">elementos de software</strong>, las propiedades visibles externamente de esos elementos y las <strong class="blue">relaciones entre ellos</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Carnigie-Mellon University
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+La <strong class="blue">organización</strong> fundamental de un sistema incorporado en sus <strong class="blue">componentes</strong>, sus <strong class="blue">relaciones</strong> con otros y su <strong class="blue">entorno</strong> y las principales <strong class="blue">guías de su diseño</strong> y <strong class="blue">evolución</strong>
+</blockquote>
+<div class="attribution">
+&#8212; IEEE
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Una arquitectura es el conjunto de <strong class="blue">decisiones significativas</strong> sobre la <strong class="blue">organización</strong> del un sistema software, la selección de los <strong class="blue">elementos estructurales</strong> y sus <strong class="blue">interfaces</strong> por los que el sistema está compuesto junto con su <strong class="blue">comportamiento</strong> como se especifica en sus <strong class="blue">colaboraciones</strong> entre estos elementos, la composición de estos elementos estructurales y de comportamiento en <strong class="blue">subsistemas progresivamente más grandes</strong> y el <strong class="blue">estilo</strong> de arquitectura que guían la organización – estos elementos, sus interfaces, sus colaboraciones y su composición
+</blockquote>
+<div class="attribution">
+&#8212; Booch, Rumbaugh, and Jacobson<br>
+<cite>Rational Unified Process</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203; junto con el estilo arquitectónico que guía esta organización dado por:</p>
+</li>
+<li>
+<p><strong class="blue">Restricciones no funcionales</strong> (rendimiento, plataforma, …)</p>
+</li>
+<li>
+<p><strong class="blue">Tecnologías</strong> (protocolos, bases de datos, …)</p>
+</li>
+<li>
+<p><strong class="blue">Reusabilidad</strong> (diccionarios de datos, API’s, …)</p>
+</li>
+<li>
+<p><strong class="blue">Economía</strong> (sistemas heredados, frameworks, …)</p>
+</li>
+<li>
+<p><strong class="blue">Compromisos de uso</strong> (disponibilidad, amigabilidad, …)</p>
+</li>
+<li>
+<p><strong class="blue">Flexibilidad al cambio</strong> (patrones de software, cortafuegos, …)</p>
+</li>
+<li>
+<p>y <strong class="blue">aspectos estéticos</strong> (C2, CMMI, …)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sistema = Forma + Funcionalidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Sistema = Arquitectura + Casos de Uso</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Forma = Arquitectura</strong></p>
+</li>
+<li>
+<p><strong class="blue">Funcionalidad = Casos de Uso</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Compartir una estructura de alto nivel y mecanismos clave similares</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>“parábola del ciego y el elefante”</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Elefante.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">ámbito cumplido</strong> y</p>
+</li>
+<li>
+<p><strong class="green">tiempo cumplido</strong> y</p>
+</li>
+<li>
+<p><strong class="green">coste cumplido</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">complejidad inherente</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 42%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="4">Objetivos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Comprender el sistema</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Fomentar la reutilización</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Evolucionar el sistema</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Organizar el desarrollo</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cientos de <strong class="green">clases en docenas de paquetes pequeños poco acoplados y altamente cohesivos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La industria de la fontanería durante mucho tiempo ha sido normalizado. Contratistas de fontanería se benefician de componentes estándar.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al hacer coincidir las dimensiones de componentes "creativos" obtenidos a partir de aquí y allá, el fontanero selecciona a partir de un conjunto estandarizado que siempre encajan.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La industria del software aún no ha alcanzado el nivel de estandarización que muchos dominios de hardware han realizado, pero <strong class="green">buenas arquitectura e interfaces explícitas son pasos en esa dirección</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El sistema debería ser fácil de cambiar, esto es que los desarrolladores deberían ser capaces de <strong class="green">cambiar partes del diseño e implementación sin tener que preocuparse sobre el efecto del cambio reverberando inesperadamente a través del sistema</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Dividiendo el sistema en subsistemas con interfaces claramente definidos y haciendo responsable a un grupo o un individuo para cada subsistema, el arquitecto puede <strong class="green">reducir la carga de comunicaciones entre grupos de trabajo sobre distintos subsistemas</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un <strong class="blue">proceso muy simple, racional y efectivo, eficaz y eficiente</strong>, que se utiliza ampliamente es <strong class="blue">descomponer el entorno de desarrollo en paquetes entregables</strong>:</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">paquetes</strong> se convierten en <strong class="blue">unidades de trabajo</strong> que son responsabilidad de un <strong class="blue">equipo de ingenieros</strong>.</p>
+</li>
+<li>
+<p>Cuando consiguen un <strong class="blue">paquete funcionando, lo entregan</strong> para el uso de los otros paquetes, equipos. <strong class="blue">Todos dependen de la versión de entregada</strong>.</p>
+</li>
+<li>
+<p>Luego siguen <strong class="blue">modificando su paquete</strong> en sus propias <strong class="blue">áreas privadas</strong>. Según se hacen las <strong class="blue">nuevas versiones</strong>, otros <strong class="blue">equipos pueden decidir si adoptan o no de inmediato la nueva versión</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si deciden <strong class="blue">no hacerlo</strong>, simplemente siguen usando la <strong class="blue">versión antigua</strong>.</p>
+</li>
+<li>
+<p>Una vez que <strong class="blue">deciden que están listos</strong>, comienzan a utilizar la <strong class="blue">nueva versión</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Por tanto, <strong class="red">ninguno de los equipos está a merced de los demás</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="green">cambios realizados en un solo paquete no implican tener un efecto inmediato en los otros equipos</strong>.</p>
+</li>
+<li>
+<p>Cada <strong class="green">equipo puede decidir por sí mismo cuándo adaptar sus paquetes a las nuevas versiones</strong> de los paquetes que utilizan.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cómo"><strong>¿Cómo?</strong></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="principios-de-paquetes">Principios de Paquetes</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Principios de Acoplamiento</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Principios de Cohesión</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Dependencias Acíclicas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Acyclic Dependencies Principle (ADP)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Reutilización Común</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Common Reuse Principle (CRP)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Dependencias Estables</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Stable Dependencies Principle (SDP)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Cierre común</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Common Closure Principle (CCP)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Abstracciones Estables</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Stable Abstractions Principle (SAP)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Equivalencia de Liberación / Reutilización</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Release/Reuse Equivalency Principle (ERP)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="principios-de-acoplamiento">Principios de Acoplamiento</h3>
+<div class="sect3">
+<h4 id="dependencia-y-acoplamiento-de-elementos">Dependencia y Acoplamiento de Elementos</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una <strong>dependencia entre elementos</strong> es una <strong>asociación</strong> en la que <strong>el elemento origen precisa, requiere, necesita, &#8230;&#8203;depende de un elemento destino</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las <strong>dependencias entre elementos</strong> se pueden representar con un <strong>grafo</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>los <strong>elementos</strong> son los <strong>nodos</strong> y</p>
+</li>
+<li>
+<p>las <strong>dependencias</strong> son los <strong>arcos dirigidos</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/dependenciaElemento.svg" alt="dependenciaElemento" width="586" height="205">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento de un elemento</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento <span class="red">eferente</span> de un elemento</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento <span class="green">aferente</span> de un elemento</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que el <strong>elemento</strong> es el <strong>elemento <span class="red">origen</span> o <span class="green">destino</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que el <strong>elemento</strong> es el <strong>elemento <span class="red">origen</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que el <strong>elemento</strong> es el <strong>elemento <span class="green">destino</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>elementos <strong>de los que depende el elemento dado</strong> o <strong>que dependen del elemento dado</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>elementos <strong>de los que depende el elemento dado</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>elementos <strong>que dependen del elemento dado</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoObjetos.svg" alt="acoplamientoObjetos" width="459" height="335">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoObjetosEferente.svg" alt="acoplamientoObjetosEferente" width="459" height="335">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoObjetosAferente.svg" alt="acoplamientoObjetosAferente" width="459" height="335">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>los elementos relacionados desde <strong>arriba</strong> y hacia <strong>abajo</strong>, hacia <strong>afuera</strong> y hacia <strong>adentro</strong>, <strong>todos los elementos relacionados</strong> con el elemento dado</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>los elementos relacionados hacia <strong>abajo</strong> y hacia <strong>afuera</strong> del elemento dado</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>los elementos relacionados desde <strong>arriba</strong> y hacia <strong>adentro</strong> del elemento dado</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|A| &gt;= 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|Ae| &gt;= 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|Aa| &gt;= 0</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="dependencias-y-acoplamiento-de-clases">Dependencias y Acoplamiento de Clases</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una <strong>dependencia entre clases</strong> es una <strong>asociación</strong> en la que <strong>la clase origen hereda, tiene, está asociada, usa o depende de la clase destino</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una <strong>prueba de unidad de una clase</strong> requiere <strong>compilar y enlazar</strong> con las <strong>clases de las que depende</strong></p>
+</li>
+<li>
+<p>Las <strong>dependencias entre clases</strong> se pueden representar con un <strong>grafo</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>las <strong>clases</strong> son los <strong>nodos</strong> y</p>
+</li>
+<li>
+<p>las <strong>dependencias</strong> son los <strong>arcos dirigidos</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/dependenciaClase.svg" alt="dependenciaClase" width="507" height="301">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento de una clase</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento <span class="red">eferente</span> de una clase</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento <span class="green">aferente</span> de una clase</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que la <strong>clase</strong> es el <strong>elemento <span class="red">origen</span> o <span class="green">destino</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que la <strong>clase</strong> es el <strong>elemento <span class="red">origen</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que la <strong>clase</strong> es el <strong>elemento <span class="green">destino</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>clases <strong class="red">de los que depende la clase dada</strong> o <strong class="green">que dependen de la clase dada</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>clases <strong class="red">de los que depende la clase dada</strong>,</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>clases <strong class="green">que dependen de la clase dada</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>clases <strong class="red">base</strong> y <strong class="green">derivadas</strong>, <strong class="green">todo</strong> y <strong class="red">partes</strong>, <strong>asociadas</strong> y <strong>usadas</strong> <strong class="red">por</strong> y <strong class="green">a</strong> la clase</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>clases <strong class="red">base</strong>, <strong class="red">parte</strong>, <strong class="red">asociadas</strong> y que son <strong class="red">usadas</strong> <strong class="red">por</strong> la clase dada</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>clases <strong class="green">derivadas</strong>, <strong class="green">todo</strong>, <strong class="green">asociadas</strong> y que <strong class="green">usan</strong> <strong class="green">a</strong> la clase dada</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoClasesTopDown.svg" alt="acoplamientoClasesTopDown" width="413" height="487">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoClasesEferenteTopDown.svg" alt="acoplamientoClasesEferenteTopDown" width="439" height="487">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoClasesAferenteTopDown.svg" alt="acoplamientoClasesAferenteTopDown" width="439" height="487">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoClases.svg" alt="acoplamientoClases" width="395" height="487">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoClasesEferente.svg" alt="acoplamientoClasesEferente" width="395" height="487">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoClasesAferente.svg" alt="acoplamientoClasesAferente" width="395" height="487">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|A| &gt;= 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|Ae| &gt;= 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|Aa| &gt;= 0</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="dependencia-y-acoplamiento-de-paquetes">Dependencia y Acoplamiento de Paquetes</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una <strong>relación de dependencia entre paquetes</strong> es una <strong>asociación</strong> en la que <strong>el paquete origen tiene una clase con alguna dependencia hacia alguna clase del paquete destino</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una <strong>prueba de componente/integración de un paquete</strong> requiere <strong>compilar y enlazar</strong> con los <strong>paquetes de los que depende</strong></p>
+</li>
+<li>
+<p>Las <strong>dependencias entre paquetes</strong> se pueden representar con un <strong>grafo</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>los <strong>paquetes</strong> son los <strong>nodos</strong> y</p>
+</li>
+<li>
+<p>las <strong>dependencias</strong> son los <strong>arcos dirigidos</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/dependenciaPaquete.svg" alt="dependenciaPaquete" width="199" height="350">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento de un paquete</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento <span class="red">eferente</span> de un paquete</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Acoplamiento <span class="green">aferente</span> de un paquete</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que el <strong>paquete</strong> es el <strong>elemento <span class="red">origen</span> o <span class="green">destino</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que el <strong>paquete</strong> es el <strong>elemento <span class="red">origen</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es el <strong>conjunto de dependencias</strong> en las que el <strong>paquete</strong> es el <strong>elemento <span class="green">destino</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>paquetes <strong>de los que depende el paquete dado</strong> o <strong>que dependen del paquete dado</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>paquetes <strong>de los que depende el paquete dado</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>paquetes <strong>que dependen del paquete dado</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoPaquetes.svg" alt="acoplamientoPaquetes" width="770" height="405">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoPaquetesEferente.svg" alt="acoplamientoPaquetesEferente" width="770" height="405">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/acoplamientoPaquetesAferente.svg" alt="acoplamientoPaquetesAferente" width="770" height="405">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>los paquetes relacionados desde <strong>arriba</strong> y hacia <strong>abajo</strong>, hacia <strong>afuera</strong> y hacia <strong>adentro</strong>, <strong>todos los elementos relacionados</strong> con el paquete dado</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>los paquetes relacionados hacia <strong>abajo</strong> y hacia <strong>afuera</strong> del paquete dado</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>los paquetes relacionados desde <strong>arriba</strong> y hacia <strong>adentro</strong> del paquete dado</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|A| &gt;= 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|Ae| &gt;= 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>|Aa| &gt;= 0</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="green">Ejemplo sin ciclos</em></th>
+<th class="tableblock halign-left valign-top"><em class="red">Ejemplo con ciclos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/sinCiclos.svg" alt="sinCiclos" width="660" height="687">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conCiclos.svg" alt="conCiclos" width="690" height="797">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Acoplamiento Eferente</strong> del paquete <strong class="blue">"D"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>el paquete <strong class="blue">"D"</strong> <strong class="blue">depende directamente</strong> de los paquetes <strong class="blue">"E"</strong>, <strong class="blue">"F"</strong> y <strong class="blue">"G"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>el paquete <strong class="blue">"G"</strong> <strong>depende directamente</strong> del paquete <strong class="blue">"H"</strong></em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>el paquete <strong class="blue">"D"</strong> <strong class="blue">depende, directa o indirectamente</strong>, de los paquetes <span class="blue"><strong>"E"</strong>, <strong>"F"</strong>, <strong>"G"</strong> y <strong>"H"</strong></span></em></p>
+</li>
+<li>
+<p><em><strong class="green">4 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="green">50%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Acoplamiento Eferente</strong> del paquete <strong>"D"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>el paquete <strong class="blue">"D"</strong> <strong class="blue">depende directamente</strong> de los paquetes <strong class="blue">"E"</strong>, <strong class="blue">"F"</strong> y <strong class="blue">"G"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>el paquete <strong class="blue">"G"</strong> <strong class="blue">depende directamente</strong> de los paquetes <strong class="blue">"H"</strong> y <strong class="blue">"A"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>el paquete <strong class="blue">"A"</strong> <strong class="blue">depende directamente</strong> de los paquetes <strong class="blue">"B"</strong>, <strong class="blue">"C"</strong> y <strong class="blue">"D"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>el paquete <strong class="blue">"B"</strong> <strong class="blue">depende directamente</strong> del paquete <strong class="blue">"H"</strong></em></p>
+</li>
+<li>
+<p><em>el paquete <strong class="blue">"C"</strong> <strong class="blue">depende directamente</strong> del paquete <strong class="blue">"H"</strong> y <strong class="blue">"E"</strong></em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>el paquete <strong class="blue">"D"</strong> <strong class="blue">depende, directa o indirectamente</strong>, de los paquetes <span class="blue"><strong>"A"</strong>, <strong>"B"</strong>, <strong>"C"</strong>,<strong>"D"</strong>, <strong>"E"</strong>, <strong>"F"</strong>, <strong>"G"</strong> y <strong>"H"</strong></span></em></p>
+</li>
+<li>
+<p><em><strong class="red">8 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="red">100%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Prueba de componente/integración del paquete "D"</strong> requiere <strong class="blue">compilar y enlazar con las versiones entregadas</strong> de los <strong class="blue">paquetes eferentes</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquetes <span class="green"><strong>"E"</strong>, <strong>"F"</strong>, <strong>"G"</strong> y <strong>"H"</strong></span></em></p>
+</li>
+<li>
+<p><em><strong class="green">4 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="green">50%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Prueba de componente/integración del paquete "D"</strong> requiere <strong class="blue">compilar y enlazar con las versiones entregadas</strong> de los <strong class="blue">paquetes eferentes</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquetes <span class="red"><strong>"A"</strong>, <strong>"B"</strong>, <strong>"C"</strong>, <strong>"D"</strong>, <strong>"E"</strong>, <strong>"F"</strong>, <strong>"G"</strong> y <strong>"H"</strong></span></em></p>
+</li>
+<li>
+<p><em><strong class="red">8 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="red">100%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Acoplamiento Aferente</strong> del paquete <strong>"D"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>del paquete <strong class="blue">"D"</strong>, <strong class="blue">depende directamente</strong> el paquete <span class="blue"><strong>"A"</strong></span></em></p>
+</li>
+<li>
+<p><em>el paquete <strong class="blue">"A"</strong> <strong class="blue">depende directa o inderectamente</strong> del paquete <strong class="blue">"D"</strong></em></p>
+</li>
+<li>
+<p><em><strong class="green">1 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="green">12,5%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Acoplamiento Aferente</strong> del paquete <strong>"D"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>del paquete <strong class="blue">"D"</strong>, <strong class="blue">depende directamente</strong> el paquete <strong class="blue">"A"</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>del paquete <strong class="blue">"A"</strong>, <strong class="blue">depende directamente</strong> el paquete <strong class="blue">"G"</strong></em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>los paquetes <strong class="blue">"A"</strong> y <strong class="blue">"G"</strong> <strong class="blue">dependen, directa o indirectamente</strong>, del paquete <span class="blue"><strong>"D"</strong></span></em></p>
+</li>
+<li>
+<p><em><strong class="red">2 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="red">25%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>_<strong class="blue">Nueva versión del paquete "D"</strong> requiere <strong class="blue">re-compilar y re-enlazar con</strong> los <strong class="blue">paquetes aferentes</strong> _</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquete [green]</em><strong>"A"</strong>_</p>
+</li>
+<li>
+<p><em><strong class="green">1 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="green">12,5</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong class="blue">Nueva versión del paquete "D"</strong> requiere <strong class="blue">re-compilar y re-enlazar con</strong> los <strong class="blue">paquetes aferentes</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquetes <span class="red"><strong>"A"</strong>, <strong>"B"</strong>, <strong>"C"</strong>, <strong>"D"</strong>, <strong>"E"</strong>, <strong>"F"</strong>, <strong>"G"</strong> y <strong>"H"</strong></span></em></p>
+</li>
+<li>
+<p><em><strong class="red">8 de 8</strong> paquetes</em></p>
+</li>
+<li>
+<p><em><strong class="red">100%</strong> del sistema</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Nueva versión del sistema</strong> requiere <strong>re-compilar, re-probar y re-entregar</strong> de <strong>abajo hacia arriba</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquetes <strong>“H”</strong>, <strong>"E"</strong> y <strong>"F"</strong> en <strong class="green">paralelo independientemente</strong>;</em></p>
+</li>
+<li>
+<p><em>paquetes <strong>“B”</strong>, <strong>"C"</strong> y <strong>"G"</strong> en <strong class="green">paralelo independientemente</strong>;</em></p>
+</li>
+<li>
+<p><em>paquete <strong>"D"</strong>;</em></p>
+</li>
+<li>
+<p><em>paquete <strong>"A"</strong></em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Nueva versión del sistema</strong> requiere <strong>re-compilar, re-probar y re-entregar</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquetes <strong>“H”</strong>, <strong>"E"</strong> y <strong>"F"</strong> en <strong class="green">paralelo independientemente</strong>;</em></p>
+</li>
+<li>
+<p><em>paquetes <strong>“B”</strong> y <strong>"C"</strong> en <strong class="green">paralelo independientemente</strong>;</em></p>
+</li>
+<li>
+<p><em>paquetes <strong>"A"</strong>, <strong>“D"</strong> y <strong>"G"</strong> <strong class="red">al mismo tiempo</strong>;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Fácil</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Pruebas de un paquete</strong> requiere <strong class="blue">versiones</strong> de los paquetes que forman parte del <strong class="blue">acoplamiento eferente</strong> del paquete, <strong class="green">limitándose a un subconjunto de todo el sistema</strong></p>
+</li>
+<li>
+<p><strong class="blue">Nueva versión de un paquete</strong> impacta en los paquetes que forman parte del <strong class="blue">acoplamiento aferente</strong> del paquete, <strong class="green">limitándose a un subconjunto de todo el sistema</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Difícil</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Pruebas de paquete</strong> requiere <strong class="blue">versiones</strong> de los paquetes que forman parte del <strong class="blue">acoplamiento eferente</strong> del paquete, <strong class="red">pudiendo alcanzar a todo el sistema, se ha convertido en un “paquete grande”</strong></p>
+</li>
+<li>
+<p><strong class="blue">Nueva versión de un paquete</strong> impacta en los paquetes que forman parte del <strong class="blue">acoplamiento aferente</strong> del paquete, <strong class="red">pudiendo alcanzar a todo el sistema, se ha convertido en un “paquete grande”</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="principio-de-dependencias-acíclicas">Principio de Dependencias Acíclicas</h4>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="red">ciclos</strong> hacen que sea muy <strong class="red">difícil</strong> aislar módulos, realizar pruebas de unidad y entregas con ausencia de errores</p>
+</li>
+<li>
+<p>En proyectos</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">pequeños</strong>, con unos pocos desarrolladores, <strong class="blue">no es un problema demasiado grande</strong>.</p>
+</li>
+<li>
+<p><strong class="red">medianos/grandes</strong>, cuando crece el tamaño del equipo de desarrollo, <strong class="red">es un problema demasiado grande</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>no es raro que pasen las semanas <strong class="red">sin ser capaces de construir una versión estable</strong> del proyecto.</p>
+</li>
+<li>
+<p>todo <strong class="red">el equipo está cambiando perpetuamente</strong> su código tratando de hacer que funcione con los últimos cambios que otra persona hizo.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+La <strong class="blue">estructura de dependencias entre los paquetes debe ser un grafo dirigido acíclico</strong>. Es decir, no debe haber ciclos en la estructura de dependencias.
+</blockquote>
+<div class="attribution">
+&#8212; Robert C. "Uncle Bob" Martin<br>
+<cite>Clean Architecture. A Craftman's Guide to Software Structured and Design</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Mecanismo para romper ciclos entre paquetes</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Ggrafo dirigido acíclico de dependencias</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Aplicar el <strong class="blue">Principio de Inversión de Dependencias</strong> (DIP).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Crear una interfaz "Z" en el paquete "g"</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>que tiene los métodos que necesita la clase "Y" del paquete “g” y</em></p>
+</li>
+<li>
+<p><em>que es implementada por la clase "X" del paquete “a”.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Esto invierte la dependencia entre “g” y “a” rompiendo el ciclo.</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/sinCiclosDIP.svg" alt="sinCiclosDIP" width="692" height="861">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Aplicar un nuevo reparto de responsabilidades</strong> entre paquetes con un <strong class="blue">nuevo paquete alojando la(s) clase(s) de los paquetes que provocaron el ciclo y éstos paquetes dependen del nuevo paquete</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Crear un paquete "i" con la clase "X"</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>de la que dependen las clases de los paquetes "a" y "g"</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Esto invierte la dependencia entre “g” y “a” rompiendo el ciclo.</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/sinCiclosPaquete.svg" alt="sinCiclosPaquete" width="714" height="761">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="principio-de-dependencias-estables">Principio de Dependencias Estables</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="red">Volatilidad</span></th>
+<th class="tableblock halign-left valign-top"><span class="green">Estabilidad</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong class="red">volatilidad de un módulo</strong> es la <strong class="red">probabilidad de que cambie</strong> con su consecuente mantenimiento. Cuando los destinos de las dependencias son extremadamente improbable que cambien, no son volátiles.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>las dependencias de un módulo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>con <span class="green"><strong>baja volatilidad</strong></span>, es <span class="green"><strong>mejor</strong></span></p>
+</li>
+<li>
+<p>con <span class="red"><strong>alta volatilidad</strong></span>, es <span class="red"><strong>peor</strong></span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>es <strong class="red">difícil de predecir</strong> porque depende de todo tipo de factores:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>presiones del mercado,</p>
+</li>
+<li>
+<p>de los caprichos de los clientes,</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p>algo que un <strong class="red">cliente va a querer cambiar</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong class="green">estabilidad de un módulo</strong> es un factor que <strong class="green">influye en la volatilidad</strong> y muy <strong class="green">fácil de medir</strong>. Entonces, los módulos más inestables, más difíciles de cambiar, deben ser los menos volátiles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="green">definición clásica</strong> de la palabra "estabilidad" es <strong class="green">"no se puede mover fácilmente"</strong>.</p>
+</li>
+<li>
+<p>La estabilidad</p>
+<div class="ulist">
+<ul>
+<li>
+<p>es una medida de la <strong class="green">dificultad en el cambio del módulo</strong></p>
+</li>
+<li>
+<p><strong class="red">no</strong> es una medida de la <strong class="red">probabilidad de que un módulo cambie</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un diseño orientado a objetos <strong class="blue">fiable, flexible y reutilizable es por su falta de interdependencias</strong>. Sin embargo, tiene algunas dependencias pero <strong class="blue">esas dependencias no tienen por qué interferir en esas cualidades deseables</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Métrica de inestabilidad de un paquete</strong>, no repercusión,:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">I = |Ae| / (|Ae| + |Aa|)</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>donde:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>|Ae|&gt;=0, siendo <strong class="blue">Ae</strong> el <strong class="blue">acoplamiento eferente</strong>;</p>
+</li>
+<li>
+<p>|Aa|&gt;=0, siendo <strong class="blue">Aa</strong> el <strong class="blue">acoplamiento eferente</strong>;</p>
+</li>
+<li>
+<p>0 &#8656; I &#8656; 1, siendo <strong class="blue">I</strong> la <strong class="blue">inestabilidad</strong> del paquete</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/valorInestabilidad.svg" alt="valorInestabilidad" width="948" height="640">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Estudio de <strong class="blue">valores extremos</strong> de la <strong class="blue">Inestabilidad</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Para I = 0</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se obtiene un <strong class="red">mínimo de inestabilidad</strong> y</p>
+</li>
+<li>
+<p>un <strong class="red">máximo de estabilidad</strong> del paquete porque con</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Ae = 0</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">no depende de clases de fuera</strong>, sino que</p>
+</li>
+<li>
+<p><strong class="red">los demás paquetes dependerán de él</strong>. Él no depende de nadie.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Para I = 1</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se obtiene un <strong class="green">máximo de inestabilidad</strong> y</p>
+</li>
+<li>
+<p>un <strong class="green">mínimo de estabilidad</strong> del paquete porque con</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Aa = 0</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">los demás paquetes no dependen de sus clases</strong>, sino que</p>
+</li>
+<li>
+<p><strong class="green">sus clases dependerán de otras de otros paquetes</strong>. Un cambio en el paquete no repercutirá en otros paquetes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">cambios en el paquete repercutirán a otros paquetes</strong>, es <strong class="red">responsable</strong> de los demás.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">cambios en el paquete no repercutirán a otros paquetes</strong>, es <strong class="green">irresponsable</strong> de los demás.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">cambios en otros paquetes no repercutirán al paquete</strong>, es <strong class="red">independiente</strong> de los demás.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">cambios en otros paquetes repercutirán al paquete</strong>, es <strong class="green">dependiente</strong> de los demás.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Estable</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Intermedio</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Inestable</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/responsable.svg" alt="responsable" width="401" height="226">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/iyresponsable.svg" alt="iyresponsable" width="436" height="453">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/irresponsable.svg" alt="irresponsable" width="433" height="289">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>I = |Ae| / (|Ae| + |Aa|)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>I = 0 / (0 + 3) = 0/3 = 0</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>I = |Ae| / (|Ae| + |Aa|)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>I = 3 / (3 + 3) = 3/6 = 0,5</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>I = |Ae| / (|Ae| + |Aa|)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>I = 3 / (3 + 0) = 3/3 = 1</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Responsable</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Intermedio</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Irresponsable</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Independiente</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Intermedio</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Dependiente</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hoja</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Intermedio</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Raíz</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+Las <strong class="blue">dependencias entre paquetes en un diseño deben estar en la dirección de la estabilidad de los paquetes</strong>. Un paquete debe depender sólo de paquetes más estables
+</blockquote>
+<div class="attribution">
+&#8212; Robert C. "Uncle Bob" Martin<br>
+<cite>Clean Architecture. A Craftman's Guide to Software Structured and Design</cite>
+</div>
+</div>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/estabilidadBien.svg" alt="estabilidadBien" width="647" height="268">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/estabilidadMal.svg" alt="estabilidadMal" width="787" height="371">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="principio-de-abstracciones-estables">Principio de Abstracciones Estables</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Métrica de abstracción de un paquete</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">A = |Ca| / |Ct|</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Donde</p>
+<div class="ulist">
+<ul>
+<li>
+<p>|Ca|&gt;=0, siendo <strong class="blue">Ca</strong> el <strong class="blue">número de clases abstractas</strong>;</p>
+</li>
+<li>
+<p>|Aa|&gt;=0, siendo <strong class="blue">Aa</strong> el <strong class="blue">número total de clases</strong>;</p>
+</li>
+<li>
+<p>0 &#8656; A &#8656; 1, siendo <strong class="blue">A</strong> la <strong class="blue">abstracción</strong> deL paquete</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Mínima abstracción</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Máxima abstracción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">A = 0</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">A = 1</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se obtiene un <strong class="red">mínimo de abstracción</strong>, <strong class="red">máxima concreción</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se obtiene un <strong class="green">máximo de abstracción</strong>, <strong class="green">mínima concreción</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">no es extensible</strong> en cuanto que para añadir funcionalidad habrá que, en algún momento, modificar el diseño de las clases que no pueden asumir un crecimiento ilimitado con nuevas funcionalidades</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">es extensible</strong> en cuanto que para añadir funcionalidad habrá que añadir otros paquetes con clases instanciables que hereden de las clases abstractas de forma ilimitada</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="relación-entre-estabilidad-y-abstracción">Relación entre Estabilidad y Abstracción</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Análisis de combinaciones de valores extremos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Análisis de combinaciones de valores intermedios</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">E=1 y A=1</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>paquetes <strong class="green">máximamente estables</strong>, <strong class="green">difíciles de modificar</strong>, y</p>
+</li>
+<li>
+<p><strong class="green">máximamente abstractos</strong>, <strong class="green">fáciles de extender</strong>, permiten <strong class="green">añadir funcionalidad sin repercutir</strong> en el diseño global del sistema</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">E=1 y A=0</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>paquetes <strong class="red">máximamente estables</strong>, <strong class="red">difíciles de modificar</strong>, y</p>
+</li>
+<li>
+<p><strong class="red">máximamente concretos</strong>, <strong class="red">difíciles de extender</strong>, <strong class="red">no permiten añadir funcionalidad sin repercutir</strong> en el diseño global del sistema</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Paquetes <strong class="blue">tienen grados de abstracción y la estabilidad</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Para una <strong class="blue">clase</strong>: es muy común que una <strong class="blue">clase abstracta deriva de otra clase abstracta</strong>; la derivada es una abstracción que tiene una <strong class="blue">dependencia eferente</strong>, lo que <strong class="red">disminuye su estabilidad</strong>; por tanto, aunque es <strong class="red">máximamente abstracta</strong>, <strong class="red">no será máximamente estable</strong>.</p>
+</li>
+<li>
+<p>Para un <strong class="blue">paquete</strong>: <strong class="red">con más razón</strong> en cuanto que la abstracción no será extrema en cuanto <strong class="red">contenga clases abstractas y concretas en cualquier número</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">E=0 y A=0</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>paquetes <strong class="green">máximamente inestables</strong>, <strong class="green">fáciles de modificar</strong>, y</p>
+</li>
+<li>
+<p><strong class="green">máximamente concretos</strong>, <strong class="green">difíciles de extender</strong>, permiten <strong class="green">añadir funcionalidad sin repercutir</strong> en el diseño global del sistema</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">E=0 y A=1</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>paquetes <strong class="red">máximamente inestables</strong>, <strong class="red">fáciles de modificar</strong>, y</p>
+</li>
+<li>
+<p><strong class="red">máximamente abstractos</strong>, <strong class="red">fáciles de extender</strong>, <strong class="red">no tienen sentido</strong> porque serían un conjunto de clases abstractas sin dependencias aferentes, sin ninguna derivada</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Malas</strong>:</th>
+<th class="tableblock halign-left valign-top"><strong class="green">Buenas</strong>:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">E~1 y A~0</strong>: paquetes <strong class="red">muy estables</strong>, <strong class="red">difíciles de modificar</strong>, y <strong class="red">muy concretos</strong>, <strong class="red">difíciles de extender</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>paquete de utilidades con cadenas de caracteres, … pero no repercute por su ínfima volatilidad</em>.</p>
+</li>
+<li>
+<p><em>paquete de interfaz entre las aplicaciones OO y las bases de datos relacionales que conlleva habituales quebraderos de cabeza por su volatilidad</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="red">E~0 y A~1</strong>: <strong class="red">no tienen sentido</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">E=A</strong> en la <strong class="green">secuencia principal</strong>: paquetes con el <strong class="green">mismo grado de estabilidad y abstracción porque el grado de dificultad de cambio está acompasado con su grado de extensibilidad</strong>. Tiene el número "correcto" de clases concretas y abstractas en <strong class="green">proporción a su dependencias eferentes y aferentes</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+Los paquetes con máxima estabilidad deben ser máximamente abstractos. Los paquetes inestables deberían ser concretos. <strong class="blue">La abstracción de un paquete debe estar en proporción a su estabilidad</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Robert C. "Uncle Bob" Martin<br>
+<cite>Clean Architecture. A Craftman's Guide to Software Structured and Design</cite>
+</div>
+</div>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/secuenciaPrincipal.png" alt="secuenciaPrincipal"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Distancia de un paquete</strong> a las secuencia principal:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>D = | (A + E) / √2 |</strong> con valores entre <strong>[0, ~ 0,707]</strong></p>
+</li>
+<li>
+<p><strong>D’ =| (A + E) |</strong> con valores entre <strong>[0, 1]</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Para <strong class="green">D‘~ 0</strong> son paquetes <strong class="green">más reutilizables</strong> y <strong class="green">menos sensible a los cambios</strong></p>
+</li>
+<li>
+<p>Para <strong class="red">D‘~ 1</strong> son paquetes que <strong class="red">deben ser re-examinados y reestructurados</strong>.</p>
+</li>
+<li>
+<p>La <strong class="green">bondad del diseño global</strong> se obtiene con <strong class="green">una media y una varianza de todas las D’ cerca de cero</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/inestabilidadOpenClose1.svg" alt="inestabilidadOpenClose1" width="405" height="390">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/inestabilidadOpenClose2.svg" alt="inestabilidadOpenClose2" width="788" height="390">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/inestabilidadOpenClose3.svg" alt="inestabilidadOpenClose3" width="697" height="362">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio Open/Close</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Paquetes de interfaces permiten la extensión de funcionalidades sin afectar a sus clientes mediante el <strong>Principio de Inversión de Dependencias</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="principios-de-cohesión">Principios de Cohesión</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Determinan <strong class="blue">qué clases colocar dentro de los paquetes adecuados</strong></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="principio-de-reusabilidad-común">Principio de Reusabilidad Común</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong class="blue">clases</strong> rara son vez reusadas de manera aislada, <strong class="blue">colaboran con otras clases que forman parte de la abstracción reusable</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Un ejemplo sería una clase contenedora y sus iteradores asociados. Estas clases son reusadas juntas porque están estrechamente acopladas entre sí.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La razón por la que estas clases van juntas en el mismo paquete es que cuando un ingeniero decide utilizar un paquete se crea una dependencia con todo el paquete. A partir de entonces, <strong class="blue">cada vez que el paquete es versionado, las aplicaciones que lo utilizan deben ser revalidadas y re-versionadas</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si un paquete está siendo <strong class="red">versionado a causa de los cambios en una clase que no afecta, entonces no será muy agradable tener que re-validar y re-versionar la aplicación</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Las clases de un paquete se reutilizan juntas. <strong class="blue">Si se reusa una de las clases de un paquete, se reusan todas</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Robert C. "Uncle Bob" Martin<br>
+<cite>Clean Architecture. A Craftman's Guide to Software Structured and Design</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="principio-de-cierre-común">Principio de Cierre Común</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Más importante que la reusabilidad, es el mantenimiento</strong></p>
+</li>
+<li>
+<p>Este principio está estrechamente asociado con el <strong class="blue">Principio Abierto/Cerrado</strong> (OCP). El OCP afirma que las clases deben estar cerradas para la modificación pero abiertas para la extensión. Los sistemas se diseñan de tal forma que la están cerrados para los tipos de cambios más probables que prevemos. El 100% del cierre no es alcanzable pero debe ser la estratégica.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El "cierre" es en el sentido de la palabra de OCP. <strong class="blue">Si dos clases están tan estrechamente vinculadas, de tal manera que casi siempre se cambian juntas, deben pertenecer al mismo paquete</strong>. Esto <strong class="green">reduce al mínimo la carga de trabajo relacionada con el versionado, revalidación y redistribución</strong> del software.</p>
+</li>
+<li>
+<p>Parece claro que se prefiere que <strong class="blue">los cambios se centren en un solo paquete en lugar de tener que excavar a través de un montón de paquetes y cambiar a todos</strong>. De esa manera sólo necesitamos versionar el paquete modificado. <strong class="green">Otros paquetes que no dependen del paquete modificado no tienen que ser revalidados o reversionados de nuevo</strong>. Por lo tanto, cuando se presente un cambio de requisitos, que el cambio tenga una buena oportunidad de ser restringido a un <strong class="green">número mínimo de paquetes</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Las clases de un paquete deberían encerrarse juntas contra la misma clase de cambios. <strong class="blue">Un cambio que afecta a un paquete, afecta a todas las clases del paquete</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Robert C. "Uncle Bob" Martin<br>
+<cite>Clean Architecture. A Craftman's Guide to Software Structured and Design</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="principio-de-equivalencia-entre-reusabilidad-y-entregable">Principio de Equivalencia entre Reusabilidad y Entregable</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se <strong class="blue">reusa código</strong>, si y sólo si, nunca se necesita mirar el código fuente, que no sean sus partes públicas. Es decir, se espera que <strong class="blue">el código que se está reusando sea tratado como un producto</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">No se mantiene</strong> en el desarrollo de la aplicación ni se distribuye.</p>
+</li>
+<li>
+<p>El <strong class="blue">autor es el responsable de su mantenimiento y distribución</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Siempre que las bibliotecas son arregladas o mejoradas, se recibe una nueva versión que se puede <strong class="blue">integrar</strong> en el sistema cuando la <strong class="blue">oportunidad lo permita</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La <strong class="blue">granularidad de la reusabilidad no puede ser menor que la granularidad de los entregables</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Puede que <span class="red"><strong>sea posible entregar y llevar el control de versiones de clases</strong></span> pero hay tantas clases en una aplicación típica que esto casi seguro que abruma al sistema de control de versiones.</p>
+</li>
+<li>
+<p>Se necesita una entidad de mayor escala para actuar como granulo para los entregables y, claramente, el <span class="green"><strong>paquete es el candidato para dicha granularidad</strong></span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+La granularidad de la reusabilidad es la granularidad del entregable. Sólo los <strong class="blue">componentes que se entregan mediante un sistema de control de versiones pueden ser efectivamente reusados</strong>. Esta *granularidad es el paquete.
+</blockquote>
+<div class="attribution">
+&#8212; Robert C. "Uncle Bob" Martin<br>
+<cite>Clean Architecture. A Craftman's Guide to Software Structured and Design</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="resumen">Resumen</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Principios de Acoplamiento</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Principios de Cohesión</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Dependencias Acíclicas</strong>: la estructura de <span class="green"><strong>dependencias entre los paquetes debe ser un grafo dirigido acíclico</strong></span>. Es decir, no debe haber ciclos en la estructura de dependencias</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Reutilización Común</strong>: las clases de un paquete se reutilizan juntas. <span class="green"><strong>Si se reusa una de las clases de un paquete, se reusan todas</strong></span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Dependencias Estables</strong>: las <span class="green"><strong>dependencias entre paquetes en un diseño deben estar en la dirección de la estabilidad de los paquetes</strong></span>. Un paquete debe depender sólo de paquetes más estables</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Cierre común</strong>: las clases de un paquete deberían <span class="green"><strong>encerrarse juntas contra la misma clase de cambios</strong></span>. Un cambio que afecta a un paquete, afecta a todas las clases del paquete</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Abstracciones Estables</strong>: los paquetes con máxima estabilidad deben ser máximamente abstractos. Los paquetes inestables deberían ser concretos. <span class="green"><strong>La abstracción de un paquete debe estar en proporción a su estabilidad</strong></span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Principio de Equivalencia de Liberación / Reutilización</strong>: la granularidad de la reusabilidad es la granularidad del entregable. Sólo <span class="green"><strong>los componentes que se entregan mediante un sistema de control de versiones pueden ser efectivamente reusados</strong></span>. Esta granularidad es el paquete</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actores-y-atributos-de-la-arquitectura">Actores y Atributos de la Arquitectura</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Actor</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Responsabilidad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Usuarios</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">colaborando con UX y desarrolladores</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Desarrolladores</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">implementan el producto, las pruebas funcionales y no funcionales</span> (distribución, pruebas de carga, de estabilidad&#8230;&#8203;) en <span class="blue">diferentes entornos</span> (testing, pre-producción, producción)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Gestores de proyectos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">planifican el equipo, solicitan recursos , toman decisiones sobre el personal asignado al proyecto, funcionalidades del sistema y requisitos no funcionales</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Administradores</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">preparan la infraestructura del entorno, despliegan el sistema, recogen los logs, monitorizan el sistema, escalan según necesidades y mantienen la infraestructura</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Analista de Negocios</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">analiza los datos proporcionados por operaciones, buscan patrones en comportamientos y oportunidades de negocio y también son útiles para monitorizar (patrones en fallos)</span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Tipo</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Atributo</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Capacidad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><div class="content"><div class="paragraph">
+<p><strong class="blue">Atributos de Calidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Portabilidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">de plataforma, SSOO, dispositivos, Cloud, &#8230;&#8203;</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Adaptabilidad al cambio</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">capacidad de añadir nueva funcionalidad</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Comprensible</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">el software es entendible por quien debe efectuar los cambios</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Testabilidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">pueden construirse tests para las nuevas funcionalidades</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Usabilidad</strong> (<em>UX</em>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">los usuarios pueden usarlo de forma eficiente y satisfactoria</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Seguridad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">prevenir accesos no autorizados</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Integridad de datos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">evitar la corrupción de datos por su desactualización</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="paragraph">
+<p><strong class="blue">Atributos de Operación</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Disponibilidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">porcentaje del tiempo que el sistema está disponible</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Actualización</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">capacidad de actualizar el sistema en funcionamiento (en caliente)</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Fiabilidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">capacidad del sistema de operar durante largos periodos de tiempo</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Recuperabilidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">tiempo necesario para recuperar el sistema cuando se producen fallos</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Capacidad de gestión</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">capacidad de gestionar e inspeccionar sus componentes</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="paragraph">
+<p><strong class="blue">Atributos de Rendimiento</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Tiempo de respuesta</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">de los distintos casos de uso que ofrece el sistema</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Elasticidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">capacidad del sistema para aumentar o disminuir su capacidad en función de la carga</span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Capacidad</strong> (<em>throughput</em>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="blue">capacidad de soportar cargas extremas sin dejar de dar servicio</span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="documentación-de-la-arquitectura">Documentación de la Arquitectura</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="41-vistas">4+1 Vistas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/krutchen.png" alt="krutchen" width="1000" height="600"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Diagramas5.jpg" alt="Diagramas5">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Vistas</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Contenidos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Diagramas</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Arquitectura</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Casos de Uso</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Incluye <span class="blue">casos de uso que describe el comportamiento como es visto por los usuarios, analistas y probadores</span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Diagramas de Casos de Uso</span></p>
+</li>
+<li>
+<p><span class="blue">Diagramas de Estados para el Contexto de los Casos de Uso</span></p>
+</li>
+<li>
+<p><span class="blue">Diagramas de Estados, Actividad o Secuencia para la Especificación de Casos de Uso</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Requisitos de la Arquitectura del Sistema Informático</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Lógica o Diseño</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Incluye <span class="blue">clases, interfaces y colaboraciones que forman el vocabulario del problema y su solución</span> (tratando con los requisitos funcionales)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Diagramas de Paquetes para la Arquitectura</span></p>
+</li>
+<li>
+<p><span class="blue">Diagramas de Clase y Objetos para cada Paquete</span></p>
+</li>
+<li>
+<p><span class="blue">Diagramas de Colaboración y Secuencia para Mecanismos</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Arquitectura del Software</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Desarrollo o Implementación</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Incluye <span class="blue">componentes usados para ensamblar y hacer posible el sistema físico (la gestión de configuración de versiones consiste de los componentes que pueden ser ensamblados de varias formas para dar un ejecutable)</span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Diagramas de Componentes</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">Arquitectura del Sistema</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Física o Despliegue</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Incluye <span class="blue">nodos que forman la topología hardware sobre la que el sistema se ejecuta (cubriendo distribución, entrega e instalación)</span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Diagramas de Despliegue</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">Arquitectura de Sistema</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Procesos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Incluye los <span class="blue">hilos y/o procesos que forman los mecanismos de concurrencia y sincronización del sistema (operaciones, adaptabilidad y rendimiento del sistema)</span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Diagramas de Actividad con calles (<em>swinlanes</em>) para cada hilo de ejecución</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Arquitectura de Software</strong> y/o <strong class="red">Sistema</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="estilos-arquitectónicos">Estilos Arquitectónicos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Movimientos en la arquitectura civil.</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Edad de Bronce / Egipcio (Imhotep)</em></p>
+</li>
+<li>
+<p><em>Griego / Romano (Vitruvio)</em></p>
+</li>
+<li>
+<p><em>Bizantino / románico</em></p>
+</li>
+<li>
+<p><em>Gótico</em></p>
+</li>
+<li>
+<p><em>Manierismo (Miguel Ángel, Palladio)</em></p>
+</li>
+<li>
+<p><em>Barroco</em></p>
+</li>
+<li>
+<p><em>Ingeniería / Racional / Nacional / Romántico</em></p>
+</li>
+<li>
+<p><em>Art Nouveau</em></p>
+</li>
+<li>
+<p><em>Modernismo (Wright, LeCorbusier)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Un estilo arquitectónico, con un <strong class="blue">nombre bien definido</strong>, es una <strong class="blue">colección de decisiones de diseño arquitectónico</strong> que (1) son <strong class="blue">aplicables en un contexto de desarrollo dado</strong>, (2) <strong class="blue">restringen decisiones de diseño arquitectónico</strong> que son específicas para un sistema particular dentro de ese contexto, y (3) obtienen <strong class="blue">cualidades beneficiosas</strong> en cada sistema resultante."
+</blockquote>
+<div class="attribution">
+&#8212; Software Architecture Foundations<br>
+<cite>Theory and Practice</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Un <strong class="blue">estilo arquitectónico</strong> define una <strong class="blue">familia de sistemas en términos de un patrón de organización estructural</strong>. Un estilo arquitectónico define, un <strong class="blue">vocabulario de componentes</strong> y <strong class="blue">tipos de conectores</strong>, un <strong class="blue">conjunto de restricciones</strong> sobre cómo se pueden combinar, uno o más modelos semánticos que especifican cómo se pueden determinar las propiedades generales de un sistema a partir de las propiedades de sus partes
+</blockquote>
+<div class="attribution">
+&#8212; Booch
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los términos "<strong class="blue">estilo arquitectónico</strong>", "<strong class="blue">patrón arquitectónico</strong>" y "<strong class="blue">lenguaje arquitectónico</strong>" se usan a menudo con un <strong class="blue">significado similar</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">patrones arquitectónicos</strong> se refieren a patrones en el <strong class="blue">nivel del sistema</strong>.</p>
+</li>
+<li>
+<p>Los <strong class="blue">patrones de diseño</strong> son más pequeños en escala y capturan el conocimiento de diseño sobre componentes a <strong class="blue">nivel de subsistema</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">patrones de arquitectura y diseño son independientes de los lenguajes de programación</strong>. La codificación de los patrones describen sugerencias exitosas para la realización de patrones de diseño o problemas de codificación típicos en un lenguaje de programación específico.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Niveles de abstracción</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Descripción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Estilo arquitectónico / Patrón arquitectónico</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Define los <strong class="blue">tipos de elementos</strong> y cómo <strong class="blue">interactúan</strong>.</p>
+</li>
+<li>
+<p>A veces define una <strong class="blue">correspondencia</strong> entre <strong class="blue">funcionalidades</strong> y ciertos <strong class="blue">elementos</strong> arquitectónicos.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Arquitectura de referencia</strong> / <strong>Dominio Específico</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Define los <strong class="blue">tipos de elementos</strong> y cómo <strong class="blue">interactúan</strong>.</p>
+</li>
+<li>
+<p>Se aplican a un <strong class="blue">dominio particular</strong></p>
+</li>
+<li>
+<p>Definen cómo se <strong class="blue">asigna la funcionalidad</strong> del dominio a los elementos arquitectónicos.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Arquitectura de línea de producto</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se aplica a un <strong class="blue">conjunto de productos</strong> dentro de una empresa.</p>
+</li>
+<li>
+<p>Define los <strong class="blue">tipos de elementos</strong>, cómo <strong class="blue">interactúan</strong>, cómo se <strong class="blue">asigna la funcionalidad</strong> del producto.</p>
+</li>
+<li>
+<p>También puede definir algunas de las instancias de los elementos arquitectónicos. Por ejemplo, los componentes de informe de errores serían comunes a muchos productos de la línea de productos</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Arquitectura de software</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se <strong class="blue">aplica a un sistema</strong></p>
+</li>
+<li>
+<p>Describe los <strong class="blue">tipos de elementos</strong>, cómo <strong class="blue">interactúan</strong>, cómo se <strong class="blue">asigna la funcionalidad</strong> del producto.</p>
+</li>
+<li>
+<p>Describe las <strong class="blue">instancias</strong> que existen en el sistema.</p>
+</li>
+<li>
+<p><strong class="blue">Nivel de especificidad</strong> necesario para diseñar un sistema.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Término</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Define los tipos de elementos y cómo interactúan.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Define el mapeo de la funcionalidad a los elementos de la arquitectura.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Define instancias de elementos de arquitectura</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Un estilo arquitectónico</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>a veces</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>no</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Una arquitectura de referencia</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>no</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Una arquitectura de línea de productos</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>a veces</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Una arquitectura de software</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p>si</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="arquitecturas-estructurales">Arquitecturas Estructurales</h3>
+<div class="sect3">
+<h4 id="arquitecturas-de-capas">Arquitecturas de Capas</h4>
+<div class="quoteblock">
+<blockquote>
+A menudo hay <strong class="red">confusion</strong> entre los términos de <strong class="blue">capa lógica</strong> (<em>layer</em>) y <strong class="blue">física</strong> (<em>tier</em>), siendo usadas como sinónimos. La mayoría de la gente ve <strong class="blue">capa física implicando una separación física</strong>. Los sistemas cliente/servidor a menudo se describen como dos capas físicas y la separación es física: el cliente es un escritorio y el servidor es un servidor. Yo uso <strong class="blue">capa lógica para reforzar que tú no tienes que ejecutar las capas lógicas en diferentes máquinas</strong>. Una capa lógica de la lógica del dominio a menudo corre tanto en un escritorio como en un servidor de bases de datos. En esta situación tienes dos nodos pero tres capas lógicas. Con una base de datos local puedo ejecutar las tres capas lógicas en un solo portatil pero todavía serán tres capas lógicas distintas
+</blockquote>
+<div class="attribution">
+&#8212; Fowler<br>
+<cite>Architectural Patterns</cite>
+</div>
+</div>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El patrón arquitectónico de capas ayuda a estructurar aplicaciones que se pueden <strong class="blue">descomponer en grupos de subtareas</strong> en las que cada grupo de subtareas se encuentra en un nivel particular de abstracción</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Comience en el nivel más bajo de abstracción, llámelo <strong class="blue">Capa 1</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Esta es la base de su sistema.</p>
+</li>
+<li>
+<p>Ábrete paso hacia arriba en la escalera de abstracción <strong class="blue">colocando la Capa J sobre la Capa J - 1</strong> hasta que alcances el nivel superior de funcionalidad, llámala <strong class="blue">Capa N</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/capa.svg" alt="capa" width="378" height="344">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/arquitectruaCapas.svg" alt="arquitectruaCapas" width="597" height="416">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El patrón de capas describe el principio <strong class="blue">más extendido de la subdivisión arquitectónica</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Muchos de los diagramas de bloques que vemos en los documentos de la arquitectura del sistema parecen implicar una arquitectura en capas.</p>
+</li>
+<li>
+<p>Sin embargo, las arquitecturas reales con demasiada frecuencia resultan ser una <strong class="red">mezcla de paradigmas diferentes</strong> que, por sí solos, no pueden ser criticados, u ocultan colecciones de componentes que cooperan sin límites arquitectónicos claros entre ellos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Los <strong>protocolos de red</strong> son probablemente el ejemplo más conocido de arquitecturas en capas.</em></p>
+</li>
+<li>
+<p><em>Dicho protocolo consiste en un conjunto de reglas y convenciones que describen cómo los programas informáticos se comunican a través de los límites de la máquina.</em></p>
+</li>
+<li>
+<p><em>Se <strong>definen el formato</strong>, los <strong>contenidos</strong> y el <strong>significado de todos los mensajes</strong>.</em></p>
+</li>
+<li>
+<p><em>Todos los escenarios se describen en detalle, generalmente dando diagramas de secuencia.</em></p>
+</li>
+<li>
+<p><em>El protocolo especifica acuerdos en una variedad de niveles de abstracción, desde los detalles de la transmisión de bits hasta la lógica de la aplicación de alto nivel.</em></p>
+</li>
+<li>
+<p><em>Por lo tanto, los diseñadores usan varios subprotocolos y los <strong>organizan en capas</strong>.</em></p>
+</li>
+<li>
+<p><em>Cada capa se ocupa de un aspecto específico de la comunicación y utiliza los servicios de la siguiente capa inferior.</em></p>
+</li>
+<li>
+<p><em>La Organización Internacional de Normalización (ISO) definió el siguiente modelo arquitectónico, el <strong>Modelo OSI de 7 capas</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/osi.svg" alt="osi" width="614" height="911">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tuberías-y-filtros-pipes-and-filters">Tuberías y Filtros (<em>Pipes and Filters</em>)</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Proporciona una estructura para <strong class="blue">sistemas que procesan un flujo de datos</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Divide la tarea de un sistema en varios pasos de procesamiento secuencial</strong>.</p>
+</li>
+<li>
+<p><strong class="blue">Los datos de salida de un paso son la entrada al paso siguiente</strong>.</p>
+</li>
+<li>
+<p><strong class="blue">Cada paso de procesamiento es implementado por un componente de filtro</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/filtrosTuberias.svg" alt="filtrosTuberias" width="616" height="419">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un <strong class="blue">filtro consume y entrega datos de manera incremental</strong>, en contraste con el consumo de toda su entrada antes de producir cualquier salida, para lograr una baja latencia y permitir el procesamiento paralelo real.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">entrada al sistema es proporcionada por una fuente de datos</strong> como un archivo de texto.</p>
+</li>
+<li>
+<p>La <strong class="blue">salida fluye a un receptor de datos</strong>, como un archivo, terminal, programa de animación, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">fuente de datos, los filtros y el sumidero de datos están conectados secuencialmente por tuberías adyacentes</strong>.</p>
+</li>
+<li>
+<p>Cada <strong class="blue">tubería implementa el flujo de datos</strong> entre los pasos de procesamiento adyacentes.</p>
+</li>
+<li>
+<p>La <strong class="blue">secuencia de filtros combinados por tuberías se denomina tubería de procesamiento</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Escenario</th>
+<th class="tableblock halign-left valign-top">Diagrama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Escenario I</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Muestra un canal de inserción en el que la <strong class="blue">actividad comienza con la fuente de datos</strong>.</p>
+</li>
+<li>
+<p>La actividad del filtro se activa al escribir datos en los filtros pasivos</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/escenario1.png" alt="escenario1"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Escenario II</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Muestra una tubería de tracción.</p>
+</li>
+<li>
+<p>Aquí el flujo de control se <strong class="blue">inicia cuando el receptor de datos solicita datos</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/escenario2.png" alt="escenario2"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Escenario III</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Muestra una <strong class="blue">tubería mixta push-pull</strong> con fuente de datos pasiva y sumidero.</p>
+</li>
+<li>
+<p>Aquí el segundo filtro desempeña el papel activo y comienza el procesamiento.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/escenario3.png" alt="escenario3"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Escenario IV</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Muestra un comportamiento más complejo pero típico de un sistema de tuberías y filtros.</p>
+</li>
+<li>
+<p>Todos los filtros tiran y empujan los datos en un bucle.</p>
+</li>
+<li>
+<p>Por lo tanto, <strong class="blue">cada filtro se ejecuta en su propio hilo de control</strong>, por ejemplo, como un proceso separado.</p>
+</li>
+<li>
+<p>Los <strong class="blue">filtros están sincronizados por una tubería de búfer entre ellos</strong>.</p>
+</li>
+<li>
+<p>Para simplificar, asumimos que la tubería solo amortigua un solo valor.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/escenario4.png" alt="escenario4"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Conceptualmente, la <strong>traducción del lenguaje de programación</strong> de alto nivel al código de máquina consta de las fases de <strong>análisis léxico</strong>, <strong>análisis de sintaxis</strong>, <strong>análisis semántico</strong>, <strong>generación de código intermedio</strong> y, opcionalmente, <strong>optimización de código intermedio</strong>.</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Cada etapa tiene datos de entrada y salida bien definidos.</em></p>
+</li>
+<li>
+<p><em>La entrada al proceso de compilación es una secuencia de caracteres ASCII que representan el lenguaje de programación de alto nivel.</em></p>
+</li>
+<li>
+<p><em>La etapa final en nuestro sistema, ya sea backend o intérprete, toma el código binario como su entrada</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/compilador.svg" alt="compilador" width="859" height="747">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="arquitecturas-de-persistencia">Arquitecturas de Persistencia</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Registro Activo</strong> (<em>Active Record</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Un objeto cubre una fila de una tabla o vista de base de datos, encapsula el acceso a la base de datos y agrega lógica de dominio a esos datos</span>.</p>
+</li>
+<li>
+<p><strong class="green">Patrón de Experto en la Información</strong> para la <strong class="gree">distribución de responsabilidades</strong></p>
+</li>
+<li>
+<p><strong class="green">Diseño modular</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/registroActivo.svg" alt="registroActivo" width="411" height="253">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Puerta de enlace a Fila de Datos</strong> (<em>Row Data Gateway</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Un objeto que actúa como una puerta de enlace a los objetos de una fuente de datos</span>.</p>
+</li>
+<li>
+<p><strong class="green">Principio Abierto/Cerrado</strong> y <strong>Sustitución de Liskov</strong> para búsquedas extensibles</p>
+</li>
+<li>
+<p><strong class="green">Diseño modular</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/enlaceFila.svg" alt="enlaceFila" width="357" height="359">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Puerta de enlace a Tabla de Datos</strong> (<em>Table Data Gateway</em>) / <strong>Objeto de Acceso a Datos</strong> (<em>Data Access Object</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Un objeto que actúa como una puerta de enlace a una tabla de base de datos. Una instancia maneja todas las filas en la tabla</span>.</p>
+</li>
+<li>
+<p><strong class="green">Principio Abierto/Cerrado</strong> y <strong class="green">Sustitución de Liskov</strong> para tecnologías extensibles</p>
+</li>
+<li>
+<p><strong class="green">Diseño modular</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/enlaceTabla.svg" alt="enlaceTabla" width="654" height="399">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Asociador de Datos</strong> (<em>Data Mapper</em>) <strong class="blue">Asociador Objeto/Relacional</strong> (<em>Object-Relation Mapper</em>, <strong class="blue">ORM</strong>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://www.yegor256.com/2014/12/01/orm-offensive-anti-pattern.html">Debate</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="arquitecturas-adaptables">Arquitecturas Adaptables</h3>
+<div class="sect3">
+<h4 id="arquitectura-de-micronúcleo-microkernel">Arquitectura de Micronúcleo (<em>microkernel</em>)</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Los <strong>Sistemas operativos</strong> se caracterizan por disponer de un <strong>núcleo</strong> (no monolíticos) que implementa únicamente: la <strong>planificación de procesos</strong>, <strong>mecanismo de comunicación entre procesos</strong> y <strong>gestión de interrupciones</strong>.</em></p>
+</li>
+<li>
+<p><em>Además, existen <strong>procesos servidores</strong> que se ejecutan en <strong>modo no privilegiado</strong> del procesador -que, por supuesto, se ejecutan <strong>fuera del espacio del núcleo</strong> del sistema operativo- y que implementan: la administración de <strong>memoria principal</strong>, la administración de <strong>ficheros</strong> y la gestión de <strong>dispositivos</strong> de entrada/salida.</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El patrón arquitectónico de Microkernel se aplica a los <strong class="blue">sistemas de software que deben poder adaptarse a los requisitos cambiantes del sistema</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Separa un núcleo funcional mínimo de la funcionalidad extendida y las partes específicas del cliente</strong>.</p>
+</li>
+<li>
+<p>El microkernel también sirve como un zócalo para conectar estas extensiones y coordinar su colaboración.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 90%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Componente</th>
+<th class="tableblock halign-left valign-top">Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Microkernel</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El microkernel representa el componente principal del patrón. <strong class="blue">Implementa servicios centrales</strong> como facilidades de comunicación o manejo de recursos.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Otros componentes se basan en todos o algunos de estos servicios básicos</strong>.</p>
+</li>
+<li>
+<p><strong class="blue">Muchas dependencias específicas del sistema están encapsuladas dentro del microkernel</strong>. <em>Por ejemplo, la mayoría de las partes dependientes del hardware están ocultas para otros participantes.</em></p>
+</li>
+<li>
+<p>Un microkernel implementa <strong class="blue">servicios atómicos</strong>, a los que nos referimos como <strong class="blue">mecanismos</strong>. Estos mecanismos sirven como una <strong class="blue">base fundamental sobre la cual se construyen funcionalidades más complejas</strong>, llamadas <strong class="blue">políticas</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Servidor interno</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>un servidor interno, también conocido como un subsistema, <strong class="blue">extiende la funcionalidad proporcionada por el microkernel</strong>. Representa un componente separado que ofrece funcionalidad adicional.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">El microkernel invoca la funcionalidad de los servidores internos</strong> a través de solicitudes de servicio. Por lo tanto, los servidores internos pueden <strong class="blue">encapsular algunas dependencias</strong> en el sistema de software o hardware subyacente. <em>Por ejemplo, los controladores de dispositivos que admiten tarjetas gráficas específicas son buenos candidatos para servidores internos.</em></p>
+</li>
+<li>
+<p>Puede considerar los servidores internos como extensiones del microkernel de patrones arquitectónicos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Servidor externo</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>un servidor externo, también conocido como personalidad, es un componente que <strong class="blue">utiliza el microkernel para implementar su propia vista del dominio de aplicación subyacente</strong>. Como ya se mencionó,una vista denota una capa de abstracción construida sobre los servicios atómicos proporcionados por el microkernel. Diferentes servidores externos implementan diferentes políticas para dominios de aplicación específicos.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los servidores externos exponen su funcionalidad al exportar interfaces de la misma manera que lo hace el propio microkernel. <strong class="blue">Cada uno de estos servidores externos se ejecuta en un proceso separado</strong>. Recibe solicitudes de servicio de las aplicaciones cliente utilizando las facilidades de comunicación proporcionadas por el microkernel, interpreta estas solicitudes, ejecuta los servicios apropiados y devuelve los resultados a sus clientes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Cliente</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un cliente es una aplicación que está asociada con exactamente un servidor externo. Solo <strong class="blue">accede a las interfaces de programación proporcionadas por el servidor externo</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Adaptador</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los adaptadores, también conocidos como <strong class="blue">emuladores</strong>, representan estas <strong class="blue">interfaces entre los clientes y sus servidores externos</strong>, y les permiten a los clientes acceder a los servicios de su servidor externo de manera portátil. Son parte del espacio de direcciones del cliente.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Por lo tanto, introducimos interfaces entre los clientes y sus servidores externos para <strong class="blue">proteger a los clientes de las dependencias directas</strong>.</p>
+</li>
+<li>
+<p>Si el servidor externo implementa una plataforma de aplicación existente, el adaptador correspondiente imita las interfaces de programación de esa plataforma. Los clientes escritos para la plataforma emulada pueden, por lo tanto, compilarse y ejecutarse sin modificaciones. Los adaptadores también <strong class="blue">protegen a los clientes de los detalles de implementación específicos del microkernel</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/microkernel.png" alt="microkernel" width="1100" height="50"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="arquitecturas-de-interacción">Arquitecturas de Interacción</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Vista Separada</strong> (<em>Separated Presentation Pattern</em>): Asegura que cualquier código que manipula la presentación solo manipula la presentación despalazando toda la lógica del dominio y de datos en áreas separadas del programa.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sub-patron del Principio de Única Responsabilidad</strong> de SOLID que ayuda a definir capas lógicas y físicas de la arquitectura</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El resultado de su aplicación serán <strong class="blue">Vistas que se responsabilizan</strong> de:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Gestionar sus controles de interfaz</strong>: botones, listas, … paneles, diálogos, ..</p>
+</li>
+<li>
+<p><strong class="blue">Gestionar su Lógica</strong>: para manipular los controles de interfaz</p>
+</li>
+<li>
+<p><strong class="blue">Gestionar su Estado</strong>: referido a los datos actuales mostrados en la interfaz</p>
+</li>
+<li>
+<p><strong class="blue">Gestionar su Sincronización</strong>: coordinando su estado con el estado de los objetos de datos y de negocio en memoria y/o bbdd</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sintesis"><strong>Sintesis</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Patterns of Enterprise Application Architecture</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Martin Fowler</strong></p>
+</li>
+<li>
+<p>Addison-Wesley; (2002)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/PatternsOfEnterpriseApplicationArchitecture.jpg" alt="PatternsOfEnterpriseApplicationArchitecture" width="200" height="260"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Clean Architecture: A Craftsman&#8217;s Guide to Software Structure and Design</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Robert C Martin</strong></p>
+</li>
+<li>
+<p>Prentice Hall; (2017)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CleanArchitecture.jpg" alt="CleanArchitecture" width="200" height="260"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The Art of Software Architecture: Design Methods and Techniques</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Stephen T. Albin</strong></p>
+</li>
+<li>
+<p>Wiley; (2003)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TheArtOfSoftwareArchitecture.jpg" alt="TheArtOfSoftwareArchitecture" width="200" height="260"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nick Rozanski</strong>, <strong>Eóin Woods</strong></p>
+</li>
+<li>
+<p>Addison-Wesley; (2011)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/SoftwareSystemsArchitecture.jpg" alt="SoftwareSystemsArchitecture" width="200" height="260"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Software Architecture in Practice</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Len Bass</strong>, <strong>Paul Clements</strong>, <strong>Rick Kazman</strong></p>
+</li>
+<li>
+<p>Addison-Wesley; (2012)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/SoftwareArchitectureInPractice.jpg" alt="SoftwareArchitectureInPractice" width="200" height="260"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Pattern-oriented Software Architecture: A System of Patterns</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Frank Buschmann</strong>, <strong>Regine Meunier</strong>, <strong>Hans Rohnert</strong>, <strong>Peter Sommerlad</strong></p>
+</li>
+<li>
+<p>Wiley (1996)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/PatternOrientedSoftwareArchitecture.jpg" alt="PatternOrientedSoftwareArchitecture" width="200" height="260"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Documenting Software Architectures</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Paul Clements</strong>, <strong>Felix Bachmann</strong>, <strong>Len Bass</strong> ..</p>
+</li>
+<li>
+<p>(2001)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/DocumentingSoftwareArchitectures.png" alt="DocumentingSoftwareArchitectures" width="200" height="260"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Integrating Software Architecture-Centric Methods into Extreme Programming</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Robert L. Nord</strong>, <strong>James E. Tomayko</strong>, <strong>Rob Wojcik</strong></p>
+</li>
+<li>
+<p>(2004)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/IntegratingSoftwareArchitectureCentricMethods.png" alt="IntegratingSoftwareArchitectureCentricMethods" width="200" height="260"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ponente">Ponente</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Luis Fernández Muñoz</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Formador/Consultor</em></p>
+</li>
+<li>
+<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
+</li>
+<li>
+<p><em>Ingeniero en Informática por la UMA</em></p>
+</li>
+<li>
+<p><em>Diplomado en Informática por la UPM</em></p>
+</li>
+<li>
+<p><em>Profesor Titular de ETSISI de la UPM</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 0.0.1<br>
+Last updated 2022-10-16 16:26:46 +0200
+</div>
+</div>
+<script>
+                let speed = 50;
+                
+                function typeWriter(v) {
+                  let i = v.getAttribute("typewriter-index")
+                  let txt = v.getAttribute("typewriter-original")
+                  
+                  if (i < txt.length) {
+                    v.getElementsByTagName("P")[0].innerHTML += txt.charAt(i);
+                    i++;
+                    v.setAttribute("typewriter-index", i)                        
+                  }else{
+                    if( ++i > txt.length+30 ){
+                        v.setAttribute("typewriter-index", 0)
+                        v.getElementsByTagName("P")[0].innerHTML = ''
+                    }
+                  }
+                }
+                
+                function typeWriterAll(){
+                    [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                        typeWriter(v)
+                    })
+                    setTimeout(typeWriterAll, speed);
+                }
+                                    
+                [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                    v.setAttribute("typewriter-original", v.innerText)
+                    v.setAttribute("typewriter-index", 0)
+                    v.getElementsByTagName("P")[0].innerHTML = ''
+                })
+                
+                setTimeout(typeWriterAll, speed);
+                
+                </script>
+</html>

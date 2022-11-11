@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="159px" preserveAspectRatio="none" style="width:207px;height:159px;background:#222222;" version="1.1" viewBox="0 0 207 159" width="207px" zoomAndPan="magnify"><defs/><g><!--class Singleton--><polygon fill="#222222" points="6,8,6,8.2102,16,7.5857,26,8.1933,36,8.3997,46,7.2866,56,7.9223,66,7.5735,76,7.6165,86,7.9318,96,7.3086,106,8.5536,116,7.3697,126,7.8022,136,8.4319,146,7.9142,156,8.0682,166,7.9681,176,8.1785,186,8.2391,196,8,196.5857,8,196.6711,18.0324,196.6793,28.0647,196.2546,38.0971,196.4636,48.1295,196.7022,58.1618,195.2788,68.1942,196.6785,78.2266,195.7035,88.2589,196.5338,98.2913,195.505,108.3237,195.9315,118.356,196.7416,128.3884,195.9513,138.4208,196,148.4531,196,148.5584,186,148.7918,176,148.8694,166,148.4492,156,148.7403,146,147.8807,136,148.7375,126,149.0013,116,148.8977,106,149.0661,96,147.97,86,147.8009,76,147.8317,66,148.3942,56,148.2566,46,149.1345,36,148.2784,26,148.1101,16,148.6814,6,148.4531,5.3332,148.4531,5.4809,138.4208,6.649,128.3884,6.4357,118.356,6.7345,108.3237,5.6782,98.2913,6.3192,88.2589,6.5904,78.2266,5.5276,68.1942,5.9041,58.1618,6.126,48.1295,6.6518,38.0971,5.9958,28.0647,6.4626,18.0324,6,8" style="stroke: #FF69B4; stroke-width: 3.0;"/><text fill="#FF69B4" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="47" y="34.1074">Singleton</text><path d="M7,46.1133 L7,46.3935 L16.8947,45.5609 L26.7895,46.371 L36.6842,46.6462 L46.5789,45.1621 L56.4737,46.0097 L66.3684,45.5446 L76.2632,45.6019 L86.1579,46.0224 L96.0526,45.1915 L105.9474,46.8515 L115.8421,45.2729 L125.7368,45.8496 L135.6316,46.6892 L145.5263,45.9989 L155.4211,46.2043 L165.3158,46.0707 L175.2105,46.3513 L185.1053,46.4321 L195,46.1133 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><polygon fill="none" points="14,59.4058,14,59.4758,15.2,59.2677,16.4,59.4702,17.6,59.539,18.8,59.168,20,59.4058,19.9741,59.4058,19.8578,60.6058,19.8722,61.8058,19.9773,63.0058,19.7695,64.2058,20,65.4058,20,65.5903,18.8,65.1957,17.6,65.3398,16.4,65.5497,15.2,65.3772,14,65.4058,14.0227,65.4058,13.9894,64.2058,14.0595,63.0058,14.0797,61.8058,14.1952,60.6058,14,59.4058" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="162" x="27" y="66.1938">Singleton instance</text><polygon fill="none" points="14,80.9907,14,81.0608,15.2,80.8526,16.4,81.0552,17.6,81.1239,18.8,80.7529,20,80.9907,19.9741,80.9907,19.8578,82.1907,19.8722,83.3907,19.9773,84.5907,19.7695,85.7907,20,86.9907,20,87.1753,18.8,86.7806,17.6,86.9248,16.4,87.1347,15.2,86.9621,14,86.9907,14.0227,86.9907,13.9894,85.7907,14.0595,84.5907,14.0797,83.3907,14.1952,82.1907,14,80.9907" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="81" x="27" y="87.7788">attribute</text><path d="M7,97.2832 L7,97.5634 L16.8947,96.7308 L26.7895,97.5409 L36.6842,97.8161 L46.5789,96.332 L56.4737,97.1796 L66.3684,96.7145 L76.2632,96.7719 L86.1579,97.1923 L96.0526,96.3614 L105.9474,98.0214 L115.8421,96.4428 L125.7368,97.0195 L135.6316,97.8591 L145.5263,97.1688 L155.4211,97.3742 L165.3158,97.2406 L175.2105,97.5212 L185.1053,97.602 L195,97.2832 " fill="#222222" style="stroke: #FF69B4; stroke-width: 3.0;"/><polygon fill="#84BE84" points="20.0166,114.3054,19.5768,114.9063,19.0567,115.7863,18.3128,116.3794,17.5311,116.7038,16.9078,116.7319,16.1067,116.3263,15.3509,116.0613,14.7771,115.5233,14.4762,114.9073,14.2977,114.4169,14.1229,113.7763,13.8391,113.2251,14.0572,112.6869,14.2482,112.0973,14.9653,111.631,15.4697,111.026,16.0941,110.8251,16.8364,110.6521,17.7883,110.7549,18.3097,111.0007,18.9158,111.1122,19.6529,111.8673,19.9098,112.6645,20.0214,113.2084,19.895,114.1047" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="117" x="27" y="117.3638">getInstance()</text><polygon fill="#84BE84" points="20.0166,135.8904,19.5768,136.4912,19.0567,137.3713,18.3128,137.9644,17.5311,138.2887,16.9078,138.3169,16.1067,137.9112,15.3509,137.6463,14.7771,137.1082,14.4762,136.4923,14.2977,136.0019,14.1229,135.3613,13.8391,134.81,14.0572,134.2718,14.2482,133.6823,14.9653,133.216,15.4697,132.6109,16.0941,132.41,16.8364,132.237,17.7883,132.3398,18.3097,132.5857,18.9158,132.6972,19.6529,133.4523,19.9098,134.2494,20.0214,134.7934,19.895,135.6897" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="72" x="27" y="138.9487">method()</text><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #ff69b4
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #ff69b4
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+class Singleton  {
+- {static} Singleton instance
++ {static} getInstance()
+- attribute
++ method()
+}
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

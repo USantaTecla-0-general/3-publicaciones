@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="335px" preserveAspectRatio="none" style="width:459px;height:335px;background:#222222;" version="1.1" viewBox="0 0 459 335" width="459px" zoomAndPan="magnify"><defs/><g><polygon fill="#222222" points="171,142,171,142.2102,181.1818,141.5857,191.3636,142.1933,201.5455,142.3997,211.7273,141.2866,221.9091,141.9223,232.0909,141.5735,242.2727,141.6165,252.4545,141.9318,262.6364,141.3086,272.8182,142.5536,283,142,282.3697,142,282.8022,151.6227,283.4319,161.2453,282.9142,170.868,283.0682,180.4906,283,190.1133,283,190.0813,272.8182,190.2918,262.6364,190.3524,252.4545,190.699,242.2727,190.7843,232.0909,190.7925,221.9091,190.3679,211.7273,190.5769,201.5455,190.8155,191.3636,189.3921,181.1818,190.7918,171,190.1133,170.7035,190.1133,171.5338,180.4906,170.505,170.868,170.9315,161.2453,171.7416,151.6227,171,142" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="179" y="165.1074">Elemento</text><path d="M172,174.1133 L172,174.3935 L182,173.5609 L192,174.371 L202,174.6462 L212,173.1621 L222,174.0097 L232,173.5446 L242,173.6019 L252,174.0224 L262,173.1915 L272,174.8515 L282,174.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><polygon fill="#222222" points="6,250,6,250.2102,16.3333,249.5857,26.6667,250.1933,37,250.3997,47.3333,249.2866,57.6667,249.9223,68,249.5735,78.3333,249.6165,88.6667,249.9318,99,249.3086,109.3333,250.5536,119.6667,249.3697,130,250,129.8022,250,130.4319,260.6038,129.9142,271.2076,130.0682,281.8114,129.9681,292.4152,130.1785,303.019,130.2391,313.6228,130,324.2266,130,324.8123,119.6667,324.8976,109.3333,324.9058,99,324.4812,88.6667,324.6901,78.3333,324.9288,68,323.5054,57.6667,324.9051,47.3333,323.9301,37,324.7604,26.6667,323.7315,16.3333,324.1581,6,324.2266,6.7416,324.2266,5.9513,313.6228,6.1053,303.019,6.3386,292.4152,6.4162,281.8114,5.9961,271.2076,6.2872,260.6038,6,250" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="20" y="273.1074">Elemento</text><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="14" y="299.2207">EferenteX</text><path d="M7,308.2266 L7,308.5068 L17.1667,307.6741 L27.3333,308.4843 L37.5,308.7595 L47.6667,307.2754 L57.8333,308.1229 L68,307.6579 L78.1667,307.7152 L88.3333,308.1357 L98.5,307.3047 L108.6667,308.9648 L118.8333,307.3862 L129,308.2266 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="#222222" points="165,250,165,250.2102,175.3333,249.5857,185.6667,250.1933,196,250.3997,206.3333,249.2866,216.6667,249.9223,227,249.5735,237.3333,249.6165,247.6667,249.9318,258,249.3086,268.3333,250.5536,278.6667,249.3697,289,250,288.8022,250,289.4319,260.6038,288.9142,271.2076,289.0682,281.8114,288.9681,292.4152,289.1785,303.019,289.2391,313.6228,289,324.2266,289,324.8123,278.6667,324.8976,268.3333,324.9058,258,324.4812,247.6667,324.6901,237.3333,324.9288,227,323.5054,216.6667,324.9051,206.3333,323.9301,196,324.7604,185.6667,323.7315,175.3333,324.1581,165,324.2266,165.7416,324.2266,164.9513,313.6228,165.1053,303.019,165.3386,292.4152,165.4162,281.8114,164.9961,271.2076,165.2872,260.6038,165,250" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="179" y="273.1074">Elemento</text><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="173" y="299.2207">EferenteY</text><path d="M166,308.2266 L166,308.5068 L176.1667,307.6741 L186.3333,308.4843 L196.5,308.7595 L206.6667,307.2754 L216.8333,308.1229 L227,307.6579 L237.1667,307.7152 L247.3333,308.1357 L257.5,307.3047 L267.6667,308.9648 L277.8333,307.3862 L288,308.2266 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="#222222" points="324,250,324,250.2102,334.3333,249.5857,344.6667,250.1933,355,250.3997,365.3333,249.2866,375.6667,249.9223,386,249.5735,396.3333,249.6165,406.6667,249.9318,417,249.3086,427.3333,250.5536,437.6667,249.3697,448,250,447.8022,250,448.4319,260.6038,447.9142,271.2076,448.0682,281.8114,447.9681,292.4152,448.1785,303.019,448.2391,313.6228,448,324.2266,448,324.8123,437.6667,324.8976,427.3333,324.9058,417,324.4812,406.6667,324.6901,396.3333,324.9288,386,323.5054,375.6667,324.9051,365.3333,323.9301,355,324.7604,344.6667,323.7315,334.3333,324.1581,324,324.2266,324.7416,324.2266,323.9513,313.6228,324.1053,303.019,324.3386,292.4152,324.4162,281.8114,323.9961,271.2076,324.2872,260.6038,324,250" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="338" y="273.1074">Elemento</text><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="332" y="299.2207">EferenteZ</text><path d="M325,308.2266 L325,308.5068 L335.1667,307.6741 L345.3333,308.4843 L355.5,308.7595 L365.6667,307.2754 L375.8333,308.1229 L386,307.6579 L396.1667,307.7152 L406.3333,308.1357 L416.5,307.3047 L426.6667,308.9648 L436.8333,307.3862 L447,308.2266 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><!--link ElementoAferenteX to Elemento--><!--link ElementoAferenteY to Elemento--><!--link ElementoAferenteZ to Elemento--><!--link Elemento to ElementoEferenteX--><path d="M195.97,190.23 L196.1379,190.4544 L187.2501,196.0655 L179.3466,202.9919 L171.1226,209.49 L161.8445,214.5796 L153.9635,221.5359 L145.296,227.4414 L136.9414,233.7651 L128.8044,240.3795 L120.47,246.73 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="116.17,249.95,116.1855,250.0183,118.0605,249.3797,120.0263,249.1416,121.9625,248.7731,123.8014,247.9757,125.775,247.772,125.7713,247.7464,124.635,247.4687,123.5174,247.3204,122.4129,247.2618,121.2634,246.8937,120.1769,246.9592,120.3595,246.9857,120.1315,245.8093,120.4367,244.7104,120.807,243.621,120.7988,242.4765,120.9897,241.361,121.0095,241.3721,120.0165,243.0736,119.1137,244.8257,118.1674,246.5534,117.3042,248.3277,116.17,249.95" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Elemento to ElementoEferenteY--><path d="M227,190.23 L227.2802,190.23 L226.4476,201.114 L227.2577,211.998 L227.5329,222.882 L226.0488,233.766 L227,244.65 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="227,249.71,227.064,249.7385,227.6738,247.8539,228.6589,246.1362,229.5217,244.3641,229.9827,242.4134,231,240.71,230.9817,240.6917,230.0995,241.4095,229.3096,242.2196,228.5839,243.0939,227.637,243.747,227,244.71,227.1305,244.8405,226.0514,243.7614,225.3534,243.0634,224.7018,242.4118,223.7798,241.4898,223,240.71,223.0208,240.7192,223.7903,242.5057,224.6544,244.3342,225.4728,246.1424,226.3784,247.9893,227,249.71" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Elemento to ElementoEferenteZ--><path d="M258.03,190.23 L258.1979,190.4544 L266.0879,196.0655 L274.9622,202.9919 L283.516,209.49 L291.0156,214.5796 L299.9124,221.5359 L308.0226,227.4414 L316.4459,233.7651 L325.0867,240.3795 L333.53,246.73 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="337.83,249.95,337.8911,249.9843,336.7456,248.1646,335.9583,246.5459,335.0544,244.8618,333.7669,242.9624,333.0103,241.361,332.9847,241.3573,333.0322,242.4602,333.2089,243.5819,333.4755,244.7166,333.4325,245.8064,333.8231,246.9592,333.8497,247.1418,332.6733,246.9138,331.5744,247.2191,330.4849,247.5893,329.3405,247.5811,328.225,247.772,328.23,247.7942,330.1436,248.1972,332.0802,248.7012,334.0056,249.1565,335.9522,249.7048,337.83,249.95" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam object {
+    BorderThickness 3
+    BorderColor<<a>> #DarkGrey
+    BorderColor<<b>> #228B22
+    BorderColor<<c>> #DC143C
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor<<a>> #DarkGrey
+    FontColor<<b>> #228B22
+    FontColor<<c>> #DC143C
+}
+
+object Elemento <<a>>
+object "Elemento\nAferenteX" as ElementoAferenteX<<b>>
+object "Elemento\nAferenteY" as ElementoAferenteY<<b>>
+object "Elemento\nAferenteZ" as ElementoAferenteZ<<b>>
+object "Elemento\nEferenteX" as ElementoEferenteX<<c>>
+object "Elemento\nEferenteY" as ElementoEferenteY<<c>>
+object "Elemento\nEferenteZ" as ElementoEferenteZ<<c>>
+
+ElementoAferenteX .down.> Elemento
+ElementoAferenteY .down.> Elemento
+ElementoAferenteZ .down.> Elemento
+Elemento .down.> ElementoEferenteX
+Elemento .down.> ElementoEferenteY
+Elemento .down.> ElementoEferenteZ
+
+hide ElementoAferenteX
+hide ElementoAferenteY
+hide ElementoAferenteZ
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

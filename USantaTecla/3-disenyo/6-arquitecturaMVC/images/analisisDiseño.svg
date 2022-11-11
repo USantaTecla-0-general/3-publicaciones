@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="698.75px" preserveAspectRatio="none" style="width:1493px;height:698px;" version="1.1" viewBox="0 0 1493 698" width="1493.75px" zoomAndPan="magnify"><defs><filter height="300%" id="f1wz29ey983i8n" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b843a707a9d29bfe6172f1502199d263]
+entity XView--><path d="M341.25,16.875 L341.25,46.875 M341.25,31.875 L362.5,31.875 " fill="none" filter="url(#f1wz29ey983i8n)" style="stroke: #000000; stroke-width: 2.5;"/><ellipse cx="377.5" cy="31.875" fill="#9FB7E5" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="41.25" x="346.25" y="67.4463">XView</text><!--MD5=[a91319e7cfad8d66707571e19cb9c3d9]
+entity XController--><ellipse cx="856.875" cy="30" fill="#C4E4AB" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #718C00; stroke-width: 2.5;"/><polygon fill="#718C00" points="851.875,15,859.375,8.75,856.875,15,859.375,21.25,851.875,15" style="stroke: #718C00; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="87.5" x="813.125" y="68.1665">XController</text><!--MD5=[d1b0dfd0ce39cb18e38dc74678584e70]
+entity XEntity--><ellipse cx="749.375" cy="267.5" fill="#F8D987" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="734.375" x2="764.375" y1="285" y2="285"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="722.5" y="305.6665">XEntity</text><!--MD5=[cd754f8d81a38742ce1362595dcde55c]
+entity XEntities--><ellipse cx="1216.875" cy="30" fill="#F8D987" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="1201.875" x2="1231.875" y1="47.5" y2="47.5"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="67.5" x="1183.125" y="68.1665">XEntities</text><!--MD5=[69e620827fd35227d329e8118e6b893e]
+entity XStyle--><path d="M28.75,393.125 L28.75,423.125 M28.75,408.125 L50,408.125 " fill="none" filter="url(#f1wz29ey983i8n)" style="stroke: #000000; stroke-width: 2.5;"/><ellipse cx="65" cy="408.125" fill="#629EF9" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="93.75" x="7.5" y="443.6963">XStyle «CSS»</text><!--MD5=[e1959f9d6eaaeb2bbab4621b2f4b0ce0]
+entity XTemplate--><path d="M185,393.125 L185,423.125 M185,408.125 L206.25,408.125 " fill="none" filter="url(#f1wz29ey983i8n)" style="stroke: #000000; stroke-width: 2.5;"/><ellipse cx="221.25" cy="408.125" fill="#629EF9" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="131.25" x="145" y="443.6963">XTemplate «xhtml»</text><!--MD5=[3e43e042c3fe4f7558132f5e4ace8cc0]
+entity XBean--><path d="M341.25,393.125 L341.25,423.125 M341.25,408.125 L362.5,408.125 " fill="none" filter="url(#f1wz29ey983i8n)" style="stroke: #000000; stroke-width: 2.5;"/><ellipse cx="377.5" cy="408.125" fill="#629EF9" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><text fill="#000000" font-family="sans-serif" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="93.75" x="320" y="443.6963">XBean «java»</text><!--MD5=[c6fb24700750cfff68f5131225d532fb]
+entity XApiController--><ellipse cx="989.375" cy="406.25" fill="#B5BD68" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #718C00; stroke-width: 2.5;"/><polygon fill="#718C00" points="984.375,391.25,991.875,385,989.375,391.25,991.875,397.5,984.375,391.25" style="stroke: #718C00; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="170" x="904.375" y="444.4165">XApiController «java»</text><!--MD5=[bbf0f880fd942a65300bd135fa224f6b]
+entity XBusinessController--><ellipse cx="1226.875" cy="406.25" fill="#B5BD68" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #718C00; stroke-width: 2.5;"/><polygon fill="#718C00" points="1221.875,391.25,1229.375,385,1226.875,391.25,1229.375,397.5,1221.875,391.25" style="stroke: #718C00; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="216.25" x="1118.75" y="444.4165">XBusinessController «java»</text><!--MD5=[ebe48896ccc091e048fe88d7e89d9f4d]
+entity XGateway--><ellipse cx="525.625" cy="406.25" fill="#B5BD68" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #718C00; stroke-width: 2.5;"/><polygon fill="#718C00" points="520.625,391.25,528.125,385,525.625,391.25,528.125,397.5,520.625,391.25" style="stroke: #718C00; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="136.25" x="457.5" y="444.4165">XGateway «java»</text><!--MD5=[bb7c449e9d49406d49b3614b1de06c6d]
+entity XDao--><ellipse cx="1429.375" cy="406.25" fill="#F2AC4E" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="1414.375" x2="1444.375" y1="423.75" y2="423.75"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="100" x="1379.375" y="444.4165">XDao «java»</text><!--MD5=[69e49715a4c359aea4a800f263690fc5]
+entity XDto--><ellipse cx="586.875" cy="643.75" fill="#F2AC4E" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="571.875" x2="601.875" y1="661.25" y2="661.25"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="115" x="529.375" y="681.9165">XModel «java»</text><!--MD5=[a6f8c75b3f75492d1ec2b2e54a455b92]
+entity XDto2--><ellipse cx="838.125" cy="643.75" fill="#F2AC4E" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="823.125" x2="853.125" y1="661.25" y2="661.25"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="95" x="790.625" y="681.9165">XDto «java»</text><!--MD5=[fd32a81c2404801ffd3250cd88dc7b13]
+entity XModel--><ellipse cx="1090.625" cy="643.75" fill="#F2AC4E" filter="url(#f1wz29ey983i8n)" rx="15" ry="15" style="stroke: #000000; stroke-width: 2.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="1075.625" x2="1105.625" y1="661.25" y2="661.25"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="111.25" x="1035" y="681.9165">XEntity «java»</text><!--MD5=[50a2f9fbc7f4e317ae9a157602683354]
+link XView to XController--><path d="M397.5963,41.25 C444.91,41.25 530.2088,41.25 530.2088,41.25 C530.2088,41.25 693.5413,41.25 693.5413,41.25 C693.5413,41.25 758.7375,41.25 806.7488,41.25 " fill="none" id="XView-&gt;XController" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="813.105,41.25,801.855,36.25,806.855,41.25,801.855,46.25,813.105,41.25" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[c96254998bffdc37543dfcfe42650edb]
+link XController to XEntity--><path d="M843.0413,72.7412 C823.2875,115.925 787.0525,195.1338 765.9087,241.355 " fill="none" id="XController-&gt;XEntity" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="763.155,247.375,772.3816,239.2244,765.7548,241.6914,763.2878,235.0646,763.155,247.375" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[1f68c671bc902a1c4247cc12881887ba]
+link XController to XEntities--><path d="M900.8775,41.25 C935.125,41.25 976.875,41.25 976.875,41.25 C976.875,41.25 1096.875,41.25 1096.875,41.25 C1096.875,41.25 1141.5925,41.25 1176.4313,41.25 " fill="none" id="XController-&gt;XEntities" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="1182.8088,41.25,1171.5588,36.25,1176.5588,41.25,1171.5588,46.25,1182.8088,41.25" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[4de373271ed25b31c9e00bfbe01109ae]
+link XView to XEntity--><path d="M396.1375,70.9138 C445.3525,118.7025 539.375,210 539.375,210 C539.375,210 656.9125,247.78 716.12,266.8113 " fill="none" id="XView-&gt;XEntity" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="722.3512,268.8137,713.171,260.611,716.4011,266.9012,710.1109,270.1313,722.3512,268.8137" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[434ae80786ffddc1adc857a584c1c241]
+reverse link XView to XTemplate--><path d="M351.14,76.9375 C331.5475,119.82 300.625,187.5 300.625,187.5 C300.625,187.5 245.9675,326.4213 221.8413,387.7413 " fill="none" id="XView&lt;-XTemplate" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="353.9437,70.8013,344.7214,78.9566,351.3469,76.4862,353.8173,83.1117,353.9437,70.8013" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="301.875" y="205.6189">«trace»</text><!--MD5=[dd13b8f21bdf94be4093cbad622a6385]
+reverse link XView to XStyle--><path d="M335.1413,75.3675 C293.8375,118.145 226.875,187.5 226.875,187.5 C226.875,187.5 122.1151,326.4213 75.8735,387.7413 " fill="none" id="XView&lt;-XStyle" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="339.5488,70.8013,328.1377,75.4219,335.2077,75.2977,335.332,82.3676,339.5488,70.8013" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="228.125" y="205.6189">«trace»</text><!--MD5=[ad0a9a327dfb0dde2502ddd70b0fda44]
+reverse link XView to XBean--><path d="M366.875,77.6087 C366.875,151.2675 366.875,320.675 366.875,387.9563 " fill="none" id="XView&lt;-XBean" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="366.875,71.2075,361.875,82.4575,366.875,77.4575,371.875,82.4575,366.875,71.2075" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="368.125" y="205.6189">«trace»</text><!--MD5=[077052d3e712a7d29586dd38bad12772]
+reverse link XController to XGateway--><path d="M822.8413,77.13 C780.6888,120.0225 714.375,187.5 714.375,187.5 C714.375,187.5 602.0338,323.6487 550.69,385.8738 " fill="none" id="XController&lt;-XGateway" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="827.3488,72.5438,815.898,77.0651,822.9688,77.0023,823.0316,84.0731,827.3488,72.5438" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="715.625" y="205.6189">«trace»</text><!--MD5=[8378eb86587e7c0d65c10cc493410c6c]
+reverse link XEntity to XDto--><path d="M733.6125,316.255 C701.6025,389.8763 629.5225,555.66 599.9313,623.72 " fill="none" id="XEntity&lt;-XDto" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="736.215,310.2687,727.1454,318.5937,733.7239,316.0009,736.3168,322.5794,736.215,310.2687" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="661.875" y="504.3689">«trace»</text><!--MD5=[463ad371560d199c47707c1ddcb6fd8f]
+reverse link XController to XApiController--><path d="M869.7275,78.755 C895.8275,152.3763 954.6,318.16 978.7288,386.22 " fill="none" id="XController&lt;-XApiController" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="867.6063,72.7687,866.6542,85.043,869.6953,78.6593,876.079,81.7004,867.6063,72.7687" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="916.875" y="205.6189">«trace»</text><!--MD5=[9465d0e5a19a9f8690e92acad9d04204]
+reverse link XController to XBusinessController--><path d="M891.4588,77.435 C963.6675,150.375 1129.3625,317.75 1197.1463,386.22 " fill="none" id="XController&lt;-XBusinessController" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="886.84,72.7687,891.2013,84.2814,891.237,77.2104,898.308,77.2461,886.84,72.7687" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="1023.125" y="205.6189">«trace»</text><!--MD5=[e6913fe88019ccc0d1c529f33aa1fb4a]
+reverse link XEntity to XDto2--><path d="M757.0188,316.8113 C770.45,381.4913 796.875,508.75 796.875,508.75 C796.875,508.75 817.495,581.2345 829.5775,623.7059 " fill="none" id="XEntity&lt;-XDto2" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="755.6825,310.3762,753.0721,322.4074,756.9522,316.4959,762.8636,320.376,755.6825,310.3762" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="798.125" y="504.3689">«trace»</text><!--MD5=[841edb66dd8576d57f059c082709cc7f]
+reverse link XEntity to XModel--><path d="M777.1988,315.4363 C816.0587,364.9275 881.875,448.75 881.875,448.75 C881.875,448.75 1001.7562,566.4774 1059.8238,623.5015 " fill="none" id="XEntity&lt;-XModel" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="773.0638,310.1688,776.0798,322.1047,776.924,315.0842,783.9444,315.9283,773.0638,310.1688" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="943.125" y="504.3689">«trace»</text><!--MD5=[0c542b00a3d30ca5821688326fa9d3f4]
+reverse link XEntities to XDao--><path d="M1237.2363,78.3125 C1278.9625,151.71 1373.525,318.0225 1412.3,386.22 " fill="none" id="XEntities&lt;-XDao" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="1234.085,72.7687,1235.3002,85.0197,1237.1747,78.2016,1243.9928,80.0762,1234.085,72.7687" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="1313.125" y="205.6189">«trace»</text><!--MD5=[1ad8b6e3ce4868a98c635063f7a836a0]
+link XTemplate to XBean--><path d="M276.3925,417.5 C287.9663,417.5 303.7788,417.5 313.1488,417.5 " fill="none" id="XTemplate-&gt;XBean" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="319.9763,417.5,308.7263,412.5,313.7263,417.5,308.7263,422.5,319.9763,417.5" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[0a96750e8c3bca69099d2acee725ea54]
+reverse link XStyle to XTemplate--><path d="M108.101,417.5 C117.4711,417.5 133.2838,417.5 144.8575,417.5 " fill="none" id="XStyle&lt;-XTemplate" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="101.274,417.5,112.524,422.5,107.524,417.5,112.524,412.5,101.274,417.5" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[4a81e3764077e8943470940a86b32ca3]
+link XBean to XDto--><path d="M393.4125,447.0963 C433.6588,490.0875 510.0688,571.7071 553.8525,618.4761 " fill="none" id="XBean-&gt;XDto" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="558.505,623.4461,554.4664,611.8163,554.2335,618.8836,547.1663,618.6507,558.505,623.4461" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[c7acfa08dcd589d90119835bdd84e675]
+link XBean to XGateway--><path d="M414.1287,417.5 C417.6088,417.5 419.7913,417.5 419.7913,417.5 C419.7913,417.5 436.1238,417.5 450.64,417.5 " fill="none" id="XBean-&gt;XGateway" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="457.1175,417.5,445.8675,412.5,450.8675,417.5,445.8675,422.5,457.1175,417.5" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[185957532b416e8b1531ed4194056346]
+link XDto to XDto2--><path d="M644.5163,655 C686.4613,655 742.8738,655 783.9812,655 " fill="none" id="XDto-&gt;XDto2" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="790.4438,655,779.1938,650,784.1938,655,779.1938,660,790.4438,655" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="690.625" y="646.8689">«trace»</text><!--MD5=[981f5fb8fd3a5fede22cd6db0dd8dce5]
+link XGateway to XApiController--><path d="M594.0525,417.5 C674.51,417.5 808.3875,417.5 897.7488,417.5 " fill="none" id="XGateway-&gt;XApiController" style="stroke: #808080; stroke-width: 1.25; stroke-dasharray: 7.0,7.0;"/><polygon fill="#808080" points="904.105,417.5,892.855,412.5,897.855,417.5,892.855,422.5,904.105,417.5" style="stroke: #808080; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="53.75" x="722.1875" y="409.3689">«trace»</text><!--MD5=[a546c99f3fa34e376a924392c1897355]
+link XApiController to XBusinessController--><path d="M1074.7538,417.5 C1082.9088,417.5 1097.8675,417.5 1112.1263,417.5 " fill="none" id="XApiController-&gt;XBusinessController" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="1118.6025,417.5,1107.3525,412.5,1112.3525,417.5,1107.3525,422.5,1118.6025,417.5" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[9e7208bb26b1c1822412ca7bf574810f]
+link XGateway to XDto--><path d="M533.5075,448.9913 C544.7163,491.9988 565.2388,570.7383 577.3063,617.0375 " fill="none" id="XGateway-&gt;XDto" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="579.0238,623.625,581.0247,611.4776,577.4474,617.5771,571.348,613.9998,579.0238,623.625" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[39ded9082ddca16de9a0c55c3caa98ab]
+link XApiController to XDto2--><path d="M934.015,448.9463 C901.0663,466.9187 865.625,486.25 865.625,486.25 C865.625,486.25 852.2575,567.6726 844.1612,616.9801 " fill="none" id="XApiController-&gt;XDto2" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="843.105,623.417,849.8616,613.1257,844.1176,617.2496,839.9938,611.5055,843.105,623.417" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[b4d5b94def5010f404da0fb1df13dcbf]
+link XBusinessController to XModel--><path d="M1209.3413,448.9913 C1184.2013,492.3512 1138.0038,572.0315 1111.2538,618.1694 " fill="none" id="XBusinessController-&gt;XModel" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="1108.0913,623.625,1118.0594,616.4002,1111.226,618.218,1109.4082,611.3846,1108.0913,623.625" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[fcdefb3cbe0525dea1df9a71367016bc]
+link XBusinessController to XDao--><path d="M1335.2,417.5 C1349.4125,417.5 1361.875,417.5 1361.875,417.5 C1361.875,417.5 1366.2375,417.5 1372.7375,417.5 " fill="none" id="XBusinessController-&gt;XDao" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="1379.2625,417.5,1368.0125,412.5,1373.0125,417.5,1368.0125,422.5,1379.2625,417.5" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[9d66dd05645f7adbb321d39d5ba3fb07]
+link XBusinessController to XDto2--><path d="M1177.245,448.7512 C1103.8313,493.13 966.8638,575.9274 891.405,621.5419 " fill="none" id="XBusinessController-&gt;XDto2" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="885.635,625.0299,897.8491,623.4879,890.9834,621.7962,892.6752,614.9304,885.635,625.0299" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[486509f5cf844048907475c539f13499]
+link XDto2 to XModel--><path d="M886.1087,655 C905.01,655 922.2913,655 922.2913,655 C922.2913,655 1006.4588,655 1006.4588,655 C1006.4588,655 1015.9425,655 1028.545,655 " fill="none" id="XDto2-&gt;XModel" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="1034.9538,655,1023.7037,650,1028.7038,655,1023.7037,660,1034.9538,655" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[7682806716d7157bd4113db7cbde81f8]
+link XDao to XModel--><path d="M1386.125,448.7512 C1322.975,492.56 1205.8638,573.8056 1139.6138,619.765 " fill="none" id="XDao-&gt;XModel" style="stroke: #A80036; stroke-width: 1.25;"/><polygon fill="#A80036" points="1134.15,623.5558,1146.2435,621.2516,1139.2853,619.9933,1140.5436,613.0351,1134.15,623.5558" style="stroke: #A80036; stroke-width: 1.25;"/><!--MD5=[56cb3b84df50458003d37ddd5d8fa77c]
+@startuml
+
+skinparam {
+    BoundaryBackgroundColor #629EF9
+    BoundaryBorderColor black
+    BoundaryFontSize 12
+    BoundarySize 10
+    ControlBackgroundColor #b5bd68
+    ControlBorderColor #718c00
+    EntityBackgroundColor #F2AC4E
+    EntityBorderColor black
+}
+
+
+ skinparam linetype polyline
+
+
+
+    boundary XView #9FB7E5
+    control XController #C4E4AB
+    entity XEntity #F8D987
+    entity XEntities #F8D987
+    boundary XStyle as "XStyle <<CSS>>"
+    boundary XTemplate as "XTemplate <<xhtml>>"
+    boundary XBean as "XBean <<java>>"
+    control XApiController as "XApiController <<java>>"
+    control XBusinessController as "XBusinessController <<java>>"
+    control XGateway as "XGateway <<java>>"
+    entity XDao as "XDao <<java>>"
+    entity XDto as "XModel <<java>>"
+    entity XDto2 as "XDto <<java>>"
+    entity XModel as "XEntity <<java>>"
+
+
+    XView -right-> XController
+    XController -right-> XEntity
+    XController -right-> XEntities
+    XView -down-> XEntity
+
+    XTemplate ...[#Gray]up.> XView : <<trace>>
+    XStyle ...[#Gray]up.> XView : <<trace>>
+    XBean ...[#Gray]up.> XView : <<trace>>
+    XGateway ...[#Gray]up.> XController : <<trace>>
+    XDto ...[#Gray]up.> XEntity : <<trace>>
+    XApiController ...[#Gray]up.> XController : <<trace>>
+    XBusinessController ...[#Gray]up.> XController : <<trace>>
+    XDto2 ...[#Gray]up.> XEntity : <<trace>>
+    XModel ...[#Gray]up.> XEntity : <<trace>>
+    XDao ...[#Gray]up.> XEntities : <<trace>>
+
+    XTemplate -right-> XBean
+    XTemplate -left-> XStyle
+    XBean - -> XDto
+    XBean -right-> XGateway
+    XDto .[#Gray]right.> XDto2 : <<trace>>
+
+    XGateway .[#Gray]right.> XApiController : <<trace>>
+    XApiController -right-> XBusinessController
+    XGateway - -down-> XDto
+    XApiController - -down-> XDto2
+    XBusinessController - -down-> XModel
+    XBusinessController -right-> XDao
+    XBusinessController -right-> XDto2
+    XDto2 -right-> XModel
+    XDao -right-> XModel
+
+
+
+
+
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 12:51:06 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.8+10-b1094.1
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

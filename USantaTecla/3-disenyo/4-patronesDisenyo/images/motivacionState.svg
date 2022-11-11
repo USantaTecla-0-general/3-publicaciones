@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="820px" preserveAspectRatio="none" style="width:764px;height:820px;background:#222222;" version="1.1" viewBox="0 0 764 820" width="764px" zoomAndPan="magnify"><defs/><g><!--class Scenario--><polygon fill="#222222" points="22,8,22,8.2102,32.4,7.5857,42.8,8.1933,53.2,8.3997,63.6,7.2866,74,7.9223,84.4,7.5735,94.8,7.6165,105.2,7.9318,115.6,7.3086,126,8,126.5536,8,125.3697,17.4623,125.8022,26.9246,126.4319,36.3868,125.9142,45.8491,126.0682,55.3114,125.9681,64.7737,126.1785,74.236,126,83.6982,126,83.9374,115.6,84.2839,105.2,84.3693,94.8,84.3775,84.4,83.9529,74,84.1618,63.6,84.4005,53.2,82.9771,42.8,84.3768,32.4,83.4017,22,83.6982,22.5338,83.6982,21.505,74.236,21.9315,64.7737,22.7416,55.3114,21.9513,45.8491,22.1053,36.3868,22.3386,26.9246,22.4162,17.4623,22,8" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="26" y="34.1074">Scenario</text><path d="M23,46.1133 L23,46.3935 L33.2,45.5609 L43.4,46.371 L53.6,46.6462 L63.8,45.1621 L74,46.0097 L84.2,45.5446 L94.4,45.6019 L104.6,46.0224 L114.8,45.1915 L125,46.1133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><path d="M23,54.1133 L23,54.3935 L33.2,53.5609 L43.4,54.371 L53.6,54.6462 L63.8,53.1621 L74,54.0097 L84.2,53.5446 L94.4,53.6019 L104.6,54.0224 L114.8,53.1915 L125,54.1133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="#84BE84" points="36.0166,71.1355,35.5768,71.7363,35.0567,72.6164,34.3128,73.2095,33.5311,73.5338,32.9078,73.562,32.1067,73.1564,31.3509,72.8914,30.7771,72.3534,30.4762,71.7374,30.2977,71.247,30.1229,70.6064,29.8391,70.0552,30.0572,69.5169,30.2482,68.9274,30.9653,68.4611,31.4697,67.8561,32.0941,67.6552,32.8364,67.4821,33.7883,67.5849,34.3097,67.8308,34.9158,67.9423,35.6529,68.6974,35.9098,69.4946,36.0214,70.0385,35.895,70.9348" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="54" x="43" y="74.1938">main()</text><!--class Person--><polygon fill="#222222" points="6,341.5,6,341.7102,15.7143,341.0857,25.4286,341.6933,35.1429,341.8997,44.8571,340.7866,54.5714,341.4223,64.2857,341.0735,74,341.1165,83.7143,341.4318,93.4286,340.8086,103.1429,342.0536,112.8571,340.8697,122.5714,341.3022,132.2857,341.9319,142,341.5,141.9142,341.5,142.0682,351.4986,141.9681,361.4973,142.1785,371.4959,142.2391,381.4945,142.5857,391.4931,142.6711,401.4918,142.6793,411.4904,142.2546,421.489,142.4636,431.4876,142.7022,441.4863,141.2788,451.4849,142.6785,461.4835,141.7035,471.4821,142.5338,481.4808,141.505,491.4794,141.9315,501.478,142.7416,511.4766,141.9513,521.4753,142.1053,531.4739,142.3386,541.4725,142.4162,551.4711,141.9961,561.4698,142.2872,571.4684,141.4276,581.467,142.2844,591.4656,142.5482,601.4643,142,611.4629,142,611.9074,132.2857,612.0759,122.5714,610.9798,112.8571,610.8107,103.1429,610.8415,93.4286,611.404,83.7143,611.2664,74,612.1443,64.2857,611.2882,54.5714,611.1198,44.8571,611.6912,35.1429,610.7961,25.4286,610.9438,15.7143,612.1118,6,611.4629,6.4357,611.4629,6.7345,601.4643,5.6782,591.4656,6.3192,581.467,6.5904,571.4684,5.5276,561.4698,5.9041,551.4711,6.126,541.4725,6.6518,531.4739,5.9958,521.4753,6.4626,511.4766,5.4462,501.478,5.3227,491.4794,6.5036,481.4808,5.2831,471.4821,6.509,461.4835,6.2066,451.4849,5.7321,441.4863,5.6462,431.4876,6.4588,421.489,5.7007,411.4904,6.5919,401.4918,5.4473,391.4931,6.6174,381.4945,6.4843,371.4959,6.245,361.4973,6.0472,351.4986,6,341.5" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="38" y="367.6074">Person</text><path d="M7,379.6133 L7,379.8935 L17.3077,379.0609 L27.6154,379.871 L37.9231,380.1462 L48.2308,378.6621 L58.5385,379.5097 L68.8462,379.0446 L79.1538,379.1019 L89.4615,379.5224 L99.7692,378.6915 L110.0769,380.3515 L120.3846,378.7729 L130.6923,379.3496 L141,379.6133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="none" points="20.0166,396.6355,19.5768,397.2363,19.0567,398.1164,18.3128,398.7095,17.5311,399.0338,16.9078,399.062,16.1067,398.6564,15.3509,398.3914,14.7771,397.8534,14.4762,397.2374,14.2977,396.747,14.1229,396.1064,13.8391,395.5552,14.0572,395.0169,14.2482,394.4274,14.9653,393.9611,15.4697,393.3561,16.0941,393.1552,16.8364,392.9821,17.7883,393.0849,18.3097,393.3308,18.9158,393.4423,19.6529,394.1974,19.9098,394.9946,20.0214,395.5385,19.895,396.4348" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="36" x="27" y="399.6938">mood</text><path d="M7,409.1982 L7,409.4785 L17.3077,408.6458 L27.6154,409.456 L37.9231,409.7311 L48.2308,408.247 L58.5385,409.0946 L68.8462,408.6296 L79.1538,408.6869 L89.4615,409.1074 L99.7692,408.2764 L110.0769,409.9364 L120.3846,408.3579 L130.6923,408.9346 L141,409.1982 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="#84BE84" points="20.0166,426.2204,19.5768,426.8213,19.0567,427.7014,18.3128,428.2945,17.5311,428.6188,16.9078,428.6469,16.1067,428.2413,15.3509,427.9763,14.7771,427.4383,14.4762,426.8224,14.2977,426.332,14.1229,425.6914,13.8391,425.1401,14.0572,424.6019,14.2482,424.0123,14.9653,423.546,15.4697,422.941,16.0941,422.7401,16.8364,422.5671,17.7883,422.6699,18.3097,422.9158,18.9158,423.0272,19.6529,423.7824,19.9098,424.5795,20.0214,425.1235,19.895,426.0198" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="45" x="27" y="429.2788">eat()</text><polygon fill="#84BE84" points="20.0166,447.8054,19.5768,448.4063,19.0567,449.2863,18.3128,449.8794,17.5311,450.2038,16.9078,450.2319,16.1067,449.8263,15.3509,449.5613,14.7771,449.0233,14.4762,448.4073,14.2977,447.9169,14.1229,447.2763,13.8391,446.7251,14.0572,446.1869,14.2482,445.5973,14.9653,445.131,15.4697,444.526,16.0941,444.3251,16.8364,444.1521,17.7883,444.2549,18.3097,444.5007,18.9158,444.6122,19.6529,445.3673,19.9098,446.1645,20.0214,446.7084,19.895,447.6047" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="63" x="27" y="450.8638">dance()</text><polygon fill="#84BE84" points="20.0166,469.3904,19.5768,469.9912,19.0567,470.8713,18.3128,471.4644,17.5311,471.7887,16.9078,471.8169,16.1067,471.4112,15.3509,471.1463,14.7771,470.6082,14.4762,469.9923,14.2977,469.5019,14.1229,468.8613,13.8391,468.31,14.0572,467.7718,14.2482,467.1823,14.9653,466.716,15.4697,466.1109,16.0941,465.91,16.8364,465.737,17.7883,465.8398,18.3097,466.0857,18.9158,466.1972,19.6529,466.9523,19.9098,467.7494,20.0214,468.2934,19.895,469.1897" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="54" x="27" y="472.4487">work()</text><polygon fill="#F24D5C" points="14,487.2456,14,487.3157,15.2,487.1075,16.4,487.31,17.6,487.3788,18.8,487.0078,20,487.2456,19.9741,487.2456,19.8578,488.4456,19.8722,489.6456,19.9773,490.8456,19.7695,492.0456,20,493.2456,20,493.4302,18.8,493.0355,17.6,493.1797,16.4,493.3896,15.2,493.217,14,493.2456,14.0227,493.2456,13.9894,492.0456,14.0595,490.8456,14.0797,489.6456,14.1952,488.4456,14,487.2456" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="90" x="27" y="494.0337">eatHappy()</text><polygon fill="#F24D5C" points="14,508.8306,14,508.9006,15.2,508.6925,16.4,508.895,17.6,508.9638,18.8,508.5928,20,508.8306,19.9741,508.8306,19.8578,510.0306,19.8722,511.2306,19.9773,512.4306,19.7695,513.6306,20,514.8306,20,515.0151,18.8,514.6205,17.6,514.7646,16.4,514.9745,15.2,514.802,14,514.8306,14.0227,514.8306,13.9894,513.6306,14.0595,512.4306,14.0797,511.2306,14.1952,510.0306,14,508.8306" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="72" x="27" y="515.6187">eatSad()</text><polygon fill="#F24D5C" points="14,530.4155,14,530.4856,15.2,530.2774,16.4,530.48,17.6,530.5488,18.8,530.1777,20,530.4155,19.9741,530.4155,19.8578,531.6155,19.8722,532.8155,19.9773,534.0155,19.7695,535.2155,20,536.4155,20,536.6001,18.8,536.2054,17.6,536.3496,16.4,536.5595,15.2,536.3869,14,536.4155,14.0227,536.4155,13.9894,535.2155,14.0595,534.0155,14.0797,532.8155,14.1952,531.6155,14,530.4155" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="108" x="27" y="537.2036">danceHappy()</text><polygon fill="#F24D5C" points="14,552.0005,14,552.0705,15.2,551.8624,16.4,552.0649,17.6,552.1337,18.8,551.7627,20,552.0005,19.9741,552.0005,19.8578,553.2005,19.8722,554.4005,19.9773,555.6005,19.7695,556.8005,20,558.0005,20,558.185,18.8,557.7904,17.6,557.9346,16.4,558.1445,15.2,557.9719,14,558.0005,14.0227,558.0005,13.9894,556.8005,14.0595,555.6005,14.0797,554.4005,14.1952,553.2005,14,552.0005" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="90" x="27" y="558.7886">danceSad()</text><polygon fill="#F24D5C" points="14,573.5854,14,573.6555,15.2,573.4473,16.4,573.6499,17.6,573.7187,18.8,573.3477,20,573.5854,19.9741,573.5854,19.8578,574.7854,19.8722,575.9854,19.9773,577.1854,19.7695,578.3854,20,579.5854,20,579.77,18.8,579.3754,17.6,579.5195,16.4,579.7294,15.2,579.5569,14,579.5854,14.0227,579.5854,13.9894,578.3854,14.0595,577.1854,14.0797,575.9854,14.1952,574.7854,14,573.5854" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="99" x="27" y="580.3735">workHappy()</text><polygon fill="#F24D5C" points="14,595.1704,14,595.2405,15.2,595.0323,16.4,595.2348,17.6,595.3036,18.8,594.9326,20,595.1704,19.9741,595.1704,19.8578,596.3704,19.8722,597.5704,19.9773,598.7704,19.7695,599.9704,20,601.1704,20,601.355,18.8,600.9603,17.6,601.1045,16.4,601.3144,15.2,601.1418,14,601.1704,14.0227,601.1704,13.9894,599.9704,14.0595,598.7704,14.0797,597.5704,14.1952,596.3704,14,595.1704" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="81" x="27" y="601.9585">workSad()</text><path d="M177.5,144 L177.5,472.5 L142.35,476.5 L177.5,480.5 L177.5,808.832 A0,0 0 0 0 177.5,808.832 L752.5,808.832 A0,0 0 0 0 752.5,808.832 L752.5,154 L742.5,144 L177.5,144 A0,0 0 0 0 177.5,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M742.5,144 L742.6868,144 L742.1317,146 L742.6718,148 L742.8553,150 L741.8659,152 L742.5,154 L742.5,153.9309 L744.5,153.6209 L746.5,153.6591 L748.5,153.9394 L750.5,153.3854 L752.5,154 L752.848,154.348 L750.1038,151.6038 L748.3757,149.8757 L746.7715,148.2715 L744.4461,145.9461 L742.5,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="168" x="184.5" y="170.1074">public eat() {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="468" x="208.5" y="196.2207">if (this.mood == AvailableMood.HAPPY) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="192" x="256.5" y="222.334">this.eatHappy();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="528" x="208.5" y="248.4473">} else if (this.mood == AvailableMood.SAD) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="168" x="256.5" y="274.5605">this.eatSad();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="208.5" y="300.6738">}</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="184.5" y="326.7871">}</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="0" x="196.5" y="352.9004"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="192" x="184.5" y="379.0137">public dance() {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="456" x="208.5" y="405.127">if(this.mood == AvailableMood.HAPPY) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="216" x="244.5" y="431.2402">this.danceHappy();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="528" x="208.5" y="457.3535">} else if (this.nood == AvailableMood.SAD) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="192" x="244.5" y="483.4668">this.danceSad();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="372" x="244.5" y="509.5801">tis.mood = AvailableMood.HAPPY;</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="208.5" y="535.6934">}</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="184.5" y="561.8066">}</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="0" x="196.5" y="587.9199"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="184.5" y="614.0332">public work() {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="468" x="208.5" y="640.1465">if (this.mood == AvailableMood.HAPPY) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="192" x="256.5" y="666.2598">tis.workHappy();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="384" x="256.5" y="692.373">this.mood == AvaailableMood.SAD;</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="528" x="208.5" y="718.4863">} else if (this.mood == AvailableMood.SAD) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="256.5" y="744.5996">this.workSad();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="208.5" y="770.7129">}</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="184.5" y="796.8262">}</text><!--link Scenario to Person--><path d="M74,84.28 L74.2802,84.28 L73.4476,94.3576 L74.2577,104.4352 L74.5329,114.5128 L73.0488,124.5904 L73.8964,134.668 L73.4313,144.7456 L73.4887,154.8232 L73.9091,164.9008 L73.0782,174.9784 L74.7382,185.056 L73.1596,195.1336 L73.7363,205.2112 L74.5759,215.2888 L73.8856,225.3664 L74.091,235.444 L73.9574,245.5216 L74.238,255.5992 L74.3188,265.6768 L74.7809,275.7544 L74.8947,285.832 L74.9057,295.9096 L74.3395,305.9872 L74.6181,316.0648 L74.9363,326.1424 L74,336.22 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="74,341.47,74.064,341.4985,74.6738,339.6139,75.6589,337.8962,76.5217,336.1241,76.9827,334.1734,78,332.47,77.9817,332.4517,77.0995,333.1695,76.3096,333.9796,75.5839,334.8539,74.637,335.507,74,336.47,74.1305,336.6005,73.0514,335.5214,72.3534,334.8234,71.7018,334.1718,70.7798,333.2498,70,332.47,70.0208,332.4792,70.7903,334.2657,71.6544,336.0942,72.4728,337.9024,73.3784,339.7493,74,341.47" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DC143C
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DC143C
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam note {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+class Scenario  {
++ main()
+}
+class Person  {
++ mood
++ eat()
++ dance()
++ work()
+- eatHappy()
+- eatSad()
+- danceHappy()
+- danceSad()
+- workHappy()
+- workSad()
+}
+note right
+public eat() {
+  if (this.mood == AvailableMood.HAPPY) {
+      this.eatHappy();
+  } else if (this.mood == AvailableMood.SAD) {
+      this.eatSad();
+  }
+}
+
+public dance() {
+  if(this.mood == AvailableMood.HAPPY) {
+     this.danceHappy();
+  } else if (this.nood == AvailableMood.SAD) {
+     this.danceSad();
+     tis.mood = AvailableMood.HAPPY;
+  }
+}
+
+public work() {
+  if (this.mood == AvailableMood.HAPPY) {
+      tis.workHappy();
+      this.mood == AvaailableMood.SAD;
+  } else if (this.mood == AvailableMood.SAD) {
+      this.workSad();
+  }
+}
+end note
+
+Scenario .down.> Person
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

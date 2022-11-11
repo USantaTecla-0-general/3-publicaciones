@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="390px" preserveAspectRatio="none" style="width:405px;height:390px;background:#222222;" version="1.1" viewBox="0 0 405 390" width="405px" zoomAndPan="magnify"><defs/><g><!--entity PaqueteXc--><polygon fill="#222222" points="6.5,8,6.5,8.2102,16,7.5857,25.5,8.1933,35,8.3997,44.5,7.2866,54,7.9223,63.5,7.5735,73,7.6165,82.5,8,82.4781,7.994,83.6777,13.0611,85.478,18.2924,86.4973,23.3102,88.0364,28.4701,89.5,33.6094,89.5,33.7534,92.9,33.5808,96.3,33.6321,99.7,33.5987,103.1,33.6689,106.5,33.6094,106.5797,33.6094,106.6952,37.0094,106.7237,40.4094,106.7264,43.8094,106.5849,47.2094,106.5,50.6094,106.5,51.073,96.5,51.3116,86.5,49.8882,76.5,51.2879,66.5,50.3129,56.5,51.1432,46.5,50.1144,36.5,50.5409,26.5,51.351,16.5,50.5606,6.5,50.6094,6.5351,50.6094,6.6129,42.0875,6.6387,33.5656,6.4987,25.0438,6.5957,16.5219,6.5,8" style="stroke: #A9A9A9; stroke-width: 1.5;"/><path d="M6.5,33.6094 L6.5,33.8896 L16.875,33.0569 L27.25,33.8671 L37.625,34.1423 L48,32.6582 L58.375,33.5058 L68.75,33.0407 L79.125,33.098 L89.5,33.6094 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#A9A9A9" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="11.5" y="26.5332">PaqueteXc</text><path d="M142,10.5 L142,25.5 L106.54,29.5 L142,33.5 L142,48.6133 A0,0 0 0 0 142,48.6133 L345,48.6133 A0,0 0 0 0 345,48.6133 L345,20.5 L335,10.5 L142,10.5 A0,0 0 0 0 142,10.5 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M335,10.5 L335.1868,10.5 L334.6317,12.5 L335.1718,14.5 L335.3553,16.5 L334.3659,18.5 L335,20.5 L335,20.4309 L337,20.1209 L339,20.1591 L341,20.4394 L343,19.8854 L345,20.5 L345.348,20.848 L342.6038,18.1038 L340.8757,16.3757 L339.2715,14.7715 L336.9461,12.4461 L335,10.5 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#228B22" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="149" y="36.6074">I=1 =&gt; E=0; A=0</text><!--entity PaqueteYc--><polygon fill="#222222" points="6,172,6,172.2102,15.625,171.5857,25.25,172.1933,34.875,172.3997,44.5,171.2866,54.125,171.9223,63.75,171.5735,73.375,171.6165,83,172,82.9781,171.994,84.1777,177.0611,85.978,182.2924,86.9973,187.3102,88.5364,192.4701,90,197.6094,90,197.7534,93.4,197.5808,96.8,197.6321,100.2,197.5987,103.6,197.6689,107,197.6094,107.0797,197.6094,107.1952,201.0094,107.2237,204.4094,107.2264,207.8094,107.0849,211.2094,107,214.6094,107,215.073,96.9,215.3116,86.8,213.8882,76.7,215.2879,66.6,214.3129,56.5,215.1432,46.4,214.1144,36.3,214.5409,26.2,215.351,16.1,214.5606,6,214.6094,6.0351,214.6094,6.1129,206.0875,6.1387,197.5656,5.9987,189.0438,6.0957,180.5219,6,172" style="stroke: #A9A9A9; stroke-width: 1.5;"/><path d="M6,197.6094 L6,197.8896 L16.5,197.0569 L27,197.8671 L37.5,198.1423 L48,196.6582 L58.5,197.5058 L69,197.0407 L79.5,197.098 L90,197.6094 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#A9A9A9" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="11" y="190.5332">PaqueteYc</text><path d="M142,174.5 L142,189.5 L107.19,193.5 L142,197.5 L142,212.6133 A0,0 0 0 0 142,212.6133 L393,212.6133 A0,0 0 0 0 393,212.6133 L393,184.5 L383,174.5 L142,174.5 A0,0 0 0 0 142,174.5 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M383,174.5 L383.1868,174.5 L382.6317,176.5 L383.1718,178.5 L383.3553,180.5 L382.3659,182.5 L383,184.5 L383,184.4309 L385,184.1209 L387,184.1591 L389,184.4394 L391,183.8854 L393,184.5 L393.348,184.848 L390.6038,182.1038 L388.8757,180.3757 L387.2715,178.7715 L384.9461,176.4461 L383,174.5 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#FFA500" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="228" x="149" y="200.6074">I=0,5 =&gt; E=0,5; A=0</text><!--entity PaqueteZc--><polygon fill="#222222" points="6.5,336,6.5,336.2102,16,335.5857,25.5,336.1933,35,336.3997,44.5,335.2866,54,335.9223,63.5,335.5735,73,335.6165,82.5,336,82.4781,335.994,83.6777,341.0611,85.478,346.2924,86.4973,351.3102,88.0364,356.4701,89.5,361.6094,89.5,361.7534,92.9,361.5808,96.3,361.6321,99.7,361.5987,103.1,361.6689,106.5,361.6094,106.5797,361.6094,106.6952,365.0094,106.7237,368.4094,106.7264,371.8094,106.5849,375.2094,106.5,378.6094,106.5,379.073,96.5,379.3116,86.5,377.8882,76.5,379.2879,66.5,378.3129,56.5,379.1432,46.5,378.1144,36.5,378.5409,26.5,379.351,16.5,378.5606,6.5,378.6094,6.5351,378.6094,6.6129,370.0875,6.6387,361.5656,6.4987,353.0438,6.5957,344.5219,6.5,336" style="stroke: #A9A9A9; stroke-width: 1.5;"/><path d="M6.5,361.6094 L6.5,361.8896 L16.875,361.0569 L27.25,361.8671 L37.625,362.1423 L48,360.6582 L58.375,361.5058 L68.75,361.0407 L79.125,361.098 L89.5,361.6094 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 1.5;"/><text fill="#A9A9A9" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="11.5" y="354.5332">PaqueteZc</text><path d="M142,338.5 L142,353.5 L106.54,357.5 L142,361.5 L142,376.6133 A0,0 0 0 0 142,376.6133 L345,376.6133 A0,0 0 0 0 345,376.6133 L345,348.5 L335,338.5 L142,338.5 A0,0 0 0 0 142,338.5 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M335,338.5 L335.1868,338.5 L334.6317,340.5 L335.1718,342.5 L335.3553,344.5 L334.3659,346.5 L335,348.5 L335,348.4309 L337,348.1209 L339,348.1591 L341,348.4394 L343,347.8854 L345,348.5 L345.348,348.848 L342.6038,346.1038 L340.8757,344.3757 L339.2715,342.7715 L336.9461,340.4461 L335,338.5 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="149" y="364.6074">I=0 =&gt; E=1; A=0</text><!--link PaqueteXc to PaqueteYc--><path d="M56.5,51.02 L56.7802,51.02 L55.9476,60.6475 L56.7577,70.275 L57.0329,79.9025 L55.5488,89.53 L56.3964,99.1575 L55.9313,108.785 L55.9887,118.4125 L56.4091,128.04 L55.5782,137.6675 L57.2382,147.295 L55.6596,156.9225 L56.5,166.55 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="56.5,171.89,56.564,171.9185,57.1738,170.0339,58.1589,168.3162,59.0217,166.5441,59.4827,164.5934,60.5,162.89,60.4817,162.8717,59.5995,163.5895,58.8096,164.3996,58.0839,165.2739,57.137,165.927,56.5,166.89,56.6305,167.0205,55.5514,165.9414,54.8534,165.2434,54.2018,164.5918,53.2798,163.6698,52.5,162.89,52.5208,162.8992,53.2903,164.6857,54.1544,166.5142,54.9728,168.3224,55.8784,170.1693,56.5,171.89" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link PaqueteYc to PaqueteZc--><path d="M56.5,215.02 L56.7802,215.02 L55.9476,224.6475 L56.7577,234.275 L57.0329,243.9025 L55.5488,253.53 L56.3964,263.1575 L55.9313,272.785 L55.9887,282.4125 L56.4091,292.04 L55.5782,301.6675 L57.2382,311.295 L55.6596,320.9225 L56.5,330.55 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="56.5,335.89,56.564,335.9185,57.1738,334.0339,58.1589,332.3162,59.0217,330.5441,59.4827,328.5934,60.5,326.89,60.4817,326.8717,59.5995,327.5895,58.8096,328.3996,58.0839,329.2739,57.137,329.927,56.5,330.89,56.6305,331.0205,55.5514,329.9414,54.8534,329.2434,54.2018,328.5918,53.2798,327.6698,52.5,326.89,52.5208,326.8992,53.2903,328.6857,54.1544,330.5142,54.9728,332.3224,55.8784,334.1693,56.5,335.89" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam defaultFontColor DarkGrey
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam package {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam note{
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #228B22
+}
+package PaqueteXc
+note right of PaqueteXc : I=1 => E=0; A=0
+package PaqueteYc
+note right of PaqueteYc : <color:#ffa500>I=0,5 => E=0,5; A=0</color>
+package PaqueteZc
+note right of PaqueteZc : <color:#DC143C>I=0 => E=1; A=0</color>
+
+PaqueteXc ...> PaqueteYc
+PaqueteYc ...> PaqueteZc
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

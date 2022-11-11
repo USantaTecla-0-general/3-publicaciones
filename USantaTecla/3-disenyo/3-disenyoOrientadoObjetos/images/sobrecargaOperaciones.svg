@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="218px" preserveAspectRatio="none" style="width:640px;height:218px;background:#222222;" version="1.1" viewBox="0 0 640 218" width="640px" zoomAndPan="magnify"><defs/><g><!--cluster clases--><polygon fill="#222222" points="22,24.5,22,24.7102,32,24.0857,42,24.6933,52,24.8997,62,23.7866,72,24.4223,82,24.0735,92,24.1165,102,24.5,101.9777,24.4954,103.1742,31.2763,104.9808,38.1824,105.9942,44.9257,107.5354,51.7774,109,58.6133,109,59.0452,119.1111,58.5275,129.2222,58.6815,139.3333,58.5813,149.4444,58.7918,159.5556,58.8524,169.6667,59.199,179.7778,59.2843,189.8889,59.2925,200,58.8679,210.1111,59.0769,220.2222,59.3155,230.3333,57.8921,240.4444,59.2918,250.5556,58.3168,260.6667,59.1471,270.7778,58.1183,280.8889,58.5448,291,59.3549,301.1111,58.5645,311.2222,58.7186,321.3333,58.9519,331.4444,59.0295,341.5556,58.6094,351.6667,58.9005,361.7778,58.0409,371.8889,58.8977,382,58.6133,382.5482,58.6133,382.4445,69.102,382.613,79.5906,381.5169,90.0793,381.3478,100.568,381.3786,111.0566,381.9411,121.5453,381.8035,132.034,382.6814,142.5227,381.8253,153.0113,382,163.5,382,163.1569,372,163.7283,362,162.8332,352,162.9809,342,164.149,332,163.9357,322,164.2345,312,163.1782,302,163.8192,292,164.0904,282,163.0276,272,163.4041,262,163.626,252,164.1518,242,163.4958,232,163.9626,222,162.9462,212,162.8227,202,164.0036,192,162.7831,182,164.009,172,163.7066,162,163.2321,152,163.1462,142,163.9588,132,163.2007,122,164.0919,112,162.9473,102,164.1174,92,163.9843,82,163.745,72,163.5472,62,164.2266,52,164.1136,42,163.6693,32,163.7682,22,163.5,21.8697,163.5,22.7165,153.5714,22.1549,143.6429,22.1726,133.7143,21.3916,123.7857,21.5948,113.8571,22.5307,103.9286,22.4298,94,21.9571,84.0714,21.6778,74.1429,21.7811,64.2143,21.3138,54.2857,22.4147,44.3571,22.7396,34.4286,22,24.5" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M22,58.6133 L22,58.8935 L31.6667,58.0609 L41.3333,58.871 L51,59.1462 L60.6667,57.6621 L70.3333,58.5097 L80,58.0446 L89.6667,58.1019 L99.3333,58.5224 L109,58.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="27" y="47.6074">clases</text><!--class A--><polygon fill="#222222" points="159,71.5,159,71.7102,168.5556,71.0857,178.1111,71.6933,187.6667,71.8997,197.2222,70.7866,206.7778,71.4223,216.3333,71.0735,225.8889,71.1165,235.4444,71.4318,245,71.5,244.3086,71.5,245.5536,80.9623,244.3697,90.4246,244.8022,99.8868,245.4319,109.3491,244.9142,118.8114,245.0682,128.2737,244.9681,137.736,245,147.1982,245,147.3768,235.4444,147.4374,225.8889,147.7839,216.3333,147.8693,206.7778,147.8775,197.2222,147.4529,187.6667,147.6618,178.1111,147.9005,168.5556,146.4771,159,147.1982,159.6785,147.1982,158.7035,137.736,159.5338,128.2737,158.505,118.8114,158.9315,109.3491,159.7416,99.8868,158.9513,90.4246,159.1053,80.9623,159,71.5" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="12" x="196" y="97.6074">A</text><path d="M160,109.6133 L160,109.8935 L170.5,109.0609 L181,109.871 L191.5,110.1462 L202,108.6621 L212.5,109.5097 L223,109.0446 L233.5,109.1019 L244,109.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M160,117.6133 L160,117.8935 L170.5,117.0609 L181,117.871 L191.5,118.1462 L202,116.6621 L212.5,117.5097 L223,117.0446 L233.5,117.1019 L244,117.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="72" x="166" y="137.6938">void m()</text><!--class B--><polygon fill="#222222" points="38,71.5,38,71.7102,47.5556,71.0857,57.1111,71.6933,66.6667,71.8997,76.2222,70.7866,85.7778,71.4223,95.3333,71.0735,104.8889,71.1165,114.4444,71.4318,124,71.5,123.3086,71.5,124.5536,80.9623,123.3697,90.4246,123.8022,99.8868,124.4319,109.3491,123.9142,118.8114,124.0682,128.2737,123.9681,137.736,124,147.1982,124,147.3768,114.4444,147.4374,104.8889,147.7839,95.3333,147.8693,85.7778,147.8775,76.2222,147.4529,66.6667,147.6618,57.1111,147.9005,47.5556,146.4771,38,147.1982,38.6785,147.1982,37.7035,137.736,38.5338,128.2737,37.505,118.8114,37.9315,109.3491,38.7416,99.8868,37.9513,90.4246,38.1053,80.9623,38,71.5" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="12" x="75" y="97.6074">B</text><path d="M39,109.6133 L39,109.8935 L49.5,109.0609 L60,109.871 L70.5,110.1462 L81,108.6621 L91.5,109.5097 L102,109.0446 L112.5,109.1019 L123,109.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M39,117.6133 L39,117.8935 L49.5,117.0609 L60,117.871 L70.5,118.1462 L81,116.6621 L91.5,117.5097 L102,117.0446 L112.5,117.1019 L123,117.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="72" x="45" y="137.6938">void m()</text><!--class C--><polygon fill="#222222" points="280,71.5,280,71.7102,289.5556,71.0857,299.1111,71.6933,308.6667,71.8997,318.2222,70.7866,327.7778,71.4223,337.3333,71.0735,346.8889,71.1165,356.4444,71.4318,366,71.5,365.3086,71.5,366.5536,80.9623,365.3697,90.4246,365.8022,99.8868,366.4319,109.3491,365.9142,118.8114,366.0682,128.2737,365.9681,137.736,366,147.1982,366,147.3768,356.4444,147.4374,346.8889,147.7839,337.3333,147.8693,327.7778,147.8775,318.2222,147.4529,308.6667,147.6618,299.1111,147.9005,289.5556,146.4771,280,147.1982,280.6785,147.1982,279.7035,137.736,280.5338,128.2737,279.505,118.8114,279.9315,109.3491,280.7416,99.8868,279.9513,90.4246,280.1053,80.9623,280,71.5" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="12" x="317" y="97.6074">C</text><path d="M281,109.6133 L281,109.8935 L291.5,109.0609 L302,109.871 L312.5,110.1462 L323,108.6621 L333.5,109.5097 L344,109.0446 L354.5,109.1019 L365,109.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M281,117.6133 L281,117.8935 L291.5,117.0609 L302,117.871 L312.5,118.1462 L323,116.6621 L333.5,117.5097 L344,117.0446 L354.5,117.1019 L365,117.6133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="72" x="287" y="137.6938">void m()</text><path d="M401.5,12 L401.5,105.5 L366.12,109.5 L401.5,113.5 L401.5,206.793 A0,0 0 0 0 401.5,206.793 L628.5,206.793 A0,0 0 0 0 628.5,206.793 L628.5,22 L618.5,12 L401.5,12 A0,0 0 0 0 401.5,12 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M618.5,12 L618.6868,12 L618.1317,14 L618.6718,16 L618.8553,18 L617.8659,20 L618.5,22 L618.5,21.9309 L620.5,21.6209 L622.5,21.6591 L624.5,21.9394 L626.5,21.3854 L628.5,22 L628.848,22.348 L626.1038,19.6038 L624.3757,17.8757 L622.7715,16.2715 L620.4461,13.9461 L618.5,12 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="408.5" y="38.1074">A oA = new A();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="408.5" y="64.2207">B oB = new B();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="180" x="408.5" y="90.334">C oC = new C();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="0" x="420.5" y="116.4473"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="204" x="408.5" y="142.5605">oA.m(); // m de A</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="204" x="408.5" y="168.6738">oB.m(); // m de B</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="204" x="408.5" y="194.7871">oC.m(); // m de C</text><!--
+@startuml
+
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam package {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam note {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+package clases {
+
+class A {
+void m()
+}
+
+class B{
+void m()
+}
+
+class C{
+void m()
+}
+
+}
+note right
+A oA = new A();
+B oB = new B();
+C oC = new C();
+
+oA.m(); // m de A
+oB.m(); // m de B
+oC.m(); // m de C
+endnote
+
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

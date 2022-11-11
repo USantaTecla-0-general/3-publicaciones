@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="335px" preserveAspectRatio="none" style="width:459px;height:335px;background:#222222;" version="1.1" viewBox="0 0 459 335" width="459px" zoomAndPan="magnify"><defs/><g><polygon fill="#222222" points="171,142,171,142.2102,181.1818,141.5857,191.3636,142.1933,201.5455,142.3997,211.7273,141.2866,221.9091,141.9223,232.0909,141.5735,242.2727,141.6165,252.4545,141.9318,262.6364,141.3086,272.8182,142.5536,283,142,282.3697,142,282.8022,151.6227,283.4319,161.2453,282.9142,170.868,283.0682,180.4906,283,190.1133,283,190.0813,272.8182,190.2918,262.6364,190.3524,252.4545,190.699,242.2727,190.7843,232.0909,190.7925,221.9091,190.3679,211.7273,190.5769,201.5455,190.8155,191.3636,189.3921,181.1818,190.7918,171,190.1133,170.7035,190.1133,171.5338,180.4906,170.505,170.868,170.9315,161.2453,171.7416,151.6227,171,142" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="179" y="165.1074">Elemento</text><path d="M172,174.1133 L172,174.3935 L182,173.5609 L192,174.371 L202,174.6462 L212,173.1621 L222,174.0097 L232,173.5446 L242,173.6019 L252,174.0224 L262,173.1915 L272,174.8515 L282,174.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><polygon fill="#222222" points="6,8,6,8.2102,16.3333,7.5857,26.6667,8.1933,37,8.3997,47.3333,7.2866,57.6667,7.9223,68,7.5735,78.3333,7.6165,88.6667,7.9318,99,7.3086,109.3333,8.5536,119.6667,7.3697,130,8,129.8022,8,130.4319,18.6038,129.9142,29.2076,130.0682,39.8114,129.9681,50.4152,130.1785,61.019,130.2391,71.6228,130,82.2266,130,82.8123,119.6667,82.8976,109.3333,82.9058,99,82.4812,88.6667,82.6901,78.3333,82.9288,68,81.5054,57.6667,82.9051,47.3333,81.9301,37,82.7604,26.6667,81.7315,16.3333,82.1581,6,82.2266,6.7416,82.2266,5.9513,71.6228,6.1053,61.019,6.3386,50.4152,6.4162,39.8114,5.9961,29.2076,6.2872,18.6038,6,8" style="stroke: #228B22; stroke-width: 3.0;"/><text fill="#228B22" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="20" y="31.1074">Elemento</text><text fill="#228B22" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="14" y="57.2207">AferenteX</text><path d="M7,66.2266 L7,66.5068 L17.1667,65.6741 L27.3333,66.4843 L37.5,66.7595 L47.6667,65.2754 L57.8333,66.1229 L68,65.6579 L78.1667,65.7152 L88.3333,66.1357 L98.5,65.3047 L108.6667,66.9648 L118.8333,65.3862 L129,66.2266 " fill="#222222" style="stroke: #228B22; stroke-width: 3.0;"/><polygon fill="#222222" points="165,8,165,8.2102,175.3333,7.5857,185.6667,8.1933,196,8.3997,206.3333,7.2866,216.6667,7.9223,227,7.5735,237.3333,7.6165,247.6667,7.9318,258,7.3086,268.3333,8.5536,278.6667,7.3697,289,8,288.8022,8,289.4319,18.6038,288.9142,29.2076,289.0682,39.8114,288.9681,50.4152,289.1785,61.019,289.2391,71.6228,289,82.2266,289,82.8123,278.6667,82.8976,268.3333,82.9058,258,82.4812,247.6667,82.6901,237.3333,82.9288,227,81.5054,216.6667,82.9051,206.3333,81.9301,196,82.7604,185.6667,81.7315,175.3333,82.1581,165,82.2266,165.7416,82.2266,164.9513,71.6228,165.1053,61.019,165.3386,50.4152,165.4162,39.8114,164.9961,29.2076,165.2872,18.6038,165,8" style="stroke: #228B22; stroke-width: 3.0;"/><text fill="#228B22" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="179" y="31.1074">Elemento</text><text fill="#228B22" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="173" y="57.2207">AferenteY</text><path d="M166,66.2266 L166,66.5068 L176.1667,65.6741 L186.3333,66.4843 L196.5,66.7595 L206.6667,65.2754 L216.8333,66.1229 L227,65.6579 L237.1667,65.7152 L247.3333,66.1357 L257.5,65.3047 L267.6667,66.9648 L277.8333,65.3862 L288,66.2266 " fill="#222222" style="stroke: #228B22; stroke-width: 3.0;"/><polygon fill="#222222" points="324,8,324,8.2102,334.3333,7.5857,344.6667,8.1933,355,8.3997,365.3333,7.2866,375.6667,7.9223,386,7.5735,396.3333,7.6165,406.6667,7.9318,417,7.3086,427.3333,8.5536,437.6667,7.3697,448,8,447.8022,8,448.4319,18.6038,447.9142,29.2076,448.0682,39.8114,447.9681,50.4152,448.1785,61.019,448.2391,71.6228,448,82.2266,448,82.8123,437.6667,82.8976,427.3333,82.9058,417,82.4812,406.6667,82.6901,396.3333,82.9288,386,81.5054,375.6667,82.9051,365.3333,81.9301,355,82.7604,344.6667,81.7315,334.3333,82.1581,324,82.2266,324.7416,82.2266,323.9513,71.6228,324.1053,61.019,324.3386,50.4152,324.4162,39.8114,323.9961,29.2076,324.2872,18.6038,324,8" style="stroke: #228B22; stroke-width: 3.0;"/><text fill="#228B22" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="338" y="31.1074">Elemento</text><text fill="#228B22" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="332" y="57.2207">AferenteZ</text><path d="M325,66.2266 L325,66.5068 L335.1667,65.6741 L345.3333,66.4843 L355.5,66.7595 L365.6667,65.2754 L375.8333,66.1229 L386,65.6579 L396.1667,65.7152 L406.3333,66.1357 L416.5,65.3047 L426.6667,66.9648 L436.8333,65.3862 L447,66.2266 " fill="#222222" style="stroke: #228B22; stroke-width: 3.0;"/><!--link ElementoAferenteX to Elemento--><path d="M116.14,82.03 L116.3079,82.2544 L124.2368,87.8955 L133.15,94.8519 L141.7427,101.38 L149.2812,106.4996 L158.2168,113.4859 L166.3659,119.4214 L174.8281,125.7751 L183.5078,132.4195 L191.99,138.8 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="196.07,141.85,196.131,141.8844,194.9828,140.0661,194.1924,138.4493,193.2855,136.7669,191.9953,134.8687,191.2357,133.2693,191.21,133.2655,191.2595,134.3679,191.4381,135.4894,191.7066,136.624,191.6656,137.7132,192.058,138.866,192.0849,139.0486,190.9081,138.8226,189.8098,139.1297,188.7209,139.5019,187.5765,139.4956,186.4613,139.6884,186.4663,139.7106,188.3807,140.1103,190.3178,140.6111,192.244,141.0631,194.1911,141.6081,196.07,141.85" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link ElementoAferenteY to Elemento--><path d="M227,82.03 L227.2802,82.03 L226.4476,92.922 L227.2577,103.814 L227.5329,114.706 L226.0488,125.598 L227,136.49 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="227,141.85,227.064,141.8785,227.6738,139.9939,228.6589,138.2762,229.5217,136.5041,229.9827,134.5534,231,132.85,230.9817,132.8317,230.0995,133.5495,229.3096,134.3596,228.5839,135.2339,227.637,135.887,227,136.85,227.1305,136.9805,226.0514,135.9014,225.3534,135.2034,224.7018,134.5518,223.7798,133.6298,223,132.85,223.0208,132.8592,223.7903,134.6457,224.6544,136.4742,225.4728,138.2824,226.3784,140.1293,227,141.85" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link ElementoAferenteZ to Elemento--><path d="M337.86,82.03 L338.0279,82.2544 L329.1012,87.8955 L321.1589,94.8519 L312.896,101.38 L303.5789,106.4996 L295.659,113.4859 L286.9526,119.4214 L278.5592,125.7751 L270.3833,132.4195 L262.01,138.8 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="257.93,141.85,257.9454,141.9184,259.8214,141.2829,261.7876,141.0482,263.7245,140.683,265.5648,139.8887,267.5387,139.6884,267.535,139.6628,266.3987,139.3833,265.2814,139.233,264.1774,139.1725,263.0278,138.8025,261.942,138.866,262.1245,138.8928,261.8986,137.7161,262.2057,136.6177,262.5778,135.5289,262.5716,134.3845,262.7643,133.2693,262.7842,133.2804,261.7882,134.9802,260.8825,136.7308,259.9332,138.4568,259.067,140.2297,257.93,141.85" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Elemento to ElementoEferenteX--><!--link Elemento to ElementoEferenteY--><!--link Elemento to ElementoEferenteZ--><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam object {
+    BorderThickness 3
+    BorderColor<<a>> #DarkGrey
+    BorderColor<<b>> #228B22
+    BorderColor<<c>> #DC143C
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor<<a>> #DarkGrey
+    FontColor<<b>> #228B22
+    FontColor<<c>> #DC143C
+}
+
+object Elemento <<a>>
+object "Elemento\nAferenteX" as ElementoAferenteX<<b>>
+object "Elemento\nAferenteY" as ElementoAferenteY<<b>>
+object "Elemento\nAferenteZ" as ElementoAferenteZ<<b>>
+object "Elemento\nEferenteX" as ElementoEferenteX<<c>>
+object "Elemento\nEferenteY" as ElementoEferenteY<<c>>
+object "Elemento\nEferenteZ" as ElementoEferenteZ<<c>>
+
+ElementoAferenteX .down.> Elemento
+ElementoAferenteY .down.> Elemento
+ElementoAferenteZ .down.> Elemento
+Elemento .down.> ElementoEferenteX
+Elemento .down.> ElementoEferenteY
+Elemento .down.> ElementoEferenteZ
+
+hide ElementoEferenteX
+hide ElementoEferenteY
+hide ElementoEferenteZ
+
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

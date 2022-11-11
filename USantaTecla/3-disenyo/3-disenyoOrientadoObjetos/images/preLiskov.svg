@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="295px" preserveAspectRatio="none" style="width:84px;height:295px;background:#222222;" version="1.1" viewBox="0 0 84 295" width="84px" zoomAndPan="magnify"><defs/><g><!--class P--><polygon fill="#222222" points="6,8,6,8.0701,10,7.8619,14,8.0644,18,8.1332,22,7.7622,26,8,25.9223,8,25.5735,18.8227,25.6165,29.6453,25.9318,40.468,25.3086,51.2906,26,62.1133,26,62.2978,22,61.9032,18,62.0474,14,62.2573,10,62.0847,6,62.1133,6.0682,62.1133,5.9681,51.2906,6.1785,40.468,6.2391,29.6453,6.5857,18.8227,6,8" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="12" x="10" y="34.1074">P</text><path d="M7,46.1133 L7,46.2067 L10.6,45.9291 L14.2,46.1992 L17.8,46.2909 L21.4,45.7962 L25,46.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M7,54.1133 L7,54.2067 L10.6,53.9291 L14.2,54.1992 L17.8,54.2909 L21.4,53.7962 L25,54.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class T--><polygon fill="#222222" points="6,230,6,230.0701,10,229.8619,14,230.0644,18,230.1332,22,229.7622,26,230,25.9223,230,25.5735,240.8227,25.6165,251.6453,25.9318,262.468,25.3086,273.2906,26,284.1133,26,284.2978,22,283.9032,18,284.0474,14,284.2573,10,284.0847,6,284.1133,6.0682,284.1133,5.9681,273.2906,6.1785,262.468,6.2391,251.6453,6.5857,240.8227,6,230" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="12" x="10" y="256.1074">T</text><path d="M7,268.1133 L7,268.2067 L10.6,267.9291 L14.2,268.1992 L17.8,268.2909 L21.4,267.7962 L25,268.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M7,276.1133 L7,276.2067 L10.6,275.9291 L14.2,276.1992 L17.8,276.2909 L21.4,275.7962 L25,276.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><polygon fill="#222222" points="33,122,33,122.0701,41,121.8619,49,122.0644,57,122.1332,65,121.7622,73,122,72.9223,122,72.5735,131.6227,72.6165,141.2453,72.9318,150.868,72.3086,160.4906,73,170.1133,73,170.2978,65,169.9032,57,170.0474,49,170.2573,41,170.0847,33,170.1133,33.0682,170.1133,32.9681,160.4906,33.1785,150.868,33.2391,141.2453,33.5857,131.6227,33,122" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24" x="41" y="145.1074">oT</text><path d="M34,154.1133 L34,154.2067 L41.6,153.9291 L49.2,154.1992 L56.8,154.2909 L64.4,153.7962 L72,154.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--link P to T--><path d="M15.44,75.58 L15.7202,75.5827 L14.7996,84.8588 L15.5217,94.1504 L15.7089,103.4371 L14.1368,112.707 L15,122 L14.9655,121.9999 L14.7924,126.7993 L14.7936,131.5994 L14.9157,136.3999 L14.6207,141.1988 L14.91,146 L15.1561,146.0009 L14.6479,150.7989 L14.8581,155.5997 L15.156,160.4007 L14.9439,165.1999 L15,170 L15.091,170.0009 L15.0454,179.2836 L15.414,188.5703 L15.5828,197.855 L16.1329,207.1434 L15.44,216.42 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="#A9A9A9" points="15.61,229.65,15.6744,229.6777,16.2613,227.7859,17.2256,226.0564,18.0669,224.274,18.5043,222.3179,19.5009,220.6023,19.4824,220.5842,18.6089,221.3126,17.8289,222.1322,17.1139,223.0153,16.1749,223.6798,15.5496,224.6504,15.6785,224.7824,14.5932,223.7097,13.8843,223.0226,13.2213,222.3826,12.2911,221.4688,11.5015,220.699,11.5222,220.7085,12.3135,222.4848,13.199,224.3042,14.039,226.1029,14.9657,227.9412,15.61,229.65" style="stroke: #A9A9A9; stroke-width: 2.0;"/><path d="M15.5496,224.6504 L15.643,224.6515 L15.3455,223.049 L15.5956,221.4533 L15.6674,219.8554 L15.1529,218.2501 L15.45,216.655 " fill="#A9A9A9" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="#A9A9A9" points="15.61,62.35,15.6678,62.3896,14.6816,63.4623,14.0343,64.7669,13.2766,65.996,12.156,66.9767,11.5378,68.3012,11.516,68.2871,12.204,69.4334,13.0014,70.6508,13.875,71.9176,14.4862,73.014,15.465,74.3491,15.6173,74.4533,16.106,73.0402,17.0394,71.9314,18.0271,70.8597,18.6991,69.572,19.5372,68.3979,19.5563,68.4103,18.7428,67.1825,18.0162,66.0112,17.2477,64.8126,16.5592,63.6659,15.61,62.35" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link P to oT--><path d="M24.86,62.11 L25.1254,62.2001 L27.4219,71.0174 L31.274,80.3629 L34.6196,89.5363 L36.2993,98.1442 L40.1869,107.5017 L43.37,116.62 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="45.09,121.7,45.1598,121.7062,45.128,119.7258,45.5053,117.7819,45.7493,115.8261,45.5553,113.8311,45.9678,111.8903,45.9445,111.8789,45.3415,112.8432,44.8557,113.8651,44.4515,114.927,43.7664,115.851,43.4746,116.9681,43.5559,117.1338,42.3664,116.2809,41.4144,115.9117,40.4914,115.6015,39.3997,114.948,38.3968,114.475,38.4135,114.4904,39.7276,115.9128,41.1177,117.4054,42.4712,118.8642,43.8946,120.3877,45.09,121.7" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link oT to T--><path d="M45.15,170.12 L45.4154,170.2101 L41.5202,179.0958 L39.1807,188.5095 L36.3346,197.7513 L31.8226,206.4276 L29.5185,215.8534 L26.51,225.04 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="24.87,229.86,24.9214,229.9076,26.1059,228.32,27.5919,227.0113,28.9798,225.6117,30.0447,223.9136,31.5566,222.6288,31.5451,222.6056,30.4787,223.0008,29.4699,223.5133,28.5012,224.1071,27.3944,224.4203,26.481,225.1267,26.6466,225.2081,25.793,224.0188,25.4228,223.0673,25.1115,222.1449,24.4571,221.0536,23.9832,220.0511,24.0059,220.0532,24.15,222.012,24.3972,223.98,24.5947,225.9436,24.8871,227.9158,24.87,229.86" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam object {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+class P
+P *-down-> T
+
+class T
+object oT
+
+P .down.> oT
+oT ..> T
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

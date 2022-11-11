@@ -498,13 +498,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#generadores">Generadores</a></li>
 </ul>
 </li>
-<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
 <li><a href="#programación-modular">Programación Modular</a>
 <ul class="sectlevel2">
-<li><a href="#common-js"><em>Common JS</em></a></li>
 <li><a href="#ecmascript-modules"><em>EcmaScript Modules</em></a></li>
 </ul>
 </li>
+<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
 <li><a href="#programación-concurrente">Programación Concurrente</a>
 <ul class="sectlevel2">
 <li><a href="#continuaciones-callbacks">Continuaciones <em>Callbacks</em></a></li>
@@ -567,7 +566,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/contexto.svg" alt="contexto" width="275" height="285">
+<img src="images/contexto.svg" alt="contexto" width="1770" height="1022">
 </div>
 </div>
 </div>
@@ -1017,7 +1016,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-javascript"
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/como.svg" alt="como" width="275" height="226">
+<img src="images/como.svg" alt="como" width="719" height="1025">
 </div>
 </div></div></td>
 </tr>
@@ -1362,7 +1361,7 @@ console.writeln(<span class="string"><span class="delimiter">'</span><span class
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/1-tiposPrimitivos-tiposPrimitivos.svg" alt="1 tiposPrimitivos tiposPrimitivos" width="303" height="271">
+<img src="images/1-tiposPrimitivos-tiposPrimitivos.svg" alt="1 tiposPrimitivos tiposPrimitivos" width="784" height="811">
 </div>
 </div>
 <div class="ulist">
@@ -3055,7 +3054,7 @@ console.writeln(crazyVariable); <span class="comment">// undefined</span></code>
 <h3 id="operadores">Operadores</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/3-operadores-tiposPrimitivos.svg" alt="3 operadores tiposPrimitivos" width="275" height="226">
+<img src="images/3-operadores-tiposPrimitivos.svg" alt="3 operadores tiposPrimitivos" width="1145" height="786">
 </div>
 </div>
 <div class="sect3">
@@ -6310,7 +6309,7 @@ auxiliar(); <span class="comment">// última definición</span>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ambito.svg" alt="ambito" width="275" height="226">
+<img src="images/ambito.svg" alt="ambito" width="276" height="261">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -10926,15 +10925,158 @@ settedObject.method(); <span class="comment">// this.attribute: lo que sea</span
 <h3 id="herencia">Herencia</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con Clases</th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Función constructora</p>
+<p><strong class="blue"><em>extends</em></strong> es la palabra clave para que <strong>una clase se especialice a partir de la transminisión de propiedades públicas y privadas de la clase base</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La clase derivada puede <strong>añadir propiedades</strong>, atributos y métodos, pero no el constructor</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong>constructor</strong> de la clase derivada <strong>debe invocar como primera sentencia el constructor de la clase base</strong> para la inicialización de los sus atributos mediante:</p>
+</li>
+<li>
+<p><strong>super</strong> <strong>(</strong> <em>&lt;expresion&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;expresion&gt;</em> <strong class="red">}</strong> <strong>);</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La <strong>clase derivada puede redefinir los métodos transmitidos desde la clase padre</strong> definiendo un nuevo método con el mismo nombre</p>
+<div class="ulist">
+<ul>
+<li>
+<p>en cualquier caso, se puede invocar opcionalmente al método <strong>con el comportamiento de la clase padre</strong> mediante:</p>
+</li>
+<li>
+<p><strong>super.</strong> <em>&lt;identificador&gt;</em> <strong>(</strong> <em>&lt;expresion&gt;</em> <strong class="red">{</strong> <strong>,</strong> <em>&lt;expresion&gt;</em> <strong class="red">}</strong> <strong>)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="reserved">class</span> Base {
+
+    <span class="error">#</span>attribute;
+
+    constructor(parameter) {
+        <span class="local-variable">this</span>.<span class="error">#</span>attribute = parameter;
+    }
+
+    methodA() {
+        console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodB() {
+        console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodC() {
+        console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+}
+
+<span class="reserved">class</span> Derived <span class="reserved">extends</span> Base {
+
+    <span class="error">#</span>attribute;
+
+    constructor(parameter, other){
+        <span class="reserved">super</span>(parameter);
+        <span class="local-variable">this</span>.<span class="error">#</span>attribute = other;
+    }
+
+    methodB() {
+        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+        <span class="reserved">super</span>.methodB();
+        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodC() {
+        console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+
+    methodD() {
+        console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
+    }
+}
+
+let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+
+object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
+object.methodA();
+object.methodB();
+object.methodC();
+object.methodD();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con Funciones Constructoras</th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong>función constructora derivada debe llamar explícitamente lo primero a la función constructora de la clase base</strong> enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos, para que inicialize con las propiedades heredadas</p>
+</li>
+<li>
+<p>El <strong>prototipo de la clase derivada se inicializa con una copia de todos los métodos del prototipo de la clase base</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>manteniendo el construtor de su prototipo a la funcion constructora especializada</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Posteriormente, podrá <strong>añadir propiedades</strong>, atributos y métodos, accediendo a todas sus las propiedades</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el caso de <strong>redefinición de métodos</strong>, para disfrutar del comportamiento de la calse base se debe <strong>invocar explícitamente a la propiedad función anulada de la clase</strong> base enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -11002,15 +11144,34 @@ console.writeln(object <span class="keyword">instanceof</span> Derived);</code><
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con <em>Clousures</em></th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Clousures</p>
+<p>La función de la clase derivada <strong>llama a la función de la clase base para obtener un objeto con la inicialización de todas las propiedades heredadas</strong>, atributos y métodos, suministrando los posibles argumentos</p>
+</li>
+<li>
+<p>La función de la clase derivada se especializa <strong>añadiendo las funciones deseadas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el caso de <strong>redefinición de métodos</strong>, para disfrutar del comportamiento de la calse base se debe <strong>invocar explícitamente a la propiedad función anulada de la clase</strong> base enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La función <strong>retorna con esparcimiento el objeto de la clase base junto con otro objeto conformado con los métodos públicos</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -11084,15 +11245,28 @@ object.methodD();</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Herencia con patrón Factoria</th>
+<th class="tableblock halign-left valign-top"><em class="green">javascript</em></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Factoria</p>
+<p>La función factoría de la clase dereivada retorna un objeto con la copia de todos las propiedades del objeto inicializado por la función factoria de la clase base junto con las propiedades añadidas en la clase derivada</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el caso de <strong>redefinición de métodos</strong>, para disfrutar del comportamiento de la calse base se debe <strong>invocar explícitamente a la propiedad función anulada de la clase</strong> base enlazada a la dirección del objeto de la clase derivada <em>this</em> junto con sus argumentos.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -11141,87 +11315,6 @@ let <span class="function">Derived</span> = <span class="keyword">function</span
             console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{that.other}<span class="error">`</span>);
         }
     });
-}
-
-let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
-object.methodA();
-object.methodB();
-object.methodC();
-
-object = <span class="keyword">new</span> Derived(<span class="error">`</span>derived<span class="error">`</span>, <span class="error">`</span>specializations<span class="error">`</span>);
-object.methodA();
-object.methodB();
-object.methodC();
-object.methodD();</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clases</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-
-<span class="reserved">class</span> Base {
-
-    <span class="error">#</span>attribute;
-
-    constructor(parameter) {
-        <span class="local-variable">this</span>.<span class="error">#</span>attribute = parameter;
-    }
-
-    methodA() {
-        console.writeln(<span class="error">`</span>Base - A: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodB() {
-        console.writeln(<span class="error">`</span>Base - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodC() {
-        console.writeln(<span class="error">`</span>Base - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-}
-
-<span class="reserved">class</span> Derived <span class="reserved">extends</span> Base {
-
-    <span class="error">#</span>attribute;
-
-    constructor(parameter, other){
-        <span class="reserved">super</span>(parameter);
-        <span class="local-variable">this</span>.<span class="error">#</span>attribute = other;
-    }
-
-    methodB() {
-        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-        <span class="reserved">super</span>.methodB();
-        console.writeln(<span class="error">`</span>Derived - B: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodC() {
-        console.writeln(<span class="error">`</span>Derived - C: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
-
-    methodD() {
-        console.writeln(<span class="error">`</span>Derived - D: attribute: <span class="predefined">$</span>{<span class="local-variable">this</span>.<span class="error">#</span>attribute}<span class="error">`</span>);
-    }
 }
 
 let object = <span class="keyword">new</span> Base(<span class="error">`</span>base<span class="error">`</span>);
@@ -11786,102 +11879,6 @@ const iterableObject = {
 </div>
 </div>
 <div class="sect1">
-<h2 id="programación-con-excepciones">Programación con Excepciones</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">Elevación de Excepciones</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>elevación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">5</span>-excepciones/<span class="integer">0</span>-index.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">6</span>-excepciones/app.js[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">Elevación de Excepciones</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>detección de excepciones</strong>, con sentencia <em>try</em>, se ejecuta hasta la excepción</p>
-</li>
-<li>
-<p><strong>captura de excepciones</strong>, con sentencia <em>catch</em>, se ejecuta solo en caso de una excepción durante la ejecución del <em>try</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p>*bloque <em>finally</em>, se ejecuta en cualquier caso</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>elevación/delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
-</li>
-<li>
-<p><strong>delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">5</span>-excepciones/<span class="integer">0</span>-index.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">6</span>-excepciones/app.js[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
 <h2 id="programación-modular">Programación Modular</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
@@ -11941,69 +11938,6 @@ const iterableObject = {
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="common-js"><em>Common JS</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>./module.js</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>./app.js</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="ecmascript-modules"><em>EcmaScript Modules</em></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -12015,31 +11949,24 @@ const iterableObject = {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Implementación de módulos EcmaScript</p>
+<p><span class="red">Requiere la configuración</span> de <em>package.json</em></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Existen extensiones específicas <em>.mjs</em></p>
+<p>Existen extensiones específicas <em>.mjs</em> para los módulos</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>package.json</em></p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre>{
- "name": "app",
- "version": "1.0.0",
- "type": "module"
-}</pre>
+<pre class="CodeRay highlight"><code data-lang="json">{
+ <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">app</span><span class="delimiter">&quot;</span></span>,
+ <span class="key"><span class="delimiter">&quot;</span><span class="content">version</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">1.0.0</span><span class="delimiter">&quot;</span></span>,
+ <span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">module</span><span class="delimiter">&quot;</span></span>
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12047,25 +11974,26 @@ const iterableObject = {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
-<col style="width: 45%;">
+<col style="width: 35%;">
+<col style="width: 15%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong class="blue">Importación del módulo</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">JavaScript</em></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">JavaScript</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">Sintaxis</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>&lt;_importacion_&gt; <strong class="red">::=</strong> <strong>import</strong> <strong>'</strong> &lt;_ruta/fichero_&gt; <strong>.js';</strong></p>
+<p><em>&lt;importacion</em>&gt; <strong class="red">::=</strong> <strong>import</strong> <strong>'</strong> <em>&lt;ruta/fichero</em>&gt; <strong>.js';</strong></p>
 </li>
 </ul>
 </div>
@@ -12089,11 +12017,23 @@ const iterableObject = {
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">1</span>-ejecucion/module.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia del m<span class="error">ó</span>dulo<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>./module.mjs</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia del m<span class="error">ó</span>dulo M<span class="error">`</span>);</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12105,11 +12045,10 @@ const iterableObject = {
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">1</span>-ejecucion/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./module.mjs</span><span class="delimiter">'</span></span>;</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12117,8 +12056,8 @@ const iterableObject = {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -12128,17 +12067,17 @@ const iterableObject = {
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="8"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">Sintaxis</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>&lt;_exportacionDefecto_&gt; <strong class="red">::=</strong> <strong>export</strong> <strong>default</strong> &lt;_expresion_&gt;</p>
+<p><em>&lt;exportacionDefecto</em>&gt; <strong class="red">::=</strong> <strong>export</strong> <strong>default</strong> <em>&lt;expresion</em>&gt;</p>
 </li>
 <li>
-<p>&lt;_importacion_&gt; <strong class="red">::=</strong> <strong>import</strong> &lt;_identificador_&gt; <strong>from</strong> <strong>'</strong> &lt;_ruta/fichero_&gt; <strong>.js';</strong></p>
+<p><em>&lt;importacion</em>&gt; <strong class="red">::=</strong> <strong>import</strong> <em>&lt;identificador</em>&gt; <strong>from</strong> <strong>'</strong> <em>&lt;ruta/fichero</em>&gt; <strong>.js';</strong></p>
 </li>
 </ul>
 </div>
@@ -12148,60 +12087,51 @@ const iterableObject = {
 <div class="ulist">
 <ul>
 <li>
-<p>la exportación por defecto retorna la expresión especificada</p>
+<p>la exportación por defecto <strong class="blue">retorna la expresión</strong> especificada: <span class="blue">típicamente un objeto cuyas propiedades reunen todo aquello publicable</span>, &#8230;&#8203;, la dirección del objeto de una función anónima, un entero, &#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">debe ser única en el módulo</span></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>el ientificador de la claúsula <em>import</em> queda declarado y asignado al valor de la exportación por defecto</p>
+<p>el ientificador de la claúsula <em>import</em> queda <strong class="blue">declarado y asignado al valor de la exportación por defecto</strong></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>./module.js</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">2</span>-<span class="integer">0</span>-exportDefault/module.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">const K = <span class="integer">0</span>;
+
+let o = {
+  <span class="key">propertye</span>: <span class="error">`</span>atributo del objeto o del module<span class="error">`</span>
+};
+
+<span class="keyword">function</span> <span class="function">f</span>() {
+  console.log(<span class="error">`</span>cuerpo de la funci<span class="error">ó</span>n f del module<span class="error">`</span>);
+};
+
+<span class="reserved">class</span> c {
+  constructor() {
+    console.log(<span class="error">`</span>objeto de la clase c del module<span class="error">`</span>);
+  }
+};
+
+<span class="reserved">export</span> <span class="keyword">default</span> { K, o, f, c};</code></pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>./app.js</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">2</span>-<span class="integer">0</span>-exportDefault/app.js[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>./module.js</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">2</span>-<span class="integer">1</span>-funcionAnonima/module.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">export</span> <span class="keyword">default</span> <span class="keyword">function</span>(){
+  console.log(<span class="error">`</span>Del m<span class="error">ó</span>dulo<span class="error">`</span>);
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12213,11 +12143,29 @@ const iterableObject = {
 </li>
 </ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>./app.js</em></p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">2</span>-<span class="integer">1</span>-funcionAnonima/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> f from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+f();</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> module from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+
+console.log(module.K);
+console.log(module.o);
+module.f();
+let o = <span class="keyword">new</span> module.c();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12243,10 +12191,10 @@ const iterableObject = {
 <div class="ulist">
 <ul>
 <li>
-<p>&lt;_exportacionExplicita_&gt; <strong class="red">::=</strong> <strong>export</strong> <strong class="red">(</strong> &lt;_declaracionVariable_&gt; <strong class="red">|</strong> &lt;_declaracionConstante_&gt; <strong class="red">|</strong> &lt;_declaracionFunción_&gt; <strong class="red">|</strong> &lt;_declaracionClase_&gt; <strong class="red">)</strong></p>
+<p><em>&lt;exportacionExplicita</em>&gt; <strong class="red">::=</strong> <strong>export</strong> <strong class="red">(</strong> <em>&lt;declaracionVariable</em>&gt; <strong class="red">|</strong> <em>&lt;declaracionConstante</em>&gt; <strong class="red">|</strong> <em>&lt;declaracionFunción</em>&gt; <strong class="red">|</strong> <em>&lt;declaracionClase</em>&gt; <strong class="red">)</strong></p>
 </li>
 <li>
-<p>&lt;_importacion_&gt; <strong class="red">::=</strong> <strong>import</strong> &lt;_identificador_&gt; <strong>from</strong> <strong>'</strong> &lt;_ruta/fichero_&gt; <strong>.js';</strong></p>
+<p><em>&lt;importacion</em>&gt; <strong class="red">::=</strong> <strong>import</strong> <em>&lt;identificador</em>&gt; <strong>from</strong> <strong>'</strong> <em>&lt;ruta/fichero</em>&gt; <strong>.js';</strong></p>
 </li>
 </ul>
 </div>
@@ -12257,6 +12205,9 @@ const iterableObject = {
 <ul>
 <li>
 <p>el ientificador de la claúsula <em>import</em> queda declarado y asignado a un objeto cuyas propiedades son todas la declaraciones explícitas del módulo</p>
+</li>
+<li>
+<p><strong class="red">no muy recomendada</strong> por falta de legibilidad respecto a qué se publica de todo el fichero</p>
 </li>
 </ul>
 </div>
@@ -12274,7 +12225,21 @@ const iterableObject = {
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">3</span>-nominalModule/module.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">export</span> const K = <span class="integer">0</span>;
+
+<span class="reserved">export</span> let o = {
+  <span class="key">propertye</span>: <span class="error">`</span>atributo del objeto o del module<span class="error">`</span>
+};
+
+<span class="reserved">export</span> <span class="keyword">function</span> <span class="function">f</span>() {
+  console.log(<span class="error">`</span>cuerpo de la funci<span class="error">ó</span>n f del module<span class="error">`</span>);
+};
+
+<span class="reserved">export</span> <span class="reserved">class</span> c {
+  constructor() {
+    console.log(<span class="error">`</span>objeto de la clase c del module<span class="error">`</span>);
+  }
+};</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12290,7 +12255,12 @@ const iterableObject = {
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">3</span>-nominalModule/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> module from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+
+console.log(module.K);
+console.log(module.o);
+module.f();
+let o = <span class="keyword">new</span> module.c();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12309,17 +12279,17 @@ const iterableObject = {
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="8"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p><strong class="blue">Sintaxis</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>&lt;_exportacion_&gt; <strong class="red">::=</strong> &lt;_exportacionImplicita_&gt; <strong class="red">|</strong> &lt;_exportacionExplicita_&gt;</p>
+<p><em>&lt;exportacion</em>&gt; <strong class="red">::=</strong> <em>&lt;exportacionImplicita</em>&gt; <strong class="red">|</strong> <em>&lt;exportacionExplicita</em>&gt;</p>
 </li>
 <li>
-<p>&lt;_importacion_&gt; <strong class="red">::=</strong> <strong>import</strong> <strong class="red">(</strong> &lt;_identificador_&gt; <strong class="red">|</strong> * <strong>as</strong> &lt;_identificador_&gt; <strong class="red">)</strong> <strong>from</strong> <strong>'</strong> &lt;_ruta/fichero_&gt; <strong>.js';</strong></p>
+<p><em>&lt;importacion</em>&gt; <strong class="red">::=</strong> <strong>import</strong> <strong class="red">(</strong> <em>&lt;identificador</em>&gt; <strong class="red">|</strong> * <strong>as</strong> <em>&lt;identificador</em>&gt; <strong class="red">)</strong> <strong>from</strong> <strong>'</strong> <em>&lt;ruta/fichero</em>&gt; <strong>.js';</strong></p>
 </li>
 </ul>
 </div>
@@ -12347,7 +12317,21 @@ const iterableObject = {
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">4</span>-nominalTodos/module.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">export</span> const K = <span class="integer">0</span>;
+
+<span class="reserved">export</span> let o = {
+  <span class="key">propertye</span> : <span class="error">`</span>atributo del objeto o del module<span class="error">`</span>
+};
+
+<span class="reserved">export</span> <span class="keyword">function</span> <span class="function">f</span>(){
+  console.log(<span class="error">`</span>cuerpo de la funci<span class="error">ó</span>n f del module<span class="error">`</span>);
+};
+
+<span class="reserved">export</span> <span class="reserved">class</span> c{
+  constructor(){
+    console.log(<span class="error">`</span>objeto de la clase c del module<span class="error">`</span>);
+  }
+};</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12359,31 +12343,6 @@ const iterableObject = {
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">4</span>-nominalTodos/app.js[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>./module.js</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">5</span>-nominalParticulares/module.js[]</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -12395,7 +12354,20 @@ const iterableObject = {
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> <span class="integer">4</span>-como/<span class="integer">6</span>-modular/<span class="integer">2</span>-ecmaJS.adoc - include::..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>..<span class="regexp"><span class="delimiter">/</span><span class="content">..</span><span class="delimiter">/</span></span>src/<span class="integer">0</span>-itinerario/<span class="integer">5</span>-modular/<span class="integer">2</span>-ecmaScript/<span class="integer">5</span>-nominalParticulares/app.js[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> { <span class="comment">/* K, f */</span> o, c  } from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+
+console.log(o);
+let oWithoutColision = <span class="keyword">new</span> c();</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> * as module from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+
+console.log(module.K);
+console.log(module.o);
+module.f();
+let o = <span class="keyword">new</span> module.c();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12421,6 +12393,213 @@ const iterableObject = {
 </tbody>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="programación-con-excepciones">Programación con Excepciones</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Elevación de Excepciones</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>elevación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error: 404</span><span class="delimiter">&quot;</span></span> <span class="comment">// no capturada</span>
+<span class="keyword">throw</span> <span class="integer">404</span>; <span class="comment">// no capturada</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Elevación de Excepciones</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">javascript</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>detección de excepciones</strong>, con sentencia <em>try</em>, se ejecuta hasta la excepción</p>
+</li>
+<li>
+<p><strong>captura de excepciones</strong>, con sentencia <em>catch</em>, se ejecuta solo en caso de una excepción durante la ejecución del <em>try</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*bloque <em>finally</em>, se ejecuta en cualquier caso</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>elevación/delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
+</li>
+<li>
+<p><strong>delegación de excepciones</strong>, con sentencia <em>throw</em>, se lanza/relanza la excepción especificada</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia previa<span class="error">`</span>);
+<span class="keyword">try</span> {
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error</span><span class="delimiter">&quot;</span></span>;
+    }
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada?</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span> (exception) {
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception);
+}
+console.log(<span class="error">`</span>Sentencia posterior<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia previa<span class="error">`</span>);
+<span class="keyword">try</span> {
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error</span><span class="delimiter">&quot;</span></span>;
+    }
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada?</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span> (exception) {
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception);
+} <span class="keyword">finally</span> {
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones finally</span><span class="delimiter">&quot;</span></span>);
+}
+console.log(<span class="error">`</span>Sentencia posterior<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia previa<span class="error">`</span>);
+<span class="keyword">try</span> {
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error</span><span class="delimiter">&quot;</span></span>;
+    }
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada?</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">finally</span> {
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones finally</span><span class="delimiter">&quot;</span></span>);
+}
+console.log(<span class="error">`</span>Sentencia posterior<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Objetos como Excepciones</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>la expresión de la sentencia throw permite elevar objetos</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia previa<span class="error">`</span>);
+<span class="keyword">try</span> {
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string"><span class="delimiter">&quot;</span><span class="content">descripcion</span><span class="delimiter">&quot;</span></span>);
+    }
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada?</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span> (exception) {
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception.name + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + exception.message);
+}
+console.log(<span class="error">`</span>Sentencia posterior<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">class</span> CustomError <span class="reserved">extends</span> Error {
+    constructor(message) {
+        <span class="reserved">super</span>(message);
+        <span class="local-variable">this</span>.name = <span class="string"><span class="delimiter">'</span><span class="content">CustomError</span><span class="delimiter">'</span></span>;
+    }
+}
+
+console.log(<span class="error">`</span>Sentencia previa<span class="error">`</span>);
+<span class="keyword">try</span> {
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> RangeError(<span class="string"><span class="delimiter">&quot;</span><span class="content">descripcion</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> CustomError(<span class="string"><span class="delimiter">&quot;</span><span class="content">descripcion</span><span class="delimiter">&quot;</span></span>);
+    }
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada?</span><span class="delimiter">&quot;</span></span>);
+} <span class="keyword">catch</span> (exception) {
+    <span class="keyword">if</span> (exception <span class="keyword">instanceof</span> RangeError) {
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception.name + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + exception.message);
+    } <span class="keyword">else</span> <span class="keyword">if</span> (exception <span class="keyword">instanceof</span> CustomError) {
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception.name + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + exception.message);
+    }
+}
+console.log(<span class="error">`</span>Sentencia posterior<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -13296,7 +13475,7 @@ console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n p
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/evenOdd.svg" alt="evenOdd" width="275" height="226">
+<img src="images/evenOdd.svg" alt="evenOdd" width="97" height="520">
 </div>
 </div></div></td>
 </tr>
@@ -13393,7 +13572,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/acumulacionRecurisiva2.svg" alt="acumulacionRecurisiva2" width="275" height="226">
+<img src="images/acumulacionRecurisiva2.svg" alt="acumulacionRecurisiva2" width="163" height="288">
 </div>
 </div></div></td>
 </tr>
@@ -13470,7 +13649,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/acumulacionRecurisiva.svg" alt="acumulacionRecurisiva" width="275" height="226">
+<img src="images/acumulacionRecurisiva.svg" alt="acumulacionRecurisiva" width="133" height="636">
 </div>
 </div></div></td>
 </tr>
@@ -14025,7 +14204,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-10-16 16:39:50 +0200
+Last updated 2022-11-07 10:40:37 +0100
 </div>
 </div>
 <style>

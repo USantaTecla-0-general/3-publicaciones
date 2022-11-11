@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="429px" preserveAspectRatio="none" style="width:1807px;height:429px;background:#222222;" version="1.1" viewBox="0 0 1807 429" width="1807px" zoomAndPan="magnify"><defs/><g><!--class Scenario--><polygon fill="#222222" points="848.5,8,848.5,8.2102,858.9,7.5857,869.3,8.1933,879.7,8.3997,890.1,7.2866,900.5,7.9223,910.9,7.5735,921.3,7.6165,931.7,7.9318,942.1,7.3086,952.5,8,953.0536,8,951.8697,17.4623,952.3022,26.9246,952.9319,36.3868,952.4142,45.8491,952.5682,55.3114,952.4681,64.7737,952.6785,74.236,952.5,83.6982,952.5,83.9374,942.1,84.2839,931.7,84.3693,921.3,84.3775,910.9,83.9529,900.5,84.1618,890.1,84.4005,879.7,82.9771,869.3,84.3768,858.9,83.4017,848.5,83.6982,849.0338,83.6982,848.005,74.236,848.4315,64.7737,849.2416,55.3114,848.4513,45.8491,848.6053,36.3868,848.8386,26.9246,848.9162,17.4623,848.5,8" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="852.5" y="34.1074">Scenario</text><path d="M849.5,46.1133 L849.5,46.3935 L859.7,45.5609 L869.9,46.371 L880.1,46.6462 L890.3,45.1621 L900.5,46.0097 L910.7,45.5446 L920.9,45.6019 L931.1,46.0224 L941.3,45.1915 L951.5,46.1133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><path d="M849.5,54.1133 L849.5,54.3935 L859.7,53.5609 L869.9,54.371 L880.1,54.6462 L890.3,53.1621 L900.5,54.0097 L910.7,53.5446 L920.9,53.6019 L931.1,54.0224 L941.3,53.1915 L951.5,54.1133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="#84BE84" points="862.5166,71.1355,862.0768,71.7363,861.5567,72.6164,860.8128,73.2095,860.0311,73.5338,859.4078,73.562,858.6067,73.1564,857.8509,72.8914,857.2771,72.3534,856.9762,71.7374,856.7977,71.247,856.6229,70.6064,856.3391,70.0552,856.5572,69.5169,856.7482,68.9274,857.4653,68.4611,857.9697,67.8561,858.5941,67.6552,859.3364,67.4821,860.2883,67.5849,860.8097,67.8308,861.4158,67.9423,862.1529,68.6974,862.4098,69.4946,862.5214,70.0385,862.395,70.9348" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="54" x="869.5" y="74.1938">main()</text><!--class Person--><polygon fill="#222222" points="724.5,188.5,724.5,188.7102,734.5571,188.0857,744.6143,188.6933,754.6714,188.8997,764.7286,187.7866,774.7857,188.4223,784.8429,188.0735,794.9,188.1165,804.9571,188.4318,815.0143,187.8086,825.0714,189.0536,835.1286,187.8697,845.1857,188.3022,855.2429,188.9319,865.3,188.4142,875.3571,188.5682,885.4143,188.4681,895.4714,188.6785,905.5286,188.7391,915.5857,189.0857,925.6429,189.1711,935.7,189.1793,945.7571,188.7546,955.8143,188.9636,965.8714,189.2022,975.9286,187.7788,985.9857,189.1785,996.0429,188.2035,1006.1,189.0338,1016.1571,188.005,1026.2143,188.4315,1036.2714,189.2416,1046.3286,188.4513,1056.3857,188.6053,1066.4429,188.8386,1076.5,188.5,1076.9162,188.5,1076.4961,198.7013,1076.7872,208.9026,1075.9276,219.1038,1076.7844,229.3051,1077.0482,239.5064,1076.9445,249.7077,1077.113,259.909,1076.0169,270.1102,1075.8478,280.3115,1075.8786,290.5128,1076.4411,300.7141,1076.3035,310.9154,1077.1814,321.1166,1076.3253,331.3179,1076.1569,341.5192,1076.7283,351.7205,1075.8332,361.9218,1076.5,372.123,1076.5,371.6039,1066.4429,372.772,1056.3857,372.5587,1046.3286,372.8575,1036.2714,371.8013,1026.2143,372.4422,1016.1571,372.7135,1006.1,371.6506,996.0429,372.0272,985.9857,372.249,975.9286,372.7748,965.8714,372.1189,955.8143,372.5856,945.7571,371.5693,935.7,371.4458,925.6429,372.6267,915.5857,371.4061,905.5286,372.632,895.4714,372.3297,885.4143,371.8551,875.3571,371.7693,865.3,372.5818,855.2429,371.8237,845.1857,372.7149,835.1286,371.5703,825.0714,372.7405,815.0143,372.6074,804.9571,372.368,794.9,372.1703,784.8429,372.8497,774.7857,372.7366,764.7286,372.2923,754.6714,372.3912,744.6143,371.9928,734.5571,372.8395,724.5,372.123,724.6549,372.123,724.6726,361.9218,723.8916,351.7205,724.0948,341.5192,725.0307,331.3179,724.9298,321.1166,724.4571,310.9154,724.1778,300.7141,724.2811,290.5128,723.8138,280.3115,724.9147,270.1102,725.2396,259.909,725.0264,249.7077,725.1949,239.5064,724.3633,229.3051,724.5872,219.1038,724.1124,208.9026,724.784,198.7013,724.5,188.5" style="stroke: #DC143C; stroke-width: 3.0;"/><text fill="#DC143C" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="864.5" y="214.6074">Person</text><path d="M725.5,226.6133 L725.5,226.8935 L735.5,226.0609 L745.5,226.871 L755.5,227.1462 L765.5,225.6621 L775.5,226.5097 L785.5,226.0446 L795.5,226.1019 L805.5,226.5224 L815.5,225.6915 L825.5,227.3515 L835.5,225.7729 L845.5,226.3496 L855.5,227.1892 L865.5,226.4989 L875.5,226.7043 L885.5,226.5707 L895.5,226.8513 L905.5,226.9321 L915.5,227.3942 L925.5,227.508 L935.5,227.519 L945.5,226.9528 L955.5,227.2314 L965.5,227.5496 L975.5,225.6517 L985.5,227.518 L995.5,226.2179 L1005.5,227.325 L1015.5,225.9533 L1025.5,226.5219 L1035.5,227.6021 L1045.5,226.5483 L1055.5,226.7537 L1065.5,227.0648 L1075.5,226.6133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><path d="M725.5,234.6133 L725.5,234.8935 L735.5,234.0609 L745.5,234.871 L755.5,235.1462 L765.5,233.6621 L775.5,234.5097 L785.5,234.0446 L795.5,234.1019 L805.5,234.5224 L815.5,233.6915 L825.5,235.3515 L835.5,233.7729 L845.5,234.3496 L855.5,235.1892 L865.5,234.4989 L875.5,234.7043 L885.5,234.5707 L895.5,234.8513 L905.5,234.9321 L915.5,235.3942 L925.5,235.508 L935.5,235.519 L945.5,234.9528 L955.5,235.2314 L965.5,235.5496 L975.5,233.6517 L985.5,235.518 L995.5,234.2179 L1005.5,235.325 L1015.5,233.9533 L1025.5,234.5219 L1035.5,235.6021 L1045.5,234.5483 L1055.5,234.7537 L1065.5,235.0648 L1075.5,234.6133 " fill="#222222" style="stroke: #DC143C; stroke-width: 3.0;"/><polygon fill="#84BE84" points="738.5166,251.6355,738.0768,252.2363,737.5567,253.1164,736.8128,253.7095,736.0311,254.0338,735.4078,254.062,734.6067,253.6564,733.8509,253.3914,733.2771,252.8534,732.9762,252.2374,732.7977,251.747,732.6229,251.1064,732.3391,250.5552,732.5572,250.0169,732.7482,249.4274,733.4653,248.9611,733.9697,248.3561,734.5941,248.1552,735.3364,247.9821,736.2883,248.0849,736.8097,248.3308,737.4158,248.4423,738.1529,249.1974,738.4098,249.9946,738.5214,250.5385,738.395,251.4348" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="117" x="745.5" y="254.6938">setApproach()</text><polygon fill="#84BE84" points="738.5166,273.2204,738.0768,273.8213,737.5567,274.7014,736.8128,275.2945,736.0311,275.6188,735.4078,275.6469,734.6067,275.2413,733.8509,274.9763,733.2771,274.4383,732.9762,273.8224,732.7977,273.332,732.6229,272.6914,732.3391,272.1401,732.5572,271.6019,732.7482,271.0123,733.4653,270.546,733.9697,269.941,734.5941,269.7401,735.3364,269.5671,736.2883,269.6699,736.8097,269.9158,737.4158,270.0272,738.1529,270.7824,738.4098,271.5795,738.5214,272.1235,738.395,273.0198" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="63" x="745.5" y="276.2788">flirt()</text><polygon fill="#84BE84" points="738.5166,294.8054,738.0768,295.4063,737.5567,296.2863,736.8128,296.8794,736.0311,297.2038,735.4078,297.2319,734.6067,296.8263,733.8509,296.5613,733.2771,296.0233,732.9762,295.4073,732.7977,294.9169,732.6229,294.2763,732.3391,293.7251,732.5572,293.1869,732.7482,292.5973,733.4653,292.131,733.9697,291.526,734.5941,291.3251,735.3364,291.1521,736.2883,291.2549,736.8097,291.5007,737.4158,291.6122,738.1529,292.3673,738.4098,293.1645,738.5214,293.7084,738.395,294.6047" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="144" x="745.5" y="297.8638">makeFriendship()</text><polygon fill="#F24D5C" points="732.5,312.6606,732.5,312.7307,733.7,312.5225,734.9,312.7251,736.1,312.7939,737.3,312.4228,738.5,312.6606,738.4741,312.6606,738.3578,313.8606,738.3722,315.0606,738.4773,316.2606,738.2695,317.4606,738.5,318.6606,738.5,318.8452,737.3,318.4506,736.1,318.5947,734.9,318.8046,733.7,318.6321,732.5,318.6606,732.5227,318.6606,732.4894,317.4606,732.5595,316.2606,732.5797,315.0606,732.6952,313.8606,732.5,312.6606" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="315" x="745.5" y="319.4487">apporoachWithSharedFriendApproach()</text><polygon fill="#F24D5C" points="732.5,334.2456,732.5,334.3157,733.7,334.1075,734.9,334.31,736.1,334.3788,737.3,334.0078,738.5,334.2456,738.4741,334.2456,738.3578,335.4456,738.3722,336.6456,738.4773,337.8456,738.2695,339.0456,738.5,340.2456,738.5,340.4302,737.3,340.0355,736.1,340.1797,734.9,340.3896,733.7,340.217,732.5,340.2456,732.5227,340.2456,732.4894,339.0456,732.5595,337.8456,732.5797,336.6456,732.6952,335.4456,732.5,334.2456" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="306" x="745.5" y="341.0337">apporoachWithSharedHobbyApproach()</text><polygon fill="#F24D5C" points="732.5,355.8306,732.5,355.9006,733.7,355.6925,734.9,355.895,736.1,355.9638,737.3,355.5928,738.5,355.8306,738.4741,355.8306,738.3578,357.0306,738.3722,358.2306,738.4773,359.4306,738.2695,360.6306,738.5,361.8306,738.5,362.0151,737.3,361.6205,736.1,361.7646,734.9,361.9745,733.7,361.802,732.5,361.8306,732.5227,361.8306,732.4894,360.6306,732.5595,359.4306,732.5797,358.2306,732.6952,357.0306,732.5,355.8306" style="stroke: #C82930; stroke-width: 1.0;"/><text fill="#A9A9A9" font-family="courier" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="324" x="745.5" y="362.6187">apporoachWithSharedForwardApproach()</text><path d="M6,144 L6,417.1328 A0,0 0 0 0 6,417.1328 L689,417.1328 A0,0 0 0 0 689,417.1328 L689,284.5 L724.17,280.5 L689,276.5 L689,154 L679,144 L6,144 A0,0 0 0 0 6,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M679,144 L679.1868,144 L678.6317,146 L679.1718,148 L679.3553,150 L678.3659,152 L679,154 L679,153.9309 L681,153.6209 L683,153.6591 L685,153.9394 L687,153.3854 L689,154 L689.348,154.348 L686.6038,151.6038 L684.8757,149.8757 L683.2715,148.2715 L680.9461,145.9461 L679,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="192" x="13" y="170.1074">public flirt() {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="216" x="37" y="196.2207">// Trying to flirt</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="552" x="37" y="222.334">if (this.approach == Approach.SHARED_FRIEND) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="480" x="73" y="248.4473">this.approachWithSharedFriendApproach();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="624" x="37" y="274.5605">} else if (this.approach == Approach.SHARED_HOBBY) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="468" x="73" y="300.6738">this.approachWithSharedHobbyApproach();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="636" x="37" y="326.7871">} else if (this.approach == Approach.STRAIGHTFORWARD)</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="504" x="73" y="352.9004">this.approachWitStraightForwardApproach();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="252" x="37" y="379.0137">// Inviting to dinner</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="13" y="405.127">}</text><path d="M1112,144 L1112,276.5 L1076.55,280.5 L1112,284.5 L1112,417.1328 A0,0 0 0 0 1112,417.1328 L1795,417.1328 A0,0 0 0 0 1795,417.1328 L1795,154 L1785,144 L1112,144 A0,0 0 0 0 1112,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M1785,144 L1785.1868,144 L1784.6317,146 L1785.1718,148 L1785.3553,150 L1784.3659,152 L1785,154 L1785,153.9309 L1787,153.6209 L1789,153.6591 L1791,153.9394 L1793,153.3854 L1795,154 L1795.348,154.348 L1792.6038,151.6038 L1790.8757,149.8757 L1789.2715,148.2715 L1786.9461,145.9461 L1785,144 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="192" x="1119" y="170.1074">public flirt() {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="324" x="1143" y="196.2207">// Trying to make frienship</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="552" x="1143" y="222.334">if (this.approach == Approach.SHARED_FRIEND) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="480" x="1179" y="248.4473">this.approachWithSharedFriendApproach();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="624" x="1143" y="274.5605">} else if (this.approach == Approach.SHARED_HOBBY) {</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="468" x="1179" y="300.6738">this.approachWithSharedHobbyApproach();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="636" x="1143" y="326.7871">} else if (this.approach == Approach.STRAIGHTFORWARD)</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="516" x="1179" y="352.9004">this.approachWithStraightForwardApproach();</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="240" x="1143" y="379.0137">// inviting to match</text><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="12" x="1119" y="405.127">}</text><!--link Scenario to Person--><path d="M900.5,84.1 L900.7802,84.1 L899.9476,94.011 L900.7577,103.922 L901.0329,113.833 L899.5488,123.744 L900.3964,133.655 L899.9313,143.566 L899.9887,153.477 L900.4091,163.388 L899.5782,173.299 L900.5,183.21 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="900.5,188.35,900.564,188.3785,901.1738,186.4939,902.1589,184.7762,903.0217,183.0041,903.4827,181.0534,904.5,179.35,904.4817,179.3317,903.5995,180.0495,902.8096,180.8596,902.0839,181.7339,901.137,182.387,900.5,183.35,900.6305,183.4805,899.5514,182.4014,898.8534,181.7034,898.2018,181.0518,897.2798,180.1298,896.5,179.35,896.5208,179.3592,897.2903,181.1457,898.1544,182.9742,898.9728,184.7824,899.8784,186.6293,900.5,188.35" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DC143C
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DC143C
+}
+skinparam classAttribute {
+    FontSize 15
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam note {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+class Scenario  {
++ main()
+}
+class Person  {
++ setApproach()
++ flirt()
++ makeFriendship()
+- apporoachWithSharedFriendApproach()
+- apporoachWithSharedHobbyApproach()
+- apporoachWithSharedForwardApproach()
+}
+note left
+public flirt() {
+  // Trying to flirt
+  if (this.approach == Approach.SHARED_FRIEND) {
+     this.approachWithSharedFriendApproach();
+  } else if (this.approach == Approach.SHARED_HOBBY) {
+     this.approachWithSharedHobbyApproach();
+  } else if (this.approach == Approach.STRAIGHTFORWARD)
+     this.approachWitStraightForwardApproach();
+  // Inviting to dinner
+}
+end note
+class Person
+note right
+public flirt() {
+  // Trying to make frienship
+  if (this.approach == Approach.SHARED_FRIEND) {
+     this.approachWithSharedFriendApproach();
+  } else if (this.approach == Approach.SHARED_HOBBY) {
+     this.approachWithSharedHobbyApproach();
+  } else if (this.approach == Approach.STRAIGHTFORWARD)
+     this.approachWithStraightForwardApproach();
+  // inviting to match
+}
+end note
+
+Scenario .down.> Person
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

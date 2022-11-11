@@ -1,0 +1,3683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.8">
+<meta name="author" content="Universo Santa Tecla">
+<title>Programación Extrema</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="book">
+<div id="header">
+<h1>Programación Extrema</h1>
+<div class="details">
+<span id="author" class="author">Universo Santa Tecla</span><br>
+<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
+<span id="revnumber">version 0.0.1</span>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Índice</div>
+<ul class="sectlevel1">
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
+<li><a href="#cuándo-dónde-quién"><strong>¿Cuándo? ¿Dónde? ¿Quién?</strong></a></li>
+<li><a href="#qué"><strong>¿Qué?</strong></a></li>
+<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
+<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
+<li><a href="#roles">Roles</a></li>
+<li><a href="#actividades">Actividades</a></li>
+<li><a href="#valores">Valores</a>
+<ul class="sectlevel2">
+<li><a href="#sencillez">Sencillez</a></li>
+<li><a href="#comunicación">Comunicación</a></li>
+<li><a href="#realimentación">Realimentación</a></li>
+<li><a href="#coraje">Coraje</a></li>
+<li><a href="#respeto">Respeto</a></li>
+</ul>
+</li>
+<li><a href="#principios">Principios</a></li>
+<li><a href="#practicas">Practicas</a>
+<ul class="sectlevel2">
+<li><a href="#estrategias-de-desarrollo">Estrategias de Desarrollo</a></li>
+<li><a href="#estrategia-de-diseño">Estrategia de Diseño</a></li>
+<li><a href="#estrategia-de-pruebas">Estrategia de Pruebas</a></li>
+<li><a href="#estrategia-de-planificación">Estrategia de Planificación</a></li>
+</ul>
+</li>
+<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
+<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
+<li><a href="#ponente">Ponente</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">ámbito incumplido</strong> y/o</p>
+</li>
+<li>
+<p><strong class="red">tiempo incumplido</strong> y/o</p>
+</li>
+<li>
+<p><strong class="red">coste incumplido</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+<strong class="red">Si no vas a velocidad límite, alguien lo hará y se comerá tu comida</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programming</cite>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cuándo-dónde-quién"><strong>¿Cuándo? ¿Dónde? ¿Quién?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="3"><strong class="blue">Comunidad de Smalltalk (GUI, OO+herencia, MVC, patrones, &#8230;&#8203;)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em><strong>Ward Cunningham</strong></em> y <em><strong>Kent Beck</strong></em></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><em><strong>Kent Beck</strong></em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Origen</strong>, <strong>finales de los 80</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Desarrollo</strong>, en los 90</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Creación</strong>, <strong>1993-1997</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>desarrollo de software es un proceso adaptativo y orientado a las personas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>multiples proyectos como consultor</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.martinfowler.com/bliki/C3.html">C3 de Chrysler</a>, se puede considerar el proyecto de su creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Kent Beck</em> acuñó el nombre de <strong class="blue">Extreme Programming</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Primera edición: <strong>2000</strong></th>
+<th class="tableblock halign-left valign-top">Segunda edición: <strong>2005</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Hay <strong class="red">cambios significativos</strong> entre ambas ediciones, que reflejan la evolución de XP y su maduración, <strong class="red">incorporando algunas prácticas de otras metodologías</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>4 valores</p>
+<div class="ulist">
+<ul>
+<li>
+<p>14 principios</p>
+<div class="ulist">
+<ul>
+<li>
+<p>12 prácticas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>5 valores</p>
+<div class="ulist">
+<ul>
+<li>
+<p>14 principios</p>
+<div class="ulist">
+<ul>
+<li>
+<p>13 prácticas</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qué"><strong>¿Qué?</strong></h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<strong class="blue">Es un método ligero, eficiente, de bajo riesgo, predecible, científica y divertido para que</strong> <strong class="red">equipos de tamaño mediano a pequeño (de 10 a 2 programadores)</strong> <strong class="blue">desarrollen software frente a</strong> <strong class="red">requisitos imprecisos y muy cambiantes</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programmig</cite>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="green">Conservadora</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Niveles extremos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Novedad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>todas sus técnicas han sido probadas durante décadas o siglos</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>toma principios y prácticas de sentido común</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>poner todas a trabajar bajo un mismo paraguas</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si la <strong class="green">simplicidad es buena,</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">siempre dejaremos el sistema con el diseño más sencillo que soporte su funcionalidad actual</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">la cosa más sencilla que probablemente pudiese funcionar</strong>, (<strong>MVP</strong>, <em>minimum viable product</em>)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si las <strong class="green">revisiones de código son buenas,</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">revisaremos el código todo el tiempo</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">programación por parejas</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si un código con un <strong class="green">buen diseño es importante</strong>,</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>entonces diseñemos todos los días y <strong class="green">cambiemos nuestro código para que siempre tenga un buen diseño</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">refactorizar</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si la <strong class="green">arquitectura es importante,</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">todos trabajarán definiendo y refinando la arquitectura todo el tiempo</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">metáfora</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si las <strong class="green">pruebas son buenas,</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">todos probarán todo el tiempo, incluso los clientes</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">prueba unitaria y funcional</strong>, respectivamente</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si las <strong class="green">pruebas de integración son importantes,</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">entonces integraremos y probaremos varias veces al día</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">integración continua</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si las <strong class="green">iteraciones cortas son buenas</strong>,</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">haremos iteraciones realmente cortas, segundos, minutos y horas, y no semanas, meses y años</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">el juego de la planificación con replanificación y retrospectivas</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p>Asegurar todas las practicas <strong class="red">tan minuciosamente como sea posible</strong> y que las prácticas <strong class="green">se apoyan unas a otras en el mayor grado posible</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">ámbito cumplido</strong> y</p>
+</li>
+<li>
+<p><strong class="green">tiempo cumplido</strong> y</p>
+</li>
+<li>
+<p><strong class="green">coste cumplido</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
+</li>
+<li>
+<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">A los programadores</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">A los clientes y directivos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Al proyecto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Serán capaces de <strong class="green">trabajar en cosas que realmente importan</strong> cada día.</p>
+</li>
+<li>
+<p><strong class="green">No tendrán que enfrentarse solos a situaciones aterradoras</strong>.</p>
+</li>
+<li>
+<p>Podrán aprovechar todas sus <strong class="green">energías para hacer que su sistema tenga éxito</strong>.</p>
+</li>
+<li>
+<p>Tomarán las <strong class="green">decisiones que puedan tomar</strong> mejor y <strong class="green">no tomarán aquellas para las que no sean los mejores preparados</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Obtendrán el <strong class="green">mayor valor posible de cada semana</strong> de programación.</p>
+</li>
+<li>
+<p>Cada pocas semanas podrán <strong class="green">ver progresos concretos</strong> en las metas que les importan.</p>
+</li>
+<li>
+<p><strong class="green">Podrán cambiar la dirección del proyecto</strong> a mitad del desarrollo, <strong class="green">sin incurrir en costes excesivos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Reducir riesgos</strong> del proyecto,</p>
+</li>
+<li>
+<p>mejorando la <strong class="green">sensibilidad a los cambios del negocio</strong>,</p>
+</li>
+<li>
+<p>la <strong class="green">productividad</strong> a lo largo de la vida del sistema y</p>
+</li>
+<li>
+<p>añade <strong class="green">diversión</strong> a la construcción de software en equipo</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="quoteblock">
+<blockquote>
+<strong class="green">Tenemos éxito cuando tengamos un estilo que reúna un conjunto consistente de valores que sirvan tanto a las necesidades humanas como a las comerciales</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme programming</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cómo"><strong>¿Cómo?</strong></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="roles">Roles</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong class="blue">Cliente/Usuario</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Gestor</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Programadores</strong></th>
+</tr>
+</thead>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Un equipo que trabaja de un modo eficiente “como una unidad” puede mejorar la productividad en todas y cada una de las etapas del desarrollo del software</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No existen tantos equipos que trabajen de manera compenetrada y unida</strong>, como si fueran una sola persona.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el mundo del desarrollo del software hay <strong class="red">muchos egos (o “estrellas del rock”)</strong> que prefieren trabajar en solitario y no compartir su conocimiento.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es <strong class="green">necesario que todos los desarrolladores colaboren juntos</strong>, como un verdadero equipo, para crear <strong class="green">el mejor producto que jamas hayan soñado</strong>.
+La <strong class="green">motivación y el objetivo compartido</strong> es también uno de los aspectos que se fomentan.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Clientes/Usuarios</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Gestores</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programadores</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Necesitan que se cree la aplicación</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Controlan los recursos del proyecto</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Analiza, diseña, testea el software y lo integra en el sistema.</strong></p>
+</li>
+<li>
+<p><strong class="blue">Estima el coste de implementar cada historia y, cuando finalmente la implementa, se puede medir su velocidad</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="paragraph">
+<p><strong class="blue">XP fija el coste y el tiempo y la calidad (siempre alta) y se negocia el alcance entre cliente/usuario y programadores</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Aprenderán el modo de comunicarse con el equipo</strong>, para conseguir transmitir sus ideas.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong class="red">equipo le ayudará en ese cambio de mentalidad</strong> para obtener el producto en plazos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Aprenderán a medir el progreso del proyecto, la calidad del producto y cómo responder a las preguntas importantes</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Es muy importante que aprendan a <strong class="red">confiar en la propia gestión que hace de sí mismo el equipo de desarrollo</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Lo más importante es <strong class="blue">entender correctamente la funcionalidad que está descrita en la historia de usuario</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Ante cualquier duda, debería tener accesible al cliente para entablar una conversación que le permita entender la funcionalidad, su motivación y el mecanismo que el cliente usará para verificar que la historia se ha implementado correctamente</strong>.</p>
+</li>
+<li>
+<p>El <strong class="blue">cliente debería ver cuanto antes la funcionalidad implementada</strong>, de forma que pueda dar realimentación a los desarrolladores si no han comprendido correctamente lo que él quería.</p>
+</li>
+<li>
+<p>También puede ocurrir que el <strong class="blue">cliente quiera refinar la funcionalidad</strong> una vez que la haya empezado a usar o que incluso <strong class="blue">cambie de opinión completamente</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actividades">Actividades</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong class="blue">Escuchar</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Probar</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Codificar</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Diseñar</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><div class="content"><div class="quoteblock">
+<blockquote>
+Queremos hacer cualquier cosa que debamos hacer para tener un desarrollo software estable y predecible. Pero <strong class="red">no tenemos tiempo para hacer horas extras</strong>. Las cuatro actividades básicas del desarrollo son : codificar, probar, escuchar y diseñar
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programming</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Escuchar</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Puesto que (como programador) no lo conoces todo, tienes que preguntar a alguien. Te dirán cuáles son las respuestas que esperas, y cuáles son los casos raros desde la perspectiva del negocio.</p>
+</li>
+<li>
+<p>Decir tan sólo <strong class="red">“deberías escuchar a los otros y al cliente” no ayuda mucho</strong>. Las personas intentan eso y no funciona.</p>
+</li>
+<li>
+<p>Tenemos que encontrar la forma de <strong class="green">estructurar la comunicación</strong> para que las cosas que tienen que ser comunicadas, se comuniquen cuando necesitan ser comunicadas y con la cantidad de detalle que necesitan ser comunicadas.</p>
+</li>
+<li>
+<p>De forma similar, las reglas que desarrollemos no tienen que fomentar la comunicación que no ayude</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Codificar</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al final del día, todo nuestro trabajo está en un programa. Llamo <strong class="red">codificar a la única actividad de la que sabemos que no podemos prescindir</strong>.</p>
+</li>
+<li>
+<p><strong class="green">Si dibujas diagramas que generan código o escribes en un editor, estás codificando</strong>. Cuando codificas algo, también tienes oportunidad para comprender la mejor estructura para el código. Hay ciertos signos en el código que te indican que todavía no entiendes suficientemente la estructura necesaria.</p>
+</li>
+<li>
+<p>El código también te da la oportunidad de comunicarte de forma clara y concisa.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Probar</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Las características del software que no pueden ser demostradas mediante pruebas automatizadas, simplemente no existen</strong>. Por lo que no tengo confianza en nada de lo que escribo, hasta que no tengo una prueba para eso.</p>
+</li>
+<li>
+<p>Las pruebas me dan la oportunidad de pensar sobre lo que quiero, de forma independiente a cómo será implementado.</p>
+</li>
+<li>
+<p><strong class="green">Cuando no puedes pensar en ninguna prueba que pudiese originar un fallo, has acabado por completo</strong>. Las pruebas mantienen el programa vivo más tiempo (si las pruebas funcionan y son mantenidas).</p>
+</li>
+<li>
+<p>Cuando tienes las pruebas, puedes hacer más cambios durante más tiempo que si no las tuvieras. Si continuas escribiendo las pruebas, tu confianza en el sistema aumenta con el tiempo.</p>
+</li>
+<li>
+<p><strong class="green">Programar y probar a la vez es más rápido que solo programar</strong>. La ganancia en la productividad venía de la reducción en el tiempo utilizado en la depuración, no tardas una hora localizando un error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Diseñar</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">¿Por qué no puedes escuchar, escribir una prueba, hacer que funcione, escuchar, escribir una prueba, hacerla que funcione, indefinidamente?</strong> La única forma de conseguir que el siguiente caso de prueba funcionase es hacer que otro no funcione. O la única forma de hacer que el caso de prueba funcionase es resolver otro problema que sea equivalente.</p>
+</li>
+<li>
+<p>La única forma de evitar esto es diseñar. Al diseñar estás creando una <strong class="green">estructura que organiza la lógica en el sistema</strong>. Un buen diseño organiza la lógica, de tal forma que un cambio en una parte del sistema no siempre requiere un cambio en otra parte del sistema.</p>
+</li>
+<li>
+<p><strong class="green">Un buen diseño asegura que cada trozo de lógica está en uno y solamente un lugar</strong>. Un buen diseño permite el crecimiento del sistema con cambios en un solo lugar.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Valores</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Principios</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="quoteblock">
+<blockquote>
+las <strong class="blue">buenas prácticas</strong> no son suficientes por sí mismas, tienen que entenderse bajo un conjunto de <strong class="blue">valores</strong> y <strong class="blue">principios</strong> que permiten al equipo comportarse como una <strong class="blue">unidad con un objetivo común</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programming</cite>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">valores son universales y muy genéricos</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los valores son <strong class="red">demasiado abstractos</strong> para guiar el comportamiento.</p>
+</li>
+<li>
+<p>La comunicación, simplicidad, realimentación, coraje y respeto <strong class="blue">se pueden aplicar en otros contextos diferentes al desarrollo software</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">principios el hueco entre los valores y las buenas prácticas técnicas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los principios son <strong class="blue">un refinamiento de los valores pero concretados para un entorno específico</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Valores</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Principios</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Buenas prácticas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Simplicidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Comunicación</strong></p>
+</li>
+<li>
+<p><strong class="blue">Realimentación</strong></p>
+</li>
+<li>
+<p><strong class="blue">Coraje</strong></p>
+</li>
+<li>
+<p><strong class="blue">Respeto</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Humanidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Economía</strong></p>
+</li>
+<li>
+<p><strong class="blue">Beneficio mutuo</strong></p>
+</li>
+<li>
+<p><strong class="blue">Auto-similaridad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Mejora continua</strong></p>
+</li>
+<li>
+<p><strong class="blue">Diversidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Reflexión</strong></p>
+</li>
+<li>
+<p><strong class="blue">Flujo</strong></p>
+</li>
+<li>
+<p><strong class="blue">Oportunidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Redundancia</strong></p>
+</li>
+<li>
+<p><strong class="blue">Fallo</strong></p>
+</li>
+<li>
+<p><strong class="blue">Calidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Pasos de niño</strong></p>
+</li>
+<li>
+<p><strong class="blue">Responsabilidad aceptada</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Equipo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">El equipo debe estar junto</strong></p>
+</li>
+<li>
+<p><strong class="blue">El equipo como una unidad</strong></p>
+</li>
+<li>
+<p><strong class="blue">Propiedad compartida del código</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Organización del trabajo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Trabaja las horas razonables para ser productivo</strong></p>
+</li>
+<li>
+<p><strong class="blue">Margen en la planificación (<em>Slack</em>)</strong></p>
+</li>
+<li>
+<p><strong class="blue">Planifica usando historias de usuario</strong></p>
+</li>
+<li>
+<p><strong class="blue">El ciclo semanal y el ciclo trimestral</strong></p>
+</li>
+<li>
+<p><strong class="blue">Radiadores de información</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Desarrollo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Programa por pares</strong></p>
+</li>
+<li>
+<p><strong class="blue">Programación dirigida por pruebas</strong></p>
+</li>
+<li>
+<p><strong class="blue">Integración continua</strong></p>
+</li>
+<li>
+<p><strong class="blue">Pequeñas versiones incrementales</strong></p>
+</li>
+<li>
+<p><strong class="blue">Diseño emergente y sencillo</strong></p>
+</li>
+<li>
+<p><strong class="blue">Código de calidad</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="valores">Valores</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong class="blue">Sencillez</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Comunicación</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Realimentación</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Coraje</strong></th>
+<th class="tableblock halign-center valign-top"><strong class="blue">Respeto</strong></th>
+</tr>
+</thead>
+</table>
+<div class="sect2">
+<h3 id="sencillez">Sencillez</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 35%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="green">KISS</strong>, <em>Keep it simple, stupid!</em></th>
+<th class="tableblock halign-left valign-top"><strong class="red">BDUF</strong>, <em>Big design up front</em></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">YAGNI</strong>, <em>You aren&#8217;t gonna need it</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es <strong class="green">mucho mejor hacer una cosa sencilla hoy y pagar un poco más mañana para cambiar</strong>, si es que es necesario, que</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">hacer una cosa más complicada hoy y no utilizarla después</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una de las cosas más difíciles del mundo es no mirar lo que necesitarás implementar mañana, la próxima semana y el próximo mes</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">más fácil y rápido de implementar y de probar</span>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Lo que implica que el cliente puede tener esa <span class="green">funcionalidad mucho antes</span> y puede aportar su <strong class="green">realimentación</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>sistemas software se implementan de tal forma que están <span class="red">preparados para cosas que nunca ocurren y eso tiene mucho coste y poco valor</span>, <strong class="red">sobre-diseño</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>se aplican en otras disciplinas de la ingeniería, en construcción, pero han <span class="red">resultado muy poco adecuadas para el desarrollo de software</span>, utilizándose principalmente en el <span class="red">desarrollo en cascada</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Intenta consumir los mínimos recursos necesarios para sacar una funcionalidad, pero no pienses en lo que vas a necesitar mañana o dentro de un mes, piensa en las
+necesidades actuales y reduce el coste de llevarlas a cabo</span>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Metodología <em class="blue"><strong>lean startup</strong></em> pero aplicada al desarrollo de software.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="comunicación">Comunicación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Comunicación con el cliente</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Comunicación con el equipo</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Comunicación técnica</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Los <strong class="red">problemas</strong> en los proyectos se pueden remontar a</em></p>
+</li>
+<li>
+<p><em><strong class="red">alguien que no dijo a otro algo importante</strong>.</em></p>
+</li>
+<li>
+<p><em><strong class="red">La mala comunicación no sucede por casualidad</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>metodologías no ágiles, se considera que esta comunicación tiene que realizarse <strong class="red">a través de contratos y documentos</strong></p>
+</li>
+<li>
+<p>esa comunicación tiene que realizarse de la forma más directa posible, que <strong class="green">permita una conversación e incluso una negociación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">comunicación dentro del propio equipo de desarrollo y con los clientes</strong>.</p>
+</li>
+<li>
+<p><strong class="green">Todos</strong> los involucrados en un proyecto tienen que conocer de forma clara los <strong class="green">objetivos del proyecto</strong>, para que todas sus acciones vayan encaminadas a la consecución de esos objetivos.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">entregas frecuentes de software funcionando</strong> se han demostrado como una de las mejores formas de comunicación entre el equipo y el cliente.</p>
+</li>
+<li>
+<p><strong class="green">estimación del coste de forma conjunta por todos</strong> los miembros del equipo, la <strong class="green">programación por pares</strong> y el concepto de que <strong class="green">todo el código es de todos</strong> fomentan la comunicación entre los miembros del equipo.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="realimentación">Realimentación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 45%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Realimentación del sistema</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Realimentación del cliente</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Realimentación del equipo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue"><strong>Es La capacidad de medir diferentes aspectos del desarrollo software</strong></em></p>
+</li>
+<li>
+<p><em>Una <strong class="blue">realimentación concreta sobre el estado actual del sistema no tiene precio</strong>:</em></p>
+</li>
+<li>
+<p><em>sistema funcionando, pruebas satisfactorias, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><em><strong class="red">El optimismo es un riesgo del oficio de la programación</strong>. <strong class="green">La realimentación es el tratamiento</strong>.</em></p>
+</li>
+<li>
+<p><em>Una de las estrategias en el proceso de planificación es que</em></p>
+</li>
+<li>
+<p><em><strong class="blue">el equipo ponga las historias valiosas en producción tan pronto como sea posible</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Gracias a los <strong class="green">test automatizados</strong>, el sistema es capaz de <strong class="blue">generar un informe automático sobre su estado interno</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Gracias a las <strong class="green">entregas frecuentes</strong> de software funcionando el cliente puede evaluar el software según se va desarrollando.</p>
+</li>
+<li>
+<p>Esta es una importante <strong class="blue">herramienta para verificar</strong> que el proyecto avanza en la buena dirección. Y reaccionar en caso de que no sea así.</p>
+</li>
+<li>
+<p>Se recomienda que el <strong class="blue">cliente colabore activamente en la creación de test de aceptación</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si el cliente quiere <strong class="blue">incorporar funcionalidades no previstas</strong> en el producto, el <strong class="blue">equipo podrá estimar el coste</strong> de implementar dichas características</p>
+</li>
+<li>
+<p>Las <strong class="green">reuniones retrospectivas</strong> permiten que el equipo se realimente a sí mismo sobre su funcionamiento interno con el objetivo de mejorar</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="coraje">Coraje</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los desarrolladores deben tener <strong class="blue">valor durante el desarrollo</strong> de un proyecto en los <strong class="red">momentos y ante las situaciones adecuadas</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cuando se detectan <strong class="red">problemas de coordinación o de incomunicación</strong>, cualquier miembro del equipo tiene que tener el coraje suficiente para poner los <strong class="green">problemas encima de la mesa</strong> antes de que se agraven y sean más difíciles de solucionar</p>
+</li>
+<li>
+<p>Los programadores deben tener el coraje de <strong class="red">asumir los fallos que se cometan o limitaciones que se tengan</strong> y si es necesario, <strong class="green">pedir ayuda</strong> para solucionarlos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los desarrolladores tienen que <strong class="red">defender sus convicciones y negociar</strong> incluso con los otros miembros del equipo si no están de acuerdo en algo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hay que intentar llegar a <strong class="green">situaciones de compromiso</strong> siempre que sea posible por el bien del equipo, y <strong class="green">para eso hay que tener coraje</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="respeto">Respeto</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">si los miembros de un equipo no se preocupan de los otros y de lo que ellos están haciendo, XP está muerto</strong>.</p>
+</li>
+<li>
+<p><strong class="green">El respeto se manifiesta de muchas formas durante el desarrollo de un producto software</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un <strong class="blue">compañero nuevo con poca experiencia</strong> se merece el mismo respeto que un programador experimentado.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si un miembro del equipo tiene poca experiencia, hay que respetar sus ganas de
+aprender y mejorar y hay que hacer un <strong class="blue">esfuerzo por ayudarle y enseñarle todo lo posible</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Como todo el <strong class="blue">código es de todos</strong>, hay que hacer un <strong class="blue">esfuerzo extra por hacer el mejor código que puedas hacer</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cuando <strong class="blue">programas para ti mismo, puedes tomarte muchas “licencias”</strong> y hacer las cosas rápido y sin pensar en el mantenimiento futuro.</p>
+</li>
+<li>
+<p>Pero cuando tu código en realidad es el código de todos, <strong class="blue">por respeto a ellos</strong>, deberías cuidar al máximo su calidad.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si tu <strong class="blue">código hace que varios test dejen de funcionar</strong>, por respeto a los demás miembros, deberías <strong class="blue">solucionar los problemas lo antes posible</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Unos test que no funcionan están invalidando el trabajo de todos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las críticas siempre deben ser <strong class="green">constructivas</strong> y deben estar enfocadas en la mejora, no en la crítica <strong class="red">destructiva</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="principios">Principios</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+De los cuatro valores deducimos una docena de principios básicos para guiar nuestro nuevo estilo
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programming</cite>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Humanidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Economía</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Beneficio mutuo</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Auto-similaridad</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Mejora continua</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Diversidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Reflexión</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Flujo</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Oportunidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Redundancia</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Fallo</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Calidad</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue"><em>Baby steps</em></strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Responsabilidad aceptada</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Humanidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los desarrolladores son <span class="blue">personas y como tales tienen necesidades y objetivos personales</span>.</p>
+</li>
+<li>
+<p>La programación extrema es consciente de este aspecto y <span class="red">no considera a las personas como <strong>recursos intercambiables</strong></span>.</p>
+</li>
+<li>
+<p>Algunas de las prácticas de XP tienen como objetivo satisfacer, en la medida de lo posible, <span class="blue">las necesidades personales de cada miembro del equipo de forma equilibrada con el equipo como conjunto</span>.</p>
+</li>
+<li>
+<p>El razonamiento detrás de este enfoque es muy sencillo, <strong class="green">una persona estará involucrada con los objetivos del equipo si en cierta forma esos objetivos están alineados con sus propios objetivos personales</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Auto-similaridad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Intenta aplicar las cosas que funcionan en otros contextos y a escalas diferentes, porque pueden funcionar también</strong>.</p>
+</li>
+<li>
+<p>Esto sobre todo se aplica a los tests:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Puedes implementar <span class="blue">tests a diario a módulos internos de la aplicación</span> (test unitarios).</p>
+</li>
+<li>
+<p>Pero también puedes implementar <span class="blue">test de integración y de aceptación una vez por semana para verificar</span> que la integración del módulos y el sistema completo funciona como se espera.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Beneficio mutuo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las <span class="blue">tareas tienen que suponer un beneficio para el que las realiza y para el que se beneficia de ellas</span>. Si no es así, esas tareas acabarán realizándose con menos cuidado porque no aportan un valor directo al que las realiza.</p>
+</li>
+<li>
+<p>El caso más representativo es el caso de la <strong class="red">escritura de una documentación extensa que explica con detalle el comportamiento de un sistema</strong>. Escribir la documentación no aporta ningún valor concreto al que la escribe, porque todo el valor será obtenido por el que consulte la documentación en el futuro.</p>
+</li>
+<li>
+<p>En XP se <span class="blue">sustituye la documentación detallada por un conjunto de prácticas que aportan mucho valor al que las realiza y ofrecen incluso más valor que la documentación al que recibe los resultados en el futuro</span>.</p>
+</li>
+<li>
+<p>En concreto, en XP se promueve la <span class="green">escritura de test automatizados, la mejora del diseño de forma continua y la selección de nombres en el código que sean auto-explicativos</span>.</p>
+</li>
+<li>
+<p>Todas estas técnicas aportan mucho valor al que las realiza, porque facilitan la <span class="green">comprensión y mantenibilidad del código</span> hoy.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Economía</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Alguien paga los sueldos</span>. Así que todo el <span class="blue">trabajo técnico tiene que estar alineado con los objetivos de negocio</span>.</p>
+</li>
+<li>
+<p>Por eso siempre se intentan implementar cuanto <strong class="green">antes las historias de usuario con mayor valor para el negocio</strong>.</p>
+</li>
+<li>
+<p>Hay dos cuestiones económicas que afectan al desarrollo software:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Valor del dinero en el tiempo</span>: Se refiere a que tener un euro hoy es mejor que tener es mismo euro mañana. Por eso es necesario tener <span class="blue">software funcionando cuanto antes</span>. Este tipo de ideas están muy alineados con los conceptos de <em>lean startup</em>, en los que hay que validar el modelo de negocio cuanto antes con los clientes.</p>
+</li>
+<li>
+<p><span class="blue">Valor como opción de futuro</span>: <span class="green">Si el software y el equipo son flexibles y se adaptan al cambio, tendrán mucho más valor</span> que <span class="red">si son fijos y rígidos</span>. Las prácticas técnicas que se proponen tienen la economía muy presente.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Mejora continua</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>En el desarrollo software nada es perfecto, pero todo es “perfeccionable”.</p>
+</li>
+<li>
+<p><strong class="green">“Lo perfecto es enemigo de lo bueno”</strong> sugiere que algo razonable ahora es mucho mejor que algo perfecto dentro de una semana.</p>
+</li>
+<li>
+<p>Pero siempre hay que tener como <span class="blue">objetivo mejorar y perfeccionar eso bueno que acabamos de hacer</span>. Por eso una de las prácticas es la mejora continua del diseño. <strong class="red">No se debe sobre-diseñar un sistema</strong>, pero a medida que avanza su desarrollo, su diseño tiene que ir mejorando para que el código se mantenga con calidad.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Diversidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los <span class="blue">miembros de los equipos de desarrollo tienen que tener diferentes habilidades, experiencia, enfoques</span>.</p>
+</li>
+<li>
+<p>De esta forma el equipo <strong class="green">podrá elegir las mejores soluciones en cada caso</strong>.</p>
+</li>
+<li>
+<p>Puede ser una fuente de conflictos que tienen que resolverse, por eso XP tiene algunas <span class="blue">prácticas que favorecen los espacios de comunicación necesarios para resolver esos conflictos</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Reflexión</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los buenos equipos no sólo hacen el trabajo, si no que también son <span class="blue">conscientes de cómo hacen el trabajo y mejoran de forma continua</span> el proceso con el que hacen el trabajo.</p>
+</li>
+<li>
+<p>Las <strong class="blue">retrospectivas</strong> son una práctica concreta orientada a la mejora del proceso. Tener un <span class="green">espacio para el auto-análisis y la crítica constructiva favorece enormemente al funcionamiento de un equipo</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Responsabilidad aceptada</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="red">responsabilidad no se puede imponer, sólo se puede aceptar voluntariamente</strong>.</p>
+</li>
+<li>
+<p>El <span class="blue">equipo que tiene que estimar el coste de hacer ese trabajo y se responsabiliza de cumplir con esa estimación lo mejor que pueda</span>. De igual forma, la persona encarga de implementar una historia de usuario se <span class="blue">responsabiliza del  diseño, implementación y prueba de dicha historia</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Oportunidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Considera los problemas son una oportunidad de mejora</strong>.</p>
+</li>
+<li>
+<p>Si un cliente se queja de que una funcionalidad tiene fallos, consideralo como una oportunidad para <strong class="blue">mejorar la cobertura de tus tests</strong>.</p>
+</li>
+<li>
+<p>Si un <span class="blue">programador comete muchos errores programando, favorece la programación por pares y la revisión del código</span>.</p>
+</li>
+<li>
+<p>Si enfocamos todos los problemas como oportunidades de mejora, será mucho más probable que el software desarrollado tenga <strong class="green">cada vez mayor calidad con un coste razonable</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Redundancia</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La redundancia se aplica en muchos contextos de la informática.</p>
+</li>
+<li>
+<p><strong class="red">No se debería tener un único punto de fallo, ni en los sistemas informáticos ni en los equipos</strong>.</p>
+</li>
+<li>
+<p>Ejemplos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los tests son una forma de redundancia sobre una funcionalidad implementada. <span class="blue">Un código actúa de una forma y otro código verifica que actúa como debe actuar</span>.</p>
+</li>
+<li>
+<p>La <strong class="blue">programación por pares</strong> o la <strong class="blue">revisión del código</strong> son una forma de redundancia.</p>
+</li>
+<li>
+<p>La <span class="blue">comunicación continua con el cliente son una forma de verificar</span> lo que se pidió en un primer momento.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Fallo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hay veces que <span class="green">intentar algo y fallar es mucho mejor que tener interminables reuniones discutiendo las bondades de cada alternativa</span>.</p>
+</li>
+<li>
+<p>Hay gente que denomina <strong class="red">“parálisis por análisis”</strong> al proceso de sobre-analizar algo elucubrando decenas de variantes y situaciones cuando en realidad <span class="blue">se podrían haber implementado dos o tres propuestas y haber realizado un análisis empírico</span>, mucho <strong class="green">más efectivo</strong>.</p>
+</li>
+<li>
+<p>El fallo es una forma de aprender y si se gestiona de forma adecuada, mucho mejor que el análisis parálisis.</p>
+</li>
+<li>
+<p>El <span class="green"><em>lean startup</em> recomienda fallar rápido y barato, como forma de validar modelos de negocio</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Calidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Un <strong class="blue">proyecto con mayor calidad no es más costoso que otro con menor calidad</strong>.</p>
+</li>
+<li>
+<p>En proyectos pequeños, en forma de <strong class="red">prototipos</strong>, los <span class="red">desarrolladores pueden relajar mucho la calidad del código y ganar con ello algo de time-to-market_</span>.</p>
+</li>
+<li>
+<p>Pero en prácticamente <span class="blue">cualquier proyecto real la calidad garantiza que el coste del mantenimiento no se dispara, lo que en el medio plazo reduce los costes y los riesgos del proyecto</span>.</p>
+</li>
+<li>
+<p>Hay veces que la <strong class="red">calidad está reñida con la simplicidad. Una solución más mantenible puede ser más compleja y costosa que una solución más simple pero menos mantenible</strong>.</p>
+</li>
+<li>
+<p>La regla sería: <span class="blue">intenta hacerlo lo mejor que puedas con el tiempo disponible. En la siguiente iteración se mejorará con el trabajo de la primera iteración como base</span>.</p>
+</li>
+<li>
+<p>Esto <span class="red">se puede considerar una pérdida de tiempo, pero también es una forma de luchar contra el análisis parálisis, aportando valor al cliente desde el principio y reduciendo los riesgos</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Pasos de niño (<em>Baby steps</em>)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Intenta dar los <strong class="green">pasos lo más pequeños posibles, eso reducirá los riesgos de fallo de los pasos grandes</strong>.</p>
+</li>
+<li>
+<p>Por ejemplo, <span class="blue">pasa los test por cada pequeño cambio de código que realices</span>. Eso permitirá detectar más rápidamente los potenciales errores que introduzcas.</p>
+</li>
+<li>
+<p>No esperes dos años a sacar una nueva versión, intenta ofrecer las <span class="blue">actualizaciones lo más frecuentes a los usuarios</span>.</p>
+</li>
+<li>
+<p>A priori puede parecer que los pequeños pasos hacen el desarrollo más lento, pero en la práctica, los pequeños pasos <span class="green">permiten mitigar muchos riesgos y los problemas se solucionan mucho más rápido</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Flujo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Históricamente el desarrollo software se ha realizado de forma discreta en <strong class="red">grandes saltos</strong>. <span class="red">Las actualizaciones de software ocurrían cada uno o más años, lo que suponía mucho riesgo en forma de retrasos y en forma de rechazo por los usuarios</span>.</p>
+</li>
+<li>
+<p>Actualmente es común que el software se desarrolle de <span class="blue">forma continua y predecible</span>. Dependiendo del software puede ser una o dos veces al año, pero hay otros servicios (como algunas aplicaciones web) que se actualizan <span class="blue">varias veces en el día</span>.</p>
+</li>
+<li>
+<p><strong class="green">Algoritmo del escalador: consigue un diseño sencillo, entonces lo haces un poco más complejo, después se simplifica y, a continuación, un poco más complejo</strong></p>
+</li>
+<li>
+<p>Las <span class="blue">prácticas relacionadas con la <strong>integración continua</strong> están guiadas por el principio del flujo</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Realimentación rápida</span></strong>: la psicología del aprendizaje enseña que el tiempo entre una acción y su realimentación es crítico para aprender. Los negocios aprenden cómo el sistema puede contribuir más, y realimentan lo que aprenden de días o semanas en vez de en meses o años. Los programadores aprenden a cómo mejorar a diseñar, implementar y probar el sistema, y realimentan lo aprendido en segundos o minutos en vez de días, semanas o meses</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Asumir la sencillez</span></strong>: Tratar cada problema como si se pudiese resolver de la forma más sencilla. El tiempo que ahorras en el 98% de los problemas para lo cual es cierto, te dará unos recursos ridículos para aplicarlos al otro 2%. XP propone que hagas un buen trabajo día a día y tengas confianza en tus habilidades para añadir complejidad en el futuro, cuando la necesites.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Cambio incremental</span></strong>: Los grandes cambios hechos de una vez no funcionan. Cualquier problema se resuelve con una serie de pequeños cambios que marcan la diferencia: un poco cada vez.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Aceptar el cambio</span></strong>: La mejor estrategia es aquella que conserva la mayoría de opciones mientras resuelves tu problema más acuciante.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Trabajo de calidad</span></strong>: De las cuatro variables de desarrollo (ámbito, coste, tiempo y calidad), la calidad no es realmente una variable independiente. Los únicos posibles valores son “excelente” o “muy excelente”, dependiendo de si las vidas están o no en juego. De otra manera no disfrutas con tu trabajo, no trabajas bien y el proyecto va directo a la papelera.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Enseñar a aprender</span></strong>: Mejor que hacer un conjunto de sentencias doctrinarias tales como “Debes hacer las pruebas XYZ”, nos centramos en enseñar estrategias para aprender cuántas pruebas deberías hacer. Algunas ideas las estableceremos con exactitud. Habrá otras que no tengamos tanta confianza, y aquéllas las estableceremos como estrategias con las cuales el lector pueda aprender sus propias respuestas.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Pequeñas inversiones iniciales</span></strong>: Demasiados recursos al comienzo de un proyecto es una receta para el fracaso. Presupuestos escasos fuerzan a los programadores y clientes a recortar los requisitos y las aproximaciones. Centrarse en presupuestos escasos, anima a que se haga un buen trabajo de cualquier que se haga. Si tienes algún imperativo sobre el ámbito, la fecha, calidad o coste, entonces es improbable que seas capaz a una conclusión satisfactoria</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Jugar a ganar</span></strong>: Muchos desarrollos de software que he visto, juegan a no perder. Se escriben muchos documentos. Se celebran muchas reuniones. Cualquiera intenta hacer un desarrollo de “libro”, no por nada en particular, sino porque quieren ser capaces de decir al final que ellos no han fallado, pues siguieron el proceso. ¡Cubre tu culo! En el desarrollo de software que se juega a ganar, se hace cualquier cosa que ayude al equipo a ganar y nada que no le ayude a ganar</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Experimentos concretos</span></strong>: Cada vez que tomes una decisión de diseño y no la pruebes, hay alguna probabilidad de que la decisión sea errónea. Muchas de las decisiones que tomas, la mayoría llevan asociado un riesgo. Por lo tanto, el resultado de una sesión de diseño debería ser una serie de experimentos dirigosa los interrogantes surgidos durante la sesión y no un diseño acabado.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Comunicación abierta y honesta</span></strong>: Los programadores tienen que ser capaces de explicar las consecuencias de decisiones de otras personas “tú violas la encapsulación aquí y eso realmente ocasiona problemas”. Tienen que ser capaces de decirse el uno al otro dónde hay problemas en el código. Ellos tienen que tener libertad de expresar sus temores, y conseguir ayuda. Ellos tienen que tener la libertad de dar malas noticias a los clientes y directivos, de decirlas pronto y no ser castigados.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Trabajar con los instintos de las personas, no contra ellas</span></strong>: Es un engaño, diseñar un proceso donde siguiendo los intereses particulares a corto plazo también sirva a los intereses a largo plazo del equipo. Si XP no puede trabajar con los intereses de la gente a corto plazo, está condenada a ser un método olvidado.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Aceptar la responsabilidad</span></strong>: La alternativa es que la responsabilidad sea aceptada, no impuesta. Esto no quiere decir que harás lo que exactamente desees hacer. Eres parte de un equipo, y si el equipo no llega a la conclusión de que cierta tarea necesita hacerse, alguien escogerá hacerla, no importa lo odiosa que sea.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Adaptación particular</span></strong>: Tienes que adaptar todo lo que leas en este libro a tus condiciones particulares. Adoptar XP no significa que llego a decidir cómo vas a desarrollar. Significa que decides cómo desarrollar.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="underline">Ir ligero de equipaje</span></strong>: Las cosas que deberíamos llevar son: pocas, sencillas y valiosas. El equipo XP llega a ser nómada desde el punto de vista intelectual, siempre están preparados para empaquetar las tiendas rápidamente y seguir a la manada. La manada en este caso puede ser un diseño que queremos llevar en una dirección diferente a la que habíamos anticipado, o un cliente que quiere ir en una dirección diferente a la pensada.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="practicas">Practicas</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<strong class="green">Confiaremos en las sinergias entre prácticas sencillas, prácticas que a menudo fueron abandonadas décadas atrás como impracticables o ingenuas</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programming</cite>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Practicas2000.jpg" alt="Practicas2000"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Practicas2004.jpg" alt="Practicas2004"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Edición 2000</th>
+<th class="tableblock halign-left valign-top">Edición 2005</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Estrategias de desarrollo</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Propiedad colectiva</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El equipo como una unidad</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Estándares de Codificación</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Propiedad compartida del código</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Integración continua</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Integración continua</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Programación por Parejas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Programa por pares</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Estrategia de Diseño</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Diseño sencillo</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Diseño emergente y sencillo</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Recodificacion</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Código de calidad</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Metáfora</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Estrategia de Pruebas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Hacer Pruebas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Programación dirigida por pruebas</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Estrategia de Planificación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Radiadores de información</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>40 horas semanales</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Trabaja las horas razonables para ser productivo</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Versiones cortas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Pequeñas versiones incrementales</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cliente in-situ</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Planifica usando historias de usuario</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Juego de la Planificaciónes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Planificación de la Iteración</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El ciclo semanal y el ciclo trimestral</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Margen en la planificación (Slack)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Estrategia de Instalaciones</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El equipo debe estar junto</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+<strong class="red">Las prácticas se apoyan entre sí. La debilidad de una se cubre con los puntos fuertes de las otras</strong>.
+</blockquote>
+<div class="attribution">
+&#8212; Kent Beck<br>
+<cite>eXtreme Programming</cite>
+</div>
+</div>
+<div class="sect2">
+<h3 id="estrategias-de-desarrollo">Estrategias de Desarrollo</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Estándares de Codificación</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">El equipo como una unidad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>por la propiedad colectiva, <strong class="red">no puedes permitirte tener diferentes tipos de normas de codificación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Uno de los secretos para que un proyecto tenga éxito, es que el equipo esté <strong class="green">unido en la consecución de los objetivos del mismo</strong>.</p>
+</li>
+<li>
+<p>El equipo debe incluir todos los perfiles necesarios para la consecución de los objetivos del proyecto.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Es <span class="green">mejor dividir a los equipos por proyecto</span> que por <span class="red">tipo de tareas</span>.</p>
+</li>
+<li>
+<p>Es mejor que en un mismo equipo exista una persona experta en <span class="green">experiencia de usuario, varios desarrolladores y un administrador de sistemas</span> en vez de tener <span class="red">departamentos</span> de experiencia de usuario, departamentos de desarrollo y departamentos de sistemas que se encarguen entre ellos de varios proyectos.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="green">Focalizar en un proyecto</strong>, con unos clientes concretos y con unos compañeros concretos ayuda a implicarse con el proyecto, a tener la sensación de equipo y a conseguir mejor los objetivos.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Propiedad colectiva</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Propiedad compartida del código</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Cualquier persona puede cambiar cualquier parte del código</strong> del sistema en cualquier momento. Así, <strong class="red">el código complejo no dura mucho tiempo</strong>, porque todo el mundo</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cuando el equipo es un conjunto de desarrolladores que tienen que realizar un
+producto software, esto se traduce en que <strong class="blue">todo el código es de todos</strong>, independientemente de quién haya escrito cada línea.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No hay propiedad del código</strong>.</p>
+</li>
+<li>
+<p>Para conseguir esto, habitualmente se hacen <strong class="green">revisiones de código</strong> de unos desarrolladores a otros, y los <span class="green">desarrolladores participan en varias partes</span> del código a lo largo del proyecto.</p>
+</li>
+<li>
+<p>Esto también fomenta la <strong class="green">colaboración entre los miembros del equipos</strong>, los miembros con mejores capacidades técnicas <span class="green">enseñarán a los novatos</span> cuales son las mejores técnicas.</p>
+</li>
+<li>
+<p>Al fin y al cabo, <span class="green">todos los desarrolladores deben sentirse cómodos</span> con todo el código, como si hubiese estado escrito por ellos mismos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Integración continua</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Integración continua</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el código no puede permanecer <strong class="red">sin integrarse más de un par de horas</strong>. Al final de cada episodio de desarrollo, el <strong class="green">código es integrado con la última versión y todas las pruebas deben funcionar al 100%</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cuando varios desarrolladores colaboran para desarrollar un producto software <strong class="green">cada uno se encarga de programar una funcionalidad</strong>.</p>
+</li>
+<li>
+<p>La <span class="blue">integración de los módulos</span> desarrollados por cada uno de los integrantes del equipo no es una tarea que debe tomarse <span class="blue">muy en serio dentro del proceso de desarrollo</span>.</p>
+</li>
+<li>
+<p><strong class="red">Cuanto más tiempo pase desde la última integración, más probabilidad habrá de que la integración no sea satisfactoria</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Programación por Parejas</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Programa por pares</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">no significa que una persona programe mientras la otra mira</strong>. Es un diálogo entre dos personas que intentan simultáneamente programar (y analizar, diseñar y probar) y comprender juntos cómo programar mejor. En principio, no podrías escribir todo el código de producción en parejas pero la <strong class="green">calidad del código resultante es mucho mayor</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Dos desarrolladores programan a la misma vez en el mismo código, sentados uno al lado del otro</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cuando el código que hay que desarrollar es complejo, esta técnica reduce el tiempo de desarrollo y el código tiene mucha más calidad, <strong class="green">menos errores y es más comprensible</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Habitualmente hay <strong class="blue">dos roles</strong> en cada pareja:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El programador que controla el teclado y el ratón y va <strong class="blue">programando los tests o el código</strong> y piensa cómo es la <strong class="blue">mejor forma de desarrollar la funcionalidad</strong>.</p>
+</li>
+<li>
+<p>El otro programador que está pensando de manera más <strong class="blue">estratégica porque tiene una visión más global</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al estar liberado de la escritura, se puede hacer las siguientes preguntas: <span class="blue">¿Es esta aproximación correcta? ¿Hay más casos de test que convendría implementar para verificar la funcionalidad? ¿Hay alguna manera de simplificar el sistema?</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="estrategia-de-diseño">Estrategia de Diseño</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Diseño sencillo</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Diseño emergente y sencillo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">En la primera utilización solamente pagas lo que debes.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">implementarás algo de una forma muy simple la primera vez que te lo encuentres.</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">La segunda vez que lo utilices, lo harás más general.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">En la segunda utilización pagas por la flexibilidad.</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">De esta forma nunca paga por la flexibilidad que no utilizas, y tiendes a hacer el sistema flexible donde necesita ser flexible para la tercera, cuarta y quinta variación</strong>.</p>
+</li>
+<li>
+<p>Cuatro imperativos en orden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong class="green">sistema (código y pruebas junto) debe comunicar todo lo que quieres comunicar</strong></p>
+</li>
+<li>
+<p>El <strong class="green">sistema no debe contener código duplicado</strong></p>
+</li>
+<li>
+<p>El <strong class="green">sistema debería tener el menor número posible de clases</strong></p>
+</li>
+<li>
+<p>El <strong class="green">sistema debería tener el menor número posible de métodos</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Durante el desarrollo software hay que tener muchas cosas bajo control, pero <strong class="red">una de las más peligrosas es la complejidad</strong>.</p>
+</li>
+<li>
+<p>Hay veces que las cosas son complicadas porque son esencialmente complicadas (<strong class="blue">complejidad intrínseca</strong>), pero otras veces, las complejidad la provocamos nosotros por las herramientas que usamos, por el contexto, la inercia o la ignorancia
+(<strong class="red">complejidad accidental</strong>)</p>
+</li>
+<li>
+<p>La programación extrema te propone que intentes que tu diseño sea <strong class="blue">siempre lo más sencillo posible para la funcionalidad que tienes implementada hasta ese momento</strong>.</p>
+</li>
+<li>
+<p>Y si en el <strong class="green">futuro necesitas incorporar nueva funcionalidad y tu código actual no está preparado para admitir esa nueva funcionalidad, que ajustes tu código actual (mediante la refactorización) para permitir esa nueva funcionalidad</strong>.</p>
+</li>
+<li>
+<p>Es decir, la regla de oro es <strong class="red">“no intentes anticipar todas las posibles ampliación del futuro”</strong>, porque es posible que esas ampliaciones nunca lleguen (recuerda <strong class="red">YAGNI</strong>).</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Refactoring</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Código de calidad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">un cambio en el sistema que lo deja sin cambios en su comportamiento, pero mejora alguna característica no funcional</strong> (sencillez, flexibilidad, comprensión, <strong class="red">rendimiento</strong>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>XP recomienda que el código tiene que tener <strong class="blue">buena calidad a lo largo del proyecto</strong>.</p>
+</li>
+<li>
+<p>Es la única <strong class="green">garantía de que el software será mantenible</strong>, ampliable, predecible y libre de defectos</p>
+</li>
+<li>
+<p>Un código es de calidad en función de muchos aspectos:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Buenos valores en las métricas que analizan el código</strong></p>
+</li>
+<li>
+<p>Sigue los <strong class="green">principios del código limpio</strong> (SOLID, nombres de variables adecuados&#8230;&#8203;)</p>
+</li>
+<li>
+<p><strong class="blue">No tiene malos olores</strong> (Código duplicado, Listas de parámetros cortas, clases cortas&#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A medida que el código crece porque se añaden <strong class="red">nuevas funcionalidades, generalmente se suele degradar su calidad</strong></p>
+</li>
+<li>
+<p>La única forma de mantener la calidad del código constante es <strong class="blue">refactorizar</strong> de forma constante para acomodar las nuevas funcionalidades</p>
+</li>
+<li>
+<p>La única forma de refactorizar con garantías es tener una <strong class="red">buena batería de tests</strong> que verifiquen que no hay regresiones</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Metáfora</strong></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>una <strong class="blue">historia que todos</strong> (clientes, programadores y directores de proyecto) <strong class="blue">pueden contar sobre cómo funciona el sistema</strong>. Sustituye mucho de lo que otra gente llama <strong class="red">“arquitectura”</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="estrategia-de-pruebas">Estrategia de Pruebas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Hacer Pruebas</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Programación dirigida por pruebas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Si <strong class="blue">la interfaz de un método no está clara, escribe una prueba antes de escribir el método</strong></p>
+</li>
+<li>
+<p>Si <strong class="blue">la interfaz está clara, pero imagina que la implementación podría ser un poco menos complicada, escribe una prueba antes de escribir el método</strong></p>
+</li>
+<li>
+<p>Si piensa en <strong class="blue">una circunstancia no usual en la cual el código debiera funcionar conforme está escrito, escribe una prueba</strong> para comunicar la circunstancia</p>
+</li>
+<li>
+<p>Si encuentra <strong class="blue">un problema posterior, escribe una prueba que aísla el problema</strong></p>
+</li>
+<li>
+<p>Si esta <strong class="blue">haciendo refactorización en algún código, y no está seguro de cómo debe ser su comportamiento, y todavía no hay una prueba para dicho comportamiento en cuestión, escribe una primera prueba</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Ciclo de desarrollo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1. <strong class="red">Rojo</strong>: <strong class="red">implementación del test de una nueva funcionalidad</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Comprobación de que el test falla (no está implementada la funcionalidad, métodos vacíos)</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2. <strong class="green">Verde</strong>: <strong class="green">implementación de lo mínimo para que el test pase. Con nuevos casos de prueba se tiene que amoldar el código, posiblemente generalizando</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Comprobación de que el test pasa</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3. <strong class="blue">Refactor</strong>: <strong class="blue">mejora de la calidad del código que ya funciona</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em><strong class="blue">Red de seguridad de pruebas es nuestro segundo “compilador”</strong></em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.crowdbotics.com/blog/tdd-x-roi-is-test-driven-development-worth-the-money"><span class="red">¿Crítica?</span></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="estrategia-de-planificación">Estrategia de Planificación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Usa radiadores de información</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Cada miembro del equipo tiene que conocer el estado del desarrollo de la iteración actual y del proyecto en su conjunto</strong>.</p>
+</li>
+<li>
+<p><strong class="green">Cada miembro del equipo tiene que saber cual es la mejor tarea que puede desarrollar en cada momento por el bien del equipo</strong>.</p>
+</li>
+<li>
+<p>Esto se puede conseguir de muchas formas:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Herramientas software de gestión de tareas</span> (Redmine, Taiga, Jira, Trello&#8230;&#8203;)</p>
+</li>
+<li>
+<p>Se puede usar un <strong class="blue">“rudimentario” excel compartido</strong> en el que cada fila
+representa una tarea y están organizadas por orden de prioridad</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Gestión visual</strong>, <em>visual managment</em>: <span class="blue">el avance del proyecto es visible para todos en un mural</span>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Para ello, utilizan <span class="blue"><strong>post-its</strong> que son fáciles de escribir, desechar y mover</span>.</p>
+</li>
+<li>
+<p>Cada <span class="blue">post-it representa una <strong>historia de usuario</strong> en una <strong>fila</strong></span>.</p>
+</li>
+<li>
+<p>Cada <span class="blue">historia de usuario se divide en <strong>tareas</strong>, y para cada una de ellas también se usa un post-it.</span></p>
+</li>
+<li>
+<p>Es habitual tener una pizarra con columnas. <span class="blue">Cada <strong>columna</strong> representa el <strong>estado de la tarea</strong>: Lista, En progreso, Finalizada, Con impedimentos</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">- <strong class="blue">40 horas semanales</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Trabaja las horas razonables para ser productivo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">si el equipo no está fresco y con energías, no será capaz de llevar a cabo el resto de las prácticas</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El desarrollo de software es un tipo de tarea tan especial que <strong class="red">parece que podemos estar programando todo el día simplemente con un poco de café a nuestro lado</strong>.</p>
+</li>
+<li>
+<p>El problema es que llegado a un punto, <strong class="red">la productividad cae y empezamos a cometer errores que producen más daño que el beneficio</strong> que podríamos obtener por haber trabajado más horas.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sintesis"><strong>Sintesis</strong></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Obra, Autor y Editor</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+<th class="tableblock halign-left valign-top">Obra, Autor y Editor</th>
+<th class="tableblock halign-left valign-top">Portada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Refactoring (Pearson Addison-Wesley Signature Series)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Fowler Martin</strong></p>
+</li>
+<li>
+<p>Financial Times Prentice Hall; Edición: 01 (28 de noviembre de 2018)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Refectoring.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Test Driven Development. By Example (The Addison-Wesley Signature Series</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Beck Kent</strong></p>
+</li>
+<li>
+<p>Addison Wesley; Edición: 01 (8 de noviembre de 2002)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Extreme Programming Explained: Embrace Change: Embracing Change</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Kent Beck</strong>, <strong>Cynthia Andres</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Extreme.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Planning Extreme Programming (The Xp Series)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Beck Kent</strong>,  <strong>Fowler Martin</strong></p>
+</li>
+<li>
+<p>Addison Wesley; Edición: 01 (16 de octubre de 2000)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Planning.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum and XP from the Trenches (Enterprise Software Development)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Henrik Kniberg</strong></p>
+</li>
+<li>
+<p>Lulu.com; Edición: 1 (4 de octubre de 2007)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Scrum.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum: El revolucionario método para trabajar el doble en la mitad de tiempo</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Jeff Sutherland</strong>,</p>
+</li>
+<li>
+<p>Editorial Ariel (20 de enero de 2015)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ScrumElRevolucionario.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Refactoring Databases: Evolutionary Database Design</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Scott J Ambler</strong>, <strong>Pramod J. Sadalage</strong></p>
+</li>
+<li>
+<p>Addison-Wesley Professional; Edición: 1 (13 de marzo de 2006)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/RefactoringDatabases.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>User Stories Applied: For Agile Software Development</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cohn, M.</strong></p>
+</li>
+<li>
+<p>Addison Wesley, 2004</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/UserStoriesAppliedForAgileSoftwareDevelopment.jpg" alt="UserStoriesAppliedForAgileSoftwareDevelopment"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Scrum y XP desde las trincheras</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Henrik Kniberg</strong>. Prólogos de <strong>Jeff Sutherland</strong> y <strong>Mike Cohn</strong></p>
+</li>
+<li>
+<p>proyectalis.com</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ScrumXPTrenches.jpg" alt="ScrumXPTrenches"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Diseño Ágil con TDD</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Carlos Blé Jurado</strong></p>
+</li>
+<li>
+<p>Lulu.com</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/DisenoAgilconTDD.jpg" alt="DisenoAgilconTDD"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ponente">Ponente</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Luis Fernández Muñoz</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Formador/Consultor</em></p>
+</li>
+<li>
+<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
+</li>
+<li>
+<p><em>Ingeniero en Informática por la UMA</em></p>
+</li>
+<li>
+<p><em>Diplomado en Informática por la UPM</em></p>
+</li>
+<li>
+<p><em>Profesor Titular de ETSISI de la UPM</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 0.0.1<br>
+Last updated 2022-10-16 16:53:43 +0200
+</div>
+</div>
+<script>
+                let speed = 50;
+                
+                function typeWriter(v) {
+                  let i = v.getAttribute("typewriter-index")
+                  let txt = v.getAttribute("typewriter-original")
+                  
+                  if (i < txt.length) {
+                    v.getElementsByTagName("P")[0].innerHTML += txt.charAt(i);
+                    i++;
+                    v.setAttribute("typewriter-index", i)                        
+                  }else{
+                    if( ++i > txt.length+30 ){
+                        v.setAttribute("typewriter-index", 0)
+                        v.getElementsByTagName("P")[0].innerHTML = ''
+                    }
+                  }
+                }
+                
+                function typeWriterAll(){
+                    [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                        typeWriter(v)
+                    })
+                    setTimeout(typeWriterAll, speed);
+                }
+                                    
+                [].forEach.call(document.getElementsByClassName('typewriter'), function(v,i,a) {
+                    v.setAttribute("typewriter-original", v.innerText)
+                    v.setAttribute("typewriter-index", 0)
+                    v.getElementsByTagName("P")[0].innerHTML = ''
+                })
+                
+                setTimeout(typeWriterAll, speed);
+                
+                </script>
+</html>
