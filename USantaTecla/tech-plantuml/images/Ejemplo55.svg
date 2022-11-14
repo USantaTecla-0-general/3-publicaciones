@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="248px" preserveAspectRatio="none" style="width:187px;height:248px;" version="1.1" viewBox="0 0 187 248" width="187px" zoomAndPan="magnify"><defs><filter height="300%" id="fckohz0a135kh" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity Actor--><ellipse cx="26.5" cy="18" fill="#FEFECE" filter="url(#fckohz0a135kh)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M26.5,26 L26.5,53 M13.5,34 L39.5,34 M26.5,53 L13.5,68 M26.5,53 L39.5,68 " fill="none" filter="url(#fckohz0a135kh)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="10" y="89.5332">Actor</text><!--entity Actor2--><ellipse cx="26.5" cy="163" fill="#FEFECE" filter="url(#fckohz0a135kh)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M26.5,171 L26.5,198 M13.5,179 L39.5,179 M26.5,198 L13.5,213 M26.5,198 L39.5,213 " fill="none" filter="url(#fckohz0a135kh)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="41" x="6" y="234.5332">Actor2</text><ellipse cx="129.6838" cy="50.4517" fill="#FEFECE" filter="url(#fckohz0a135kh)" rx="41.1838" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="54" x="102.6838" y="55.7564">Usecase</text><ellipse cx="129.3406" cy="195.4517" fill="#FEFECE" filter="url(#fckohz0a135kh)" rx="46.8406" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="98.3406" y="200.7564">Usecase2</text><!--link Actor to Actor2--><path d="M26.5,113.54 C26.5,126.86 26.5,140.63 26.5,152.95 " fill="none" id="Actor-Actor2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="19.5,113.25,26.5,93.25,33.5,113.25,19.5,113.25" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Usecase to Usecase2--><path d="M129.5,86.28 C129.5,116.13 129.5,157.68 129.5,179.6 " fill="none" id="Usecase-Usecase2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="122.5,86.26,129.5,66.26,136.5,86.26,122.5,86.26" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+actor Actor
+actor Actor2
+usecase Usecase
+usecase Usecase2
+
+Actor <|- - Actor2
+Usecase <|- - Usecase2
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

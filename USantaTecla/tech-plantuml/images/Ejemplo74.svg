@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="383px" preserveAspectRatio="none" style="width:188px;height:383px;" version="1.1" viewBox="0 0 188 383" width="188px" zoomAndPan="magnify"><defs><filter height="300%" id="f11sxjqisyurgl" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="93.5" cy="20" fill="#000000" filter="url(#f11sxjqisyurgl)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#FFFFFF" filter="url(#f11sxjqisyurgl)" height="139.7969" style="stroke: #000000; stroke-width: 2.0;" width="146" x="20.5" y="40.5762"/><path d="M102.5,41.5762 L102.5,51.1855 L92.5,61.1855 L20.5,61.1855 " fill="none" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="23.5" y="56.1094">Initialization</text><rect fill="#FEFECE" filter="url(#f11sxjqisyurgl)" height="35.0938" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="100" x="43.5" y="78.1855"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="80" x="53.5" y="100.6426">read config file</text><rect fill="#FEFECE" filter="url(#f11sxjqisyurgl)" height="35.0938" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="30.5" y="133.2793"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="106" x="40.5" y="155.7363">init internal variable</text><rect fill="#FFFFFF" filter="url(#f11sxjqisyurgl)" height="139.7969" style="stroke: #000000; stroke-width: 2.0;" width="167" x="10" y="190.9492"/><path d="M73,191.9492 L73,201.5586 L63,211.5586 L10,211.5586 " fill="none" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="13" y="206.4824">Running</text><rect fill="#FEFECE" filter="url(#f11sxjqisyurgl)" height="35.0938" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="147" x="20" y="228.5586"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="127" x="30" y="251.0156">wait for user interaction</text><rect fill="#FEFECE" filter="url(#f11sxjqisyurgl)" height="35.0938" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="109" x="39" y="283.6523"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="89" x="49" y="306.1094">print information</text><ellipse cx="93.5" cy="361.7461" fill="#FFFFFF" filter="url(#f11sxjqisyurgl)" rx="11" ry="11" style="stroke: #000000; stroke-width: 1.0;"/><ellipse cx="93.5" cy="361.7461" fill="#000000" rx="6" ry="6" style="stroke: #7F7F7F; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="93.5" x2="93.5" y1="113.2793" y2="133.2793"/><polygon fill="#A80036" points="89.5,123.2793,93.5,133.2793,97.5,123.2793,93.5,127.2793" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="93.5" x2="93.5" y1="30" y2="78.1855"/><polygon fill="#A80036" points="89.5,68.1855,93.5,78.1855,97.5,68.1855,93.5,72.1855" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="93.5" x2="93.5" y1="263.6523" y2="283.6523"/><polygon fill="#A80036" points="89.5,273.6523,93.5,283.6523,97.5,273.6523,93.5,277.6523" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="93.5" x2="93.5" y1="168.373" y2="228.5586"/><polygon fill="#A80036" points="89.5,218.5586,93.5,228.5586,97.5,218.5586,93.5,222.5586" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="93.5" x2="93.5" y1="318.7461" y2="350.7461"/><polygon fill="#A80036" points="89.5,340.7461,93.5,350.7461,97.5,340.7461,93.5,344.7461" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+start
+partition Initialization {
+	:read config file;
+	:init internal variable;
+}
+partition Running {
+	:wait for user interaction;
+	:print information;
+}
+
+stop
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

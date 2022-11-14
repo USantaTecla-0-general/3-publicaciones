@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="260px" preserveAspectRatio="none" style="width:225px;height:260px;" version="1.1" viewBox="0 0 225 260" width="225px" zoomAndPan="magnify"><defs><filter height="300%" id="f1jgso61aoqst9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Clase--><rect fill="#FEFECE" filter="url(#f1jgso61aoqst9)" height="241.7031" id="Clase" style="stroke: #A80036; stroke-width: 1.5;" width="208" x="6" y="8"/><ellipse cx="89.25" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M92.0156,19.875 Q92.1719,19.6563 92.3594,19.5469 Q92.5469,19.4375 92.7656,19.4375 Q93.1406,19.4375 93.375,19.7031 Q93.6094,19.9531 93.6094,20.5625 L93.6094,22.0156 Q93.6094,22.625 93.375,22.8906 Q93.1406,23.1563 92.7656,23.1563 Q92.4219,23.1563 92.2188,22.9531 Q92.0156,22.7656 91.9063,22.25 Q91.8594,21.8906 91.6719,21.7031 Q91.3438,21.3281 90.7344,21.1094 Q90.125,20.8906 89.5,20.8906 Q88.7344,20.8906 88.0938,21.2188 Q87.4688,21.5469 86.9688,22.2969 Q86.4844,23.0469 86.4844,24.0781 L86.4844,25.1719 Q86.4844,26.4063 87.375,27.2344 Q88.2656,28.0469 89.8594,28.0469 Q90.7969,28.0469 91.4531,27.7969 Q91.8438,27.6406 92.2656,27.2031 Q92.5313,26.9375 92.6719,26.8594 Q92.8281,26.7813 93.0313,26.7813 Q93.3594,26.7813 93.6094,27.0469 Q93.875,27.2969 93.875,27.6406 Q93.875,27.9844 93.5313,28.3906 Q93.0313,28.9688 92.2344,29.2969 Q91.1563,29.75 89.8594,29.75 Q88.3438,29.75 87.1406,29.125 Q86.1563,28.625 85.4688,27.5625 Q84.7813,26.4844 84.7813,25.2031 L84.7813,24.0469 Q84.7813,22.7188 85.3906,21.5781 Q86.0156,20.4219 87.1094,19.8125 Q88.2031,19.1875 89.4375,19.1875 Q90.1719,19.1875 90.8125,19.3594 Q91.4688,19.5156 92.0156,19.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="33" x="109.75" y="28.9102">Clase</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="213" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="26" y="55.4189">tipo atributo</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="71" x="26" y="69.2549">atributoSinTipo</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="74" x="26" y="83.0908">atributoEstatico</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="90.9258"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="26" y="96.9268">atributoPrivado</text><polygon fill="none" points="17,102.7617,21,106.7617,17,110.7617,13,106.7617" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="26" y="110.7627">atributoProtegido</text><polygon fill="none" points="17,117.5977,13,123.5977,21,123.5977" style="stroke: #1963A0; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="26" y="124.5986">atributoPaquete</text><ellipse cx="17" cy="135.4336" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="26" y="138.4346">atrobutoPublico</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="213" y1="144.8516" y2="144.8516"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="182" x="26" y="160.2705">tipo metodo(tipo parametro) Exception</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="81" x="26" y="174.1064">metodoEstatico()</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="92" x="26" y="187.9424">metodoAbstracto()</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="195.7773"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="79" x="26" y="201.7783">metodoPrivado()</text><polygon fill="#FFFF44" points="17,207.6133,21,211.6133,17,215.6133,13,211.6133" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="88" x="26" y="215.6143">metodoProtegido()</text><polygon fill="#4177AF" points="17,222.4492,13,228.4492,21,228.4492" style="stroke: #1963A0; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="26" y="229.4502">metodoPaquete()</text><ellipse cx="17" cy="240.2852" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="26" y="243.2861">metodoPublico()</text><!--
+@startuml
+class Clase {
+
+tipo atributo
+atributoSinTipo
+{static} atributoEstatico
+- atributoPrivado
+# atributoProtegido
+~ atributoPaquete
++ atrobutoPublico
+
+tipo metodo(tipo parametro) Exception
+{static} metodoEstatico()
+{abstract} metodoAbstracto()
+-metodoPrivado()
+#metodoProtegido()
+~metodoPaquete()
++metodoPublico()
+
+}
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

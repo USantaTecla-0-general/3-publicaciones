@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="351px" preserveAspectRatio="none" style="width:259px;height:351px;" version="1.1" viewBox="0 0 259 351" width="259px" zoomAndPan="magnify"><defs><filter height="300%" id="f1lh4hqh7p0gcd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster Paquete2--><polygon fill="#FFFFFF" filter="url(#f1lh4hqh7p0gcd)" points="22,24,94,24,101,47.6094,237,47.6094,237,124,22,124,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="101" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="66" x="26" y="40.5332">Paquete2</text><!--class ClaseA--><!--class ClaseB--><!--class ClaseC--><!--class ClaseD--><rect fill="#FEFECE" filter="url(#f1lh4hqh7p0gcd)" height="48" id="ClaseD" style="stroke: #A80036; stroke-width: 1.5;" width="74" x="38" y="60"/><ellipse cx="53" cy="76" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M55.7656,71.875 Q55.9219,71.6563 56.1094,71.5469 Q56.2969,71.4375 56.5156,71.4375 Q56.8906,71.4375 57.125,71.7031 Q57.3594,71.9531 57.3594,72.5625 L57.3594,74.0156 Q57.3594,74.625 57.125,74.8906 Q56.8906,75.1563 56.5156,75.1563 Q56.1719,75.1563 55.9688,74.9531 Q55.7656,74.7656 55.6563,74.25 Q55.6094,73.8906 55.4219,73.7031 Q55.0938,73.3281 54.4844,73.1094 Q53.875,72.8906 53.25,72.8906 Q52.4844,72.8906 51.8438,73.2188 Q51.2188,73.5469 50.7188,74.2969 Q50.2344,75.0469 50.2344,76.0781 L50.2344,77.1719 Q50.2344,78.4063 51.125,79.2344 Q52.0156,80.0469 53.6094,80.0469 Q54.5469,80.0469 55.2031,79.7969 Q55.5938,79.6406 56.0156,79.2031 Q56.2813,78.9375 56.4219,78.8594 Q56.5781,78.7813 56.7813,78.7813 Q57.1094,78.7813 57.3594,79.0469 Q57.625,79.2969 57.625,79.6406 Q57.625,79.9844 57.2813,80.3906 Q56.7813,80.9688 55.9844,81.2969 Q54.9063,81.75 53.6094,81.75 Q52.0938,81.75 50.8906,81.125 Q49.9063,80.625 49.2188,79.5625 Q48.5313,78.4844 48.5313,77.2031 L48.5313,76.0469 Q48.5313,74.7188 49.1406,73.5781 Q49.7656,72.4219 50.8594,71.8125 Q51.9531,71.1875 53.1875,71.1875 Q53.9219,71.1875 54.5625,71.3594 Q55.2188,71.5156 55.7656,71.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="67" y="80.9102">ClaseD</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="111" y1="92" y2="92"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="111" y1="100" y2="100"/><!--link ClaseA to ClaseB--><!--link ClaseC to ClaseA--><!--
+@startuml
+package Paquete1 {
+class ClaseA
+class ClaseB
+}
+
+package Paquete2 {
+class ClaseC
+class ClaseD
+}
+
+ClaseA *- - ClaseB
+ClaseC <- - ClaseA
+
+hide Paquete1
+hide ClaseC
+
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

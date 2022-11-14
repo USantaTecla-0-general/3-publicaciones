@@ -1,0 +1,14 @@
+<svg version="1.1" width="150" height="120" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="-25" cy="30" r="25" fill="green">
+        <animate attributeName="cx" 
+                 from="-25"  to="175"
+                 begin="0s" dur="1s"
+                 fill="remove" repeatCount="indefinite"/>
+    </circle>
+    <text >
+        <animate attributeName="cx" 
+                 from="-25"  to="175"
+                 begin="0s" dur="1s"
+                 fill="remove" repeatCount="indefinite"/>
+    </text>
+</svg>

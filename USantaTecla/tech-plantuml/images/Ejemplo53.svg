@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="203px" preserveAspectRatio="none" style="width:310px;height:203px;" version="1.1" viewBox="0 0 310 203" width="310px" zoomAndPan="magnify"><defs><filter height="300%" id="f1iv0hfypwtq82" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="152.5143" cy="100.0072" fill="#FEFECE" filter="url(#f1iv0hfypwtq82)" rx="146.5143" ry="92.0072" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="113.0143" y="43.6771">You can use</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="231" x="37.0143" y="61.2865">several lines to define your usecase.</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="185" x="60.0143" y="78.8958">You can also use separators.</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="9.8424" x2="295.1862" y1="81.972" y2="81.972"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="205" x="50.0143" y="100.5052">Several separators are possible.</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="7.4973" x2="297.5313" y1="107.5814" y2="107.5814"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="7.7954" x2="297.2331" y1="109.5814" y2="109.5814"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="144" x="80.5143" y="126.1146">And you can add titles:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="182" x="61.5143" y="165.3333">This allows large description.</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="23.1464" x2="117.5143" y1="141.9954" y2="141.9954"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="117.5143" y="147.224">Conclusion</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="187.5143" x2="281.8821" y1="141.9954" y2="141.9954"/><!--
+@startuml
+usecase UC1 as "You can use
+several lines to define your usecase.
+You can also use separators.
+- -
+Several separators are possible.
+==
+And you can add titles:
+..Conclusion..
+This allows large description."
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

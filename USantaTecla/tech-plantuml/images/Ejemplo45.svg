@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="200px" preserveAspectRatio="none" style="width:395px;height:200px;" version="1.1" viewBox="0 0 395 200" width="395px" zoomAndPan="magnify"><defs><filter height="300%" id="f1ov2t47wren9b" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity AA--><rect fill="#BDB76B" filter="url(#f1ov2t47wren9b)" height="55.2188" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="6" y="8"/><rect fill="#BDB76B" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="1" y="13"/><rect fill="#BDB76B" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="1" y="53.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="67" x="16" y="32.5332">«static lib»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="18" x="40.5" y="50.1426">AA</text><!--entity BB--><rect fill="#008000" filter="url(#f1ov2t47wren9b)" height="55.2188" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="128.5" y="8"/><rect fill="#008000" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="123.5" y="13"/><rect fill="#008000" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="123.5" y="53.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="138.5" y="32.5332">«shared lib»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="18" x="168.5" y="50.1426">BB</text><!--entity CC--><rect fill="#BDB76B" filter="url(#f1ov2t47wren9b)" height="55.2188" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="262" y="8"/><rect fill="#BDB76B" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="257" y="13"/><rect fill="#BDB76B" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="257" y="53.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="67" x="272" y="32.5332">«static lib»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="20" x="295.5" y="50.1426">CC</text><!--entity node1--><polygon fill="#FFFF00" filter="url(#f1ov2t47wren9b)" points="9.5,141.5,19.5,131.5,89.5,131.5,89.5,169.1094,79.5,179.1094,9.5,179.1094,9.5,141.5" style="stroke: #008000; stroke-width: 1.5;"/><line style="stroke: #008000; stroke-width: 1.5;" x1="79.5" x2="88.5" y1="141.5" y2="132.5"/><line style="stroke: #008000; stroke-width: 1.5;" x1="9.5" x2="79.5" y1="141.5" y2="141.5"/><line style="stroke: #008000; stroke-width: 1.5;" x1="79.5" x2="79.5" y1="141.5" y2="179.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="24.5" y="166.0332">node1</text><!--entity node2--><polygon fill="#FF00FF" filter="url(#f1ov2t47wren9b)" points="124.5,133,134.5,123,260.5,123,260.5,178.2188,250.5,188.2188,124.5,188.2188,124.5,133" style="stroke: #008000; stroke-width: 1.5;"/><line style="stroke: #008000; stroke-width: 1.5;" x1="250.5" x2="259.5" y1="133" y2="124"/><line style="stroke: #008000; stroke-width: 1.5;" x1="124.5" x2="250.5" y1="133" y2="133"/><line style="stroke: #008000; stroke-width: 1.5;" x1="250.5" x2="250.5" y1="133" y2="188.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="96" x="139.5" y="157.5332">«shared node»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="167.5" y="175.1426">node2</text><!--entity Production--><path d="M295.5,142 C295.5,132 339.5,132 339.5,132 C339.5,132 383.5,132 383.5,142 L383.5,168.6094 C383.5,178.6094 339.5,178.6094 339.5,178.6094 C339.5,178.6094 295.5,178.6094 295.5,168.6094 L295.5,142 " fill="#00FFFF" filter="url(#f1ov2t47wren9b)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M295.5,142 C295.5,152 339.5,152 339.5,152 C339.5,152 383.5,152 383.5,142 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="305.5" y="170.5332">Production</text><!--link AA to BB--><!--link BB to CC--><!--link AA to node1--><!--link node1 to node2--><!--link node2 to Production--><!--
+@startuml
+[AA] <<static lib>>
+[BB] <<shared lib>>
+[CC] <<static lib>>
+
+node node1
+node node2 <<shared node>>
+database Production
+
+skinparam component {
+	backgroundColor<<static lib>> DarkKhaki
+	backgroundColor<<shared lib>> Green
+}
+
+skinparam node {
+	borderColor Green
+	backgroundColor Yellow
+	backgroundColor<<shared node>> Magenta
+}
+skinparam databaseBackgroundColor Aqua
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>
