@@ -12048,7 +12048,8 @@ const iterableObject = {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
-<span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./module.mjs</span><span class="delimiter">'</span></span>;</code></pre>
+<span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./module.mjs</span><span class="delimiter">'</span></span>;
+<span class="reserved">import</span> <span class="string"><span class="delimiter">'</span><span class="content">./module.cjs</span><span class="delimiter">'</span></span>;</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12120,6 +12121,11 @@ let o = {
   constructor() {
     console.log(<span class="error">`</span>objeto de la clase c del module<span class="error">`</span>);
   }
+
+  m(){
+    console.log(<span class="error">`</span>m<span class="error">é</span>todo de la clase c del module<span class="error">`</span>);
+  }
+
 };
 
 <span class="reserved">export</span> <span class="keyword">default</span> { K, o, f, c};</code></pre>
@@ -12160,12 +12166,12 @@ f();</code></pre>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> module from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> x from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
 
-console.log(module.K);
-console.log(module.o);
-module.f();
-let o = <span class="keyword">new</span> module.c();</code></pre>
+console.log(x.K);
+console.log(x.o);
+x.f();
+let object = <span class="keyword">new</span> x.c();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12255,12 +12261,12 @@ let o = <span class="keyword">new</span> module.c();</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> module from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">import</span> {K, o, f, c} from <span class="string"><span class="delimiter">'</span><span class="content">./module.js</span><span class="delimiter">'</span></span>;
 
-console.log(module.K);
-console.log(module.o);
-module.f();
-let o = <span class="keyword">new</span> module.c();</code></pre>
+console.log(K);
+console.log(o);
+f();
+let object = <span class="keyword">new</span> c();</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12403,20 +12409,6 @@ let o = <span class="keyword">new</span> module.c();</code></pre>
 <img src="images/plantuml.png" alt="plantuml" width="218" height="467">
 </div>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="plantuml">package connect4
-package types as &quot;connect4.\ntypes&quot;
-package models as &quot;connect4.\nmodels&quot;
-package views as &quot;connect4.\nviews&quot;
-
-connect4 ..&gt; views
-connect4 ..&gt; models
-views ..&gt; models
-views ..&gt; types
-models ..&gt; types</code></pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -12446,7 +12438,7 @@ models ..&gt; types</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error: 404</span><span class="delimiter">&quot;</span></span> <span class="comment">// no capturada</span>
-<span class="keyword">throw</span> <span class="integer">404</span>; <span class="comment">// no capturada</span></code></pre>
+<span class="keyword">throw</span> <span class="integer">404</span>; <span class="comment">// no ejecutada</span></code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12541,22 +12533,120 @@ console.log(<span class="error">`</span>Sentencia posterior<span class="error">`
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><span class="blue">Delegación de Excepciones</span></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="blue">Objetos como Excepciones</span></p>
+<p>Una sentencia try/catch captura una excepción,</p>
 <div class="ulist">
 <ul>
 <li>
-<p>la expresión de la sentencia throw permite elevar objetos</p>
+<p>comprueba e incluso arregla el problema</p>
+</li>
+<li>
+<p>y/o re-eleva la misma excepción u otra</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="error">`</span>Sentencia previa externa<span class="error">`</span>);
+<span class="keyword">try</span> {
+    console.log(<span class="error">`</span>Sentencia previa interna<span class="error">`</span>);
+    <span class="keyword">try</span> {
+        <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+            <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error interna</span><span class="delimiter">&quot;</span></span>;
+        }
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada? interna</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (exception) {
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch interna: </span><span class="delimiter">&quot;</span></span> + exception);
+        <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+            <span class="keyword">throw</span> <span class="error">`</span>re-<span class="predefined">$</span>{exception}<span class="error">`</span>; <span class="comment">// no gestiona nada</span>
+        }
+        <span class="comment">// gestiona parcialmente</span>
+        <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+            <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error parcial</span><span class="delimiter">&quot;</span></span>;
+        }
+        <span class="comment">// gestion completa</span>
+    }
+    console.log(<span class="error">`</span>Sentencia posterior interna<span class="error">`</span>);
+} <span class="keyword">catch</span> (exception) {
+    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch externa: </span><span class="delimiter">&quot;</span></span> + exception);
+}
+console.log(<span class="error">`</span>Sentencia posterior externa<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">function</span> <span class="function">outside</span>() {
+    console.log(<span class="error">`</span>Sentencia previa externa<span class="error">`</span>);
+    <span class="keyword">try</span> {
+        inside();
+    } <span class="keyword">catch</span> (exception) {
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch externa: </span><span class="delimiter">&quot;</span></span> + exception);
+    }
+    console.log(<span class="error">`</span>Sentencia posterior externa<span class="error">`</span>);
+}
+
+<span class="keyword">function</span> <span class="function">inside</span>() {
+    console.log(<span class="error">`</span>Sentencia previa interna<span class="error">`</span>);
+    <span class="keyword">try</span> {
+        <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+            <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error interna</span><span class="delimiter">&quot;</span></span>;
+        }
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada? interna</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (exception) {
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch interna: </span><span class="delimiter">&quot;</span></span> + exception);
+        <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+            <span class="keyword">throw</span> <span class="error">`</span>re-<span class="predefined">$</span>{exception}<span class="error">`</span>; <span class="comment">// no gestiona nada</span>
+        }
+        <span class="comment">// gestiona parcialmente</span>
+        <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+            <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error parcial</span><span class="delimiter">&quot;</span></span>;
+        }
+        <span class="comment">// gestion completa</span>
+    }
+    console.log(<span class="error">`</span>Sentencia posterior interna<span class="error">`</span>);
+}
+
+outside();
+console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
+inside();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><span class="blue">Objetos como Excepciones</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la expresión de la sentencia <strong><em>throw</em></strong> permite elevar la dirección de objetos</p>
 </li>
 </ul>
 </div></div></td>
@@ -12761,7 +12851,7 @@ console.log(<span class="error">`</span>Sentencia posterior<span class="error">`
 <p>Habitualmente <strong>recibirán el valor resultado o un error</strong></p>
 </li>
 <li>
-<p>Sólo <strong>se ejecutan una vez al finalizar la función</strong></p>
+<p>Sólo <strong>se ejecutan una vez al finalizar la función</strong>, <strong class="green">asincronamente</strong></p>
 </li>
 </ul>
 </div>
@@ -12803,7 +12893,7 @@ console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/0-continuaciones/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/0-continuaciones/3-browser/code.js">browser</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/0-continuaciones/2-multiple/app.js">múltiple</a></p>
+<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/0-continuaciones/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/0-continuaciones/2-multiple/app.js">múltiple</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -13011,7 +13101,7 @@ console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/1-promesas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/1-promesas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/1-promesas/3-multipleAll/app.js">múltiple all</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/1-promesas/4-multipleAllFuncional/app.js">múltiple all funcional</a></p>
+<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/3-multipleAll/app.js">múltiple all</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -13094,7 +13184,7 @@ console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/2-asincronas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/2-asincronas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/2-asincronas/3-multipleAll/app.js">múltiple all</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/0-itinerario/4-objetos/x-countries/2-asincronas/4-multipleAllFuncional/app.js">múltiple all funcional</a></p>
+<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/3-multipleAll/app.js">múltiple all</a></p>
 </li>
 </ul>
 </div></div></td>

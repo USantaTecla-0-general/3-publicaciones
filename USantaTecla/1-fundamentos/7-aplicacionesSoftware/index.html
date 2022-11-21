@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8">
 <meta name="author" content="Universo Santa Tecla">
-<title>UML</title>
+<title>Aplicaciones del Software</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,7 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book">
 <div id="header">
-<h1>UML</h1>
+<h1>Aplicaciones del Software</h1>
 <div class="details">
 <span id="author" class="author">Universo Santa Tecla</span><br>
 <span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
@@ -449,13 +449,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Índice</div>
 <ul class="sectlevel1">
 <li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#lenguaje-unificado-de-modelado">Lenguaje Unificado de Modelado</a></li>
+<li><a href="#qué"><strong>¿Qué?</strong></a>
+<ul class="sectlevel2">
+<li><a href="#aplicación-informática">Aplicación Informática</a></li>
+</ul>
+</li>
 <li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#diagramas-estructurales">Diagramas Estructurales</a></li>
-<li><a href="#diagramas-de-comportamiento">Diagramas de Comportamiento</a></li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
+<li><a href="#información">Información</a>
+<ul class="sectlevel2">
+<li><a href="#hipertextos-e-hipermedia">Hipertextos e Hipermedia</a></li>
+<li><a href="#formatos-de-texto">Formatos de Texto</a></li>
+<li><a href="#formatos-multimedia">Formatos Multimedia</a></li>
+</ul>
+</li>
+<li><a href="#sistema-informático">Sistema informático</a>
+<ul class="sectlevel2">
+<li><a href="#sistemas-operativos">Sistemas Operativos</a></li>
+<li><a href="#interfaces-gráficas-de-usuario">Interfaces Gráficas de Usuario</a></li>
+</ul>
+</li>
+<li><a href="#sistemas-informáticos-en-red">Sistemas informáticos en red</a>
+<ul class="sectlevel2">
+<li><a href="#sistemas-comunicaciones">Sistemas Comunicaciones</a></li>
+<li><a href="#sistemas-gestores-de-bases-de-datos">Sistemas Gestores de Bases de Datos</a></li>
+<li><a href="#sistemas-distribuidos">Sistemas Distribuidos</a></li>
+<li><a href="#servicios-en-red">Servicios en Red</a></li>
+</ul>
+</li>
+<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
 </ul>
@@ -464,33 +486,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<div class="paragraph">
 <p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/uml.png" alt="uml" width="250" height="330"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -499,41 +496,124 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">Evitar ambigüedades en la comunicación</strong></th>
+<th class="tableblock halign-left valign-top" colspan="5"><a href="https://www.sopadelibros.com/libro/historia-universal-cifras-georges-ifrah">Historia Universal de las Cifras</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/manualMal.jpg" alt="manualMal">
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Numeros</strong></em></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/pptMal.png" alt="pptMal">
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Calculadora</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Ingenierías</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Militares</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://es.wikipedia.org/wiki/Fortran"><em><strong>Fortran</strong></em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/numeros.jpg" alt="numeros"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/calculadora.jpg" alt="calculadora"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ingenieria.jpg" alt="ingenieria"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/militares.jpg" alt="militares"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/fortran.png" alt="fortran"></span></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="red">la misma persona interpreta lo mismo del mismo diagrama pasado el tiempo, una servilleta con un garabato <strong>sin estandarizar</strong>, &#8230;&#8203;</span></p>
+<p><em><strong>Letras</strong></em></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="red">distintas personas interpretan lo mismo del mismo diagrama, transparencias / diapositivas / &#8230;&#8203; muy bonitas <strong>sin estandarizar</strong>, &#8230;&#8203;</span></p>
+<p><em><strong>Máquina de escribir</strong></em></p>
 </li>
 </ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Economía</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em><strong>Gobiernos</strong></em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://es.wikipedia.org/wiki/COBOL"><em><strong>COBOL</strong></em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/letras.jpg" alt="letras"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/maquinaEscribir.jpg" alt="maquinaEscribir"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/economia.jpg" alt="economia"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/gobiernos.jpg" alt="gobiernos"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/cobol.png" alt="cobol"></span></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -543,12 +623,8 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 <div class="sect1">
 <h2 id="qué"><strong>¿Qué?</strong></h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="lenguaje-unificado-de-modelado">Lenguaje Unificado de Modelado</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="aplicación-informática">Aplicación Informática</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -556,40 +632,17 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.uml-diagrams.org/"><em>Unified Model Language</em></a></p>
-</li>
-<li>
-<p><strong class="blue">lenguaje estándar de modelado para visualizar, especificar, construir y documentar artefactos de un sistema software</strong></p>
+<p><strong class="blue">Aplicación Informática</strong> <em>(aplicativo)</em>,</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Propuesto por la metodología <strong class="blue">RUP</strong>: <span class="blue">Proceso Unificado de Rational</span> (<span class="blue"><em>Rational Unified Process</em></span>)</p>
+<p>solución informática (software, hardware, firmware, &#8230;&#8203;)</p>
 </li>
 <li>
-<p>Dirigido por <em>Object Management Group</em>, <em>OMG</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Lenguaje</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Cada <strong class="blue">símbolo</strong>, <span class="green">léxico</span> (<em>como las palabras correctas del castellano</em>)</p>
-</li>
-<li>
-<p><strong class="blue">relacionado</strong>, <span class="green">sintaxis</span> (<em>como la gramática de secuencias correctas</em>) con otros símbolos en un <strong class="blue">diagrama</strong>, <span class="red">grafo</span> / <span class="green">jerarquía</span> (<em>que forman una sentencia</em>)</p>
-</li>
-<li>
-<p>que tiene un <strong class="blue">significado estándar</strong> <span class="blue">semática</span> (significado que se interpreta por la secuencia correcta de palabras correctas)</p>
+<p>aplicada a la explotación de la gestión de un sistema de información (altas, bajas, modificaciones y consultas, <em>CRUD</em>)</p>
 </li>
 </ul>
 </div>
@@ -599,6 +652,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -606,119 +660,80 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 15.7894%;">
+<col style="width: 42.1052%;">
+<col style="width: 42.1054%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Objeto</th>
+<th class="tableblock halign-left valign-top">Capacidad cualitativa</th>
+<th class="tableblock halign-left valign-top">Capacidad cuantitativa</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Propuestas del sistema software: <strong class="green">Requisitos y Arquitectura del Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Estándar</strong> para describir los <strong class="green">planos de un sistema</strong>, incluyendo cosas conceptuales como <strong class="green">procesos de negocio y funciones de sistemas tanto como cosas concretas como sentencias de lenguajes de programación, esquemas de bases de datos y componentes software reutilizables</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Ser humano</strong></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Ejemplos</em>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em class="green">Modelo del Dominio</em>: <a href="https://github.com/USantaTecla-0-domains/game-mastermind#domainModel">Mastermind</a>,
-<a href="https://github.com/USantaTecla-0-domains/game-ticTacToe#domainmodel">TicTacToe</a> y <a href="https://github.com/USantaTecla-0-domains/game-draughts#modelo-del-dominio">Draughts</a></p>
-</li>
-<li>
-<p><em class="green">Requisitos</em>: <a href="https://github.com/USantaTecla-0-domains/game-mastermind/tree/master/1.0.basic#requisitos">Mastermind</a>, <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic#requirements">TicTacToe</a> y <a href="https://github.com/USantaTecla-0-domains/game-draughts/tree/master/1.B%C3%A1sica#requisitos">Draughts</a></p>
-</li>
-<li>
-<p><em class="green">Análisis</em>: <a href="https://github.com/USantaTecla-tech-java/game-mastermind/tree/master/docs/analisis/1.B%C3%A1sica#analisis">Mastermind</a>, <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/docs/analisis/1.Basica#analisis">TicTacToe</a> y <a href="https://github.com/USantaTecla-tech-java/game-draughts/tree/master/docs/analisis/1.B%C3%A1sica#analisis">Draughts</a></p>
-</li>
-<li>
-<p><em class="green">Arquitectura del Sistema/DevOps</em>: <a href="https://c4model.com/">c4model</a></p>
-</li>
-<li>
-<p><em class="red">master</em>: <em>Universo Santa Tecla</em></p>
-</li>
-<li>
-<p><em class="red">esta asignatura</em>: <em>UML</em></p>
-</li>
-<li>
-<p><em class="red">cuadro</em>: <em>Las Meninas</em> de Velázquez, compartiendo espacio el observador y los reyes</p>
-</li>
-<li>
-<p><em class="red">metodología</em>: <em>Rational Unified Process</em></p>
-</li>
-<li>
-<p><em class="red">código</em>: <em>Teorema de la Programación Estructurada</em></p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Muy <strong class="lime">buena</strong>: reconocimiento de patrones, asociaciones, recursividad, &#8230;&#8203;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Muy <strong class="red">mala</strong>: pequeña, errores por cansancio, desmotivación, &#8230;&#8203; y muy lentos</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Hardware</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Muy <strong class="red">mala</strong>: ningún computador superó la prueba de Turing</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Muy <strong class="lime">buena</strong>: sin errores y a toda velocidad</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="red">No es el objetivo</strong> ( … aplicación robusta flexible y escalable &#8230;&#8203;, es un <strong class="green">medio</strong> para:</p>
+<p><strong>Efectividad</strong> en la <strong class="blue">gestión de sistemas de información</strong>, requeridos por <strong class="blue">clientes</strong> para diferentes <strong class="blue">usuarios</strong>, con</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="green">Comunicarse con los clientes</strong></p>
+<p><strong>Eficacia</strong>, sin errores en <strong>cálculos</strong>, <strong>filtrados</strong>, <strong>secuencias de acciones</strong>, &#8230;&#8203;</p>
 </li>
 <li>
-<p><strong class="green">Comunicarse entre desarrolladores</strong></p>
+<p><strong>Eficiencia</strong>, con escaso consumo de recuros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>hardware</strong> y <strong>energía eléctrica</strong></p>
 </li>
 <li>
-<p>Usar herramientas de <strong class="green">generación automática de código/documentación</strong></p>
+<p><strong>tiempo de los usuarios</strong> para aprender y <strong>explotar</strong> el producto software</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No incluye</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Plantillas de todos los artefactos (p.e. documentos de requisitos, &#8230;&#8203;)</p>
-</li>
-<li>
-<p><strong class="red">Normas de calidad</strong> (análisis y diseño orientado a objetos)</p>
-</li>
-<li>
-<p><strong class="red">Métricas</strong> de calidad del software, de resistencia al cambio, &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong class="red">Gestión de proyecto y configuración</strong> (p.e. planificación, estimación de costes, &#8230;&#8203;)</p>
-</li>
-</ul>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/software.svg" alt="software" width="675" height="756">
 </div>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -728,6 +743,18 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 <div class="sect1">
 <h2 id="cómo"><strong>¿Cómo?</strong></h2>
 <div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/PrevioWorldWideWed10.svg" alt="PrevioWorldWideWed10" width="1499" height="404">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="información">Información</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="hipertextos-e-hipermedia">Hipertextos e Hipermedia</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -736,184 +763,126 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="blue">Herramientas CASE</strong> (<em>computer aided software engineering</em>)</th>
+<th class="tableblock halign-left valign-top" colspan="3"><a href="http://www.hipertexto.info/documentos/sist_preweb.htm"> Historia del Hipertexto</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>para modelado de software con <strong class="green">gestión de repositorios</strong>, trazabilidad, generación de informes, &#8230;&#8203;</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Basadas en la edición (<strong class="blue">iconos, formularios, &#8230;&#8203; con clicks de ratón</strong>) de cada elemento del diagrama y sus relaciones, <strong class="red">responsabilizandose de la disposición de los elementos en la visualización!!!</strong></p>
-</li>
-</ul>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vannevarBush.gif" alt="vannevarBush"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/hypercard.gif" alt="hypercard"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ibis.gif" alt="ibis"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 90%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="18"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/hipertextoHipermidia.svg" alt="hipertextoHipermidia" width="1698" height="2623">
 </div>
-</li>
-</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/MIT.png" alt="MIT" width="80" height="60"></span></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><a href="https://staruml.io/">StarUML</a></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><a href="https://sparxsystems.com/">EnterpriseArchitecture</a></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><a href="https://www.nomagic.com/products/magicdraw">MagicDraw</a></p>
+<p><span class="image"><img src="images/VannevarBush.jpg" alt="VannevarBush" width="80" height="60"></span></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/starUML.png" alt="starUML"></span></p>
+<p><span class="image"><img src="images/Memex.jfif" alt="Memex" width="80" height="60"></span></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/enterpriseArchitecture.jpg" alt="enterpriseArchitecture"></span></p>
+<p><span class="image"><img src="images/UStanford.png" alt="UStanford" width="80" height="60"></span></p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/magicDraw.png" alt="magicDraw"></span></p>
+<p><span class="image"><img src="images/TNelson.jfif" alt="TNelson" width="80" height="60"></span></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Engelbarg.jfif" alt="Engelbarg" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Xanadu.jpg" alt="Xanadu" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/IBM.png" alt="IBM" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/AVDam.jpg" alt="AVDam" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/HES.jfif" alt="HES" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Apple.png" alt="Apple" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Microsoft.jfif" alt="Microsoft" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/PowerPoint.png" alt="PowerPoint" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/HiperCard.jpg" alt="HiperCard" width="80" height="60"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 46.6666%;">
-<col style="width: 26.6666%;">
-<col style="width: 26.6668%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Vista</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Vista Estática</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Vista Dinámica</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">proyección de un modelo que se ve desde una perspectiva</strong> o un punto de vista dado y que <strong class="blue">omite entidades que no son relevantes desde esa perspectiva</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>apariencia de un sistema que enfatiza su <strong class="blue">estructura</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>apariencia de un sistema que enfatiza su <strong class="blue">comportamiento</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Mi casa desde el punto de vista de dimensiones, sistema de calefacción, apariencia, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>organización de la UPM, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>proceso para la obtención de un título de postrgrado, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 46.6666%;">
-<col style="width: 26.6666%;">
-<col style="width: 26.6668%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Diagrama</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Diagrama estructural</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Diagrama dinámico</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">presentación gráfica de un conjunto de elementos, que la mayoría de las veces se dibuja como un grafo conexo de nodos (elementos) y arcos (relaciones)</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>muestra los aspectos estáticos de un sistema representando el <strong class="blue">esqueleto relativamente estable</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>muestra los aspectos dinámicos de un sistema tales como sus <strong class="blue">partes mutables</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Planos de un edificio para su venta, acuerdo con el cliente, y construcción, acuerdo con la cuadrilla</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>planta, alzado, … de un edificio, maqueta3D, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>plano de aguas de un edificio, salidas de incendios, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="sect2">
+<h3 id="formatos-de-texto">Formatos de Texto</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/DiagramaDiagramas.svg" alt="DiagramaDiagramas" width="960" height="895">
+<img src="images/formatosTexto.svg" alt="formatosTexto" width="911" height="2820">
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="diagramas-estructurales">Diagramas Estructurales</h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -921,8 +890,8 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Diagrama de Objetos</strong>, <span class="red">poco usados</span></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Diagrama de Clases</strong></th>
+<th class="tableblock halign-left valign-top">GML/SGML &#8230;&#8203; XML</th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -930,462 +899,250 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-uml">git</a
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="red">"Foto" (estática) de entidades de la "realidad"</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Objetos con valores de atributos</p>
-</li>
-<li>
-<p>Enlaces entre objetos paralelo a las relaciones entre sus clases</p>
-</li>
-<li>
-<p><a href="https://www.google.com/search?q=object+diagram+uml&amp;tbm=isch&amp;ved=2ahUKEwibtKma56zwAhUMlBoKHXjiCw4Q2-cCegQIABAA&amp;oq=object+diagram+uml&amp;gs_lcp=CgNpbWcQAzICCAAyBAgAEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeOgYIABAHEB46CAgAEAgQBxAeUOXbZ1i85mdg&#8212;&#8203;lnaABwAHgAgAFQiAGLBJIBATeYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=qI2PYJvAJoyoavjEr3A&amp;bih=980&amp;biw=1866&amp;rlz=1C1DIMC_esES879ES879#imgrc=jFyUTGuqnj3shM">ejemplos?!?</a></p>
-</li>
-</ul>
-</div>
+<p>Se basan en <strong>marcas o etiquetas de metadatos que encierran los datos con una etiqueta de apertura (“&lt;metadato&gt;”) y otra de cierre (“&lt;/metadato&gt;”) de forma anidada</strong></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">"Foto" (estática) de clases de entidades de la "realidad"</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Clases, interfaces, …​</p>
-</li>
-<li>
-<p>Relaciones de herencia, composición, agregación, dependencia, …​</p>
-</li>
-<li>
-<p><a href="https://www.google.com/search?q=class+diagram+uml&amp;tbm=isch&amp;ved=2ahUKEwjqxePF7azwAhVLdBoKHfGdA2cQ2-cCegQIABAA&amp;oq=class+diagram+uml&amp;gs_lcp=CgNpbWcQAzIECCMQJzICCAAyBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB46BggAEAcQHlDfxQVY1M8FYMrXBWgAcAB4AIABWIgBvAOSAQE2mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=TpSPYOrmFsvoafG7jrgG&amp;bih=980&amp;biw=1866&amp;rlz=1C1DIMC_esES879ES879">ejemplos?!?</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaObjetos.svg" alt="DiagramaObjetos" width="642" height="350">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaBases.svg" alt="DiagramaBases" width="620" height="498">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Diagrama de Despliegue</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Diagrama de Componentes</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">"Foto" (estática) de hardware</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Componentes Hardware</p>
-</li>
-<li>
-<p>Enlaces entre Componentes Hardware</p>
-</li>
-<li>
-<p><a href="https://www.google.com/search?q=deploy+diagram+uml&amp;tbm=isch&amp;ved=2ahUKEwjgqNTy7azwAhXI_4UKHc5IBEkQ2-cCegQIABAA&amp;oq=deploy+diagram+uml&amp;gs_lcp=CgNpbWcQAzIECAAQEzoGCAAQBxAeOggIABAIEAcQHlD3QVipWWC_W2gBcAB4AIABV4gB1ASSAQE4mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=rJSPYOCiHsj_lwTOkZHIBA&amp;bih=980&amp;biw=1866&amp;rlz=1C1DIMC_esES879ES879">ejemplos?!?</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">"Foto" (estática) de software</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Componentes Software</p>
-</li>
-<li>
-<p>Enlaces entre Componentes Software</p>
-</li>
-<li>
-<p><a href="https://www.google.com/search?q=component+diagram+uml&amp;tbm=isch&amp;ved=2ahUKEwj909z47azwAhUHdBoKHRw9AHIQ2-cCegQIABAA&amp;oq=component+diagram+uml&amp;gs_lcp=CgNpbWcQAzICCAAyBAgAEB4yBAgAEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjoGCAAQBxAeOggIABAHEAUQHjoICAAQCBAHEB5Q-7UBWK3CAWDuxQFoAHAAeACAAU6IAbMFkgECMTCYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=uZSPYL2TDYfoaZz6gJAH&amp;bih=980&amp;biw=1866&amp;rlz=1C1DIMC_esES879ES879">ejemplos?!?</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaDespliegue.svg" alt="DiagramaDespliegue" width="496" height="352">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaComponentes.svg" alt="DiagramaComponentes" width="517" height="616">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Diagrama de Paquetes</strong></th>
-<th class="tableblock halign-left valign-top"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">"Foto estática" de agrupaciones de clasificadores</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Objetos, Clases, Nodos, Componentes, <span class="red">Actores y Casos de Uso</span></p>
-</li>
-<li>
-<p>Dependencia entre paquetes (algún clasificador de un paquete está relacionado con otro del otro paquete)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaPaquetes.svg" alt="DiagramaPaquetes" width="989" height="650">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="diagramas-de-comportamiento">Diagramas de Comportamiento</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="green">Teorema de la Programación Estructurada</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion inicial</span><span class="delimiter">&quot;</span></span>);
-<span class="keyword">do</span> {
-  console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion0</span><span class="delimiter">&quot;</span></span>);
-  <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.33</span>) {
-    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Action1</span><span class="delimiter">&quot;</span></span>);
-  } <span class="keyword">else</span> <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.66</span>) {
-    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Action2</span><span class="delimiter">&quot;</span></span>);
-  } <span class="keyword">else</span>{
-    console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Action3</span><span class="delimiter">&quot;</span></span>);
-  }
-  console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion4</span><span class="delimiter">&quot;</span></span>);
-} <span class="keyword">while</span> (Math.random() &lt; <span class="float">0.5</span>);
-console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion final</span><span class="delimiter">&quot;</span></span>);</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">let state = <span class="integer">0</span>;
-<span class="keyword">do</span> {
-  <span class="keyword">switch</span> (state) {
-    <span class="keyword">case</span> <span class="integer">0</span>:
-      console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion inicial</span><span class="delimiter">&quot;</span></span>);
-      state = <span class="integer">1</span>;
-      <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="integer">1</span>:
-      console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion0</span><span class="delimiter">&quot;</span></span>);
-      <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.33</span>) {
-        state = <span class="integer">2</span>;
-      } <span class="keyword">else</span> <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.66</span>) {
-        state = <span class="integer">3</span>;
-      } <span class="keyword">else</span> {
-        state = <span class="integer">4</span>;
-      }
-      <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="integer">2</span>:
-      console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Action1</span><span class="delimiter">&quot;</span></span>);
-      state = <span class="integer">5</span>;
-      <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="integer">3</span>:
-      console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Action2</span><span class="delimiter">&quot;</span></span>);
-      state = <span class="integer">5</span>;
-      <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="integer">4</span>:
-      console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Action3</span><span class="delimiter">&quot;</span></span>);
-      state = <span class="integer">5</span>;
-      <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="integer">5</span>:
-      console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion4</span><span class="delimiter">&quot;</span></span>);
-      <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>){
-        state = <span class="integer">1</span>;
-      } <span class="keyword">else</span> {
-        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Accion final</span><span class="delimiter">&quot;</span></span>);
-        state = <span class="integer">6</span>;
-      }
-      <span class="keyword">break</span>;
-  }
-} <span class="keyword">while</span> (state != <span class="integer">6</span>);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;pedido&gt;</span>
+  <span class="tag">&lt;codigoArticulo&gt;</span>458.34<span class="tag">&lt;/codigoArticulo&gt;</span>
+  <span class="tag">&lt;precioUnidad&gt;</span>89.345<span class="tag">&lt;precioUnidad&gt;</span>
+  <span class="tag">&lt;cantidad&gt;</span>823<span class="tag">&lt;/cantidad&gt;</span>
+<span class="tag">&lt;/pedido&gt;</span></code></pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>se basa en estas transformaciones anteriores</p>
-</li>
-<li>
-<p>toda función computable puede ser implementada en un lenguaje de programación que combine sólo tres estructuras lógicas, llamadas estructuras de control de flujo de ejecución:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Secuencia</strong>: ejecución de una instrucción tras otra.</p>
-</li>
-<li>
-<p><strong class="green">Selección</strong>, aternativa: ejecución de una de dos instrucciones (o conjuntos), según el valor de una variable booleana.</p>
-</li>
-<li>
-<p><strong class="green">Iteración</strong>, ciclo o bucle: ejecución de una instrucción (o conjunto) mientras una variable booleana sea 'verdadera'.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>erradica la necesidad de la <strong class="red">sentencia GOTO</strong></p>
-</li>
-</ul>
+<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong>Mediante los metadatos, no hay que “deducir” el significado de un dato</strong> por su posición en una tabla o por el contexto dentro de una oración para su correcto procesamiento.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="formatos-multimedia">Formatos Multimedia</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/formatosMultimedia.svg" alt="formatosMultimedia" width="1042" height="1691">
+</div>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Diagrama de Actividad</strong>, <span class="red">poco usados</span></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Diagrama de Estados</strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="red">"Video" (dinámica) con secuencia de acciones destacadas</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Acciones y condiciones</p>
-</li>
-<li>
-<p>Flujo de Control de Ejecución</p>
-</li>
-</ul>
-</div>
+<p>La historia de los <strong>formatos</strong> para información multimedia están salpicados de <strong>luchas de patentes y estándares</strong>, algoritmos de <strong>compresión</strong> con o sin pérdida de información, &#8230;&#8203; casi todos ellos previos al nacimiento de la Web</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="green">"Video" (dinámica) con secuencia de acciones no destacadas, destacando los estados intermedios</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Estados, acciones y condiciones</p>
-</li>
-<li>
-<p>Transición de Estados con Acciones</p>
+<p>En particular, la historia de los <strong>formatos de video digital</strong> están salpicados por <strong>codecs</strong> (para la transformación de datos en señal y viceversa) , <strong><em>streaming</em></strong> (que evita la descarga total previa a la reproducción), <strong>alta definición</strong> (con relación 16:9), &#8230;&#8203;</p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaActividad%20svg.png" alt="DiagramaActividad svg" width="303" height="523">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaEstdos.svg" alt="DiagramaEstdos" width="409" height="725">
-</div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Diagrama de Secuencia</strong>, <span class="red">poco usados</span></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Diagrama de Colaboración/Comunicación</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">"Video" (dinámica) con secuencia de acciones entre distintos colaboradores</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Participantes: actor, objetos, componente software, hardware, …​</p>
-</li>
-<li>
-<p>Mensajes entre Participantes ordenados secuencialmente, bloques (if, while, do/while, …​)</p>
-</li>
-</ul>
 </div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">"Foto movida" (estática) sin secuencia de acciones entre colaboradores</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Participantes: actor, objetos, componente software, hardware, …​</p>
-</li>
-<li>
-<p>Mensajes entre Participantes colaboradores</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" rowspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaSecuencia.svg" alt="DiagramaSecuencia" width="368" height="686">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/communicationDiagram.jpg" alt="communicationDiagram">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaColaboracion.svg" alt="DiagramaColaboracion" width="333" height="222">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Diagrama de Casos de Uso</strong></th>
-<th class="tableblock halign-left valign-top"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">"Foto de tipos de conversaciones" (dinámica?!?) sin secuencia de acciones entre actor y el sistema informático</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Casos de Uso y Actores</p>
-</li>
-<li>
-<p>Enlaces entre Actores y Casos de Uso y entre Casos de Uso (herencia, extend e include)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/DiagramaCasosUso.svg" alt="DiagramaCasosUso" width="490" height="665">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
+<h2 id="sistema-informático">Sistema informático</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sistemas-operativos">Sistemas Operativos</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/sistemasOperativos.svg" alt="sistemasOperativos" width="1282" height="2418">
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/softwareLibre.png" alt="softwareLibre">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="interfaces-gráficas-de-usuario">Interfaces Gráficas de Usuario</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/interfacesGraficasUSuario.svg" alt="interfacesGraficasUSuario" width="1045" height="1856">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sistemas-informáticos-en-red">Sistemas informáticos en red</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sistemas-comunicaciones">Sistemas Comunicaciones</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/conunicaciones.svg" alt="conunicaciones" width="1369" height="2132">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sistemas-gestores-de-bases-de-datos">Sistemas Gestores de Bases de Datos</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/basesDatos.svg" alt="basesDatos" width="883" height="2054">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sistemas-distribuidos">Sistemas Distribuidos</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/aplicacionesDistribuidas.svg" alt="aplicacionesDistribuidas" width="557" height="1396">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="servicios-en-red">Servicios en Red</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Aplicación Informática</strong> <em>(aplicativo)</em>, solución informática (software, hardware, firmware, &#8230;&#8203;) aplicada a la explotación de la gestión de un sistema de información (altas, bajas, modificaciones y consultas, <em>CRUD</em>)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Producto Software</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Servicio de Datos</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Su <strong class="blue">fabricación</strong> se caracteriza:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se requiere contar con un <strong class="red">capital previo</strong>.</p>
+</li>
+<li>
+<p><strong class="red">Primero se diseña</strong> el producto.</p>
+</li>
+<li>
+<p>Luego se <strong class="red">replica infinidad</strong> de veces.</p>
+</li>
+<li>
+<p>Más tarde se reparte a través de alguna <strong class="red">cadena de distribución</strong>.</p>
+</li>
+<li>
+<p>Finalmente, el <strong class="blue">cliente paga por recibir una copia del producto</strong>.</p>
+</li>
+<li>
+<p>El producto suele ser una <strong class="blue">“cosa” tangible</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Su <strong class="blue">provisión</strong> se caracteriza:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">No</strong> se requiere contar con un <strong class="red">capital previo</strong>.</p>
+</li>
+<li>
+<p>Se debe encontrar una <strong class="blue">necesidad insatisfecha</strong> que tengan los clientes.</p>
+</li>
+<li>
+<p><strong class="green">No</strong> se requiere una <strong class="red">cadena de distribución</strong>.</p>
+</li>
+<li>
+<p>El <strong class="blue">cliente paga por tener su necesidad debidamente atendida</strong>.</p>
+</li>
+<li>
+<p>El servicio <strong class="green">no</strong> suele ser una <strong class="blue">“cosa” tangible</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Producto software</strong>, solución sofware para <strong class="blue">instalar</strong> en tu hardware para explotar tu sistema de información en aplicación de escritorio</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Servicio software</strong>, solución software para <strong class="blue">servir</strong> tu sistema de información entre tu y su hardware distribuido en red</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Típicamente con la plataforma <em>World Wide Web</em> con protocolo <em>http</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sintesis"><strong>Sintesis</strong></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
@@ -1412,46 +1169,28 @@ console.log(<span class="string"><span class="delimiter">&quot;</span><span clas
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>The Unified Modeling Language User Guide</p>
+<p><strong>Wikipedia</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Booch, Jacobson, Rumbaugh</strong></p>
+<p>Jimmy Wales, Larry Sanger, y la comunidad</p>
 </li>
 <li>
-<p>Pearson Education; (2005)</p>
+<p>15 de enero de 2001</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Wiki.png" alt="Wiki"></span></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Fowler, Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -1485,7 +1224,7 @@ console.log(<span class="string"><span class="delimiter">&quot;</span><span clas
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -1513,7 +1252,7 @@ console.log(<span class="string"><span class="delimiter">&quot;</span><span clas
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-11-21 12:23:05 +0100
+Last updated 2022-10-16 16:24:34 +0200
 </div>
 </div>
 <style>
