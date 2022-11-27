@@ -453,12 +453,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a>
 <ul class="sectlevel1">
-<li><a href="#reducen-los-riesgos">Reducen los Riesgos</a>
-<ul class="sectlevel2">
-<li><a href="#inocuas">Inocuas</a></li>
-<li><a href="#red-de-seguridad">Red de Seguridad</a></li>
-</ul>
-</li>
 <li><a href="#fáciles-de-ejecutar">Fáciles de Ejecutar</a>
 <ul class="sectlevel2">
 <li><a href="#automatizadas">Automatizadas</a></li>
@@ -482,14 +476,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#mejoran-la-comprensión-del-sut">Mejoran la Comprensión del SUT</a>
 <ul class="sectlevel2">
+<li><a href="#pruebas-como-especificación">Pruebas como especificación</a></li>
 <li><a href="#mejoran-la-documentación">Mejoran la Documentación</a></li>
 </ul>
 </li>
 <li><a href="#mejoran-la-calidad">Mejoran la Calidad</a>
 <ul class="sectlevel2">
-<li><a href="#pruebas-como-especificación">Pruebas como especificación</a></li>
 <li><a href="#repelentes-de-errores">Repelentes de Errores</a></li>
 <li><a href="#localizador-de-defectos">Localizador de Defectos</a></li>
+</ul>
+</li>
+<li><a href="#reducen-los-riesgos">Reducen los Riesgos</a>
+<ul class="sectlevel2">
+<li><a href="#inocuas">Inocuas</a></li>
+<li><a href="#red-de-seguridad">Red de Seguridad</a></li>
 </ul>
 </li>
 </ul>
@@ -640,29 +640,17 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 <h1 id="cómo" class="sect0"><strong>¿Cómo?</strong></h1>
 <div class="openblock partintro">
 <div class="content">
-<table class="tableblock frame-none grid-none stretch">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
-<li>
-<p><strong class="blue">Reducen los Riesgos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="blue">Inocuas</span></p>
-</li>
-<li>
-<p><span class="blue">Red de Seguridad</span></p>
-</li>
-</ul>
-</div>
-</li>
 <li>
 <p><strong class="blue">Fáciles de Ejecutar</strong></p>
 <div class="ulist">
@@ -724,11 +712,18 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 <div class="ulist">
 <ul>
 <li>
+<p><span class="blue">Parte de la Especificación</span></p>
+</li>
+<li>
 <p><span class="blue">Parte de la Documentación</span></p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p><strong class="blue">Mejoran la Calidad</strong></p>
 <div class="ulist">
@@ -739,279 +734,27 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 <li>
 <p><span class="blue">Localizan Defectos</span></p>
 </li>
-<li>
-<p><span class="blue">Parte de la Especificación</span></p>
-</li>
 </ul>
 </div>
 </li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="reducen-los-riesgos">Reducen los Riesgos</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 50%;">
-<col style="width: 15%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
 <li>
-<p>La planificación de pruebas debe <strong class="blue">revisar todos los riesgos del proyecto</strong> y discutir sobre la clase de riesgos que podrían <strong class="blue">ser mitigados</strong>, al menos parcialmente, a través de las pruebas automáticas</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="green">Red de Seguridad</strong> debe ser un <strong class="red">juego de pruebas exhaustivo y muy superior frente a las pruebas manuales de validación por parte del cliente</strong>.</p>
-</li>
-<li>
-<p>Por tanto, debe alcanzarse una <strong class="red">alta cobertura</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Inocuas</strong></p>
-</li>
-<li>
-<p><strong class="blue">Red de Seguridad</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="inocuas">Inocuas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las pruebas <strong class="red">no deben introducir nuevos fallos</strong> por lo que <strong class="red">no se debe modificar el SUT</strong> con “nuevos problemas”.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Por tanto, se debe <strong class="green">mantener toda la lógica de la prueba fuera del SUT</strong>, de tal forma que cualquier código específico de la prueba debe ser aportado por la prueba y sólo en el entorno de prueba.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 25%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
-<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
-<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Prueba Manazas</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una prueba que <strong class="red">incorpora/modifica código de producción para facilitar su codificación</strong>: añadir métodos get, cambiar la signatura del método para devolver un valor esperado, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>modificando el SUT: <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v1/modifiyingSUT/ClosedInterval.java"><em>closedInterval/v1/ modifiyingSUT/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v1/modifiyingSUT/ClosedIntervalTest.java"><em>closedInterval/v1/ modifiyingSUT/ ClosedIntervalTest</em></a> vs</p>
-</li>
-<li>
-<p>métodos cruzado: <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v2/crossTest/ClosedInterval.java"><em>closedInterval/v2/ crossTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v2/crossTest/ClosedIntervalTest.java"><em>closedInterval/v2/ crossTest/ ClosedIntervalTest</em></a> vs</p>
-</li>
-<li>
-<p>herencia: <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v3/inheritTest/ClosedInterval.java"><em>closedInterval/v3/ inheritTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v3/inheritTest/ClosedIntervalTest.java"><em>closedInterval/v3/ inheritTest/ ClosedIntervalTest</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v3/inheritTest/models/ClosedInterval.java"><em>closedInterval/v3/ inheritTest/models/ ClosedInterval</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="red-de-seguridad">Red de Seguridad</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 70%;">
-<col style="width: 15%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las pruebas deben <strong class="blue">evidenciar todos los fallos</strong> de tal forma que los <strong class="green">errores no detectados en producción sean muy infrecuentes</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 9.0909%;">
-<col style="width: 40.909%;">
-<col style="width: 50.0001%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
-<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
-<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Prueba Infalible</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una prueba se escribió <strong class="red">para pasar en lugar de para fallar primero</strong>. Como desafortunado efecto colateral, sucede que el <strong class="red">test siempre funciona</strong>, aunque debiese fallar, creando una falsa sensación de seguridad</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v4/neverFailingTest/ClosedInterval.java"><em>closedInterval/v4/ neverFailingTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v4/neverFailingTest/ClosedIntervalTest.java"><em>closedInterval/v4/ neverFailingTest/ ClosedIntervalTest</em></a> vs</p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v2/crossTest/ClosedInterval.java"><em>closedInterval/v2/ crossTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v2/crossTest/ClosedIntervalTest.java"><em>closedInterval/v2/ crossTest/ ClosedIntervalTest</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Prueba Errática</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una prueba que <strong class="red">a veces pasa y a veces falla</strong>.</p>
+<p><strong class="blue">Reducen los Riesgos</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="red">El poder de la <em>barra roja</em> disminuye significativamente cuando se ve regularmente</strong>, se comienza a ignorar y se ha perdido gran parte del valor de las pruebas sin la retroalimentación que indica si se ha introducido un error.</p>
+<p><span class="blue">Inocuas</span></p>
+</li>
+<li>
+<p><span class="blue">Red de Seguridad</span></p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/shuffleTest/v1/erraticTest/ShuffleTest.java"><em>shuffleTest/v1/ erraticTest/ ShuffleTest</em></a> vs</p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/shuffleTest/v2/notErraticTest/ShuffleTest.java"><em>shuffleTest/v2/ notErraticTest/ ShuffleTest</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Prueba Incompleta</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una prueba que parece confiable porque ha sido probado <strong class="red">a fondo cuando, de hecho, no lo hace</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/factorial/v1/incompleteTest/Math.java"><em>factorial/v1/ incompleteTest/ Math</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/factorial/v1/incompleteTest/MathTest.java"><em>factorial/v1/ incompleteTest/ MathTest</em></a> vs</p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/factorial/v2/completeTest/Math.java"><em>factorial/v2/ completeTest/ Math</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/factorial/v2/completeTest/MathTest.java"><em>factorial/v2/ completeTest/ MathTest</em></a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Prueba con Bajas Expectativas</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una prueba que toma un atajo con el que puede ayudarle a ir más rápido pero <strong class="red">no prueba la característica en toda su extensión</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v5/loweredExpectations/ClosedInterval.java"><em>closedInterval/v5/ loweredExpectations/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v5/loweredExpectations/ClosedIntervalTest.java"><em>closedInterval/v5/ loweredExpectations/ ClosedIntervalTest</em></a></p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1019,8 +762,8 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28%;">
-<col style="width: 57%;">
+<col style="width: 30%;">
+<col style="width: 55%;">
 <col style="width: 15%;">
 </colgroup>
 <tbody>
@@ -1502,7 +1245,7 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Un cambio de constructor afecta a multitud de pruebas. Se evita con <strong>Patrón Builder</strong>, o también conocido como <a href="https://martinfowler.com/bliki/ObjectMother.html">Object Mother</a> en el ámbito de pruebas, "madre/generador" de objetos</p>
+<p>Un cambio de constructor afecta a multitud de pruebas. Se evita con <strong>Patrón Builder</strong>, o también conocido como <a href="https://franiglesias.github.io/object-mother/">Object Mother</a> en el ámbito de pruebas, "madre/generador" de objetos</p>
 </li>
 </ul>
 </div></div></td>
@@ -2018,6 +1761,33 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 </tbody>
 </table>
 <div class="sect2">
+<h3 id="pruebas-como-especificación">Pruebas como especificación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas nos <strong class="green">permiten especificar el comportamiento</strong> a través de distintos escenarios con suficiente detalle nos ayudan a <strong class="red">identificar áreas donde los requisitos son ambiguos o contradictorios</strong>, como una <strong class="green">“especificación ejecutable”</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Tal análisis <strong class="green">mejora la calidad de la especificación, lo cual mejora la calidad del software</strong> así especificado.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
 <h3 id="mejoran-la-documentación">Mejoran la Documentación</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2088,33 +1858,6 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="pruebas-como-especificación">Pruebas como especificación</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 66.6666%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las pruebas nos <strong class="green">permiten especificar el comportamiento</strong> a través de distintos escenarios con suficiente detalle nos ayudan a <strong class="red">identificar áreas donde los requisitos son ambiguos o contradictorios</strong>, como una <strong class="green">“especificación ejecutable”</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Tal análisis <strong class="green">mejora la calidad de la especificación, lo cual mejora la calidad del software</strong> así especificado.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="repelentes-de-errores">Repelentes de Errores</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2167,6 +1910,268 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reducen-los-riesgos">Reducen los Riesgos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 50%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La planificación de pruebas debe <strong class="blue">revisar todos los riesgos del proyecto</strong> y discutir sobre la clase de riesgos que podrían <strong class="blue">ser mitigados</strong>, al menos parcialmente, a través de las pruebas automáticas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La <strong class="green">Red de Seguridad</strong> debe ser un <strong class="red">juego de pruebas exhaustivo y muy superior frente a las pruebas manuales de validación por parte del cliente</strong>.</p>
+</li>
+<li>
+<p>Por tanto, debe alcanzarse una <strong class="red">alta cobertura</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Inocuas</strong></p>
+</li>
+<li>
+<p><strong class="blue">Red de Seguridad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="inocuas">Inocuas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas <strong class="red">no deben introducir nuevos fallos</strong> por lo que <strong class="red">no se debe modificar el SUT</strong> con “nuevos problemas”.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Por tanto, se debe <strong class="green">mantener toda la lógica de la prueba fuera del SUT</strong>, de tal forma que cualquier código específico de la prueba debe ser aportado por la prueba y sólo en el entorno de prueba.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 25%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Manazas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">incorpora/modifica código de producción para facilitar su codificación</strong>: añadir métodos get, cambiar la signatura del método para devolver un valor esperado, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>modificando el SUT: <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v1/modifiyingSUT/ClosedInterval.java"><em>closedInterval/v1/ modifiyingSUT/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v1/modifiyingSUT/ClosedIntervalTest.java"><em>closedInterval/v1/ modifiyingSUT/ ClosedIntervalTest</em></a> vs</p>
+</li>
+<li>
+<p>métodos cruzado: <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v2/crossTest/ClosedInterval.java"><em>closedInterval/v2/ crossTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v2/crossTest/ClosedIntervalTest.java"><em>closedInterval/v2/ crossTest/ ClosedIntervalTest</em></a> vs</p>
+</li>
+<li>
+<p>herencia: <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v3/inheritTest/ClosedInterval.java"><em>closedInterval/v3/ inheritTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v3/inheritTest/ClosedIntervalTest.java"><em>closedInterval/v3/ inheritTest/ ClosedIntervalTest</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v3/inheritTest/models/ClosedInterval.java"><em>closedInterval/v3/ inheritTest/models/ ClosedInterval</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="red-de-seguridad">Red de Seguridad</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 70%;">
+<col style="width: 15%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las pruebas deben <strong class="blue">evidenciar todos los fallos</strong> de tal forma que los <strong class="green">errores no detectados en producción sean muy infrecuentes</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 40.909%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Antipatrón</strong></th>
+<th class="tableblock halign-left valign-top"><span class="red">Descripción</span></th>
+<th class="tableblock halign-left valign-top"><em>Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Infalible</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba se escribió <strong class="red">para pasar en lugar de para fallar primero</strong>. Como desafortunado efecto colateral, sucede que el <strong class="red">test siempre funciona</strong>, aunque debiese fallar, creando una falsa sensación de seguridad</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v4/neverFailingTest/ClosedInterval.java"><em>closedInterval/v4/ neverFailingTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v4/neverFailingTest/ClosedIntervalTest.java"><em>closedInterval/v4/ neverFailingTest/ ClosedIntervalTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v2/crossTest/ClosedInterval.java"><em>closedInterval/v2/ crossTest/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v2/crossTest/ClosedIntervalTest.java"><em>closedInterval/v2/ crossTest/ ClosedIntervalTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Errática</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que <strong class="red">a veces pasa y a veces falla</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">El poder de la <em>barra roja</em> disminuye significativamente cuando se ve regularmente</strong>, se comienza a ignorar y se ha perdido gran parte del valor de las pruebas sin la retroalimentación que indica si se ha introducido un error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/shuffleTest/v1/erraticTest/ShuffleTest.java"><em>shuffleTest/v1/ erraticTest/ ShuffleTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/shuffleTest/v2/notErraticTest/ShuffleTest.java"><em>shuffleTest/v2/ notErraticTest/ ShuffleTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba Incompleta</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que parece confiable porque ha sido probado <strong class="red">a fondo cuando, de hecho, no lo hace</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/factorial/v1/incompleteTest/Math.java"><em>factorial/v1/ incompleteTest/ Math</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/factorial/v1/incompleteTest/MathTest.java"><em>factorial/v1/ incompleteTest/ MathTest</em></a> vs</p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/factorial/v2/completeTest/Math.java"><em>factorial/v2/ completeTest/ Math</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/factorial/v2/completeTest/MathTest.java"><em>factorial/v2/ completeTest/ MathTest</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Prueba con Bajas Expectativas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una prueba que toma un atajo con el que puede ayudarle a ir más rápido pero <strong class="red">no prueba la característica en toda su extensión</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/main/java/usantatecla/closedInterval/v5/loweredExpectations/ClosedInterval.java"><em>closedInterval/v5/ loweredExpectations/ ClosedInterval</em></a> con <a href="https://github.com/USantaTecla-tech-junit/src2/tree/master/src/test/java/usantatecla/closedInterval/v5/loweredExpectations/ClosedIntervalTest.java"><em>closedInterval/v5/ loweredExpectations/ ClosedIntervalTest</em></a></p>
 </li>
 </ul>
 </div></div></td>
