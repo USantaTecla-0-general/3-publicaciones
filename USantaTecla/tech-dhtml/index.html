@@ -2469,9 +2469,9 @@ mousewheel	Deprecated. Use the wheel event instead</p>
     <span class="comment">// div.addEventListener(&quot;click&quot;, alertBubblingFromListener);</span>
     <span class="comment">// div.addEventListener(&quot;click&quot;, alertTricklingFromListener, true);</span>
     div.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>
-      , alertBubblingFromListenerWithoutPropagation);
-    div.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>
-      , alertTricklingFromListenerWithoutPropagation, <span class="predefined-constant">true</span>);
+       , alertBubblingFromListenerWithoutPropagation);
+     div.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>
+       , alertTricklingFromListenerWithoutPropagation, <span class="predefined-constant">true</span>);
   }
 }
 
@@ -2543,7 +2543,7 @@ mousewheel	Deprecated. Use the wheel event instead</p>
     <span class="tag">&lt;title&gt;</span>JS Event. Cancelación<span class="tag">&lt;/title&gt;</span>
   <span class="tag">&lt;/head&gt;</span>
   <span class="tag">&lt;script&gt;</span>
-<span class="inline">    const DIGITS = <span class="regexp"><span class="delimiter">/</span><span class="content">[0-9]</span><span class="delimiter">/</span><span class="modifier">g</span></span>;
+<span class="inline">    const DIGITS = <span class="regexp"><span class="delimiter">/</span><span class="content">[0-9]</span><span class="delimiter">/</span></span>;
 
     <span class="keyword">var</span> data = {
       <span class="key">count</span> : <span class="integer">0</span>,
@@ -2560,6 +2560,15 @@ mousewheel	Deprecated. Use the wheel event instead</p>
         event.preventDefault();
       }
     }
+
+    <span class="comment">// function filterNoDigitsWithPreventDefaul(event){</span>
+    <span class="comment">//     var origLastIndex = DIGITS.lastIndex;</span>
+    <span class="comment">//     DIGITS.lastIndex = 0;</span>
+    <span class="comment">//     if (!(DIGITS.test(event.key))){</span>
+    <span class="comment">//     event.preventDefault();</span>
+    <span class="comment">//   }</span>
+    <span class="comment">//   DIGITS.lastIndex = origLastIndex;</span>
+    <span class="comment">// }</span>
 
     <span class="keyword">function</span> <span class="function">filterNoDigitsWithReturn</span>(event){
       <span class="keyword">return</span> DIGITS.test(event.key);
@@ -2600,73 +2609,180 @@ mousewheel	Deprecated. Use the wheel event instead</p>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+<col style="width: 16%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>La gestión dinámica de estilos por parte de JavaScript se ciñe a la <strong>gestión de la propiedad <em>style</em> presente en todo elemento</strong> del árbol DOM que contiene todas las propiedades de estilo correspondientes a cada tipo de elmento: <em>width, position, color, margin, text-align, &#8230;&#8203;</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p>A priori todas las propiedades tienen algún valor predefinido <strong>estáticamente</strong> por el <strong>navegador</strong> o por las <strong>hojas de estilo</strong> del desarrollador tras la carga de la página HTML en el árbol DOM pero</p>
 </li>
-<li>
-<p><strong>dinámicamente</strong> el código JavaScript puede recorrer los elementos del árbol DOM y modificar los valores de las propiedades de estilo del objeto <em>style</em> de cada elemento</p>
-<div class="ulist">
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Alternativamente, existe la propiedad <strong><em>cssText</em></strong> del objeto <em>style</em> al que se puede asignar el texto CSS correspondiente a la configuración deseada pero "machaca" las propiedades anteriores.</p>
 </li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<li>
+<p>Añadidamente, todo elemento del árbol <em>DOM</em> disfruta de la propiedad <em>classList</em> con los métodos: <em>add, remove, contains, &#8230;&#8203;</em></p>
 </li>
 </ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">.title {
+    <span class="key">color</span>: red;
+    font-family: Arial, Helvetica, sans-serif;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A priori todas las propiedades tienen algún valor predefinido <strong>estáticamente</strong> por el <strong>navegador</strong> o por las <strong>hojas de estilo</strong> del desarrollador tras la carga de la página HTML en el árbol DOM</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>pero <strong>dinámicamente</strong> el código JavaScript puede recorrer los elementos del árbol DOM y modificar los valores de las propiedades de estilo del objeto <em>style</em> de cada elemento</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><strong>con funciones</strong></p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript">&lt;!DOCTYPE html&gt;
 <span class="tag">&lt;html&gt;</span>
-  <span class="tag">&lt;head&gt;</span>
-    <span class="tag">&lt;title&gt;</span>JS CSS. element<span class="tag">&lt;/title&gt;</span>
-    <span class="tag">&lt;script&gt;</span>
-<span class="inline">      <span class="keyword">function</span> <span class="function">getTitle</span>(){
-        <span class="keyword">return</span> document.getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">h1</span><span class="delimiter">&quot;</span></span>)[<span class="integer">0</span>];
-      }
 
-      <span class="keyword">function</span> <span class="function">load</span>(){
-        <span class="comment">// desaconsejado!!!</span>
-        getTitle().style.cssText =
-          <span class="string"><span class="delimiter">&quot;</span><span class="content">color:red; font-family:Arial, Helvetica, sans-serif;</span><span class="delimiter">&quot;</span></span>;
-      }
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>JS CSS. element<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">style.css</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attribute-name">language</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javascript</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./app.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
 
-      <span class="keyword">function</span> <span class="function">changeColor</span>(){
-        let color = <span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span>;
-        <span class="keyword">for</span>(let i=<span class="integer">0</span>; i&lt;<span class="string"><span class="delimiter">&quot;</span><span class="content">RGB</span><span class="delimiter">&quot;</span></span>.length; i++){
-          let number = Math.floor(Math.random()*<span class="integer">256</span>).toString(<span class="integer">16</span>);
-          <span class="keyword">if</span> (number.length == <span class="integer">1</span>){
-            number = <span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> + number;
-          }
-          color += number
-        }
-        getTitle().style.color =  color;
-      }</span>
+<span class="tag">&lt;body</span> <span class="attribute-name">onload</span>=<span class="string"><span class="delimiter">&quot;</span>load();<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Título<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;form&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Cambiar color</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>changeColor();<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
 
-    <span class="tag">&lt;/script&gt;</span>
-  <span class="tag">&lt;/head&gt;</span>
-  <span class="tag">&lt;body</span> <span class="attribute-name">onload</span>=<span class="string"><span class="delimiter">&quot;</span>load();<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h1&gt;</span>Título<span class="tag">&lt;/h1&gt;</span>
-    <span class="tag">&lt;form&gt;</span>
-      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Cambiar color</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>changeColor();<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;/form&gt;</span>
-  <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">function</span> <span class="function">load</span>() {
+    getTitle().classList.add(<span class="string"><span class="delimiter">'</span><span class="content">title</span><span class="delimiter">'</span></span>);
+}
+
+<span class="keyword">function</span> <span class="function">getTitle</span>() {
+    <span class="keyword">return</span> document.getElementsByTagName(<span class="string"><span class="delimiter">'</span><span class="content">h1</span><span class="delimiter">'</span></span>)[<span class="integer">0</span>];
+}
+
+<span class="keyword">function</span> <span class="function">changeColor</span>() {
+    getTitle().style.color = <span class="local-variable">this</span>.getRandomColor();
+}
+
+<span class="keyword">function</span> <span class="function">getRandomColor</span>() {
+    let color = <span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span>;
+    <span class="keyword">for</span> (let i = <span class="integer">0</span>; i &lt; <span class="string"><span class="delimiter">'</span><span class="content">RGB</span><span class="delimiter">'</span></span>.length; i++) {
+        let number = Math.floor(Math.random() * <span class="integer">256</span>).toString(<span class="integer">16</span>);
+        <span class="keyword">if</span> (number.length == <span class="integer">1</span>) {
+            number = <span class="string"><span class="delimiter">'</span><span class="content">0</span><span class="delimiter">'</span></span> + number;
+        }
+        color += number
+    }
+    <span class="keyword">return</span> color;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><strong>con objetos</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">&lt;!DOCTYPE html&gt;
+<span class="tag">&lt;html&gt;</span>
+
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>JS CSS. element<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">style.css</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attribute-name">language</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">javascript</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">./app.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+
+<span class="tag">&lt;body</span> <span class="attribute-name">onload</span>=<span class="string"><span class="delimiter">&quot;</span>colorChanger .load.bind(colorChanger) ()<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Título<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;form&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Cambiar color</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="string"><span class="delimiter">&quot;</span>colorChanger .changeColor.bind(colorChanger) (event, <span class="local-variable">this</span>)<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+
+<span class="tag">&lt;/html&gt;</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="reserved">class</span> ColorChanger {
+
+    load() {
+        <span class="comment">// desaconsejado!!!</span>
+        <span class="local-variable">this</span>.<span class="error">#</span>getTitle().style.cssText =
+            <span class="string"><span class="delimiter">&quot;</span><span class="content">color:red; font-family:Arial, Helvetica, sans-serif;</span><span class="delimiter">&quot;</span></span>;
+    }
+
+    <span class="error">#</span>getTitle() {
+        <span class="keyword">return</span> document.getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">h1</span><span class="delimiter">&quot;</span></span>)[<span class="integer">0</span>];
+    }
+
+    changeColor(event, element) {
+        console.log(event);
+        console.log(element);
+        <span class="local-variable">this</span>.<span class="error">#</span>getTitle().style.color = <span class="local-variable">this</span>.<span class="error">#</span>getRandomColor();
+    }
+
+    <span class="error">#</span>getRandomColor() {
+        let color = <span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span>;
+        <span class="keyword">for</span> (let i = <span class="integer">0</span>; i &lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">RGB</span><span class="delimiter">&quot;</span></span>.length; i++) {
+            let number = Math.floor(Math.random() * <span class="integer">256</span>).toString(<span class="integer">16</span>);
+            <span class="keyword">if</span> (number.length == <span class="integer">1</span>) {
+                number = <span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> + number;
+            }
+            color += number
+        }
+        <span class="keyword">return</span> color;
+    }
+
+}
+
+const colorChanger = <span class="keyword">new</span> ColorChanger();</code></pre>
 </div>
 </div></div></td>
 </tr>
