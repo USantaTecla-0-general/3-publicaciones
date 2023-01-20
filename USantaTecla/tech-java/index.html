@@ -744,13 +744,16 @@ ERROR!!!</pre>
 <div class="ulist">
 <ul>
 <li>
+<p>sencillo</p>
+</li>
+<li>
 <p>fuertemente tipado</p>
 </li>
 <li>
 <p>imperativo</p>
 </li>
 <li>
-<p>secuencial/concurrente</p>
+<p>secuencial/ concurrente</p>
 </li>
 <li>
 <p>orientado a objetos con clases</p>
@@ -1178,7 +1181,7 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Un <strong class="blue">programa</strong> se compone de <strong class="blue">paquetes</strong> que se componen de otros paquetes y <strong class="blue">clases</strong>, bajo el <strong class="red">paradigma de la programación orientada a objetos</strong></p>
+<p>Un <strong class="blue">programa</strong> se compone de <strong class="blue">paquetes</strong> que se componen de otros paquetes y <strong class="blue">clases</strong>, bajo el <strong class="red">paradigma de la programación modular</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1227,6 +1230,9 @@ cualquier sistema operativo</p>
 </li>
 <li>
 <p><strong class="blue">sentencia iterativa</strong>, para repetir la ejecución de sentencias.</p>
+</li>
+<li>
+<p><strong class="blue">sentencias con excepciones</strong>, para elevar, capturalas y delegarlas.</p>
 </li>
 </ul>
 </div>
@@ -1309,7 +1315,7 @@ cualquier sistema operativo</p>
 <p><em>Las ocho primeras líneas y dos últimas se explilcarán en los sucesivos apartados de este documento!!!</em></p>
 </li>
 <li>
-<p><em>Todos los códigos deben ir acompañandos en carpeta "utils" el fichero:</em> <a href="https://github.com/USantaTecla-tech-java/src/blob/master/utils/console.java">utils/Console.java</a></p>
+<p><em>Todos los códigos deben ir acompañandos en carpeta "utils" el fichero:</em> <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/utils/Console.java">utils/Console.java</a></p>
 </li>
 </ul>
 </div>
@@ -1359,7 +1365,7 @@ cualquier sistema operativo</p>
 <p><em>&lt;comnetario&gt;</em> <strong class="red">::=</strong> <strong>//</strong> <em>&lt;caracter&gt;</em> <span class="red">*</span> <em>&lt;saltoLinea&gt;</em></p>
 </li>
 <li>
-<p><em>&lt;comnetario&gt;</em> <strong class="red">::=</strong> <strong>/</strong> <strong>* &lt;caracter&gt; </strong>* <strong>/</strong></p>
+<p><em>&lt;comnetario&gt;</em> <strong class="red">::=</strong> <strong>/</strong> <strong>* <em>&lt;caracter&gt;</em> <span class="red"><strong></span> </strong></strong> <strong>/</strong></p>
 </li>
 <li>
 <p>Válidos entre la secuencia de valores, operadores, identificadores, &#8230;&#8203; <span class="red">nunca dentro de éstos!!!</span></p>
@@ -2080,7 +2086,7 @@ cualquier sistema operativo</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tipo-string">Tipo <em>String</em></h4>
+<h4 id="literales-string">Literales <em>String</em></h4>
 <div class="sect4">
 <h5 id="literales-de-tipo-string">Literales de tipo <em>string</em></h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -2452,7 +2458,7 @@ cualquier sistema operativo</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="tipo-string-2">Tipo <em>string</em></h5>
+<h5 id="tipo-string">Tipo <em>string</em></h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 35%;">
@@ -2639,8 +2645,8 @@ cualquier sistema operativo</p>
 <h4 id="entrada-de-datos">Entrada de Datos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -2657,7 +2663,7 @@ cualquier sistema operativo</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong>console.</strong> <strong class="red">(</strong> <strong>readByte</strong> <strong class="red">|</strong> <strong>readShort</strong> <strong class="red">|</strong> <strong>readInt</strong> <strong class="red">|</strong> <strong>readLong</strong> <strong class="red">|</strong> <strong>readFloat</strong> <strong class="red">|</strong> <strong>readDouble</strong> <strong class="red">|</strong> <strong>readChar</strong> <strong class="red">|</strong> <strong>readBoolean</strong> <strong class="red">|</strong> <strong>readString</strong> <strong class="red">)</strong> <strong>(</strong> <strong class="red">[</strong> <em>&lt;String&gt;</em> <strong class="red">]</strong> <strong>)</strong></p>
+<p><em>&lt;expresion&gt;</em> <strong class="red">::=</strong> <strong>console.</strong> <strong>read</strong>[red]<strong>(</strong> <strong>Byte</strong> <strong class="red">|</strong> <strong>Short</strong> <strong class="red">|</strong> <strong>Int</strong> <strong class="red">|</strong> <strong>Long</strong> <strong class="red">|</strong> <strong>Float</strong> <strong class="red">|</strong> <strong>Double</strong> <strong class="red">|</strong> <strong>Char</strong> <strong class="red">|</strong> <strong>Boolean</strong> <strong class="red">|</strong> <strong>String</strong> <strong class="red">)</strong> <strong>(</strong> <strong class="red">[</strong> <em>&lt;String&gt;</em> <strong class="red">]</strong> <strong>)</strong></p>
 </li>
 </ul>
 </div>
@@ -2728,8 +2734,8 @@ cualquier sistema operativo</p>
 <h4 id="sentencia-de-declaración-de-variable">Sentencia de Declaración de Variable</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
 <col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -2808,11 +2814,11 @@ cualquier sistema operativo</p>
         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Valor actual .</span><span class="delimiter">&quot;</span></span> + identifier + <span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>); <span class="comment">// Valor actual .0.</span>
         <span class="type">int</span> identifierWithoutInitialization;
         <span class="comment">//console.writeln(&quot;.&quot; + identifierWithoutInitialization + &quot;.&quot;); // Error</span>
-        <span class="type">byte</span> code;
-        <span class="type">short</span> age;
-        <span class="type">long</span> euros;
-        <span class="type">float</span> distance;
-        <span class="type">double</span> lighYear;
+        <span class="type">byte</span> code = <span class="integer">127</span>;
+        <span class="type">short</span> age = -<span class="integer">1000</span>;
+        <span class="type">long</span> euros = <span class="integer">1234567890</span>;
+        <span class="type">float</span> distance; <span class="comment">// conversion</span>
+        <span class="type">double</span> lighYear = <span class="float">0.0234</span>;
         <span class="type">char</span> initial = <span class="string"><span class="delimiter">'</span><span class="content">A</span><span class="delimiter">'</span></span>;
         <span class="type">boolean</span> error = <span class="predefined-constant">false</span>;
     }
@@ -2942,19 +2948,19 @@ cualquier sistema operativo</p>
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
-        <span class="type">byte</span> byteVariable = <span class="integer">1</span>;
-        <span class="type">short</span> shortVariable = <span class="integer">2</span>;
-        <span class="type">int</span> intVariable = <span class="integer">3</span>;
-        <span class="type">long</span> longVariable = <span class="integer">4</span>;
-        <span class="comment">//float floatVariable = 0.1;</span>
-        <span class="type">double</span> doubleVariable  = <span class="float">0.01</span>;
-        <span class="type">char</span> character = <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>;
-        <span class="type">boolean</span>  logic = <span class="predefined-constant">true</span>;
         <span class="type">int</span> x;
         <span class="type">int</span> y;
         <span class="type">int</span> z = -<span class="integer">1</span>;
         x = y = z;
         console.writeln(x); <span class="comment">// -1</span>
+        x = <span class="integer">0</span>;
+        console.writeln(x); <span class="comment">// 0</span>
+        x = x + <span class="integer">1</span>;
+        console.writeln(x); <span class="comment">// 1</span>
+        console.writeln(x + <span class="integer">1</span>); <span class="comment">// 2</span>
+        console.writeln(x); <span class="comment">// 1</span>
+        console.writeln(x = x + <span class="integer">1</span>); <span class="comment">// 2</span>
+        console.writeln(x); <span class="comment">// 2</span>
     }
 }</code></pre>
 </div>
@@ -3355,8 +3361,8 @@ cualquier sistema operativo</p>
 <h4 id="operadores-de-acumulación">Operadores de Acumulación</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <thead>
 <tr>
@@ -3415,7 +3421,17 @@ cualquier sistema operativo</p>
         console.writeln(x *= <span class="integer">2</span>); <span class="comment">// 468</span>
         console.writeln(x /= <span class="integer">2</span>); <span class="comment">// 234</span>
         console.writeln(x %= <span class="integer">7</span>); <span class="comment">// 3</span>
-        console.writeln(x</code></pre>
+        console.writeln(x |= <span class="integer">2</span>); <span class="comment">// 3</span>
+        console.writeln(x &amp;= <span class="integer">2</span>); <span class="comment">// 2</span>
+        console.writeln(x ^= <span class="integer">3</span>); <span class="comment">// 1</span>
+        console.writeln(x &lt;&lt;= <span class="integer">2</span>); <span class="comment">// 4</span>
+        console.writeln(x &gt;&gt;= <span class="integer">2</span>); <span class="comment">// 1</span>
+        console.writeln(x &gt;&gt;&gt;= <span class="integer">2</span>); <span class="comment">// 0</span>
+        console.writeln(x += <span class="integer">1</span> * <span class="integer">5</span>); <span class="comment">// 5</span>
+        console.writeln(x += <span class="integer">1</span> * <span class="integer">5</span>); <span class="comment">// 10</span>
+        console.writeln(x); <span class="comment">// 10</span>
+    }
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -3682,8 +3698,8 @@ cualquier sistema operativo</p>
 <h4 id="precedencia-y-asociatividad">Precedencia y asociatividad</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
@@ -3773,8 +3789,8 @@ cualquier sistema operativo</p>
 <h4 id="operador-paréntesis">Operador Paréntesis</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -4262,13 +4278,6 @@ cualquier sistema operativo</p>
 <ul>
 <li>
 <p>Su ejecución (espacio/tiempo) ejecuta secuencialmente las sentencias anidadas</p>
-<div class="ulist">
-<ul>
-<li>
-<p>cuando termina la ejecución de la sentencia, se destruyen todas las posibles variables y constantes creadas internamente</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -4354,6 +4363,9 @@ cualquier sistema operativo</p>
 </li>
 <li>
 <p><span class="red">Nunca desde fuera hacia dentro!!!</span>, <strong class="green">ocultación de información</strong></p>
+</li>
+<li>
+<p>cuando termina la ejecución de la sentencia, <strong class="red">se destruyen todas las posibles variables y constantes creadas internamente</strong></p>
 </li>
 </ul>
 </div>
@@ -4531,13 +4543,6 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
 <p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#0-multiplicationtable">3-numbers/0-multiplicationTable/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_1/App.java">v0.1</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_2/App.java">v0.2</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_3/App.java">v0.3</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a3_numbers/a0_multiplicationTable/v0_4/App.java">v0.4</a></p>
 </li>
 </ul>
@@ -4549,8 +4554,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4558,6 +4561,8 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4572,8 +4577,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4581,6 +4584,8 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4595,8 +4600,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4604,6 +4607,8 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4618,8 +4623,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -4627,8 +4630,6 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -4637,8 +4638,8 @@ cualquier sistema operativo</p>
 <h3 id="tablas">Tablas</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 29%;">
+<col style="width: 71%;">
 </colgroup>
 <thead>
 <tr>
@@ -5198,7 +5199,31 @@ cualquier sistema operativo</p>
 </div>
 <div class="sect2">
 <h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
-
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="clases-de-recubrimiento">Clases de Recubrimiento</h3>
