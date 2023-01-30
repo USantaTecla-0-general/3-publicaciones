@@ -569,7 +569,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
 <li><a href="#clases-de-recubrimiento">Clases de Recubrimiento</a></li>
 <li><a href="#enumerados">Enumerados</a></li>
-<li><a href="#síntesis">Síntesis</a></li>
 </ul>
 </li>
 <li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a></li>
@@ -4631,6 +4630,17 @@ cualquier sistema operativo</p>
 </ul>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#1-interval6-isintersected">1-interval6-isintersected</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a1_interval/scenarios/isIntersected/App.java">isIntersected</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -4784,7 +4794,8 @@ cualquier sistema operativo</p>
         <span class="comment">// false false</span>
         <span class="comment">// false false</span>
         <span class="comment">// false false</span>
-        
+
+        <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> amedias  = <span class="keyword">new</span> <span class="type">int</span>[<span class="integer">10</span>]<span class="type">[]</span>;
     }
 }</code></pre>
 </div>
@@ -4857,11 +4868,7 @@ cualquier sistema operativo</p>
         Console console = <span class="keyword">new</span> Console();
         console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">0</span>]); <span class="comment">// 1</span>
         console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">4</span>]); <span class="comment">// 5</span>
-        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">5</span>]); <span class="comment">// ERROR</span>
-        <span class="type">int</span><span class="type">[]</span> array = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> };
-        console.writeln(array[<span class="integer">0</span>]); <span class="comment">// 1</span>
-        console.writeln(array[<span class="integer">4</span>]); <span class="comment">// 5</span>
-        <span class="comment">// console.writeln(array[5]); // ERROR!!!</span>
+        <span class="comment">//console.writeln(new int[] { 1, 2, 3, 4, 5 }[5]); // ERROR</span>
 
         console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
             { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> }, 
@@ -4935,6 +4942,12 @@ cualquier sistema operativo</p>
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
+        <span class="type">int</span><span class="type">[]</span> array = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> };
+        console.writeln(array[<span class="integer">0</span>]); <span class="comment">// 1</span>
+        console.writeln(array[<span class="integer">4</span>]); <span class="comment">// 5</span>
+        <span class="comment">// console.writeln(array[5]); // ERROR!!!</span>
+        console.writeln(array.length); <span class="comment">// 5</span>
+
         <span class="type">int</span> primitive1 = <span class="integer">1</span>;
         <span class="type">int</span> primitive2 = primitive1;
         console.writeln(primitive1); <span class="comment">// 1</span>
@@ -4950,22 +4963,24 @@ cualquier sistema operativo</p>
         array1[<span class="integer">1</span>] = <span class="integer">666</span>;
         console.writeln(array1); <span class="comment">// 1,666,3</span>
         console.writeln(array2); <span class="comment">// 1,666,3</span>
-
         console.writeln(array1 == array2); <span class="comment">// true</span>
+
         array1 = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">666</span>, <span class="integer">3</span> };
         console.writeln(array1); <span class="comment">// 1,666,3</span>
         console.writeln(array2); <span class="comment">// 1,666,3</span>
-
         console.writeln(array1 == array2); <span class="comment">// false</span>
+
         array2[<span class="integer">1</span>] = <span class="integer">0</span>;
         console.writeln(array1); <span class="comment">// 1,666,3</span>
         console.writeln(array2); <span class="comment">// 1,0,3</span>
+        console.writeln(array1 == array2); <span class="comment">// false</span>
+
         <span class="keyword">for</span> (<span class="type">int</span> value : array1) {
-            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            console.writeln(value); <span class="comment">// 1 / 666 / 3</span>
         }
         console.writeln();
         <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; array1.length; i++) {
-            console.write(array1[i] + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            console.writeln(i + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + array1[i]); <span class="comment">// 0: 1 / 1: 666 / 2: 3</span>
         }
         console.writeln();
     }
@@ -5022,9 +5037,6 @@ cualquier sistema operativo</p>
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
-    <span class="type">int</span><span class="type">[]</span> array = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> };
-    console.writeln(array + <span class="string"><span class="delimiter">&quot;</span><span class="content"> con </span><span class="delimiter">&quot;</span></span> + array.length); <span class="comment">// 1,2,3,4,5 con 5 items</span>
-
     <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> bidimensional = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> {
         { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span> },
         { <span class="integer">0</span> },
@@ -5163,7 +5175,7 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/5-units.md#1-interval4-split">1-interval4-split</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a1_interval/scenarios/split/App.java">split</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -5179,23 +5191,1662 @@ cualquier sistema operativo</p>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="vista-pública-de-las-clases">Vista Pública de las Clases</h3>
+<div class="sect3">
+<h4 id="nombre-de-la-clase">Nombre de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span>  &lt;<span class="class">NombreClase</span>&gt; {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Coordinate</span> {
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una clase es una colección heterogénea de</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">atributos</strong>, variables o constantes o colecciones de éstos u otros objetos cuyos valores determinan las características del <strong class="blue">concepto, módulo, unidad</strong>, &#8230;&#8203;</p>
+</li>
+<li>
+<p>y <strong class="blue">métodos</strong>, algoritmos disponibles para manipular (añadir, eliminar, modificar, consultar) las características del <strong class="blue">concepto, módulo, unidad</strong>, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Debe respetar los principios de diseño de <strong class="green">alta cohesión, bajo acoplamiento y pequeño tamaño del diseño modular</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>la clase Intervalo implanta el concepto de un segmento limitado por un mínimo y un máximo:</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>intervalo de horas laborales [8,15]</em></p>
+</li>
+<li>
+<p><em>intervalo de la capacidad de memoria de los pc’s de un laboratorio [1.2,4]</em></p>
+</li>
+<li>
+<p><em>intervalo de la tensión arterial aconsejable para una persona [8.4,14.3]</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>contempla operaciones como:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>desplazar</em></p>
+</li>
+<li>
+<p><em>longitud_</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="cabecera-de-métodos-de-la-clase">Cabecera de Métodos de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Sintaxis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue"><em>Ejemplo</em></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> &lt;tipo1&gt; &lt;nombreMetodo&gt; ( [&lt;tipo2&gt; &lt;parametro&gt;, ...])</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>el <em>tipo<sub>1</sub></em> indica el tipo del valor devuelto, que puede ser:_</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>void</em>, nada</p>
+</li>
+<li>
+<p><em>&lt;primitivo/Clase&gt;</em>, un valor de tipo primitivo o una referencia a un objeto de una clase</p>
+</li>
+<li>
+<p><em>&lt;primitivo/Clase&gt;[]</em>, una referencia a un vector de valores de tipos primitivos o de referencias a objetos</p>
+</li>
+<li>
+<p><em>&lt;primitivo/Clase&gt;[][]</em>, una referencia a una matriz de valores de tipos primitivos o de referencias a objetos</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>el nombre del método debe comenzar con minúscula_</p>
+</li>
+<li>
+<p>el <em>tipo<sub>2</sub></em> puede ser igual que <em>tipo<sub>1</sub></em> excepto_ <strong class="red"><em>void</em></strong></p>
+</li>
+<li>
+<p>todos los parámetros son pasados_ <strong class="blue"><em>por valor</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  <span class="directive">public</span> <span class="type">void</span> shift(<span class="type">double</span> shiftment) {...}
+  <span class="directive">public</span> <span class="type">void</span> adjust(Interval interval) {...}
+  <span class="directive">public</span> <span class="type">double</span> length() {...}
+  <span class="directive">public</span> <span class="type">boolean</span> includes(Interval interval) {...}
+  <span class="directive">public</span> <span class="type">boolean</span> equals(Interval interval) {...}
+  <span class="directive">public</span> Interval symetric() {...}
+  <span class="directive">public</span> Interval shifted(<span class="type">double</span> shifment) {...}
+  <span class="directive">public</span> Interval intersección(Interval interval) {...}
+  <span class="directive">public</span> <span class="type">double</span><span class="type">[]</span> values(<span class="type">int</span> times) {...}
+  <span class="directive">public</span> Interval<span class="type">[]</span> split(<span class="type">int</span> times) {...}
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sobrecarga-de-métodos-de-la-clase">Sobrecarga de Métodos de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Descripción</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Varios métodos pueden tener el mismo nombre con las siguientes restricciones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">si están en la misma clase</strong>, deben <strong class="blue">diferenciarse en el número o tipo de parámetros comparados dos a dos</strong>;</p>
+</li>
+<li>
+<p><strong class="green">si están en distintas clases</strong>, no existe restricción;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  <span class="directive">public</span> Interval(<span class="type">double</span> min, <span class="type">double</span> max) {...}
+  <span class="directive">public</span> Interval(<span class="type">double</span> max) {...}
+  <span class="directive">public</span> Interval() {...}
+  <span class="directive">public</span> Interval(Interval interval) {...}
+  <span class="directive">public</span> Interval(<span class="predefined-type">String</span> string) {...}
+  <span class="directive">public</span> <span class="type">boolean</span> includes (<span class="type">double</span> point) {...}
+  <span class="directive">public</span> <span class="type">boolean</span> includes (Interval interval) {...}
+  <span class="directive">public</span> <span class="type">boolean</span> isValid() {...}
+  ...
+}
 
+<span class="type">class</span> <span class="class">Coordinate</span> {
+  <span class="directive">public</span> <span class="type">boolean</span> isValid ()
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="constructores-de-la-clase">Constructores de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Descripción</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son <strong class="blue">métodos que reúnen las tareas de inicialización</strong>, <strong class="red">no construyen</strong>, y se lanzan implícimatemente en la construcción de objetos. Cumplen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>no devuelven nada, ni <strong>void</strong>;</p>
+</li>
+<li>
+<p>deben coincidir su nombre con el de la clase;</p>
+</li>
+<li>
+<p>no se pueden lanzar mensajes que se correspondan con los constructores de la clase._</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  <span class="directive">public</span> Interval(<span class="type">double</span> min, <span class="type">double</span> max) {...}
+  <span class="directive">public</span> Interval(<span class="type">double</span> max) {...}
+  <span class="directive">public</span> Interval() {...}
+  <span class="directive">public</span> Interval(Interval interval) {...}
+  <span class="directive">public</span> Interval(<span class="predefined-type">String</span> string) {...}
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="destructores-de-la-clase">Destructores de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Descripción</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Son métodos que reúnen las tareas de liberación de recursos (no destruyen) y se lanzan automáticamente en la destrucción de objetos. <strong>Además:</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>su cabecera debe ser:</em></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> finalize()</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>no se pueden lanzar mensajes que se correspondan con los destructores de la clase.</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="vista-pública-de-los-objetos">Vista Pública de los Objetos</h3>
-
+<div class="sect3">
+<h4 id="creación-de-objetos">Creación de objetos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 26.3157%;">
+<col style="width: 36.8421%;">
+<col style="width: 36.8422%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong><span class="blue">Sintaxis f</span></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong><span class="blue">Ejemplo</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>new</strong> es un operador unario prefijo cuyo operando es una clase de objetos y devuelve la dirección de memoria donde se ha reservado el espacio para dicho objeto;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/SintaxisF.jpg" alt="height32">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>donde la lista de expresiones debe coincidir con la lista de parámetros de alguno de los constructores de la clase; en caso de no existir, la lista debe ser vacía.</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">new</span> Intervalo()
+<span class="keyword">new</span> Intervalo(<span class="integer">100</span>)
+<span class="keyword">new</span> Intervalo(<span class="float">11.5</span>, <span class="float">55.1</span>)
+<span class="keyword">new</span> Intervalo(<span class="keyword">new</span> Intervalo(-<span class="integer">1</span>, <span class="integer">1</span>))</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="referencia-a-un-objeto">Referencia a un objeto</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Es una variable puntero que alberga la dirección de un objeto de una clase.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Referencia%20(2).jpg" alt="height32">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>final</strong> obliga a la inicialización y fija su valor para la referencia</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/EjemploReferencia%20(2).jpg" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Operadores</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>&lt;referenciaO&gt; = &lt;direcciónO&gt;: asigna la dirección a la referencia siendo del mismo tipo;</em></p>
+</li>
+<li>
+<p><em>&lt;direcciónO-I&gt; == &lt;direcciónO-D&gt;: determina si dos direcciones a objetos de la misma clase son iguales;</em></p>
+</li>
+<li>
+<p><em>&lt;direcciónO-I&gt; != &lt;direcciónO-D&gt;: determina si dos direcciones a objetos de la misma clase son distintas;</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">final</span> Intervalo HORARIO = <span class="keyword">new</span> Intervalo(<span class="integer">7</span>, <span class="integer">15</span>);
+Intervalo edades = <span class="keyword">new</span> Intervalo(<span class="integer">100</span>);
+Intervalo años;
+años = edades;
+<span class="type">boolean</span> mismo = edades == años;
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="paso-de-mensajes">Paso de mensajes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;direccion0&gt; . &lt;metodo&gt; ([&lt;expresion&gt;,...)]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>donde el método (sin contemplar constructores ni destructores) debe estar presente en la interfaz de la clase del objeto y la lista de expresiones debe coincidir en número y tipos a la lista de parámetros del método;</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">intervalo.longitud()
+<span class="keyword">new</span> Intervalo(-<span class="integer">100</span>, <span class="integer">100</span>).longitud()
+edades.partido(<span class="integer">5</span>)
+años.incluye(<span class="integer">88</span>)
+edades.interseccion(años)
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="creación-de-vectores-de-objetos">Creación de vectores de objetos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 45%;">
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis g</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>new</strong> es operador unario prefijo cuyo operando es un vector de referencias a objetos de una clase y devuelve la dirección de memoria donde se ha reservado el espacio para dicho vector;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/SintaxisG.jpg" alt="height32">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donde la expresión debe ser de tipo entero y determina la longitud de referencias del vector inicializadas a <strong>null</strong>;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">new</span> Intervalo[<span class="integer">100</span>]</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis h</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">new</span> &lt;Clase&gt;<span class="type">[]</span> {&lt;expresion&gt;,..., &lt;expresion&gt;}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donde cada expresión debe ser una dirección a un objeto de la clase que inicializan las referencias del vector creado de longitud igual al número de expresiones;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">   Intervalo intervalo = <span class="keyword">new</span> Intervalo();
+<span class="keyword">new</span> Intervalo<span class="type">[]</span> {<span class="keyword">new</span> Intervalo(), <span class="predefined-constant">null</span>, intervalo}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EjemploSintaxisH.jpg" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="referencia-a-un-vector-de-referencias-a-objetos">Referencia a un vector de referencias a objetos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 45%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Definición</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Es una variable puntero que alberga la dirección de un vector de referencias a objetos  de una clase.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Referencia2.jpg" alt="heigt32">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>final</strong> obliga a la inicialización y fija su valor para la referencia</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Intervalo<span class="type">[]</span> intervalos;</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EjemploReferencia2%20(2).jpg" alt="height32">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Intervalo<span class="type">[]</span> intervalos = <span class="keyword">new</span> Intervalo[<span class="integer">10</span>];
+intervalos[<span class="integer">0</span>] = <span class="keyword">new</span> Intervalo ();
+intervalos[<span class="integer">1</span>] = intervalos[<span class="integer">0</span>].desplazados(<span class="integer">1</span>);
+intervalos[intervalos.length-<span class="integer">1</span>] = <span class="keyword">new</span> Intervalo(<span class="integer">2</span>,<span class="integer">2</span>);
+Intervalo intervalo = intervalos[<span class="integer">1</span>];
+intervalos = <span class="predefined-constant">null</span>;<i class="conum" data-value="1"></i><b>(1)</b>
+...</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><em>Se libera automáticamente toda la memoria de las referencias del vector y de cada objeto excepto del segundo intervalo porque nadie está apuntando a dichos elementos;</em></td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="vista-privada-de-las-clases">Vista privada de las Clases</h3>
+<div class="sect3">
+<h4 id="definición-de-atributos">Definición de atributos</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>En cualquer punto de la implementación de la clase, se declaran variables de tipos primitivos,referencias a objetos o vectores de éstos anteponiendo la palabra <strong>private</strong> o, exepcionalmente para constantes globales(<em>Se tratarán posteriormente;</em> ), <strong>public</strong>;</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>A falta de inicialización explícita, se inicializan a valores por defecto, dependiendo de su tipo (0 para tipos numéricos, false para el tipo lógico, y null para referencias);</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">clase</span>&gt; {
+   <span class="directive">private</span> &lt;atributo&gt;
+   <span class="directive">private</span> &lt;atributo&gt;
+   ...
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Intervalo</span> {
+   <span class="directive">private</span> <span class="type">double</span> minimo;
+   <span class="directive">private</span> <span class="type">double</span> maximo;
+   ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En el caso de que los atributos sean constantes,puede postergarse la inicialización al cuerpo de los constructores. Una vez inicializadas, ya no es posible la asignación de nuevos valores.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Persona</span>  {
+  <span class="directive">private</span> <span class="type">byte</span> edad;
+  <span class="directive">private</span> <span class="directive">final</span> <span class="type">int</span> DNI;
 
+  <span class="directive">public</span> Persona(<span class="type">int</span> dni) {
+    edad = <span class="integer">0</span>;
+    <span class="local-variable">this</span>.DNI = dni;
+  }
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="definición-de-metodos">Definición de metodos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>En cualquier punto de la implementación
+de la clase, se define el cuerpo de las cabeceras de los métodos
+acompañándolos de una sentencia secuencial que contiene las
+declaraciones locales y sentencias que se consideren oportunas;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">clase &lt;clase&gt; {
+  <span class="directive">public</span> &lt;cabeceraMetodo&gt;
+  &lt;sentenciaSecuencial&gt;
+  <span class="directive">public</span> &lt;cabeceraMetodo&gt;
+  &lt;sentenciaSecuencial&gt;
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>dentro del cuerpo del método se tiene acceso a los atributos, los parámetros del método y a las declaraciones locales (<em>ley escrita de Demeter</em>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Intervalo</span> {
+   <span class="directive">private</span> <span class="type">double</span> minimo;
+   <span class="directive">private</span> <span class="type">double</span> maximo;
+
+   <span class="directive">public</span> <span class="type">void</span> desplazar (<span class="type">double</span> cantidad)  {
+     minimo += cantidad;
+     maximo += cantidad;
+   }
+   ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>si el tipo devuelto no es_ <strong>void</strong>, la sentencia</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">return</span> &lt;expresion&gt;;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>determina el valor devuelto por el método;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">double</span> longitud() {
+<span class="keyword">return</span> maximo - minimo;
+}
+<span class="directive">public</span> <span class="type">boolean</span> incluye(<span class="type">double</span> punto) {
+  <span class="keyword">return</span> minimo &lt;= punto &amp;&amp; punto &lt;= maximo;
+}
+<span class="directive">public</span> <span class="type">boolean</span> valido() {
+  <span class="keyword">return</span> minimo &lt;= maximo;
+}
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>dado que los atributos son privados a la clase, se puede acceder a los atributos de un objeto de la clase que se está implementando mediante la notación punto:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;direccion0&gt;.&lt;atributo&gt;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> iguales(Intervalo intervalo) {
+  <span class="keyword">return</span> minimo == intervalo.minimo &amp;&amp;
+    maximo == intervalo.maximo;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>this</strong> es una referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está definiendo; por tanto:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> <span class="directive">final</span> &lt;Clase&gt; <span class="local-variable">this</span>;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="usos">Usos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Resolución de ambigüedades en la colisión de parámetros o declaraciones locales con el mismo nombre que los atributos;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo(<span class="type">double</span> minimo, <span class="type">double</span> maximo) {
+  <span class="local-variable">this</span>.minimo = minimo;
+  <span class="local-variable">this</span>.maximo = maximo;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reutilización de métodos en la codificación de otros métodos;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> incluye(Intervalo intervalo) {
+  <span class="keyword">return</span> <span class="local-variable">this</span>.incluye(intervalo.minimo) &amp;&amp;
+    <span class="local-variable">this</span>.incluye(intervalo.maximo);
+}
+<span class="directive">public</span> <span class="type">void</span> escalar(<span class="type">double</span> escala) {
+ <span class="type">double</span> nuevaLongitud = <span class="local-variable">this</span>.longitud() * escala;
+ <span class="type">double</span> puntoMedio = <span class="local-variable">this</span>.puntoMedio();
+ minimo = puntoMedio - nuevaLongitud / <span class="integer">2</span>;
+ maximo = puntoMedio + nuevaLongitud / <span class="integer">2</span>;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reutilización de contructores en la definición de otros constructores mediante la sintaxis:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span> ( [ &lt;expresion&gt;,...] );</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Debe ser la primera sentencia del constructor;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo() {
+ <span class="local-variable">this</span>(<span class="integer">0</span>, <span class="integer">0</span>);
+}
+
+<span class="directive">public</span> Intervalo(<span class="type">double</span> maximo) {
+  <span class="local-variable">this</span>(<span class="integer">0</span>, maximo);
+}
+
+<span class="directive">public</span> Intervalo(Intervalo intervalo) {
+  <span class="local-variable">this</span>(intervalo.minimo, intervalo.maximo);
+}
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Reutilización de métodos en la codificación de otros métodos;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dado que puede ser conveniente disponer de métodos, que no han sido solicitados, para implementar otros métodos, cabe la posibilidad de definir métodos de ámbito privado que sólo se pueden usar en la implementación de la clase:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">clase</span>&gt; {
+   <span class="directive">private</span> &lt;cabeceraMetodo&gt;
+   &lt;sentenciaSecuencial&gt;
+   <span class="directive">private</span> &lt;cabeceraMetodo&gt;
+   &lt;sentenciaSecuencial&gt;
+   <span class="error">…</span>
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> Intervalo copia() {
+  <span class="keyword">return</span> <span class="keyword">new</span> Intervalo(<span class="local-variable">this</span>);
+}
+
+<span class="directive">public</span> Intervalo desplazado(<span class="type">double</span> cantidad) {
+   Intervalo intervalo = <span class="local-variable">this</span>.copia();
+   intervalo.desplazar(cantidad);
+   <span class="keyword">return</span> intervalo;
+}
+...</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo interseccion(Intervalo intervalo){
+  <span class="keyword">if</span> (<span class="local-variable">this</span>.incluye(intervalo))
+    <span class="keyword">return</span> intervalo.copia();
+  <span class="keyword">else</span> <span class="keyword">if</span> (intervalo.incluye(<span class="local-variable">this</span>))
+    <span class="keyword">return</span> <span class="local-variable">this</span>.copia();
+  <span class="keyword">else</span> <span class="keyword">if</span> (<span class="local-variable">this</span>.incluye(intervalo.minimo))
+    <span class="keyword">return</span> <span class="keyword">new</span> Intervalo(intervalo.minimo,
+           <span class="local-variable">this</span>.maximo);
+  <span class="keyword">else</span> <span class="keyword">if</span> (<span class="local-variable">this</span>.incluye(intervalo.maximo))
+    <span class="keyword">return</span> <span class="keyword">new</span> Intervalo(<span class="local-variable">this</span>.minimo,
+           intervalo.maximo);
+  <span class="keyword">else</span>
+    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">interval</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a1_interval/classes/App.java"><em>classes</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">date</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/classes/App.java"><em>classes</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="vista-privada-de-los-objetos">Vista Privada de los Objetos</h3>
-
+<div class="sect3">
+<h4 id="desencadenamiento-de-instanciaciones">Desencadenamiento de Instanciaciones</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Cuando</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Donde</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se crea un objeto (instancia):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se crean los atributos definidos en la clase;</p>
+</li>
+<li>
+<p>Se ejecuta la inicialización de los atributos;</p>
+</li>
+<li>
+<p>Se ejecuta el constructor;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>en particular:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pueden declararse referencias a objetos de otras clases y, por tanto,</p>
+</li>
+<li>
+<p>Crearse nuevos objetos en su inicialización</p>
+</li>
+<li>
+<p>o en su constructor</p>
+</li>
+<li>
+<p>Donde, recursivamente, pueden crear nuevos objetos de otras clases hasta llegar, de esta manera, a la creación de objetos que se basan directamente en tipos primitivos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="desencadenamiento-de-mensajes">Desencadenamiento de Mensajes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Cuando</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Donde</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se lanza un mensaje a un objeto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se crean las declaraciones locales con su inicialización y</p>
+</li>
+<li>
+<p>se ejecuta el cuerpo del método correspondiente</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>en particular:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pueden lanzarse nuevos mensajes a objetos que sean atributos de su clase,</p>
+</li>
+<li>
+<p>a objetos que sean argumentos del mensaje o</p>
+</li>
+<li>
+<p>a objetos que se crean en su ejecución</p>
+</li>
+<li>
+<p>Donde, recursivamente, pueden lanzar nuevos mensajes en la definición de sus respectivos métodos hasta llegar, de esta
+manera, a la definición de métodos que se basan directamente en tipos primitivos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el desencadenamiento de instanciaciones puede provocar un desencadenamiento de mensajes a través de la ejecución de los constructores que pueden lanzar mensajes;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo(Intervalo intervalo) {
+  <span class="local-variable">this</span>(intervalo.minimo, intervalo.maximo);
+}
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el desencadenamiento de mensajes puede provocar un desencadenamiento de instanciaciones a través de la creación de objetos en la definición de los métodos.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> Intervalo copia() {
+  <span class="keyword">return</span> <span class="keyword">new</span> Intervalo(<span class="local-variable">this</span>);
+}
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="miembros-de-clase">Miembros de Clase</h3>
+<div class="sect3">
+<h4 id="miembros-de-instancia">Miembros de Instancia</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>atributos presentes en cada uno de los objetos de la clase;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>día, mes y año de una fecha concreta.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>métodos cuyos mensajes se lanzan sobre un objetos particular.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>si una fecha concreta se encuentra en una año bisiesto.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="miembros-de-clase-miembros-estáticos">Miembros de Clase (miembros estáticos)</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>atributos compartidos por la globalidad de objetos de la clase;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los nombres de los meses de cualquier año.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>métodos cuyos mensajes NO se lanzan sobre un objetos particular.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>si un año (no una fecha particular) es bisiesto.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Los miembros de clase o estáticos asumen los aspectos globales de la comunidad de objetos de la clase</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="atributos-estáticos">Atributos Estáticos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>caracterizados por la palabra reservada <strong>static</strong> tras su visibilidad;</p>
+</li>
+<li>
+<p>su reserva de memoria e inicialización obligatoria se realiza al principio de la ejecución del programa, incluso ante la ausencia de objetos de la clase;</p>
+</li>
+<li>
+<p>accesibles desde cualquier método de la clase;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la notación sintáctica para el acceso:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;Clase&gt;.&lt;atributoEstatico&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="métodos-estáticos">Métodos estáticos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>caracterizados por la palabra reservada <strong>static</strong> tras su visibilidad;</p>
+</li>
+<li>
+<p>no se permite el acceso a <strong>this</strong> ni a los atributos de instancia;</p>
+</li>
+<li>
+<p>se permite el acceso a los atributos estáticos;</p>
+</li>
+<li>
+<p>la notación sintáctica para el lanzamiento del mensaje:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;Clase&gt;.&lt;metodoEstatico&gt;([&lt;argumento&gt;, <span class="error">…</span> ])</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25.2525%;">
+<col style="width: 37.3737%;">
+<col style="width: 37.3738%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Fecha</span> {
+ <span class="directive">private</span> <span class="type">int</span> dia;
+ <span class="directive">private</span> <span class="type">int</span> mes;
+ <span class="directive">private</span> <span class="type">int</span> año;
+<span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">int</span><span class="type">[]</span> DIAS_MESES =
+  {<span class="integer">31</span>,<span class="integer">28</span>,<span class="integer">31</span>,<span class="integer">30</span>,<span class="integer">31</span>,<span class="integer">30</span>, <span class="integer">31</span>,<span class="integer">31</span>,<span class="integer">30</span>,<span class="integer">31</span>,<span class="integer">30</span>,<span class="integer">31</span>};
 
+<span class="directive">public</span> <span class="type">boolean</span> posterior(Fecha fecha) {
+  <span class="type">boolean</span> resultado;
+  <span class="keyword">if</span> (<span class="local-variable">this</span>.año == fecha.año)
+  <span class="keyword">if</span> (<span class="local-variable">this</span>.mes == fecha.mes)
+    resultado = <span class="local-variable">this</span>.dia &gt; fecha.dia;
+  <span class="keyword">else</span>
+    resultado = <span class="local-variable">this</span>.mes &gt; fecha.mes;
+  <span class="keyword">else</span>
+    resultado = <span class="local-variable">this</span>.año &gt; fecha.año;
+  <span class="keyword">return</span> resultado;
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> bisiesto(<span class="type">int</span> año) {
+  <span class="keyword">return</span> año%<span class="integer">4</span> == <span class="integer">0</span>;
+}
+
+<span class="directive">public</span> <span class="type">boolean</span> enBisiesto() {
+  <span class="keyword">return</span> Fecha.bisiesto(año);
+}
+
+<span class="directive">public</span> <span class="type">int</span> diasTranscurridosAño() {
+  <span class="type">int</span> dias = dia - <span class="integer">1</span>;
+  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">1</span>; i &lt; mes; i++)
+    dias += Fecha.DIAS_MESES[i - <span class="integer">1</span>];
+  <span class="keyword">if</span> (<span class="local-variable">this</span>.enBisiesto() &amp;&amp;
+    <span class="local-variable">this</span>.posterior(<span class="keyword">new</span> Fecha(<span class="integer">29</span>, <span class="integer">2</span>, año)))
+dias++;
+  <span class="keyword">return</span> dias;
+}
+  ...</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> diasAño(<span class="type">int</span> año) {
+  <span class="type">int</span> dias = <span class="integer">0</span>;
+  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; Fecha.DIAS_MESES.length; i++)
+      dias += Fecha.DIAS_MESES[i];
+  <span class="keyword">if</span> (Fecha.bisiesto(año))
+     dias++;
+  <span class="keyword">return</span> dias;
+  }
+  ...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="código-estático">Código estático</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 30%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>sirve para la inicialización de los atributos estáticos cuando la inicialización posible no alcanza sus objetivos;</p>
+</li>
+<li>
+<p>se ejecutan en cualquier orden en el comienzo de la ejecución del programa;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;atributoEstático&gt;
+<span class="directive">static</span> {
+  &lt;sentencia/declaración&gt;
+  <span class="error">…</span>
+  &lt;sentencia/declaración&gt;
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> <span class="directive">static</span> <span class="type">int</span><span class="type">[]</span> coeficientes = <span class="predefined-constant">null</span>;
+<span class="directive">static</span> {
+  <span class="comment">// lectura del fichero “coeficientes.sys”</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="clases-de-utilidad">Clases de Utilidad</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son clases que reúnen un conjunto cohesivo de métodos estáticos</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Suelen no ser instanciables porque no responden al concepto habitual de clases de objetos (se consigue a través constructores privados que eviten la creación de objetos de esa clase de utilidad)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="clase-system">Clase: System</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> currentTimeMillis()
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> nanoTime()
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> exit(<span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> gc()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="clase-math-i">Clase: Math (I)</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">double</span> E;
+<span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">double</span> PI;
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> sin(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> cos(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> tan(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> asin(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> acos(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> atan(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> toRadians(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> toDegrees(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> exp(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> log(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> log10(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> sqrt(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> cbrt(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> IEEEremainder(<span class="type">double</span>, <span class="type">double</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> ceil(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> floor(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> rint(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> atan2(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> pow(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> round(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> round(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> random()
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> abs(<span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> abs(<span class="type">long</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> abs(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> abs(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> max(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> max(<span class="type">long</span>, <span class="type">long</span>)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="clase-math-ii">Clase: Math (II)</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> max(<span class="type">float</span>, <span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> max(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> min(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> min(<span class="type">long</span>, <span class="type">long</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> min(<span class="type">float</span>, <span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> min(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> ulp(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> ulp(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> signum(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> signum(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> sinh(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> cosh(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> tanh(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> hypot(<span class="type">double</span>,<span class="type">double</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> expm1(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> log1p(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> copySign(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> copySign(<span class="type">float</span>, <span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> getExponent(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> getExponent(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> nextAfter(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> nextAfter(<span class="type">float</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> nextUp(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> nextUp(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> scalb(<span class="type">double</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> scalb(<span class="type">float</span>, <span class="type">int</span>)
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
@@ -5219,7 +6870,13 @@ cualquier sistema operativo</p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -5232,448 +6889,6 @@ cualquier sistema operativo</p>
 <div class="sect2">
 <h3 id="enumerados">Enumerados</h3>
 
-</div>
-<div class="sect2">
-<h3 id="síntesis">Síntesis</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clases con miembros, atributos y métodos, públicos y privados</p>
-<div class="ulist">
-<ul>
-<li>
-<p>En la implantación de la clase</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Métodos de instancia, públicos o privados, acceden a miembros públicos o privados de instancia o estáticos</p>
-</li>
-<li>
-<p>Métodos estáticos, públicos o privados, acceden a miembros públicos o privados estáticos</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Fuera de la implantación de la clase</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Se accede a cualquier miembro, atributo o método, de instancia o estático público</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_clazz</span>;
-
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="type">class</span> <span class="class">Clazz</span> {
-    
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> PUBLIC_CONSTANT = <span class="integer">0</span>;
-    <span class="directive">private</span> <span class="directive">static</span> <span class="type">int</span> PRIVATE_CONSTANT = <span class="integer">1</span>;
-    <span class="directive">public</span> <span class="type">int</span> publicAtributte;
-    <span class="directive">private</span> <span class="type">int</span> privateAtributte;
-
-    <span class="directive">public</span> Clazz(<span class="type">int</span> value){
-        <span class="local-variable">this</span>.publicAtributte = <span class="integer">2</span>;
-        <span class="local-variable">this</span>.privateAtributte = value;
-    }
-
-    <span class="directive">private</span> Clazz(){
-        <span class="local-variable">this</span>(<span class="integer">3</span>);
-        <span class="comment">// ...</span>
-    }
-
-    <span class="directive">public</span> <span class="type">void</span> publicInstnaceMethod() {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
-        <span class="local-variable">this</span>.privateInstnaceMethod();
-        Clazz.publicStaticMethod();
-        Clazz.privateStaticMethod();
-    }
-
-    <span class="directive">private</span> <span class="type">void</span> privateInstnaceMethod() {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
-        Clazz.publicStaticMethod();
-        Clazz.privateStaticMethod();
-    }
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> publicStaticMethod() {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : publicAtributte: &quot; + this.publicAtributte);</span>
-        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : privateAtributte: &quot; + this.privateAtributte);</span>
-        <span class="comment">// this.privateInstnaceMethod();</span>
-        <span class="comment">// Clazz.publicStaticMethod();</span>
-        Clazz.privateStaticMethod();
-    }
-
-    <span class="directive">private</span> <span class="directive">static</span> <span class="type">void</span> privateStaticMethod() {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln();
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : PRIVATE_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PRIVATE_CONSTANT);
-        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : publicAtributte: &quot; + this.publicAtributte);</span>
-        <span class="comment">// console.writeln(&quot;privateInstnaceMethod : privateAtributte: &quot; + this.privateAtributte);</span>
-    }
-    
-}
-
-<span class="type">class</span> <span class="class">Client</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln();
-        Clazz object = <span class="keyword">new</span> Clazz(<span class="integer">0</span>);
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">main.PUBLIC_CONSTANT: </span><span class="delimiter">&quot;</span></span> + Clazz.PUBLIC_CONSTANT);
-        <span class="comment">// console.writeln(&quot;main.PRIVATE_CONSTANT: &quot; + Clazz.PRIVATE_CONSTANT);</span>
-        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">main.publicAtributte: </span><span class="delimiter">&quot;</span></span> + object.publicAtributte);
-        <span class="comment">// console.writeln(&quot;main.privateAtributte: &quot; + object.privateAtributte);</span>
-        object.publicInstnaceMethod();
-        <span class="comment">// object.privateInstnaceMethod();</span>
-        Clazz.publicStaticMethod();
-        <span class="comment">// Clazz.privateStaticMethod();</span>
-    }
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los métodos pueden generar nueva información (retorno) y recibir información (parámetros)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Argumentos</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Sobrecarga</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Retorno</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_method</span>;
-
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="type">class</span> <span class="class">X</span> {
-}
-
-<span class="type">class</span> <span class="class">Clazz</span> {
-
-    <span class="directive">private</span> <span class="type">int</span> primitive;
-    <span class="directive">private</span> <span class="type">int</span><span class="type">[]</span> primitiveArray;
-    <span class="directive">private</span> X object;
-    <span class="directive">private</span> X<span class="type">[]</span> objectArray;
-
-    <span class="directive">public</span> <span class="type">void</span> methodWithoutArguments() {
-        <span class="comment">// sentences</span>
-    }
-
-    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span> primitive, <span class="type">int</span><span class="type">[]</span> primitiveArray, X object, X<span class="type">[]</span> objectArray) {
-        <span class="comment">// sentences</span>
-    }
-
-    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span> primitive, <span class="type">int</span><span class="type">[]</span> primitiveArray, X object) {
-        <span class="comment">// sentences</span>
-    }
-
-    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span><span class="type">[]</span> primitiveArray, X object, X<span class="type">[]</span> objectArray, <span class="type">int</span> primitive) {
-        <span class="comment">// sentences</span>
-    }
-
-    <span class="directive">public</span> <span class="type">int</span> methodReturPrimitive() {
-        <span class="comment">// sentences</span>
-        <span class="keyword">return</span> <span class="integer">0</span>;
-    }
-
-    <span class="directive">public</span> <span class="type">int</span><span class="type">[]</span> methodReturPrimitiveArray() {
-        <span class="comment">// sentences</span>
-        <span class="keyword">return</span> <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {};
-    }
-
-    <span class="directive">public</span> X methodReturObject() {
-        <span class="comment">// sentences</span>
-        <span class="keyword">return</span> <span class="keyword">new</span> X();
-    }
-
-    <span class="directive">public</span> X<span class="type">[]</span> methodReturObjectArray() {
-        <span class="comment">// sentences</span>
-        <span class="keyword">return</span> <span class="keyword">new</span> X<span class="type">[]</span> {};
-    }
-
-}
-
-<span class="type">class</span> <span class="class">Client</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln();
-        Clazz object = <span class="keyword">new</span> Clazz();
-        object.methodWithoutArguments();
-        object.methodWitArguments(<span class="integer">0</span>, <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X(), <span class="keyword">new</span> X<span class="type">[]</span> {});
-        object.methodWitArguments(<span class="integer">0</span>, <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X());
-        object.methodWitArguments(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X(), <span class="keyword">new</span> X<span class="type">[]</span> {}, <span class="integer">0</span>);
-        X x = object.methodReturObject();
-        X<span class="type">[]</span> xs = object.methodReturObjectArray();
-        <span class="type">int</span> primitive = object.methodReturPrimitive();
-        <span class="type">int</span><span class="type">[]</span> primitiveArray = object.methodReturPrimitiveArray();
-    }
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los enumerados son clases que enumeran la existencia de todos sus objetos impidiendo la creación de posteriores instanciaciones</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Constructor privado</p>
-</li>
-<li>
-<p>Disfruta de métodos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>values()</em>, método estáticco que retorna un <em>array</em> con todos los objetos enumerados según su enumeración</p>
-</li>
-<li>
-<p><em>ordinal()</em>, método de instancia que retorna la posicion (0, 1, &#8230;&#8203;) dentro de la enumeración</p>
-</li>
-<li>
-<p><em>name()</em>, método de instancia que retorna un String con el identificador del enumerado</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_enum.a_enum</span>;
-
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="type">enum</span> Enun {
-    OBJECT_1(<span class="integer">1</span>),
-    OBJECT_2(<span class="integer">2</span>),
-    OBJECT_3(<span class="integer">3</span>);
-
-    <span class="directive">private</span> <span class="type">int</span> atributte;
-
-    <span class="directive">private</span> Enun(<span class="type">int</span> value){
-        <span class="local-variable">this</span>.atributte = value;
-    }
-
-    <span class="directive">public</span> <span class="type">void</span> method() {
-        <span class="keyword">new</span> Console().writeln(<span class="local-variable">this</span>.atributte);
-    }
-    
-}
-
-<span class="type">class</span> <span class="class">EnunClient</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
-        Console console = <span class="keyword">new</span> Console();
-        Enun.OBJECT_1.method();
-        <span class="keyword">for</span>(Enun object : Enun.values()){
-            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">name: </span><span class="delimiter">&quot;</span></span> + object.name());
-            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">ordinal: </span><span class="delimiter">&quot;</span></span> + object.ordinal());
-            object.method();
-        }
-        <span class="comment">// Enun object = new Enun(0); ERROR</span>
-    }
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Cada enumerado sería un objeto de la clase público y estático</p>
-</li>
-<li>
-<p>las funciones <em>values</em>, <em>ordinal</em> y <em>name</em> se generan siempre igual</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a_enum.a_clazz</span>;
-
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="type">class</span> <span class="class">Enun</span> {
-    <span class="directive">public</span> <span class="directive">static</span> Enun OBJECT_1 = <span class="keyword">new</span> Enun(<span class="integer">1</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_1</span><span class="delimiter">&quot;</span></span>);
-    <span class="directive">public</span> <span class="directive">static</span> Enun OBJECT_2 = <span class="keyword">new</span> Enun(<span class="integer">2</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_2</span><span class="delimiter">&quot;</span></span>);
-    <span class="directive">public</span> <span class="directive">static</span> Enun OBJECT_3 = <span class="keyword">new</span> Enun(<span class="integer">3</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_3</span><span class="delimiter">&quot;</span></span>);
-    <span class="directive">private</span> <span class="directive">static</span> Enun<span class="type">[]</span> VALUES = <span class="keyword">new</span> Enun<span class="type">[]</span>{ Enun.OBJECT_1, Enun.OBJECT_2, Enun.OBJECT_3 };
-
-    <span class="directive">private</span> <span class="type">int</span> atributte;
-    <span class="directive">private</span> <span class="predefined-type">String</span> name;
-
-    <span class="directive">private</span> Enun(<span class="type">int</span> value, <span class="predefined-type">String</span> name){
-        <span class="local-variable">this</span>.atributte = value;
-        <span class="local-variable">this</span>.name = name;
-    }
-
-    <span class="directive">public</span> <span class="type">void</span> method() {
-        <span class="keyword">new</span> Console().writeln(<span class="local-variable">this</span>.atributte);
-    }
-
-    <span class="directive">public</span> <span class="predefined-type">String</span> name() {
-        <span class="keyword">return</span> <span class="local-variable">this</span>.name;
-    }
-
-    <span class="directive">public</span> <span class="type">int</span> ordinal(){
-        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="integer">0</span>; i&lt; Enun.VALUES.length; i++){
-            <span class="keyword">if</span> (Enun.VALUES[i] == <span class="local-variable">this</span>){
-                <span class="keyword">return</span> i;
-            }
-        }
-        <span class="keyword">return</span> -<span class="integer">1</span>;
-    }
-
-    <span class="directive">public</span> <span class="directive">static</span> Enun<span class="type">[]</span> values() {
-        <span class="keyword">return</span> Enun.VALUES;
-    }
-}
-
-<span class="type">class</span> <span class="class">ClassClient</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
-        Console console = <span class="keyword">new</span> Console();
-        Enun.OBJECT_1.method();
-        <span class="keyword">for</span>(Enun object : Enun.values()){
-            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">name: </span><span class="delimiter">&quot;</span></span> + object.name());
-            console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">ordinal: </span><span class="delimiter">&quot;</span></span> + object.ordinal());
-            object.method();
-        }
-        <span class="comment">// Enun object = new Enun(0); ERROR</span>
-    }
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/managers/services/v0_0"><em>servicesContract</em></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>ticTacToe.models.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-general/0-domains/blob/master/games/ticTacToe/1-domain/README.md">domain</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-0-general/0-domains/blob/master/games/ticTacToe/4-programming/1-basic/README.md">requirements</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/domainModel/basic/README.md">design</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla"><em>src</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>

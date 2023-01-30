@@ -5022,7 +5022,7 @@ console.writeln(x); <span class="comment">// 3</span>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#4-validationv0">4-validation</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/2-texts/4-validation/v0.0/app.js">v0.0</a></p>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/3-numbers.md#4-validationv0">4-validation</a> - <a href="https://github.com/USantaTecla-tech-javascript/0-simpleDomains/blob/master/3-numbers/4-validation/v0.0/app.js">v0.0</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -12437,7 +12437,11 @@ let o = <span class="keyword">new</span> module.c();</code></pre>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error: 404</span><span class="delimiter">&quot;</span></span> <span class="comment">// no capturada</span>
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+<span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error: 404</span><span class="delimiter">&quot;</span></span> <span class="comment">// no capturada</span>
+console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">no ejecutada</span><span class="delimiter">&quot;</span></span>);
 <span class="keyword">throw</span> <span class="integer">404</span>; <span class="comment">// no ejecutada</span></code></pre>
 </div>
 </div></div></td>
@@ -12611,12 +12615,13 @@ console.log(<span class="error">`</span>Sentencia posterior externa<span class="
         console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada? interna</span><span class="delimiter">&quot;</span></span>);
     } <span class="keyword">catch</span> (exception) {
         console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch interna: </span><span class="delimiter">&quot;</span></span> + exception);
+        <span class="comment">// no gestiona nada</span>
         <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
-            <span class="keyword">throw</span> <span class="error">`</span>re-<span class="predefined">$</span>{exception}<span class="error">`</span>; <span class="comment">// no gestiona nada</span>
+            <span class="keyword">throw</span> exception;
         }
         <span class="comment">// gestiona parcialmente</span>
         <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
-            <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Error parcial</span><span class="delimiter">&quot;</span></span>;
+            <span class="keyword">throw</span> <span class="error">`</span>re-<span class="predefined">$</span>{exception}<span class="error">`</span>;
         }
         <span class="comment">// gestion completa</span>
     }
@@ -12624,8 +12629,7 @@ console.log(<span class="error">`</span>Sentencia posterior externa<span class="
 }
 
 outside();
-console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);
-inside();</code></pre>
+console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">---</span><span class="delimiter">&quot;</span></span>);</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -12679,8 +12683,12 @@ console.log(<span class="error">`</span>Sentencia previa<span class="error">`</s
 <span class="keyword">try</span> {
     <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
         <span class="keyword">throw</span> <span class="keyword">new</span> RangeError(<span class="string"><span class="delimiter">&quot;</span><span class="content">descripcion</span><span class="delimiter">&quot;</span></span>);
-    } <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+    }
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
         <span class="keyword">throw</span> <span class="keyword">new</span> CustomError(<span class="string"><span class="delimiter">&quot;</span><span class="content">descripcion</span><span class="delimiter">&quot;</span></span>);
+    }
+    <span class="keyword">if</span> (Math.random() &lt; <span class="float">0.5</span>) {
+        <span class="keyword">throw</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">descuidado</span><span class="delimiter">&quot;</span></span>;
     }
     console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sentencia ejecutada?</span><span class="delimiter">&quot;</span></span>);
 } <span class="keyword">catch</span> (exception) {
@@ -12688,6 +12696,9 @@ console.log(<span class="error">`</span>Sentencia previa<span class="error">`</s
         console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception.name + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + exception.message);
     } <span class="keyword">else</span> <span class="keyword">if</span> (exception <span class="keyword">instanceof</span> CustomError) {
         console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: </span><span class="delimiter">&quot;</span></span> + exception.name + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + exception.message);
+    } <span class="keyword">else</span> {
+        console.log(<span class="string"><span class="delimiter">&quot;</span><span class="content">Acciones catch: descuidado</span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">throw</span> exception;
     }
 }
 console.log(<span class="error">`</span>Sentencia posterior<span class="error">`</span>);</code></pre>
@@ -12866,7 +12877,7 @@ const console = <span class="keyword">new</span> Console();
 
 <span class="keyword">function</span> <span class="function">main</span>(millis){
   setTimeout(() =&gt; {
-    console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> durante <span class="predefined">$</span>{millis} segundos<span class="error">`</span>);
+    console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> durante <span class="predefined">$</span>{millis/<span class="integer">1000</span>} segundos<span class="error">`</span>);
   }, millis);
 }
 
@@ -13029,15 +13040,18 @@ pero todavía no se han ejecutado los callbacks.</p>
 
 const console = <span class="keyword">new</span> Console();
 
-<span class="keyword">function</span> <span class="function">sleep</span>(millis){
+<span class="keyword">function</span> <span class="function">sleep</span>(millis) {
   <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) =&gt; {
     setTimeout(() =&gt; resolve(), millis);
   });
 }
 
-<span class="keyword">function</span> <span class="function">main</span>(millis){
+<span class="keyword">function</span> <span class="function">main</span>(millis) {
   sleep(millis)
-    .then(() =&gt; console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> <span class="predefined">$</span>{millis} segundos<span class="error">`</span>))
+    .then(() =&gt; console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> <span class="predefined">$</span>{millis} segundos<span class="error">`</span>));
+  sleep(millis)
+    .then(() =&gt; console.writeln(<span class="error">`</span>XXXXX<span class="error">`</span>));
+
 }
 
 main(<span class="integer">3000</span>);
