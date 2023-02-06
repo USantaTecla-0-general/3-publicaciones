@@ -6236,17 +6236,15 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div>
 <div class="sect2">
 <h3 id="vista-privada-de-los-objetos">Vista Privada de los Objetos</h3>
-<div class="sect3">
-<h4 id="desencadenamiento-de-instanciaciones">Desencadenamiento de Instanciaciones</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Cuando</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Donde</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Desencadenamiento de instanciaciones</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Desencadenamiento de mensajes</span></strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6254,17 +6252,20 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>se crea un objeto (instancia):</p>
+<p>se <strong class="blue">crea un objeto</strong> (instancia):</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Se crean los atributos definidos en la clase;</p>
+<p>por lo que, se crean los atributos definidos en la clase;</p>
 </li>
 <li>
-<p>Se ejecuta la inicialización de los atributos;</p>
+<p>por lo que, se ejecuta la inicialización de los atributos con posibles <strong class="blue">creaciones de nuevos objetos</strong>;</p>
 </li>
 <li>
-<p>Se ejecuta el constructor;</p>
+<p>por lo que, se ejecuta el constructor en la creación del objeto con posibles <strong class="blue">creaciones de nuevos objetos</strong>;</p>
+</li>
+<li>
+<p>Donde, <strong>recursivamente</strong>, pueden crear nuevos objetos de otras clases hasta llegar, de esta manera, a la creación de objetos que se basan directamente en tipos primitivos.</p>
 </li>
 </ul>
 </div>
@@ -6274,79 +6275,17 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>en particular:</p>
+<p>se <strong class="blue">lanza un mensaje</strong> a un objeto:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pueden declararse referencias a objetos de otras clases y, por tanto,</p>
+<p>por lo que se crean las declaraciones locales con su inicialización y se ejecuta el cuerpo del método correspondiente</p>
 </li>
 <li>
-<p>Crearse nuevos objetos en su inicialización</p>
+<p>por lo que se pueden <strong class="blue">lanzar nuevos mensajes</strong> a objetos que sean atributos de su clase, a objetos que sean argumentos del mensaje o a objetos que se crean en su ejecución</p>
 </li>
 <li>
-<p>o en su constructor</p>
-</li>
-<li>
-<p>Donde, recursivamente, pueden crear nuevos objetos de otras clases hasta llegar, de esta manera, a la creación de objetos que se basan directamente en tipos primitivos.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="desencadenamiento-de-mensajes">Desencadenamiento de Mensajes</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Cuando</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Donde</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>se lanza un mensaje a un objeto:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>se crean las declaraciones locales con su inicialización y</p>
-</li>
-<li>
-<p>se ejecuta el cuerpo del método correspondiente</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>en particular:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pueden lanzarse nuevos mensajes a objetos que sean atributos de su clase,</p>
-</li>
-<li>
-<p>a objetos que sean argumentos del mensaje o</p>
-</li>
-<li>
-<p>a objetos que se crean en su ejecución</p>
-</li>
-<li>
-<p>Donde, recursivamente, pueden lanzar nuevos mensajes en la definición de sus respectivos métodos hasta llegar, de esta
+<p>Donde, <strong>recursivamente</strong>, pueden lanzar nuevos mensajes en la definición de sus respectivos métodos hasta llegar, de esta
 manera, a la definición de métodos que se basan directamente en tipos primitivos.</p>
 </li>
 </ul>
@@ -6364,53 +6303,57 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+<th class="tableblock halign-left valign-top">- el <strong class="blue">desencadenamiento de instanciaciones puede provocar un desencadenamiento de mensajes</strong> a través de la ejecución de los constructores que pueden lanzar mensajes;</th>
+<th class="tableblock halign-left valign-top">- el <strong class="blue">desencadenamiento de mensajes puede provocar un desencadenamiento de instanciaciones</strong> a través de la creación de objetos en la definición de los métodos.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>el desencadenamiento de instanciaciones puede provocar un desencadenamiento de mensajes a través de la ejecución de los constructores que pueden lanzar mensajes;</p>
-</li>
-</ul>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo(Intervalo intervalo) {
   <span class="local-variable">this</span>(intervalo.minimo, intervalo.maximo);
-}
-<span class="error">…</span></code></pre>
+}</code></pre>
 </div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>el desencadenamiento de mensajes puede provocar un desencadenamiento de instanciaciones a través de la creación de objetos en la definición de los métodos.</p>
-</li>
-</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> Intervalo copia() {
   <span class="keyword">return</span> <span class="keyword">new</span> Intervalo(<span class="local-variable">this</span>);
-}
-<span class="error">…</span></code></pre>
+}</code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">interval</a> - <a href=""><em>ServicesContract</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="miembros-de-clase">Miembros de Clase</h3>
-<div class="sect3">
-<h4 id="miembros-de-instancia">Miembros de Instancia</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -6418,8 +6361,8 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Miembros de instancia</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Miembros de clase o estáticos</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6427,14 +6370,14 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>atributos presentes en cada uno de los objetos de la clase;</p>
+<p>Los miembros de instancia asumen los <strong class="green">aspectos, datos y operaciones, particulares/locales de/a cada objeto de la clase</strong></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>día, mes y año de una fecha concreta.</p>
+<p>Los miembros de clase o estáticos asumen los <strong class="blue">aspectos, datos y operaciones, compartidos/globales por/a la comunidad de objetos de la clase</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -6443,99 +6386,110 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>métodos cuyos mensajes se lanzan sobre un objetos particular.</p>
+<p><strong class="green">atributos de instancia</strong> presentes en cada uno de los objetos de la clase;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ej. <em>día, mes y año de una fecha concreta</em></p>
+</li>
+<li>
+<p><span class="green">si no hay objetos, no hay atributos de instancia</span>;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>si una fecha concreta se encuentra en una año bisiesto.</p>
+<p><strong class="blue">atributos de clase</strong> compartidos por la globalidad de objetos de la clase;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ej. <em>los nombres y duración de los meses de cualquier fecha, excepto en Febrero de años bisiestos, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><span class="blue">si no hay objetos,</span> <strong class="red">si</strong> <span class="blue">hay atributos de clase</span>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">métodos de instancia</strong> cuyos mensajes se lanzan sobre un objeto particular de la clase;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ej. <em>si es primavera, si una fecha concreta se encuentra en una año bisiesto, &#8230;&#8203;</em></p>
+</li>
+<li>
+<p><span class="green">si no hay objetos, no hay mensajes</span>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">métodos de clase</strong> cuyos mensajes NO se lanzan sobre un objetos particular;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ej. <em>si un año (de cualquier fecha, no de una fecha particular) es bisiesto</em></p>
+</li>
+<li>
+<p><span class="blue">si no hay objetos,</span> <strong class="red">si</strong> <span class="blue">se llama a métodos de clase</span>, <strong class="red">no mensaje!!!</strong>;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
 <div class="sect3">
-<h4 id="miembros-de-clase-miembros-estáticos">Miembros de Clase (miembros estáticos)</h4>
+<h4 id="atributos-y-métodos-estáticos">Atributos y Métodos Estáticos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>atributos compartidos por la globalidad de objetos de la clase;</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Atributos estáticos</strong></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>los nombres de los meses de cualquier año.</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Métodos estáticos</strong></p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>métodos cuyos mensajes NO se lanzan sobre un objetos particular.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>si un año (no una fecha particular) es bisiesto.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><em>Los miembros de clase o estáticos asumen los aspectos globales de la comunidad de objetos de la clase</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="atributos-estáticos">Atributos Estáticos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 65%;">
-<col style="width: 35%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>caracterizados por la palabra reservada <strong>static</strong> tras su visibilidad;</p>
 </li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p>su reserva de memoria e inicialización obligatoria se realiza al principio de la ejecución del programa, incluso ante la ausencia de objetos de la clase;</p>
 </li>
 <li>
 <p>accesibles desde cualquier método de la clase;</p>
 </li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
 <li>
 <p>la notación sintáctica para el acceso:</p>
 </li>
@@ -6543,33 +6497,11 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">&lt;Clase&gt;.&lt;atributoEstatico&gt;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">    &lt;Clase&gt;.&lt;atributosEstático&gt;</code></pre>
 </div>
 </div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="métodos-estáticos">Métodos estáticos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
-<li>
-<p>caracterizados por la palabra reservada <strong>static</strong> tras su visibilidad;</p>
-</li>
 <li>
 <p>no se permite el acceso a <strong>this</strong> ni a los atributos de instancia;</p>
 </li>
@@ -6580,10 +6512,10 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <p>la notación sintáctica para el lanzamiento del mensaje:</p>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">&lt;Clase&gt;.&lt;metodoEstatico&gt;([&lt;argumento&gt;, <span class="error">…</span> ])</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">    &lt;Clase&gt;.&lt;metodoEstatico&gt;([&lt;argumento&gt;, <span class="error">…</span> ])</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6591,15 +6523,9 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25.2525%;">
-<col style="width: 37.3737%;">
-<col style="width: 37.3738%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -6621,16 +6547,16 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
   <span class="keyword">else</span>
     resultado = <span class="local-variable">this</span>.año &gt; fecha.año;
   <span class="keyword">return</span> resultado;
+}
+
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> bisiesto(<span class="type">int</span> año) {
+  <span class="keyword">return</span> año%<span class="integer">4</span> == <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> bisiesto(<span class="type">int</span> año) {
-  <span class="keyword">return</span> año%<span class="integer">4</span> == <span class="integer">0</span>;
-}
-
-<span class="directive">public</span> <span class="type">boolean</span> enBisiesto() {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> enBisiesto() {
   <span class="keyword">return</span> Fecha.bisiesto(año);
 }
 
@@ -6643,20 +6569,15 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 dias++;
   <span class="keyword">return</span> dias;
 }
-  ...</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> diasAño(<span class="type">int</span> año) {
+
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> diasAño(<span class="type">int</span> año) {
   <span class="type">int</span> dias = <span class="integer">0</span>;
   <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; Fecha.DIAS_MESES.length; i++)
       dias += Fecha.DIAS_MESES[i];
   <span class="keyword">if</span> (Fecha.bisiesto(año))
      dias++;
   <span class="keyword">return</span> dias;
-  }
-  ...</code></pre>
+  }</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6716,46 +6637,57 @@ dias++;
 <h4 id="clases-de-utilidad">Clases de Utilidad</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 60%;">
+<col style="width: 40%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">En librerías y proyectos</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html">System</a></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Son clases que reúnen un conjunto cohesivo de métodos estáticos</p>
+<p>Son clases que reúnen un <strong class="blue">conjunto cohesivo de métodos estáticos</strong>, &#8230;&#8203; <span class="red">cajón de-sastre</span></p>
+</li>
+<li>
+<p><strong class="blue">Suelen no ser instanciables</strong> porque no responden al concepto habitual de clases de objetos</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se consigue a través <strong class="blue">constructores privados</strong> que eviten la creación de objetos de esa clase de utilidad</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Suelen no ser instanciables porque no responden al concepto habitual de clases de objetos (se consigue a través constructores privados que eviten la creación de objetos de esa clase de utilidad)</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">System</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> currentTimeMillis() { ...}
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> nanoTime() { ...}
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> exit(<span class="type">int</span>) { ...}
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> gc() { ...}
+}</code></pre>
+</div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="sect4">
-<h5 id="clase-system">Clase: System</h5>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> currentTimeMillis()
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> nanoTime()
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> exit(<span class="type">int</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> gc()</code></pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="clase-math-i">Clase: Math (I)</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -6775,12 +6707,8 @@ dias++;
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> log10(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> sqrt(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> cbrt(<span class="type">double</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> IEEEremainder(<span class="type">double</span>, <span class="type">double</span>)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> ceil(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> IEEEremainder(<span class="type">double</span>, <span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> ceil(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> floor(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> rint(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> atan2(<span class="type">double</span>,<span class="type">double</span>)
@@ -6793,22 +6721,10 @@ dias++;
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> abs(<span class="type">float</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> abs(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> max(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> max(<span class="type">long</span>, <span class="type">long</span>)</code></pre>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> max(<span class="type">long</span>, <span class="type">long</span>)
+...</code></pre>
 </div>
 </div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="clase-math-ii">Clase: Math (II)</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> max(<span class="type">float</span>, <span class="type">float</span>)
@@ -6824,12 +6740,8 @@ dias++;
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> sinh(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> cosh(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> tanh(<span class="type">double</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> hypot(<span class="type">double</span>,<span class="type">double</span>)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> expm1(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> hypot(<span class="type">double</span>,<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> expm1(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> log1p(<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> copySign(<span class="type">double</span>,<span class="type">double</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> copySign(<span class="type">float</span>, <span class="type">float</span>)
@@ -6841,13 +6753,12 @@ dias++;
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> nextUp(<span class="type">float</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">double</span> scalb(<span class="type">double</span>, <span class="type">int</span>)
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> scalb(<span class="type">float</span>, <span class="type">int</span>)
-<span class="error">…</span></code></pre>
+...</code></pre>
 </div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div class="sect2">
