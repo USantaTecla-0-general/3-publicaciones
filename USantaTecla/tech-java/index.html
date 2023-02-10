@@ -5202,8 +5202,7 @@ cualquier sistema operativo</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2">*<em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -5840,6 +5839,45 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div>
 <div class="sect2">
 <h3 id="vista-privada-de-las-clases">Vista Privada de las Clases</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle"><strong class="blue">Definición de Atributos</strong></th>
+<th class="tableblock halign-center valign-middle"><strong class="blue">Definición de Métodos</strong></th>
+<th class="tableblock halign-center valign-middle"><strong class="green">Aserciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">datos constantes y/o variables de tipos primitivos y/o referencias a objetos y/o tablas</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">operaciones con sentencias secuenciales, alternativos, iterativas, de retorno y/o expresiones (asignación)</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">verificación del correcto estado del entorno del mensaje, atributos, parámetros, entorno, &#8230;&#8203;</span> para la <strong class="green">seguridad al procesar los datos</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="sect3">
 <h4 id="definición-de-atributos">Definición de atributos</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -5852,14 +5890,17 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>En cualquer punto de la implementación de la clase, se <strong class="blue">declaran variables de tipos primitivos, referencias a objetos o vectores</strong> de éstos anteponiendo la palabra <strong>private</strong> o, exepcionalmente para <strong class="blue">constantes</strong> (<em>Se tratarán posteriormente;</em> ), <strong class="red">public</strong>;</p>
+<p>Se <strong class="blue">declaran variables de tipos primitivos, referencias a objetos o vectores</strong> de éstos</p>
+</li>
+<li>
+<p>anteponiendo la palabra <strong>private</strong> o, exepcionalmente para <strong class="blue">constantes</strong> (<em>Se tratarán posteriormente;</em> ), <strong class="red">public</strong>;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pero lo lógico es <span class="green">al principio de la declaración de la clase</span></p>
+<p>En <span class="red">cualquer punto de la implementación</span> de la clase pero lo lógico es <span class="green">al principio de la declaración de la clase</span></p>
 </li>
 <li>
-<p>A <strong class="blue">falta de inicialización explícita</strong>, se inicializan a valores por defecto, dependiendo de su tipo (<span class="blue">0 para tipos numéricos, false para el tipo lógico, y null para referencias</span>);</p>
+<p>A <strong class="blue">falta de inicialización explícita</strong>, se inicializan a <strong class="blue">valores por defecto</strong>, dependiendo de su tipo (<span class="blue"><em>0</em> para tipos numéricos, <em>false</em> para el tipo <em>boolean</em>, caracter nulo para tipo <em>char</em>  y <em>null</em> para referencias</span>);</p>
 </li>
 </ul>
 </div>
@@ -5877,7 +5918,13 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Ejemplos</em></p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -5893,7 +5940,7 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización al cuerpo de los constructores</strong>.</p>
+<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización al cuerpo de todos los constructores obligatoriamente</strong>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -5907,7 +5954,8 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Person</span>  {
-  <span class="directive">private</span> <span class="type">byte</span> age;
+  <span class="directive">public</span> <span class="directive">final</span> <span class="type">short</span> ADULT = <span class="integer">18</span>;
+  <span class="directive">private</span> <span class="type">short</span> age;
   <span class="directive">private</span> <span class="directive">final</span> <span class="type">int</span> DNI;
 
   <span class="directive">public</span> Person(<span class="type">int</span> dni) {
@@ -5926,8 +5974,8 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <h4 id="definición-de-metodos">Definición de metodos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
-<col style="width: 45%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
@@ -6057,6 +6105,8 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </tr>
 </tbody>
 </table>
+<div class="sect4">
+<h5 id="referencia-this">Referencia <em>this</em></h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 70%;">
@@ -6116,10 +6166,10 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 }
 
 <span class="directive">public</span> <span class="type">void</span> escale(<span class="type">double</span> escale) {
-  <span class="type">double</span> newLength = <span class="local-variable">this</span>.length() * escale;
-  <span class="type">double</span> middlePoint = <span class="local-variable">this</span>.middlePoint();
-  <span class="local-variable">this</span>.min = middlePoint - newLength / <span class="integer">2</span>;
-  tnis.max = middlePoint + newLength / <span class="integer">2</span>;
+  <span class="directive">final</span> <span class="type">double</span> newHalfLength = <span class="local-variable">this</span>.length()/<span class="integer">2</span> * escale;
+  <span class="directive">final</span> <span class="type">double</span> middlePoint = <span class="local-variable">this</span>.middlePoint();
+  <span class="local-variable">this</span>.min = middlePoint - newHalfLength;
+  tnis.max = middlePoint + newHalfLength;
 }</code></pre>
 </div>
 </div></div></td>
@@ -6187,14 +6237,592 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> Interval clone() {
-  <span class="keyword">return</span> <span class="keyword">new</span> Interval(<span class="local-variable">this</span>);
-}
-
-<span class="directive">public</span> Interval shifted(<span class="type">double</span> amount) {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Interval shifted(<span class="type">double</span> amount) {
    Interval interval = <span class="local-variable">this</span>.clone();
    interval.shift(amount);
    <span class="keyword">return</span> interval;
+}
+
+<span class="directive">private</span> Interval clone() {
+  <span class="keyword">return</span> <span class="keyword">new</span> Interval(<span class="local-variable">this</span>);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aserciones">Aserciones</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Error</strong> es una <span class="red">acción que produce un resultado incorrecto</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Defecto</strong> es la <span class="red">imperfección de un componente causado por un error</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Fallo</strong> es la <span class="red">manifestación visible de un defecto</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Ej. un conductor analiza mal el contexto de la circulación</em></p>
+</li>
+<li>
+<p><em>Ej. un programador escribe mal una sentencia, incumpliendo reglas léxico/ sintáctico/ semánticas</em></p>
+</li>
+<li>
+<p><em>Ej. un programador diseña mal un algoritmo, produciendo un bucle infinito</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Ej. un conductor establece una velocidad, giro, &#8230;&#8203; inadecuados</em></p>
+</li>
+<li>
+<p><em>Ej. un programa produce una incompatibilidad de tipos entre un operador y un operando</em></p>
+</li>
+<li>
+<p><em>Ej. un programa con una condición en una sentencia iterativa infinita</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Ej. se produce un accidente</em></p>
+</li>
+<li>
+<p><em>Ej. el programa no compila</em></p>
+</li>
+<li>
+<p><em>Ej. el programa no responde</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 26%;">
+<col style="width: 37%;">
+<col style="width: 37%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="blue">Tipos de Errores</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>Errores en Tiempo de Compilación</em></strong> producidos por el incumplimiento de las</p>
+<div class="ulist">
+<ul>
+<li>
+<p>reglas léxicas,</p>
+</li>
+<li>
+<p>reglas sintácticas y/o</p>
+</li>
+<li>
+<p>reglas semánticas del lenguaje fuerte o débilmente tipado;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Errores en Tiempo de Ejecución</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Errores Lógicos</strong> producidos por la lógica de un programa que no contempla todos los posibles situaciónes del sistema de información</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se <strong class="green">gestionan con sentencias <em>assert</em></strong> para las pre-condiciones</p>
+</li>
+<li>
+<p>Se <strong class="green">gestionan con pruebas del software</strong> para las post-condiciones</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Errores Excepcionales</strong> producidos por recursos (bibliotecas / <em>frameworks</em> para gestión de ficheros, comunicaciones, &#8230;&#8203;, arquitectura) fuera del ámbito del software que los maneja.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se <strong class="red">gestionan con objetos de la clase <em>Exception</em> y la sentencia <em>try/catch/finally</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18%;">
+<col style="width: 41%;">
+<col style="width: 41%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Contexto</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Aplicación</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Biblioteca</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>ciertos errores lógicos (ej.: un valor negativo para calcular un factorial, una referencia sin la dirección del objeto, &#8230;&#8203;) pueden ser un error lógico o excepcional <strong class="blue">dependiendo del software en el que se está desarrollando</strong>:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">debe responsabilizarse de la detección y subsanación de los errores lógicos dentro de su ámbito</strong> durante el desarrollo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>los <strong class="blue">errores en la entrada de datos del usuario</strong> <strong class="red">no son errores del desarrollo</strong> y se solventan mediante la <strong class="green">validación de la entrada de datos, sentencia iterativa hasta alcanzar la condición deseada</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">NO puede responsabilizarse del uso indebido de los servicios prestados a las aplicaciones y NUNCA debe responsabilizarse de la subsanación de dichos errores</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>En estos casos, estos <strong class="red">errores lógicos se considerarán excepcionales</strong> porque la causa del error está <strong class="red">fuera de los límites del software</strong> de la biblioteca.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><em>Ej. la función factorial contemplará:</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>pre-condiciones para verificar si la entrada es correcta (el argumento no es negativo) mediante</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>la sentencia assert en el código de producción</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>la elevación de una excepción en el código de producción</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>post-condiciones para verificar si la salida es correcta (n! = 1 si n = 0 si no n * (n-1)!) mediante la librería aseertThat en el código de pruebas</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  ...
+  public Interval<span class="type">[]</span> split(<span class="type">int</span> times) {
+    Interval<span class="type">[]</span> intervals = <span class="keyword">new</span> Interval[times];
+    <span class="directive">final</span> <span class="type">double</span> length = <span class="local-variable">this</span>.length() / times;
+    <span class="directive">final</span> <span class="type">double</span> min = <span class="local-variable">this</span>.min;
+    <span class="directive">final</span> <span class="type">double</span> max = min + length;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; times; i++) {
+      intervals[i] = <span class="keyword">new</span> Interval(min, max);
+      min = max;
+      max += length;
+    }
+    <span class="keyword">return</span> intervals;
+  }
+  ...
+}
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+    Console console = <span class="keyword">new</span> Console();
+    Interval interval = <span class="keyword">new</span> Interval();
+    interval.read();
+    <span class="type">int</span> times = console.readInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">¿Partir en cuántas veces? </span><span class="delimiter">&quot;</span></span>);
+    Interval<span class="type">[]</span> intervals = interval.split(times);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>cuando se solicita el número de veces, si el usuario introduce un valor negativo, se produce un error de ejecución, se muestra por pantalla un informe del error producido (reserva de un vector cuyo tamaño es negativo), y finaliza la ejecución del programa</em></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Introduce el minimo: <span class="integer">1</span>
+Introduce el maximo: <span class="integer">5</span>
+Veces: -<span class="integer">1</span>
+<span class="exception">Exception</span> in thread <span class="string"><span class="delimiter">&quot;</span><span class="content">main</span><span class="delimiter">&quot;</span></span> java.lang.NegativeArraySizeException
+        at Intervalo.valores (Intervalo.java:<span class="integer">141</span>)
+        at Aplicacion.main (Aplicacion.java:<span class="integer">7</span>)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">Programación defensiva</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="red">si se trata de una aplicación, la solución NO es que el método compruebe la corrección de su argumento y que, en el <strong>caso de que no sea correcto, gestione el error acoplándose con un mensaje a la consola, &#8230;&#8203;</strong></em>:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  ...
+  public Interval<span class="type">[]</span> split(<span class="type">int</span> times) {
+    <span class="keyword">if</span> (times &lt; <span class="integer">0</span>) {
+      <span class="keyword">new</span> Console().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">El numero de veces debe ser positivo</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+    }
+    Interval<span class="type">[]</span> intervals = <span class="keyword">new</span> Interval[times];
+    <span class="directive">final</span> <span class="type">double</span> length = <span class="local-variable">this</span>.length() / times;
+    <span class="directive">final</span> <span class="type">double</span> min = <span class="local-variable">this</span>.min;
+    <span class="directive">final</span> <span class="type">double</span> max = min + length;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; times; i++) {
+      intervals[i] = <span class="keyword">new</span> Interval(min, max);
+      min = max;
+      max += length;
+    }
+    <span class="keyword">return</span> intervals;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="red">si se trata de una aplicación, la solución NO es que el método compruebe la corrección de su argumento y que, en el <strong>caso de que no sea correcto, devuelva una valor que indique que hay un error</strong></em>:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  ...
+  public Interval<span class="type">[]</span> split(<span class="type">int</span> times) {
+    <span class="keyword">if</span> (times &lt; <span class="integer">0</span>) {
+      <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+    }
+    Interval<span class="type">[]</span> intervals = <span class="keyword">new</span> Interval[times];
+    <span class="directive">final</span> <span class="type">double</span> length = <span class="local-variable">this</span>.length() / times;
+    <span class="directive">final</span> <span class="type">double</span> min = <span class="local-variable">this</span>.min;
+    <span class="directive">final</span> <span class="type">double</span> max = min + length;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; times; i++) {
+      intervals[i] = <span class="keyword">new</span> Interval(min, max);
+      min = max;
+      max += length;
+    }
+    <span class="keyword">return</span> intervals;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Falta de cohesión</strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="green">Validación de datos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+    Console console = <span class="keyword">new</span> Console();
+    Interval interval = <span class="keyword">new</span> Interval();
+    interval.read();
+    Interval<span class="type">[]</span> intervals;
+    <span class="keyword">do</span> {
+      <span class="type">int</span> times = console.readInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">¿Partir en cuántas veces? </span><span class="delimiter">&quot;</span></span>);
+      intervalos = intervalo.troceado(veces);
+    } <span class="keyword">while</span> (intervalos != <span class="predefined-constant">null</span>);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="green">si se trata de una aplicación, la solución es que, al leer el argumento, se <strong>valide</strong> su corrección y que, en el caso de que no sea correcto, <strong class="red">no se invoque al método</strong> y se comunique y requiera de nuevo al usuario</em>:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+    Console console = <span class="keyword">new</span> Console();
+    Interval interval = <span class="keyword">new</span> Interval();
+    <span class="type">int</span> times;
+    <span class="keyword">do</span> {
+      times = console.readInt(<span class="string"><span class="delimiter">&quot;</span><span class="content">¿Partir en cuántas veces? </span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">if</span> (times &lt;= <span class="integer">0</span>) {
+         console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">El numero de veces debe ser positivo</span><span class="delimiter">&quot;</span></span>);
+      }
+    } <span class="keyword">while</span> (times &lt;= <span class="integer">0</span>);
+    Interval<span class="type">[]</span> intervals = interval.split(times);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 57%;">
+<col style="width: 43%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sentencia <em>assert</em></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="keyword">assert</span> &lt;expresión1&gt; [ : &lt;expresión2&gt; ] ;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cada <strong class="blue">aserción contiene una expresión lógica</strong> (&lt;expresión<sub>1</sub>&gt;) que se <strong class="green">supone cierta</strong> cuando se ejecute la sentencia</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">en caso contrario, el sistema finaliza la ejecución</strong> del programa y avisa del defecto detectado</p>
+</li>
+<li>
+<p>opcionalmente, se puede <span class="blue">acompañar de una cadena de caracteres</span> (&lt;expresión<sub>2</sub>&gt;) para detallar el error detectado</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La experiencia ha demostrado que escribir aserciones es una de las formas más rápidas y efectivas para detectar y corregir errores lógicos en desarrollo, <strong class="green">Diseño por Contrato</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>si se desea comprobar en el método la corrección de su argumento, debe incluirse una aserción como <strong class="green">pre-condiciones</strong></p>
+</li>
+<li>
+<p><span class="green">las aserciones permiten eliminar estas comprobaciones automáticamente en la ejecución del código de producción para evitar la finalización abrupta del programa en fase de explotación</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  ...
+  public Interval<span class="type">[]</span> split(<span class="type">int</span> times) {
+    <span class="keyword">assert</span> times &gt; <span class="integer">0</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">El numero de veces no es positivo</span><span class="delimiter">&quot;</span></span>;
+
+    Interval<span class="type">[]</span> intervals = <span class="keyword">new</span> Interval[times];
+    <span class="directive">final</span> <span class="type">double</span> length = <span class="local-variable">this</span>.length() / times;
+    <span class="directive">final</span> <span class="type">double</span> min = <span class="local-variable">this</span>.min;
+    <span class="directive">final</span> <span class="type">double</span> max = min + length;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; times; i++) {
+      intervals[i] = <span class="keyword">new</span> Interval(min, max);
+      min = max;
+      max += length;
+    }
+    <span class="keyword">return</span> intervals;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="red">si se está desarrollando una biblioteca, entonces sí que deberemos responsabilizarnos de comprobar los argumentos que se reciben en los métodos, porque están fuera del ámbito de la biblioteca, junto con la consiguiente gestión de excepciones para comunicar de la situación al error</em>:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+  ...
+  public Interval<span class="type">[]</span> split(<span class="type">int</span> times) <span class="directive">throws</span> <span class="exception">Exception</span> {
+    <span class="keyword">if</span> (times &lt; <span class="integer">0</span>) {
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">Exception</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">El numero de veces no es positivo</span><span class="delimiter">&quot;</span></span>)
+    }
+
+    Interval<span class="type">[]</span> intervals = <span class="keyword">new</span> Interval[times];
+    <span class="directive">final</span> <span class="type">double</span> length = <span class="local-variable">this</span>.length() / times;
+    <span class="directive">final</span> <span class="type">double</span> min = <span class="local-variable">this</span>.min;
+    <span class="directive">final</span> <span class="type">double</span> max = min + length;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; times; i++) {
+      intervals[i] = <span class="keyword">new</span> Interval(min, max);
+      min = max;
+      max += length;
+    }
+    <span class="keyword">return</span> intervals;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+    Console console = <span class="keyword">new</span> Console();
+    Interval interval = <span class="keyword">new</span> Interval();
+    <span class="type">int</span> times;
+    ...
+    try {
+      Interval<span class="type">[]</span> intervals = interval.split(times);
+      ...
+    } <span class="keyword">catch</span> (<span class="exception">Exception</span> ex){
+      <span class="comment">// gestión de error</span>
+    }
+  }
 }</code></pre>
 </div>
 </div></div></td>
@@ -6238,8 +6866,8 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <h3 id="vista-privada-de-los-objetos">Vista Privada de los Objetos</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 52.4752%;">
+<col style="width: 47.5248%;">
 </colgroup>
 <thead>
 <tr>
@@ -6265,7 +6893,7 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <p>por lo que, se ejecuta el constructor en la creación del objeto con posibles <strong class="blue">creaciones de nuevos objetos</strong>;</p>
 </li>
 <li>
-<p>Donde, <strong>recursivamente</strong>, pueden crear nuevos objetos de otras clases hasta llegar, de esta manera, a la creación de objetos que se basan directamente en tipos primitivos.</p>
+<p>Donde, <strong class="green">recursivamente</strong>, pueden crear nuevos objetos de otras clases hasta llegar, de esta manera, a la creación de objetos que se basan directamente en tipos primitivos.</p>
 </li>
 </ul>
 </div>
@@ -6285,7 +6913,7 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <p>por lo que se pueden <strong class="blue">lanzar nuevos mensajes</strong> a objetos que sean atributos de su clase, a objetos que sean argumentos del mensaje o a objetos que se crean en su ejecución</p>
 </li>
 <li>
-<p>Donde, <strong>recursivamente</strong>, pueden lanzar nuevos mensajes en la definición de sus respectivos métodos hasta llegar, de esta
+<p>Donde, <strong class="green">recursivamente</strong>, pueden lanzar nuevos mensajes en la definición de sus respectivos métodos hasta llegar, de esta
 manera, a la definición de métodos que se basan directamente en tipos primitivos.</p>
 </li>
 </ul>
@@ -6294,34 +6922,86 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </ul>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">- el <strong class="blue">desencadenamiento de instanciaciones puede provocar un desencadenamiento de mensajes</strong> a través de la ejecución de los constructores que pueden lanzar mensajes;</th>
-<th class="tableblock halign-left valign-top">- el <strong class="blue">desencadenamiento de mensajes puede provocar un desencadenamiento de instanciaciones</strong> a través de la creación de objetos en la definición de los métodos.</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo(Intervalo intervalo) {
-  <span class="local-variable">this</span>(intervalo.minimo, intervalo.maximo);
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Person</span> {
+  ...
+  private MedicalRecord medicalRecord;
+  <span class="directive">private</span> AcademicRecord academicRecord;
+  ...
+
+  public Person(...) {
+    ...
+    this.medicalRecord = <span class="keyword">new</span> MedicalRecord();
+    <span class="local-variable">this</span>.academicRecord = <span class="keyword">new</span> AcademicRecord();
+    ...
+  }
+}
+
+<span class="type">class</span> <span class="class">MedicalRecord</span> {
+  ...
+}
+
+<span class="type">class</span> <span class="class">AcademicRecord</span> {
+  ...
 }</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> Intervalo copia() {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Person</span> {
+  ...
+
+  public <span class="type">boolean</span> isAdult() {
+    <span class="keyword">return</span> <span class="local-variable">this</span>.age &gt; Person.ADULT;
+  }
+
+  <span class="directive">public</span> <span class="type">void</span> writeln() {
+    ...
+    new Console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Age: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.age + (<span class="local-variable">this</span>.isAdult() ? <span class="string"><span class="delimiter">&quot;</span><span class="content"> (adult)</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>));
+    <span class="local-variable">this</span>.medicalRecord.writeln();
+    <span class="local-variable">this</span>.academicRecord.writeln();
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el <strong class="blue">desencadenamiento de instanciaciones puede provocar un desencadenamiento de mensajes</strong> a través de la ejecución de los constructores que pueden lanzar mensajes;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Intervalo(Intervalo intervalo) {
+  <span class="local-variable">this</span>(intervalo.minimo, intervalo.maximo);
+}
+
+<span class="directive">private</span> Intervalo copia() {
   <span class="keyword">return</span> <span class="keyword">new</span> Intervalo(<span class="local-variable">this</span>);
 }</code></pre>
 </div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el <strong class="blue">desencadenamiento de mensajes puede provocar un desencadenamiento de instanciaciones</strong> a través de la creación de objetos en la definición de los métodos.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -6361,8 +7041,8 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Miembros de instancia</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Miembros de clase o estáticos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Miembros de instancia</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Miembros de clase o estáticos</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6377,7 +7057,7 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los miembros de clase o estáticos asumen los <strong class="blue">aspectos, datos y operaciones, compartidos/globales por/a la comunidad de objetos de la clase</strong></p>
+<p>Los miembros de clase o estáticos asumen los <strong class="red">aspectos, datos y operaciones, compartidos/globales por/a la comunidad de objetos de la clase</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -6403,14 +7083,14 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">atributos de clase</strong> compartidos por la globalidad de objetos de la clase;</p>
+<p><strong class="red">atributos de clase</strong> compartidos por la globalidad de objetos de la clase;</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Ej. <em>los nombres y duración de los meses de cualquier fecha, excepto en Febrero de años bisiestos, &#8230;&#8203;</em></p>
 </li>
 <li>
-<p><span class="blue">si no hay objetos,</span> <strong class="red">si</strong> <span class="blue">hay atributos de clase</span>;</p>
+<p><span class="red">si no hay objetos,</span> <strong class="red">si</strong> <span class="red">hay atributos de clase</span>;</p>
 </li>
 </ul>
 </div>
@@ -6439,14 +7119,14 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">métodos de clase</strong> cuyos mensajes NO se lanzan sobre un objetos particular;</p>
+<p><strong class="red">métodos de clase</strong> cuyos mensajes NO se lanzan sobre un objetos particular;</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Ej. <em>si un año (de cualquier fecha, no de una fecha particular) es bisiesto</em></p>
 </li>
 <li>
-<p><span class="blue">si no hay objetos,</span> <strong class="red">si</strong> <span class="blue">se llama a métodos de clase</span>, <strong class="red">no mensaje!!!</strong>;</p>
+<p><span class="red">si no hay objetos,</span> <strong class="red">si</strong> <span class="red">se llama a métodos de clase</span>, <strong class="red">no mensaje!!!</strong>;</p>
 </li>
 </ul>
 </div>
@@ -6463,20 +7143,18 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Atributos estáticos</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Métodos estáticos</strong></p>
-</div></div></td>
+<th class="tableblock halign-left valign-top"><strong class="blue">Atributos estáticos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Métodos estáticos</strong></th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>caracterizados por la palabra reservada <strong>static</strong> tras su visibilidad;</p>
+<p>caracterizados por la palabra reservada <strong class="blue">static</strong> tras su visibilidad;</p>
 </li>
 </ul>
 </div></div></td>
@@ -6485,13 +7163,23 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>su reserva de memoria e inicialización obligatoria se realiza al principio de la ejecución del programa, incluso ante la ausencia de objetos de la clase;</p>
+<p>su <strong class="blue">reserva de memoria e inicialización obligatoria</strong> se realiza al principio de la ejecución del programa,</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green">en orden dentro de las declaraciones de la clase</span> pero</p>
 </li>
 <li>
-<p>accesibles desde cualquier método de la clase;</p>
+<p><span class="red">en desorden entre las distintas clases</span></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>la notación sintáctica para el acceso:</p>
+<p><span class="blue">accesibles desde cualquier método, de instancia o estático, de la clase</span>;</p>
+</li>
+<li>
+<p>la notación <span class="blue">sintáctica</span> para el acceso desde las expresiones:</p>
 </li>
 </ul>
 </div>
@@ -6503,19 +7191,19 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>no se permite el acceso a <strong>this</strong> ni a los atributos de instancia;</p>
+<p><span class="green">se permite el acceso a los atributos estáticos</span>;</p>
 </li>
 <li>
-<p>se permite el acceso a los atributos estáticos;</p>
+<p><strong class="red">no se permite el acceso a <em>this</em> ni a los atributos de instancia</strong>;</p>
 </li>
 <li>
-<p>la notación sintáctica para el lanzamiento del mensaje:</p>
+<p>la notación <span class="blue">sintáctica</span> para la invocación/llamada/ejecución del método estático como sentencia de los métodos:</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    &lt;Clase&gt;.&lt;metodoEstatico&gt;([&lt;argumento&gt;, <span class="error">…</span> ])</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">  &lt;Clase&gt;.&lt;metodoEstatico&gt;([&lt;argumento&gt; { &lt;argumento&gt;, }])</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6643,7 +7331,7 @@ dias++;
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"><strong class="blue">En librerías y proyectos</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html">System</a></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html"><em>System</em></a></th>
 </tr>
 </thead>
 <tbody>
@@ -6685,7 +7373,7 @@ dias++;
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html"><em>Math</em></a></th>
 </tr>
 </thead>
 <tbody>
@@ -6765,6 +7453,324 @@ dias++;
 <h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
+<col style="width: 17%;">
+<col style="width: 39%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Constantes, inmutables</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Variables, mutables</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son <strong class="blue">secuencias de caracteres de cualquier longitud</strong>, incluso <strong class="blue">secuencia vacía</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuyos caracteres no varían tras la creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementadas bajo la clase  <strong class="blue">String</strong> <span class="red">sin contemplar métodos que modifiquen el estado del objeto</span>.</p>
+</li>
+<li>
+<p><em>Ej. El nombre de una persona, de un mes, de una universidad, de un proyecto, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuyos caracteres sí varían tras la creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementadas bajo las clases <strong class="blue">StringBuffer</strong> (con sincronización en concurrencia) y <strong class="blue">StringBuilder</strong> (sin) <span class="red">con métodos que contemplan la modificación del objeto</span></p>
+</li>
+<li>
+<p><em>Ej. Membrete de una carta, párrafo de aviso, clausula de contrato, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="clase-string">Clase <em>String</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html"><em>String</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">String</span>()
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">int</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">StringBuffer</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">StringBuilder</span>)
+<span class="directive">public</span> <span class="type">int</span> length()
+<span class="directive">public</span> <span class="type">boolean</span> isEmpty()
+<span class="directive">public</span> <span class="type">char</span> charAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">byte</span><span class="type">[]</span> getBytes()
+<span class="directive">public</span> <span class="type">char</span><span class="type">[]</span> toCharArray()
+<span class="directive">public</span> <span class="predefined-type">String</span> toString()
+<span class="directive">public</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">void</span> getBytes(<span class="type">int</span>, <span class="type">int</span>, <span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="predefined-type">CharSequence</span> subSequence(<span class="type">int</span>,<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">int</span> hashCode()
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="type">int</span>, <span class="type">int</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">int</span> codePointAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointBefore(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointCount(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> offsetByCodePoints(<span class="type">int</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span>)
+<span class="directive">public</span> <span class="type">boolean</span> equalsIgnoreCase(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">boolean</span> contentEquals(<span class="predefined-type">StringBuffer</span>)
+<span class="directive">public</span> <span class="type">boolean</span> matches(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">boolean</span> regionMatches(<span class="type">int</span>,<span class="predefined-type">String</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">boolean</span> regionMatches(<span class="type">boolean</span>,<span class="type">int</span>, <span class="predefined-type">String</span>,<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">boolean</span> startsWith(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">boolean</span> startsWith(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">boolean</span> endsWith(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> compareTo(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> compareToIgnoreCase(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span><span class="type">[]</span> split(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span><span class="type">[]</span> split(<span class="predefined-type">String</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="predefined-type">String</span> concat(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> replace(<span class="type">char</span>, <span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> replaceFirst(<span class="predefined-type">String</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> replaceAll(<span class="predefined-type">String</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> toLowerCase()
+<span class="directive">public</span> <span class="predefined-type">String</span> toUpperCase()
+<span class="directive">public</span> <span class="predefined-type">String</span> trim()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> getBytes(<span class="type">int</span> srcBegin, <span class="type">int</span> srcEnd,
+  <span class="type">byte</span><span class="type">[]</span> dst, <span class="type">int</span> dstBegin)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> getChars(<span class="type">int</span> srcBegin, <span class="type">int</span> srcEnd,
+  <span class="type">char</span><span class="type">[]</span> dst, <span class="type">int</span> dstBegin)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">long</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> copyValueOf(<span class="type">char</span><span class="type">[]</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">boolean</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> copyValueOf(<span class="type">char</span><span class="type">[]</span>,<span class="type">int</span>, <span class="type">int</span>)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="clase-stringbuffer-y-stringbuilder">Clase <em>StringBuffer</em> y <em>StringBuilder</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 46%;">
+<col style="width: 54%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">StringBuffer</span>()
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="predefined-type">CharSequence</span>)
+
+<span class="directive">public</span> <span class="type">int</span> length()
+<span class="directive">public</span> <span class="type">char</span> charAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">CharSequence</span> subSequence(<span class="type">int</span>,<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> toString()
+
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">int</span> codePointAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointBefore(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointCount(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> offsetByCodePoints(<span class="type">int</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">int</span> capacity()
+<span class="directive">public</span> <span class="type">void</span> ensureCapacity(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">void</span> setLength(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">void</span> trimToSize()
+<span class="directive">public</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="predefined-type">StringBuffer</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">boolean</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> appendCodePoint(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">long</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">float</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">double</span>)
+
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>,<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">boolean</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">long</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">float</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">double</span>)
+
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> delete(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> deleteCharAt(<span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">void</span> setCharAt(<span class="type">int</span>, <span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> replace(<span class="type">int</span>, <span class="type">int</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> reverse()
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="literales-string-2">Literales <em>String</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es la única clase cuyos objetos pueden presentarse en forma literal;</p>
+</li>
+<li>
+<p>su formato es una secuencia de caracteres de cualquier longitud encerrados entre dobles comillas</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"&lt;caracter&gt;..."</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>son objetos de la clase <strong>String</strong> cuya evaluación devuelve la dirección del objeto al que representan;</p>
+</li>
+<li>
+<p>además, es la única clase que disfruta de un operador (<strong>+</strong>) para la concatenación de cadenas de caracteres y combinado con cualquier tipo.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">int</span> longitud = <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>.length();
+<span class="predefined-type">String</span> cadena = <span class="keyword">new</span> <span class="predefined-type">String</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>);
+<span class="type">boolean</span> falso = cadena == <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>;
+<span class="type">boolean</span> cierto = cadena.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>);
+<span class="type">boolean</span> tambien = <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>.equals(cadena);
+<span class="predefined-type">StringBuffer</span> buffer = <span class="keyword">new</span> <span class="predefined-type">StringBuffer</span>(cadena);
+buffer.insert(<span class="integer">0</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">de </span><span class="delimiter">&quot;</span></span>).insert(<span class="integer">0</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">cadena </span><span class="delimiter">&quot;</span></span>);
+<span class="type">boolean</span> si = (<span class="string"><span class="delimiter">&quot;</span><span class="content">cadena de </span><span class="delimiter">&quot;</span></span> + cadena).
+    contentEquals(buffer);
+<span class="predefined-type">String</span> serie = (<span class="integer">0</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>+(<span class="integer">1</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">,</span><span class="delimiter">&quot;</span></span>+(<span class="integer">2</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
@@ -6795,13 +7801,426 @@ dias++;
 </tbody>
 </table>
 </div>
+</div>
 <div class="sect2">
 <h3 id="clases-de-recubrimiento">Clases de Recubrimiento</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Clases de Recubrimiento</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html"><em>Character</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Aglutinan funciones de conversión entre los tipos primitivos y las correspondientes cadenas de caracteres junto con algunas otras funciones auxiliares particulares de cada tipo primitivo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html"><em>Character</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html"><em>Byte</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html"><em>Short</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html"><em>Integer</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html"><em>Long</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html"><em>Float</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html"><em>Double</em></a></p>
+</li>
+<li>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html"><em>Boolean</em></a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Character</span> {
+  <span class="predefined-type">Character</span>(<span class="type">char</span>)
+  <span class="type">char</span> charValue()
+  <span class="type">int</span> compareTo(<span class="predefined-type">Character</span>)
+  <span class="type">int</span> hashCode()
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> toString(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">char</span><span class="type">[]</span> toChars(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isLowerCase(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isUpperCase(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isTitleCase(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isDigit(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isDefined(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isLetter(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isLetterOrDigit(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">char</span> toLowerCase(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">char</span> toUpperCase(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">char</span> toTitleCase(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> getNumericValue(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isSpace(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isSpaceChar(<span class="type">char</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isWhitespace(<span class="type">char</span>)
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 43%;">
+<col style="width: 57%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html"><em>Integer</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Integer</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">int</span> MIN_VALUE;
+  <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">int</span> MAX_VALUE;
+  <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">int</span> SIZE;
+  <span class="directive">public</span> <span class="predefined-type">Integer</span>(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="predefined-type">Integer</span>(<span class="predefined-type">String</span>)
+  <span class="directive">public</span> <span class="type">byte</span> byteValue()
+  <span class="directive">public</span> <span class="type">short</span> shortValue()
+  <span class="directive">public</span> <span class="type">int</span> intValue()
+  <span class="directive">public</span> <span class="type">long</span> longValue()
+  <span class="directive">public</span> <span class="type">float</span> floatValue()
+  <span class="directive">public</span> <span class="type">double</span> doubleValue()
+  <span class="directive">public</span> <span class="predefined-type">String</span> toString()
+  <span class="directive">public</span> <span class="type">int</span> hashCode()
+  <span class="directive">public</span> <span class="type">int</span> compareTo(<span class="predefined-type">Integer</span>)
+  ...</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  ...
+  public <span class="directive">static</span> <span class="predefined-type">String</span> toString(<span class="type">int</span>, <span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> toHexString(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> toOctalString(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> toBinaryString(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> toString(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> stringSize(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> parseInt(<span class="predefined-type">String</span>, <span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> parseInt(<span class="predefined-type">String</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> valueOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> valueOf(<span class="predefined-type">String</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> valueOf(<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> getInteger(<span class="predefined-type">String</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> getInteger(<span class="predefined-type">String</span>,<span class="type">int</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> getInteger(<span class="predefined-type">String</span>,<span class="predefined-type">Integer</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Integer</span> decode(<span class="predefined-type">String</span>)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>)
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 61%;">
+<col style="width: 39%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html"><em>Boolean</em></a></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Boolean</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Boolean</span> FALSE
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Boolean</span> TRUE
+  <span class="directive">public</span> <span class="predefined-type">Boolean</span>(<span class="type">boolean</span> value)
+  <span class="directive">public</span> <span class="predefined-type">Boolean</span>(<span class="predefined-type">String</span> s)
+  <span class="directive">public</span> <span class="type">boolean</span> booleanValue()
+  <span class="directive">public</span> <span class="predefined-type">String</span> toString()
+  <span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span> obj)
+  <span class="directive">public</span> <span class="type">int</span> compareTo(<span class="predefined-type">Boolean</span> b)
+  <span class="directive">public</span> <span class="type">int</span> hashCode()
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> compare(<span class="type">boolean</span> x, <span class="type">boolean</span> y)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> getBoolean(<span class="predefined-type">String</span> name)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">int</span> hashCode(<span class="type">boolean</span> value)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> logicalAnd(<span class="type">boolean</span> a, <span class="type">boolean</span> b)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> logicalOr(<span class="type">boolean</span> a, <span class="type">boolean</span> b)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> logicalXor(<span class="type">boolean</span> a, <span class="type">boolean</span> b)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> parseBoolean(<span class="predefined-type">String</span> s)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Boolean</span> valueOf(<span class="type">boolean</span> b)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Boolean</span> valueOf(<span class="predefined-type">String</span> s)
+  <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> toString(<span class="type">boolean</span> b)
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Fecha(<span class="predefined-type">String</span> cadena) {
+  dia = <span class="predefined-type">Integer</span>.parseInt(
+    cadena.substring(<span class="integer">0</span>, cadena.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>)));
+  cadena = cadena.substring(
+    cadena.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>) + <span class="integer">1</span>, cadena.length());
+  mes = <span class="predefined-type">Integer</span>.parseInt(
+    cadena.substring(<span class="integer">0</span>, cadena.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>)));
+  cadena = cadena.substring(
+    cadena.indexOf(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>) + <span class="integer">1</span>, cadena.length());
+  año = <span class="predefined-type">Integer</span>.parseInt(cadena);
+}
 
+<span class="directive">public</span> <span class="predefined-type">String</span> toString() {
+  <span class="keyword">return</span> dia + <span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span> + mes + <span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span> + año;
+}
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="enumerados">Enumerados</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Enumerados</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son <strong class="blue">clases</strong> que limitan la creación de objetos a los enumerados explícitamente en la implementación de la clase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la <strong class="red">única limitación</strong> respecto a la implantación de una clase normal es que, si incorporan <strong class="red">constructores, deben ser privados</strong> para evitar la creación de nuevos objetos distintos a los ofertados por la implementación</p>
+</li>
+<li>
+<p>donde <strong class="blue">cada &lt;enumeradoX&gt; es implícitamente una referencia a un objeto de la calse</strong> con modificadores <strong class="blue">public static final</strong></p>
+</li>
+<li>
+<p>la <strong>sentencia <em>switch</em> acepta expresiones de clase enumerado</strong> y, en tal caso, las posibles constantes de cada clausula <em>case</em> serán las referencias a los objetos especificados en el enumerado</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>El enumerado/clase Planeta responsable de su posición, velocidad, &#8230;&#8203; con únicamente 8 objetos mutables con atributos y métodos</em></p>
+</li>
+<li>
+<p><em>El enumerado/clase Mes responsable de su número máximo de días (28, 30 ó 31) y los literales en varios idiomas (“Enero”, “January”) con únicamente 12 objetos inmutables con atributos y métodos</em></p>
+</li>
+<li>
+<p><em>El enumerado/clase Color responsable de nada con únicamente 2 objetos inmutables (vacíos) sin atributos ni métodos</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="green">Enumerado</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Clase con <em>static</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">enum</span> &lt;Enumerado&gt; {
+  &lt;enumerado1&gt;[(&lt;argumentos&gt;)],
+  ...
+  &lt;enumeradoN&gt;[(&lt;argumentos&gt;)];
 
+  &lt;definiciónAtributos&gt;
+
+  <span class="directive">private</span> &lt;Enumerado&gt; ([&lt;parametros&gt;]) {
+    ...
+  }
+
+  &lt;definiciónMétodos&gt;
+
+  <span class="directive">public</span> <span class="type">void</span> &lt;metodo&gt; () {
+    ...
+    switch(<span class="local-variable">this</span>){
+      <span class="keyword">case</span> &lt;enumerado1&gt;:
+      <span class="keyword">case</span> &lt;enumerado2&gt;:
+      ...
+        &lt;sentencia&gt;;
+        <span class="keyword">break</span>;
+      <span class="keyword">default</span>:
+        &lt;sentencia&gt;;
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">Enumerado</span>&gt; {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> &lt;Enumerado&gt; &lt;enumerado1&gt; = <span class="keyword">new</span> &lt;Enumerado&gt;([&lt;argumentos&gt;]);
+  ...
+  public <span class="directive">static</span> <span class="directive">final</span> &lt;Enumerado&gt; &lt;enumeradoN&gt; = <span class="keyword">new</span> &lt;Enumerado&gt;([&lt;argumentos&gt;]);
+
+  &lt;definiciónAtributos&gt;
+
+  <span class="directive">private</span> &lt;Enumerado&gt; ([&lt;parametros&gt;]) {
+    ...
+  }
+
+  &lt;definiciónMétodos&gt;
+
+  <span class="directive">public</span> <span class="type">void</span> &lt;metodo&gt; () {
+    ...
+    if(<span class="local-variable">this</span> == &lt;enumerado1&gt; || <span class="local-variable">this</span>== &lt;enumerado2&gt;) {
+      &lt;sentencia&gt;;
+    } <span class="keyword">else</span> {
+      &lt;sentencia&gt;;
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Métodos implícitos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>devuelve la <strong class="blue">posición del enumerado</strong> dentro de la secuencia expresada en la implementación</p>
+</li>
+<li>
+<p>devuelve el <strong class="blue">identificador del enumerado</strong>;</p>
+</li>
+<li>
+<p>devuelve un <strong class="blue">vector de referencias con la dirección de todos los objetos enumerados</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>la <strong class="green">sentencia <em>for</em> acepta tablas de objetos enumerados en su formato iterador</strong> como tablas de objetos de clases</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">Enumerado</span>&gt; {
+    <span class="directive">public</span> <span class="type">int</span> ordinal()
+    <span class="directive">public</span> <span class="predefined-type">String</span> name()
+    <span class="directive">public</span> <span class="directive">static</span> &lt;Enumerado&gt;<span class="type">[]</span> values()
+    ...
+}
+
+<span class="type">class</span> <span class="class">App</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+    Console console = <span class="keyword">new</span> Console();
+    <span class="keyword">for</span>(&lt;Enumerado&gt; <span class="type">enum</span> : &lt;Enumerado&gt;.values()) {
+      console.writeln(
+        <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span> + <span class="type">enum</span>.ordinal() + <span class="string"><span class="delimiter">&quot;</span><span class="content">. </span><span class="delimiter">&quot;</span></span> + <span class="type">enum</span>.name());
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Color</span> {
+  RED,
+  YELLOW;
+}
+
+<span class="type">class</span> <span class="class">App</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+    <span class="predefined-type">String</span> string = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+    <span class="keyword">for</span>(<span class="predefined-type">Color</span> color : <span class="predefined-type">Color</span>.values){
+      string += (color.ordinal() + <span class="integer">1</span>) + <span class="string"><span class="delimiter">&quot;</span><span class="content">. </span><span class="delimiter">&quot;</span></span> + color.name();
+    }
+    <span class="keyword">new</span> Console().writeln(string);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
