@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="187px" preserveAspectRatio="none" style="width:212px;height:187px;background:#222222;" version="1.1" viewBox="0 0 212 187" width="212px" zoomAndPan="magnify"><defs/><g><!--class List--><polygon fill="#222222" points="6,8,6,8.2102,15.3333,7.5857,24.6667,8.1933,34,8.3997,43.3333,7.2866,52.6667,7.9223,62,8,61.5735,8,61.6165,18.8227,61.9318,29.6453,61.3086,40.468,62.5536,51.2906,62,62.1133,62,61.483,52.6667,61.9155,43.3333,62.5452,34,62.0275,24.6667,62.1815,15.3333,62.0813,6,62.1133,6.1785,62.1133,6.2391,51.2906,6.5857,40.468,6.6711,29.6453,6.6793,18.8227,6,8" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="10" y="34.1074">List</text><path d="M7,46.1133 L7,46.3935 L17.8,45.5609 L28.6,46.371 L39.4,46.6462 L50.2,45.1621 L61,46.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M7,54.1133 L7,54.3935 L17.8,53.5609 L28.6,54.371 L39.4,54.6462 L50.2,53.1621 L61,54.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class Node--><polygon fill="#222222" points="63,122,63,122.2102,72.3333,121.5857,81.6667,122.1933,91,122.3997,100.3333,121.2866,109.6667,121.9223,119,122,118.5735,122,118.6165,132.8227,118.9318,143.6453,118.3086,154.468,119.5536,165.2906,119,176.1133,119,175.483,109.6667,175.9155,100.3333,176.5452,91,176.0275,81.6667,176.1815,72.3333,176.0813,63,176.1133,63.1785,176.1133,63.2391,165.2906,63.5857,154.468,63.6711,143.6453,63.6793,132.8227,63,122" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="67" y="148.1074">Node</text><path d="M64,160.1133 L64,160.3935 L74.8,159.5609 L85.6,160.371 L96.4,160.6462 L107.2,159.1621 L118,160.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M64,168.1133 L64,168.3935 L74.8,167.5609 L85.6,168.371 L96.4,168.6462 L107.2,167.1621 L118,168.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class Interval--><polygon fill="#222222" points="97,8,97,8.2102,107.4,7.5857,117.8,8.1933,128.2,8.3997,138.6,7.2866,149,7.9223,159.4,7.5735,169.8,7.6165,180.2,7.9318,190.6,7.3086,201,8,201.5536,8,200.3697,18.8227,200.8022,29.6453,201.4319,40.468,200.9142,51.2906,201,62.1133,201,62.1815,190.6,62.0813,180.2,62.2918,169.8,62.3524,159.4,62.699,149,62.7843,138.6,62.7925,128.2,62.3679,117.8,62.5769,107.4,62.8155,97,62.1133,96.2788,62.1133,97.6785,51.2906,96.7035,40.468,97.5338,29.6453,96.505,18.8227,97,8" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="101" y="34.1074">Interval</text><path d="M98,46.1133 L98,46.3935 L108.2,45.5609 L118.4,46.371 L128.6,46.6462 L138.8,45.1621 L149,46.0097 L159.2,45.5446 L169.4,45.6019 L179.6,46.0224 L189.8,45.1915 L200,46.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M98,54.1133 L98,54.3935 L108.2,53.5609 L118.4,54.371 L128.6,54.6462 L138.8,53.1621 L149,54.0097 L159.2,53.5446 L169.4,53.6019 L179.6,54.0224 L189.8,53.1915 L200,54.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--link List to Node--><path d="M53.49,74.29 L53.5733,74.3324 L56.9559,81.3425 L60.8266,88.6009 L64.5383,95.7785 L67.7274,102.6902 L71.64,109.97 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="#A9A9A9" points="77.72,121.91,77.79,121.9136,77.4801,119.9357,77.5803,117.9791,77.547,116.0155,77.0745,114.0292,77.2099,112.0744,77.1853,112.0663,76.7239,113.1058,76.3866,114.1859,76.1356,115.294,75.5872,116.3052,75.4554,117.4522,75.5126,117.6277,74.3147,116.9016,73.2838,116.6878,72.2733,116.5364,71.1442,116.0214,70.0775,115.6977,70.0919,115.7154,71.5993,116.9319,73.172,118.2288,74.7133,119.4869,76.3146,120.819,77.72,121.91" style="stroke: #A9A9A9; stroke-width: 2.0;"/><path d="M75.4554,117.4522 L75.5386,117.4946 L74.5652,115.9423 L74.0798,114.6383 L73.4355,113.2535 L72.2685,111.6026 L71.825,110.32 " fill="#A9A9A9" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="#A9A9A9" points="47.36,62.26,47.4296,62.2682,47.0545,63.6762,47.0873,65.1322,46.9873,66.5726,46.4505,67.9617,46.5183,69.4218,46.5057,69.3992,47.7062,70.0042,48.9706,70.7229,50.2795,71.5209,51.4352,72.0461,52.8055,72.9533,52.9888,72.9748,52.7652,71.4964,53.0767,70.0809,53.4535,68.673,53.4505,67.2205,53.6472,65.7915,53.6583,65.8113,52.3845,65.0759,51.1615,64.4308,49.9139,63.7421,48.713,63.1365,47.36,62.26" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Interval to Node--><path d="M125.98,80.44 L126.2289,80.5688 L121.1954,88.48 L117.6209,97.1465 L113.5712,105.567 L107.9593,113.1787 L104.51,121.91 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="119.99,76.8,120.0381,76.851,122.9772,73.7915,126.1982,71.0309,129.3274,68.1729,132.1548,64.995,135.4,62.26,135.3744,62.2564,134.6632,66.436,134.0814,70.634,133.5895,74.8448,132.7878,79.0116,132.42,83.24,132.5049,83.4039,129.8374,81.7655,127.4177,80.6055,125.0282,79.5038,122.4628,78.0626,119.99,76.8" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+hide circle
+hide stereotype
+skinparam handwritten true
+
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+
+List *- -> Node
+Interval <|- - Node
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

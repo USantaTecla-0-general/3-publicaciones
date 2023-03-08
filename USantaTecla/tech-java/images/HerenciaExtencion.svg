@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="301px" preserveAspectRatio="none" style="width:97px;height:301px;background:#222222;" version="1.1" viewBox="0 0 97 301" width="97px" zoomAndPan="magnify"><defs/><g><!--class Abuela--><polygon fill="#222222" points="6,8,6,8.2102,16,7.5857,26,8.1933,36,8.3997,46,7.2866,56,7.9223,66,7.5735,76,7.6165,86,8,85.9318,8,85.3086,18.8227,86.5536,29.6453,85.3697,40.468,85.8022,51.2906,86,62.1133,86,62.5452,76,62.0275,66,62.1815,56,62.0813,46,62.2918,36,62.3524,26,62.699,16,62.7843,6,62.1133,6.6793,62.1133,6.2546,51.2906,6.4636,40.468,6.7022,29.6453,5.2788,18.8227,6,8" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="10" y="34.1074">Abuela</text><path d="M7,46.1133 L7,46.3935 L16.75,45.5609 L26.5,46.371 L36.25,46.6462 L46,45.1621 L55.75,46.0097 L65.5,45.5446 L75.25,45.6019 L85,46.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M7,54.1133 L7,54.3935 L16.75,53.5609 L26.5,54.371 L36.25,54.6462 L46,53.1621 L55.75,54.0097 L65.5,53.5446 L75.25,53.6019 L85,54.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class Padre--><polygon fill="#222222" points="12,122,12,122.2102,21.7143,121.5857,31.4286,122.1933,41.1429,122.3997,50.8571,121.2866,60.5714,121.9223,70.2857,121.5735,80,122,79.6165,122,79.9318,132.8227,79.3086,143.6453,80.5536,154.468,79.3697,165.2906,80,176.1133,80,175.9155,70.2857,176.5452,60.5714,176.0275,50.8571,176.1815,41.1429,176.0813,31.4286,176.2918,21.7143,176.3524,12,176.1133,12.5857,176.1133,12.6711,165.2906,12.6793,154.468,12.2546,143.6453,12.4636,132.8227,12,122" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="16" y="148.1074">Padre</text><path d="M13,160.1133 L13,160.3935 L22.4286,159.5609 L31.8571,160.371 L41.2857,160.6462 L50.7143,159.1621 L60.1429,160.0097 L69.5714,159.5446 L79,160.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M13,168.1133 L13,168.3935 L22.4286,167.5609 L31.8571,168.371 L41.2857,168.6462 L50.7143,167.1621 L60.1429,168.0097 L69.5714,167.5446 L79,168.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class Hija--><polygon fill="#222222" points="18,236,18,236.2102,27.3333,235.5857,36.6667,236.1933,46,236.3997,55.3333,235.2866,64.6667,235.9223,74,236,73.5735,236,73.6165,246.8227,73.9318,257.6453,73.3086,268.468,74.5536,279.2906,74,290.1133,74,289.483,64.6667,289.9155,55.3333,290.5452,46,290.0275,36.6667,290.1815,27.3333,290.0813,18,290.1133,18.1785,290.1133,18.2391,279.2906,18.5857,268.468,18.6711,257.6453,18.6793,246.8227,18,236" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="22" y="262.1074">Hija</text><path d="M19,274.1133 L19,274.3935 L29.8,273.5609 L40.6,274.371 L51.4,274.6462 L62.2,273.1621 L73,274.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M19,282.1133 L19,282.3935 L29.8,281.5609 L40.6,282.371 L51.4,282.6462 L62.2,281.1621 L73,282.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--link Abuela to Padre--><path d="M46,82.37 L46.0934,82.37 L45.8159,90.278 L46.0859,98.186 L46.1776,106.094 L45.6829,114.002 L46,121.91 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="39,82.26,39.0661,82.2831,40.2696,78.2144,41.8608,74.2813,43.3257,70.304,44.3756,66.1814,46,62.26,45.9755,62.2514,47.2658,66.213,48.6793,70.2178,50.1786,74.2525,51.3825,78.1839,53,82.26,53,82.4445,50.2,82.0499,47.4,82.1941,44.6,82.404,41.8,82.2314,39,82.26" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Padre to Hija--><path d="M46,196.37 L46.0934,196.37 L45.8159,204.278 L46.0859,212.186 L46.1776,220.094 L45.6829,228.002 L46,235.91 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="39,196.26,39.0661,196.2831,40.2696,192.2144,41.8608,188.2813,43.3257,184.304,44.3756,180.1814,46,176.26,45.9755,176.2514,47.2658,180.213,48.6793,184.2178,50.1786,188.2525,51.3825,192.1839,53,196.26,53,196.4445,50.2,196.0499,47.4,196.1941,44.6,196.404,41.8,196.2314,39,196.26" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+hide circle
+hide stereotype
+skinparam handwritten true
+
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+
+Abuela <|- - Padre
+Padre <|- -Hija
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

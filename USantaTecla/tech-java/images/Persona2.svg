@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="215px" preserveAspectRatio="none" style="width:200px;height:215px;background:#222222;" version="1.1" viewBox="0 0 200 215" width="200px" zoomAndPan="magnify"><defs/><g><!--class Persona--><polygon fill="#222222" points="32,8,32,8.2102,42.3333,7.5857,52.6667,8.1933,63,8.3997,73.3333,7.2866,83.6667,7.9223,94,7.5735,104.3333,7.6165,114.6667,7.9318,125,7.3086,135.3333,8.5536,145.6667,7.3697,156,8,155.8022,8,156.4319,18.2783,155.9142,28.5566,156.0682,38.835,155.9681,49.1133,156.1785,59.3916,156.2391,69.6699,156.5857,79.9482,156,90.2266,156,90.8976,145.6667,90.9058,135.3333,90.4812,125,90.6901,114.6667,90.9288,104.3333,89.5054,94,90.9051,83.6667,89.9301,73.3333,90.7604,63,89.7315,52.6667,90.1581,42.3333,90.9682,32,90.2266,31.9513,90.2266,32.1053,79.9482,32.3386,69.6699,32.4162,59.3916,31.9961,49.1133,32.2872,38.835,31.4276,28.5566,32.2844,18.2783,32,8" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="120" x="34" y="34.1074">«abstract»</text><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="84" x="52" y="62.2207">Persona</text><path d="M33,74.2266 L33,74.5068 L43.1667,73.6741 L53.3333,74.4843 L63.5,74.7595 L73.6667,73.2754 L83.8333,74.1229 L94,73.6579 L104.1667,73.7152 L114.3333,74.1357 L124.5,73.3047 L134.6667,74.9648 L144.8333,73.3862 L155,74.2266 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M33,82.2266 L33,82.5068 L43.1667,81.6741 L53.3333,82.4843 L63.5,82.7595 L73.6667,81.2754 L83.8333,82.1229 L94,81.6579 L104.1667,81.7152 L114.3333,82.1357 L124.5,81.3047 L134.6667,82.9648 L144.8333,81.3862 L155,82.2266 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class Mujer--><polygon fill="#222222" points="6,150,6,150.2102,15.7143,149.5857,25.4286,150.1933,35.1429,150.3997,44.8571,149.2866,54.5714,149.9223,64.2857,149.5735,74,150,73.6165,150,73.9318,160.8227,73.3086,171.6453,74.5536,182.468,73.3697,193.2906,74,204.1133,74,203.9155,64.2857,204.5452,54.5714,204.0275,44.8571,204.1815,35.1429,204.0813,25.4286,204.2918,15.7143,204.3524,6,204.1133,6.5857,204.1133,6.6711,193.2906,6.6793,182.468,6.2546,171.6453,6.4636,160.8227,6,150" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="10" y="176.1074">Mujer</text><path d="M7,188.1133 L7,188.3935 L16.4286,187.5609 L25.8571,188.371 L35.2857,188.6462 L44.7143,187.1621 L54.1429,188.0097 L63.5714,187.5446 L73,188.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M7,196.1133 L7,196.3935 L16.4286,195.5609 L25.8571,196.371 L35.2857,196.6462 L44.7143,195.1621 L54.1429,196.0097 L63.5714,195.5446 L73,196.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--class Hombre--><polygon fill="#222222" points="109,150,109,150.2102,119,149.5857,129,150.1933,139,150.3997,149,149.2866,159,149.9223,169,149.5735,179,149.6165,189,150,188.9318,150,188.3086,160.8227,189.5536,171.6453,188.3697,182.468,188.8022,193.2906,189,204.1133,189,204.5452,179,204.0275,169,204.1815,159,204.0813,149,204.2918,139,204.3524,129,204.699,119,204.7843,109,204.1133,109.6793,204.1133,109.2546,193.2906,109.4636,182.468,109.7022,171.6453,108.2788,160.8227,109,150" style="stroke: #A9A9A9; stroke-width: 3.0;"/><text fill="#A9A9A9" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="113" y="176.1074">Hombre</text><path d="M110,188.1133 L110,188.3935 L119.75,187.5609 L129.5,188.371 L139.25,188.6462 L149,187.1621 L158.75,188.0097 L168.5,187.5446 L178.25,187.6019 L188,188.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><path d="M110,196.1133 L110,196.3935 L119.75,195.5609 L129.5,196.371 L139.25,196.6462 L149,195.1621 L158.75,196.0097 L168.5,195.5446 L178.25,195.6019 L188,196.1133 " fill="#222222" style="stroke: #A9A9A9; stroke-width: 3.0;"/><!--link Persona to Mujer--><path d="M68.86,108.67 L68.9459,108.7068 L65.1768,116.7934 L61.911,125.0959 L58.4813,133.328 L54.5126,141.3291 L51.29,149.65 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="62.45,105.84,62.5017,105.8873,65.2122,102.6207,68.2255,99.6315,71.1402,96.552,73.7307,93.1754,76.77,90.21,76.7442,90.2082,76.3382,94.4283,76.0625,98.6573,75.8773,102.8924,75.3801,107.1062,75.32,111.35,75.3926,111.5197,72.6633,110.0549,70.1461,109.0854,67.6547,108.1764,65.0127,106.9157,62.45,105.84" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Persona to Hombre--><path d="M119.61,108.67 L119.6956,108.7074 L123.0192,116.7923 L126.8447,125.0964 L130.5068,133.3291 L133.6314,141.3271 L137.5,149.65 " fill="none" style="stroke: #A9A9A9; stroke-width: 2.0;"/><polygon fill="none" points="113.14,111.34,113.2099,111.3453,112.6843,107.1036,112.5682,102.8928,112.3189,98.672,111.6309,94.4182,111.55,90.21,111.531,90.1924,114.3298,93.2193,117.2243,96.335,120.1854,99.5125,122.9171,102.4772,125.97,105.74,126.0438,105.9091,123.32,106.6674,120.8116,107.9196,118.3296,109.232,115.6946,110.1938,113.14,111.34" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+@startuml
+skinparam backgroundColor #222222
+hide circle
+skinparam handwritten true
+
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+skinparam default {
+    BorderColor #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+
+class Persona <<abstract>>
+Persona <|- - Mujer
+Persona <|- - Hombre
+@enduml
+
+PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 11.0.14+8-LTS-263
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: windows-1252
+Language: es
+Country: ES
+--></g></svg>

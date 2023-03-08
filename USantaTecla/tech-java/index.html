@@ -571,7 +571,18 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#enumerados">Enumerados</a></li>
 </ul>
 </li>
-<li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a></li>
+<li><a href="#programación-orientada-a-objetos">Programación Orientada a Objetos</a>
+<ul class="sectlevel2">
+<li><a href="#relación-de-herencia">Relación de Herencia</a></li>
+<li><a href="#herencia-por-extensión">Herencia por extensión</a></li>
+<li><a href="#clases-abstractas">Clases Abstractas</a></li>
+<li><a href="#herencia-por-implementación">Herencia por Implementación</a></li>
+<li><a href="#limitaciones-de-la-herencia">Limitaciones de la  Herencia</a></li>
+<li><a href="#beneficios-de-la-herencia">Beneficios de la Herencia</a></li>
+<li><a href="#polimorfismo">Polimorfismo</a></li>
+<li><a href="#converción-de-tipos">Converción de Tipos</a></li>
+</ul>
+</li>
 <li><a href="#programación-modular">Programación Modular</a></li>
 <li><a href="#programación-con-aserciones-y-excepciones">Programación con Aserciones y Excepciones</a></li>
 <li><a href="#programación-parametrizada">Programación Parametrizada</a></li>
@@ -1325,9 +1336,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a0_programa.v0</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
     
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -1394,9 +1403,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a0_programa.v1</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -1618,9 +1625,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a1_numericos.a1_valores</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -1696,9 +1701,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a1_numericos.a2_unarios</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -1777,9 +1780,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a1_numericos.a3_binarios</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -1861,9 +1862,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_char.a1_valores</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -1931,8 +1930,6 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa</span>. <span class="namespace">a1_tipos.a3_boolean.a1_valores</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
 <span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
@@ -1989,8 +1986,6 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a3_boolean.a2_unarios</span>;
-
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
 
 <span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
 
@@ -2057,8 +2052,6 @@ cualquier sistema operativo</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a3_boolean.a3_binarios</span>;
-
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
 
 <span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
 
@@ -2164,9 +2157,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a2_string.a1_valores</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2244,9 +2235,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a2_string.a2_concatenacion</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -2313,9 +2302,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_relacional.a2_numericos</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2379,9 +2366,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_relacional.a4_char</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2440,9 +2425,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_relacional.a3_boolean</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2510,9 +2493,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_relacional.a1_string</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2574,9 +2555,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a2_sentenciasSimples.a1_salida</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2683,9 +2662,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a2_sentenciasSimples.a2_entrada</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2801,9 +2778,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a2_sentenciasSimples.a3_variable</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -2941,9 +2916,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a2_sentenciasSimples.a4_asignacion</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3048,9 +3021,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a2_sentenciasSimples.a5_constante</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3192,9 +3163,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a3_operadores.a1_bits</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
     
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3285,9 +3254,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a3_operadores.a3_ternario</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3408,9 +3375,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a3_operadores.a4_acumulador</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3540,9 +3505,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a3_operadores.a5_incrementoDecremento</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3667,9 +3630,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a3_operadores.a2_conversion</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3759,9 +3720,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a4_expresiones.a1_asociatividad</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -3827,9 +3786,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a4_expresiones.a2_parentesis</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -4031,9 +3988,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a1_alternativa</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
     
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -4178,8 +4133,6 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a2_iterativa</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
 <span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
@@ -4287,9 +4240,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a3_secuencial.a1_sinVariables</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -4375,9 +4326,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a3_secuencial.a2_conVariables</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -4466,9 +4415,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a3_secuencial.a4_agrupacion</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -4723,53 +4670,48 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a1_creacion</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
-        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}); <span class="comment">//</span>
-        console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }); <span class="comment">// 1 2 3 4 5</span>
-        <span class="keyword">for</span> (<span class="predefined-type">String</span> x : <span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span> { <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span> }) {
-            console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">for</span> (<span class="type">int</span> value : <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}) {
+            console.write(value); <span class="comment">//</span>
         }
-        console.writeln(); <span class="comment">// Javascript, Java, Scala</span>
-        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span> { <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span> }); <span class="comment">// Javascript Java Scala</span>
+        console.writeln();
+        <span class="keyword">for</span> (<span class="type">int</span> value : <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 2, 3, 4, 5,</span>
+        }
+        console.writeln();
+        <span class="keyword">for</span> (<span class="predefined-type">String</span> value : <span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span> { <span class="string"><span class="delimiter">&quot;</span><span class="content">Java</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Javascript</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Scala</span><span class="delimiter">&quot;</span></span> }) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// Javascript, Java, Scala</span>
+        }
+        console.writeln();
         <span class="keyword">for</span> (<span class="type">boolean</span> value : <span class="keyword">new</span> <span class="type">boolean</span><span class="type">[]</span> { <span class="predefined-constant">false</span>, <span class="predefined-constant">true</span> }) {
-            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// false, true</span>
         }
-        console.writeln(); <span class="comment">// false, true</span>
+        console.writeln();
         <span class="type">boolean</span> b = <span class="predefined-constant">false</span>;
         <span class="keyword">for</span> (<span class="type">boolean</span> x : <span class="keyword">new</span> <span class="type">boolean</span><span class="type">[]</span> { <span class="predefined-constant">true</span>, b, <span class="integer">5</span> + <span class="integer">6</span> &gt; <span class="integer">5</span> - <span class="integer">6</span> }) {
-            console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            console.write(x + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// true, false, true,</span>
         }
-        console.writeln(); <span class="comment">// true, false, true,</span>
-
+        console.writeln();
         <span class="keyword">for</span> (<span class="type">char</span><span class="type">[]</span> vowels : <span class="keyword">new</span> <span class="type">char</span><span class="type">[]</span><span class="type">[]</span> {
                 { <span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">e</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">i</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">u</span><span class="delimiter">'</span></span> },
                 { <span class="string"><span class="delimiter">'</span><span class="content">A</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">E</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">I</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">O</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">U</span><span class="delimiter">'</span></span> } }) {
             <span class="keyword">for</span> (<span class="type">char</span> vowel : vowels) {
-                console.write(vowel + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+                console.write(vowel + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// a, e, i, o, u, A, E, I, O, U</span>
             }
-            console.writeln();
         }
-        <span class="comment">// a, e, i, o, u,</span>
-        <span class="comment">// A, E, I, O, U</span>
-
+        console.writeln();
         <span class="keyword">for</span> (<span class="type">char</span><span class="type">[]</span> row : <span class="keyword">new</span> <span class="type">char</span><span class="type">[]</span><span class="type">[]</span> {
                 { <span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span> },
                 { <span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">o</span><span class="delimiter">'</span></span> },
                 { <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">x</span><span class="delimiter">'</span></span> } }) {
             <span class="keyword">for</span> (<span class="type">char</span> token : row) {
-                console.write(token + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+                console.write(token + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// x, ,o, x, o, o, , ,x</span>
             }
-            console.writeln();
         }
-        console.writeln(); <span class="comment">// x, ,o</span>
-        <span class="comment">// x,o,o,</span>
-        <span class="comment">// , ,x</span>
-
+        console.writeln();
         <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span><span class="type">[]</span> tableData : <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span><span class="type">[]</span><span class="type">[]</span> {
                 {
                         { <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span> },
@@ -4778,24 +4720,25 @@ cualquier sistema operativo</p>
                 {
                         {},
                         { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span> } } }) {
-            <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span> rowData : tableData) {
-                <span class="keyword">for</span> (<span class="type">int</span> value : rowData) {
-                    console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>);
+            <span class="keyword">for</span> (<span class="type">int</span><span class="type">[]</span> row : tableData) {
+                <span class="keyword">for</span> (<span class="type">int</span> value : row) {
+                    console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 0, 0, 0, 0, 0, 0, 1, 2, 3, 4</span>
                 }
             }
         }
-        console.writeln(); <span class="comment">// 0,0,0,0,0,0,1,2,3,4</span>
-        
-        console.writeln(<span class="keyword">new</span> <span class="type">int</span>[<span class="integer">3</span> * <span class="integer">2</span>]); <span class="comment">// 0 0 0 0 0 0</span>
-        <span class="type">int</span> length = <span class="integer">3</span>;
-        <span class="keyword">for</span>(<span class="type">boolean</span><span class="type">[]</span> row : <span class="keyword">new</span> <span class="type">boolean</span>[length][<span class="integer">2</span>]){
-            console.writeln(row); 
+        console.writeln();
+        <span class="keyword">for</span> (<span class="type">int</span> value : <span class="keyword">new</span> <span class="type">int</span>[<span class="integer">3</span> * <span class="integer">2</span>]) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 0, 0, 0, 0, 0, 0,</span>
         }
-        <span class="comment">// false false</span>
-        <span class="comment">// false false</span>
-        <span class="comment">// false false</span>
-
-        <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> amedias  = <span class="keyword">new</span> <span class="type">int</span>[<span class="integer">10</span>]<span class="type">[]</span>;
+        console.writeln();
+        <span class="type">int</span> length = <span class="integer">3</span>;
+        <span class="keyword">for</span> (<span class="type">boolean</span><span class="type">[]</span> row : <span class="keyword">new</span> <span class="type">boolean</span>[length - <span class="integer">1</span>][<span class="integer">2</span>]) {
+            <span class="keyword">for</span> (<span class="type">boolean</span> value : row) {
+                console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// false, false, false, false,</span>
+            }
+        }
+        console.writeln();
+        <span class="type">int</span><span class="type">[]</span><span class="type">[]</span> notIntsOnlyRows = <span class="keyword">new</span> <span class="type">int</span>[<span class="integer">10</span>]<span class="type">[]</span>;
     }
 }</code></pre>
 </div>
@@ -4860,23 +4803,21 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a2_acceso</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
         console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">0</span>]); <span class="comment">// 1</span>
         console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>, <span class="integer">4</span>, <span class="integer">5</span> }[<span class="integer">4</span>]); <span class="comment">// 5</span>
         <span class="comment">//console.writeln(new int[] { 1, 2, 3, 4, 5 }[5]); // ERROR</span>
-
         console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
             { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> }, 
             { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">0</span>][<span class="integer">0</span>]); <span class="comment">// a</span>
-        console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
+        <span class="keyword">for</span>(<span class="predefined-type">String</span> value : <span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
             { <span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">b</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">c</span><span class="delimiter">&quot;</span></span> }, 
-            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">1</span>]); <span class="comment">// x - y - z</span>
-
+            { <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> } }[<span class="integer">1</span>]){
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// x, y, z,</span>
+        }
         console.writeln();
         console.writeln(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">0</span>, <span class="integer">1</span>, <span class="integer">2</span> }.length); <span class="comment">// 3</span>
         console.writeln(<span class="keyword">new</span> <span class="predefined-type">String</span><span class="type">[]</span><span class="type">[]</span> { 
@@ -4936,9 +4877,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a3_referencia</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
     <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
         Console console = <span class="keyword">new</span> Console();
@@ -4957,30 +4896,54 @@ cualquier sistema operativo</p>
         console.writeln(primitive2); <span class="comment">// 2</span>
 
         <span class="type">int</span><span class="type">[]</span> array1 = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span> };
+        <span class="keyword">for</span>(<span class="type">int</span> value : array1) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 2, 3</span>
+        }
+        console.writeln();
         <span class="type">int</span><span class="type">[]</span> array2 = array1;
-        console.writeln(array1); <span class="comment">// 1,2,3</span>
-        console.writeln(array2); <span class="comment">// 1,2,3</span>
+        <span class="keyword">for</span>(<span class="type">int</span> value : array2) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 2, 3</span>
+        }
+        console.writeln();
         array1[<span class="integer">1</span>] = <span class="integer">666</span>;
-        console.writeln(array1); <span class="comment">// 1,666,3</span>
-        console.writeln(array2); <span class="comment">// 1,666,3</span>
+        <span class="keyword">for</span>(<span class="type">int</span> value : array1) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3</span>
+        }
+        console.writeln();
+        <span class="keyword">for</span>(<span class="type">int</span> value : array2) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3</span>
+        }
+        console.writeln();
         console.writeln(array1 == array2); <span class="comment">// true</span>
 
         array1 = <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> { <span class="integer">1</span>, <span class="integer">666</span>, <span class="integer">3</span> };
-        console.writeln(array1); <span class="comment">// 1,666,3</span>
-        console.writeln(array2); <span class="comment">// 1,666,3</span>
+        <span class="keyword">for</span>(<span class="type">int</span> value : array1) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3</span>
+        }
+        console.writeln();
+        <span class="keyword">for</span>(<span class="type">int</span> value : array2) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3</span>
+        }
+        console.writeln();
         console.writeln(array1 == array2); <span class="comment">// false</span>
 
         array2[<span class="integer">1</span>] = <span class="integer">0</span>;
-        console.writeln(array1); <span class="comment">// 1,666,3</span>
-        console.writeln(array2); <span class="comment">// 1,0,3</span>
+        <span class="keyword">for</span>(<span class="type">int</span> value : array1) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3</span>
+        }
+        console.writeln();
+        <span class="keyword">for</span>(<span class="type">int</span> value : array2) {
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 0, 3</span>
+        }
+        console.writeln();
         console.writeln(array1 == array2); <span class="comment">// false</span>
 
         <span class="keyword">for</span> (<span class="type">int</span> value : array1) {
-            console.writeln(value); <span class="comment">// 1 / 666 / 3</span>
+            console.write(value + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 1, 666, 3,</span>
         }
         console.writeln();
         <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; array1.length; i++) {
-            console.writeln(i + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + array1[i]); <span class="comment">// 0: 1 / 1: 666 / 2: 3</span>
+            console.writeln(i + <span class="string"><span class="delimiter">&quot;</span><span class="content">: </span><span class="delimiter">&quot;</span></span> + array1[i] + <span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>); <span class="comment">// 0: 1, 1: 666, 2: 3,</span>
         }
         console.writeln();
     }
@@ -5031,9 +4994,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a4_modificacion</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -5099,9 +5060,7 @@ cualquier sistema operativo</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a2_estructurada.a4_tablas.a5_null</span>;
 
-<span class="keyword">import</span> <span class="include">es.usantatecla.utils.Console</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+<span class="type">class</span> <span class="class">App</span> {
 
   <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
     Console console = <span class="keyword">new</span> Console();
@@ -5189,45 +5148,6 @@ cualquier sistema operativo</p>
 <div class="sect1">
 <h2 id="programación-basada-a-objetos">Programación Basada a Objetos</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="vista-pública-de-las-clases">Vista Pública de las Clases</h3>
-<div class="sect3">
-<h4 id="nombre-de-la-clase">Nombre de la Clase</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-<th class="tableblock halign-left valign-top" colspan="2">*<em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span>  &lt;<span class="class">NombreClase</span>&gt; {
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Coordinate</span> {
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -5297,6 +5217,45 @@ cualquier sistema operativo</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="vista-pública-de-las-clases">Vista Pública de las Clases</h3>
+<div class="sect3">
+<h4 id="nombre-de-la-clase">Nombre de la Clase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span>  &lt;<span class="class">NombreClase</span>&gt; {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Coordinate</span> {
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="cabecera-de-métodos-de-la-clase">Cabecera de Métodos de la Clase</h4>
@@ -5317,38 +5276,45 @@ cualquier sistema operativo</p>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> &lt;tipo1&gt; &lt;nombreMetodo&gt; ( [&lt;tipo2&gt; &lt;parametro&gt;, ...])</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> &lt;tipo1&gt; &lt;nombreMetodo&gt; ( {&lt;tipo2&gt; &lt;parametro&gt;, ...}* )</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>el <em>tipo<sub>1</sub></em> indica el tipo del valor devuelto, que puede ser:_</p>
+<p>el <em>tipo<sub>1</sub></em> indica el <strong class="blue">tipo del valor devuelto</strong>, que puede ser:_</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>void</em>, nada</p>
+<p><strong class="blue"><em>void</em></strong>, nada, dado que el efecto será un cambio de estado en el objeto y/o sistema</p>
 </li>
 <li>
-<p><em>&lt;primitivo/Clase&gt;</em>, un valor de tipo primitivo o una referencia a un objeto de una clase</p>
+<p><em>&lt;primitivo/Clase&gt;</em>, un <span class="blue">valor de tipo primitivo o una referencia a un objeto de una clase</span></p>
 </li>
 <li>
-<p><em>&lt;primitivo/Clase&gt;[]</em>, una referencia a un vector de valores de tipos primitivos o de referencias a objetos</p>
+<p><em>&lt;primitivo/Clase&gt;[]</em>, <span class="blue">una referencia a un vector de valores de tipos primitivos o de referencias a objetos</span></p>
 </li>
 <li>
-<p><em>&lt;primitivo/Clase&gt;[][]</em>, una referencia a una matriz de valores de tipos primitivos o de referencias a objetos</p>
+<p><em>&lt;primitivo/Clase&gt;[][]</em>, <span class="blue">una referencia a una matriz de valores de tipos primitivos o de referencias a objetos</span></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>el nombre del método debe comenzar con minúscula_</p>
+<p>el <strong class="blue">nombre del método</strong> debe comenzar con minúscula_</p>
 </li>
 <li>
 <p>el <em>tipo<sub>2</sub></em> puede ser igual que <em>tipo<sub>1</sub></em> excepto_ <strong class="red"><em>void</em></strong></p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p>todos los parámetros son pasados_ <strong class="blue"><em>por valor</em></strong></p>
+<p>todos los <strong class="blue">parámetros son pasados por valor</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -5841,15 +5807,19 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <h3 id="vista-privada-de-las-clases">Vista Privada de las Clases</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 24%;">
+<col style="width: 22%;">
+<col style="width: 18%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-middle"><strong class="blue">Definición de Atributos</strong></th>
-<th class="tableblock halign-center valign-middle"><strong class="blue">Definición de Métodos</strong></th>
-<th class="tableblock halign-center valign-middle"><strong class="green">Aserciones</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición de Atributos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición de Constructores</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición de Métodos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Referencia <em>this</em></strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Métodos privados</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -5864,14 +5834,58 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><span class="blue">operaciones con sentencias secuenciales, alternativos, iterativas, de retorno y/o expresiones (asignación)</span></p>
+<p><span class="blue">inicialización de los atributos de la clase</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
+<p><span class="blue">operaciones con sentencias secuenciales, alternativos, iterativas, expresiones (asignación) y/o de retorno</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">para la resolución de colisión de identificadores y reutilización de métodos dentro de la clase</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">para la reutilización de métodos dentro de la clase</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="green">Aserciones</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Objetos valor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><span class="green">verificación del correcto estado del entorno del mensaje, atributos, parámetros, entorno, &#8230;&#8203;</span> para la <strong class="green">seguridad al procesar los datos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">clases cuyos objetos no cambian de estado (conjunto de estados de sus atributos) tras su creación</span></p>
 </li>
 </ul>
 </div></div></td>
@@ -5883,24 +5897,22 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 22.2222%;">
+<col style="width: 27.7778%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Se <strong class="blue">declaran variables de tipos primitivos, referencias a objetos o vectores</strong> de éstos</p>
+<p>Se <strong class="blue">declaran variables y/o constantes de tipos primitivos, referencias a objetos o vectores</strong> de éstos</p>
 </li>
 <li>
-<p>anteponiendo la palabra <strong>private</strong> o, exepcionalmente para <strong class="blue">constantes</strong> (<em>Se tratarán posteriormente;</em> ), <strong class="red">public</strong>;</p>
+<p>anteponiendo la palabra <strong class="blue">private</strong></p>
 <div class="ulist">
 <ul>
 <li>
 <p>En <span class="red">cualquer punto de la implementación</span> de la clase pero lo lógico es <span class="green">al principio de la declaración de la clase</span></p>
-</li>
-<li>
-<p>A <strong class="blue">falta de inicialización explícita</strong>, se inicializan a <strong class="blue">valores por defecto</strong>, dependiendo de su tipo (<span class="blue"><em>0</em> para tipos numéricos, <em>false</em> para el tipo <em>boolean</em>, caracter nulo para tipo <em>char</em>  y <em>null</em> para referencias</span>);</p>
 </li>
 </ul>
 </div>
@@ -5916,17 +5928,6 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 }</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Ejemplos</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
@@ -5936,15 +5937,26 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div>
 </div></div></td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="definición-de-constructores">Definición de constructores</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización al cuerpo de todos los constructores obligatoriamente</strong>.</p>
+<p>Reservado para las <strong class="blue">tareas de inicialización de los atributos</strong> del objeto, evitando la creación de objetos incosistentes</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Una vez <span class="blue">inicializadas, ya no es posible la asignación de nuevos valores</span>.</p>
+<p>A <strong class="blue">falta de inicialización explícita</strong>, <strong class="red">no recomendado</strong>, se inicializan a <strong class="blue">valores por defecto</strong>, dependiendo de su tipo (<span class="blue"><em>0</em> para tipos numéricos, <em>false</em> para el tipo <em>boolean</em>, caracter nulo para tipo <em>char</em>  y <em>null</em> para referencias</span>);</p>
 </li>
 </ul>
 </div>
@@ -5953,17 +5965,26 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Person</span>  {
-  <span class="directive">public</span> <span class="directive">final</span> <span class="type">short</span> ADULT = <span class="integer">18</span>;
-  <span class="directive">private</span> <span class="type">short</span> age;
-  <span class="directive">private</span> <span class="directive">final</span> <span class="type">int</span> DNI;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span>
 
-  <span class="directive">public</span> Person(<span class="type">int</span> dni) {
-    age = <span class="integer">0</span>;
-    DNI = dni;
+  <span class="directive">private</span> <span class="type">double</span> min;
+  <span class="directive">private</span> <span class="type">double</span> max;
+
+  <span class="directive">public</span> Interval(){
+    min = <span class="integer">0</span>;
+    max = <span class="integer">0</span>;
   }
-  ...
-}</code></pre>
+
+  <span class="directive">public</span> Interval(<span class="type">double</span> maximum){
+    min = <span class="integer">0</span>;
+    max = maximum;
+  }
+
+  <span class="directive">public</span> Interval(<span class="type">double</span> minimum, <span class="type">double</span> maximum){
+    min = minimum;
+    max = maximum;
+  }
+  ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5979,37 +6000,24 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>En cualquier punto de la implementación de la clase, <strong class="blue">se define el cuerpo de las cabeceras de los métodos acompañándolos de una sentencia secuencial</strong> que contiene las declaraciones locales y sentencias que se consideren oportunas</p>
 <div class="ulist">
 <ul>
 <li>
-<p>La <strong class="blue">cabecera del método</strong> esta constituido por</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>public</strong></p>
+<p>dentro del cuerpo del método se tiene <strong class="blue">acceso a los atributos, los parámetros del método y a las declaraciones locales</strong> desde las expresiones de la anidación jerárquica de sentencias</p>
 </li>
 <li>
-<p><strong class="blue">tipo devuelto</strong> (tipo primitivo, referencia, array, &#8230;&#8203;) o <strong class="blue">void</strong>, sin información devuelta, para <strong class="blue">efecto lateral en un cambio de estado del objeto</strong></p>
-</li>
-<li>
-<p>secuencia entre paréntesis de <strong class="blue">parámetros</strong> separados por comas donde cada parámetro contiene <strong class="blue">un tipo y su identificador</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>dentro del cuerpo del método se tiene <strong class="blue">acceso a los atributos, los parámetros del método y a las declaraciones locales</strong> (<em>ley escrita de Demeter</em>) a través de la anidación de las sentencias secuenciales</p>
+<p>la <strong class="blue">notación punto</strong> para el paso de mensajes sirve también para acceder a los atributos de un objeto de la misma clase</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java">clase &lt;<span class="type">class</span>&gt; {
   <span class="directive">public</span> &lt;methodHeader&gt; &lt;sequentialSentence&gt;
@@ -6018,22 +6026,26 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 }</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Interval</span> {
-   <span class="directive">private</span> <span class="type">double</span> min;
-   <span class="directive">private</span> <span class="type">double</span> max;
+  <span class="directive">private</span> <span class="type">double</span> min;
+  <span class="directive">private</span> <span class="type">double</span> max;
 
-   <span class="directive">public</span> <span class="type">void</span> shift (<span class="type">double</span> amount) {
-     min += amount;
-     max += amount;
-   }
-   ...</code></pre>
+  <span class="directive">public</span> <span class="type">void</span> shift (<span class="type">double</span> amount) {
+    min += amount;
+    max += amount;
+  }
+
+  <span class="directive">public</span> Interval(Interval interval){
+    min = interval.min;
+    max = interval.max;
+  }
+
+  <span class="directive">public</span> <span class="type">boolean</span> equals(Intervalo interval) {
+    <span class="keyword">return</span> min == interval.min &amp;&amp; max == interval.max;
+  }
+  ...</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -6076,37 +6088,9 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>dado que los atributos son privados a la clase, <strong class="blue">se puede acceder a los atributos de un objeto de la clase que se está implementando mediante la notación punto</strong>:</p>
-</li>
-</ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">&lt;expression&gt;.&lt;atributo&gt;</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> equals(Intervalo interval) {
-  <span class="keyword">return</span> min == interval.min &amp;&amp; max == interval.max;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect4">
-<h5 id="referencia-this">Referencia <em>this</em></h5>
+<div class="sect3">
+<h4 id="referencia-this">Referencia <em>this</em></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 70%;">
@@ -6130,6 +6114,13 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <ul>
 <li>
 <p>Sirve para <strong class="blue">resolución de ambigüedades en la colisión</strong> de parámetros o declaraciones locales con el mismo nombre que los atributos;</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Evita la multiplicidad de identificadores innecesarios</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -6150,30 +6141,6 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 <col style="width: 65%;">
 </colgroup>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Sirve para la <strong class="blue">reutilización de métodos</strong> en la codificación de otros métodos;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> includes(Interval interval) {
-  <span class="keyword">return</span> <span class="local-variable">this</span>.includes(interval.min) &amp;&amp;
-    <span class="local-variable">this</span>.includes(interval.max);
-}
-
-<span class="directive">public</span> <span class="type">void</span> escale(<span class="type">double</span> escale) {
-  <span class="directive">final</span> <span class="type">double</span> newHalfLength = <span class="local-variable">this</span>.length()/<span class="integer">2</span> * escale;
-  <span class="directive">final</span> <span class="type">double</span> middlePoint = <span class="local-variable">this</span>.middlePoint();
-  <span class="local-variable">this</span>.min = middlePoint - newHalfLength;
-  tnis.max = middlePoint + newHalfLength;
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -6203,8 +6170,35 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sirve para la <strong class="blue">reutilización de métodos</strong> en la codificación de otros métodos;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> includes(Interval interval) {
+  <span class="keyword">return</span> <span class="local-variable">this</span>.includes(interval.min) &amp;&amp;
+    <span class="local-variable">this</span>.includes(interval.max);
+}
+
+<span class="directive">public</span> <span class="type">void</span> escale(<span class="type">double</span> escale) {
+  <span class="directive">final</span> <span class="type">double</span> newHalfLength = <span class="local-variable">this</span>.length()/<span class="integer">2</span> * escale;
+  <span class="directive">final</span> <span class="type">double</span> middlePoint = <span class="local-variable">this</span>.middlePoint();
+  <span class="local-variable">this</span>.min = middlePoint - newHalfLength;
+  tnis.max = middlePoint + newHalfLength;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="métodos-privados">Métodos privados</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 60%;">
@@ -6251,7 +6245,54 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </tr>
 </tbody>
 </table>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a1_classes/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a1_classes/App.java"><em>App</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="aserciones">Aserciones</h4>
@@ -6845,17 +6886,124 @@ Veces: -<span class="integer">1</span>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">interval</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a1_interval/classes/App.java"><em>classes</em></a></p>
+<p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_asserts/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_asserts/App.java"><em>App</em></a></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">date</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/classes/App.java"><em>classes</em></a></p>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
 </li>
 </ul>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="objetos-valor">Objetos Valor</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En el caso de que los atributos sean <strong class="blue">constantes, puede postergarse la inicialización obligatoria al cuerpo de todos los constructores</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una vez <span class="blue">inicializadas, ya no es posible la asignación de nuevos valores</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Person</span>  {
+  <span class="directive">public</span> <span class="directive">final</span> <span class="type">short</span> ADULT = <span class="integer">18</span>;
+  <span class="directive">private</span> <span class="type">short</span> age;
+  <span class="directive">private</span> <span class="directive">final</span> <span class="type">int</span> DNI;
+
+  <span class="directive">public</span> Person(<span class="type">int</span> dni) {
+    age = <span class="integer">0</span>;
+    DNI = dni;
+  }
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Fraction - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/Fraction.java"><em>Fraction</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/FractionView.java"><em>FractionView</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a3_values/App.java"><em>App</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">xxx</a> - <a href=""><em>xxx</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
@@ -8227,6 +8375,1660 @@ buffer.insert(<span class="integer">0</span>, <span class="string"><span class="
 <div class="sect1">
 <h2 id="programación-orientada-a-objetos">Programación Orientada a Objetos</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="relación-de-herencia">Relación de Herencia</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Transmisión</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La herencia en todos los ámbitos (derecho, biología, &#8230;&#8203;) tiene connotaciones de transmisión</p>
+</li>
+<li>
+<p>En Programación Orientada a Objetos es la transmisión de todos los miembros (atributos y métodos públicos y privados) de una clase a otra.</p>
+</li>
+<li>
+<p>Terminología:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">clase base</strong> para la que transmite y <strong class="blue">clase derivada</strong> a la que recibe la transmisión</p>
+</li>
+<li>
+<p>paralela a los <strong class="blue">árboles genealógicos</strong>: padre, hija, nieta &#8230;&#8203;</p>
+</li>
+<li>
+<p><strong class="red">superclase</strong> y <strong class="red">subclases</strong> en desuso</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Transmision.svg" alt="Transmision" width="193" height="325">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 48%;">
+<col style="width: 27%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Colaboración entre objetos</span></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las relaciones de <strong class="blue">composición, asociación y dependencia</strong> son relaciones binarias que devienen de la <strong class="blue">colaboración entre objetos</strong>: envío de mensajes entre objetos</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La relación de <strong class="blue">herencia</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>es una <strong class="blue">relación binaria</strong> entre clases</p>
+</li>
+<li>
+<p>si existe una relación de herencia, <span class="red">no es necesario que exista una colaboración entre los objetos</span> de sus clases aunque tampoco lo impide</p>
+</li>
+<li>
+<p>por tanto, los <strong class="blue">objetos de las clases de una relación de herencia</strong> son, <strong class="blue">a priori, independientes</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>La clase Persona hereda de la clase Animal</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>en una aplicación sobre la evolución de las especies, sus objetos no colaboran</em></p>
+</li>
+<li>
+<p><em>en una aplicación para la gestión de una granja, sus objetos sí colaboran</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Tipos de Relación de Herencia</strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>Herencia simple</em></strong>: cuando una clase derivada hereda de una única clase base.</p>
+</li>
+<li>
+<p><strong class="blue"><em>Herencia múltiple</em></strong>: cuando una clase derivada hereda de varias clases base.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/HerenciaSimple.svg" alt="HerenciaSimple" width="236" height="301">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/HerenciaMultiples.svg" alt="HerenciaMultiples" width="224" height="301">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="jerarquías-de-clasificación">Jerarquías de Clasificación</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una jerarquía por grado de clasificación es aquélla donde <strong class="blue">cada nodo (clases) de la jerarquía establece un dominio de elementos (conjuntos de objetos de la clase) incluido en el dominio de los nodos padre e incluye a los dominios de cada nodo hijo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="green">relación de herencia</strong> permite establecer jerarquías por grado de clasificación</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="blue">Características</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">Eminentemente subjetivas</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Ej. paciente de un hospital: publica/privada, por especialidad,&#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="red">Contemplan elementos que son dificilmente categorizables</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Ej. Ornotorrinco, pingüino, mula,&#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="red">Dificultad para establecer una clasificación "perfecta"</span></p>
+</li>
+<li>
+<p><strong class="green">Esqueleto fundamental de un programa junto con la jerarquía de composición</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Reglas de Construcción</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Regla de Generalización/Especialización</strong>: cuando existen unas características específicas de un subconjunto de elementos de un determinado conjunto más amplio, que pese a que mantienen las características esenciales e identificativas del conjunto al que pertenecen, también son lo suficientemente relevantes como para ser rasgos distintivos de dicho subconjunto de elementos.</p>
+</li>
+<li>
+<p><strong class="blue">Regla ¿Es un? (<em>ISA</em>)</strong>: responder afirmativamente que un objeto de la clase hija es un objeto de la clase padre.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Jerarquias.jpg" alt="height32">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Jerarquia.svg" alt="Jerarquia" width="641" height="846">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="herencia-por-extensión">Herencia por extensión</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 35%;">
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Mediante la palabra reservada <strong class="blue">extends</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No permite herencia múltiple</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">claseDerivada</span>&gt; <span class="directive">extends</span> &lt;claseBase&gt; {
+   ...
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Abuela</span> {
+  ...
+}
+<span class="type">class</span> <span class="class">Padre</span> <span class="directive">extends</span> Abuela {
+  ...
+}
+<span class="type">class</span> <span class="class">Hija</span> <span class="directive">extends</span> Padre {
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/HerenciaExtencion.svg" alt="HerenciaExtencion" width="97" height="301">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="especialización-por-adición">Especialización por adición</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 40%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Atributos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Métodos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Constructores</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">atributos añadidos en la clase hija</strong> tienen <strong class="blue">las mismas reglas sintácticas y semánticas que en una clase que no sea derivada</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">métodos añadidos en la clase hija</strong> tienen <strong class="blue">las mismas reglas sintácticas y semánticas que en una clase que no sea derivada</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">excepto que NO tienen acceso a los atributos y métodos privados transmitidos desde la clase padre</strong>, si no es <strong class="blue">a través de los métodos públicos transmitidos desde la clase padre</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Esto <strong class="green">permite la contención del mantenimiento</strong>, dado que, si se <strong class="green">modifica la implantación de la clase padre, no repercute sobre la implantación de la clase hija y se obtiene un mínimo acoplamiento</strong> entre ambas clases</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="type">class</span> &lt;<span class="class">Clase</span>&gt; {
+
+    <span class="directive">public</span> &lt;Clase&gt;({ &lt;parametro&gt; }* ){
+      <span class="local-variable">super</span>( { &lt;expresion&gt; }*);
+      ...
+    }
+  }</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mediante <strong class="blue"><em>super</em></strong>, donde debe ser la <span class="blue">primera sentencia de los constructores de la clase derivada y sus argumentos deben coincidir en número y tipo con la lista de parámetros de algún constructor público o protegido de la clase padre</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se <span class="blue">puede omitir para el caso del constructor de la clase padre con una lista vacía de parámetros</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Implicaciones sobre los objetos</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">objetos de la clase padre NO sufren ninguna alteración</strong> por la presencia de clases derivadas</p>
+</li>
+<li>
+<p>Los <strong class="blue">objetos de la clase hija</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>tienen todos los <strong class="blue">atributos transmitidos desde la clase padre junto con los atributos añadidos en la clase hija</strong>;</p>
+</li>
+<li>
+<p>responden a mensajes que corresponden con los <strong class="blue">métodos públicos transmitidos desde la clase padre junto con los métodos públicos añadidos en la clase derivada</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/HerenciaExtencion2.svg" alt="HerenciaExtencion2" width="212" height="187">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="miembros-protegidos">Miembros protegidos</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 26%;">
+<col style="width: 37%;">
+<col style="width: 37%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
+<p><strong class="red">Cuando la clase padre no transmite los métodos públicos necesarios para manipular los atributos privados transmitidos desde la clase padre en los métodos añadidos en la clase hija</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Visibilidad publica</strong> añadiendo dichos métodos públicos a la clase padre <strong class="red">NO es solución</strong> puesto que <strong class="red">rompe el principio de encapsulación</strong> ya que, <span class="red">para la implantación de una clase hija, los objetos de la clase padre dan a conocer más allá de lo que se les solicitaba previamente a la existencia de la clase derivada</span>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Visibilidad protegida (<em>protected</em>)</strong>, donde los miembros (atributos y/o métodos) son <strong class="blue">accesibles en la implantación de la clase y en cualquier clase derivada</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Atributos protegidos</strong> Dentro del cuerpo de los <span class="blue">métodos de la clase derivada se tiene acceso a los atributos protegidos heredados, a los atributos añadidos, a los parámetros del método y a las declaraciones locales</span>, <strong class="blue">ley flexible de Demeter</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implicación: <span class="red">desbordamiento del mantenimiento dado que si se modifica la implantación de la clase padre SI repercute sobre la implantación de la clase hija</span> y se obtiene un <strong class="red">máximo acoplamiento</strong> entre ambas clases</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Métodos <em>get/set</em> protegidos</strong> son métodos <span class="green">para obtener el valor y asignar un valor a los atributos privados transmitidos desde la clase padre</span>, <strong class="green">posibilitando cualquier manipulación por parte de la clase hija futura</strong>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implicación: <span class="green">contención del mantenimiento dado que si se modifica la implantación de la clase padre no repercute sobre la implantación de la clase hija</span> y se obtiene un <strong class="green">mínimo acoplamiento</strong> entre ambas clases</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="especialización-por-redefinición">Especialización por redefinición</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Donde la <strong class="blue">cabecera del método es exactamente igual a la cabecera del método no privado de la clase padre, excepto su visibilidad, que puede ampliarse</strong>. <strong class="red">En caso contrario, sería sobrecarga y no redifinición</strong></p>
+</li>
+<li>
+<p>Sus implicaciones son:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se <strong class="red">anula la transmisión del método de la clase padre</strong>;</p>
+</li>
+<li>
+<p>los <strong class="blue">objetos de la clase padre responden al mensaje con el comportamiento dado en la clase padre</strong>;</p>
+</li>
+<li>
+<p>los <strong class="blue">objetos de la clase hija responden al mensaje con el comportamiento dado en la clase hija</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/ListaCentinela.svg" alt="ListaCentinela" width="284" height="187">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="referencia-super">Referencia <em>super</em></h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">super</strong>, en la implantación de cualquier <strong class="blue">clase derivada, es una referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está redefiniendo, pero con el comportamiento de la clase padre</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Su utilidad será para la <strong class="red">reutilización del método de la clase padre, anulado en la transmición, desde la redefinición del método de la clase hija</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Conjunto.svg" alt="Conjunto" width="385" height="187">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clase-object">Clase <em>Object</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Toda clase "no derivada" explícitamente hereda implícitamente de la clase predefinida <em>Object</em></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Proporciona un conjunto de <strong class="blue">métodos comunes a todas las clases</strong>, algunos de ellos <span class="blue">susceptibles de ser redefinidos</span> en cualquier clase de la manera oportuna.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>además, métodos para la <span class="blue">sincronización</span> de programas concurrentes y para usar la <span class="blue">reflexión</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Object</span> {
+  <span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span>)
+  <span class="directive">public</span> <span class="predefined-type">String</span> toString()
+  <span class="directive">public</span> <span class="type">int</span> hashCode()
+  <span class="directive">protected</span> <span class="predefined-type">Object</span> clone()
+  <span class="directive">protected</span> <span class="type">void</span> finalize()
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clases-abstractas">Clases Abstractas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Clases Concretas</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Clases Abstractas</span></strong></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Surgen de la descripción de los atributos y métodos que definen el comportamiento de un cierto conjunto de objetos homogéneos</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son clases <strong>NO</strong> instanciables que surgen del factor común del código de otras clases con atributos comunes, métodos comunes y/o cabeceras de métodos comunes sin definición.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/ClassAbstracta.jpg" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>donde los métodos abstractos no pueden ser <em>private</em>.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>En un dispensador <strong>NO</strong> acotado se pueden meter o sacar elementos sin limitación para el número de elementos; una pila es un dispensador con política LIFO; una cola es una dispensador con política FIFO</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Dispensador.svg" alt="Dispensador" width="380" height="187">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">abstract</span> <span class="type">class</span> <span class="class">DispensadorNoAcotado</span> {
+  <span class="directive">protected</span> Nodo entrada;
+  <span class="directive">protected</span> DispensadorNoAcotado(){
+    entrada = <span class="predefined-constant">null</span>;
+  }
+
+ <span class="directive">public</span> <span class="type">void</span> meter(Intervalo intervalo){
+   entrada = <span class="keyword">new</span> Nodo(<span class="predefined-constant">null</span>, intervalo, entrada);
+ }
+
+ <span class="directive">public</span> <span class="directive">abstract</span> Intervalo sacar();
+
+ <span class="directive">public</span> <span class="type">boolean</span> vacio(){
+   <span class="keyword">return</span> entrada == <span class="predefined-constant">null</span>;
+
+ }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">PilaNoAcotada</span> <span class="directive">extends</span> DispensadorNoAcotado {
+  <span class="directive">public</span> Intervalo sacar() {
+    Intervalo intervalo = entrada.getIntervalo();
+    entrada = entrada.getSiguiente();
+    <span class="keyword">return</span> intervalo;
+  }
+}
+
+<span class="type">class</span> <span class="class">ColaNoAcotada</span> <span class="directive">extends</span> DispensadorNoAcotado {
+  <span class="directive">private</span> Nodo salida;
+  <span class="directive">public</span> ColaNoAcotada() {
+    salida = <span class="predefined-constant">null</span>;
+  }
+  <span class="directive">public</span> <span class="type">void</span> meter(Intervalo intervalo) {
+    <span class="type">boolean</span> vacio = <span class="local-variable">this</span>.vacio();
+    <span class="local-variable">super</span>.meter(intervalo);
+    <span class="keyword">if</span> (vacio) {
+      salida = entrada;
+    }
+}
+
+<span class="directive">public</span> Intervalo sacar() {
+  Intervalo intervalo = salida.getIntervalo();
+  <span class="keyword">if</span> (salida.getAnterior() == <span class="predefined-constant">null</span>) {
+    entrada = <span class="predefined-constant">null</span>;
+    salida = <span class="predefined-constant">null</span>;
+  } <span class="keyword">else</span> {
+    salida = salida.getAnterior();
+    salida.setSiguiente(<span class="predefined-constant">null</span>);
+  }
+  <span class="keyword">return</span> intervalo;
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Posibilidades:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>una clase abstracta puede ser hija de otra clase abstracta porque se especializa (añadiendo atributos y/o métodos y/o redefiniendo métodos) pero <strong>NO</strong> redefine todos los métodos abstractos transmitidos y/o añade algún método abstracto;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Alumno.svg" alt="Alumno" width="479" height="357">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>una clase abstracta puede ser hija de una clase concreta si en su especialización añade algún método abstracto</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/persona.svg" alt="persona" width="260" height="415">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un método no abstracto de una clase abstracta puede definirse apoyándose en métodos abstractos entendiendo que será un código que se transmite hasta clases concretas que redefinen los métodos abstractos;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Cubo</span> <span class="directive">extends</span> Solido {
+  <span class="directive">private</span> <span class="type">double</span> lado;
+  <span class="directive">public</span> <span class="type">double</span> volumen() {
+    <span class="keyword">return</span> <span class="predefined-type">Math</span>.pow(lado, <span class="integer">3</span>);
+  }
+}
+
+<span class="type">class</span> <span class="class">Esfera</span> <span class="directive">extends</span> Solido {
+  <span class="directive">private</span> <span class="type">double</span> radio;
+  <span class="directive">public</span> <span class="type">double</span> volumen() {
+    <span class="keyword">return</span> <span class="float">4.0</span> / <span class="float">3.0</span> * <span class="predefined-type">Math</span>.PI * <span class="predefined-type">Math</span>.pow(radio, <span class="integer">3</span>);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">abstract</span> <span class="type">class</span> <span class="class">Solido</span> {
+  <span class="directive">private</span> <span class="type">double</span> densidad;
+  <span class="directive">public</span> <span class="type">double</span> peso() {
+    <span class="keyword">return</span> densidad * <span class="local-variable">this</span>.volumen();
+  }
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">double</span> volumen();
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="herencia-por-implementación">Herencia por Implementación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Interfaces</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son clases abstractas <strong>puras</strong> que no contienen ningún atributo ni la definición de ningún método, sólo contienen métodos abstractos. Puede ser clases padre de clases u otros interfaces.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">interface</span> &lt;<span class="class">interfazBase</span>&gt; {
+    &lt;cabeceraMetodo1&gt;;
+    <span class="error">…</span>
+    &lt;cabeceraMetodoN&gt;;
+}
+
+[<span class="directive">abstract</span>] <span class="type">class</span> &lt;<span class="class">claseDerivada</span>&gt; <span class="directive">implements</span> &lt;interfazBase&gt; {
+    <span class="error">…</span>
+}
+
+<span class="type">interface</span> &lt;<span class="class">interfazDerivado</span>&gt; <span class="directive">extends</span> &lt;interfazBase&gt; {
+    <span class="error">…</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>donde todos los métodos del interfaz son públicos.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Un dispensador <strong>NO</strong> acotado es un dispensador implantado con listas dinámicas; un dispensador acotado es un dispensador implantado con vectores</p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/DispensadorHerencia.svg" alt="DispensadorHerencia" width="772" height="301">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong><span class="blue">Ejemplos</span></strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">interface</span> <span class="class">Dispensador</span> {
+  <span class="type">void</span> meter(Intervalo elemento);
+
+  Intervalo sacar();
+
+  <span class="type">boolean</span> vacio();
+
+}
+
+<span class="directive">abstract</span> <span class="type">class</span> <span class="class">DispensadorNoAcotado</span>
+        <span class="directive">implements</span> Dispensador {
+ <span class="error">…</span>
+  <span class="comment">// expuesto anteriormente</span>
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">abstract</span> <span class="type">class</span> <span class="class">DispensadorAcotado</span> <span class="directive">implements</span> Dispensador {
+
+  <span class="directive">protected</span> Intervalo<span class="type">[]</span> elementos;
+  <span class="directive">protected</span> <span class="type">int</span> cuantos;
+  <span class="directive">protected</span> <span class="type">int</span> siguiente;
+
+  <span class="directive">protected</span> DispensadorAcotado(<span class="type">int</span> tamaño) {
+    elementos = <span class="keyword">new</span> Intervalo[tamaño];
+    cuantos = <span class="integer">0</span>;
+    siguiente = <span class="integer">0</span>;
+  }
+
+  <span class="directive">public</span> <span class="type">void</span> meter(Intervalo intervalo) {
+    cuantos++;
+    elementos[siguiente] = intervalo;
+    siguiente++;
+}
+  <span class="directive">public</span> <span class="type">boolean</span> vacio() {
+    <span class="keyword">return</span> cuantos == <span class="integer">0</span>;
+}
+<span class="directive">public</span> <span class="type">boolean</span> lleno() {
+  <span class="keyword">return</span> cuantos == elementos.length;
+}
+  }
+  <span class="type">class</span> <span class="class">PilaAcotada</span> <span class="directive">extends</span> DispensadorAcotado {
+
+<span class="directive">public</span> PilaAcotada(<span class="type">int</span> tamaño) {
+  <span class="local-variable">super</span>(tamaño);
+}
+<span class="directive">public</span> Intervalo sacar() {
+  cuantos--;
+  siguiente--;
+  <span class="keyword">return</span> elementos[siguiente];
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">ColaAcotada</span> <span class="directive">extends</span> DispensadorAcotado {
+  <span class="directive">private</span> <span class="type">int</span> inicio;
+  <span class="directive">public</span> ColaAcotada(<span class="type">int</span> tamaño) {
+    <span class="local-variable">super</span>(tamaño);
+    inicio = <span class="integer">0</span>;
+  }
+
+<span class="directive">public</span> <span class="type">void</span> meter(Intervalo intervalo) {
+  <span class="local-variable">super</span>.meter(intervalo);
+  <span class="keyword">if</span> (siguiente == elementos.length)
+    siguiente = <span class="integer">0</span>;
+}
+
+<span class="directive">public</span> Intervalo sacar() {
+  cuantos--;
+  Intervalo intervalo = elementos[inicio];
+  inicio = (inicio + <span class="integer">1</span>) % elementos.length;
+  <span class="keyword">return</span> intervalo;
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un interfaz <strong>NO</strong> puede heredar de una clase de ninguna manera, pero <strong>SI</strong> puede heredar de otro interfaz por extensión</p>
+</li>
+<li>
+<p>Una clase <strong>SI</strong> puede heredar de una clase por extensión o de un interfaz por implementación</p>
+</li>
+<li>
+<p>La herencia por extensión <strong>NO</strong> disfruta de herencia múltiple, pero la herencia por implementación <strong>SI</strong> disfruta de herencia múltiple</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">claseDerivada</span>&gt;
+  <span class="directive">extends</span> &lt;claseBase&gt;
+  <span class="directive">implements</span> &lt;interfaz1&gt;, <span class="error">…</span>, &lt;interfazN&gt; {
+  <span class="error">…</span>
+}
+<span class="type">interface</span> &lt;<span class="class">interfazDerivado</span>&gt;
+  <span class="directive">extends</span> &lt;interfaz1&gt;, <span class="error">…</span>, &lt;interfazN&gt; {
+  <span class="error">…</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="limitaciones-de-la-herencia">Limitaciones de la  Herencia</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clases final</strong> no permiten ningún tipo de herencia posterior.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">final</span> <span class="type">class</span> &lt;<span class="class">clase</span>&gt; {
+  <span class="error">…</span>
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Metodos final</strong> no permiten ningún tipo de redefinición posterior.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">clase</span>&gt; {
+  <span class="error">…</span>
+  <span class="directive">final</span> &lt;metodo&gt;
+  <span class="error">…</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los enumerados son siempre <em>final.</em></p>
+</li>
+<li>
+<p>Un enumerado <strong>NO</strong> pueden heredar de una clase por extensión, pero <strong>SI</strong> puede heredar de un interfaz por implementación.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="beneficios-de-la-herencia">Beneficios de la Herencia</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 30%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Integridad de la Arquitectura del Software</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La herencia favorece la comprensión de la arquitectura del software.</p>
+</li>
+<li>
+<p>La jerarquía de clasificación de las clases establece los niveles de generalización que reducen significativamente el número de clases al estudiar en un diseño.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/X.svg" alt="X" width="250" height="301">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/X2.svg" alt="X2" width="250" height="187">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Reusabilidad del código</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Utilización del código de la clase padre previamente escrito, probado y documentado</p>
+</li>
+<li>
+<p>No es necesario duplicar código similar,todo el código común se "factoriza" en la clasee padre.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="polimorfismo">Polimorfismo</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Definición</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Término de origen griego que significa "muchas formas".</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Una persona puede pagar con tarjeta o con efectivo</em></p>
+</li>
+<li>
+<p><em>Una empresa de transporte realiza ventas de billetes por ventanilla o a travéz de una maquina</em></p>
+</li>
+<li>
+<p><em>Un sistema operativo imprime a travéz de drivers de impresora para cada modelo</em></p>
+</li>
+<li>
+<p><em>Un navegador muestra textos,imagenes,videos,&#8230;&#8203;,con muy diversos formatos</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>no se contempla que algo cambie de formas</p>
+</li>
+<li>
+<p>no se contempla que algo sea dos cosas a la vez</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Una persona ed ventanilla <strong>NO</strong> se convierte en máquina exprendedora</em></p>
+</li>
+<li>
+<p><em>Una persona <strong>NO</strong> es a la vez una máquina exprendedora</em></p>
+</li>
+<li>
+<p><em>Simplemente, un billete lo puede vender una persona o una máquina exprendedora en cada momento que se vende un billete</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 15%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Definición</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El polimorfizmo es una relajación del sistema de tipos, de tal manera que una referencia a una clase (atributo,parámetro o declaración local o elemento de un vector) acepta direcciones de objetos de dicha clase y de sus clases derivadas (hija,nieta,&#8230;&#8203;).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Por tanto:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>el polimorfizmo exije la existencia de una jerarquía de clacificación;</p>
+</li>
+<li>
+<p>las jerarquías de clasificación <strong>NO</strong> exigen tratamientos polimòrficos;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><em>En un punto dado, existen listas, en otro punto, existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Lista2.svg" alt="Lista2" width="121" height="187">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Polimorfismo.jpg" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>donde un objeto se crea de una clase y siempre será de esa clase mientras que la referencia coleccion puede tener, en un momento dado, una dirección de un objeto lista o de un objeto conjunto</p>
+</li>
+<li>
+<p>con la incorporación del polimorfismo, tiene sentido declarar referencias a clases abstractas con la intención de almacenar direcciones de objetos de clases concretas derivadas, NO de clases abstractas que no son instanciables;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>A lo largo de la historia, en este mundo existe la jerarquía de personas: mujeres y hombres. Pero en ciertos momento y en ciertos países, no existe polimorfismo: el lugar de una mujer no lo puede ocupar un hombre y el de un hombre no lo puede ocupar una mujer. Mientras que, en otros momentos u otros países, el lugar de una persona es indiferentemente ocupado por una mujer o un hombre.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Persona2.svg" alt="Persona2" width="200" height="215">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/Polimorfismo2.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Comportamiento:</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Limitación:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>donde no se contempla que una mujer se convierta en hombre o un hombre en mujer; ni se contempla que alguien sea mujer y hombre a la vez; lo único que se contempla es que una referencia a persona apunte a un objeto de la clase mujer u hombre</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>cuando se lanza un mensaje a un objeto a travéz de una referencia polimorfica se ejecuta el método prescrito en la clase del objeto que recibe el mensaje</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><span class="red">Ejemplo:</span></strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>En un punto dado, existen listas, en otro punto,existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/Polimorfismo3.jpg" alt="height32"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>cuando se lanza un mensaje a un objeto a travéz de una referencia polimorfica, éste debe estar contemplando en el interfaz de clase de la que se declaró la referencia sin contemplar los pocibles métodos añadidos en la clase del objeto apuntado.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><span class="red">Ejemplo:</span></strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>En un punto dado, existen listas, en otro punto,existen conjuntos y, en otro punto, pueden existir indiferentemente listas o conjuntos</em></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/Polimorfismo4.jpg" alt="height32"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="formalización">Formalización</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Enlace:</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es la asociación entre un elemento de un lenguaje de programación y una de sus características;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>una variable y su nombre, su valor, su dirección, su tipo,&#8230;&#8203;; una constante y su nombre, su valor, su dirección, su tipo,&#8230;&#8203;; una expreción y su número de operadores,su valor evaluado, su tipo,&#8230;&#8203;</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Tipo de Enlaces:</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong><em>Enlace estático:</em></strong> aquel enlace que se puede resolver analizando el código, o sea, en tiempo de compilación;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>una variable y su nombre, su tipo,&#8230;&#8203;; una constante y su nombre  su valor, su tipo,&#8230;&#8203;;una expreción y su número de operadores, su tipo,&#8230;&#8203;</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong><em>Enlase dinámico:</em></strong> aquel enlace que <strong>NO</strong> se puede resolver analizando el código sino que se resuelve en tiempo de ejecución;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>una varuiable y su valor,&#8230;&#8203;; una expreción y su valor evaluado</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Polimorfizmo:</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="red">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es un enlace dinámico entre una referencia y una clase de objeto apuntado por la referencia;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Lista coleccion;
+<span class="error">…</span>
+<span class="error">…</span> coleccion <span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Persona persona;
+<span class="error">…</span>
+<span class="error">…</span> persona <span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/ListaColeccion.jpg" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="polimorfismo-vs-sobrecarga">Polimorfismo vs sobrecarga</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Sobrecarga</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Ejemplos</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>es un enlace estático entre un mensaje y el método que se ejecuta;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">A</span> {
+  <span class="directive">public</span> <span class="type">void</span> m()
+  <span class="directive">public</span> <span class="type">void</span> m(A a)
+  <span class="directive">public</span> <span class="type">void</span> m(B b)
+  <span class="directive">public</span> A m(B b, C c)
+  <span class="directive">public</span> B m(A a, C c)
+}
+<span class="type">class</span> <span class="class">B</span> {
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">C</span> {
+}
+<span class="error">…</span>
+
+A a;
+B b;
+C c;
+a.m(b, c).m();
+b = a.m(a, c);
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="beneficios-del-polimorfismo">Beneficios del Polimorfismo</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Abstracción</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Extensibilidad</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+“Entonces es el receptor del mensaje el que determina cómo se interpretará el mensaje y no lo hará el emisor. El emisor sólo necesita conocer qué comportamiento puede desarrollar el otro objeto, no qué clase de objeto cree que es y, por tanto, qué método realiza en cada instante el comportamiento. Esto es una herramienta extremadamente importante para permitirnos desarrollar sistemas flexibles. De esta manera, sólo tenemos especificado qué ocurre pero no cómo ocurrirá. Mediante esta forma de delegar qué ocurrirá, se obtiene un sistema flexible y resistente a las modificaciones”
+</blockquote>
+<div class="attribution">
+&#8212; Jacobson (creador de los Casos de Uso)<br>
+<cite>1992</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+“Emplear las consultas de tipo durante la ejecución para implantar un enunciado de conmutación – estructura de control de flujo CASE o IF-THEN-ELSE encadenados – en un campo de tipo destruye toda la modularidad de un programa y anula los objetivos de la programación orientada a objetos. También es propensa a errores; […] La experiencia demuestra que los programadores que se formaron con lenguajes como Pascal o C encuentran esta trampa muy difícil de resistir. Una razón es que este estilo requiere menos premeditación […]; en este contexto, semejante falta de premeditación muchas veces no es más que una chapuza.”
+</blockquote>
+<div class="attribution">
+&#8212; Stroustrup (creador de C++)<br>
+<cite>1993</cite>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>!!! No se puede preguntar por la clase de un objeto polimórfico!!!</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="converción-de-tipos">Converción de Tipos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Conversión ascendente (upcast)</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Conversión descendente (downcast)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>cuando se transforma una dirección de un objeto de una clase a una dirección del objeto pero de una clase ascedente (padre, abuela, …) ;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>cuando se transforma una dirección de un objeto de una clase a una dirección del objeto pero de una clase derivada (hija, nieta, …) ;</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Conversión implícita:</em> por conversión ascendente cuando se asigna una dirección de un objeto de una clase a una referencia declarada a una clase ascendente;</p>
+</li>
+<li>
+<p><em>Conversión explícita: por conversión descendente a través del operador de conversión de tipos (cast);</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">(&lt;tipo&gt;) &lt;direccion&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Lista lista = <span class="keyword">new</span> Lista();
+Conjunto conjunto = <span class="keyword">new</span> Conjunto()
+Lista coleccion = <span class="keyword">new</span> Conjunto();
+Conjunto resultado;
+resultado = conjunto.interseccion(coleccion); <span class="comment">// ERROR</span>
+resultado = conjunto.interseccion((Conjunto) coleccion);
+resultado = coleccion.interseccion(conjunto); <span class="comment">// ERROR</span>
+resultado = ((Conjunto) coleccion).interseccion(conjunto);
+((Conjunto) lista).interseccion(conjunto); <span class="comment">// ERROR DE</span>
+                                          <span class="comment">// EJECUCION</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 15%;">
@@ -8287,6 +10089,7 @@ buffer.insert(<span class="integer">0</span>, <span class="string"><span class="
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <div class="sect1">
