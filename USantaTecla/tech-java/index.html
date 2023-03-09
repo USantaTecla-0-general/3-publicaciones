@@ -583,8 +583,17 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#converción-de-tipos">Converción de Tipos</a></li>
 </ul>
 </li>
-<li><a href="#programación-modular">Programación Modular</a></li>
-<li><a href="#programación-con-aserciones-y-excepciones">Programación con Aserciones y Excepciones</a></li>
+<li><a href="#programación-modular">Programación Modular</a>
+<ul class="sectlevel2">
+<li><a href="#jerarquía-de-paquetes">Jerarquía de Paquetes</a></li>
+<li><a href="#visibilidad-de-clasificadores">Visibilidad de Clasificadores</a></li>
+<li><a href="#importación-de-clasificadores">Importación de Clasificadores</a></li>
+<li><a href="#visibilidad-de-miembros">Visibilidad de Miembros</a></li>
+<li><a href="#paquetes-y-herencia">Paquetes y Herencia</a></li>
+<li><a href="#api-de-j2se">API de J2SE</a></li>
+</ul>
+</li>
+<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
 <li><a href="#programación-parametrizada">Programación Parametrizada</a></li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
@@ -10095,11 +10104,970 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 <div class="sect1">
 <h2 id="programación-modular">Programación Modular</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Modularidad</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Niveles</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Proceso de descomposición de un sistema (en nuestro caso, software) en un conjunto de módulos <span class="blue">poco acoplados (independientes) y altamente cohesivos (con significado propio)</span>;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Clases</strong>, módulos <span class="blue">elementales en los que se descompone un programa/ biblioteca/ aplicación</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Paquetes</strong>, agrupan un <span class="blue">conjunto de clases estrechamente relacionadas</span> entre sí</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Bibliotecas</strong>, agrupan un <span class="blue">conjunto de paquetes que proporcionan un conjunto de funcionalidades genéricas</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Aplicaciones</strong>, agrupan un <span class="blue">conjunto de paquetes y bibliotecas, para proporcionar un conjunto de funcionalidades específicas</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="green">Beneficios</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Reusabilidad</strong>, permiten <span class="green">fomentar la reutilización</span> en muchos programas diferentes</p>
+</li>
+<li>
+<p><strong class="green">Encapsulación</strong>, permiten <span class="green">ocultar la implementación del módulo de su interfaz</span>, lo que redunda en una mayor capacidad para sustituir un módulo por otro con la misma funcionalidad, facilitando el mantenimiento de las aplicaciones</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Espacios de nombres</strong>, permiten <span class="green">resolver colisiones entre los nombres de los identificadores</span> usados en cada módulo</p>
+</li>
+<li>
+<p><strong class="green">Arquitectura</strong>, permiten <span class="green">organizar los componentes de los que se compone el programa y las relaciones entre estos elementos</span></p>
+</li>
+<li>
+<p><strong class="green">Desarrollo en equipo</strong>, permiten <span class="green">separar responsabilidades entre distintos grupos de desarrolladores</span>, que pueden implementar y probar cada módulo independientemente y en paralelo</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="jerarquía-de-paquetes">Jerarquía de Paquetes</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Nombres de paquetes</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Permite agrupar un <span class="blue">conjunto de clases, interfaces y enumerados, junto con archivos de recursos</span> (como textos, imágenes, sonidos, &#8230;&#8203;) en paquetes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Un paquete puede contener, a su vez, otros paquetes, lo que produce una <strong class="blue">organización jerárquica</strong> y debe situarse en un <span class="blue">directorio del sistema operativo</span>, de acuerdo a la jerarquía de paquetes, cuya raíz puede estar en cualquier directorio</p>
+</li>
+<li>
+<p>Cada paquete tiene un <span class="blue">nombre, que comienza por minúsculas y que corresponde con la jerarquía de directorios</span> del sistema operativo</p>
+</li>
+<li>
+<p>El <span class="blue">nombre del paquete debe ser único</span> (como los directorios dentro de un directorio), lo cual es problemático si puede usarse en cualquier lugar del mundo, en cuyo caso, la ruta del nombre de los paquetes deberían comenzar con un <span class="blue">nombre de dominio de Internet de la institución de desarrollo, en orden inverso</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  &lt;paquete1&gt;.&lt;paquete2&gt;. ... .&lt;paqueteN&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  pooa.util.pooa.ter.modelos</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Ejemplo.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  es.upm.eui.lpsi.pooa.util</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Ejemplo2.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Clasificadores en paquetes</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para <strong class="blue">añadir una clase, interface y/o enumerado a un paquete</strong> (clasificadores), hay que situar su fichero fuente en el directorio del paquete y, en la primera línea del código (sin contar los comentarios), escribir la sentencia de declaración de paquete <strong class="blue"><em>package</em></strong>, para indicar que el <span class="blue">clasificador pertenece a ese paquete</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>En un fichero fuente <strong class="blue">sólo puede aparecer una declaración de paquete</strong></p>
+</li>
+<li>
+<p>Si en un fichero fuente <span class="red">no se especifica ningún paquete, la clase pertenecerá a un paquete sin nombre por defecto</span>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Esto puede ser útil en el caso de aplicaciones con pocas clases</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="keyword">package</span> &lt;<span class="namespace">paquete1</span>&gt;.&lt;<span class="namespace">paquete2</span>&gt;. ... &lt;<span class="namespace">paqueteN</span>&gt;;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Ejemplo3.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="keyword">package</span> <span class="namespace">pooa.ter.modelos</span>;
 
+  <span class="type">class</span> <span class="class">MTablero</span> {
+    ...
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="visibilidad-de-clasificadores">Visibilidad de Clasificadores</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La visibilidad de las clases de un paquete es:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases declaradas <strong class="blue"><em>public</em></strong> son <strong class="blue">accesibles desde cualquier código exterior al paquete</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si hay una <strong class="blue">clase publica, entonces el nombre del fichero debe coincidir con el nombre de esa clase, y con extensión <em>.java</em></strong></p>
+</li>
+<li>
+<p>En <span class="blue">un fichero fuente puede haber varias declaraciones</span> de clases, pero <span class="blue">como máximo una de ellas puede ser <em>public</em></span>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La recomendación es disponer <span class="green">los clasificadores en distintos ficheros</span>, siendo <span class="red">excepcional y poco recomendado</span> para alguna clase auxiliar</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Las <span class="blue">clases NO declaradas <em>public</em></span> sólo son <strong class="blue">accesibles solo desde el código de ese paquete</strong> (tampoco desde sus subpaquetes);</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>MTablero.java</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>package pooa.ter.modelos;
+
+public class MTablero {
+ ...
+}</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>CAbrir.java</em></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>package pooa.ter.controladores;
+
+public class CAbrir {
+  ...
+}
+class CPoner {
+  ...
+}
+class CMover {
+  ...
+}</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="importación-de-clasificadores">Importación de Clasificadores</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Acceso a las clases</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">acceder a las clases con visibilidad pública de un paquete desde la implementación de una clase de otro paquete, requiere la importación de dichas clases</strong></p>
+</li>
+<li>
+<p><strong class="green">acceder a las clases del mismo paquete no tiene ninguna implicación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">acceder a las clases con visibilidad de paquete desde una clase de otro paquete está prohibido</strong></p>
+</li>
+<li>
+<p><strong class="red">acceder a las clases del paquete por defecto desde una clase de otro paquete está prohibido</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Importación explícita</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para <span class="blue">acceder a una clase con visibilidad pública declarada en un paquete desde una clase de otro paquete</span>, debe usarse la <strong class="blue">sentencia de importación <em>import</em></strong> de un único tipo, <span class="blue">especificando el nombre completamente calificado de la clase</span> a la que se desea acceder</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Deben aparecer en un fichero fuente <strong class="blue">después de la declaración de paquete y antes de cualquier clasificador</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> &lt;<span class="namespace">paqueteX</span>&gt;.&lt;<span class="namespace">paqueteY</span>&gt;. ... .&lt;<span class="namespace">paqueteZ</span>&gt;;
+
+<span class="keyword">import</span> &lt;<span class="include">paquete</span>&gt;.&lt;<span class="include">Clasificador</span>&gt;;
+
+<span class="type">class</span> &lt;<span class="class">Clase</span>&gt; {
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">pooa.ter.controladores</span>;
+
+<span class="keyword">import</span> <span class="include">pooa.ter.modelos.MTablero</span>;
+<span class="keyword">import</span> <span class="include">pooa.ter.modelos.MTurno</span>;
+<span class="keyword">import</span> <span class="include">pooa.ter.vistas.VTablero</span>;
+<span class="keyword">import</span> <span class="include">pooa.ter.vistas.VTurno</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">CAbrir</span> {
+  <span class="directive">private</span> MTablero mTablero = <span class="keyword">new</span> MTablero();
+  <span class="directive">private</span> VTablero vTablero = <span class="keyword">new</span> VTablero(mTablero);
+  <span class="directive">private</span> MTurno mTurno = <span class="keyword">new</span> MTurno();
+  <span class="directive">private</span> VTurno vTurno = <span class="keyword">new</span> VTurno(mTurno);
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Importación bajo demanda</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cuando se usan <strong class="blue">muchas clases de un mismo paquete, se pueden importar todas las clases del paquete</strong>, mediante la sentencia de importación <strong>import</strong> de tipos bajo demanda con la <strong class="blue">notación</strong> *</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> &lt;<span class="include">paquete1</span>&gt;. ... &lt;<span class="include">paqueteN</span>&gt;.*;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">pooa.ter.controladores</span>;
+
+<span class="keyword">import</span> <span class="include">pooa.ter.modelos</span>.*;
+<span class="keyword">import</span> <span class="include">pooa.ter.vistas</span>.*;
+
+<span class="type">class</span> <span class="class">CMover</span> {
+  <span class="directive">private</span> MTablero mTablero;
+  <span class="directive">private</span> VTablero vTablero;
+  <span class="directive">private</span> MTurno mTurno;
+  <span class="directive">private</span> VTurno vTurno;
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Importación implícita</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El código fuente de <strong class="blue">cualquier fichero de un paquete importa implícitamente el resto de su propio paquete</strong>, por lo que todas las clases definidas en un paquete están disponibles para todas las clases de ese mismo paquete</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">pooa.ter.controladores</span>;
+
+<span class="keyword">import</span> <span class="include">pooa.ter.controladores.CPoner</span>; <span class="comment">// innecesario</span>
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">CAbrir</span> {
+  ...
+  CPoner cPoner = <span class="keyword">new</span> CPoner(mTablero, mTurno);
+  CMover cMover = <span class="keyword">new</span> CMover(mTablero, mTurno);
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Colisión de nombres</strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es un <strong class="red">error importar el mismo nombre de clase de dos paquetes diferentes</strong> usando importaciones individuales de clase y/o bajo demanda</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> <span class="include">java.util.Date</span>;
+<span class="keyword">import</span> <span class="include">java.sql.Date</span>; <span class="comment">// Error</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> <span class="include">java.util</span>.*;
+<span class="keyword">import</span> <span class="include">java.sql</span>.*;
+...
+  Date fecha = <span class="keyword">new</span> <span class="predefined-type">Date</span>(); <span class="comment">// Error</span>
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Resolución de Colisión de nombres</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para resolver colisiones al utilizar clases con el mismo nombre que pertenecen a paquetes distintos, se <strong class="green">debe usar el nombre completamente calificado de la clase en todas sus ocurrencias</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="error">…</span>
+java.util.Date fechaUtil = <span class="keyword">new</span> java.util.Date();
+java.sql.Date fechaSql = <span class="keyword">new</span> java.sql.Date();
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="visibilidad-de-miembros">Visibilidad de Miembros</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18%;">
+<col style="width: 19%;">
+<col style="width: 20%;">
+<col style="width: 23%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <span class="blue">miembros declarados <em>public</em> son accesibles desde cualquier código exterior al paquete</span></p>
+</li>
+<li>
+<p>Los <span class="blue">miembros declarados <em>private</em> sólo son accesibles desde el código de esa clase</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <span class="blue">miembros declarados <em>protected</em> son accesibles desde el código de esa clase, de sus clases derivadas de cualquier paquete, y del resto de clases de ese paquete</span> (no de sus subpaquetes)</p>
+</li>
+<li>
+<p>Los miembros que <span class="blue">no especifican ningún modificador de acceso sólo son accesibles desde las clases de ese paquete</span> (no de sus subpaquetes)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Modificador</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em class="blue">public</em></p>
+</li>
+<li>
+<p><em class="blue">protected</em></p>
+</li>
+<li>
+<p><span class="blue">ninguno</span></p>
+</li>
+<li>
+<p><em class="blue">private</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Desde su clase</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Desde su paquete</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="red">No</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Desde sus subclases</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="red">No</strong></p>
+</li>
+<li>
+<p><strong class="red">No</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Desde el resto</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Si</strong></p>
+</li>
+<li>
+<p><strong class="red">No</strong></p>
+</li>
+<li>
+<p><strong class="red">No</strong></p>
+</li>
+<li>
+<p><strong class="red">No</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="paquetes-y-herencia">Paquetes y Herencia</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un <strong class="blue">método se puede redefinir en una clase derivada sólo si dicho método de la clase base es accesible desde la clase derivada</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Si el método no es accesible, el método de la clase derivada no redefine el método de la clase base, incluso aunque tenga la misma cabecera</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Cuando se <strong class="blue">invoca un método, el sistema tiene que considerar en tiempo de ejecución la accesibilidad de dicho método para decidir qué implementación del método se debe invocar</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle" colspan="2"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">package1</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">BaseClass</span> {
+
+  <span class="directive">public</span> <span class="type">void</span> writeln() {
+    <span class="local-variable">this</span>.privateMehtod();
+    <span class="local-variable">this</span>.packageMethod();
+    <span class="local-variable">this</span>.protectedMethod();
+    <span class="local-variable">this</span>.publicMethod();
+  }
+
+  <span class="directive">private</span> <span class="type">void</span> privateMehtod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">privateMehtod of BaseClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="type">void</span> packageMethod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">packageMethod of BaseClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">protected</span> <span class="type">void</span> protectedMethod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">protectedMethod of BaseClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">public</span> <span class="type">void</span> publicMethod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">publicMethod of BaseClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">package2</span>;
+
+<span class="keyword">import</span> <span class="include">package1.BaseClass</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">DerivatedClass</span> <span class="directive">extends</span> BaseClass {
+
+    <span class="directive">private</span> <span class="type">void</span> privateMehtod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">privateMehtod of DerivatedClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="type">void</span> packageMethod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">packageMethod of DerivatedClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">protected</span> <span class="type">void</span> protectedMethod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">protectedMethod of DerivatedClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">public</span> <span class="type">void</span> publicMethod() {
+    Console.getInstance().writeln( <span class="string"><span class="delimiter">&quot;</span><span class="content">publicMethod of DerivatedClass</span><span class="delimiter">&quot;</span></span>);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">app</span>;
+
+<span class="keyword">import</span> <span class="include">package1.DerivatedClass</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="keyword">new</span> DerivatedClass().writeln();
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>al ejecutar su método principal, se produciría la siguiente salida por pantalla:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">privateMehtod of BaseClass
+packageMethod of BaseClass
+protectedMethod of DerivatedClass
+publicMethod of DerivatedClass</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api-de-j2se">API de J2SE</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Biblioteca estandar</strong> (<strong class="blue"><em><a href="https://docs.oracle.com/javase/6/docs/api/">Application Programming Interface</a></em></strong>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>java.lang</em></strong>: clases básicas del lenguaje, este paquete es importado implícitamente por cualquier código</p>
+</li>
+<li>
+<p><strong class="blue"><em>java.util</em></strong>: estructuras de datos y utilidades</p>
+</li>
+<li>
+<p><strong class="blue"><em>java.io</em></strong>: acceso a ficheros</p>
+</li>
+<li>
+<p><strong class="blue"><em>java.awt, javax.swing</em></strong>: interfaces gráficas de usuario</p>
+</li>
+<li>
+<p><strong class="blue"><em>java.net</em></strong>: acceso a redes</p>
+</li>
+<li>
+<p><strong class="blue"><em>java.sql</em></strong>: acceso a bases de datos</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/API1.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/API2.png" alt="height32">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/API3.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/API4.png" alt="height32">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/API5.png" alt="height32">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">Menús</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a4_modelDynamicMenu">whitoutPackages</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a5_package">withPackages</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic">TicTacToe</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla">Models</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/documentView/basic/src/main/java/usantatecla">ModelsViews</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="programación-con-aserciones-y-excepciones">Programación con Aserciones y Excepciones</h2>
+<h2 id="programación-con-excepciones">Programación con Excepciones</h2>
 <div class="sectionbody">
 
 </div>
