@@ -593,7 +593,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#api-de-j2se">API de J2SE</a></li>
 </ul>
 </li>
-<li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
+<li><a href="#programación-con-excepciones">Programación con Excepciones</a>
+<ul class="sectlevel2">
+<li><a href="#excepciones">Excepciones</a></li>
+<li><a href="#flujos">Flujos</a></li>
+<li><a href="#ficheros">Ficheros</a></li>
+</ul>
+</li>
 <li><a href="#programación-parametrizada">Programación Parametrizada</a></li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
@@ -11069,7 +11075,1613 @@ publicMethod of DerivatedClass</code></pre>
 <div class="sect1">
 <h2 id="programación-con-excepciones">Programación con Excepciones</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuando se produce <strong class="blue">un error de ejecución</strong> en un programa, <strong class="red">se interrumpe bruscamente la ejecución secuencial de sus instrucciones</strong>, es decir, no se ejecuta ninguna operación posterior a aquélla en la que se ha producido el error, y se <strong class="red">eleva o lanza una excepción que representa ese error</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>por defecto, se muestra <strong class="red">por pantalla un informe del error producido</strong>, y <strong class="red">finaliza la ejecución del programa</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="excepciones">Excepciones</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los <strong class="blue">errores en tiempo de ejecución</strong> se gestionan con <strong class="blue">excepciones;</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>proporcionan una <span class="green">forma clara de indicar la existencia de posibles errores de ejecución, así como de comprobar la ocurrencia de dichos errores de ejecución sin oscurecer el código del programa</span></p>
+</li>
+<li>
+<p>las excepciones se representan mediante <strong class="blue">objetos de clases que pertenecen a la siguiente jerarquía</strong></p>
+</li>
+<li>
+<p>cuando se produce una excepción se <strong class="blue">crea un objeto de la clase adecuada, dependiendo del tipo de error producido</strong>, que mantendrá la información sobre el error y proporcionará métodos para obtener dicha información</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Excepciones.svg" alt="Excepciones" width="459" height="357">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Clase <em>Throwable</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la raíz de la jerarquía de clasificación y, por tanto, es la <strong class="blue">superclase de todas las excepciones</strong>. Métodos:</p>
+</li>
+<li>
+<p><em class="blue">toString</em>, devuelve un <strong class="blue">mensaje que informa</strong> de la excepción</p>
+</li>
+<li>
+<p><em class="blue">printStackTace</em>, <strong class="blue">imprime por la salida estándar los métodos que estaban en la pila de ejecución</strong> (llamadas anteriores a aquélla que produjo el error) cuando se produjo la excepción y la línea donde se produce la excepción.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Es el comportamiento <strong class="blue">por defecto</strong> cuando no se maneja la excepción.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Clase <em>Error</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>representa las <strong class="blue">excepciones graves que no deberían ser capturadas por un programa</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>java.lang.VirtualMachineError</em> deriva de <em>java.lang.Error</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Clase <em>Exception</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>representa las <strong class="blue">excepciones normales que un programa podría capturar</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Clase <em>RuntimeException</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>representa aquellas excepciones normales que <strong class="blue">NO es necesario capturar en un programa</strong>, se denominan <strong class="blue">no comprobadas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>java.lang.ArithmeticException</em> deriva de <em>java.lang.RuntimeException</em>, por división por cero</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Clase <em>IOException</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el resto de clases que heredan de la clase <em>Exception</em> representan <strong class="blue">aquellas excepciones que SI es necesario capturar en un programa</strong>, estas excepciones se denominan <strong class="blue">comprobadas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>representan las excepciones comprobadas relacionadas con operaciones fallidas de entrada y salida,</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>java.io.FileNotFoundException</em> deriva de java.io.IOException, al tratar de abrir en modo lectura un fichero inexistente</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Gestión de excepciones</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>elevar</em></strong> la excepción: cuando una <span class="blue">biblioteca o subsistema encuentra un error porque no se cumplen las condiciones de su uso</span></p>
+</li>
+<li>
+<p><strong class="blue"><em>capturar</em></strong> la excepción: cuando una <span class="blue">aplicación o biblioteca usa un recurso (ficheros, comunicaciones, bibliotecas, &#8230;&#8203;) que puede dar problemas</span>, hay que capturarlos para solventar esos problemas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>delegar</em></strong> la excepción:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>cuando una aplicación o biblioteca usa un recurso (ficheros, comunicaciones, bibliotecas, &#8230;&#8203;) que pueden dar problemas, se <span class="blue">le comunica a quien corresponda para que los resuelva</span></p>
+</li>
+<li>
+<p>cuando una aplicación o biblioteca usa un recurso (ficheros, comunicaciones, bibliotecas, &#8230;&#8203;) que pueden dar problemas, hay que capturarlos para <span class="blue">solventar en parte esos problemas y elevar otra excepción a quien corresponda para que resuelva el resto</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="elevación-de-excepciones">Elevación de Excepciones</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Sentencia <em>throw</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>durante la ejecución de un método se puede <strong class="blue">elevar una excepción, para indicar que se ha producido un error de ejecución debido a alguna razón, lo que provoca la finalización brusca de su contexto de ejecución</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>para elevar una excepción se debe usar la siguiente sentencia:</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  throw &lt;expresión&gt;;</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donde la expresión debe evaluar a una <strong class="blue">referencia a <em>Throwable</em></strong></p>
+</li>
+<li>
+<p>en un mismo método se pueden elevar, de <span class="blue">forma alternativa, varias excepciones</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+<th class="tableblock halign-left valign-top"><span class="blue"><a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a5_exceptions/a1_arithmetic/Fraction.java">Fraction.java</a></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a1_arithmetic</span>;
 
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">new</span> FractionView().writeln(<span class="keyword">new</span> Fraction(<span class="integer">3</span>, <span class="integer">0</span>));
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Despues</span><span class="delimiter">&quot;</span></span>);
+  }
+  
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Antes
+<span class="exception">Exception</span> in thread <span class="string"><span class="delimiter">&quot;</span><span class="content">main</span><span class="delimiter">&quot;</span></span> java.lang.ArithmeticException: El denominador no puede ser <span class="integer">0</span>
+  at Fraccion.&lt;init&gt;(Fraccion.java:<span class="integer">10</span>)
+  at Aplicacion.main(Aplicacion.java:<span class="integer">6</span>)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a2_format</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">new</span> FractionView().writeln(<span class="keyword">new</span> Fraction(<span class="string"><span class="delimiter">&quot;</span><span class="content">2/a3</span><span class="delimiter">&quot;</span></span>));
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Despues</span><span class="delimiter">&quot;</span></span>);
+  }
+  
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Antes
+<span class="exception">Exception</span> in thread <span class="string"><span class="delimiter">&quot;</span><span class="content">main</span><span class="delimiter">&quot;</span></span> java.lang.NumberFormatException: Formato incorrecto
+  at Fraccion.&lt;init&gt;(Fraccion.java:<span class="integer">17</span>)
+  at Aplicacion.main(Aplicacion.java:<span class="integer">6</span>)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Cláusula <em>throws</em></strong></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>las <strong class="blue">únicas excepciones comprobadas que puede elevar un método son aquéllas cuyas clases se declaran en su cabecera</strong> mediante la siguiente cláusula:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;modificador&gt; &lt;tipo1&gt; &lt;nombreMétodo&gt;({&lt;tipo2&gt; &lt;parametro&gt;, }+)
+       <span class="directive">throws</span> {&lt;claseExcepción1&gt;,}+</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>como ya hemos visto, un <span class="blue">método puede elevar excepciones no comprobadas sin necesidad de declarar sus clases en la cabecera</span>, aunque puede ser <strong class="green">conveniente por razones de documentación</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Ejemplo</em>: <span class="blue"><a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a0_fraction/a5_exceptions/a3_throws/Fraction.java"><em>Fraction.java</em></a></span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Fraction</span> {
+  ...
+  public <span class="type">void</span> read(<span class="predefined-type">String</span> path) <span class="directive">throws</span> <span class="exception">IOException</span> {
+  ...
+    if (&lt;error de apertura&gt;) {
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">IOException</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error al leer el fichero </span><span class="delimiter">&quot;</span></span> + path);
+    }
+    ...
+  }
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="captura-de-excepciones">Captura de Excepciones</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Excepciones no comprobadas</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Excepciones comprobadas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>elevadas por un método <span class="blue"><strong>pueden ser capturadas</strong> en ese mismo método o en cualquier método que, directa o indirectamente, lo haya invocado</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>si un método invoca otro método que <span class="blue">eleva excepciones no comprobadas <strong>no es necesario que las capture</strong>, pero, en el caso de que se produzca la excepción, si ningún método captura la excepción, el <strong>programa termina bruscamente</strong></span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>si un método invoca otro método que <span class="blue">eleva excepciones comprobadas, entonces es <strong>obligatorio que el método que invoca al otro capture</strong> dichas excepciones</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Sentencia <em>try/catch/finally</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>para capturar una excepción se debe usar la siguiente sentencia, donde se pueden <strong class="red">omitir la claúsula <em>catch</em> o <em>finally</em>, pero no ambas</strong>:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">try</span> {
+     &lt;sentencia1&gt;
+     ...
+     &lt;sentenciaN&gt;
+}
+[
+   <span class="keyword">catch</span> (&lt;declaraciónExcepción1&gt;) {
+     &lt;sentencia11&gt;
+     ...
+     &lt;sentencia1N1&gt;
+}
+...
+   catch (&lt;declaraciónExcepciónM&gt;) {
+    ...
+}
+]
+[ <span class="keyword">finally</span> {
+  ...
+} ]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Bloque <em>try</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>indica las sentencias en cuya ejecución <strong class="blue">se desea capturar una excepción</strong>, en el caso de que ésta se produzca</p>
+</li>
+<li>
+<p>cuando se produce una excepción en alguna de sus sentencias, <strong class="blue">se interrumpe bruscamente su ejecución</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Bloque <em>catch</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>especifican las <strong class="blue">sentencias a ejecutar cuando se produzca una excepción</strong> dentro del bloque try</p>
+</li>
+<li>
+<p>se debe especificar la <strong class="blue">clase de excepción que queremos capturar</strong> mediante la declaración de una excepción de esa clase</p>
+</li>
+<li>
+<p>opcionalmente, se pueden especificar <strong class="blue">distintos bloques catch, para indicar distintos tratamientos</strong> para distintas clases de excepciones</p>
+</li>
+<li>
+<p>es un error especificar más de un bloque catch para una misma clase de excepción;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="blue">Bloque <em>finally</em></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">se ejecuta siempre</strong>, después de la ejecución de <em>try/catch</em></p>
+</li>
+<li>
+<p>sirve para <strong class="blue">ejecutar un cierto código independientemente</strong> de si se produce o no la excepción, si se captura o no, o de cualquier otra circunstancia;</p>
+</li>
+<li>
+<p>se suele usar para garantizar la <strong class="green">liberación de recursos</strong>, por ejemplo, cerrar ficheros archivos abiertos, puertos de comunicaciones, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejecución</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a4_catch</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">try</span> {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">new</span> FractionView().writeln(<span class="keyword">new</span> Fraction(<span class="integer">3</span>, <span class="integer">0</span>));
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Después</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">ArithmeticException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error aritmetico</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    }
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin</span><span class="delimiter">&quot;</span></span>);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Inicio
+Antes
+<span class="exception">Error</span> aritmetico
+java.lang.ArithmeticException: El denominador no puede ser <span class="integer">0</span>
+      at Fraccion.&lt;init&gt;(Fraccion.java:<span class="integer">10</span>)
+      at Aplicacion.main(Aplicacion.java:<span class="integer">10</span>)
+Fin</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a5_catchsFirst</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">try</span> {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">new</span> FractionView().writeln(<span class="keyword">new</span> Fraction(<span class="string"><span class="delimiter">&quot;</span><span class="content">3/0</span><span class="delimiter">&quot;</span></span>));
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Después</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">ArithmeticException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error aritmetico</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    } <span class="keyword">catch</span> (<span class="exception">NumberFormatException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error de formato</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    }
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin</span><span class="delimiter">&quot;</span></span>);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Inicio
+Antes
+<span class="exception">Error</span> aritmetico: El denominador no puede ser <span class="integer">0</span>
+Fin</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a6_catchsSecond</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">try</span> {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">new</span> FractionView().writeln(<span class="keyword">new</span> Fraction(<span class="string"><span class="delimiter">&quot;</span><span class="content">3/a2</span><span class="delimiter">&quot;</span></span>));
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Después</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">ArithmeticException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error aritmetico</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    } <span class="keyword">catch</span> (<span class="exception">NumberFormatException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error de formato</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    }
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin</span><span class="delimiter">&quot;</span></span>);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Inicio
+Antes
+<span class="exception">Error</span> de formato: Formato incorrecto
+Fin</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="delegación-de-excepciones">Delegación de Excepciones</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Delegación</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>si el <strong class="blue">método no captura una excepción, la propaga al método que lo invocó</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>si <span class="blue">un método declara que eleva excepciones comprobadas, entonces <strong>no necesita capturar esas clases de excepciones que declara</strong>, cuando <strong>invoca métodos que elevan esas mismas clases de excepciones</strong></span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Antes
+<span class="exception">Error</span> aritmetico
+java.lang.ArithmeticException: El denominador no puede ser <span class="integer">0</span>
+         at Fraccion.&lt;init&gt;(Fraccion.java:<span class="integer">17</span>)
+         at Fraccion.crearFraccion(Fraccion.java:<span class="integer">26</span>)
+         at Aplicacion.main(Aplicacion.java:<span class="integer">14</span>)
+Fin</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a7_nested</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">try</span> {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">new</span> FractionView().writeln(App.createFraction(<span class="integer">3</span>, <span class="integer">0</span>));
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Después</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">ArithmeticException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error aritmetico</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    } <span class="keyword">catch</span> (<span class="exception">NumberFormatException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error de formato</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    }
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">public</span> <span class="directive">static</span> Fraction createFraction(<span class="type">int</span> numerator, <span class="type">int</span> denominator) <span class="directive">throws</span> <span class="exception">ArithmeticException</span> {
+    <span class="keyword">return</span> <span class="keyword">new</span> Fraction(numerator, denominator);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="excepciones-polimorficas">Excepciones Polimorficas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuando un método captura una excepción, <strong class="blue">sólo se ejecuta la primera sentencia <em>catch</em> en la que la referencia de la excepción producida encaje en la clase de excepción declarada</strong> en esa sentencia <em>catch</em>;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a8_polymorphic</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">try</span> {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">new</span> FractionView().writeln(App.createFraction(<span class="integer">3</span>, <span class="integer">0</span>));
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Después</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">ArithmeticException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error aritmetico</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    } <span class="keyword">catch</span> (<span class="exception">Exception</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    }
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">public</span> <span class="directive">static</span> Fraction createFraction(<span class="type">int</span> numerator, <span class="type">int</span> denominator) <span class="directive">throws</span> <span class="exception">ArithmeticException</span> {
+    <span class="keyword">return</span> <span class="keyword">new</span> Fraction(numerator, denominator);
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Inicio
+Antes
+<span class="exception">Error</span> aritmetico : El denominador no puede ser <span class="integer">0</span>
+Fin</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es un <strong class="red">error de compilación tratar de capturar una excepción en una sentencia <em>catch</em>, que ya ha sido capturada previamente</strong> en otra sentencia <em>catch</em>;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a5_units.a0_fraction.a5_exceptions.a9_polymorphic2</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">try</span> {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Antes</span><span class="delimiter">&quot;</span></span>);
+      <span class="keyword">new</span> FractionView().writeln(App.createFraction(<span class="string"><span class="delimiter">&quot;</span><span class="content">3/a2</span><span class="delimiter">&quot;</span></span>));
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Después</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">ArithmeticException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error aritmetico</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    } <span class="keyword">catch</span> (<span class="exception">Exception</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Error</span><span class="delimiter">&quot;</span></span>);
+      ex.printStackTrace();
+    }
+    Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin</span><span class="delimiter">&quot;</span></span>);
+  }
+
+  <span class="directive">public</span> <span class="directive">static</span> Fraction createFraction(<span class="predefined-type">String</span> string) <span class="directive">throws</span> <span class="exception">ArithmeticException</span>, <span class="exception">NumberFormatException</span> {
+    <span class="keyword">return</span> <span class="keyword">new</span> Fraction(string);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los <strong class="blue">métodos pueden elevar excepciones de clases hijas de las declaradas</strong> en su cabecera mediante la cláusula <em>throws</em>;</p>
+</li>
+<li>
+<p>los <strong class="blue">métodos redefinidos</strong> en una clase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>pueden <strong class="blue">eliminar excepciones de la cláusula <em>throws</em> de su cabecera de aquéllas que estaban declaradas en la cabecera del método en su clase padre</strong></p>
+</li>
+<li>
+<p>pueden <strong class="blue">sustituir excepciones en la cláusula <em>throws</em> de su cabecera por otros excepciones de sus clases hijas</strong>;</p>
+</li>
+<li>
+<p><strong class="red">NO</strong> pueden <strong class="blue">añadir nuevas excepciones en la cláusula <em>throws</em> de su cabecera respeto a aquéllas que estaban declaradas en la cabecera del método en su clase padre</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">clase Base  {
+
+  <span class="directive">public</span> <span class="type">void</span> m() <span class="directive">throws</span> <span class="exception">Exception</span> { ... }
+
+  <span class="directive">public</span> <span class="type">void</span> n() <span class="directive">throws</span> <span class="exception">Exception</span> { ... }
+}
+
+<span class="type">class</span> <span class="class">Derivada</span> <span class="directive">extends</span> Base  {
+
+  <span class="directive">public</span> <span class="type">void</span> m() <span class="directive">throws</span> <span class="exception">IOException</span> {
+    ...
+    throw <span class="keyword">new</span> FileSystemException() ;
+    ...
+  }
+
+  <span class="directive">public</span> <span class="type">void</span> n() {
+    ...
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="clasificación-de-excepciones">Clasificación de Excepciones</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 39.3939%;">
+<col style="width: 30.303%;">
+<col style="width: 30.3031%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top" colspan="2"><span class="blue"><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a7_exceptions"><em>Ejemplo: dispensers</em></a></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es pocible <strong class="blue">crear nuevas clases de excepciones</strong> siempre que hereden de la clase <em>Throwable</em> o de sus hijas, aunque, por convención, <span class="green">deben heredar de <em>Exception</em></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>estas clases pueden añadir <strong class="blue">nuevos atributos y métodos</strong>, como en cualquer otra relación de herencia</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Al meter un elemento en un dispensador acotado que se encuentra lleno, se detecta un error de ejecución, que se puede representar mediante una nueva clase de excepción</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Exception.svg" alt="Exception" width="325" height="187">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="flujos">Flujos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">flujos, <em>streams</em>, son objetos que representan secuencias ordenadas de datos que tienen una fuente, flujos de entrada, o un destino, flujos de salida</strong>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases de entrada/salida del paquete <em>java.io</em> se definen en términos de flujos, y permiten a los programadores <strong class="blue">abstraerse de los detalles específicos del sistema operativo al acceder a los recursos del sistema, tales como ficheros, teclado, líneas de comunicaciones, etc.</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Tipos de flujos en la biblioteca</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>de <strong class="blue">entrada y salida de <em>bytes</em></strong>, cuyas clases abstractas de las que heredan todas las demás son <em>InputStream</em> y <em>OutputStream</em></p>
+</li>
+<li>
+<p>de <strong class="blue">entrada y salida de caracteres</strong>, cuyas clases abstractas de las que heredan todas las demás son <em>Reader</em> y <em>Writer</em>, donde un <span class="blue">caracter <em>Unicode</em> puede estar formado por varios <em>bytes</em></span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="flujos-de-bytes">Flujos de Bytes</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/FlujoDeBytes.svg" alt="FlujoDeBytes" width="1703" height="799">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FlujoDeBytes2.svg" alt="FlujoDeBytes2" width="1418" height="773">
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">InputStream</span> {
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">int</span> read() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">int</span> read(<span class="type">byte</span><span class="type">[]</span> b) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">int</span> read(<span class="type">byte</span><span class="type">[]</span> b, <span class="type">int</span> off, <span class="type">int</span> len) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">long</span> skip(<span class="type">long</span> n) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">int</span> available() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> close() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">OutputStream</span> {
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> write(<span class="type">int</span> b) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> write(<span class="type">byte</span><span class="type">[]</span> b) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> write(<span class="type">byte</span><span class="type">[]</span> b, <span class="type">int</span> off, <span class="type">int</span> len) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> flush() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> close() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="flujos-de-caracteres">Flujos de Caracteres</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/FlujoDeCaracteres.svg.png" alt="FlujoDeCaracteres.svg" width="803" height="466">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FlujoDeCaracteres2.svg" alt="FlujoDeCaracteres2" width="919" height="467">
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Reader</span> {
+  <span class="directive">public</span> <span class="type">int</span> read() <span class="directive">throws</span> <span class="exception">IOException</span>
+  <span class="directive">public</span> <span class="type">int</span> read(<span class="type">char</span><span class="type">[]</span> cbuf) <span class="directive">throws</span> <span class="exception">IOException</span>
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">int</span> read(<span class="type">char</span><span class="type">[]</span> cbuf, <span class="type">int</span> off, <span class="type">int</span> len) <span class="directive">throws</span> <span class="exception">IOException</span>
+  <span class="directive">public</span> <span class="type">long</span> skip(<span class="type">long</span> n) <span class="directive">throws</span> <span class="exception">IOException</span>
+  <span class="directive">public</span> <span class="type">boolean</span> ready() <span class="directive">throws</span> <span class="exception">IOException</span>
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> close() <span class="directive">throws</span> <span class="exception">IOException</span>
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Writer</span> {
+  <span class="directive">public</span> <span class="type">void</span> write(<span class="type">int</span> c) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> write(<span class="type">char</span><span class="type">[]</span> cbuf) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> write(<span class="type">char</span><span class="type">[]</span> cbuf, <span class="type">int</span> off, <span class="type">int</span> len) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> write(<span class="predefined-type">String</span> str) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="type">void</span> write(<span class="predefined-type">String</span> str, <span class="type">int</span> off, <span class="type">int</span> len) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="predefined-type">Writer</span> append(<span class="type">char</span> c) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="predefined-type">Writer</span> append(<span class="predefined-type">CharSequence</span> csq) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="predefined-type">Writer</span> append(<span class="predefined-type">CharSequence</span> csq, <span class="type">int</span> start, <span class="type">int</span> end) <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> flush() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+  <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> close() <span class="directive">throws</span> <span class="exception">IOException</span> { ... }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="clasificación-de-flujos">Clasificación de Flujos</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Flujos de conversión</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las clases <em>InputStreamReader</em> permiten convertir bytes en caracteres</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los objetos <em>InputStreamReader</em> reciben en su constructor un objeto <em>InputStream</em> que es capaz de leer bytes</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">InputStreamReader</span>(<span class="predefined-type">InputStream</span> in)</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Los métodos read de <em>InputStreamReader</em> leen bytes de su <em>InputStream</em> y los convierten en caracteres</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las clase <em>OuputStreamWriter</em> permite convertir caracteres en bytes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los objetos <em>OuputStreamWriter</em> reciben en su constructor un objeto <em>OutputStream</em> que es capaz de escribir bytes;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> OuputStreamWriter(<span class="predefined-type">OutputStream</span> out)</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Los métodos write de <em>OutputStreamReader</em> convierten caracteres a bytes y los escriben en su <em>OutputStream</em>;</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 21%;">
+<col style="width: 27%;">
+<col style="width: 27%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="4"><strong class="blue">Flujos de Datos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Leer y escribir bytes y caracteres de texto es muy útil, pero a menudo se necesita transmitir datos binarios de los tipos primitivos a través de un flujo;</p>
+</li>
+<li>
+<p>Los interfaces <em>DataInput</em> y <em>DataOutput</em> declaran métodos que permiten leer y escribir datos en formato binario:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Tipo</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>boolean</p>
+</li>
+<li>
+<p>char</p>
+</li>
+<li>
+<p>short</p>
+</li>
+<li>
+<p>int</p>
+</li>
+<li>
+<p>long</p>
+</li>
+<li>
+<p>float</p>
+</li>
+<li>
+<p>double</p>
+</li>
+<li>
+<p>string</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Lectura</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>boolean readBoolean()</p>
+</li>
+<li>
+<p>char readChar()</p>
+</li>
+<li>
+<p>short readShort()</p>
+</li>
+<li>
+<p>int readInt()</p>
+</li>
+<li>
+<p>long readLong()</p>
+</li>
+<li>
+<p>float readFloat()</p>
+</li>
+<li>
+<p>double readDouble()</p>
+</li>
+<li>
+<p>String readUTF()</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">Escritura</span></strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>writeBoolean(boolean)</p>
+</li>
+<li>
+<p>writeChar(char)</p>
+</li>
+<li>
+<p>writeShort(short)</p>
+</li>
+<li>
+<p>writeInt(int)</p>
+</li>
+<li>
+<p>writeLong(long)</p>
+</li>
+<li>
+<p>writeFloat(float)</p>
+</li>
+<li>
+<p>writeDouble(double)</p>
+</li>
+<li>
+<p>writeUTF(String)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Varios flujos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>hay varios tipos de flujos que <strong class="blue">definen comportamientos específicos, tanto en su modalidad de entrada como de salida</strong>:</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los flujos de <strong class="blue">tipo <em>Filter</em> aplican alguna operación de filtrado cuando leen o escriben datos utilizando otro flujo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>un objeto <em>FilterReader</em> lee caracteres de otro objeto <em>Reader</em>, procesa los caracteres de alguna manera, y devuelve el resultado</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">protected</span> <span class="predefined-type">FilterReader</span>(<span class="predefined-type">Reader</span> in)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los flujos de <strong class="blue">tipo <em>Piped</em> se diseñan en parejas, de forma que las escrituras que realiza un flujo de salida se pueden leer en otro flujo de entrada</strong></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">PipedWriter</span>(<span class="predefined-type">PipedReader</span> snk) <span class="directive">throws</span> <span class="exception">IOException</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los flujos de <strong class="blue">tipo <em>Buffered</em> añaden almacenamiento intermedio en forma de <em>buffers</em>, de forma que las lecturas y escrituras no requieren acceder al sistema de ficheros en cada invocación</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Los flujos de caracteres de este tipo también proporcionan la <strong class="green">lectura y escritura de líneas de texto</strong>,con retornos de línea</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">BufferedReader</span>(<span class="predefined-type">Reader</span> in)
+<span class="directive">public</span> <span class="predefined-type">BufferedWriter</span>(<span class="predefined-type">Writer</span> out)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los llamados <strong class="blue">flujos en memoria permiten usar estructuras de datos en memoria como fuente o destino de un flujo</strong>:</p>
+</li>
+<li>
+<p>los <strong class="blue">flujos <em>ByteArray</em></strong> usan un vector de byte,</p>
+</li>
+<li>
+<p>los <strong class="blue">flujos <em>CharArray</em></strong> usan un vector de char,</p>
+</li>
+<li>
+<p>los <strong class="blue">flujos <em>String</em></strong> usan objetos de la clase <em>String</em>;</p>
+</li>
+<li>
+<p>los <strong class="blue">flujos de tipo <em>Print</em></strong> proporcionan los <strong class="green">métodos <em>print</em> y <em>println</em> que facilitan la escritura de valores de tipos primitivos y objetos en forma de texto legible</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>todos los flujos <em>Print</em> actúan como flujos <em>Filter</em></p>
+</li>
+<li>
+<p><strong class="red"><em>System.out</em> es un flujo <em>PrintStream</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ficheros">Ficheros</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>los flujos File <em>(FileInputStream, FileOutputStream, FileReader y FileWriter)</em> permiten tratar a un fichero como un flujo de entrada o de salida;</p>
+</li>
+<li>
+<p>Para crear un objeto de este tipo de flujos, se usa un constructor que recibe como argumento el nombre del fichero;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">FileWriter</span> outTxt = <span class="keyword">new</span> <span class="predefined-type">FileWriter</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">salida.txt</span><span class="delimiter">&quot;</span></span>);
+<span class="predefined-type">FileReader</span> inTxt = <span class="keyword">new</span> <span class="predefined-type">FileReader</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">entrada.txt</span><span class="delimiter">&quot;</span></span>);
+<span class="predefined-type">FileOutputStream</span> outDat = <span class="keyword">new</span> <span class="predefined-type">FileOutputStream</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">salida.dat</span><span class="delimiter">&quot;</span></span>);
+<span class="predefined-type">FileInputStream</span> inDat = <span class="keyword">new</span> <span class="predefined-type">FileInputStream</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">entrada.dat</span><span class="delimiter">&quot;</span></span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Ficheros de texto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a0_itinerario/a5_excepciones/a1_writeText/App.java">Clase plantilla</a> para <strong class="blue">escribir en un fichero de texto</strong> se usa la <strong class="blue">clase <em>PrintWriter</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a0_itinerario/a5_excepciones/a2_readText/App.java">Clase plantilla</a> para <strong class="blue">leer de un fichero de texto</strong> se usa la <strong class="blue">clase <em>BufferedReader</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a5_excepciones.a1_writeText</span>;
+
+<span class="keyword">import</span> <span class="include">java.io.IOException</span>;
+<span class="keyword">import</span> <span class="include">java.io.PrintWriter</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">PrintWriter</span> out = <span class="predefined-constant">null</span>;
+    <span class="keyword">try</span> {
+      out = <span class="keyword">new</span> <span class="predefined-type">PrintWriter</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">./src/main/resources/fichero.txt</span><span class="delimiter">&quot;</span></span>);
+      out.print(<span class="integer">1</span>);
+      out.print(<span class="string"><span class="delimiter">'</span><span class="content">:</span><span class="delimiter">'</span></span>);
+      out.print(<span class="string"><span class="delimiter">&quot;</span><span class="content"> juan = </span><span class="delimiter">&quot;</span></span>);
+      out.println(<span class="float">5.5</span>);
+      out.println(<span class="integer">2</span> + <span class="string"><span class="delimiter">&quot;</span><span class="content">: jose = </span><span class="delimiter">&quot;</span></span> + <span class="float">7.2</span>);
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fichero generado</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al escribir:</span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+    } <span class="keyword">finally</span> {
+      <span class="keyword">if</span> (out != <span class="predefined-constant">null</span>) {
+        out.close();
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a5_excepciones.a2_readText</span>;
+
+<span class="keyword">import</span> <span class="include">java.io.BufferedReader</span>;
+<span class="keyword">import</span> <span class="include">java.io.FileReader</span>;
+<span class="keyword">import</span> <span class="include">java.io.IOException</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">BufferedReader</span> in = <span class="predefined-constant">null</span>;
+    <span class="keyword">try</span> {
+      in = <span class="keyword">new</span> <span class="predefined-type">BufferedReader</span>(<span class="keyword">new</span> <span class="predefined-type">FileReader</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">./src/main/resources/fichero.txt</span><span class="delimiter">&quot;</span></span>));
+      <span class="predefined-type">String</span> linea;
+      <span class="keyword">while</span> ((linea = in.readLine()) != <span class="predefined-constant">null</span>) {
+        <span class="predefined-type">System</span>.out.println(linea);
+      }
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+      <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al leer: </span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+    } <span class="keyword">finally</span> {
+      <span class="keyword">if</span> (in != <span class="predefined-constant">null</span>) {
+        <span class="keyword">try</span> {
+          in.close();
+        } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+          <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al cerrar: </span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Ficheros binarios</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a0_itinerario/a5_excepciones/a3_writeBinary/App.java">Clase plantilla</a> para <strong class="blue">escribir en un fichero binario</strong> se usa la <strong class="blue">clase <em>DataOutputStream</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a0_itinerario/a5_excepciones/a4_readBinary/App.java">Clase plantilla</a> para <strong class="blue">leer de un fichero binario</strong> se usa la <strong class="blue">clase <em>DataInputStream</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a5_excepciones.a3_writeBinary</span>;
+
+<span class="keyword">import</span> <span class="include">java.io.DataOutputStream</span>;
+<span class="keyword">import</span> <span class="include">java.io.FileOutputStream</span>;
+<span class="keyword">import</span> <span class="include">java.io.IOException</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">DataOutputStream</span> out = <span class="predefined-constant">null</span>;
+    <span class="keyword">try</span> {
+      out = <span class="keyword">new</span> <span class="predefined-type">DataOutputStream</span>(<span class="keyword">new</span> <span class="predefined-type">FileOutputStream</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">./src/main/resources/fichero.dat</span><span class="delimiter">&quot;</span></span>));
+      out.writeInt(<span class="integer">1</span>);
+      out.writeChar(<span class="string"><span class="delimiter">'</span><span class="content">:</span><span class="delimiter">'</span></span>);
+      out.writeUTF(<span class="string"><span class="delimiter">&quot;</span><span class="content"> juan = </span><span class="delimiter">&quot;</span></span>);
+      out.writeDouble(<span class="float">5.5</span>);
+      Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fichero generado</span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+      <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al escribir: </span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+    } <span class="keyword">finally</span> {
+      <span class="keyword">if</span> (out != <span class="predefined-constant">null</span>) {
+        <span class="keyword">try</span> {
+          out.close();
+        } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+          <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al cerrar: </span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a5_excepciones.a4_readBinary</span>;
+
+<span class="keyword">import</span> <span class="include">java.io.DataInputStream</span>;
+<span class="keyword">import</span> <span class="include">java.io.FileInputStream</span>;
+<span class="keyword">import</span> <span class="include">java.io.IOException</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">DataInputStream</span> in = <span class="predefined-constant">null</span>;
+    <span class="keyword">try</span> {
+      in = <span class="keyword">new</span> <span class="predefined-type">DataInputStream</span>(<span class="keyword">new</span> <span class="predefined-type">FileInputStream</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">./src/main/resources/fichero.dat</span><span class="delimiter">&quot;</span></span>));
+      <span class="predefined-type">System</span>.out.println(in.readInt() + <span class="predefined-type">String</span>.valueOf(in.readChar()) +
+          in.readUTF() + in.readDouble());
+      <span class="predefined-type">System</span>.out.println(in.readInt() + <span class="predefined-type">String</span>.valueOf(in.readChar()) +
+          in.readUTF() + in.readDouble());
+    } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+      <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al leer: </span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+    } <span class="keyword">finally</span> {
+      <span class="keyword">if</span> (in != <span class="predefined-constant">null</span>) {
+        <span class="keyword">try</span> {
+          in.close();
+        } <span class="keyword">catch</span> (<span class="exception">IOException</span> ex) {
+          <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">IOException al cerrar: </span><span class="delimiter">&quot;</span></span> + ex.getMessage());
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
