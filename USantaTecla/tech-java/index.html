@@ -598,9 +598,16 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#excepciones">Excepciones</a></li>
 <li><a href="#flujos">Flujos</a></li>
 <li><a href="#ficheros">Ficheros</a></li>
+<li><a href="#serialización-de-objetos">Serialización de Objetos</a></li>
 </ul>
 </li>
-<li><a href="#programación-parametrizada">Programación Parametrizada</a></li>
+<li><a href="#programación-parametrizada">Programación Parametrizada</a>
+<ul class="sectlevel2">
+<li><a href="#clases-genéricas">Clases Genéricas</a></li>
+<li><a href="#parámetros-limitados">Parámetros Limitados</a></li>
+<li><a href="#parámetros-comodines">Parámetros Comodines</a></li>
+</ul>
+</li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -12215,14 +12222,13 @@ Fin</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 21%;">
-<col style="width: 27%;">
-<col style="width: 27%;">
+<col style="width: 36.8421%;">
+<col style="width: 31.5789%;">
+<col style="width: 31.579%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="4"><strong class="blue">Flujos de Datos</strong></th>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="blue">Flujos de Datos</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -12230,117 +12236,40 @@ Fin</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Leer y escribir bytes y caracteres de texto es muy útil, pero a menudo se necesita transmitir datos binarios de los tipos primitivos a través de un flujo;</p>
+<p>Leer y escribir bytes y caracteres de texto es muy útil, pero a menudo se necesita transmitir <strong class="blue">datos binarios de los tipos primitivos a través de un flujo</strong></p>
 </li>
 <li>
-<p>Los interfaces <em>DataInput</em> y <em>DataOutput</em> declaran métodos que permiten leer y escribir datos en formato binario:</p>
+<p>Los <strong class="blue">interfaces <em>DataInput_ y _DataOutput</em></strong> declaran métodos que permiten leer y escribir datos en formato binario</p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Tipo</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>boolean</p>
-</li>
-<li>
-<p>char</p>
-</li>
-<li>
-<p>short</p>
-</li>
-<li>
-<p>int</p>
-</li>
-<li>
-<p>long</p>
-</li>
-<li>
-<p>float</p>
-</li>
-<li>
-<p>double</p>
-</li>
-<li>
-<p>string</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">interface</span> <span class="class">DataInput</span> {
+  <span class="type">boolean</span> readBoolean();
+  <span class="type">char</span> readChar();
+  <span class="type">short</span> readShort();
+  <span class="type">int</span> readInt();
+  <span class="type">long</span> readLong();
+  <span class="type">float</span> readFloat();
+  <span class="type">double</span> readDouble();
+  <span class="predefined-type">String</span> readUTF();
+}</code></pre>
 </div>
-</li>
-</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Lectura</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>boolean readBoolean()</p>
-</li>
-<li>
-<p>char readChar()</p>
-</li>
-<li>
-<p>short readShort()</p>
-</li>
-<li>
-<p>int readInt()</p>
-</li>
-<li>
-<p>long readLong()</p>
-</li>
-<li>
-<p>float readFloat()</p>
-</li>
-<li>
-<p>double readDouble()</p>
-</li>
-<li>
-<p>String readUTF()</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">interface</span> <span class="class">DataInput</span> {
+  writeBoolean(<span class="type">boolean</span>);
+  writeChar(<span class="type">char</span>);
+  writeShort(<span class="type">short</span>);
+  writeInt(<span class="type">int</span>);
+  writeLong(<span class="type">long</span>);
+  writeFloat(<span class="type">float</span>);
+  writeDouble(<span class="type">double</span>);
+  writeUTF(<span class="predefined-type">String</span>);
+}</code></pre>
 </div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Escritura</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>writeBoolean(boolean)</p>
-</li>
-<li>
-<p>writeChar(char)</p>
-</li>
-<li>
-<p>writeShort(short)</p>
-</li>
-<li>
-<p>writeInt(int)</p>
-</li>
-<li>
-<p>writeLong(long)</p>
-</li>
-<li>
-<p>writeFloat(float)</p>
-</li>
-<li>
-<p>writeDouble(double)</p>
-</li>
-<li>
-<p>writeUTF(String)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -12457,8 +12386,8 @@ Fin</code></pre>
 <h3 id="ficheros">Ficheros</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <thead>
 <tr>
@@ -12471,10 +12400,14 @@ Fin</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>los flujos File <em>(FileInputStream, FileOutputStream, FileReader y FileWriter)</em> permiten tratar a un fichero como un flujo de entrada o de salida;</p>
-</li>
+<p>los <strong class="blue">flujos <em>File (FileInputStream, FileOutputStream, FileReader y FileWriter)</em></strong> permiten tratar a un <strong class="blue">fichero como un flujo de entrada o de salida</strong>;</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Para crear un objeto de este tipo de flujos, se usa un constructor que recibe como argumento el nombre del fichero;</p>
+<p>Para crear un objeto, se usa un <strong class="blue">constructor que recibe como argumento el nombre del fichero</strong>;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -12682,12 +12615,951 @@ Fin</code></pre>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="serialización-de-objetos">Serialización de Objetos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55%;">
+<col style="width: 45%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Serialización de Objetos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>resuelve el problema de almacenar en un fichero (o transmitir por una línea de comunicación, etc.) un <strong class="red">conjunto de objetos de distintas clases, posiblemente relacionados entre sí, y posteriormente restaurarlos de nuevo en la memoria de un programa</strong>, de forma que se mantengan el mismo número de objetos, los mismos valores de sus atributos y las mismas relaciones entre ese conjunto de objetos que en la situación original</p>
+<div class="ulist">
+<ul>
+<li>
+<p>resolver este problema mediante ficheros de texto o binarios es complejo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>porque los <strong class="red">objetos tienen un tamaño variable</strong> dependiendo de su clase,</p>
+</li>
+<li>
+<p>porque los <strong class="red">datos de los objetos deberían almacenarse una sola vez</strong> en el fichero,</p>
+</li>
+<li>
+<p>porque <strong class="red">no se pueden almacenar y restaurar las referencias, ya que se corresponden con direcciones de memoria</strong>, y al volver a cargar un objeto, éste ocupará una dirección de memoria diferente de la original;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Persona.svg" alt="Persona" width="450" height="251">
+</div>
+</div>
+<div class="imageblock Profesor">
+<div class="content">
+<img src="images/svg.png" alt="svg" width="554" height="239">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Flujos de Objetos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>la solución consiste en guardar en el fichero cada objeto con un “número de serie” único;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Java proporciona los flujos de bytes <em>ObjectOutputStream</em> y <em>ObjectInputStream</em> para resolver automáticamente el problema de la serialización de objetos;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>al almacenar un objeto en el fichero:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>se asocia un número de serie a cada referencia,</p>
+</li>
+<li>
+<p>al encontrar por primera vez una referencia, se almacenan los datos del objeto en el fichero y su número de serie,</p>
+</li>
+<li>
+<p>las siguientes veces que se encuentre esa referencia, escribir sólo el número de serie;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>al restaurar un objeto del fichero:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>al restaurar por primera vez un objeto, se crea, se inicializa con sus datos, y se recuerda la asociación entre la nueva referencia y su número de serie,</p>
+</li>
+<li>
+<p>al encontrar sólo su número de serie, recuperar la referencia de ese número de serie;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>para almacenar <strong>(serializar)</strong> los objetos se usa la clase <em>ObjectOutputStream</em>, que implementa el interfaz ObjectOutput que, a su vez, extiende el interfaz <em>DataOutput</em>, con lo que, además de poder escribir cualquier dato en formato binario, añade entre otros los siguientes métodos:</p>
+</li>
+<li>
+<p>que permiten serializar objetos en un flujo de bytes;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>para restaurar <strong>(deserializar)</strong> los objetos se usa la clase <em>ObjectInputStream</em>, que implementa el interfaz <em>ObjectInput</em> que, a
+su vez, extiende el interfaz <em>DataInput</em>, con lo que, además de poder leer cualquier dato en formato binario, añade entre otros los siguientes métodos:</p>
+</li>
+<li>
+<p>que permiten deserializar objetos desde un flujo de bytes;</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">ObjectOutputStream</span>(<span class="predefined-type">OutputStream</span> out) <span class="directive">throws</span> <span class="exception">IOException</span>
+<span class="directive">public</span> <span class="directive">final</span> <span class="type">void</span> writeObject(<span class="predefined-type">Object</span> obj) <span class="directive">throws</span> <span class="exception">IOException</span>
+<span class="directive">public</span> <span class="type">void</span> defaultWriteObject() <span class="directive">throws</span> <span class="exception">IOException</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">ObjectInputStream</span>(<span class="predefined-type">InputStream</span> in) <span class="directive">throws</span> <span class="exception">IOException</span>
+<span class="directive">public</span> <span class="directive">final</span> <span class="predefined-type">Object</span> readObject() <span class="directive">throws</span> <span class="exception">IOException</span>, <span class="exception">ClassNotFoundException</span>
+<span class="directive">public</span> <span class="type">void</span> defaultReadObject() <span class="directive">throws</span> <span class="exception">IOException</span>, <span class="exception">ClassNotFoundException</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>el único requisito que se necesita para poder almacenar y restaurar objetos en los flujos de objetos es que las clases de esos objetos deben implementar el interfaz <em>java.io.Serializable</em>:</p>
+</li>
+<li>
+<p>el interfaz <em>Serializable</em> no tiene ningún método, por lo que, en principio, no hay que modificar nada más en las clases de los objetos a serializar;</p>
+</li>
+<li>
+<p>el mecanismo de serialización por defecto de Java se encarga de almacenar y restaurar automáticamente todos los atributos de los objetos, excepto los atributos <em>static</em>; que nunca se serializan ni se deserializan;</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Clase</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> { <span class="error">…</span> }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="programación-parametrizada">Programación Parametrizada</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Genericos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se desea definir <strong class="green">clases cuyos atributos puedan ser de cualquier clase, y para definir métodos que puedan recibir argumentos y devolver resultados de cualquier clase</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una posible solución sería <strong class="red">declarando los atributos de estas clases y los argumentos de estos métodos con el tipo más débil posible</strong>, por ejemplo, <strong class="blue"><em>Object</em></strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Con esta solución es <strong class="red">necesario convertir la dirección devuelta por el método <em>remove</em>(), que es de la clase <em>Object</em>, a una dirección de la clase concreta mediante el operador de conversión de tipos (<em>cast</em>)</strong>.</p>
+</li>
+<li>
+<p>Al sacar un elemento existe la <strong class="red">posibilidad de que se produzca un error de conversión de tipos en tiempo de ejecución</strong> al sacar los elementos, que no es detectado en tiempo de compilación, si los objetos que <strong class="red">se meten en la pila son de distinta clase de la que se espera que sean al sacarlos</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Estos problemas se pueden resolver mediante la <strong class="green">declaración de una clase parametrizada, que permita declarar la clase de los elementos de la pila como un parámetro de tipo</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A partir de la JDK 1.5 se pueden declarar clases, interfaces y métodos parametrizados, mediante los <strong class="blue"><em>parámetros de tipo</em></strong>, también llamados <em class="blue">variables de tipo</em>.</p>
+</li>
+<li>
+<p>Las clases parametrizadas se denominan <strong class="blue">clases genéricas</strong>; y los métodos parametrizados se denominan <strong class="blue">métodos genéricos</strong>.</p>
+</li>
+<li>
+<p>Tienen las siguientes <strong class="green">ventajas</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>proporcionan una <strong class="green">comprobación estricta de tipos en tiempo de compilación</strong>;</p>
+</li>
+<li>
+<p>su uso <strong class="green">no necesita comprobación de tipos en tiempo de ejecución</strong>;</p>
+</li>
+<li>
+<p>producen código más <strong class="green">robusto</strong> y, en consecuencia, aumentan la facilidad del <strong class="green">mantenimiento de los programas</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 57%;">
+<col style="width: 43%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">- Dispensers : <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a7_modular"><em>fractions</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a1_object">objects</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">...
+<span class="integer">9</span>: <span class="integer">1</span>
+<span class="integer">10</span>: <span class="integer">0</span>
+<span class="exception">Exception</span> in thread <span class="string"><span class="delimiter">&quot;</span><span class="content">main</span><span class="delimiter">&quot;</span></span> java.lang.ClassCastException: <span class="type">class</span> <span class="class">es</span>.usantatecla.aX_dispensers.a8_parametrized.a1_object.utils.Fraction cannot be cast to <span class="type">class</span> <span class="class">java</span>.lang.Integer (es.usantatecla.aX_dispensers.a8_parametrized.a1_object.utils.Fraction is in unnamed module of loader <span class="string"><span class="delimiter">'</span><span class="content">app</span><span class="delimiter">'</span></span>; java.lang.Integer is in module java.base of loader <span class="string"><span class="delimiter">'</span><span class="content">bootstrap</span><span class="delimiter">'</span></span>)
+        at es.usantatecla.aX_dispensers.a8_parametrized.a1_object.App.main(App.java:<span class="integer">49</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="keyword">try</span> {
+    BoundedQueue boundedQueue = <span class="keyword">new</span> BoundedQueue(<span class="integer">1</span>);
+    <span class="comment">//boundedQueue.add(2);</span>
+    boundedQueue.add(<span class="keyword">new</span> Fraction(<span class="integer">1</span>, <span class="integer">2</span>));
+    <span class="type">int</span> element = (<span class="type">int</span>) boundedQueue.remove();
+    Console.getInstance().writeln(element);
+ } <span class="keyword">catch</span> (DispenserException e) {
+    e.printStackTrace();
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="clases-genéricas">Clases Genéricas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">ClaseGenerica</span>&gt;&lt;&lt;ParametroTipo1&gt;, ...,&lt;ParametroTipo2&gt;&gt; {
 
+  <span class="directive">private</span> ParametroTipo1 atributo;
+
+  <span class="directive">public</span> ParametroTipo1 metodo(ParametroTipo2 parameter) {
+    ...
+  }
+ ...
+}
+...
+private &lt;ClaseGenerica&gt;&lt;&lt;Tipo1/Clasificador1&gt;, ...,&lt;Tipo2/Clasificador2&gt;&gt; objeto
+  = <span class="keyword">new</span> &lt;ClaseGenerica&gt;&lt;&lt;Tipo1/Clasificador1&gt;, ...,&lt;Tipo2/Clasificador2&gt;&gt;(...)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>donde los <strong class="blue">identificadores encerrados entre &lt; y &gt; son los parámetros de tipo</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">pueden usarse dentro de la clase parametrizada para declarar el tipo de sus atributos, argumentos de sus métodos, o objetos locales de sus métodos</strong>.</p>
+</li>
+<li>
+<p><strong class="blue">se especifican posteriormente con un tipo concreto (actual) en la instanciación de un objeto de la clase parametrizada o al declarar una clase hija de la clase parametrizada</strong>, lo que produce la <strong class="blue">encarnación</strong> de la clase parametrizada, que se convierte en una clase concreta, proceso que se realiza en <strong class="green">tiempo de compilación</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dispensers : <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a1_object"><em>objects</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a2_generic">generics</a></p>
+</li>
+<li>
+<p>Map : <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_dispensers/a8_parametrized/a4_map">iterator</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con esta solución <strong class="blue">NO es necesario convertir la dirección devuelta por el método <em>remove()</em> a una dirección de la clase concreta mediante el operador de conversión de tipos (<em>cast</em>)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al sacar un elemento <strong class="green">NO existe la posibilidad de que se produzca un error de conversión de tipos en tiempo de ejecución al sacar los elementos, porque el error es detectado en tiempo de compilación, si se trata de meter elementos que no son de la clase adecuada</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="keyword">try</span> {
+    BoundedQueue&lt;<span class="predefined-type">Integer</span>&gt; boundedQueue = <span class="keyword">new</span> BoundedQueue&lt;<span class="predefined-type">Integer</span>&gt;(<span class="integer">1</span>);
+    boundedQueue.add(<span class="integer">2</span>);
+    <span class="comment">// boundedQueue.add(new Fraction(1, 2)); No compila!!!</span>
+    <span class="type">int</span> element = boundedQueue.remove();
+    Console.getInstance().writeln(element);
+  } <span class="keyword">catch</span> (DispenserException e) {
+    e.printStackTrace();
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18%;">
+<col style="width: 82%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Por <strong class="red">razones de compatibilidad con códigos anteriores a la JDK 1.5</strong>, está <strong class="green">permitido el uso de las clases parametrizadas sin especificar sus parámetros</strong>, aunque el compilador genera un aviso</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>estas clases se denominan <strong class="blue">tipos crudos</strong> (<em class="blue">raw types</em>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se <strong class="green">puede asignar una referencia de una clase parametrizada a un tipo crudo, y viceversa</strong>.</p>
+</li>
+<li>
+<p>Una utilidad de los tipos crudos es <strong class="green">poder crear vectores de objetos de clases parametrizadas</strong>, lo cual Java <strong class="red">no permite en la actualidad</strong>;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  BoundedQueue&lt;<span class="predefined-type">Double</span>&gt; b0 = <span class="keyword">new</span> BoundedQueue&lt;<span class="predefined-type">Double</span>&gt;(<span class="integer">10</span>);
+  b0.add(<span class="float">0.0</span>);
+  <span class="comment">//b0.add(0); // Error!!!</span>
+  <span class="comment">//b0.add(new Fraction(0,2)); // Error!!!</span>
+  Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>+b0.remove());
+
+  BoundedQueue&lt;<span class="predefined-type">Double</span>&gt; b1 = <span class="keyword">new</span> BoundedQueue(<span class="integer">10</span>);
+  b1.add(<span class="float">1.1</span>);
+  <span class="comment">//b1.add(1); // Error!!!</span>
+  <span class="comment">//b1.add(new Fraction(1,2)); // Error!!!</span>
+  Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>+b1.remove());
+
+  BoundedQueue b2 = <span class="keyword">new</span> BoundedQueue&lt;<span class="predefined-type">Double</span>&gt;(<span class="integer">10</span>);
+  b2.add(<span class="float">2.2</span>);
+  <span class="comment">//b2.add(2); // Warning!!! y Error!!!</span>
+  <span class="comment">//b2.add(new Fraction(2,2)); // Warning!!! y Error!!!</span>
+  Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>+b2.remove());
+
+  BoundedQueue b3 = <span class="keyword">new</span> BoundedQueue(<span class="integer">10</span>); <span class="comment">// Integer!!!</span>
+  <span class="comment">//b3.add(3.3); // Warning!!! y Error!!!</span>
+  b3.add(<span class="integer">3</span>);
+  <span class="comment">//b3.add(new Fraction(3,2)); // Warning!!! y Error!!!</span>
+  Console.getInstance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>+b3.remove());
+
+  <span class="comment">//BoundedQueue&lt;Integer&gt;[] a0 = new BoundedQueue&lt;Integer&gt;[3]; // Error!!!</span>
+  BoundedQueue&lt;<span class="predefined-type">Integer</span>&gt;<span class="type">[]</span> a0 = <span class="keyword">new</span> BoundedQueue[<span class="integer">3</span>];
+  <span class="keyword">for</span>(BoundedQueue&lt;<span class="predefined-type">Integer</span>&gt; boundedQueue : a0){
+    boundedQueue = <span class="keyword">new</span> BoundedQueue&lt;&gt;(<span class="integer">5</span>);
+  }</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="clases-genéricas-y-herencia">Clases genéricas y herencia</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 34%;">
+<col style="width: 66%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><span class="blue">Ejemplo</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una clase genérica puede heredar de otra clase genérica</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BoundedStack</span>&lt;E&gt; <span class="directive">extends</span> BoundedDispenser&lt;E&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una clase genérica puede heredar de una clase no genérica</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BoundedStack</span>&lt;E&gt; <span class="directive">implements</span> <span class="predefined-type">Serializable</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Una clase no genérica puede heredar de una clase genérica</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">IntBoundedStack</span> <span class="directive">extends</span> BoundedStack&lt;<span class="predefined-type">Integer</span>&gt;
+<span class="directive">public</span> <span class="directive">final</span> <span class="type">class</span> <span class="class">Integer</span> <span class="directive">extends</span> <span class="predefined-type">Number</span> <span class="directive">implements</span> <span class="predefined-type">Comparable</span>&lt;<span class="predefined-type">Integer</span>&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="limitaciones-de-las-clases-genéricas">Limitaciones de las clases genéricas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><span class="blue">Ejemplo</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No se pueden encarnar clases genéricas con tipos primitivos</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">BoundedStack&lt;<span class="type">int</span>&gt; intBoundedStack; <span class="comment">// ERROR</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No se pueden crear clases parametrizadas de excepciones</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XException</span>&lt;E&gt; <span class="directive">extends</span> <span class="exception">Exception</span> { ... } <span class="comment">// ERROR</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No pueden aparecer genéricos en las cláusulas <em>catch</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">try</span> { ... } <span class="keyword">catch</span> (E e) { ... } <span class="comment">// ERROR</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No se pueden crear vectores de objetos de clases genéricas</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BoundedStack</span>&lt;E&gt; {
+
+   <span class="directive">protected</span> E<span class="type">[]</span> elements;
+   ...
+   public BoundedStack(<span class="type">int</span> size) {
+       <span class="local-variable">this</span>.elements = <span class="keyword">new</span> E[size]; <span class="comment">// ERROR</span>
+       <span class="local-variable">this</span>.elements = (E<span class="type">[]</span>) <span class="keyword">new</span> <span class="predefined-type">Object</span>[size]; <span class="comment">// AVISO</span>
+   ...
+   }
+}
+
+PilaAcotada&lt;<span class="predefined-type">Integer</span>&gt;<span class="type">[]</span> pilas = <span class="keyword">new</span> PilaAcotada&lt;<span class="predefined-type">Integer</span>&gt;[<span class="integer">10</span>];        <span class="comment">// ERROR</span>
+PilaAcotada&lt;<span class="predefined-type">Integer</span>&gt;<span class="type">[]</span> pilas = <span class="keyword">new</span> PilaAcotada[<span class="integer">10</span>];                <span class="comment">// AVISO</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="parámetros-limitados">Parámetros Limitados</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis:</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En la declaración de un <strong class="blue">parámetro de tipo de una clase parametrizada se puede especificar una restricción que debe cumplir ese tipo</strong>; estos parámetros de tipo se conocen como <strong class="blue">parámetros de tipo limitados (<em>bounded</em>)</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> &lt;<span class="class">clase</span>&gt;&lt;&lt;parámetro&gt; <span class="directive">extends</span> &lt;tipoBase&gt;,<span class="error">…</span>&gt; {
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donde se especifica que el <strong class="blue">parámetro de tipo que se declara &lt;parámetro&gt; debe ser el tipo &lt;tipoBase&gt; o cualquier tipo derivado de él</strong>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>el <strong class="blue">tipo base puede ser una clase o un interfaz</strong>;</p>
+</li>
+<li>
+<p>se <strong class="blue">pueden especificar más interfaces separándolos por <em>&amp;</em></strong>;</p>
+</li>
+<li>
+<p>el <strong class="blue">tipo base puede estar, a su vez, parametrizado</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>por ejemplo, la clase Interval puede parametrizarse, pero con la restricción de que sus elementos sean <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">comparables</a>: <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a5_units/a1_interval/a7_parametrized">bounded</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">interface</span> <span class="class">Comparable</span>&lt;T&gt; {
+   <span class="type">int</span> comparteTo(T o);
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="parámetros-comodines">Parámetros Comodines</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">parámetros de tipos comodines (<em>wildcards</em>) son parámetros sin nombre que pueden usarse para declarar tipos parametrizados de los atributos, argumentos, objetos locales y valores devueltos de métodos de cualquier clase, parametrizada o no</strong>; y que representan únicamente que se trata de un <strong class="blue">tipo cualquiera desconocido</strong>;</p>
+</li>
+<li>
+<p>se representan mediante el [blue[<strong>símbolo <em>?</em></strong></p>
+</li>
+<li>
+<p>al ser <strong class="blue">anónimos no pueden usarse para referirse a él</strong> en el interior de la clase o método donde se declaran;</p>
+</li>
+<li>
+<p><strong class="blue">pueden limitarse como cualquier otro</strong> parámetro de tipo;</p>
+</li>
+<li>
+<p>su principal utilidad consiste en que <strong class="blue">relajan el sistema de tipos de Java de forma que resulta más fácil asignar instancias de tipos genéricos</strong>.</p>
+</li>
+<li>
+<p>Para ilustrar esta propiedad, supóngase el siguiente ejemplo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El error de compilación se produce porque la clase Lista&lt;_Double_&gt; no es una subclase de Lista&lt;_Number_&gt; aunque <em>Double</em> sea una subclase de <em>Number</em> (¿por qué?).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Lista</span>&lt;Elemento <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; {
+   <span class="error">…</span>
+   <span class="directive">public</span> <span class="type">double</span> suma(Lista&lt;<span class="predefined-type">Number</span>&gt; lista) {
+       <span class="type">double</span> suma = <span class="float">0.0</span>;
+       Iterador&lt;Elemento&gt; iterador = <span class="local-variable">this</span>.iterador();
+       <span class="keyword">while</span> (iterador.hasNext()) {
+           Elemento elemento = iterador.next();
+           suma += elemento.doubleValue();
+       }
+       Iterador&lt;<span class="predefined-type">Number</span>&gt; iteradorLista = lista.iterador();
+       <span class="keyword">while</span> (iteradorLista.hasNext()) {
+           <span class="predefined-type">Number</span> numero = iteradorLista.next();
+           suma += numero.doubleValue();
+       }
+       <span class="keyword">return</span> suma;
+  }
+  <span class="error">…</span>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+     <span class="predefined-type">Integer</span> i1 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">1</span>);
+     <span class="predefined-type">Integer</span> i2 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">2</span>);
+     <span class="predefined-type">Integer</span> i3 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">3</span>);
+     Lista&lt;<span class="predefined-type">Integer</span>&gt; listaEnteros = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Integer</span>&gt;();
+     listaEnteros.add(i1);
+     listaEnteros.add(i2);
+     listaEnteros.add(i3);
+
+     <span class="predefined-type">Double</span> d1 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">1.1</span>);
+     <span class="predefined-type">Double</span> d2 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">2.2</span>);
+     <span class="predefined-type">Double</span> d3 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">3.3</span>);
+     Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
+     listaReales.add(d1);
+     listaReales.add(d2);
+     listaReales.add(d3);
+     <span class="comment">// ERROR DE COMPILACION</span>
+     <span class="type">double</span> suma = listaEnteros.suma(listaReales);
+     <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">La suma de los elementos de </span><span class="delimiter">&quot;</span></span> +
+             listaEnteros + <span class="string"><span class="delimiter">&quot;</span><span class="content"> y </span><span class="delimiter">&quot;</span></span> + listaReales + <span class="string"><span class="delimiter">&quot;</span><span class="content"> es </span><span class="delimiter">&quot;</span></span> + suma);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 42.5742%;">
+<col style="width: 57.4258%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La razón es que si fuera así, entonces las siguientes sentencias:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>harían que <strong class="red">pudiéramos copiar una referencia a un entero en una referencia a un doble, lo cual es incorrecto</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
+Lista&lt;<span class="predefined-type">Number</span>&gt; listaNumeros = listaReales; <span class="comment">// ERROR</span>
+listaNumeros.add(<span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">1</span>));
+<span class="predefined-type">Double</span> doble = listaReales.get(<span class="integer">0</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Para resolver este error de compilación se debe <strong class="green">usar un parámetro de tipo comodín para declarar el tipo del argumento de la función <em>suma</em>()</strong>, como se muestra a continuación:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Lista</span>&lt;Elemento <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; {
+     <span class="error">…</span>
+     <span class="directive">public</span> <span class="type">double</span> suma(Lista&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; lista) {
+         <span class="type">double</span> suma = <span class="float">0.0</span>;
+         Iterador&lt;Elemento&gt; iterador = <span class="local-variable">this</span>.iterador();
+         <span class="keyword">while</span> (iterador.hasNext()) {
+              Elemento elemento = iterador.next();
+              suma += elemento.doubleValue();
+     }
+     Iterador&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; iteradorLista = lista.iterador();
+     <span class="keyword">while</span> (iteradorLista.hasNext()) {
+         <span class="predefined-type">Number</span> numero = iteradorLista.next();
+         suma += numero.doubleValue();
+     }
+     <span class="keyword">return</span> suma;
+}
+<span class="error">…</span>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+     <span class="predefined-type">Integer</span> i1 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">1</span>);
+     <span class="predefined-type">Integer</span> i2 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">2</span>);
+     <span class="predefined-type">Integer</span> i3 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">3</span>);
+     Lista&lt;<span class="predefined-type">Integer</span>&gt; listaEnteros = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Integer</span>&gt;();
+     listaEnteros.add(i1);
+     listaEnteros.add(i2);
+     listaEnteros.add(i3);
+
+     <span class="predefined-type">Double</span> d1 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">1.1</span>);
+     <span class="predefined-type">Double</span> d2 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">2.2</span>);
+     <span class="predefined-type">Double</span> d3 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">3.3</span>);
+     Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
+     listaReales.add(d1);
+     listaReales.add(d2);
+     listaReales.add(d3);
+     <span class="type">double</span> suma = listaEnteros.suma(listaReales); <span class="comment">// CORRECTO</span>
+     <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">La suma de los elementos de </span><span class="delimiter">&quot;</span></span> +
+             listaEnteros + <span class="string"><span class="delimiter">&quot;</span><span class="content"> y </span><span class="delimiter">&quot;</span></span> + listaReales + <span class="string"><span class="delimiter">&quot;</span><span class="content"> es </span><span class="delimiter">&quot;</span></span> + suma);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>El error de compilación no se produce porque el uso del parámetro comodín relaja el sistema de tipos, de manera que las siguientes sentencias son correctas:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
+Lista&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; listaNumeros = listaReales; <span class="comment">// CORRECTO</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sin embargo, usar el parámetro comodín impone que con la referencia no se puedan usar métodos de la clase parametrizada que pudieran producir una incompatibilidad de tipos:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">listaNumeros.add(<span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="integer">3</span>));
+<span class="predefined-type">Double</span> x = listaNumeros.get(<span class="integer">0</span>); <span class="comment">// ERROR</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>pero sí se pueden usar métodos que no puedan producir incompatibilidad de tipos:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">Number</span> x = listaNumeros.get(<span class="integer">0</span>); <span class="comment">// CORRECTO</span>
+<span class="predefined-type">String</span> cadena = listaNumeros.toString(); <span class="comment">// CORRECTO</span>
+listaNumeros.clear(); <span class="comment">// CORRECTO</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="red">Ejemplo:</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Lista</span>&lt;Elemento <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; {
+     <span class="error">…</span>
+     <span class="directive">public</span> <span class="type">void</span> addAll(Lista&lt;? <span class="directive">extends</span> Elemento&gt; lista) {
+        Iterador&lt;? <span class="directive">extends</span> Elemento&gt; iteradorLista = lista.iterador();
+        <span class="keyword">while</span> (iteradorLista.hasNext()) {
+            Elemento elemento = iteradorLista.next();
+            <span class="local-variable">this</span>.add(elemento);
+     }
+}
+<span class="error">…</span></code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+     <span class="error">…</span>
+     Lista&lt;<span class="predefined-type">Number</span>&gt; listaNumeros = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Number</span>&gt;();
+     listaNumeros.addAll(listaEnteros);
+     listaNumeros.addAll(listaReales);
+     <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">La lista resultado de unir </span><span class="delimiter">&quot;</span></span> +
+             listaEnteros + <span class="string"><span class="delimiter">&quot;</span><span class="content"> y </span><span class="delimiter">&quot;</span></span> + listaReales + <span class="string"><span class="delimiter">&quot;</span><span class="content"> es </span><span class="delimiter">&quot;</span></span> +
+             listaNumeros);
+     <span class="error">…</span>
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">La lista resultado de unir {<span class="integer">1</span>; <span class="integer">2</span>; <span class="integer">3</span>} y {<span class="float">1.1</span>; <span class="float">2.2</span>; <span class="float">3.3</span>}  es {<span class="integer">1</span>; <span class="integer">2</span>; <span class="integer">3</span>; <span class="float">1.1</span>; <span class="float">2.2</span>; <span class="float">3.3</span>}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
