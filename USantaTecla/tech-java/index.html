@@ -606,6 +606,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#clases-genéricas">Clases Genéricas</a></li>
 <li><a href="#parámetros-limitados">Parámetros Limitados</a></li>
 <li><a href="#parámetros-comodines">Parámetros Comodines</a></li>
+<li><a href="#métodos-genéricos">Métodos Genéricos</a></li>
+<li><a href="#colecciones">Colecciones</a></li>
 </ul>
 </li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
@@ -13292,18 +13294,52 @@ PilaAcotada&lt;<span class="predefined-type">Integer</span>&gt;<span class="type
 <h3 id="parámetros-comodines">Parámetros Comodines</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <strong class="blue">parámetros de tipos comodines (<em>wildcards</em>) son parámetros sin nombre que pueden usarse para declarar tipos parametrizados de los atributos, argumentos, objetos locales y valores devueltos de métodos de cualquier clase, parametrizada o no</strong>; y que representan únicamente que se trata de un <strong class="blue">tipo cualquiera desconocido</strong>;</p>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a5_parametrized">Código</a> con <span class="red">error de compilación porque la clase <em>List&lt;Double&gt;</em> no es una subclase de <em>List&lt;Number&gt;</em> aunque <em>Double</em> sea una subclase de <em>Number</em></span></p>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="predefined-type">List</span>&lt;<span class="predefined-type">Double</span>&gt; doubleList = <span class="keyword">new</span> <span class="predefined-type">List</span>&lt;<span class="predefined-type">Double</span>&gt;();
+  <span class="predefined-type">List</span>&lt;<span class="predefined-type">Number</span>&gt; numberList = doubleList; <span class="comment">// !!!ERROR</span>
+  numberList.add(<span class="predefined-type">Integer</span>.valueOf(<span class="integer">3</span>));
+  <span class="predefined-type">Double</span> value = doubleList.get(<span class="integer">0</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p>La razón es que si fuera así, entonces las siguientes sentencias, harían que <strong class="red">pudiéramos copiar una referencia a un entero en una referencia a un doble, lo cual es incorrecto</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p>se representan mediante el [blue[<strong>símbolo <em>?</em></strong></p>
+<p>Los <strong class="blue">parámetros de tipos comodines (<em>wildcards</em>) son parámetros sin nombre que pueden usarse para declarar tipos parametrizados de los atributos, argumentos, objetos locales y valores devueltos de métodos de cualquier clase, parametrizada o no</strong>; y que representan únicamente que se trata de un <strong class="blue">tipo cualquiera desconocido</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>se representan mediante el <strong class="blue">símbolo <em>?</em></strong></p>
 </li>
 <li>
 <p>al ser <strong class="blue">anónimos no pueden usarse para referirse a él</strong> en el interior de la clase o método donde se declaran;</p>
@@ -13314,59 +13350,186 @@ PilaAcotada&lt;<span class="predefined-type">Integer</span>&gt;<span class="type
 <li>
 <p>su principal utilidad consiste en que <strong class="blue">relajan el sistema de tipos de Java de forma que resulta más fácil asignar instancias de tipos genéricos</strong>.</p>
 </li>
-<li>
-<p>Para ilustrar esta propiedad, supóngase el siguiente ejemplo:</p>
-<div class="ulist">
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>El error de compilación se produce porque la clase Lista&lt;_Double_&gt; no es una subclase de Lista&lt;_Number_&gt; aunque <em>Double</em> sea una subclase de <em>Number</em> (¿por qué?).</p>
+<p>El <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a5_parametrized2">error de compilación no se produce</a> porque el uso del <strong class="blue">parámetro comodín relaja el sistema de tipos</strong>, de manera que las siguientes sentencias son correctas:</p>
 </li>
-</ul>
-</div>
+<li>
+<p>Sin embargo, usar el parámetro comodín <span class="red">impone que con la referencia no se puedan usar métodos de la clase parametrizada que pudieran producir una incompatibilidad de tipos</span></p>
+</li>
+<li>
+<p>pero sí se <span class="green">pueden usar métodos que no puedan producir incompatibilidad de tipos</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Lista</span>&lt;Elemento <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; {
-   <span class="error">…</span>
-   <span class="directive">public</span> <span class="type">double</span> suma(Lista&lt;<span class="predefined-type">Number</span>&gt; lista) {
-       <span class="type">double</span> suma = <span class="float">0.0</span>;
-       Iterador&lt;Elemento&gt; iterador = <span class="local-variable">this</span>.iterador();
-       <span class="keyword">while</span> (iterador.hasNext()) {
-           Elemento elemento = iterador.next();
-           suma += elemento.doubleValue();
-       }
-       Iterador&lt;<span class="predefined-type">Number</span>&gt; iteradorLista = lista.iterador();
-       <span class="keyword">while</span> (iteradorLista.hasNext()) {
-           <span class="predefined-type">Number</span> numero = iteradorLista.next();
-           suma += numero.doubleValue();
-       }
-       <span class="keyword">return</span> suma;
-  }
-  <span class="error">…</span>
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-     <span class="predefined-type">Integer</span> i1 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">1</span>);
-     <span class="predefined-type">Integer</span> i2 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">2</span>);
-     <span class="predefined-type">Integer</span> i3 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">3</span>);
-     Lista&lt;<span class="predefined-type">Integer</span>&gt; listaEnteros = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Integer</span>&gt;();
-     listaEnteros.add(i1);
-     listaEnteros.add(i2);
-     listaEnteros.add(i3);
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="predefined-type">List</span>&lt;<span class="predefined-type">Double</span>&gt; doubleList = <span class="keyword">new</span> <span class="predefined-type">List</span>&lt;<span class="predefined-type">Double</span>&gt;();
+  <span class="comment">// List&lt;Number&gt; numberList = doubleList; // !!!ERROR</span>
+  <span class="comment">//numberList.add(Integer.valueOf(3));</span>
+  <span class="predefined-type">Double</span> value = doubleList.get(<span class="integer">0</span>);
 
-     <span class="predefined-type">Double</span> d1 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">1.1</span>);
-     <span class="predefined-type">Double</span> d2 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">2.2</span>);
-     <span class="predefined-type">Double</span> d3 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">3.3</span>);
-     Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
-     listaReales.add(d1);
-     listaReales.add(d2);
-     listaReales.add(d3);
-     <span class="comment">// ERROR DE COMPILACION</span>
-     <span class="type">double</span> suma = listaEnteros.suma(listaReales);
-     <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">La suma de los elementos de </span><span class="delimiter">&quot;</span></span> +
-             listaEnteros + <span class="string"><span class="delimiter">&quot;</span><span class="content"> y </span><span class="delimiter">&quot;</span></span> + listaReales + <span class="string"><span class="delimiter">&quot;</span><span class="content"> es </span><span class="delimiter">&quot;</span></span> + suma);
-  }
+  <span class="comment">// Se podria omitir extends Number</span>
+  <span class="predefined-type">List</span>&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; numberList = doubleList;
+  <span class="comment">//numberList.add(new Double(3)); // !!!ERROR</span>
+  <span class="comment">//Number numero = new Double(3);</span>
+  <span class="comment">//numberList.add(numero); // !!!ERROR</span>
+  <span class="comment">//Double x1 = numberList.get(0); // !!!ERROR</span>
+
+  <span class="predefined-type">Number</span> number = numberList.get(<span class="integer">0</span>);
+  <span class="predefined-type">String</span> string = numberList.toString();
+  numberList.clear();
+  string = numberList.toString();</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="métodos-genéricos">Métodos Genéricos</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los métodos también se pueden parametrizar, tanto si están en una clase parametrizada como si no lo están.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Para parametrizar un método se declaran los parámetros de tipo antes de la declaración del tipo del valor devuelto por el método.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">&lt;acceso&gt; &lt;&lt;parámetro1&gt;,<span class="error">…</span>,&lt;parámetroN&gt;&gt;
+&lt;tipoDevuelto&gt; &lt;nombreMétodo&gt;(&lt;argumentos&gt;) {
+ ...
 }</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">parámetros de tipo pueden usarse dentro del método parametrizado para declarar el tipo del valor devuelto por el método, de sus argumentos y de sus objetos locales</strong>.</p>
+</li>
+<li>
+<p>Estos <strong class="blue">parámetros de tipo (formales) se especifican posteriormente con un tipo concreto (actual) al invocar el método parametrizado</strong>, lo que produce la encarnación del método.</p>
+</li>
+<li>
+<p><em>Ejemplo</em>: <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_listas/a5_parametrized3">greaters</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>TicTacToe - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_ticTacToe/a9_generics">generics</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="colecciones">Colecciones</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Java proporciona en el paquete <em>java.util</em> un conjunto de clases para representar y manejar estructuras de datos.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Antes de la aparición de la plataforma Java 2, sólo se disponía de un conjunto muy limitado de clases para las estructuras de datos más comunes: <em>Vector, Stack, Hashtable,</em> y el interfaz <em>Enumeration</em> para recorrer los elementos de estas clases.</p>
+</li>
+<li>
+<p>Java 2 incorpora un  <em>framework</em> más completo inspirado en la librería STL de C++, pero manteniendo compatibles las clases heredadas de las versiones anteriores.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Esta biblioteca de clases separa los interfaces de sus implementaciones, lo que proporciona mayor abstracción al usar la biblioteca, y facilita la extensibilidad de la misma.</p>
+</li>
+<li>
+<p>A partir de la JDK 1.5 las clases de la biblioteca son clases parametrizadas.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Iterator.svg" alt="Iterator" width="107" height="191">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Collection.svg" alt="Collection" width="300" height="423">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Map.svg" alt="Map" width="129" height="352">
 </div>
 </div></div></td>
 </tr>
@@ -13374,31 +13537,62 @@ PilaAcotada&lt;<span class="predefined-type">Integer</span>&gt;<span class="type
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 42.5742%;">
-<col style="width: 57.4258%;">
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Collection2.svg" alt="Collection2" width="996" height="539">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/Map2.svg" alt="Map2" width="668" height="483">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>La razón es que si fuera así, entonces las siguientes sentencias:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>harían que <strong class="red">pudiéramos copiar una referencia a un entero en una referencia a un doble, lo cual es incorrecto</strong>.</p>
-</li>
-</ul>
-</div>
+<p><strong><span class="underline">Interfaz Collection&lt;E&gt;:</span></strong> Es la raíz de la jerarquía de las clases de colecciones, y proporciona los métodos comunes a todas ellas:</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
-Lista&lt;<span class="predefined-type">Number</span>&gt; listaNumeros = listaReales; <span class="comment">// ERROR</span>
-listaNumeros.add(<span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">1</span>));
-<span class="predefined-type">Double</span> doble = listaReales.get(<span class="integer">0</span>);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">int</span> size()
+<span class="type">boolean</span> isEmpty()
+<span class="type">boolean</span> contains(<span class="predefined-type">Object</span> o)
+<span class="type">boolean</span> containsAll(<span class="predefined-type">Collection</span>&lt;?&gt; c)
+<span class="predefined-type">Iterator</span>&lt;E&gt; iterator()
+<span class="predefined-type">Object</span><span class="type">[]</span> toArray()
+&lt;T&gt; T<span class="type">[]</span> toArray(T<span class="type">[]</span> a)
+<span class="type">boolean</span> add(E e)
+<span class="type">boolean</span> remove(<span class="predefined-type">Object</span> o)
+<span class="type">boolean</span> addAll(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)
+<span class="type">boolean</span> removeAll(<span class="predefined-type">Collection</span>&lt;?&gt; c)
+<span class="type">boolean</span> retainAll(<span class="predefined-type">Collection</span>&lt;?&gt; c)
+<span class="type">void</span> clear()
+<span class="type">boolean</span> equals(<span class="predefined-type">Object</span> o)
+<span class="type">int</span> hashCode()</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -13406,50 +13600,220 @@ listaNumeros.add(<span class="keyword">new</span> <span class="predefined-type">
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Para resolver este error de compilación se debe <strong class="green">usar un parámetro de tipo comodín para declarar el tipo del argumento de la función <em>suma</em>()</strong>, como se muestra a continuación:</p>
+<p><strong><span class="underline">Interfaz Iterator&lt;E&gt;:</span></strong> Permite recorrer los elementos de las clases de colecciones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>donde el método <em>remove</em>() debe llamarse sólo después de <em>next</em>(), y elimina de la colección el último elemento devuelto por éste;</p>
+</li>
+<li>
+<p>no debe modificarse una colección mientras un iterador la recorre de ninguna otra manera que invocando <em>remove</em>() sobre ese iterador, porque, en otro caso, el comportamiento del iterador no está definido (la implementación actual produce una excepción <em>ConcurrentModificationException</em>);</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Lista</span>&lt;Elemento <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; {
-     <span class="error">…</span>
-     <span class="directive">public</span> <span class="type">double</span> suma(Lista&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; lista) {
-         <span class="type">double</span> suma = <span class="float">0.0</span>;
-         Iterador&lt;Elemento&gt; iterador = <span class="local-variable">this</span>.iterador();
-         <span class="keyword">while</span> (iterador.hasNext()) {
-              Elemento elemento = iterador.next();
-              suma += elemento.doubleValue();
-     }
-     Iterador&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; iteradorLista = lista.iterador();
-     <span class="keyword">while</span> (iteradorLista.hasNext()) {
-         <span class="predefined-type">Number</span> numero = iteradorLista.next();
-         suma += numero.doubleValue();
-     }
-     <span class="keyword">return</span> suma;
-}
-<span class="error">…</span>
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-     <span class="predefined-type">Integer</span> i1 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">1</span>);
-     <span class="predefined-type">Integer</span> i2 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">2</span>);
-     <span class="predefined-type">Integer</span> i3 = <span class="keyword">new</span> <span class="predefined-type">Integer</span>(<span class="integer">3</span>);
-     Lista&lt;<span class="predefined-type">Integer</span>&gt; listaEnteros = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Integer</span>&gt;();
-     listaEnteros.add(i1);
-     listaEnteros.add(i2);
-     listaEnteros.add(i3);
-
-     <span class="predefined-type">Double</span> d1 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">1.1</span>);
-     <span class="predefined-type">Double</span> d2 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">2.2</span>);
-     <span class="predefined-type">Double</span> d3 = <span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="float">3.3</span>);
-     Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
-     listaReales.add(d1);
-     listaReales.add(d2);
-     listaReales.add(d3);
-     <span class="type">double</span> suma = listaEnteros.suma(listaReales); <span class="comment">// CORRECTO</span>
-     <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">La suma de los elementos de </span><span class="delimiter">&quot;</span></span> +
-             listaEnteros + <span class="string"><span class="delimiter">&quot;</span><span class="content"> y </span><span class="delimiter">&quot;</span></span> + listaReales + <span class="string"><span class="delimiter">&quot;</span><span class="content"> es </span><span class="delimiter">&quot;</span></span> + suma);
-  }
-}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">boolean</span> hasNext()
+E next()
+<span class="type">void</span> remove()</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="listas">Listas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz List&lt;E&gt;:</strong> Representa una secuencia de elementos que ocupan una cierta posición en la colección, en la que puede haber elementos repetidos.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">E get(<span class="type">int</span> index)
+E set(<span class="type">int</span> index, E element)
+<span class="type">void</span> add(<span class="type">int</span> index, E element)
+E remove(<span class="type">int</span> index)
+<span class="type">int</span> indexOf(<span class="predefined-type">Object</span> o)
+<span class="type">int</span> lastIndexOf(<span class="predefined-type">Object</span> o)
+<span class="predefined-type">ListIterator</span>&lt;E&gt; listIterator()
+<span class="predefined-type">ListIterator</span>&lt;E&gt; listIterator(<span class="type">int</span> index)
+<span class="predefined-type">List</span>&lt;E&gt; subList(<span class="type">int</span> fromIndex, <span class="type">int</span> toIndex)
+<span class="type">boolean</span> addAll(<span class="type">int</span> index, <span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz ListIterator&lt;E&gt;:</strong> Recorre los elementos de una lista:</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">boolean</span> hasPrevious()
+E previous()
+<span class="type">int</span> nextIndex()
+<span class="type">int</span> previousIndex()
+<span class="type">void</span> add(E e)
+<span class="type">void</span> set(E e)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>donde el método <em>remove()</em> debe llamarse sólo después de <em>next()</em> o <em>previous()</em>, y elimina de la colección el último elemento devuelto por éstos;</p>
+</li>
+<li>
+<p>donde <em>add()</em> inserta justo antes del elemento que se obtendría con <em>next()</em> y justo después del elemento que se obtendría con <em>previous()</em>;</p>
+</li>
+<li>
+<p><em>set()</em> reemplaza el último elemento devuelto por <em>next</em>() o <em>previous()</em>, y sólo puede invocarse si después de estas operaciones no se ha invocado <em>add()</em> o <em>set()</em>;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases que implementan el interfaz List&lt;E&gt; son:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase ArrayList&lt;E&gt;:</strong> que proporciona una implementación basada en vectores de elementos que autoajustan su tamaño según se añaden elementos;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">ArrayList</span>()
+<span class="directive">public</span> <span class="predefined-type">ArrayList</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">ArrayList</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)
+<span class="directive">public</span> <span class="type">void</span> trimToSize()
+<span class="directive">public</span> <span class="type">void</span> ensureCapacity(<span class="type">int</span> minCapacity)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedList&lt;E&gt;:</strong> que utiliza listas doblemente enlazadas; además implementa el <strong>interfaz Deque&lt;E&gt;</strong>, por lo que puede usarse para tratar con colas (se verá más adelante);</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">LinkedList</span>()
+<span class="directive">public</span> <span class="predefined-type">LinkedList</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase Vector&lt;E&gt;:</strong> también usa vectores autoajustables, y se mantiene por razones de compatibilidad con código heredado; además está sincronizada para evitar accesos concurrentes, lo que conlleva un cierto sobrecoste adicional;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">Vector</span>()
+<span class="directive">public</span> <span class="predefined-type">Vector</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">Vector</span>(<span class="type">int</span> initialCapacity, <span class="type">int</span> capacityIncrement)
+<span class="directive">public</span> <span class="predefined-type">Vector</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)
+<span class="directive">public</span> <span class="type">void</span> copyInto(<span class="predefined-type">Object</span><span class="type">[]</span> anArray)
+<span class="directive">public</span> <span class="type">void</span> trimToSize()
+<span class="directive">public</span> <span class="type">void</span> ensureCapacity(<span class="type">int</span> minCapacity)
+<span class="directive">public</span> <span class="type">void</span> setSize(<span class="type">int</span> newSize)
+<span class="directive">public</span> <span class="type">int</span> capacity()
+<span class="directive">public</span> <span class="predefined-type">Enumeration</span>&lt;E&gt; elements()
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">Object</span> o, <span class="type">int</span> index)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">Object</span> o, <span class="type">int</span> index)
+<span class="directive">public</span> E elementAt(<span class="type">int</span> index)
+<span class="directive">public</span> E firstElement()
+<span class="directive">public</span> E lastElement()
+<span class="directive">public</span> <span class="type">void</span> setElementAt(E obj, <span class="type">int</span> index)
+<span class="directive">public</span> <span class="type">void</span> removeElementAt(<span class="type">int</span> index)
+<span class="directive">public</span> <span class="type">void</span> insertElementAt(E obj, <span class="type">int</span> index)
+<span class="directive">public</span> <span class="type">void</span> addElement(E obj)
+<span class="directive">public</span> <span class="type">boolean</span> removeElement(<span class="predefined-type">Object</span> obj)
+<span class="directive">public</span> <span class="type">void</span> removeAllElements()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Stack&lt;E&gt;:</strong> Representa una pila LIFO.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">Stack</span>()
+<span class="directive">public</span> E push(E item)
+<span class="directive">public</span> E pop()
+<span class="directive">public</span> E peek()
+<span class="directive">public</span> <span class="type">boolean</span> empty()
+<span class="directive">public</span> <span class="type">int</span> search(<span class="predefined-type">Object</span> o)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="colas">Colas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz Queue&lt;E&gt;:</strong> Las colas ordenan sus elementos según un orden determinado (normalmente FIFO, aunque no necesariamente):</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">boolean</span> offer(E e)
+E remove()
+E poll()
+E element()
+E peek()</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -13458,21 +13822,82 @@ listaNumeros.add(<span class="keyword">new</span> <span class="predefined-type">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 35%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Excepción</strong></th>
+<th class="tableblock halign-left valign-top"><strong>No excepción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Inserción</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>add()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>offer()</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Extracción</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>remove()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>poll()</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Consulta</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>element()</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>peek()</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>La única clase que implementa el <strong><em>interfaz Queue&lt;E&gt;</em></strong> es:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>El error de compilación no se produce porque el uso del parámetro comodín relaja el sistema de tipos, de manera que las siguientes sentencias son correctas:</p>
+<p><strong>Clase PriorityQueue&lt;E&gt;:</strong> proporciona una implementación basada en prioridades que se establecen por el orden natural de sus elementos (según el interfaz <em>Comparable</em>) o por un comparador de elementos que se suministra a la cola en su construcción. Todas las claves deben implementar el interfaz <em>Comparable</em> (o ser aceptadas por su <em>Comparator</em>).</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">Lista&lt;<span class="predefined-type">Double</span>&gt; listaReales = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Double</span>&gt;();
-Lista&lt;? <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; listaNumeros = listaReales; <span class="comment">// CORRECTO</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">PriorityQueue</span>()
+<span class="directive">public</span> <span class="predefined-type">PriorityQueue</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">PriorityQueue</span>(<span class="type">int</span> initialCapacity,
+<span class="predefined-type">Comparator</span>&lt;? <span class="local-variable">super</span> E&gt; comparator)
+<span class="directive">public</span> <span class="predefined-type">PriorityQueue</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)
+<span class="directive">public</span> <span class="predefined-type">PriorityQueue</span>(<span class="predefined-type">PriorityQueue</span>&lt;? <span class="directive">extends</span> E&gt; c)
+<span class="directive">public</span> <span class="predefined-type">PriorityQueue</span>(<span class="predefined-type">SortedSet</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -13480,14 +13905,59 @@ Lista&lt;? <span class="directive">extends</span> <span class="predefined-type">
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Sin embargo, usar el parámetro comodín impone que con la referencia no se puedan usar métodos de la clase parametrizada que pudieran producir una incompatibilidad de tipos:</p>
+<p><strong>Interfaz Deque&lt;E&gt;:</strong> Son colas que permiten la inserción y extracción de elementos en ambos extremos (<em>double ended queue</em>).</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">listaNumeros.add(<span class="keyword">new</span> <span class="predefined-type">Double</span>(<span class="integer">3</span>));
-<span class="predefined-type">Double</span> x = listaNumeros.get(<span class="integer">0</span>); <span class="comment">// ERROR</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> addFirst(E e)
+<span class="type">void</span> addLast(E e)
+<span class="type">boolean</span> offerFirst(E e)
+<span class="type">boolean</span> offerLast(E e)
+E removeFirst()
+E removeLast()
+E pollFirst()
+E pollLast()
+E getFirst()
+E getLast()
+E peekFirst()
+E peekLast()
+<span class="type">boolean</span> removeFirstOccurrence(<span class="predefined-type">Object</span> o)
+<span class="type">boolean</span> removeLastOccurrence(<span class="predefined-type">Object</span> o)
+<span class="type">void</span> push(E e)
+E pop()
+<span class="predefined-type">Iterator</span>&lt;E&gt; descendingIterator()</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases que implementan el <strong>interfaz Deque&lt;E&gt;</strong> son:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedList&lt;E&gt;:</strong> Implementación mediante listas doblemente enlazadas.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">LinkedList</span>()
+<span class="directive">public</span> <span class="predefined-type">LinkedList</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -13495,15 +13965,407 @@ Lista&lt;? <span class="directive">extends</span> <span class="predefined-type">
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>pero sí se pueden usar métodos que no puedan producir incompatibilidad de tipos:</p>
+<p><strong>Clase ArrayDeque&lt;E&gt;:</strong> Implementación mediante vectores autoajustables.</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">Number</span> x = listaNumeros.get(<span class="integer">0</span>); <span class="comment">// CORRECTO</span>
-<span class="predefined-type">String</span> cadena = listaNumeros.toString(); <span class="comment">// CORRECTO</span>
-listaNumeros.clear(); <span class="comment">// CORRECTO</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> ArrayDeque()
+<span class="directive">public</span> ArrayDeque(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="conjuntos">Conjuntos</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Representa una colección de elementos no repetidos. No añade ningún método nuevo a <em>Collection&lt;E&gt;</em>, sólo estipula ciertas restricciones en sus métodos;</p>
+</li>
+<li>
+<p>Las clases que implementan este interfaz son:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase EnumSet&lt;E extends Enum&lt;E&gt;&gt;:</strong> Los elementos del conjunto deben ser valores de enumerados. Proporcionan una representación muy compacta y eficiente. Los elementos se recorren según su orden natural. La clase es abstracta y sólo tiene métodos genéricos estáticos para crear los conjuntos.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt;
+noneOf(<span class="predefined-type">Class</span>&lt;E&gt; elementType)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt;
+allOf(<span class="predefined-type">Class</span>&lt;E&gt; elementType)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; copyOf(<span class="predefined-type">EnumSet</span>&lt;E&gt; s)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; copyOf(<span class="predefined-type">Collection</span>&lt;E&gt; c)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt;
+    complementOf(<span class="predefined-type">EnumSet</span>&lt;E&gt; s)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; of(E e)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; of(E e1, E e2)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; of(E e1, E e2, E e3)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; of(E e1, E e2, E e3, E e4)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; of(E e1, E e2, E e3, E e4, E e5)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; of(E first, E... rest)
+<span class="directive">public</span> <span class="directive">static</span> &lt;E <span class="directive">extends</span> <span class="predefined-type">Enum</span>&lt;E&gt;&gt; <span class="predefined-type">EnumSet</span>&lt;E&gt; range(E from, E to)
+<span class="directive">public</span> <span class="predefined-type">EnumSet</span>&lt;E&gt; clone()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase HashSet&lt;E&gt;:</strong> Implementación mediante una tabla hash (realmente un <em>HashMap</em>). No garantiza ningún orden al iterar sobre el conjunto.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">HashSet</span>()
+<span class="directive">public</span> <span class="predefined-type">HashSet</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">HashSet</span>(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)
+<span class="directive">public</span> <span class="predefined-type">HashSet</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedHashSet&lt;E&gt;:#</strong> Implementación mediante tabla hash y listas enlazadas (mediante <em>LinkedHashMap</em>), en la que los elementos se recorren en el mismo orden en el que se insertaron.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">LinkedHashSet</span>()
+<span class="directive">public</span> <span class="predefined-type">LinkedHashSet</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">LinkedHashSet</span>(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)
+<span class="directive">public</span> <span class="predefined-type">LinkedHashSet</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz SortedSet&lt;E&gt;:</strong> Representa un conjunto que establece un orden total sobre sus elementos. Los elementos se ordenan por su orden natural (según el interfaz <em>Comparable</em>) o por un comparador de elementos que se suministra al conjunto en su construcción. Todas las claves deben implementar el interfaz <em>Comparable</em> (o ser aceptadas por su <em>Comparator</em>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">Comparator</span>&lt;? <span class="local-variable">super</span> E&gt; comparator()
+<span class="predefined-type">SortedSet</span>&lt;E&gt; subSet(E fromElement, E toElement)
+<span class="predefined-type">SortedSet</span>&lt;E&gt; headSet(E toElement)
+<span class="predefined-type">SortedSet</span>&lt;E&gt; tailSet(E fromElement)
+E first()
+E last()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz NavigableSet&lt;E&gt;:</strong> Extiende <em>SortedSet&lt;E&gt;</em> para buscar un elemento menor, menor o igual, mayor o igual, y mayor que un cierto elemento dado, más otros métodos de búsqueda.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">E lower(E e)
+E floor(E e)
+E ceiling(E e)
+E higher(E e)
+E pollFirst()
+E pollLast()
+NavigableSet&lt;E&gt; descendingSet()
+<span class="predefined-type">Iterator</span>&lt;E&gt; descendingIterator()
+NavigableSet&lt;E&gt; subSet(E fromElement, <span class="type">boolean</span> fromInclusive,
+E toElement, <span class="type">boolean</span> toInclusive)
+NavigableSet&lt;E&gt; headSet(E toElement, <span class="type">boolean</span> inclusive)
+NavigableSet&lt;E&gt; tailSet(E fromElement, <span class="type">boolean</span> inclusive)
+<span class="predefined-type">SortedSet</span>&lt;E&gt; subSet(E fromElement, E toElement)
+<span class="predefined-type">SortedSet</span>&lt;E&gt; headSet(E toElement)
+<span class="predefined-type">SortedSet</span>&lt;E&gt; tailSet(E fromElement)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>La única clase que implementa el interfaz <em>NavigableSet&lt;E&gt;</em> es:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase TreeSet&lt;E&gt;:</strong> Implementación mediante <em>TreeMap</em>, en la que los elementos se recorren según su orden natural.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">TreeSet</span>()
+<span class="directive">public</span> <span class="predefined-type">TreeSet</span>(<span class="predefined-type">Comparator</span>&lt;? <span class="local-variable">super</span> E&gt; comparator)
+<span class="directive">public</span> <span class="predefined-type">TreeSet</span>(<span class="predefined-type">Collection</span>&lt;? <span class="directive">extends</span> E&gt; c)
+<span class="directive">public</span> <span class="predefined-type">TreeSet</span>(<span class="predefined-type">SortedSet</span>&lt;E&gt; s)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="mapas">Mapas</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz Map&lt;K,V&gt;:</strong> Un mapa representa una colección de elementos formados por una clave y un valor. En un mapa no puede haber elementos con claves repetidas, cada clave puede tener un valor como máximo.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">boolean</span> containsKey(<span class="predefined-type">Object</span> key)
+<span class="type">boolean</span> containsValue(<span class="predefined-type">Object</span> value)
+V get(<span class="predefined-type">Object</span> key)
+V put(K key, V value)
+V remove(<span class="predefined-type">Object</span> key)
+<span class="type">void</span> putAll(<span class="predefined-type">Map</span>&lt;? <span class="directive">extends</span> K,? <span class="directive">extends</span> V&gt; m)
+<span class="predefined-type">Set</span>&lt;K&gt; keySet()
+<span class="predefined-type">Collection</span>&lt;V&gt; values()
+<span class="predefined-type">Set</span>&lt;<span class="predefined-type">Map</span>.Entry&lt;K,V&gt;&gt; entrySet()</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Las clases que implementan este interfaz son:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase EnumMap&lt;K extends Enum&lt;K&gt;,V&gt;:</strong> Implementación para usarse con claves de tipo enumerados. Las claves deben ser valores de enumerados. Proporcionan una representación muy compacta y eficiente basada en vectores. Los elementos se recorren según su orden natural.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">EnumMap</span>(<span class="predefined-type">Class</span>&lt;K&gt; keyType)
+<span class="directive">public</span> <span class="predefined-type">EnumMap</span>(<span class="predefined-type">EnumMap</span>&lt;K,? <span class="directive">extends</span> V&gt; m)
+<span class="directive">public</span> <span class="predefined-type">EnumMap</span>(<span class="predefined-type">Map</span>&lt;K,? <span class="directive">extends</span> V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase HashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash. No garantiza ningún orden al iterar sobre el mapa.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">HashMap</span>()
+<span class="directive">public</span> <span class="predefined-type">HashMap</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">HashMap</span>(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)
+<span class="directive">public</span> <span class="predefined-type">HashMap</span>(<span class="predefined-type">Map</span>&lt;? <span class="directive">extends</span> K,? <span class="directive">extends</span> V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase LinkedHashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash y listas doblemente enlazadas. Los elementos se recorren en el orden de inserción de sus claves.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">LinkedHashMap</span>()
+<span class="directive">public</span> <span class="predefined-type">LinkedHashMap</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">LinkedHashMap</span>(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)
+<span class="directive">public</span> <span class="predefined-type">LinkedHashMap</span>(<span class="predefined-type">Map</span>&lt;? <span class="directive">extends</span> K,? <span class="directive">extends</span> V&gt; m)
+<span class="directive">public</span> <span class="predefined-type">LinkedHashMap</span>(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor,
+     <span class="type">boolean</span> accessOrder)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase WeakHashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash y claves débiles. Los elementos cuyas claves dejan de ser referenciadas se destruyen automáticamente.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">WeakHashMap</span>()
+<span class="directive">public</span> <span class="predefined-type">WeakHashMap</span>(<span class="type">int</span> initialCapacity)
+<span class="directive">public</span> <span class="predefined-type">WeakHashMap</span>(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)
+<span class="directive">public</span> <span class="predefined-type">WeakHashMap</span>(<span class="predefined-type">Map</span>&lt;? <span class="directive">extends</span> K,? <span class="directive">extends</span> V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase IdentityHashMap&lt;K,V&gt;:</strong> Implementación mediante una tabla hash y con comparación de claves y valores mediante == en lugar de equals.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">IdentityHashMap</span>()
+<span class="directive">public</span> <span class="predefined-type">IdentityHashMap</span>(<span class="type">int</span> expectedMaxSize)
+<span class="directive">public</span> <span class="predefined-type">IdentityHashMap</span>(<span class="predefined-type">Map</span>&lt;? <span class="directive">extends</span> K,? <span class="directive">extends</span> V&gt; m)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz SortedMap&lt;K,V&gt;:</strong> Un mapa que proporciona un orden total sobre sus claves. El mapa se ordena según el orden natural de sus claves, o mediante un <em>Comparator</em> que se suministra al crear el mapa. Este orden se sigue al iterar sobre las colecciones que devuelve el mapa. Todas las claves deben implementar el interfaz <em>Comparable</em> (o ser aceptadas por su <em>Comparator</em>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">Comparator</span>&lt;? <span class="local-variable">super</span> K&gt; comparator()
+<span class="predefined-type">SortedMap</span>&lt;K,V&gt; subMap(K fromKey, K toKey)
+<span class="predefined-type">SortedMap</span>&lt;K,V&gt; headMap(K toKey)
+<span class="predefined-type">SortedMap</span>&lt;K,V&gt; tailMap(K fromKey)
+K firstKey()
+K lastKey()
+<span class="predefined-type">Set</span>&lt;K&gt; keySet()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz NavigableMap&lt;K,V&gt; (I):</strong> Extiende <em>SortedMap&lt;E&gt;</em> para buscar un elemento menor, menor o igual, mayor o igual, y mayor que un cierto elemento dado, más otros métodos de búsqueda.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">Map</span>.Entry&lt;K,V&gt; lowerEntry(K key)
+K lowerKey(K key)
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; floorEntry(K key)
+K floorKey(K key)
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; ceilingEntry(K key)
+K ceilingKey(K key)
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; higherEntry(K key)
+K higherKey(K key)
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; firstEntry()
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; lastEntry()
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; pollFirstEntry()
+<span class="predefined-type">Map</span>.Entry&lt;K,V&gt; pollLastEntry()
+NavigableMap&lt;K,V&gt; descendingMap()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Interfaz NavigableMap&lt;K,V&gt; (II):</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">NavigableSet&lt;K&gt; navigableKeySet()
+NavigableSet&lt;K&gt; descendingKeySet()
+NavigableMap&lt;K,V&gt; subMap(K fromKey, <span class="type">boolean</span> fromInclusive,
+                         K toKey, <span class="type">boolean</span> toInclusive)
+NavigableMap&lt;K,V&gt; headMap(K toKey, <span class="type">boolean</span> inclusive)
+NavigableMap&lt;K,V&gt; tailMap(K fromKey, <span class="type">boolean</span> inclusive)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>La única clase que implementa el interfaz <em>NavigableMap&lt;K,V&gt;</em> es:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Clase TreeMap&lt;K,V&gt;:</strong> Implementación mediante un árbol, en la que los elementos se recorren según su orden natural (o en el orden que proporciona su <em>Comparator</em>).</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">TreeMap</span>()
+<span class="directive">public</span> <span class="predefined-type">TreeMap</span>(<span class="predefined-type">Comparator</span>&lt;? <span class="local-variable">super</span> K&gt; comparator)
+<span class="directive">public</span> <span class="predefined-type">TreeMap</span>(<span class="predefined-type">Map</span>&lt;? <span class="directive">extends</span> K,? <span class="directive">extends</span> V&gt; m)
+<span class="directive">public</span> <span class="predefined-type">TreeMap</span>(<span class="predefined-type">SortedMap</span>&lt;K,? <span class="directive">extends</span> V&gt; m)</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -13511,54 +14373,30 @@ listaNumeros.clear(); <span class="comment">// CORRECTO</span></code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="red">Ejemplo:</span></strong></th>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Lista</span>&lt;Elemento <span class="directive">extends</span> <span class="predefined-type">Number</span>&gt; {
-     <span class="error">…</span>
-     <span class="directive">public</span> <span class="type">void</span> addAll(Lista&lt;? <span class="directive">extends</span> Elemento&gt; lista) {
-        Iterador&lt;? <span class="directive">extends</span> Elemento&gt; iteradorLista = lista.iterador();
-        <span class="keyword">while</span> (iteradorLista.hasNext()) {
-            Elemento elemento = iteradorLista.next();
-            <span class="local-variable">this</span>.add(elemento);
-     }
-}
-<span class="error">…</span></code></pre>
-</div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>MultiMap - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/a0_itinerario/a7_parametrized/a1_multimap">v0</a></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-     <span class="error">…</span>
-     Lista&lt;<span class="predefined-type">Number</span>&gt; listaNumeros = <span class="keyword">new</span> Lista&lt;<span class="predefined-type">Number</span>&gt;();
-     listaNumeros.addAll(listaEnteros);
-     listaNumeros.addAll(listaReales);
-     <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">La lista resultado de unir </span><span class="delimiter">&quot;</span></span> +
-             listaEnteros + <span class="string"><span class="delimiter">&quot;</span><span class="content"> y </span><span class="delimiter">&quot;</span></span> + listaReales + <span class="string"><span class="delimiter">&quot;</span><span class="content"> es </span><span class="delimiter">&quot;</span></span> +
-             listaNumeros);
-     <span class="error">…</span>
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">La lista resultado de unir {<span class="integer">1</span>; <span class="integer">2</span>; <span class="integer">3</span>} y {<span class="float">1.1</span>; <span class="float">2.2</span>; <span class="float">3.3</span>}  es {<span class="integer">1</span>; <span class="integer">2</span>; <span class="integer">3</span>; <span class="float">1.1</span>; <span class="float">2.2</span>; <span class="float">3.3</span>}</code></pre>
-</div>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
