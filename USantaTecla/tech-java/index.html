@@ -1585,18 +1585,12 @@ cualquier sistema operativo</p>
 <div class="sect3">
 <h4 id="tipos-numéricos">Tipos numéricos</h4>
 <div class="sect4">
-<h5 id="literales-de-tipo-numérico">Literales de tipo numérico</h5>
+<h5 id="literales">Literales</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">number</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">java</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -1647,21 +1641,19 @@ cualquier sistema operativo</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a1_numericos.a1_valores</span>;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">App</span> {
 
-<span class="type">class</span> <span class="class">App</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln(<span class="integer">356</span>); <span class="comment">// 356</span>
-        console.writeln(-<span class="integer">66</span>); <span class="comment">// -66</span>
-        console.writeln(<span class="float">34.45</span>); <span class="comment">// 34.45</span>
-        console.writeln(-<span class="float">2.343e-5</span>); <span class="comment">// -2.343E-5</span>
-        console.writeln(<span class="integer">0</span>); <span class="comment">// 0</span>
-        console.writeln(-<span class="integer">0</span>); <span class="comment">// 0</span>
-        console.writeln(-<span class="octal">024</span>); <span class="comment">// -20</span>
-        console.writeln(<span class="hex">0xA4</span>); <span class="comment">// 164</span>
-    }
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    console.writeln(<span class="integer">356</span>); <span class="comment">// 356</span>
+    console.writeln(-<span class="integer">66</span>); <span class="comment">// -66</span>
+    console.writeln(<span class="float">34.45</span>); <span class="comment">// 34.45</span>
+    console.writeln(-<span class="float">2.343e-5</span>); <span class="comment">// -2.343E-5</span>
+    console.writeln(<span class="integer">0</span>); <span class="comment">// 0</span>
+    console.writeln(-<span class="integer">0</span>); <span class="comment">// 0</span>
+    console.writeln(-<span class="octal">024</span>); <span class="comment">// -20</span>
+    console.writeln(<span class="hex">0xA4</span>); <span class="comment">// 164</span>
+  }
 }</code></pre>
 </div>
 </div></div></td>
@@ -1673,15 +1665,9 @@ cualquier sistema operativo</p>
 <h5 id="operadores-unarios">Operadores unarios</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
+<col style="width: 55%;">
+<col style="width: 45%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">operadores unarios prefijos</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">java</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -1723,15 +1709,13 @@ cualquier sistema operativo</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a1_numericos.a2_unarios</span>;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">App</span> {
 
-<span class="type">class</span> <span class="class">App</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln(+ -<span class="integer">5</span>); <span class="comment">// -5</span>
-        console.writeln(- -<span class="integer">5</span>); <span class="comment">// 5</span>
-    }
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    console.writeln(+ -<span class="integer">5</span>); <span class="comment">// -5</span>
+    console.writeln(- -<span class="integer">5</span>); <span class="comment">// 5</span>
+  }
 }</code></pre>
 </div>
 </div></div></td>
@@ -1743,15 +1727,9 @@ cualquier sistema operativo</p>
 <h5 id="operadores-binarios">Operadores binarios</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">operadores binarios infijos</span>,</th>
-<th class="tableblock halign-left valign-top"><em class="blue">java</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -1802,102 +1780,23 @@ cualquier sistema operativo</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a1_numericos.a3_binarios</span>;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">App</span> {
 
-<span class="type">class</span> <span class="class">App</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    Console console = <span class="keyword">new</span> Console();
+    console.writeln(<span class="integer">4</span> + <span class="integer">5</span>); <span class="comment">// 9</span>
+    console.writeln(<span class="integer">4</span> - <span class="integer">5</span>); <span class="comment">// -1</span>
+    console.writeln(<span class="integer">4</span> * <span class="integer">5</span>); <span class="comment">// 20</span>
+    console.writeln(<span class="integer">4</span> / <span class="integer">5</span>); <span class="comment">// 0.8</span>
+    console.writeln(<span class="integer">4</span> % <span class="integer">5</span>); <span class="comment">// 4</span>
 
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-        Console console = <span class="keyword">new</span> Console();
+    <span class="comment">//console.writeln(4 / 0); // Exception</span>
+    <span class="comment">//console.writeln(4 % 0); // Exception</span>
 
-        console.writeln(<span class="integer">4</span> + <span class="integer">5</span>); <span class="comment">// 9</span>
-        console.writeln(<span class="integer">4</span> - <span class="integer">5</span>); <span class="comment">// -1</span>
-        console.writeln(<span class="integer">4</span> * <span class="integer">5</span>); <span class="comment">// 20</span>
-        console.writeln(<span class="integer">4</span> / <span class="integer">5</span>); <span class="comment">// 0.8</span>
-        console.writeln(<span class="integer">4</span> % <span class="integer">5</span>); <span class="comment">// 4</span>
-
-        <span class="comment">//console.writeln(4 / 0); // Exception</span>
-        <span class="comment">//console.writeln(4 % 0); // Exception</span>
-
-        console.writeln(<span class="float">0.1e-7</span> + <span class="float">1e7</span>); <span class="comment">// 1.000000000000001E7</span>
-        console.writeln(<span class="float">0.1e-8</span> + <span class="float">1e8</span>); <span class="comment">// 1.0E8</span>
-        console.writeln(<span class="float">0.1</span> + <span class="float">0.2</span>); <span class="comment">// 0.30000000000000004</span>
-    }
-
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="tipo-char">Tipo <em>char</em></h4>
-<div class="sect4">
-<h5 id="literales-de-tipo-char">Literales de tipo <em>char</em></h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">char</span></th>
-<th class="tableblock halign-left valign-top"><em class="blue">java</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>&lt;literal&gt;</em> <strong class="red">::=</strong> <em>&lt;valorCaracter&gt;</em></p>
-</li>
-<li>
-<p>&lt;valorCaracter&gt; <strong class="red">::=</strong> <strong>'</strong> <em>&lt;caracter&gt;</em> <strong>'</strong> <strong class="red">|</strong>  <strong>'</strong> <strong>\</strong> <em>&lt;caracter&gt;</em>  <strong>'</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>&lt;caracter&gt;</em> son los caracteres imprimibles del código <a href="https://cs.stanford.edu/people/miles/iso8859.html">ASCII</a>  (espacio, letras, dígitos, símbolos de puntuación, &#8230;&#8203;)</p>
-</li>
-<li>
-<p>los caracteres "escapados" son aquellos que no son imprimibles (salto de línea, &#8230;&#8203;) o con sobrecarga de significados (apostrofe para comienzo de cadena, &#8230;&#8203;) que deben precederse del caracter escape: '\n', '\t', &#8230;&#8203; '\"', '\'', '\"' y '\\',</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>\uXXXX</em> para caracteres de <a href="https://asecuritysite.com/coding/asc2">UTF-16 de Unicode</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>donde X será un valor hexadecimal: <em>[0-9AF]</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_char.a1_valores</span>;
-
-<span class="type">class</span> <span class="class">App</span> {
-
-    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-        Console console = <span class="keyword">new</span> Console();
-        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>); <span class="comment">// a</span>
-        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">1</span><span class="delimiter">'</span></span>); <span class="comment">// 1</span>
-        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>); <span class="comment">//  </span>
-        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">*</span><span class="delimiter">'</span></span>); <span class="comment">// *</span>
-        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">\n</span><span class="delimiter">'</span></span>); <span class="comment">// (salto de línea)</span>
-        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">\u3333</span><span class="delimiter">'</span></span>); <span class="comment">// ?</span>
-    }
-
+    console.writeln(<span class="float">0.1e-7</span> + <span class="float">1e7</span>); <span class="comment">// 1.000000000000001E7</span>
+    console.writeln(<span class="float">0.1e-8</span> + <span class="float">1e8</span>); <span class="comment">// 1.0E8</span>
+    console.writeln(<span class="float">0.1</span> + <span class="float">0.2</span>); <span class="comment">// 0.30000000000000004</span>
+  }
 }</code></pre>
 </div>
 </div></div></td>
@@ -2091,6 +1990,81 @@ cualquier sistema operativo</p>
         console.writeln(<span class="predefined-constant">false</span> || <span class="predefined-constant">true</span>); <span class="comment">// true</span>
         console.writeln(<span class="predefined-constant">true</span> || <span class="predefined-constant">false</span>); <span class="comment">// true</span>
         console.writeln(<span class="predefined-constant">true</span> || <span class="predefined-constant">true</span>); <span class="comment">// true</span>
+    }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tipo-char">Tipo <em>char</em></h4>
+<div class="sect4">
+<h5 id="literales-de-tipo-char">Literales de tipo <em>char</em></h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">char</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">java</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>&lt;literal&gt;</em> <strong class="red">::=</strong> <em>&lt;valorCaracter&gt;</em></p>
+</li>
+<li>
+<p>&lt;valorCaracter&gt; <strong class="red">::=</strong> <strong>'</strong> <em>&lt;caracter&gt;</em> <strong>'</strong> <strong class="red">|</strong>  <strong>'</strong> <strong>\</strong> <em>&lt;caracter&gt;</em>  <strong>'</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;caracter&gt;</em> son los caracteres imprimibles del código <a href="https://cs.stanford.edu/people/miles/iso8859.html">ASCII</a>  (espacio, letras, dígitos, símbolos de puntuación, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>los caracteres "escapados" son aquellos que no son imprimibles (salto de línea, &#8230;&#8203;) o con sobrecarga de significados (apostrofe para comienzo de cadena, &#8230;&#8203;) que deben precederse del caracter escape: '\n', '\t', &#8230;&#8203; '\"', '\'', '\"' y '\\',</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>\uXXXX</em> para caracteres de <a href="https://asecuritysite.com/coding/asc2">UTF-16 de Unicode</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>donde X será un valor hexadecimal: <em>[0-9AF]</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a1_imperativa.a1_tipos.a4_char.a1_valores</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>); <span class="comment">// a</span>
+        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">1</span><span class="delimiter">'</span></span>); <span class="comment">// 1</span>
+        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>); <span class="comment">//  </span>
+        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">*</span><span class="delimiter">'</span></span>); <span class="comment">// *</span>
+        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">\n</span><span class="delimiter">'</span></span>); <span class="comment">// (salto de línea)</span>
+        console.writeln(<span class="string"><span class="delimiter">'</span><span class="content">\u3333</span><span class="delimiter">'</span></span>); <span class="comment">// ?</span>
     }
 
 }</code></pre>
@@ -3674,6 +3648,9 @@ cualquier sistema operativo</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Unresolved directive in 4-como/1-imperativa/3-operadores/0-index.adoc - include::7-coma.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
