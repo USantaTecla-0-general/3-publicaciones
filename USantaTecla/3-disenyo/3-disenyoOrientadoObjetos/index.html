@@ -459,27 +459,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
 <li><a href="#principio-abiertocerrado">Principio Abierto/Cerrado</a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
+<li><a href="#clasificación">Clasificación</a>
+<ul class="sectlevel2">
+<li><a href="#clases-abstractas-e-interfaces">Clases Abstractas e Interfaces</a></li>
+<li><a href="#código-sucio-por-herencia-rechazada">Código Sucio por Herencia Rechazada</a></li>
+<li><a href="#ley-flexible-y-estricta-de-demeter">Ley Flexible y Estricta de Demeter</a></li>
+</ul>
+</li>
 <li><a href="#reusabilidad">Reusabilidad</a>
 <ul class="sectlevel2">
-<li><a href="#herencia-vs-parametrización">Herencia vs Parametrización</a></li>
-<li><a href="#herencia-vs-composición">Herencia vs Composición</a></li>
 <li><a href="#patrón-método-plantilla">Patrón Método Plantilla</a></li>
-<li><a href="#código-sucio-por-herencia-rechazada">Código Sucio por Herencia Rechazada</a></li>
+<li><a href="#herencia-vs-composición">Herencia vs Composición</a></li>
+<li><a href="#herencia-vs-parametrización">Herencia vs Parametrización</a></li>
 </ul>
 </li>
 <li><a href="#flexiblidad">Flexiblidad</a>
 <ul class="sectlevel2">
-<li><a href="#clases-abstractas-e-interfaces">Clases Abstractas e Interfaces</a></li>
-<li><a href="#principio-separación-de-interfaces">Principio Separación de Interfaces</a></li>
 <li><a href="#principio-de-sustitución-de-liskov">Principio de Sustitución de Liskov</a></li>
 <li><a href="#herencia-vs-delegación">Herencia vs Delegación</a></li>
 <li><a href="#técnica-de-doble-despacho">Técnica de Doble Despacho</a></li>
+<li><a href="#inversión-de-control">Inversión de Control</a></li>
+<li><a href="#inyección-de-dependencias">Inyección de Dependencias</a></li>
 </ul>
 </li>
-<li><a href="#inversión-de-control">Inversión de Control</a></li>
-<li><a href="#diseño-á-gil">Diseño Á-gil</a>
+<li><a href="#ocultación-de-información">Ocultación de Información</a>
 <ul class="sectlevel2">
-<li><a href="#inyección-de-dependencias">Inyección de Dependencias</a></li>
+<li><a href="#principio-separación-de-interfaces">Principio Separación de Interfaces</a></li>
 <li><a href="#principio-de-inversión-de-dependencias">Principio de Inversión de Dependencias</a></li>
 </ul>
 </li>
@@ -651,11 +656,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 45%;">
+<col style="width: 15%;">
 </colgroup>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+OOP para mí significa solo mensajería, retención local, protección y ocultación del estado del proceso, y vinculación tardía extrema de todas las cosas. Se puede hacer en Smalltalk y en LISP. Posiblemente hay otros sistemas en los que esto es posible, pero no los conozco.
+</blockquote>
+<div class="attribution">
+&#8212; Alan Kay<br>
+<cite>Meaning of “Object-Oriented Programming”</cite>
+</div>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
 <blockquote>
 Mi conjetura es que la orientación a objetos será en los 80 lo que la programación estructurada en los 70. Todo el mundo estará a favor suyo. Cada productor prometerá que sus productos lo soportan. Cada director pagará con la boca pequeña el servirlo. Cada programador lo practicará. Y nadie sabrá exactamente lo que es!
@@ -676,10 +691,7 @@ X es bueno. Orientado a Objetos es bueno. Ergo, X es Orientado a Objetos
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
 <p><strong class="blue">Programación Orientada a Objetos</strong> = <strong>Clases</strong> + <strong>Herencia</strong></p>
 </div></div></td>
 </tr>
@@ -1362,18 +1374,19 @@ X es bueno. Orientado a Objetos es bueno. Ergo, X es Orientado a Objetos
 </div>
 </div>
 <div class="sect1">
-<h2 id="reusabilidad">Reusabilidad</h2>
+<h2 id="clasificación">Clasificación</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="clases-abstractas-e-interfaces">Clases Abstractas e Interfaces</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="4"><strong>Mecanimos de Reusabilidad</strong>:</th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Clases Abstractas</strong></th>
+<th class="tableblock halign-left valign-top">- <strong class="blue">Interfaces</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -1381,18 +1394,46 @@ X es bueno. Orientado a Objetos es bueno. Ergo, X es Orientado a Objetos
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Herencia vs Parametrización</strong></p>
+<p>Aquellas clases que <strong class="blue">no son instanciables</strong> porque tienen algún <strong class="blue">método abstracto</strong>, <span class="blue">sin definición, lo cuál imposibilita su instanciación ante la ejecución de mensajes correspondientes a métodos abstractos sin definción</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Herencia vs Composición</strong></p>
+<p>Son <strong class="blue">clases abstractas puras</strong>, sin definición de atributos y métodos, solo cabeceras de los métodos abstractos, la interfaz de la clase</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Facilitan la reusabilidad</strong>, de todos los atributos y métodos definidos</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No aportan reusabilidad</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Facilitan la flexibilidad</strong> mediante el polimorfismo que aporta una relajación del sistema de tipos sobre una jerarquía de herencia</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="blue">Leyes Flexible y Estricta de Demeter</span></p>
+<p><strong class="green">Sin la clase base abstracta no hay herencia</strong>, no hay posible polimorfismo de datos</p>
+</li>
+<li>
+<p><strong class="green">Sin el método abstracto no hay interfaz</strong>, no hay posible polimorfismo de operaciones</p>
 </li>
 </ul>
 </div>
@@ -1402,20 +1443,527 @@ X es bueno. Orientado a Objetos es bueno. Ergo, X es Orientado a Objetos
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Patrón Método Plantilla</strong></p>
+<p><strong class="green">Facilitan la flexibilidad</strong> mediante el polimorfismo que aporta una relajación del sistema de tipos sobre una jerarquía de herencia</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Sin la clase base abstracta pura no hay herencia</strong>, no hay posible polimorfismo de datos</p>
+</li>
+<li>
+<p><strong class="green">Sin los métodos abstractos no hay interfaz</strong>, no hay posible polimorfismo de operaciones</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p>Aportan <strong class="green">abstracción/encapsulación, modularidad, bajo acoplamiento, cohesión!!!</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="código-sucio-por-herencia-rechazada">Código Sucio por Herencia Rechazada</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Justificación</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Solución</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las subclases <strong class="red">heredan los métodos y atributos de sus padres que no necesitan</strong>.</p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="red">Código Sucio por Herencia Rechazada</strong></p>
+<p>La solución gira en torno a <strong class="green">crear clases intermedias en la jerarquía, habitualmente abstractas, mover métodos y atributos hacia arriba y hacia abajo</strong> hasta que todas las subclases reciban los métodos y atributos necesarios y no más. De tal manera que cada clase padre tenga el factor común de sus clases derivadas.</p>
+</li>
+<li>
+<p>A menudo, esta solución complica la jerarquía en exceso. En tal caso, si la herencia rechazada es la implantación “vacía” de un método de la clase derivada podría considerarse como solución frente a la complicación de la jerarquía. Pero si la herencia rechazada es la transmisión de métodos públicos implantados a clases derivadas que no lo necesitan, <strong class="green">debería re-diseñarse la jerarquía de herencia por delegación</strong> para evitar corromper la interfaz de la clase derivada</p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="ley-flexible-y-estricta-de-demeter">Ley Flexible y Estricta de Demeter</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sinónimos</th>
+<th class="tableblock halign-left valign-top">Synonyms</th>
+<th class="tableblock halign-left valign-top">Libro</th>
+<th class="tableblock halign-left valign-top">Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>No hablescon extraños</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do not talk to strangers</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Lieberherr</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cadena de Mensajes</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Chain of Message</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Smell Code (Refactoring)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Martin Fowler</em></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="gree">Ley estricta de Demeter</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Ley flexible de Demeter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Justificación</strong>: <span class="blue">controlar el bajo acoplamiento restringieno a qué objetos enviar mensajes desde un método</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Enviar mensajes únicamente a:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em class="green"><strong>this</strong></em> y <em class="green"><strong>super</strong></em></p>
+</li>
+<li>
+<p><strong class="green">Atributos de la clase</strong></p>
+</li>
+<li>
+<p><strong class="green">Parámetro del método</strong></p>
+</li>
+<li>
+<p><strong class="green">Local del método</strong></p>
+</li>
+<li>
+<p><strong class="red">No enviar nunca a otros objetos indirectos obtenidos como resultado de un mensaje a un objeto de conocimiento directo</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Enviar mensajes únicamente a:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em class="green"><strong>this</strong></em> y <em class="green"><strong>super</strong></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Atributos de la clase</strong> y de la <strong class="red">clase base</strong></p>
+</li>
+<li>
+<p><strong class="green">Parámetro del método</strong></p>
+</li>
+<li>
+<p><strong class="green">Local del método</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>No enviar <strong class="red">nunca a otros objetos indirectos obtenidos como resultado de un mensaje a un objeto de conocimiento directo, incluso siendo transmitidos desde la clase base</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reusabilidad">Reusabilidad</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="patrón-método-plantilla">Patrón Método Plantilla</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sinónimos</th>
+<th class="tableblock halign-left valign-top">Synonyms</th>
+<th class="tableblock halign-left valign-top">Libro</th>
+<th class="tableblock halign-left valign-top">Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Método Plantilla</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Template Method</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Patrones de Diseño</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gamma et al</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Justificación</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Solución</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="red">Se dificulta la extracción de un factor común en los códigos de los métodos de las clases derivadas por detalles inmersos en el propio código pero respetando un esquema general</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="green">Definir el esqueleto de un algoritmo de un método, diferir algunos pasos para las clases derivadas</span>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El patron permite que las <span class="green">clases derivadas redefinan esos pasos abstractos sin cambiarla estructura del algoritmo</span> de la clase padre</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Sin método plantilla</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Con método plantilla</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">X</span> {
+
+}
+
+<span class="type">class</span> <span class="class">Y</span> <span class="directive">extends</span> X {
+<span class="directive">public</span> <span class="type">void</span> m() {
+  <span class="comment">// aaaaaaaaaaaa</span>
+  <span class="comment">// yyyyyyyyyyyy</span>
+  <span class="comment">// bbbbbbbbbbbb</span>
+}
+
+}
+
+<span class="type">class</span> <span class="class">Z</span> <span class="directive">extends</span> X {
+<span class="directive">public</span> <span class="type">void</span> m() {
+  <span class="comment">// aaaaaaaaaaaa</span>
+  <span class="comment">// zzzzzzzzzzzz</span>
+  <span class="comment">// bbbbbbbbbbbb</span>
+}
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">X</span> {
+<span class="directive">public</span> <span class="type">void</span> m() {
+  <span class="comment">// aaaaaaaaaaaa</span>
+  <span class="local-variable">this</span>.middle();
+  <span class="comment">// bbbbbbbbbbbb</span>
+}
+
+<span class="directive">public</span> <span class="directive">abstract</span> middle();
+}
+
+<span class="type">class</span> <span class="class">Y</span> <span class="directive">extends</span> X {
+<span class="directive">public</span> middle(){
+  <span class="comment">// yyyyyyyyyyyy</span>
+}
+
+}
+
+<span class="type">class</span> <span class="class">Z</span> <span class="directive">extends</span> X {
+<span class="directive">public</span> middle(){
+  <span class="comment">// zzzzzzzzzzzz</span>
+}
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/sinPlantilla.svg" alt="sinPlantilla" width="162" height="208">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conPlantilla.svg" alt="conPlantilla" width="288" height="251">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="herencia-vs-composición">Herencia vs Composición</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Composición</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Herencia</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reusabilidad por <strong class="blue">ensamblado</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reusabilidad por <strong class="blue">extensión</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Todo</span> {
+
+ <span class="directive">private</span> Parte parte;
+
+ <span class="directive">public</span> Todo() {
+   <span class="local-variable">this</span>.parte = <span class="keyword">new</span> Parte();
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m4(){
+   ...
+   this.parte.m1();
+   <span class="local-variable">this</span>.parte.m3();
+   ...
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m5(){
+   ...
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m1(){
+   ...
+   this.parte.m1();
+   ...
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m2(){
+   ...
+ }
+
+}
+
+<span class="type">class</span> <span class="class">Parte</span> {
+ <span class="directive">public</span> Parte() { ... }
+ <span class="directive">public</span> <span class="type">void</span> m1() { ... }
+ <span class="directive">public</span> <span class="type">void</span> m2() { ... }
+ <span class="directive">public</span> <span class="type">void</span> m3() { ... }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Base</span> {
+ <span class="directive">public</span> Base() { ... }
+ <span class="directive">public</span> <span class="type">void</span> m1() { ... }
+ <span class="directive">public</span> <span class="type">void</span> m2() { ... }
+ <span class="directive">public</span> <span class="type">void</span> m3() { ... }
+}
+
+<span class="type">class</span> <span class="class">Descendiente</span> <span class="directive">extends</span> Base {
+
+ <span class="directive">public</span> Descendiente() {
+   <span class="local-variable">super</span>();
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m4(){
+   ...
+   this.m1();
+   <span class="local-variable">this</span>.m3();
+   ...
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m5(){
+   ...
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m1(){
+   ...
+   super.m1();
+   ...
+ }
+
+ <span class="directive">public</span> <span class="type">void</span> m2(){
+   ...
+ }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/esquemaClasesComposicion.svg" alt="esquemaClasesComposicion" width="153" height="403">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/esquemaClasesHerencia.svg" alt="esquemaClasesHerencia" width="171" height="381">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/esquemaObjetosComposicion.svg" alt="esquemaObjetosComposicion" width="579" height="413">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/esquemaObjetosHerencia.svg" alt="esquemaObjetosHerencia" width="589" height="494">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reusabilidad con <strong class="red">desarrollo explícito en el código</strong>, declarando los atributos que son parte del todo y enviando mensajes para su gestión</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Reusabilidad <strong class="green">implícita en el lenguaje</strong>, declarando la herencia se transmiten automáticamente todos los atributos y métodos, públicos, protegidos, privados y de paquete, con unos accesos u otros dependiendo del punto de vista (clase cliente o clase descendiente)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">Más objetos</strong> para la reusabilidad, se tiene un objeto para el todo y otro para la parte y, por tanto, <strong class="red">menos eficiente</strong> por la re-emisión de mensajes del objeto "todo" al objeto "parte"</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Menos objetos</strong> para la reusabilidad, se tiene un objeto de la clase descendiente y, por tanto, <strong class="green">más eficiente</strong> por la emisión directa de mensajes al objeto "descendiente"</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Relación dinámica entre objetos, por tanto es <strong class="green">más flexible</strong> porque un todo puede colaborar con distintas partes en el tiempo creando nuevos objetos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Relación estática entre clases, por tanto es <strong class="red">menos flexible</strong> porque un objeto de la clase descendiente es y será un objeto de la clase descendiente sin poder modificar su clase base en tiempo de ejecución</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="green">Caja negra</strong>, desde la clase todo se tiene acceso a miembros públicos de la parte, sin posibilidad de modificar el código reusado</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="red">Caja blanca</strong>, desde la calse descendiente se tiene acceso a miembros públicos y <strong class="blue">protegidos</strong> y de paquete, con posiblidad de modificar el código reusado <strong class="blue">mediante la redefinción</strong> (<em>@Override</em>)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Fácil de mantener porque es <strong class="green">imposible romper el principio de encapsulación</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Difícil de mantener porque es <strong class="red">fácil romper el principio de encapsulación</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sect2">
 <h3 id="herencia-vs-parametrización">Herencia vs Parametrización</h3>
 <table class="tableblock frame-all grid-all stretch">
@@ -1604,218 +2152,64 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 </tbody>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="flexiblidad">Flexiblidad</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="herencia-vs-composición">Herencia vs Composición</h3>
+<h3 id="principio-de-sustitución-de-liskov">Principio de Sustitución de Liskov</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
+<col style="width: 20%;">
 <col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Composición</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Herencia</strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reusabilidad por <strong class="blue">ensamblado</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reusabilidad por <strong class="blue">extensión</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Todo</span> {
-
- <span class="directive">private</span> Parte parte;
-
- <span class="directive">public</span> Todo() {
-   <span class="local-variable">this</span>.parte = <span class="keyword">new</span> Parte();
- }
-
- <span class="directive">public</span> <span class="type">void</span> m4(){
-   ...
-   this.parte.m1();
-   <span class="local-variable">this</span>.parte.m3();
-   ...
- }
-
- <span class="directive">public</span> <span class="type">void</span> m5(){
-   ...
- }
-
- <span class="directive">public</span> <span class="type">void</span> m1(){
-   ...
-   this.parte.m1();
-   ...
- }
-
- <span class="directive">public</span> <span class="type">void</span> m2(){
-   ...
- }
-
-}
-
-<span class="type">class</span> <span class="class">Parte</span> {
- <span class="directive">public</span> Parte() { ... }
- <span class="directive">public</span> <span class="type">void</span> m1() { ... }
- <span class="directive">public</span> <span class="type">void</span> m2() { ... }
- <span class="directive">public</span> <span class="type">void</span> m3() { ... }
-}</code></pre>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Definido por <strong>Barbara Liskov</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Liskov’sSustitutionPrinciple</em>, LSP</p>
+</li>
+<li>
+<p>incorporado por <strong>Robert Martin</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>como uno de los principios SO*L*ID</p>
+</li>
+</ul>
 </div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Base</span> {
- <span class="directive">public</span> Base() { ... }
- <span class="directive">public</span> <span class="type">void</span> m1() { ... }
- <span class="directive">public</span> <span class="type">void</span> m2() { ... }
- <span class="directive">public</span> <span class="type">void</span> m3() { ... }
-}
-
-<span class="type">class</span> <span class="class">Descendiente</span> <span class="directive">extends</span> Base {
-
- <span class="directive">public</span> Descendiente() {
-   <span class="local-variable">super</span>();
- }
-
- <span class="directive">public</span> <span class="type">void</span> m4(){
-   ...
-   this.m1();
-   <span class="local-variable">this</span>.m3();
-   ...
- }
-
- <span class="directive">public</span> <span class="type">void</span> m5(){
-   ...
- }
-
- <span class="directive">public</span> <span class="type">void</span> m1(){
-   ...
-   super.m1();
-   ...
- }
-
- <span class="directive">public</span> <span class="type">void</span> m2(){
-   ...
- }
-
-}</code></pre>
+</li>
+</ul>
 </div>
+</li>
+</ul>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/esquemaClasesComposicion.svg" alt="esquemaClasesComposicion" width="153" height="403">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Lo que se quiere aquí es algo como la siguiente propiedad de sustitución: si para cada objeto oT de un tipo T, hay un objeto oS de tipo S tal que para todo progama P definido en términos de T, el comportamiento de P no cambia cuando oT es sustituido por oS, entonces S es un subtipo de T
+</blockquote>
+<div class="attribution">
+&#8212; Barbara Liskov<br>
+<cite>A behavioral notion of subtyping. ACM Transactions on Programming Languages and Systems (TOPLAS). Volume 16. Issue 6 (November 1994). pp. 1811. 1841</cite>
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/esquemaClasesHerencia.svg" alt="esquemaClasesHerencia" width="171" height="381">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/esquemaObjetosComposicion.svg" alt="esquemaObjetosComposicion" width="579" height="413">
+<img src="images/preLiskov.svg" alt="preLiskov" width="84" height="295">
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="images/esquemaObjetosHerencia.svg" alt="esquemaObjetosHerencia" width="589" height="494">
+<img src="images/postLiskov.svg" alt="postLiskov" width="112" height="301">
 </div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reusabilidad con <strong class="red">desarrollo explícito en el código</strong>, declarando los atributos que son parte del todo y enviando mensajes para su gestión</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Reusabilidad <strong class="green">implícita en el lenguaje</strong>, declarando la herencia se transmiten automáticamente todos los atributos y métodos, públicos, protegidos, privados y de paquete, con unos accesos u otros dependiendo del punto de vista (clase cliente o clase descendiente)</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Más objetos</strong> para la reusabilidad, se tiene un objeto para el todo y otro para la parte y, por tanto, <strong class="red">menos eficiente</strong> por la re-emisión de mensajes del objeto "todo" al objeto "parte"</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Menos objetos</strong> para la reusabilidad, se tiene un objeto de la clase descendiente y, por tanto, <strong class="green">más eficiente</strong> por la emisión directa de mensajes al objeto "descendiente"</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Relación dinámica entre objetos, por tanto es <strong class="green">más flexible</strong> porque un todo puede colaborar con distintas partes en el tiempo creando nuevos objetos</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Relación estática entre clases, por tanto es <strong class="red">menos flexible</strong> porque un objeto de la clase descendiente es y será un objeto de la clase descendiente sin poder modificar su clase base en tiempo de ejecución</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Caja negra</strong>, desde la clase todo se tiene acceso a miembros públicos de la parte, sin posibilidad de modificar el código reusado</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Caja blanca</strong>, desde la calse descendiente se tiene acceso a miembros públicos y <strong class="blue">protegidos</strong> y de paquete, con posiblidad de modificar el código reusado <strong class="blue">mediante la redefinción</strong> (<em>@Override</em>)</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Fácil de mantener porque es <strong class="green">imposible romper el principio de encapsulación</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Difícil de mantener porque es <strong class="red">fácil romper el principio de encapsulación</strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="ley-flexible-y-estricta-de-demeter">Ley Flexible y Estricta de Demeter</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sinónimos</th>
-<th class="tableblock halign-left valign-top">Synonyms</th>
-<th class="tableblock halign-left valign-top">Libro</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No hablescon extraños</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Do not talk to strangers</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Lieberherr</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Cadena de Mensajes</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Chain of Message</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Smell Code (Refactoring)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Martin Fowler</em></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1827,8 +2221,86 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="gree">Ley estricta de Demeter</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Ley flexible de Demeter</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Justificación</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Violaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se cumple sólo cuando los <strong class="blue">tipos de derivados son totalmente sustituibles por sus tipos base de forma que las funciones que utilizan estos tipos base pueden ser reutilizados con impunidad y los tipos derivados se puede cambiar con impunidad</strong>.</p>
+</li>
+<li>
+<p>El Principio de Sustituciónde Liskov dice que las funciones que <strong class="blue">usan punteros o referencias a una clase base debe ser capaz de usar los objetos de las clases derivadas sin conocerlas</strong></p>
+</li>
+<li>
+<p>Por tanto, la relación de herencia se refiere al comportamiento. <strong class="blue">No al comportamiento privado intrínseco si no al comportamiento público extrínseco del que dependen los clientes</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una de las violaciones más evidentes de este principio es el <strong class="red">uso de la Información de Tipos en Tiempo de Ejecución(<em>instantceof</em>, RTTI, …) para seleccionar una función basada en el tipo de un objeto</strong>. Muchos ven esta estructura como el <strong class="red">anatema de la Programacion Orientada a Objetos</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cuando se considera si un diseño particular es apropiado o no, no se debe simplemente ver la solución aislada. Uno debe verlo en términos de las asunciones razonables que serán hechas por los usuarios de este diseño.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 35%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Se cumple cuando se redefine un método en una derivada <strong class="green">reemplazando su precondición por una más débil</strong> y su <strong class="green">postcondicion por una más fuerte</strong>
+</blockquote>
+<div class="attribution">
+&#8212; Barbara Liskov<br>
+<cite>Principio de Sustitución</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>La precondición de un subtipo es creada combinando con el operador <strong class="green">OR</strong>: la precondicion es del tipo base y del subtipo, lo que resulta una <strong class="green">precondición menos restrictiva</strong>.</p>
+</li>
+<li>
+<p>La postcondición de un subtipo es creada combinando con el operador <strong class="green">AND</strong>: la postcondiciones del tipo base y del subtipo, lo que resulta una <strong class="green">postcondición más restrictiva</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/sinLiskov.svg" alt="sinLiskov" width="468" height="370">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -1836,66 +2308,549 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Justificación</strong>: <span class="blue">controlar el bajo acoplamiento restringieno a qué objetos enviar mensajes desde un método</span></p>
+<p><em>figures</em> : <a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust1_liskovs_sustitution/ust1_good/src/main/java">sin problema</a> - <a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust1_liskovs_sustitution/ust2_bad/src/main/java">con problema</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="herencia-vs-delegación">Herencia vs Delegación</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 80%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Motivación</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Solución</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En una jerarquía de herencia a veces se fuerza a <strong class="red">incorporar métodos únicamente por el beneficio de una de sus subclases</strong>. Esta práctica es <strong class="red">indeseable</strong> por que cada vez que una clase derivada necesite un nuevo método, éste será añadido a la clase base. Esto va a contaminar aún más la interfaz de la clase base, por lo que sería poco cohesiva.</p>
+</li>
+<li>
+<p>Además, <strong class="red">cada vez que un nuevo interfaz se añade a la clase base, éste debe ser implementado (o permitido por defecto) en las clases derivadas</strong>. De hecho, una práctica asociada es añadir estos interfaces a la clase base con métodos “vacíos” más que con métodos abstractos, así las clases derivadas no son agobiadas con su necesaria implementación; lo cual <strong class="red">viola el principio de sustitución de Liskov</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Cualquier relación de herencia puede convertirse en una relación de composición o delegación</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Relación de Herencia</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Relación de Composición para Delegación</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/herenciaClasesDelegado.svg" alt="herenciaClasesDelegado" width="440" height="1248">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/composiciónClasesDelegado.svg" alt="composiciónClasesDelegado" width="624" height="1511">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Relación de Herencia</th>
+<th class="tableblock halign-left valign-top">Relación de Composición para <strong>Delegación</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/secuenciaHerencia.svg" alt="secuenciaHerencia" width="484" height="761">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/secuenciaDelegado.svg" alt="secuenciaDelegado" width="549" height="858">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>figures</em> : <a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust2_delegation/src/main/java">delegación</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="código-sucio-por-jerarquías-paralelas-de-herencia">Código Sucio por Jerarquías Paralelas de Herencia</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Justificación</strong></th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="green">Solución</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Es <span class="red">un caso especial de la Cirugía a Escopetazos</span>.</p>
+</li>
+<li>
+<p>Cada vez que <strong class="red">haces una subclase de una clase, también tienes que hacer una subclase de otra</strong>. Se reconoce por los prefijos en los nombres de clases de la jerarquía son los <span class="red">mismos que los prefijos de la otra jerarquía</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Reestructurar la jerarquía:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reubicar de <span class="green">Reparto de Responsabilidades</span></p>
+</li>
+<li>
+<p>Aplicar el <span class="green">Patrón Método Plantilla</span></p>
+</li>
+<li>
+<p>Una clase contiene tantos <strong class="green">roles polimórficos</strong> como cada una de las jerarquía paralelas en los que <span class="green">delega y combina su comportamiento</span></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/pacientesDuplicado.svg" alt="pacientesDuplicado" width="730" height="431">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/pacientesRol.svg" alt="pacientesRol" width="540" height="353">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/pacientesRoles.svg" alt="pacientesRoles" width="610" height="327">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="técnica-de-doble-despacho">Técnica de Doble Despacho</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Enviar mensajes únicamente a:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em class="green"><strong>this</strong></em> y <em class="green"><strong>super</strong></em></p>
-</li>
-<li>
-<p><strong class="green">Atributos de la clase</strong></p>
-</li>
-<li>
-<p><strong class="green">Parámetro del método</strong></p>
-</li>
-<li>
-<p><strong class="green">Local del método</strong></p>
-</li>
-<li>
-<p><strong class="red">No enviar nunca a otros objetos indirectos obtenidos como resultado de un mensaje a un objeto de conocimiento directo</strong>.</p>
-</li>
-</ul>
-</div>
+<p>Por un reparto de responsabilidades justificado, <strong class="red">existe la necesidad de que un cliente de una jerarquía de clases trate específicamente según la clase derivada concreta de un parámetro polimórifco</strong></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Enviar mensajes únicamente a:</p>
+<p><em>la secretaría de alumnos atiende de forma distinta para la matriculación de distintos tipos de alumnos: master en Cloud Apps, master en Ingeniería Web, &#8230;&#8203;, grados, ESA (para adultos), Erasmus (del Espacio Europeo), invitado, &#8230;&#8203;; un profesor para evaluar con distintos tipos de pruebas según el nivel del tipo de alumno concreto; &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">1ª solución: preguntando por el tipo del objeto polimórfico</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/dobleDespacho/v1/mal">Ver código</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p><em class="green"><strong>this</strong></em> y <em class="green"><strong>super</strong></em></p>
+<p>De forma directa con operadores y funciones del lenguaje, <strong class="red"><em>instanceOf</em></strong>, o indirectamente con métodos explícitos, <strong class="red"><em>get&lt;Tipo&gt;()</em></strong>, o &#8230;&#8203; abriendo <strong class="red">distintas ramas de sentencias alternativas para tratar cada tipo de clase derivada</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/restauranteClasesInstanceOf.svg" alt="restauranteClasesInstanceOf" width="1158" height="654">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/restauranteSecuenciaInstanceOf.svg" alt="restauranteSecuenciaInstanceOf" width="812" height="797">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Consecuencias</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="green">Atributos de la clase</strong> y de la <strong class="red">clase base</strong></p>
+<p><span class="red"><strong>viola el Principio de Sustitución de Liskov</strong> preguntando por el tipo de objeto polimórfico</span></p>
 </li>
 <li>
-<p><strong class="green">Parámetro del método</strong></p>
+<p><span class="red"><strong>incurre en cambios divergentes</strong> para atender con una nueva rama en cada clase cliente que hay que localizar por toda la aplicación</span></p>
 </li>
 <li>
-<p><strong class="green">Local del método</strong></p>
+<p><span class="red"><strong>rompe el principio Open/Close</strong> con cambios en el interior de los métodos del cliente</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">2ª solución: aplicando la técnica de doble despacho</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/dobleDespacho/v2/basic">Ver código</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p>No enviar <strong class="red">nunca a otros objetos indirectos obtenidos como resultado de un mensaje a un objeto de conocimiento directo, incluso siendo transmitidos desde la clase base</strong></p>
+<p>El <strong class="blue">cliente envia un mensaje <em>aceptar</em> al objeto polimórfico</strong> auto-pasándose como parámetro (<em>this</em>)</p>
+</li>
+<li>
+<p>Cada <strong class="blue">clase derivada devuelve un mensaje <em>visitar</em> al propio cliente</strong> auto-pasándose como parámetro (<em>this</em>)</p>
+</li>
+<li>
+<p>El <strong class="blue">cliente atiende por separado con métodos <em>visitar</em></strong> para cada tipo de clase derivada con el comportamiento particular para cada uno</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/restauranteSecuenciaDobleDesapacho.svg" alt="restauranteSecuenciaDobleDesapacho" width="779" height="510">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/restauranteClasesDobleDesapacho.svg" alt="restauranteClasesDobleDesapacho" width="2098" height="705">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Consecuencias</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green"><strong>no viola el Principio de Sustitución de Liskov</strong> preguntando por el tipo de objeto polimórfico</span></p>
+</li>
+<li>
+<p><span class="green"><strong>no incurre en cambios divergentes</strong> para atender con una nueva rama en cada clase cliente</span></p>
+</li>
+<li>
+<p><span class="green"><strong>no rompe el principio Open/Close</strong> con cambios en el interior de los métodos del cliente</span></p>
+</li>
+<li>
+<p><span class="red"><strong>intimidad inapropiada</strong> con ciclos entre todas las clases cliente con todas las clases de la jerarquía</span></p>
+</li>
+<li>
+<p><span class="red"><strong>alto acoplamiento según tienden a crecer los clientes</strong> porque todas las clases de la jerarquía conocen a todas las clases de clientes</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">3ª solución: principio abierto/cerrado</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/dobleDespacho/v3/extensible">Ver código</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong class="blue">jerarquía de clases no conoce directamente a los clientes sino que conoce únicamente a una interfaz</strong> que cumple todo cliente que visita la jerarquía, <em>visitador</em> genérico.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la nueva clase derivada debe <strong class="blue">redefinir el método <em>aceptar</em></strong> para no ser abstracta enviando un mensaje <em>visitar</em> auto-pasandose por parámetro</p>
+</li>
+<li>
+<p>los cambios están guiados por el compilador porque cada clase cliente debe <strong class="blue">definir un nuevo método <em>visitar</em></strong> para la nueva clase derivada</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/restauranteClasesInversionDependencias.svg" alt="restauranteClasesInversionDependencias" width="2203" height="891">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Consecuencias</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green"><strong>no viola el Principio de Sustitución de Liskov</strong> preguntando por el tipo de objeto polimórfico</span></p>
+</li>
+<li>
+<p><span class="green"><strong>no incurre en cambios divergentes</strong> para atender con una nueva rama en cada clase cliente</span></p>
+</li>
+<li>
+<p><span class="green"><strong>no rompe el principio Open/Close</strong> con cambios en el interior de los métodos del cliente</span></p>
+</li>
+<li>
+<p><span class="green"><strong>con "leve" intimidad inapropiada</strong> con ciclos dentro del mismo paquete entre todas las clases de la jerarquía con la <strong>interfaz</strong> de los clientes, que no requiere pruebas ni comprensión porque no aporta código de implementación</span></p>
+</li>
+<li>
+<p><span class="green"><strong>bajo acoplamiento según tienden a crecer los clientes</strong> porque no todas las clases de la jerarquía conocen a todas las clases de clientes, solo conocen a la interfaz de todos los clientes</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>figures</em> : <a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust3_double_dispatching/ust1_bad/src/main/java">no <em>open/close</em></a> - <a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust3_double_dispatching/ust2_good/src/main/java"><em>open/close</em></a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="inversión-de-control">Inversión de Control</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sinónimos</th>
+<th class="tableblock halign-left valign-top">Synonyms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Principio Hollywood: “No me llames, ya te llamaremos”</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hollywood Principle: "Don&#8217;t call me, we&#8217;ll call you"</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid=none grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">La Inversión de Control</strong> es una parte fundamental de lo que hace un framework diferente a una biblioteca.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una <strong class="blue">biblioteca</strong> es esencialmente un conjunto de funciones que se pueden llamar, en estos días por lo general organizados en clases. <span class="blue">Cada llamada que hace un poco de trabajo y devuelve el control al cliente</span>.</p>
+</li>
+<li>
+<p>Un <em class="blue"><strong>framework</strong></em> encarna algún diseño abstracto, con un comportamiento más integrado. Para utilizarlo es <span class="blue">necesario insertar comportamiento en varios lugares en el framework ya sea por subclases o por conectar sus propias clases</span>. <strong class="blue">El código del framework después llama a ese código en estos puntos</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+Una característica importante de un <em>framework</em> es que los métodos definidos por el usuario para adaptar el framework, a menudo se llaman desde dentro del propio <em>framework</em>, en lugar desde el código de la aplicación del usuario. <strong class="blue">El framework a menudo desempeña el papel del programa principal en la coordinación y secuenciación de actividad de la aplicación</strong>. Esta inversión de control da al framework el poder para servir como esqueletos extensibles. Los métodos suministrados por el usuario se adaptan a los algoritmos genéricos definidos en el framework para una aplicación particular
+</blockquote>
+<div class="attribution">
+&#8212; Johonson & Foote<br>
+<cite>1988</cite>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid=none grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<blockquote>
+“algunas personas confunden el principio general de Inversión de Control con los estilos específicos de Inversión de Control, como la Inyección de Dependencias, que estos contenedores utilizan”
+</blockquote>
+<div class="attribution">
+&#8212; Fowler
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Variaciones</span>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Patrón Método Plantilla</strong> con redefinición de métodos abstractos invocados desde el método plantilla de la clase base</p>
+</li>
+<li>
+<p><strong class="blue">Eventos</strong> con auditores que determinan su comportamiento</p>
+</li>
+<li>
+<p><strong class="blue">Configuración</strong> con datos externos al framework para determinar el comportamiento</p>
+</li>
+<li>
+<p><strong class="blue">Inyección de Dependencias</strong></p>
 </li>
 </ul>
 </div>
@@ -1906,9 +2861,8 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 </tbody>
 </table>
 </div>
-</div>
 <div class="sect2">
-<h3 id="patrón-método-plantilla">Patrón Método Plantilla</h3>
+<h3 id="inyección-de-dependencias">Inyección de Dependencias</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1927,142 +2881,30 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Método Plantilla</p>
+<p>Inyección de Dependencias</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Template Method</em></p>
+<p><em>Pluggin</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Patrón de Diseño <strong>Estrategia</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Strategy Pattern Design</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Patrones de Diseño</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Gamma et al</p>
+<p><em>Gamma et al</em></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Justificación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Solución</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Se dificulta la extracción de un factor común en los códigos de los métodos de las clases derivadas por detalles inmersos en el propio código pero respetando un esquema general</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">Definir el esqueleto de un algoritmo de un método, diferir algunos pasos para las clases derivadas</span>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>El patron permite que las <span class="green">clases derivadas redefinan esos pasos abstractos sin cambiarla estructura del algoritmo</span> de la clase padre</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Sin método plantilla</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Con método plantilla</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">X</span> {
-
-}
-
-<span class="type">class</span> <span class="class">Y</span> <span class="directive">extends</span> X {
-<span class="directive">public</span> <span class="type">void</span> m() {
-  <span class="comment">// aaaaaaaaaaaa</span>
-  <span class="comment">// yyyyyyyyyyyy</span>
-  <span class="comment">// bbbbbbbbbbbb</span>
-}
-
-}
-
-<span class="type">class</span> <span class="class">Z</span> <span class="directive">extends</span> X {
-<span class="directive">public</span> <span class="type">void</span> m() {
-  <span class="comment">// aaaaaaaaaaaa</span>
-  <span class="comment">// zzzzzzzzzzzz</span>
-  <span class="comment">// bbbbbbbbbbbb</span>
-}
-
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">X</span> {
-<span class="directive">public</span> <span class="type">void</span> m() {
-  <span class="comment">// aaaaaaaaaaaa</span>
-  <span class="local-variable">this</span>.middle();
-  <span class="comment">// bbbbbbbbbbbb</span>
-}
-
-<span class="directive">public</span> <span class="directive">abstract</span> middle();
-}
-
-<span class="type">class</span> <span class="class">Y</span> <span class="directive">extends</span> X {
-<span class="directive">public</span> middle(){
-  <span class="comment">// yyyyyyyyyyyy</span>
-}
-
-}
-
-<span class="type">class</span> <span class="class">Z</span> <span class="directive">extends</span> X {
-<span class="directive">public</span> middle(){
-  <span class="comment">// zzzzzzzzzzzz</span>
-}
-
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/sinPlantilla.svg" alt="sinPlantilla" width="162" height="208">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/conPlantilla.svg" alt="conPlantilla" width="288" height="251">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="código-sucio-por-herencia-rechazada">Código Sucio por Herencia Rechazada</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2079,19 +2921,234 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Las subclases <strong class="red">heredan los métodos y atributos de sus padres que no necesitan</strong>.</p>
+<p>Eliminar las <span class="red">dependencias de una clase de aplicación hacia la implementación de otra clase, servicio, para que esta clase sea reutilizada por implementaciones alternativas del servicio actual</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>El <strong class="red">problema persiste mientras la clase instancie un objeto concreto</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>La solución gira en torno a <strong class="green">crear clases intermedias en la jerarquía, habitualmente abstractas, mover métodos y atributos hacia arriba y hacia abajo</strong> hasta que todas las subclases reciban los métodos y atributos necesarios y no más. De tal manera que cada clase padre tenga el factor común de sus clases derivadas.</p>
+<p>Lo primero será que la <strong class="green">clase trabaje con un interfaz del servicio para que éste pueda ser extendido por otras implementaciones de servicio diferentes</strong>. Pero, aunque la clase guarde la referencia al objeto servicio a través de un interfaz, mientras la clase instancie directamente el objeto servicio, continuará el acoplamiento indeseado que impide la reutilización.</p>
 </li>
 <li>
-<p>A menudo, esta solución complica la jerarquía en exceso. En tal caso, si la herencia rechazada es la implantación “vacía” de un método de la clase derivada podría considerarse como solución frente a la complicación de la jerarquía. Pero si la herencia rechazada es la transmisión de métodos públicos implantados a clases derivadas que no lo necesitan, <strong class="green">debería re-diseñarse la jerarquía de herencia por delegación</strong> para evitar corromper la interfaz de la clase derivada</p>
+<p>Lo segundo será <strong class="green">inyectar el servicio concreto a la clase a través de la interfaz</strong> de tal manera que, por la abstracción del polimorfismo, <strong class="green">desconoce con qué servicio concreto está trabajando</strong>. Alternativas para la inyección del objeto será:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">por constructor</strong>, muy recomendable cuando sea posible, asociar a objetos válidos en el momento de la construcción</p>
+</li>
+<li>
+<p><strong class="green">por métodos <em>setter</em></strong>, cuando por constructor se complica por la cantidad de parámetros, muchas formas de construcción, cuando se desea cambiar dinámicamente el proveedor del servicio durante la vida del objeto al que se le inyectó, &#8230;&#8203;</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Por último, para la creación e <strong class="green">inyección del servicio a la clase</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>para <strong class="green">aplicaciones que pueden desplegarse en muchos lugares</strong>, un <strong class="green">archivo de configuración</strong> tiene más sentido.</p>
+</li>
+<li>
+<p>para <strong class="green">aplicaciones sencillas que no tienen demasiada variación en el despliegue</strong>, es <strong class="green">más fácil usar código</strong> para el ensamblado de los componentes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="red">Sin Inyección de Dependencias</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Con Inyección de Dependencias por constructor</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Con Inyección de Dependencias por método</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">OneReport</span> {
+
+<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
+<span class="directive">private</span> OneChecker checker;
+
+<span class="directive">public</span> OneReport(<span class="predefined-type">Element</span><span class="type">[]</span> elements){
+  <span class="local-variable">this</span>.elements = elements;
+  <span class="local-variable">this</span>.checker = <span class="keyword">new</span> OneChecker();
+}
+
+<span class="directive">public</span> <span class="type">void</span> generate() {
+  ...
+  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
+    <span class="keyword">if</span> (checker.isChecked(element)){
+      ...
+    }
+  }
+  ...
+}
+
+}
+
+<span class="type">class</span> <span class="class">OneChecker</span> {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
+    <span class="keyword">return</span> ...
+  }
+
+}
+
+<span class="type">class</span> <span class="class">OtherReport</span> {
+
+<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
+<span class="directive">private</span> OhterChecker checker;
+
+<span class="directive">public</span> OtherReport(<span class="predefined-type">Element</span><span class="type">[]</span> elements){
+  <span class="local-variable">this</span>.elements = elements;
+  <span class="local-variable">this</span>.checker = <span class="keyword">new</span> OhterChecker();
+}
+
+<span class="directive">public</span> <span class="type">void</span> generate() {
+  ...
+  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
+    <span class="keyword">if</span> (checker.isChecked(element)){
+      ...
+    }
+  }
+  ...
+}
+
+}
+
+<span class="type">class</span> <span class="class">OtherChecker</span> {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
+    <span class="keyword">return</span> ...
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Report</span> {
+
+<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
+<span class="directive">private</span> Checker checker;
+
+<span class="directive">public</span> Report(<span class="predefined-type">Element</span><span class="type">[]</span> elements, Checker checker){
+  <span class="local-variable">this</span>.elements = elements;
+  <span class="local-variable">this</span>.checker = checker;
+}
+
+<span class="directive">public</span> <span class="type">void</span> generate() {
+  ...
+  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
+    <span class="keyword">if</span> (checker.isChecked(element)){
+      ...
+    }
+  }
+  ...
+}
+
+}
+
+<span class="type">interface</span> <span class="class">Checker</span> {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element);
+}
+
+<span class="type">class</span> <span class="class">OneChecker</span> <span class="directive">extends</span> Checker {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
+    <span class="keyword">return</span> ...
+  }
+
+}
+
+<span class="type">class</span> <span class="class">OtherChecker</span> <span class="directive">extends</span> Checker {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
+    <span class="keyword">return</span> ...
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Report</span> {
+
+<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
+<span class="directive">private</span> Checker checker;
+
+<span class="directive">public</span> Report(<span class="predefined-type">Element</span><span class="type">[]</span> elements){
+  <span class="local-variable">this</span>.elements = elements;
+}
+
+<span class="directive">public</span> <span class="type">void</span> set(Checker checker){
+  <span class="local-variable">this</span>.checker = checker;
+}
+
+<span class="directive">public</span> <span class="type">void</span> generate() {
+  ...
+  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
+    <span class="keyword">if</span> (checker.isChecked(element)){
+      ...
+    }
+  }
+  ...
+}
+
+}
+
+<span class="type">interface</span> <span class="class">Checker</span> {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element);
+}
+
+<span class="type">class</span> <span class="class">OneChecker</span> <span class="directive">extends</span> Checker {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
+    <span class="keyword">return</span> ...
+  }
+
+}
+
+<span class="type">class</span> <span class="class">OtherChecker</span> <span class="directive">extends</span> Checker {
+  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
+    <span class="keyword">return</span> ...
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/sinInyeccion.svg" alt="sinInyeccion" width="612" height="294">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/diagramaConInyeccionConstructor.svg" alt="diagramaConInyeccionConstructor" width="612" height="430">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/conInyeccionSetter.svg" alt="conInyeccionSetter" width="612" height="452">
+</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -2100,98 +3157,8 @@ Pile&lt;Wish&gt; wishes = <span class="keyword">new</span> Pile&lt;Wish&gt;(<spa
 </div>
 </div>
 <div class="sect1">
-<h2 id="flexiblidad">Flexiblidad</h2>
+<h2 id="ocultación-de-información">Ocultación de Información</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="clases-abstractas-e-interfaces">Clases Abstractas e Interfaces</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Clases Abstractas</strong></th>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Interfaces</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Aquellas clases que <strong class="blue">no son instanciables</strong> porque tienen algún <strong class="blue">método abstracto</strong>, <span class="blue">sin definición, lo cuál imposibilita su instanciación ante la ejecución de mensajes correspondientes a métodos abstractos sin definción</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Son <strong class="blue">clases abstractas puras</strong>, sin definición de atributos y métodos, solo cabeceras de los métodos abstractos, la interfaz de la clase</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Facilitan la reusabilidad</strong>, de todos los atributos y métodos definidos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No aportan reusabilidad</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Facilitan la flexibilidad</strong> mediante el polimorfismo que aporta una relajación del sistema de tipos sobre una jerarquía de herencia</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Sin la clase base abstracta no hay herencia</strong>, no hay posible polimorfismo de datos</p>
-</li>
-<li>
-<p><strong class="green">Sin el método abstracto no hay interfaz</strong>, no hay posible polimorfismo de operaciones</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Facilitan la flexibilidad</strong> mediante el polimorfismo que aporta una relajación del sistema de tipos sobre una jerarquía de herencia</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Sin la clase base abstracta pura no hay herencia</strong>, no hay posible polimorfismo de datos</p>
-</li>
-<li>
-<p><strong class="green">Sin los métodos abstractos no hay interfaz</strong>, no hay posible polimorfismo de operaciones</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p>Aportan <strong class="green">abstracción/encapsulación, modularidad, bajo acoplamiento, cohesión!!!</strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="sect2">
 <h3 id="principio-separación-de-interfaces">Principio Separación de Interfaces</h3>
 <table class="tableblock frame-all grid-all stretch">
@@ -2541,938 +3508,6 @@ privareturnte Secretaria secretaria;
 </table>
 </div>
 <div class="sect2">
-<h3 id="principio-de-sustitución-de-liskov">Principio de Sustitución de Liskov</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 50%;">
-<col style="width: 15%;">
-<col style="width: 15%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Definido por <strong>Barbara Liskov</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Liskov’sSustitutionPrinciple</em>, LSP</p>
-</li>
-<li>
-<p>incorporado por <strong>Robert Martin</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>como uno de los principios SO*L*ID</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Lo que se quiere aquí es algo como la siguiente propiedad de sustitución: si para cada objeto oT de un tipo T, hay un objeto oS de tipo S tal que para todo progama P definido en términos de T, el comportamiento de P no cambia cuando oT es sustituido por oS, entonces S es un subtipo de T
-</blockquote>
-<div class="attribution">
-&#8212; Barbara Liskov<br>
-<cite>A behavioral notion of subtyping. ACM Transactions on Programming Languages and Systems (TOPLAS). Volume 16. Issue 6 (November 1994). pp. 1811. 1841</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/preLiskov.svg" alt="preLiskov" width="84" height="295">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/postLiskov.svg" alt="postLiskov" width="112" height="301">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Justificación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Violaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se cumple sólo cuando los <strong class="blue">tipos de derivados son totalmente sustituibles por sus tipos base de forma que las funciones que utilizan estos tipos base pueden ser reutilizados con impunidad y los tipos derivados se puede cambiar con impunidad</strong>.</p>
-</li>
-<li>
-<p>El Principio de Sustituciónde Liskov dice que las funciones que <strong class="blue">usan punteros o referencias a una clase base debe ser capaz de usar los objetos de las clases derivadas sin conocerlas</strong></p>
-</li>
-<li>
-<p>Por tanto, la relación de herencia se refiere al comportamiento. <strong class="blue">No al comportamiento privado intrínseco si no al comportamiento público extrínseco del que dependen los clientes</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una de las violaciones más evidentes de este principio es el <strong class="red">uso de la Información de Tipos en Tiempo de Ejecución(<em>instantceof</em>, RTTI, …) para seleccionar una función basada en el tipo de un objeto</strong>. Muchos ven esta estructura como el <strong class="red">anatema de la Programacion Orientada a Objetos</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Cuando se considera si un diseño particular es apropiado o no, no se debe simplemente ver la solución aislada. Uno debe verlo en términos de las asunciones razonables que serán hechas por los usuarios de este diseño.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 35%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Se cumple cuando se redefine un método en una derivada <strong class="green">reemplazando su precondición por una más débil</strong> y su <strong class="green">postcondicion por una más fuerte</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Barbara Liskov<br>
-<cite>Principio de Sustitución</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La precondición de un subtipo es creada combinando con el operador <strong class="green">OR</strong>: la precondicion es del tipo base y del subtipo, lo que resulta una <strong class="green">precondición menos restrictiva</strong>.</p>
-</li>
-<li>
-<p>La postcondición de un subtipo es creada combinando con el operador <strong class="green">AND</strong>: la postcondiciones del tipo base y del subtipo, lo que resulta una <strong class="green">postcondición más restrictiva</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/sinLiskov.svg" alt="sinLiskov" width="468" height="370">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="herencia-vs-delegación">Herencia vs Delegación</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 80%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Motivación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Solución</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>En una jerarquía de herencia a veces se fuerza a <strong class="red">incorporar métodos únicamente por el beneficio de una de sus subclases</strong>. Esta práctica es <strong class="red">indeseable</strong> por que cada vez que una clase derivada necesite un nuevo método, éste será añadido a la clase base. Esto va a contaminar aún más la interfaz de la clase base, por lo que sería poco cohesiva.</p>
-</li>
-<li>
-<p>Además, <strong class="red">cada vez que un nuevo interfaz se añade a la clase base, éste debe ser implementado (o permitido por defecto) en las clases derivadas</strong>. De hecho, una práctica asociada es añadir estos interfaces a la clase base con métodos “vacíos” más que con métodos abstractos, así las clases derivadas no son agobiadas con su necesaria implementación; lo cual <strong class="red">viola el principio de sustitución de Liskov</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Cualquier relación de herencia puede convertirse en una relación de composición o delegación</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Relación de Herencia</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Relación de Composición para Delegación</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/herenciaClasesDelegado.svg" alt="herenciaClasesDelegado" width="440" height="1248">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/composiciónClasesDelegado.svg" alt="composiciónClasesDelegado" width="624" height="1511">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Relación de Herencia</th>
-<th class="tableblock halign-left valign-top">Relación de Composición para <strong>Delegación</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/secuenciaHerencia.svg" alt="secuenciaHerencia" width="484" height="761">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/secuenciaDelegado.svg" alt="secuenciaDelegado" width="549" height="858">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="código-sucio-por-jerarquías-paralelas-de-herencia">Código Sucio por Jerarquías Paralelas de Herencia</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 30%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Justificación</strong></th>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="green">Solución</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Es <span class="red">un caso especial de la Cirugía a Escopetazos</span>.</p>
-</li>
-<li>
-<p>Cada vez que <strong class="red">haces una subclase de una clase, también tienes que hacer una subclase de otra</strong>. Se reconoce por los prefijos en los nombres de clases de la jerarquía son los <span class="red">mismos que los prefijos de la otra jerarquía</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Reestructurar la jerarquía:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Reubicar de <span class="green">Reparto de Responsabilidades</span></p>
-</li>
-<li>
-<p>Aplicar el <span class="green">Patrón Método Plantilla</span></p>
-</li>
-<li>
-<p>Una clase contiene tantos <strong class="green">roles polimórficos</strong> como cada una de las jerarquía paralelas en los que <span class="green">delega y combina su comportamiento</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/pacientesDuplicado.svg" alt="pacientesDuplicado" width="730" height="431">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/pacientesRol.svg" alt="pacientesRol" width="540" height="353">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/pacientesRoles.svg" alt="pacientesRoles" width="610" height="327">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="técnica-de-doble-despacho">Técnica de Doble Despacho</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Por un reparto de responsabilidades justificado, <strong class="red">existe la necesidad de que un cliente de una jerarquía de clases trate específicamente según la clase derivada concreta de un parámetro polimórifco</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>la secretaría de alumnos atiende de forma distinta para la matriculación de distintos tipos de alumnos: master en Cloud Apps, master en Ingeniería Web, &#8230;&#8203;, grados, ESA (para adultos), Erasmus (del Espacio Europeo), invitado, &#8230;&#8203;; un profesor para evaluar con distintos tipos de pruebas según el nivel del tipo de alumno concreto; &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">1ª solución: preguntando por el tipo del objeto polimórfico</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/dobleDespacho/v1/mal">Ver código</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>De forma directa con operadores y funciones del lenguaje, <strong class="red"><em>instanceOf</em></strong>, o indirectamente con métodos explícitos, <strong class="red"><em>get&lt;Tipo&gt;()</em></strong>, o &#8230;&#8203; abriendo <strong class="red">distintas ramas de sentencias alternativas para tratar cada tipo de clase derivada</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/restauranteClasesInstanceOf.svg" alt="restauranteClasesInstanceOf" width="1158" height="654">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/restauranteSecuenciaInstanceOf.svg" alt="restauranteSecuenciaInstanceOf" width="812" height="797">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Consecuencias</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="red"><strong>viola el Principio de Sustitución de Liskov</strong> preguntando por el tipo de objeto polimórfico</span></p>
-</li>
-<li>
-<p><span class="red"><strong>incurre en cambios divergentes</strong> para atender con una nueva rama en cada clase cliente que hay que localizar por toda la aplicación</span></p>
-</li>
-<li>
-<p><span class="red"><strong>rompe el principio Open/Close</strong> con cambios en el interior de los métodos del cliente</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">2ª solución: aplicando la técnica de doble despacho</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/dobleDespacho/v2/basic">Ver código</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>El <strong class="blue">cliente envia un mensaje <em>aceptar</em> al objeto polimórfico</strong> auto-pasándose como parámetro (<em>this</em>)</p>
-</li>
-<li>
-<p>Cada <strong class="blue">clase derivada devuelve un mensaje <em>visitar</em> al propio cliente</strong> auto-pasándose como parámetro (<em>this</em>)</p>
-</li>
-<li>
-<p>El <strong class="blue">cliente atiende por separado con métodos <em>visitar</em></strong> para cada tipo de clase derivada con el comportamiento particular para cada uno</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/restauranteSecuenciaDobleDesapacho.svg" alt="restauranteSecuenciaDobleDesapacho" width="779" height="510">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/restauranteClasesDobleDesapacho.svg" alt="restauranteClasesDobleDesapacho" width="2098" height="705">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Consecuencias</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="green"><strong>no viola el Principio de Sustitución de Liskov</strong> preguntando por el tipo de objeto polimórfico</span></p>
-</li>
-<li>
-<p><span class="green"><strong>no incurre en cambios divergentes</strong> para atender con una nueva rama en cada clase cliente</span></p>
-</li>
-<li>
-<p><span class="green"><strong>no rompe el principio Open/Close</strong> con cambios en el interior de los métodos del cliente</span></p>
-</li>
-<li>
-<p><span class="red"><strong>intimidad inapropiada</strong> con ciclos entre todas las clases cliente con todas las clases de la jerarquía</span></p>
-</li>
-<li>
-<p><span class="red"><strong>alto acoplamiento según tienden a crecer los clientes</strong> porque todas las clases de la jerarquía conocen a todas las clases de clientes</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">3ª solución: principio abierto/cerrado</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/dobleDespacho/v3/extensible">Ver código</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">jerarquía de clases no conoce directamente a los clientes sino que conoce únicamente a una interfaz</strong> que cumple todo cliente que visita la jerarquía, <em>visitador</em> genérico.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>la nueva clase derivada debe <strong class="blue">redefinir el método <em>aceptar</em></strong> para no ser abstracta enviando un mensaje <em>visitar</em> auto-pasandose por parámetro</p>
-</li>
-<li>
-<p>los cambios están guiados por el compilador porque cada clase cliente debe <strong class="blue">definir un nuevo método <em>visitar</em></strong> para la nueva clase derivada</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/restauranteClasesInversionDependencias.svg" alt="restauranteClasesInversionDependencias" width="2203" height="891">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Consecuencias</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="green"><strong>no viola el Principio de Sustitución de Liskov</strong> preguntando por el tipo de objeto polimórfico</span></p>
-</li>
-<li>
-<p><span class="green"><strong>no incurre en cambios divergentes</strong> para atender con una nueva rama en cada clase cliente</span></p>
-</li>
-<li>
-<p><span class="green"><strong>no rompe el principio Open/Close</strong> con cambios en el interior de los métodos del cliente</span></p>
-</li>
-<li>
-<p><span class="green"><strong>con "leve" intimidad inapropiada</strong> con ciclos dentro del mismo paquete entre todas las clases de la jerarquía con la <strong>interfaz</strong> de los clientes, que no requiere pruebas ni comprensión porque no aporta código de implementación</span></p>
-</li>
-<li>
-<p><span class="green"><strong>bajo acoplamiento según tienden a crecer los clientes</strong> porque no todas las clases de la jerarquía conocen a todas las clases de clientes, solo conocen a la interfaz de todos los clientes</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="inversión-de-control">Inversión de Control</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sinónimos</th>
-<th class="tableblock halign-left valign-top">Synonyms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Principio Hollywood: “No me llames, ya te llamaremos”</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Hollywood Principle: "Don&#8217;t call me, we&#8217;ll call you"</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-none grid=none grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">La Inversión de Control</strong> es una parte fundamental de lo que hace un framework diferente a una biblioteca.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una <strong class="blue">biblioteca</strong> es esencialmente un conjunto de funciones que se pueden llamar, en estos días por lo general organizados en clases. <span class="blue">Cada llamada que hace un poco de trabajo y devuelve el control al cliente</span>.</p>
-</li>
-<li>
-<p>Un <em class="blue"><strong>framework</strong></em> encarna algún diseño abstracto, con un comportamiento más integrado. Para utilizarlo es <span class="blue">necesario insertar comportamiento en varios lugares en el framework ya sea por subclases o por conectar sus propias clases</span>. <strong class="blue">El código del framework después llama a ese código en estos puntos</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Una característica importante de un <em>framework</em> es que los métodos definidos por el usuario para adaptar el framework, a menudo se llaman desde dentro del propio <em>framework</em>, en lugar desde el código de la aplicación del usuario. <strong class="blue">El framework a menudo desempeña el papel del programa principal en la coordinación y secuenciación de actividad de la aplicación</strong>. Esta inversión de control da al framework el poder para servir como esqueletos extensibles. Los métodos suministrados por el usuario se adaptan a los algoritmos genéricos definidos en el framework para una aplicación particular
-</blockquote>
-<div class="attribution">
-&#8212; Johonson & Foote<br>
-<cite>1988</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-none grid=none grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-“algunas personas confunden el principio general de Inversión de Control con los estilos específicos de Inversión de Control, como la Inyección de Dependencias, que estos contenedores utilizan”
-</blockquote>
-<div class="attribution">
-&#8212; Fowler
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">Variaciones</span>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Patrón Método Plantilla</strong> con redefinición de métodos abstractos invocados desde el método plantilla de la clase base</p>
-</li>
-<li>
-<p><strong class="blue">Eventos</strong> con auditores que determinan su comportamiento</p>
-</li>
-<li>
-<p><strong class="blue">Configuración</strong> con datos externos al framework para determinar el comportamiento</p>
-</li>
-<li>
-<p><strong class="blue">Inyección de Dependencias</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="diseño-á-gil">Diseño Á-gil</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="inyección-de-dependencias">Inyección de Dependencias</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sinónimos</th>
-<th class="tableblock halign-left valign-top">Synonyms</th>
-<th class="tableblock halign-left valign-top">Libro</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Inyección de Dependencias</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Pluggin</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Patrón de Diseño <strong>Estrategia</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Strategy Pattern Design</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Patrones de Diseño</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Gamma et al</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Justificación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Solución</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Eliminar las <span class="red">dependencias de una clase de aplicación hacia la implementación de otra clase, servicio, para que esta clase sea reutilizada por implementaciones alternativas del servicio actual</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>El <strong class="red">problema persiste mientras la clase instancie un objeto concreto</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Lo primero será que la <strong class="green">clase trabaje con un interfaz del servicio para que éste pueda ser extendido por otras implementaciones de servicio diferentes</strong>. Pero, aunque la clase guarde la referencia al objeto servicio a través de un interfaz, mientras la clase instancie directamente el objeto servicio, continuará el acoplamiento indeseado que impide la reutilización.</p>
-</li>
-<li>
-<p>Lo segundo será <strong class="green">inyectar el servicio concreto a la clase a través de la interfaz</strong> de tal manera que, por la abstracción del polimorfismo, <strong class="green">desconoce con qué servicio concreto está trabajando</strong>. Alternativas para la inyección del objeto será:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">por constructor</strong>, muy recomendable cuando sea posible, asociar a objetos válidos en el momento de la construcción</p>
-</li>
-<li>
-<p><strong class="green">por métodos <em>setter</em></strong>, cuando por constructor se complica por la cantidad de parámetros, muchas formas de construcción, cuando se desea cambiar dinámicamente el proveedor del servicio durante la vida del objeto al que se le inyectó, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Por último, para la creación e <strong class="green">inyección del servicio a la clase</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>para <strong class="green">aplicaciones que pueden desplegarse en muchos lugares</strong>, un <strong class="green">archivo de configuración</strong> tiene más sentido.</p>
-</li>
-<li>
-<p>para <strong class="green">aplicaciones sencillas que no tienen demasiada variación en el despliegue</strong>, es <strong class="green">más fácil usar código</strong> para el ensamblado de los componentes.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Sin Inyección de Dependencias</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Con Inyección de Dependencias por constructor</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Con Inyección de Dependencias por método</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">OneReport</span> {
-
-<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
-<span class="directive">private</span> OneChecker checker;
-
-<span class="directive">public</span> OneReport(<span class="predefined-type">Element</span><span class="type">[]</span> elements){
-  <span class="local-variable">this</span>.elements = elements;
-  <span class="local-variable">this</span>.checker = <span class="keyword">new</span> OneChecker();
-}
-
-<span class="directive">public</span> <span class="type">void</span> generate() {
-  ...
-  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
-    <span class="keyword">if</span> (checker.isChecked(element)){
-      ...
-    }
-  }
-  ...
-}
-
-}
-
-<span class="type">class</span> <span class="class">OneChecker</span> {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
-    <span class="keyword">return</span> ...
-  }
-
-}
-
-<span class="type">class</span> <span class="class">OtherReport</span> {
-
-<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
-<span class="directive">private</span> OhterChecker checker;
-
-<span class="directive">public</span> OtherReport(<span class="predefined-type">Element</span><span class="type">[]</span> elements){
-  <span class="local-variable">this</span>.elements = elements;
-  <span class="local-variable">this</span>.checker = <span class="keyword">new</span> OhterChecker();
-}
-
-<span class="directive">public</span> <span class="type">void</span> generate() {
-  ...
-  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
-    <span class="keyword">if</span> (checker.isChecked(element)){
-      ...
-    }
-  }
-  ...
-}
-
-}
-
-<span class="type">class</span> <span class="class">OtherChecker</span> {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
-    <span class="keyword">return</span> ...
-  }
-
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Report</span> {
-
-<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
-<span class="directive">private</span> Checker checker;
-
-<span class="directive">public</span> Report(<span class="predefined-type">Element</span><span class="type">[]</span> elements, Checker checker){
-  <span class="local-variable">this</span>.elements = elements;
-  <span class="local-variable">this</span>.checker = checker;
-}
-
-<span class="directive">public</span> <span class="type">void</span> generate() {
-  ...
-  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
-    <span class="keyword">if</span> (checker.isChecked(element)){
-      ...
-    }
-  }
-  ...
-}
-
-}
-
-<span class="type">interface</span> <span class="class">Checker</span> {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element);
-}
-
-<span class="type">class</span> <span class="class">OneChecker</span> <span class="directive">extends</span> Checker {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
-    <span class="keyword">return</span> ...
-  }
-
-}
-
-<span class="type">class</span> <span class="class">OtherChecker</span> <span class="directive">extends</span> Checker {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
-    <span class="keyword">return</span> ...
-  }
-
-}</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Report</span> {
-
-<span class="directive">private</span> <span class="predefined-type">Element</span><span class="type">[]</span> elements;
-<span class="directive">private</span> Checker checker;
-
-<span class="directive">public</span> Report(<span class="predefined-type">Element</span><span class="type">[]</span> elements){
-  <span class="local-variable">this</span>.elements = elements;
-}
-
-<span class="directive">public</span> <span class="type">void</span> set(Checker checker){
-  <span class="local-variable">this</span>.checker = checker;
-}
-
-<span class="directive">public</span> <span class="type">void</span> generate() {
-  ...
-  for(<span class="predefined-type">Element</span> element : <span class="local-variable">this</span>.elements){
-    <span class="keyword">if</span> (checker.isChecked(element)){
-      ...
-    }
-  }
-  ...
-}
-
-}
-
-<span class="type">interface</span> <span class="class">Checker</span> {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element);
-}
-
-<span class="type">class</span> <span class="class">OneChecker</span> <span class="directive">extends</span> Checker {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
-    <span class="keyword">return</span> ...
-  }
-
-}
-
-<span class="type">class</span> <span class="class">OtherChecker</span> <span class="directive">extends</span> Checker {
-  <span class="type">boolean</span> isChecked(<span class="predefined-type">Element</span> element){
-    <span class="keyword">return</span> ...
-  }
-
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/sinInyeccion.svg" alt="sinInyeccion" width="612" height="294">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaConInyeccionConstructor.svg" alt="diagramaConInyeccionConstructor" width="612" height="430">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/conInyeccionSetter.svg" alt="conInyeccionSetter" width="612" height="452">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="principio-de-inversión-de-dependencias">Principio de Inversión de Dependencias</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3497,10 +3532,10 @@ Una característica importante de un <em>framework</em> es que los métodos defi
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Principios de Sustitución</strong> de <strong>Barbara Liskov</strong> y</p>
+<p><strong class="blue">Abierto/Cerrado</strong> de <strong>Bertrand Meyer</strong> y</p>
 </li>
 <li>
-<p><strong class="blue">Abierto/Cerrado</strong> de <strong>Bertrand Meyer</strong></p>
+<p><strong class="blue">Principios de Sustitución</strong> de <strong>Barbara Liskov</strong></p>
 </li>
 </ul>
 </div>
@@ -3512,10 +3547,10 @@ Una característica importante de un <em>framework</em> es que los métodos defi
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 15%;">
-<col style="width: 35%;">
-<col style="width: 15%;">
-<col style="width: 35%;">
+<col style="width: 13%;">
+<col style="width: 44%;">
+<col style="width: 13%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
