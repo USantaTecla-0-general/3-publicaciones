@@ -496,21 +496,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#símbolos">Símbolos</a></li>
 <li><a href="#iteradores">Iteradores</a></li>
 <li><a href="#generadores">Generadores</a></li>
-</ul>
-</li>
-<li><a href="#programación-modular">Programación Modular</a>
-<ul class="sectlevel2">
 <li><a href="#ecmascript-modules"><em>EcmaScript Modules</em></a></li>
 </ul>
 </li>
 <li><a href="#programación-con-excepciones">Programación con Excepciones</a></li>
-<li><a href="#programación-concurrente">Programación Concurrente</a>
-<ul class="sectlevel2">
-<li><a href="#continuaciones-callbacks">Continuaciones <em>Callbacks</em></a></li>
-<li><a href="#promesas">Promesas</a></li>
-<li><a href="#funciones-asíncronas">Funciones Asíncronas</a></li>
-</ul>
-</li>
 <li><a href="#recursividad">Recursividad</a>
 <ul class="sectlevel3">
 <li><a href="#recursividad-lineal">Recursividad Lineal</a></li>
@@ -522,6 +511,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#programación-funcional">Programación Funcional</a></li>
+<li><a href="#programación-concurrente">Programación Concurrente</a>
+<ul class="sectlevel2">
+<li><a href="#continuaciones-callbacks">Continuaciones <em>Callbacks</em></a></li>
+<li><a href="#promesas">Promesas</a></li>
+<li><a href="#funciones-asíncronas">Funciones Asíncronas</a></li>
+</ul>
+</li>
 <li><a href="#sintesis"><strong>Sintesis</strong></a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -8108,15 +8104,15 @@ console.writeln(<span class="keyword">typeof</span> object); <span class="commen
     console.writeln(<span class="keyword">typeof</span> object[property]); <span class="comment">// number / string</span>
 }
 
-let { a, b } = object;
-console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>); <span class="comment">// 4662 - cadena</span>
+let { a, b, c } = object;
+console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b} - <span class="predefined">$</span>{c}<span class="error">`</span>); <span class="comment">// 4662 - cadena - undefined</span>
 
 <span class="keyword">function</span> <span class="function">f</span>({ b, a }) {
     console.writeln(<span class="error">`</span><span class="predefined">$</span>{a} - <span class="predefined">$</span>{b}<span class="error">`</span>);
 }
-f(object); <span class="comment">// cadena - 4662</span>
+f(object); <span class="comment">// 4662 - cadena</span>
 f({ <span class="key">a</span>: -<span class="integer">1</span>, <span class="key">b</span>: <span class="predefined-constant">true</span> }); <span class="comment">// -1 - true</span>
-f({ <span class="key">a</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">aceptado</span><span class="delimiter">&quot;</span></span>, <span class="key">c</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">ignorado</span><span class="delimiter">&quot;</span></span> }); <span class="comment">// que - undefined</span>
+f({ <span class="key">a</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">aceptado</span><span class="delimiter">&quot;</span></span>, <span class="key">c</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">ignorado</span><span class="delimiter">&quot;</span></span> }); <span class="comment">// aceptado - undefined</span>
 
 let array = [
     {
@@ -12137,12 +12133,10 @@ const iterableObject = {
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Unresolved directive in ust4_how/ust0_index.adoc - include::ust5_object_oriented/ust0_index.adoc[]
+== Programación Modular</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="programación-modular">Programación Modular</h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -12199,6 +12193,7 @@ const iterableObject = {
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
 <h3 id="ecmascript-modules"><em>EcmaScript Modules</em></h3>
 <table class="tableblock frame-all grid-all stretch">
@@ -12988,488 +12983,6 @@ console.log(<span class="error">`</span>Sentencia posterior<span class="error">`
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="programación-concurrente">Programación Concurrente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>JavaScript se diseñó para <strong>añadir interactividad a una página web</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una página web es como una <strong>Interfaz gráfica de usuario</strong> (GUI), que se suelen implementar con un <strong>único hilo de ejecución</strong> (<em>single threaded</em>), <strong>hilo para el despacho de eventos</strong></p>
-</li>
-<li>
-<p><strong>Inicialmente no podía haber dos funciones ejecutándose a la misma vez de forma concurrente</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/costIO.jpg" alt="costIO">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Y si se necesita hacer una <strong>petición al servidor</strong> al pulsar un botón?</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Si hay un único hilo y <strong class="red">la llamada se bloqueara a la espera de respuesta, la GUI se bloquearía, congelaría</strong></p>
-</li>
-<li>
-<p>En vez de esperar a que llegue el resultado, <strong class="green">se define el código que se ejecutará cuando llegue la respuesta</strong></p>
-</li>
-<li>
-<p>JS implementa un <strong class="blue">modelo de programación asíncrono</strong> y, por tanto, <strong class="blue">las operaciones de entrada/salida no son bloqueantes</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>peticiones al <em>backend</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>get</em> de <em>https</em> en <em>node.js</em></p>
-</li>
-<li>
-<p><em>send</em> de <em>HTTPRequest</em> en <em>browser</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>lectura/escritura de ficheros</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>createReadStream</em>, <em>readDir</em>,  de <em>fs</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>"pausa"</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>setTimeOut(callback, millis)</em></p>
-</li>
-<li>
-<p><em>setInterval(callback, millis)</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/eventLoop.jpg" alt="eventLoop">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="continuaciones-callbacks">Continuaciones <em>Callbacks</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se denomina <strong><em>callback</em></strong> a una <strong>función que se pasa como parámetro a otra función para que sea “llamada de vuelta” en algún momento posterior</strong> (p.e. eventos, &#8230;&#8203;)</p>
-</li>
-<li>
-<p>Las <strong>continuaciones</strong> (<em>continuations</em>) son aquellas <strong>callbacks que se ejecutarán cuando haya terminado de ejecutarse la función a la que se llama</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Habitualmente <strong>recibirán el valor resultado o un error</strong></p>
-</li>
-<li>
-<p>Sólo <strong>se ejecutan una vez al finalizar la función</strong>, <strong class="green">asincronamente</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-
-<span class="keyword">function</span> <span class="function">main</span>(millis){
-  setTimeout(() =&gt; {
-    console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> durante <span class="predefined">$</span>{millis/<span class="integer">1000</span>} segundos<span class="error">`</span>);
-  }, millis);
-}
-
-main(<span class="integer">3000</span>);
-console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n posterior?!?<span class="error">`</span>);</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/0-continuaciones/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/0-continuaciones/2-multiple/app.js">múltiple</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Infierno de <em>callbacks</em></strong>, debiéndose llamar infierno de continuaciones</p>
-<div class="ulist">
-<ul>
-<li>
-<p>También llamado <em class="red">piramide of doom</em>, pirámide de la perdición</p>
-</li>
-<li>
-<p><strong class="red">Antipatrón</strong> con <span class="red">múltiples <em>callbacks</em> anidados que provocan que el código se vuelva difícil de leer y depurar</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/callback-hell.gif" alt="callback hell">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="promesas">Promesas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una promesa es un <strong class="blue">objeto de la clase Promise</strong>, normalmente <strong>devuelto por una función asíncrona</strong>, <strong class="green">sustituyendo a un callback de continuación</strong>: <strong class="blue">cosificación</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se <strong>responsabiliza del código que se ejecutará cuando esté disponible el
-resultado</strong>, habitualmente de entrada/salida, y <strong>definido en el método <em>then</em> de la promesa</strong></p>
-</li>
-<li>
-<p>El <strong>posible error de entrada/salida se puede gestionar en un único sitio, en el método <em>catch</em></strong>, al final de los métodos <em>then</em></p>
-</li>
-<li>
-<p><strong>Paralelo a los bloques <em>try</em>, también existe el método <em>finally</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong>Estados de una promesa</strong>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>Pending</em>, pendiente</strong>: Está pendiente de recibir un resultado, se está ejecutando</p>
-</li>
-<li>
-<p><strong class="blue"><em>Settled</em>, finalizada</strong>: Ha finalizado su ejecución de forma <strong class="green">satisfactoria (<em>fulfilled</em>)</strong> o <strong class="red">con error (<em>rejected</em>)</strong>
-pero todavía no se han ejecutado los callbacks.</p>
-</li>
-<li>
-<p><strong class="green"><em>Resolved</em>, resuelta</strong>: Ha finalizado y se han invocado los callbacks</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/promesas.png" alt="promesas">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>En el <strong>constructor</strong> se le pasa una <strong>función callback con dos parámetros función: <em>resolve</em> y <em>reject</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Se deberá llamar a una de estas funciones para resolver la promesa (<em>fullfil</em> o <em>reject</em>)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-
-<span class="keyword">function</span> <span class="function">sleep</span>(millis) {
-  <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; resolve(), millis);
-  });
-}
-
-<span class="keyword">function</span> <span class="function">main</span>(millis) {
-  sleep(millis)
-    .then(() =&gt; console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> <span class="predefined">$</span>{millis} segundos<span class="error">`</span>));
-  sleep(millis)
-    .then(() =&gt; console.writeln(<span class="error">`</span>XXXXX<span class="error">`</span>));
-
-}
-
-main(<span class="integer">3000</span>);
-console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n posterior?!?<span class="error">`</span>);</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Promise.all(…)</em></strong>: <strong>Devuelve una promesa que se resuelve cuando todas las promesas se han resuelto</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Devuelve <strong>error en cuanto alguna de ellas es rechazada</strong> (<em>rejected</em>)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Promise.allSettled(…)</em></strong>: <strong>Devuelve una promesa que se cumple cuando todas finalizan</strong> (<em>fulfilled</em> o <em>rejected</em>).</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Nunca devuelve error</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/3-multipleAll/app.js">múltiple all</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="funciones-asíncronas">Funciones Asíncronas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las <strong>funciones declaradas como asíncronas (<em>async</em>) pueden usar funciones con promesas como si fueran funciones síncronas</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>En la llamada, se puede usar el <strong>operador <em>await</em> sobre una función que devuelve una promesa</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Si la promesa <strong>devuelve un valor, podemos asignar ese valor a una variable</strong></p>
-</li>
-<li>
-<p>Para gestionar <strong>promesas rechazadas, usamos try/catch</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
-
-const console = <span class="keyword">new</span> Console();
-
-<span class="keyword">function</span> <span class="function">sleep</span>(millis){
-  <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; resolve(), millis);
-  });
-}
-
-async <span class="keyword">function</span> <span class="function">main</span>(millis){
-  await sleep(millis);
-  console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> <span class="predefined">$</span>{millis} segundos<span class="error">`</span>);
-}
-
-main(<span class="integer">3000</span>);
-console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n posterior?!?<span class="error">`</span>);</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/3-multipleAll/app.js">múltiple all</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -14361,6 +13874,488 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 </div>
 </div>
 <div class="sect1">
+<h2 id="programación-concurrente">Programación Concurrente</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>JavaScript se diseñó para <strong>añadir interactividad a una página web</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una página web es como una <strong>Interfaz gráfica de usuario</strong> (GUI), que se suelen implementar con un <strong>único hilo de ejecución</strong> (<em>single threaded</em>), <strong>hilo para el despacho de eventos</strong></p>
+</li>
+<li>
+<p><strong>Inicialmente no podía haber dos funciones ejecutándose a la misma vez de forma concurrente</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/costIO.jpg" alt="costIO">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Y si se necesita hacer una <strong>petición al servidor</strong> al pulsar un botón?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si hay un único hilo y <strong class="red">la llamada se bloqueara a la espera de respuesta, la GUI se bloquearía, congelaría</strong></p>
+</li>
+<li>
+<p>En vez de esperar a que llegue el resultado, <strong class="green">se define el código que se ejecutará cuando llegue la respuesta</strong></p>
+</li>
+<li>
+<p>JS implementa un <strong class="blue">modelo de programación asíncrono</strong> y, por tanto, <strong class="blue">las operaciones de entrada/salida no son bloqueantes</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>peticiones al <em>backend</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>get</em> de <em>https</em> en <em>node.js</em></p>
+</li>
+<li>
+<p><em>send</em> de <em>HTTPRequest</em> en <em>browser</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>lectura/escritura de ficheros</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>createReadStream</em>, <em>readDir</em>,  de <em>fs</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>"pausa"</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>setTimeOut(callback, millis)</em></p>
+</li>
+<li>
+<p><em>setInterval(callback, millis)</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/eventLoop.jpg" alt="eventLoop">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="continuaciones-callbacks">Continuaciones <em>Callbacks</em></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se denomina <strong><em>callback</em></strong> a una <strong>función que se pasa como parámetro a otra función para que sea “llamada de vuelta” en algún momento posterior</strong> (p.e. eventos, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>Las <strong>continuaciones</strong> (<em>continuations</em>) son aquellas <strong>callbacks que se ejecutarán cuando haya terminado de ejecutarse la función a la que se llama</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Habitualmente <strong>recibirán el valor resultado o un error</strong></p>
+</li>
+<li>
+<p>Sólo <strong>se ejecutan una vez al finalizar la función</strong>, <strong class="green">asincronamente</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">main</span>(millis){
+  setTimeout(() =&gt; {
+    console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> durante <span class="predefined">$</span>{millis/<span class="integer">1000</span>} segundos<span class="error">`</span>);
+  }, millis);
+}
+
+main(<span class="integer">3000</span>);
+console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n posterior?!?<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/0-continuaciones/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/0-continuaciones/2-multiple/app.js">múltiple</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Infierno de <em>callbacks</em></strong>, debiéndose llamar infierno de continuaciones</p>
+<div class="ulist">
+<ul>
+<li>
+<p>También llamado <em class="red">piramide of doom</em>, pirámide de la perdición</p>
+</li>
+<li>
+<p><strong class="red">Antipatrón</strong> con <span class="red">múltiples <em>callbacks</em> anidados que provocan que el código se vuelva difícil de leer y depurar</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/callback-hell.gif" alt="callback hell">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="promesas">Promesas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Una promesa es un <strong class="blue">objeto de la clase Promise</strong>, normalmente <strong>devuelto por una función asíncrona</strong>, <strong class="green">sustituyendo a un callback de continuación</strong>: <strong class="blue">cosificación</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Se <strong>responsabiliza del código que se ejecutará cuando esté disponible el
+resultado</strong>, habitualmente de entrada/salida, y <strong>definido en el método <em>then</em> de la promesa</strong></p>
+</li>
+<li>
+<p>El <strong>posible error de entrada/salida se puede gestionar en un único sitio, en el método <em>catch</em></strong>, al final de los métodos <em>then</em></p>
+</li>
+<li>
+<p><strong>Paralelo a los bloques <em>try</em>, también existe el método <em>finally</em></strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong>Estados de una promesa</strong>:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>Pending</em>, pendiente</strong>: Está pendiente de recibir un resultado, se está ejecutando</p>
+</li>
+<li>
+<p><strong class="blue"><em>Settled</em>, finalizada</strong>: Ha finalizado su ejecución de forma <strong class="green">satisfactoria (<em>fulfilled</em>)</strong> o <strong class="red">con error (<em>rejected</em>)</strong>
+pero todavía no se han ejecutado los callbacks.</p>
+</li>
+<li>
+<p><strong class="green"><em>Resolved</em>, resuelta</strong>: Ha finalizado y se han invocado los callbacks</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/promesas.png" alt="promesas">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>En el <strong>constructor</strong> se le pasa una <strong>función callback con dos parámetros función: <em>resolve</em> y <em>reject</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se deberá llamar a una de estas funciones para resolver la promesa (<em>fullfil</em> o <em>reject</em>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">sleep</span>(millis) {
+  <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; resolve(), millis);
+  });
+}
+
+<span class="keyword">function</span> <span class="function">main</span>(millis) {
+  sleep(millis)
+    .then(() =&gt; console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> <span class="predefined">$</span>{millis} segundos<span class="error">`</span>));
+  sleep(millis)
+    .then(() =&gt; console.writeln(<span class="error">`</span>XXXXX<span class="error">`</span>));
+
+}
+
+main(<span class="integer">3000</span>);
+console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n posterior?!?<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Promise.all(…)</em></strong>: <strong>Devuelve una promesa que se resuelve cuando todas las promesas se han resuelto</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Devuelve <strong>error en cuanto alguna de ellas es rechazada</strong> (<em>rejected</em>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><em>Promise.allSettled(…)</em></strong>: <strong>Devuelve una promesa que se cumple cuando todas finalizan</strong> (<em>fulfilled</em> o <em>rejected</em>).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nunca devuelve error</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/1-promesas/3-multipleAll/app.js">múltiple all</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="funciones-asíncronas">Funciones Asíncronas</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Las <strong>funciones declaradas como asíncronas (<em>async</em>) pueden usar funciones con promesas como si fueran funciones síncronas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>En la llamada, se puede usar el <strong>operador <em>await</em> sobre una función que devuelve una promesa</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si la promesa <strong>devuelve un valor, podemos asignar ese valor a una variable</strong></p>
+</li>
+<li>
+<p>Para gestionar <strong>promesas rechazadas, usamos try/catch</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">const { Console } = require(<span class="string"><span class="delimiter">&quot;</span><span class="content">./console</span><span class="delimiter">&quot;</span></span>);
+
+const console = <span class="keyword">new</span> Console();
+
+<span class="keyword">function</span> <span class="function">sleep</span>(millis){
+  <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; resolve(), millis);
+  });
+}
+
+async <span class="keyword">function</span> <span class="function">main</span>(millis){
+  await sleep(millis);
+  console.writeln(<span class="error">`</span>Estuve haciendo <span class="string"><span class="delimiter">&quot;</span><span class="content">nada</span><span class="delimiter">&quot;</span></span> <span class="predefined">$</span>{millis} segundos<span class="error">`</span>);
+}
+
+main(<span class="integer">3000</span>);
+console.writeln(<span class="error">`</span>Acci<span class="error">ó</span>n posterior?!?<span class="error">`</span>);</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>countries : <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/1-simple/app.js">simple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/2-multiple/app.js">múltiple</a> - <a href="https://github.com/USantaTecla-tech-javascript/src/blob/master/manager/countries/7-concurrente/manager/countries/2-asincronas/3-multipleAll/app.js">múltiple all</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="sintesis"><strong>Sintesis</strong></h2>
 <div class="sectionbody">
 
@@ -14595,7 +14590,7 @@ Las funciónes de recursividad de cola son un tipo especial de funciones recursi
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-11-07 10:40:37 +0100
+Last updated 2023-05-09 06:32:47 +0200
 </div>
 </div>
 <style>

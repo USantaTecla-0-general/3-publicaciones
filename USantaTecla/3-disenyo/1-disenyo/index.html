@@ -760,14 +760,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Índice</th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -2563,84 +2558,6 @@ si uno piensa cuidadosamente e intenta ser congruente la distinción imprecisa e
 <div class="sect2">
 <h3 id="software-autoexplicativo">Software Autoexplicativo</h3>
 <div class="sect3">
-<h4 id="formato">Formato</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 26.25%;">
-<col style="width: 63.75%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Justificación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Implicaciones</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Violaciones</strong> <a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/ticTacToe/v010">TicTacToe</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Formateo de código es importante. Es <strong class="blue">demasiado importante como para ignorarlo y es demasiado importante como para tratarlo religiosamente</strong>. El formateo de código trata sobre la comunicación y la comunicación es de primer orden para los desarrolladores profesionales</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">un único estilo de formato</strong> y luego todos los miembros de ese equipo debe usar ese estilo.
-</blockquote>
-<div class="attribution">
-&#8212; Martin<br>
-<cite>R.</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Un código es una jerarquía. Hay información que pertenece al archivo como un todo, a las clases individuales dentro del archivo, a los métodos dentro de las clases, a los bloques dentro de los métodos, y de forma recursiva a los bloques dentro de los bloques. Cada nivel de esta jerarquía es un ámbito en el que los nombres pueden ser declarados y en la que las declaraciones y sentencias ejecutables se interpretan. Para hacer esta jerarquía visible, hay que <strong class="green">sangrar la líneas de código fuente de forma proporcional a su posición en la jerarquía</strong>.</p>
-</li>
-<li>
-<p>Utilizamos el <strong class="green">espacio en blanco horizontal para asociar</strong> las cosas que están fuertemente relacionadas y disociar las cosas que están más débilmente relacionadas y para acentuar la precedencia de operadores</p>
-</li>
-<li>
-<p>Una <strong class="green">línea entre grupos lógicos</strong> (atributos y cada método).</p>
-</li>
-<li>
-<p>Los <strong class="green">atributos deben declararse al principio</strong> de la clase</p>
-</li>
-<li>
-<p>Las <strong class="green">funciones dependientes</strong> en que una llama a otra, deberían estar verticalmente cerca: primero la llamante y luego la llamada</p>
-</li>
-<li>
-<p><strong class="green">Grupos de funciones</strong> que realizan operaciones parecidas, deberían permanencer juntas</p>
-</li>
-<li>
-<p>Las variables deberían declararse tan cerca comos sea posible de su utilización, <strong class="green">minimizar el intervalo de vida de una variable</strong></p>
-</li>
-<li>
-<p>Los programadores prefieren <strong class="green">líneas cortas</strong> (~40, máximo80/120)</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No uses tabuladores</strong> entre los tipos y las variables para una disposición por columnas</p>
-</li>
-<li>
-<p><strong class="red">Nunca rompas las reglas de sangrado</strong> por muy pequeñas que sean las líneas</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
 <h4 id="nombrado">Nombrado</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3074,6 +2991,84 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">
 </li>
 <li>
 <p><strong class="red">Código comentado</strong>, cuando para eso está el control de versiones</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="formato">Formato</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 26.25%;">
+<col style="width: 63.75%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Justificación</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Implicaciones</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Violaciones</strong> <a href="https://github.com/miw-upm/IWVG/tree/master/doo/src/main/java/ticTacToe/v010">TicTacToe</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Formateo de código es importante. Es <strong class="blue">demasiado importante como para ignorarlo y es demasiado importante como para tratarlo religiosamente</strong>. El formateo de código trata sobre la comunicación y la comunicación es de primer orden para los desarrolladores profesionales</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">un único estilo de formato</strong> y luego todos los miembros de ese equipo debe usar ese estilo.
+</blockquote>
+<div class="attribution">
+&#8212; Martin<br>
+<cite>R.</cite>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Un código es una jerarquía. Hay información que pertenece al archivo como un todo, a las clases individuales dentro del archivo, a los métodos dentro de las clases, a los bloques dentro de los métodos, y de forma recursiva a los bloques dentro de los bloques. Cada nivel de esta jerarquía es un ámbito en el que los nombres pueden ser declarados y en la que las declaraciones y sentencias ejecutables se interpretan. Para hacer esta jerarquía visible, hay que <strong class="green">sangrar la líneas de código fuente de forma proporcional a su posición en la jerarquía</strong>.</p>
+</li>
+<li>
+<p>Utilizamos el <strong class="green">espacio en blanco horizontal para asociar</strong> las cosas que están fuertemente relacionadas y disociar las cosas que están más débilmente relacionadas y para acentuar la precedencia de operadores</p>
+</li>
+<li>
+<p>Una <strong class="green">línea entre grupos lógicos</strong> (atributos y cada método).</p>
+</li>
+<li>
+<p>Los <strong class="green">atributos deben declararse al principio</strong> de la clase</p>
+</li>
+<li>
+<p>Las <strong class="green">funciones dependientes</strong> en que una llama a otra, deberían estar verticalmente cerca: primero la llamante y luego la llamada</p>
+</li>
+<li>
+<p><strong class="green">Grupos de funciones</strong> que realizan operaciones parecidas, deberían permanencer juntas</p>
+</li>
+<li>
+<p>Las variables deberían declararse tan cerca comos sea posible de su utilización, <strong class="green">minimizar el intervalo de vida de una variable</strong></p>
+</li>
+<li>
+<p>Los programadores prefieren <strong class="green">líneas cortas</strong> (~40, máximo80/120)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">No uses tabuladores</strong> entre los tipos y las variables para una disposición por columnas</p>
+</li>
+<li>
+<p><strong class="red">Nunca rompas las reglas de sangrado</strong> por muy pequeñas que sean las líneas</p>
 </li>
 <li>
 <p>&#8230;&#8203;</p>
@@ -3688,14 +3683,9 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Índice</th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -3736,7 +3726,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2">Índice</th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Modelo del Dominio</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -3838,6 +3828,11 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">
 <col style="width: 20%;">
 <col style="width: 20%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="4"><strong class="blue">Legibilidad</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
@@ -4331,7 +4326,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre <strong class="blue">
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2022-10-16 16:25:53 +0200
+Last updated 2023-05-07 08:56:09 +0200
 </div>
 </div>
 <style>
