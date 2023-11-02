@@ -8972,52 +8972,6 @@ buffer.insert(<span class="integer">0</span>, <span class="string"><span class="
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="clase-object">Clase <em>Object</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">Toda clase "no derivada" explícitamente hereda implícitamente de la clase predefinida <em>Object</em></span></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Proporciona un conjunto de <strong class="blue">métodos comunes a todas las clases</strong>, algunos de ellos <span class="blue">susceptibles de ser redefinidos</span> en cualquier clase de la manera oportuna.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>además, métodos para la <span class="blue">sincronización</span> de programas concurrentes y para usar la <span class="blue">reflexión</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Object</span> {
-  <span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span>)
-  <span class="directive">public</span> <span class="predefined-type">String</span> toString()
-  <span class="directive">public</span> <span class="type">int</span> hashCode()
-  <span class="directive">protected</span> <span class="predefined-type">Object</span> clone()
-  <span class="directive">protected</span> <span class="type">void</span> finalize()
-  ...
-}</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="clases-abstractas">Clases Abstractas</h3>
@@ -9946,7 +9900,19 @@ b = a.m(a, c);
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu">menus</a></p>
+<p><a href="https://github.com/USantaTecla-tech-java/ust_figures/tree/main/ust3_design/ust3_objectOriented/ust4_how/ust3_flexibility/ust1_liskovs_sustitution/ust2_bad/src/main/java">figures</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a1_modelMenu">menú alternativo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a2_modelQuitMenu">menú con escape</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a3_modelIterativeMenu">menú iterativo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a4_modelDynamicMenu">menú dinámico</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -9955,16 +9921,6 @@ b = a.m(a, c);
 <img src="images/menus.svg" alt="menus" width="1093" height="1324">
 </div>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu_undo_redo">menus_undo/redo</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -10039,6 +9995,52 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="clase-object">Clase <em>Object</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">Toda clase "no derivada" explícitamente hereda implícitamente de la clase predefinida <em>Object</em></span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Proporciona un conjunto de <strong class="blue">métodos comunes a todas las clases</strong>, algunos de ellos <span class="blue">susceptibles de ser redefinidos</span> en cualquier clase de la manera oportuna.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>además, métodos para la <span class="blue">sincronización</span> de programas concurrentes y para usar la <span class="blue">reflexión</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">Object</span> {
+  <span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span>)
+  <span class="directive">public</span> <span class="predefined-type">String</span> toString()
+  <span class="directive">public</span> <span class="type">int</span> hashCode()
+  <span class="directive">protected</span> <span class="predefined-type">Object</span> clone()
+  <span class="directive">protected</span> <span class="type">void</span> finalize()
+  ...
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
