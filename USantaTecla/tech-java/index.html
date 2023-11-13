@@ -566,8 +566,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#vista-privada-de-las-clases">Vista Privada de las Clases</a></li>
 <li><a href="#vista-privada-de-los-objetos">Vista Privada de los Objetos</a></li>
 <li><a href="#miembros-de-clase">Miembros de Clase</a></li>
-<li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
 <li><a href="#clases-de-recubrimiento">Clases de Recubrimiento</a></li>
+<li><a href="#cadenas-de-caracteres">Cadenas de Caracteres</a></li>
 <li><a href="#enumerados">Enumerados</a></li>
 </ul>
 </li>
@@ -581,6 +581,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#beneficios-de-la-herencia">Beneficios de la Herencia</a></li>
 <li><a href="#polimorfismo">Polimorfismo</a></li>
 <li><a href="#conversión-de-tipos-2">Conversión de Tipos</a></li>
+<li><a href="#herencia-y-enumerados">Herencia y Enumerados</a></li>
 </ul>
 </li>
 <li><a href="#programación-modular">Programación Modular</a>
@@ -1204,12 +1205,12 @@ cualquier sistema operativo</p>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 60%;">
 <col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Un <strong class="blue">programa</strong> se compone de <strong class="blue">paquetes</strong> que se componen de otros paquetes y <strong class="blue">clases</strong>, bajo el <strong class="red">paradigma de la programación modular</strong></p>
@@ -1249,6 +1250,17 @@ cualquier sistema operativo</p>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="images/como.svg" alt="como" width="1282" height="1355">
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p>Las sentencias pueden ser <strong class="blue">compuestas</strong>, bajo el <strong class="red">paradigma de la programación estructurada</strong></p>
 <div class="ulist">
@@ -1268,6 +1280,10 @@ cualquier sistema operativo</p>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p>Los datos, <strong class="blue">constantes</strong> o <strong class="blue">variables</strong>, pueden ser de <strong class="blue">tipo</strong></p>
 <div class="ulist">
@@ -1285,11 +1301,6 @@ cualquier sistema operativo</p>
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaItinerario.svg" alt="diagramaItinerario">
-</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -5208,16 +5219,13 @@ cualquier sistema operativo</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">atributos</strong>, variables o constantes o colecciones de éstos u otros objetos cuyos valores determinan las características del <strong class="blue">concepto, módulo, unidad</strong>, &#8230;&#8203;</p>
+<p><strong class="blue">atributos</strong>, variables o constantes o colecciones de éstos u otros objetos cuyos valores determinan las características de la <strong class="blue">clase, tipo, tipo de entidad, concepto, unidad</strong>, &#8230;&#8203;</p>
 </li>
 <li>
-<p>y <strong class="blue">métodos</strong>, algoritmos disponibles para manipular (añadir, eliminar, modificar, consultar) las características del <strong class="blue">concepto, módulo, unidad</strong>, &#8230;&#8203;</p>
+<p>y <strong class="blue">métodos</strong>, algoritmos disponibles para manipular (añadir, eliminar, modificar, consultar) las características de la <strong class="blue">clase, tipo, tipo de entidad, concepto, unidad</strong>, &#8230;&#8203;</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Debe respetar los principios de diseño de <strong class="green">alta cohesión, bajo acoplamiento y pequeño tamaño del diseño modular</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -6293,6 +6301,141 @@ intervalos = <span class="predefined-constant">null</span>;<i class="conum" data
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Resumen de Implantación de Clases</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a1_clazz</span>;
+
+<span class="type">class</span> <span class="class">Clazz</span> {
+
+    <span class="directive">public</span> <span class="type">int</span> publicAtributte; <span class="comment">// Desaconsejado</span>
+    <span class="directive">private</span> <span class="type">int</span> privateAtributte;
+
+    <span class="directive">public</span> Clazz(<span class="type">int</span> value) {
+        <span class="local-variable">this</span>.publicAtributte = <span class="integer">2</span>;
+        <span class="local-variable">this</span>.privateAtributte = value;
+    }
+
+    <span class="directive">private</span> Clazz() {
+        <span class="local-variable">this</span>(<span class="integer">3</span>);
+        <span class="comment">// ...</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> publicInstnaceMethod() {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">publicInstnaceMethod : privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
+        <span class="local-variable">this</span>.privateInstanceMethod();
+    }
+
+    <span class="directive">private</span> <span class="type">void</span> privateInstanceMethod() {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : publicAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.publicAtributte);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">privateInstnaceMethod : privateAtributte: </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.privateAtributte);
+    }
+
+}
+
+<span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        Clazz object = <span class="keyword">new</span> Clazz(<span class="integer">0</span>);
+        console.writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">main.publicAtributte: </span><span class="delimiter">&quot;</span></span> + object.publicAtributte);
+        <span class="comment">// console.writeln(&quot;main.privateAtributte: &quot; + object.privateAtributte);</span>
+        object.publicInstnaceMethod();
+        <span class="comment">// object.privateInstnaceMethod();</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a1_method</span>;
+
+<span class="type">class</span> <span class="class">X</span> {
+}
+
+<span class="type">class</span> <span class="class">Clazz</span> {
+
+    <span class="directive">private</span> <span class="type">int</span> primitive;
+    <span class="directive">private</span> <span class="type">int</span><span class="type">[]</span> primitiveArray;
+    <span class="directive">private</span> X object;
+    <span class="directive">private</span> X<span class="type">[]</span> objectArray;
+
+    <span class="directive">public</span> <span class="type">void</span> methodWithoutArguments() {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span> primitive, <span class="type">int</span><span class="type">[]</span> primitiveArray, X object, X<span class="type">[]</span> objectArray) {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span> primitive, <span class="type">int</span><span class="type">[]</span> primitiveArray, X object) {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> methodWitArguments(<span class="type">int</span><span class="type">[]</span> primitiveArray, X object, X<span class="type">[]</span> objectArray, <span class="type">int</span> primitive) {
+        <span class="comment">// sentences</span>
+    }
+
+    <span class="directive">public</span> <span class="type">int</span> methodReturPrimitive() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="integer">0</span>;
+    }
+
+    <span class="directive">public</span> <span class="type">int</span><span class="type">[]</span> methodReturPrimitiveArray() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {};
+    }
+
+    <span class="directive">public</span> X methodReturObject() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> X();
+    }
+
+    <span class="directive">public</span> X<span class="type">[]</span> methodReturObjectArray() {
+        <span class="comment">// sentences</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> X<span class="type">[]</span> {};
+    }
+
+}
+
+<span class="type">class</span> <span class="class">App</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        Console console = <span class="keyword">new</span> Console();
+        console.writeln();
+        Clazz object = <span class="keyword">new</span> Clazz();
+        object.methodWithoutArguments();
+        object.methodWitArguments(<span class="integer">0</span>, <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X(), <span class="keyword">new</span> X<span class="type">[]</span> {});
+        object.methodWitArguments(<span class="integer">0</span>, <span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X());
+        object.methodWitArguments(<span class="keyword">new</span> <span class="type">int</span><span class="type">[]</span> {}, <span class="keyword">new</span> X(), <span class="keyword">new</span> X<span class="type">[]</span> {}, <span class="integer">0</span>);
+        X x = object.methodReturObject();
+        X<span class="type">[]</span> xs = object.methodReturObjectArray();
+        <span class="type">int</span> primitive = object.methodReturPrimitive();
+        <span class="type">int</span><span class="type">[]</span> primitiveArray = object.methodReturPrimitiveArray();
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
@@ -7267,8 +7410,6 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="atributos-y-métodos-estáticos">Atributos y Métodos Estáticos</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -7371,9 +7512,6 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="código-estático">Código estático</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 35%;">
@@ -7382,9 +7520,9 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Sintaxis</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Código estático</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -7392,10 +7530,10 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>sirve para la inicialización de los atributos estáticos cuando la inicialización posible no alcanza sus objetivos;</p>
+<p>sirve para la <span class="blue">inicialización de los atributos estáticos</span> cuando la <span class="red">expresión de inicialización no alcanza sus objetivos</span> y <span class="blue">requiere la ejecución de sentencias</span></p>
 </li>
 <li>
-<p>se ejecutan en cualquier orden en el comienzo de la ejecución del programa;</p>
+<p>se <span class="blue">ejecutan al comienzo de la ejecución del programa</span>, secuencialmente dentro de cada fichero y en cualquier orden entre distintos ficheros</p>
 </li>
 </ul>
 </div></div></td>
@@ -7420,17 +7558,102 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect3">
-<h4 id="clases-de-utilidad">Clases de Utilidad</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 70%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">En librerías y proyectos</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Método <em>main</em></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Sintaxis</strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public static void main(String[] args) { <i class="conum" data-value="1"></i><b>(1)</b>
+  ...
+}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>método del que parte la ejecución, presente en las clases "principales"</td>
+</tr>
+</table>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a3_basadaObjetos.a4_main</span>;
+
+<span class="type">class</span> <span class="class">Clazz</span> {
+
+    <span class="directive">private</span> <span class="type">void</span> exec(<span class="predefined-type">String</span><span class="type">[]</span> args){
+
+    }
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        <span class="keyword">new</span> Clazz().exec(args);
+    }
+}
+
+<span class="type">class</span> <span class="class">App</span> {
+    
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        Console.instance().write(<span class="string"><span class="delimiter">&quot;</span><span class="content">Eco!!!</span><span class="char">\n</span><span class="content">java App </span><span class="delimiter">&quot;</span></span>);
+        <span class="keyword">for</span>(<span class="predefined-type">String</span> current : args){
+            Console.instance().writeln(current);
+        }
+        Console.instance().writeln();
+    }
+    
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Ejecución</strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>c:\&gt;java Clase param1 param2 <i class="conum" data-value="1"></i><b>(1)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><em>args[0].equals("param1") &amp;&amp; args[1].equals("param2")</em></td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Clases de Utilidad</strong></th>
 <th class="tableblock halign-left valign-top"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html"><em>System</em></a></th>
 </tr>
 </thead>
@@ -7439,8 +7662,9 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Son clases que reúnen un <strong class="blue">conjunto cohesivo de métodos estáticos</strong>, &#8230;&#8203; <span class="red">cajón de-sastre</span></p>
-</li>
+<p>son clases que reúnen un <strong class="blue">conjunto cohesivo de métodos estáticos</strong>, &#8230;&#8203; <span class="red">cajón de-sastre</span> dentro de la <strong class="blue">librería o proyecto</strong></p>
+<div class="ulist">
+<ul>
 <li>
 <p><strong class="blue">Suelen no ser instanciables</strong> porque no responden al concepto habitual de clases de objetos</p>
 <div class="ulist">
@@ -7452,16 +7676,29 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 </div>
 </li>
 </ul>
+</div>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">System</span> {
-  <span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> currentTimeMillis() { ...}
-  <span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> nanoTime() { ...}
-  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> exit(<span class="type">int</span>) { ...}
-  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> gc() { ...}
-}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> gc() {}<i class="conum" data-value="1"></i><b>(1)</b>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> exit(<span class="type">int</span>) {}<i class="conum" data-value="2"></i><b>(2)</b>
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> nanoTime() {}
+<span class="directive">public</span> <span class="directive">static</span> <span class="type">long</span> currentTimeMillis() {}</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><em>garbage collector</em>, invoca el recolector de basura que libera la memoria de todo objeto no referenciado; se llama automáticamente cuando el procesador está ocioso por interrupción de entrada/salida, &#8230;&#8203;</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>invoca la salida incondicional del programa comunicando un código de error</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 </tbody>
@@ -7543,363 +7780,17 @@ manera, a la definición de métodos que se basan directamente en tipos primitiv
 <span class="directive">public</span> <span class="directive">static</span> <span class="type">float</span> scalb(<span class="type">float</span>, <span class="type">int</span>)
 ...</code></pre>
 </div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 17%;">
-<col style="width: 39%;">
-<col style="width: 44%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Definición</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Constantes, inmutables</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Variables, mutables</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Son <strong class="blue">secuencias de caracteres de cualquier longitud</strong>, incluso <strong class="blue">secuencia vacía</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>cuyos caracteres no varían tras la creación</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementadas bajo la clase  <strong class="blue">String</strong> <span class="red">sin contemplar métodos que modifiquen el estado del objeto</span>.</p>
-</li>
-<li>
-<p><em>Ej. El nombre de una persona, de un mes, de una universidad, de un proyecto, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>cuyos caracteres sí varían tras la creación</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementadas bajo las clases <strong class="blue">StringBuffer</strong> (con sincronización en concurrencia) y <strong class="blue">StringBuilder</strong> (sin) <span class="red">con métodos que contemplan la modificación del objeto</span></p>
-</li>
-<li>
-<p><em>Ej. Membrete de una carta, párrafo de aviso, clausula de contrato, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="clase-string">Clase <em>String</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html"><em>String</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">String</span>()
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">char</span><span class="type">[]</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">int</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">StringBuffer</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">StringBuilder</span>)
-<span class="directive">public</span> <span class="type">int</span> length()
-<span class="directive">public</span> <span class="type">boolean</span> isEmpty()
-<span class="directive">public</span> <span class="type">char</span> charAt(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">byte</span><span class="type">[]</span> getBytes()
-<span class="directive">public</span> <span class="type">char</span><span class="type">[]</span> toCharArray()
-<span class="directive">public</span> <span class="predefined-type">String</span> toString()
-<span class="directive">public</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">void</span> getBytes(<span class="type">int</span>, <span class="type">int</span>, <span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>)
-
-<span class="directive">public</span> <span class="predefined-type">CharSequence</span> subSequence(<span class="type">int</span>,<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>, <span class="type">int</span>)
-
-<span class="directive">public</span> <span class="type">int</span> hashCode()
-<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="type">int</span>, <span class="type">int</span>)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">int</span> codePointAt(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> codePointBefore(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> codePointCount(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> offsetByCodePoints(<span class="type">int</span>, <span class="type">int</span>)
-
-<span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span>)
-<span class="directive">public</span> <span class="type">boolean</span> equalsIgnoreCase(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">boolean</span> contentEquals(<span class="predefined-type">StringBuffer</span>)
-<span class="directive">public</span> <span class="type">boolean</span> matches(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">boolean</span> regionMatches(<span class="type">int</span>,<span class="predefined-type">String</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">boolean</span> regionMatches(<span class="type">boolean</span>,<span class="type">int</span>, <span class="predefined-type">String</span>,<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">boolean</span> startsWith(<span class="predefined-type">String</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">boolean</span> startsWith(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">boolean</span> endsWith(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">int</span> compareTo(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">int</span> compareToIgnoreCase(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span><span class="type">[]</span> split(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span><span class="type">[]</span> split(<span class="predefined-type">String</span>, <span class="type">int</span>)
-
-<span class="directive">public</span> <span class="predefined-type">String</span> concat(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> replace(<span class="type">char</span>, <span class="type">char</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> replaceFirst(<span class="predefined-type">String</span>, <span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> replaceAll(<span class="predefined-type">String</span>, <span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> toLowerCase()
-<span class="directive">public</span> <span class="predefined-type">String</span> toUpperCase()
-<span class="directive">public</span> <span class="predefined-type">String</span> trim()</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> getBytes(<span class="type">int</span> srcBegin, <span class="type">int</span> srcEnd,
-  <span class="type">byte</span><span class="type">[]</span> dst, <span class="type">int</span> dstBegin)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> getChars(<span class="type">int</span> srcBegin, <span class="type">int</span> srcEnd,
-  <span class="type">char</span><span class="type">[]</span> dst, <span class="type">int</span> dstBegin)</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">int</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">long</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span><span class="type">[]</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> copyValueOf(<span class="type">char</span><span class="type">[]</span>)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">float</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">double</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">boolean</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> copyValueOf(<span class="type">char</span><span class="type">[]</span>,<span class="type">int</span>, <span class="type">int</span>)</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="clase-stringbuffer-y-stringbuilder">Clase <em>StringBuffer</em> y <em>StringBuilder</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 46%;">
-<col style="width: 54%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clases</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">StringBuffer</span>()
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="predefined-type">CharSequence</span>)
-
-<span class="directive">public</span> <span class="type">int</span> length()
-<span class="directive">public</span> <span class="type">char</span> charAt(<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">CharSequence</span> subSequence(<span class="type">int</span>,<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> toString()
-
-<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
-
-<span class="directive">public</span> <span class="type">int</span> codePointAt(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> codePointBefore(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> codePointCount(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="type">int</span> offsetByCodePoints(<span class="type">int</span>, <span class="type">int</span>)
-
-<span class="directive">public</span> <span class="type">int</span> capacity()
-<span class="directive">public</span> <span class="type">void</span> ensureCapacity(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">void</span> setLength(<span class="type">int</span>)
-<span class="directive">public</span> <span class="type">void</span> trimToSize()
-<span class="directive">public</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="predefined-type">StringBuffer</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span><span class="type">[]</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">boolean</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> appendCodePoint(<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">long</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">float</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">double</span>)
-
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>,<span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">boolean</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">long</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">float</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">double</span>)
-
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> delete(<span class="type">int</span>, <span class="type">int</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> deleteCharAt(<span class="type">int</span>)
-
-<span class="directive">public</span> <span class="type">void</span> setCharAt(<span class="type">int</span>, <span class="type">char</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> replace(<span class="type">int</span>, <span class="type">int</span>, <span class="predefined-type">String</span>)
-<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> reverse()
-...</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="literales-string-2">Literales <em>String</em></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Ejemplos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>es la única clase cuyos objetos pueden presentarse en forma literal;</p>
-</li>
-<li>
-<p>su formato es una secuencia de caracteres de cualquier longitud encerrados entre dobles comillas</p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>"&lt;caracter&gt;..."</pre>
-</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>son objetos de la clase <strong>String</strong> cuya evaluación devuelve la dirección del objeto al que representan;</p>
-</li>
-<li>
-<p>además, es la única clase que disfruta de un operador (<strong>+</strong>) para la concatenación de cadenas de caracteres y combinado con cualquier tipo.</p>
+<p><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StrictMath.html"><em>StrictMathMath</em></a>: con la misma interfaz pública y una implementación independiente de la máquina, sin cálculos nativos, <span class="red">menos eficiente</span> que <em>Math</em>, la cual es <span class="red">menos portable</span></p>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">int</span> longitud = <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>.length();
-<span class="predefined-type">String</span> cadena = <span class="keyword">new</span> <span class="predefined-type">String</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>);
-<span class="type">boolean</span> falso = cadena == <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>;
-<span class="type">boolean</span> cierto = cadena.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>);
-<span class="type">boolean</span> tambien = <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>.equals(cadena);
-<span class="predefined-type">StringBuffer</span> buffer = <span class="keyword">new</span> <span class="predefined-type">StringBuffer</span>(cadena);
-buffer.insert(<span class="integer">0</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">de </span><span class="delimiter">&quot;</span></span>).insert(<span class="integer">0</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">cadena </span><span class="delimiter">&quot;</span></span>);
-<span class="type">boolean</span> si = (<span class="string"><span class="delimiter">&quot;</span><span class="content">cadena de </span><span class="delimiter">&quot;</span></span> + cadena).
-    contentEquals(buffer);
-<span class="predefined-type">String</span> serie = (<span class="integer">0</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>+(<span class="integer">1</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">,</span><span class="delimiter">&quot;</span></span>+(<span class="integer">2</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>;</code></pre>
-</div>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="clases-de-recubrimiento">Clases de Recubrimiento</h3>
@@ -8096,6 +7987,349 @@ buffer.insert(<span class="integer">0</span>, <span class="string"><span class="
 ...</code></pre>
 </div>
 </div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="cadenas-de-caracteres">Cadenas de Caracteres</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 17%;">
+<col style="width: 39%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Definición</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Constantes, inmutables</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Variables, mutables</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Son <strong class="blue">secuencias de caracteres de cualquier longitud</strong>, incluso <strong class="blue">secuencia vacía</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuyos caracteres no varían tras la creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementadas bajo la clase  <strong class="blue">String</strong> <span class="red">sin contemplar métodos que modifiquen el estado del objeto</span>.</p>
+</li>
+<li>
+<p><em>Ej. El nombre de una persona, de un mes, de una universidad, de un proyecto, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>cuyos caracteres sí varían tras la creación</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementadas bajo las clases <strong class="blue">StringBuffer</strong> (con sincronización en concurrencia) y <strong class="blue">StringBuilder</strong> (sin) <span class="red">con métodos que contemplan la modificación del objeto</span></p>
+</li>
+<li>
+<p><em>Ej. Membrete de una carta, párrafo de aviso, clausula de contrato, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clase</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html"><em>String</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">String</span>()
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">int</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="type">byte</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">StringBuffer</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span>(<span class="predefined-type">StringBuilder</span>)
+<span class="directive">public</span> <span class="type">int</span> length()
+<span class="directive">public</span> <span class="type">boolean</span> isEmpty()
+<span class="directive">public</span> <span class="type">char</span> charAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">byte</span><span class="type">[]</span> getBytes()
+<span class="directive">public</span> <span class="type">char</span><span class="type">[]</span> toCharArray()
+<span class="directive">public</span> <span class="predefined-type">String</span> toString()
+<span class="directive">public</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">void</span> getBytes(<span class="type">int</span>, <span class="type">int</span>, <span class="type">byte</span><span class="type">[]</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="predefined-type">CharSequence</span> subSequence(<span class="type">int</span>,<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">int</span> hashCode()
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="type">int</span>, <span class="type">int</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">int</span> codePointAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointBefore(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointCount(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> offsetByCodePoints(<span class="type">int</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">boolean</span> equals(<span class="predefined-type">Object</span>)
+<span class="directive">public</span> <span class="type">boolean</span> equalsIgnoreCase(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">boolean</span> contentEquals(<span class="predefined-type">StringBuffer</span>)
+<span class="directive">public</span> <span class="type">boolean</span> matches(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">boolean</span> regionMatches(<span class="type">int</span>,<span class="predefined-type">String</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">boolean</span> regionMatches(<span class="type">boolean</span>,<span class="type">int</span>, <span class="predefined-type">String</span>,<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">boolean</span> startsWith(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">boolean</span> startsWith(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">boolean</span> endsWith(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> compareTo(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> compareToIgnoreCase(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span><span class="type">[]</span> split(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span><span class="type">[]</span> split(<span class="predefined-type">String</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="predefined-type">String</span> concat(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> replace(<span class="type">char</span>, <span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> replaceFirst(<span class="predefined-type">String</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> replaceAll(<span class="predefined-type">String</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> toLowerCase()
+<span class="directive">public</span> <span class="predefined-type">String</span> toUpperCase()
+<span class="directive">public</span> <span class="predefined-type">String</span> trim()</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> getBytes(<span class="type">int</span> srcBegin, <span class="type">int</span> srcEnd,
+  <span class="type">byte</span><span class="type">[]</span> dst, <span class="type">int</span> dstBegin)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">void</span> getChars(<span class="type">int</span> srcBegin, <span class="type">int</span> srcEnd,
+  <span class="type">char</span><span class="type">[]</span> dst, <span class="type">int</span> dstBegin)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">long</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> copyValueOf(<span class="type">char</span><span class="type">[]</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">float</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">double</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">boolean</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> valueOf(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">String</span> copyValueOf(<span class="type">char</span><span class="type">[]</span>,<span class="type">int</span>, <span class="type">int</span>)</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 46%;">
+<col style="width: 54%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Clases</em> <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html"><em>StringBuffer</em></a> y <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html"><em>StringBuilder</em></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">StringBuffer</span>()
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span>(<span class="predefined-type">CharSequence</span>)
+
+<span class="directive">public</span> <span class="type">int</span> length()
+<span class="directive">public</span> <span class="type">char</span> charAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> substring(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">CharSequence</span> subSequence(<span class="type">int</span>,<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> toString()
+
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> indexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="type">int</span> lastIndexOf(<span class="predefined-type">String</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">int</span> codePointAt(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointBefore(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> codePointCount(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="type">int</span> offsetByCodePoints(<span class="type">int</span>, <span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">int</span> capacity()
+<span class="directive">public</span> <span class="type">void</span> ensureCapacity(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">void</span> setLength(<span class="type">int</span>)
+<span class="directive">public</span> <span class="type">void</span> trimToSize()
+<span class="directive">public</span> <span class="type">void</span> getChars(<span class="type">int</span>, <span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="predefined-type">StringBuffer</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">boolean</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> appendCodePoint(<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">long</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">float</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> append(<span class="type">double</span>)
+
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>, <span class="type">int</span>,<span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span><span class="type">[]</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">boolean</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">long</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">float</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> insert(<span class="type">int</span>, <span class="type">double</span>)
+
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> delete(<span class="type">int</span>, <span class="type">int</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> deleteCharAt(<span class="type">int</span>)
+
+<span class="directive">public</span> <span class="type">void</span> setCharAt(<span class="type">int</span>, <span class="type">char</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> replace(<span class="type">int</span>, <span class="type">int</span>, <span class="predefined-type">String</span>)
+<span class="directive">public</span> <span class="predefined-type">StringBuffer</span> reverse()
+...</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong class="blue">Literales <em>String</em></strong></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplos</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>es la única clase cuyos objetos pueden presentarse en forma literal;</p>
+</li>
+<li>
+<p>su formato es una secuencia de caracteres de cualquier longitud encerrados entre dobles comillas</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"&lt;caracter&gt;..."</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>son objetos de la clase <strong>String</strong> cuya evaluación devuelve la dirección del objeto al que representan;</p>
+</li>
+<li>
+<p>además, es la única clase que disfruta de un operador (<strong>+</strong>) para la concatenación de cadenas de caracteres y combinado con cualquier tipo.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="type">int</span> longitud = <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>.length();
+<span class="predefined-type">String</span> cadena = <span class="keyword">new</span> <span class="predefined-type">String</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>);
+<span class="type">boolean</span> falso = cadena == <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>;
+<span class="type">boolean</span> cierto = cadena.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>);
+<span class="type">boolean</span> tambien = <span class="string"><span class="delimiter">&quot;</span><span class="content">caracteres</span><span class="delimiter">&quot;</span></span>.equals(cadena);
+<span class="predefined-type">StringBuffer</span> buffer = <span class="keyword">new</span> <span class="predefined-type">StringBuffer</span>(cadena);
+buffer.insert(<span class="integer">0</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">de </span><span class="delimiter">&quot;</span></span>).insert(<span class="integer">0</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">cadena </span><span class="delimiter">&quot;</span></span>);
+<span class="type">boolean</span> si = (<span class="string"><span class="delimiter">&quot;</span><span class="content">cadena de </span><span class="delimiter">&quot;</span></span> + cadena).
+    contentEquals(buffer);
+<span class="predefined-type">String</span> serie = (<span class="integer">0</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">, </span><span class="delimiter">&quot;</span></span>+(<span class="integer">1</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">,</span><span class="delimiter">&quot;</span></span>+(<span class="integer">2</span>+<span class="integer">1</span>)+<span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-initialsv0">3-initials/v0.0</a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v0_0/App.java"><em>v0.0</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a3_initials/v1_0/App.java">v1.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#2-morsetranlator">2-texts/2-morseTranlator/v0</a> : <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a2_texts/a2_morseTranslator/v0_0/App.java">v0.0</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -10042,6 +10276,190 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="herencia-y-enumerados">Herencia y Enumerados</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em class="red">Sin enumerados</em></th>
+<th class="tableblock halign-left valign-top"><em class="green">Con enumerados</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a4_orientadoObjetos.a6_enums.a1_inherits</span>;
+
+<span class="directive">abstract</span> <span class="type">class</span> <span class="class">Enum</span> {
+    <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Enum</span> OBJECT_1 = <span class="keyword">new</span> Object_1(<span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_1</span><span class="delimiter">&quot;</span></span>);
+    <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Enum</span> OBJECT_2 = <span class="keyword">new</span> Object_2(<span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_2</span><span class="delimiter">&quot;</span></span>);
+    <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Enum</span> OBJECT_3 = <span class="keyword">new</span> Object_3(<span class="string"><span class="delimiter">&quot;</span><span class="content">OBJECT_3</span><span class="delimiter">&quot;</span></span>);
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="predefined-type">Enum</span><span class="type">[]</span> values() {
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="predefined-type">Enum</span><span class="type">[]</span> { <span class="predefined-type">Enum</span>.OBJECT_1, <span class="predefined-type">Enum</span>.OBJECT_2, <span class="predefined-type">Enum</span>.OBJECT_3 };
+    }
+
+    <span class="directive">private</span> <span class="predefined-type">String</span> name;
+
+    <span class="directive">protected</span> <span class="predefined-type">Enum</span>(<span class="predefined-type">String</span> name) {
+        <span class="local-variable">this</span>.name = name;
+    }
+
+    <span class="directive">public</span> <span class="predefined-type">String</span> name() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.name;
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> transmitedMethod() {
+        Console.instance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">General</span><span class="delimiter">&quot;</span></span>);
+    }
+
+    <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> redefinedMethod();
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+        <span class="keyword">for</span> (<span class="predefined-type">Enum</span> current : <span class="predefined-type">Enum</span>.values()) {
+            current.transmitedMethod();
+            current.redefinedMethod();
+            <span class="comment">// if (current == Enum.OBJECT_3){</span>
+            <span class="comment">// current.addedMethod();</span>
+            <span class="comment">// }</span>
+        }
+        <span class="comment">// Enum.OBJECT_3.addedMethod();</span>
+    }
+}
+
+<span class="type">class</span> <span class="class">Object_1</span> <span class="directive">extends</span> <span class="predefined-type">Enum</span> {
+
+    <span class="directive">protected</span> Object_1(<span class="predefined-type">String</span> name) {
+        <span class="local-variable">super</span>(name);
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> redefinedMethod() {
+        Console.instance().writeln(<span class="local-variable">this</span>.name());
+    }
+}
+
+<span class="type">class</span> <span class="class">Object_2</span> <span class="directive">extends</span> <span class="predefined-type">Enum</span> {
+
+    <span class="directive">protected</span> Object_2(<span class="predefined-type">String</span> name) {
+        <span class="local-variable">super</span>(name);
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> redefinedMethod() {
+        Console.instance().writeln(<span class="local-variable">this</span>.name());
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> transmitedMethod() {
+        Console.instance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Particular</span><span class="delimiter">&quot;</span></span>);
+    }
+}
+
+<span class="type">class</span> <span class="class">Object_3</span> <span class="directive">extends</span> <span class="predefined-type">Enum</span> {
+
+    <span class="directive">protected</span> Object_3(<span class="predefined-type">String</span> name) {
+        <span class="local-variable">super</span>(name);
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> redefinedMethod() {
+        Console.instance().writeln(<span class="local-variable">this</span>.name());
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> addedMethod() {
+        Console.instance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">addedMethod</span><span class="delimiter">&quot;</span></span>);
+    }
+
+}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a4_orientadoObjetos.a6_enums.a2_enums</span>;
+
+<span class="type">enum</span> <span class="predefined-type">Enum</span> {
+    OBJECT_1 {
+        <span class="directive">public</span> <span class="type">void</span> redefinedMethod() {
+            Console.instance().writeln(OBJECT_1.name());
+        }
+
+    },
+    OBJECT_2 {
+        <span class="directive">public</span> <span class="type">void</span> redefinedMethod() {
+            Console.instance().writeln(OBJECT_2.name());
+        }
+
+        <span class="directive">public</span> <span class="type">void</span> transmitedMethod() {
+            Console.instance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">Particular</span><span class="delimiter">&quot;</span></span>);
+        }
+    },
+    OBJECT_3 {
+        <span class="directive">public</span> <span class="type">void</span> redefinedMethod() {
+            Console.instance().writeln(OBJECT_3.name());
+            <span class="local-variable">this</span>.addedMethod();
+        }
+
+        <span class="directive">public</span> <span class="type">void</span> addedMethod() {
+            Console.instance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">addedMethod</span><span class="delimiter">&quot;</span></span>);
+        }
+    };
+
+    <span class="directive">public</span> <span class="type">void</span> transmitedMethod() {
+        Console.instance().writeln(<span class="string"><span class="delimiter">&quot;</span><span class="content">General</span><span class="delimiter">&quot;</span></span>);
+    }
+
+    <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">void</span> redefinedMethod();
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        <span class="keyword">for</span>(<span class="predefined-type">Enum</span> current : <span class="predefined-type">Enum</span>.values()){
+            current.transmitedMethod();
+            current.redefinedMethod();
+            <span class="comment">// if (current == Enum.OBJECT_3){</span>
+            <span class="comment">//     current.addedMethod();</span>
+            <span class="comment">// }</span>
+        }
+        <span class="comment">// Enum.OBJECT_3.addedMethod();</span>
+    }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Language - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a3_enums/Language.java"><em>sin herencia</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a4_inherits/Language.java">con herencia</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Month - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a4_inherits/Month.java"><em>sin herencia</em></a> - <a href="https://github.com/USantaTecla-tech-java/src/blob/main/src/main/java/es/usantatecla/a5_units/a3_date/a3_enums/Month.java">con herencia</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -10146,8 +10564,8 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 <h3 id="jerarquía-de-paquetes">Jerarquía de Paquetes</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -10157,7 +10575,7 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="ulist">
 <ul>
 <li>
 <p>Permite agrupar un <span class="blue">conjunto de clases, interfaces y enumerados, junto con archivos de recursos</span> (como textos, imágenes, sonidos, &#8230;&#8203;) en paquetes</p>
@@ -10176,17 +10594,16 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java">  &lt;paquete1&gt;.&lt;paquete2&gt;. ... .&lt;paqueteN&gt;</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">  pooa.util.pooa.ter.modelos</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">  pooa.util
+  pooa.ter.modelos</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -10220,7 +10637,7 @@ resultado = ((Conjunto) coleccion).interseccion(conjunto);
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Clasificadores en paquetes</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Declaración de paquete</strong></th>
 <th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
@@ -10366,12 +10783,13 @@ class CMover {
 <h3 id="importación-de-clasificadores">Importación de Clasificadores</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 55%;">
-<col style="width: 45%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Acceso a las clases</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Acceso a las clases</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Prohibido acceso a las clases</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -10379,20 +10797,20 @@ class CMover {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">acceder a las clases con visibilidad pública de un paquete desde la implementación de una clase de otro paquete, requiere la importación de dichas clases</strong></p>
+<p><span class="blue">con <strong>visibilidad pública</strong> desde otra clase de <strong>otro paquete</strong>, con la <strong>importación</strong> correspondiente</span></p>
 </li>
 <li>
-<p><strong class="green">acceder a las clases del mismo paquete no tiene ninguna implicación</strong></p>
+<p><span class="blue">con <strong>cualquier visibilidad</strong> desde otra clase del <strong>mismo paquete</strong>, <strong>sin importación</strong></span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="red">acceder a las clases con visibilidad de paquete desde una clase de otro paquete está prohibido</strong></p>
+<p><span class="red">con <strong>visibilidad de paquete</strong> desde otra clase de <strong>otro paquete</strong></span></p>
 </li>
 <li>
-<p><strong class="red">acceder a las clases del paquete por defecto desde una clase de otro paquete está prohibido</strong></p>
+<p><span class="red"><strong>del paquete por defecto</strong> desde otra clase de <strong>otro paquete</strong></span></p>
 </li>
 </ul>
 </div></div></td>
@@ -10401,21 +10819,21 @@ class CMover {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 45%;">
+<col style="width: 55%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Importación explícita</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Importación</strong></th>
 <th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Para <span class="blue">acceder a una clase con visibilidad pública declarada en un paquete desde una clase de otro paquete</span>, debe usarse la <strong class="blue">sentencia de importación <em>import</em></strong> de un único tipo, <span class="blue">especificando el nombre completamente calificado de la clase</span> a la que se desea acceder</p>
+<p><strong class="blue">Importación explícita</strong>: para <span class="blue">acceder a una clase con visibilidad pública declarada en un paquete desde una clase de otro paquete</span>, debe usarse la <strong class="blue">sentencia de importación <em>import</em></strong> de un único tipo, <span class="blue">especificando el nombre completamente calificado de la clase</span> a la que se desea acceder</p>
 <div class="ulist">
 <ul>
 <li>
@@ -10425,20 +10843,12 @@ class CMover {
 </div>
 </li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> &lt;<span class="namespace">paqueteX</span>&gt;.&lt;<span class="namespace">paqueteY</span>&gt;. ... .&lt;<span class="namespace">paqueteZ</span>&gt;;
-
-<span class="keyword">import</span> &lt;<span class="include">paquete</span>&gt;.&lt;<span class="include">Clasificador</span>&gt;;
-
-<span class="type">class</span> &lt;<span class="class">Clase</span>&gt; {
-  ...
-}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> &lt;<span class="include">paquete1</span>&gt;. ... &lt;<span class="include">paqueteN</span>&gt;.&lt;<span class="include">Clasificador</span>&gt;;</code></pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">pooa.ter.controladores</span>;
@@ -10458,25 +10868,11 @@ class CMover {
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Importación bajo demanda</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Cuando se usan <strong class="blue">muchas clases de un mismo paquete, se pueden importar todas las clases del paquete</strong>, mediante la sentencia de importación <strong>import</strong> de tipos bajo demanda con la <strong class="blue">notación</strong> *</p>
+<p><strong class="blue">Importación bajo demanda</strong>: cuando se usan <strong class="blue">muchas clases de un mismo paquete, se pueden importar todas las clases del paquete</strong>, mediante la sentencia de importación <strong>import</strong> de tipos bajo demanda con la <strong class="blue">notación</strong> *</p>
 </li>
 </ul>
 </div>
@@ -10502,25 +10898,11 @@ class CMover {
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Importación implícita</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>El código fuente de <strong class="blue">cualquier fichero de un paquete importa implícitamente el resto de su propio paquete</strong>, por lo que todas las clases definidas en un paquete están disponibles para todas las clases de ese mismo paquete</p>
+<p><strong class="blue">Importación implícita</strong>: el código fuente de <strong class="blue">cualquier fichero de un paquete importa implícitamente el resto de su propio paquete</strong>, por lo que todas las clases definidas en un paquete están disponibles para todas las clases de ese mismo paquete</p>
 </li>
 </ul>
 </div></div></td>
@@ -10543,13 +10925,13 @@ class CMover {
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 35%;">
+<col style="width: 30%;">
+<col style="width: 35%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Colisión de nombres</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Colisión de nombres</strong></th>
 <th class="tableblock halign-left valign-top" colspan="2"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
@@ -10578,29 +10960,15 @@ class CMover {
 </div>
 </div></div></td>
 </tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Resolución de Colisión de nombres</strong></th>
-<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Para resolver colisiones al utilizar clases con el mismo nombre que pertenecen a paquetes distintos, se <strong class="green">debe usar el nombre completamente calificado de la clase en todas sus ocurrencias</strong></p>
+<p><strong class="blue">Resolución de Colisión de nombres</strong>: se <strong class="green">debe usar el nombre completamente calificado de la clase en todas sus ocurrencias</strong></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="error">…</span>
 java.util.Date fechaUtil = <span class="keyword">new</span> java.util.Date();
@@ -10627,20 +10995,20 @@ java.sql.Date fechaSql = <span class="keyword">new</span> java.sql.Date();
 <td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <span class="blue">miembros declarados <em>public</em> son accesibles desde cualquier código exterior al paquete</span></p>
+<p>Los <span class="blue">miembros declarados <strong><em>public</em></strong> son accesibles desde cualquier código exterior al paquete</span></p>
 </li>
 <li>
-<p>Los <span class="blue">miembros declarados <em>private</em> sólo son accesibles desde el código de esa clase</span></p>
+<p>Los <span class="blue">miembros declarados <strong><em>private</em></strong> sólo son accesibles desde el código de esa clase</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Los <span class="blue">miembros declarados <em>protected</em> son accesibles desde el código de esa clase, de sus clases derivadas de cualquier paquete, y del resto de clases de ese paquete</span> (no de sus subpaquetes)</p>
+<p>Los <span class="blue">miembros declarados <strong><em>protected</em></strong> son accesibles desde el código de esa clase, de sus clases derivadas de cualquier paquete, y del resto de clases de ese paquete</span> (no de sus subpaquetes)</p>
 </li>
 <li>
-<p>Los miembros que <span class="blue">no especifican ningún modificador de acceso sólo son accesibles desde las clases de ese paquete</span> (no de sus subpaquetes)</p>
+<p>Los <span class="blue">miembros que <strong class="blue">no especifican ningún modificador</strong> de acceso sólo son accesibles desde las clases de ese paquete</span> (no de sus subpaquetes)</p>
 </li>
 </ul>
 </div></div></td>
@@ -10659,7 +11027,7 @@ java.sql.Date fechaSql = <span class="keyword">new</span> java.sql.Date();
 <p><em class="blue">protected</em></p>
 </li>
 <li>
-<p><span class="blue">ninguno</span></p>
+<p><span class="red">ninguno</span></p>
 </li>
 <li>
 <p><em class="blue">private</em></p>
@@ -10903,6 +11271,37 @@ publicMethod of DerivatedClass</code></pre>
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">Menús</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a4_modelDynamicMenu">whitoutPackages</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a5_package">withPackages</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic">TicTacToe</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla">Models</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/documentView/basic/src/main/java/usantatecla">ModelsViews</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="api-de-j2se">API de J2SE</h3>
@@ -10913,7 +11312,7 @@ publicMethod of DerivatedClass</code></pre>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Biblioteca estandar</strong> (<strong class="blue"><em><a href="https://docs.oracle.com/javase/6/docs/api/">Application Programming Interface</a></em></strong>)</th>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Biblioteca estandar</strong> (<strong class="blue"><em><a href="https://docs.oracle.com/javase/8/docs/api/">Application Programming Interface</a></em></strong>)</th>
 </tr>
 </thead>
 <tbody>
@@ -10921,13 +11320,16 @@ publicMethod of DerivatedClass</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue"><em>java.lang</em></strong>: clases básicas del lenguaje, este paquete es importado implícitamente por cualquier código</p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html"><em>java.lang</em></a></strong>: clases básicas del lenguaje, recubrimientos, &#8230;&#8203; <span class="red">importado implícitamente por cualquier proyecto</span></p>
 </li>
 <li>
-<p><strong class="blue"><em>java.util</em></strong>: estructuras de datos y utilidades</p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html"><em>java.util</em></a></strong>: utilidades y <span class="green">estructuras de datos</span></p>
 </li>
 <li>
-<p><strong class="blue"><em>java.io</em></strong>: acceso a ficheros</p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html"><em>java.time</em></a></strong>: <span class="blue">calendario</span>, <span class="red">desaprobando <em>java.util.Calendar</em>, <em>java.util.Date</em>, &#8230;&#8203;</span></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html"><em>java.io</em></a></strong>: acceso a ficheros</p>
 </li>
 <li>
 <p><strong class="blue"><em>java.awt, javax.swing</em></strong>: interfaces gráficas de usuario</p>
@@ -10977,13 +11379,13 @@ publicMethod of DerivatedClass</code></pre>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 38%;">
+<col style="width: 62%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
+<th class="tableblock halign-left valign-top"><span class="blue"><a href="https://docs.oracle.com/javase/6/docs/api/java/util/Random.html">Clase <em>java.util.Random</em></a></span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
 </tr>
 </thead>
 <tbody>
@@ -10991,18 +11393,350 @@ publicMethod of DerivatedClass</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="">Menús</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a4_extends/a4_modelDynamicMenu">whitoutPackages</a> - <a href="https://github.com/USantaTecla-tech-java/src/tree/main/src/main/java/es/usantatecla/aX_menu/a5_package">withPackages</a></p>
+<p>implantación <span class="green">más eficiente y menos sesgada, más aleatoria</span>, que <em>Math.random()</em></p>
 </li>
 </ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Random() {}
+Random(long seed) {}
+int nextInt(int top)<i class="conum" data-value="1"></i><b>(1)</b>
+int nextInt()
+long nextLong()
+float nextFloat()
+double nextDouble()
+double nextGaussian()
+boolean nextBoolean()
+void nextBytes(byte[] bytes)
+void setSeed(long seed)<i class="conum" data-value="2"></i><b>(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>genera valores de 0 a <em>top</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>establece una semilla a partir de la cual generar los siguientes valores aleatorios, habitualmente alimentado con <em>System.currentTimeMillis()</em></td>
+</tr>
+</table>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a6_packages.a2_random</span>;
+
+<span class="keyword">import</span> <span class="include">java.util.Random</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="directive">final</span> <span class="type">int</span> min = <span class="integer">3</span>;
+    <span class="directive">final</span> <span class="type">int</span> max = <span class="integer">7</span>;
+    <span class="predefined-type">Random</span> random = <span class="keyword">new</span> <span class="predefined-type">Random</span>();
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="integer">0</span>; i &lt; <span class="integer">10</span>; i++) {
+      Console.instance().writeln(min + random.nextInt(max - min + <span class="integer">1</span>));
+    }
+    random = <span class="keyword">new</span> <span class="predefined-type">Random</span>(<span class="predefined-type">System</span>.currentTimeMillis());
+    Console.instance().writeln(random.nextInt());
+    Console.instance().writeln(random.nextDouble());
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Clases de Expresiones Regulares</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/1.0.basic">TicTacToe</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic/src/main/java/usantatecla">Models</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/documentView/basic/src/main/java/usantatecla">ModelsViews</a></p>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html"><em>java.util.regex.Pattern</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>static Pattern compile(String expReg)
+Matcher matcher(String text)</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/Matcher.html"><em>java.util.regex.Matcher</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>boolean find()
+String group()
+int start()
+int end()
+String replaceAll(String text)</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a6_packages.a1_regExp</span>;
+
+<span class="keyword">import</span> <span class="include">java.util.regex.Matcher</span>;
+<span class="keyword">import</span> <span class="include">java.util.regex.Pattern</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">Pattern</span> words = <span class="predefined-type">Pattern</span>.compile(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">w+</span><span class="delimiter">&quot;</span></span>);
+    <span class="directive">final</span> <span class="predefined-type">String</span> TEXT = <span class="string"><span class="delimiter">&quot;</span><span class="content">Uno, dos, tres y cuatro.</span><span class="delimiter">&quot;</span></span>;
+    <span class="predefined-type">Matcher</span> matcher = words.matcher(TEXT);
+    <span class="keyword">while</span> (matcher.find()) {
+      Console.instance().writeln(
+        <span class="string"><span class="delimiter">&quot;</span><span class="char">\&quot;</span><span class="delimiter">&quot;</span></span> + matcher.group() + <span class="string"><span class="delimiter">&quot;</span><span class="char">\&quot;</span><span class="delimiter">&quot;</span></span>
+        + <span class="string"><span class="delimiter">&quot;</span><span class="content">(</span><span class="delimiter">&quot;</span></span> + matcher.start() + 
+        <span class="string"><span class="delimiter">&quot;</span><span class="content">-</span><span class="delimiter">&quot;</span></span> + matcher.end() + <span class="string"><span class="delimiter">&quot;</span><span class="content">)</span><span class="delimiter">&quot;</span></span>);
+    }
+    <span class="predefined-type">Pattern</span> separators = 
+      <span class="predefined-type">Pattern</span>.compile(
+        <span class="string"><span class="delimiter">&quot;</span><span class="content">[</span><span class="char">\\</span><span class="content">s,.]+</span><span class="delimiter">&quot;</span></span>, <span class="predefined-type">Pattern</span>.CASE_INSENSITIVE);
+    Console.instance().writeln(
+      separators.matcher(TEXT).replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>));
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="blue">Clases de Calendario</span></th>
+<th class="tableblock halign-left valign-top"><em class="blue">Ejemplo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html"><em>java.time.LocalDateTime</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>int getYear()
+LocalDateTime plusYears(long years)
+LocalDateTime minusYears(long years)
+LocalDateTime withYear(int year)
+Month getMonth()
+int getMonthValue()
+LocalDateTime plusMonths(long months)
+LocalDateTime minusMonths(long months)
+LocalDateTime withDayOfMonth(int dayOfMonth)
+LocalDateTime withMonth(int month)
+LocalDateTime plusWeeks(long weeks)
+LocalDateTime minusWeeks(long weeks)
+int getDayOfMonth()
+DayOfWeek getDayOfWeek()
+int getDayOfYear()
+LocalDateTime plusDays(long days)
+LocalDateTime minusDays(long days)
+LocalDateTime withDayOfYear(int dayOfYear)
+int getHour()
+LocalDateTime plusHours(long hours)
+LocalDateTime minusHours(long hours)
+LocalDateTime withHour(int hour)
+int getMinute()
+LocalDateTime plusMinutes(long minutes)
+LocalDateTime minusMinutes(long minutes)
+LocalDateTime withMinute(int minute)
+int getSecond()
+LocalDateTime plusSeconds(long seconds)
+LocalDateTime minusSeconds(long seconds)
+LocalDateTime withSecond(int second)
+int getNano()
+LocalDateTime plusNanos(long nanos)
+LocalDateTime minusNanos(long nanos)
+LocalDateTime withNano(int nanoOfSecond)
+LocalDateTime plus(long amountToAdd, TemporalUnit unit)
+LocalDateTime minus(long amountToSubtract, TemporalUnit unit)
+LocalDateTime plus(TemporalAmount amountToAdd)
+LocalDateTime minus(TemporalAmount amountToSubtract)
+LocalDateTime with(TemporalAdjuster adjuster)
+LocalDateTime with(TemporalField field, long newValue)
+long getLong(TemporalField field)
+boolean isAfter(LocalDateTime other)
+boolean isBefore(LocalDateTime other)
+LocalDate toLocalDate()
+LocalTime toLocalTime()
+static LocalDateTime now()
+static LocalDateTime now(Clock clock)
+static LocalDateTime now(ZoneId zone)
+static LocalDateTime of(LocalDate date, LocalTime time)
+static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute)
+static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute)
+static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second)
+static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second)
+static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second, int nanoOfSecond)
+static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second, int nanoOfSecond)
+static LocalDateTime parse(CharSequence text)
+static LocalDateTime parse(CharSequence text, DateTimeFormatter formatter)
+...
+}
+
+class LocalDate {
+public int getYear()
+...
+}
+
+class LocalTime {
+public int getHour()
+...
+}</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Month.html"><em>java.time.Month</em></a></strong></p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>JANUARY
+...
+int	maxLength()</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/DayOfWeek.html"><em>java.time.DayOfWeek</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Period.html"><em>java.time.Period</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html"><em>java.time.Duration</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html"><em>java.time.ZoneId</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html"><em>java.time.ZonedDateTime</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html"><em>java.time.format.DateTimeFormatter</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html"><em>java.time.temporal.ChronoUnit</em></a></strong></p>
+</li>
+<li>
+<p><strong class="blue"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html"><em>java.time.temporal.TemporalAdjusters</em></a></strong></p>
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">es.usantatecla.a0_itinerario.a6_packages.a3_localDateTime</span>;
+
+<span class="keyword">import</span> <span class="include">java.time.Duration</span>;
+<span class="keyword">import</span> <span class="include">java.time.LocalDate</span>;
+<span class="keyword">import</span> <span class="include">java.time.LocalDateTime</span>;
+<span class="keyword">import</span> <span class="include">java.time.LocalTime</span>;
+<span class="keyword">import</span> <span class="include">java.time.Month</span>;
+<span class="keyword">import</span> <span class="include">java.time.Period</span>;
+<span class="keyword">import</span> <span class="include">java.time.ZoneId</span>;
+<span class="keyword">import</span> <span class="include">java.time.ZonedDateTime</span>;
+<span class="keyword">import</span> <span class="include">java.time.format.DateTimeFormatter</span>;
+<span class="keyword">import</span> <span class="include">java.time.temporal.ChronoUnit</span>;
+<span class="keyword">import</span> <span class="include">java.time.temporal.TemporalAdjusters</span>;
+
+<span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    trace(LocalDate.of(<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>));
+    trace(LocalDate.of(<span class="integer">1</span>, Month.FEBRUARY, <span class="integer">3</span>));
+    trace(LocalDate.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">0001-02-03</span><span class="delimiter">&quot;</span></span>));
+
+    trace(LocalTime.of(<span class="integer">4</span>, <span class="integer">5</span>, <span class="integer">6</span>));
+    trace(LocalTime.of(<span class="integer">4</span>, <span class="integer">5</span>));
+    trace(LocalTime.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">04:05:06</span><span class="delimiter">&quot;</span></span>));
+    trace(LocalTime.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">04:05</span><span class="delimiter">&quot;</span></span>));
+
+    trace(LocalDateTime.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">0001-02-03T04:05:06</span><span class="delimiter">&quot;</span></span>));
+    trace(LocalDateTime.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">0001-02-03T04:05</span><span class="delimiter">&quot;</span></span>));
+    trace(LocalDateTime.of(LocalDate.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">0001-02-03</span><span class="delimiter">&quot;</span></span>), LocalTime.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">04:05</span><span class="delimiter">&quot;</span></span>)));
+
+    LocalDateTime now = LocalDateTime.now();
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now in Paris: </span><span class="delimiter">&quot;</span></span> + ZonedDateTime.of(now, ZoneId.of(<span class="string"><span class="delimiter">&quot;</span><span class="content">Europe/Paris</span><span class="delimiter">&quot;</span></span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now in Paris: </span><span class="delimiter">&quot;</span></span> + ZonedDateTime.parse(<span class="string"><span class="delimiter">&quot;</span><span class="content">0001-02-03T04:05:06+01:00[Europe/Paris]</span><span class="delimiter">&quot;</span></span>));
+
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now);
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.toLocalDate());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.toLocalTime());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">tomorrow: </span><span class="delimiter">&quot;</span></span> + now.plusDays(<span class="integer">1</span>));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">tomorrow: </span><span class="delimiter">&quot;</span></span> + now.plus(Period.ofDays(<span class="integer">1</span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">tomorrow: </span><span class="delimiter">&quot;</span></span> + now.plus(<span class="integer">1</span>, ChronoUnit.DAYS));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">next year: </span><span class="delimiter">&quot;</span></span> + now.plusYears(<span class="integer">1</span>));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">hour ago: </span><span class="delimiter">&quot;</span></span> + now.minusHours(<span class="integer">1</span>));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">hour ago: </span><span class="delimiter">&quot;</span></span> + now.minus(<span class="integer">1</span>, ChronoUnit.HOURS));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">hour ago: </span><span class="delimiter">&quot;</span></span> + now.minus(<span class="predefined-type">Duration</span>.ofHours(<span class="integer">1</span>)));
+
+    LocalDateTime tomorrow = now.plusDays(<span class="integer">1</span>);
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">horas: </span><span class="delimiter">&quot;</span></span> + <span class="predefined-type">Duration</span>.between(now, tomorrow).toHours());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">horas: </span><span class="delimiter">&quot;</span></span> + ChronoUnit.HOURS.between(now, tomorrow));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">dias: </span><span class="delimiter">&quot;</span></span> + Period.between(now.toLocalDate(), tomorrow.toLocalDate()).getDays());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">dias: </span><span class="delimiter">&quot;</span></span> + ChronoUnit.DAYS.between(now, tomorrow));
+
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now-firstDayOfMonth: </span><span class="delimiter">&quot;</span></span> + now.with(TemporalAdjusters.firstDayOfMonth()));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now-lastDayOfYear: </span><span class="delimiter">&quot;</span></span> + now.with(TemporalAdjusters.lastDayOfYear()));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now-getDayOfWeek: </span><span class="delimiter">&quot;</span></span> + now.getDayOfWeek());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now-getDayOfWeek: </span><span class="delimiter">&quot;</span></span> + (now.getDayOfWeek().ordinal() + <span class="integer">1</span>));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now-getDayOfMonth: </span><span class="delimiter">&quot;</span></span> + now.getDayOfMonth());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now is before plus second: </span><span class="delimiter">&quot;</span></span> + now.isBefore(now.plusSeconds(<span class="integer">1</span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now is after minus second: </span><span class="delimiter">&quot;</span></span> + now.isAfter(now.minusSeconds(<span class="integer">1</span>)));
+
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now isLeapYear </span><span class="delimiter">&quot;</span></span> + now.getYear() + <span class="string"><span class="delimiter">&quot;</span><span class="content">? </span><span class="delimiter">&quot;</span></span> + LocalDate.now().isLeapYear());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">2000 isLeapYear </span><span class="delimiter">&quot;</span></span> + <span class="integer">2000</span> + <span class="string"><span class="delimiter">&quot;</span><span class="content">? </span><span class="delimiter">&quot;</span></span> + LocalDate.of(<span class="integer">2000</span>, <span class="integer">2</span>, <span class="integer">29</span>).isLeapYear());
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">2001 isLeapYear </span><span class="delimiter">&quot;</span></span> + <span class="integer">2001</span> + <span class="string"><span class="delimiter">&quot;</span><span class="content">? </span><span class="delimiter">&quot;</span></span> + LocalDate.of(<span class="integer">2001</span>, <span class="integer">2</span>, <span class="integer">28</span>).isLeapYear());
+
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.format(DateTimeFormatter.ofPattern(<span class="string"><span class="delimiter">&quot;</span><span class="content">yyyy/dd/MM</span><span class="delimiter">&quot;</span></span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.format(DateTimeFormatter.ofPattern(<span class="string"><span class="delimiter">&quot;</span><span class="content">yyyy/MM/dd</span><span class="delimiter">&quot;</span></span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.format(DateTimeFormatter.ofPattern(<span class="string"><span class="delimiter">&quot;</span><span class="content">yyyy/MM/dd - hh:mm:ss</span><span class="delimiter">&quot;</span></span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.format(DateTimeFormatter.ofPattern(<span class="string"><span class="delimiter">&quot;</span><span class="content">yyyy/MM/dd - HH:mm</span><span class="delimiter">&quot;</span></span>)));
+    trace(<span class="string"><span class="delimiter">&quot;</span><span class="content">now: </span><span class="delimiter">&quot;</span></span> + now.format(DateTimeFormatter.ofPattern(<span class="string"><span class="delimiter">&quot;</span><span class="content">yyyy/MM </span><span class="delimiter">&quot;</span></span>)));
+  }
+
+  <span class="directive">private</span> <span class="directive">static</span> <span class="type">void</span> trace(<span class="predefined-type">Object</span> object) {
+    Console.instance().writeln(object);
+  }
+
+}</code></pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
