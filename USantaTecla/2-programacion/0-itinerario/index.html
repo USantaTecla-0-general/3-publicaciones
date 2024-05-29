@@ -448,11 +448,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Índice</div>
 <ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a>
-<ul class="sectlevel2">
-<li><a href="#arquitectura-de-von-neumann">Arquitectura de von Neumann</a></li>
-</ul>
-</li>
+<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
 <li><a href="#qué"><strong>¿Qué?</strong></a></li>
 <li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
 <li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
@@ -466,11 +462,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#según-el-bloque-organización">Según el Bloque Organización</a></li>
 <li><a href="#según-la-ejecución">Según la Ejecución</a></li>
 <li><a href="#otros-criterios">Otros criterios</a></li>
-<li><a href="#tendencias">Tendencias</a></li>
 </ul>
 </li>
 <li><a href="#lenguajes-de-programación">Lenguajes de Programación</a></li>
-<li><a href="#errores-en-programación">Errores en Programación</a></li>
+<li><a href="#errores-en-programación">Errores en Programación</a>
+<ul class="sectlevel2">
+<li><a href="#tendencias">Tendencias</a></li>
+</ul>
+</li>
 <li><a href="#itinerario">Itinerario</a></li>
 <li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
 <li><a href="#ponente">Ponente</a></li>
@@ -481,36 +480,44 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="por-qué"><strong>¿Por qué?</strong></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="arquitectura-de-von-neumann">Arquitectura de von Neumann</h3>
-<div class="paragraph">
-<p>imagen con partes de la computadora
-instrucciones de ensamblador/código máquina</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Matemática</th>
+<th class="tableblock halign-left valign-top">Ingeniería</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">teoría</strong> sobre qué se puede calcular, saber, conocer, <strong>computar</strong> (latín <em>putare</em>, pensar)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Lógica</strong>: problemas de completitud, consistencia y decidibilidad</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Leibniz, &#8230;&#8203;, Hilbert, Russel, Gödel, Wittgenstein, &#8230;&#8203;</strong></p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong class="blue">Turing</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Entrada/Salida, Procesos y Datos</p>
+<p>formalizó el concepto de algoritmo y computación</p>
 </li>
 <li>
-<p>Dispositivos, Procesador, Memoria</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Interrupciones entre dispositivo y procesador</p>
-</li>
-<li>
-<p>dispositivos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>entrada: teclado, ratón, joystick, &#8230;&#8203;</p>
-</li>
-<li>
-<p>salida: pantalla, impresora, &#8230;&#8203;</p>
-</li>
-<li>
-<p>entrada/salida: red</p>
+<p><strong class="blue">Maquina Universal de Turing</strong>, origen de la <strong class="red">computadora</strong></p>
 </li>
 </ul>
 </div>
@@ -518,73 +525,142 @@ instrucciones de ensamblador/código máquina</p>
 </ul>
 </div>
 </li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p>Código máquina</p>
+<p>transformación para la aplicación <strong class="green">práctica</strong></p>
+</li>
+<li>
+<p><strong class="blue">von Neumann</strong> y otros &#8230;&#8203; <span class="red">con juicio</span>!</p>
 <div class="ulist">
 <ul>
 <li>
-<p>0100101001010</p>
+<p>polímata, la persona más inteligente del mundo &#8230;&#8203; o <strong class="blue">Gauss</strong>?!?</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>de ahí viene codificar en vez de programar!!!</p>
+<p><strong class="blue">Shanon</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>recupera el Algebra de <strong class="blue">Boole</strong> y</p>
+</li>
+<li>
+<p>la funde con el Sistema Binario formalizado por <strong class="blue">Leibniz</strong>.</p>
+</li>
+<li>
+<p>Posterior autor de la <strong class="blue">Teoria de la Información: Entropía</strong></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Arquitectura de von Neumann</strong>:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Unidad Central de Proceso</strong> (<em>CPU</em>), el procesador</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Registros</strong>, donde almacena los datos en proceso</p>
+</li>
+<li>
+<p><strong class="blue">Unidad Aritmético-lógico</strong>, donde se procesan los operadores aritmético-lógios, que conduce directamente a muchas instrucciones de ensamblador</p>
+</li>
+<li>
+<p><strong class="blue">Unidad de control</strong>, donde se procesa el flujo de ejecución secuencial, que conduce directamente a instrucciones de salto condicional e incondicional</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong class="blue">Reloj</strong>, que establece el ritmo de las operaciones</p>
+</li>
+<li>
+<p><strong class="blue">Memorias de palabras</strong> (<em>bytes</em>) limitadas indexables:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue"><em>ROM</em></strong> (<em>Read Only Memory</em>) para la información de las instrucciones del microprograma (interprete)</p>
+</li>
+<li>
+<p><strong class="blue"><em>RAM</em></strong> (<em>Random Access Memory</em>) para la información de los datos del usuario</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong class="blue">Unidad de Entrada/Salida</strong> de información de/a los dispositivos</p>
+</li>
+<li>
+<p><strong class="blue">Buses</strong>, canales de comunicación que interconectan los elementos anteriores</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/vonNeumann2.png" alt="vonNeumann2"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/dispositivos.webp" alt="dispositivos"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Lenguaje ensamblador</strong> es una <strong class="blue">traducción directa, "legible" por humanos, de los código binarios</strong> de las instrucciones del procesador</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Origen de que <span class="red">codificar</span> sea sinónimo de <span class="green">programar</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/ensamblador.png" alt="ensamblador"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
 <h2 id="qué"><strong>¿Qué?</strong></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Programar: instrucciones para manipular los datos</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Entrada/Salida</p>
-</li>
-<li>
-<p>Procesos</p>
-</li>
-<li>
-<p>Datos</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Programación, conjunto resultante, acción, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Programa,</p>
-<div class="ulist">
-<ul>
-<li>
-<p>En <strong class="red">Tiempo de Compilación</strong>, fuera del tiempo de ejecución</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Proceso, hilo de ejecución</p>
-<div class="ulist">
-<ul>
-<li>
-<p>En <strong class="red">Tiempo de Ejecución</strong>, desde el inicio al final de la ejecución</p>
-</li>
-<li>
-<p>Aplicación/Componente, sistema distribuido, comunicaciones</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+
 </div>
 </div>
 <div class="sect1">
@@ -605,25 +681,6 @@ instrucciones de ensamblador/código máquina</p>
 </ul>
 </div>
 </li>
-<li>
-<p>Programador</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Desarrollar en Lenguajes Java y JavaScript</p>
-</li>
-<li>
-<p>Comprender el 80% de muchos otros</p>
-</li>
-<li>
-<p>con criterio</p>
-</li>
-<li>
-<p>escalón para diseño y pruebas, desarrollador</p>
-</li>
-</ul>
-</div>
-</li>
 </ul>
 </div>
 </div>
@@ -640,64 +697,100 @@ instrucciones de ensamblador/código máquina</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="quoteblock">
 <blockquote>
-&#8230;&#8203;'ciencia normal' significa investigación basada firmemente en una o más realizaciones científicas pasadas, realizaciones que alguna comunidad científica particular reconoce, durante cierto tiempo, como fundamento para su práctica posterior. [&#8230;&#8203;] Voy a llamar, de ahora en adelante, a las realizaciones que comparten esas dos características, 'paradigmas', término que se relaciona estrechamente con 'ciencia normal'. <strong>Paradigma es un conjunto de prácticas y saberes que definen una disciplina científica durante un período específico</strong>
+&#8230;&#8203;'ciencia normal' significa investigación basada firmemente en una o más <strong>realizaciones científicas</strong> pasadas, realizaciones que alguna <strong>comunidad científica</strong> particular reconoce, durante <strong>cierto tiempo</strong>, como <strong>fundamento para su práctica posterior</strong>. [&#8230;&#8203;] Voy a llamar, de ahora en adelante, a las realizaciones que comparten esas dos características, 'paradigmas', término que se relaciona estrechamente con 'ciencia normal'. <strong>Paradigma es un conjunto de prácticas y saberes que definen una disciplina científica durante un período específico</strong>
 </blockquote>
 <div class="attribution">
 &#8212; Thomas S. Kuhn<br>
-<cite>La estructura de las revoluciones científicas</cite>
+<cite>La estructura de las revoluciones científicas (1962)</cite>
 </div>
 </div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/paradigma.jpg" alt="paradigma"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="quoteblock">
 <blockquote>
 En su famoso libro The Structure of Scientific Revolutions de 1970, el historiador Thomas Khun extendió la definición de la plabra para abarcar un <strong>conjunto de teorías, estándares, métodos que juntos representan una forma de organizar el conocimiento, esto es, una forma de ver el mundo</strong>
 </blockquote>
 <div class="attribution">
 &#8212; Budd<br>
-<cite>1994</cite>
+<cite>Programación Orientada a Objetos (1994)</cite>
 </div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/paradigma.jpg" alt="paradigma"></span></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/hippyYuppy.jpg" alt="hippyYuppy"></span></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="sect2">
 <h3 id="según-el-nivel-semántico">Según el Nivel Semántico</h3>
-<div class="paragraph">
-<p>Saltar de código ensamblador a lenguaje de alto nivel</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Bajo nivel</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Medio nivel</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Alto nivel</strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enfocados a la máquina</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Lenguajes de Bajo nivel</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>enfocados a la máquina</p>
+</li>
+<li>
+<p><em>código binario, ensamblador, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enfocados a la máquina y al desarrollador</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Lenguajes de Medio nivel</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>enfocados a la máquina y al desarrollador</p>
+</li>
+<li>
+<p><em>C, C++, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enfocados al desarrollador</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Lenguajes de Alto nivel</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>enfocados al desarrollador</p>
+</li>
+<li>
+<p><em>Fortran, Cobol, Basic, &#8230;&#8203;, Java, Javascript, Scala, PHP, &#8230;&#8203;</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -711,25 +804,11 @@ En su famoso libro The Structure of Scientific Revolutions de 1970, el historiad
 <p><span class="image"><img src="images/javascript.png" alt="javascript"></span></p>
 </div></div></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>código binario, ensamblador, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>C, C++, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Java, Javascript, Scala, PHP, Basic, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
 <h3 id="según-la-traducción-para-la-ejecución">Según la Traducción para la Ejecución</h3>
-<div class="paragraph">
-<p>De ensamblador a alto nivel</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -842,20 +921,6 @@ En su famoso libro The Structure of Scientific Revolutions de 1970, el historiad
 </div>
 <div class="sect2">
 <h3 id="según-el-sistema-de-tipos">Según el Sistema de Tipos</h3>
-<div class="paragraph">
-<p>Hueco semántico (teoría de lenguajes de gabriel)
-Poner otros ejemplos a variable?!?
-Traer enlace estático y dinámico</p>
-</div>
-<div class="paragraph">
-<p>No hay tipos primitivos Eiffel y Smalltalk
-Hay tipos primitivos distintos: Java, Javascript
-Distinta clasificación</p>
-</div>
-<div class="paragraph">
-<p>Programación parametrizada
-Inferencia de tipos</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -903,13 +968,6 @@ Inferencia de tipos</p>
 </div>
 <div class="sect2">
 <h3 id="según-el-fundamento-matemático">Según el Fundamento Matemático</h3>
-<div class="paragraph">
-<p>máquina de turing, mutabilidad
-teoría de funciones, inmutabilidad</p>
-</div>
-<div class="paragraph">
-<p>aclarar función pura vs impura</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1005,10 +1063,6 @@ teoría de funciones, inmutabilidad</p>
 </div>
 <div class="sect2">
 <h3 id="según-los-saltos-de-ejecución">Según los Saltos de Ejecución</h3>
-<div class="paragraph">
-<p>teorema de programación estructurada
-codigo de algoritmo y máquina de estados</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 5%;">
@@ -1111,9 +1165,6 @@ codigo de algoritmo y máquina de estados</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>cambiar código de búsqueda a primo</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -1161,26 +1212,6 @@ codigo de algoritmo y máquina de estados</p>
 </div>
 <div class="sect2">
 <h3 id="según-el-bloque-organización">Según el Bloque Organización</h3>
-<div class="paragraph">
-<p>1 función
-2 modular
-3 basado objetos: TAD&#8217;s
-3 orientado a objeto</p>
-</div>
-<div class="paragraph">
-<p>grupos de función o ramillete de funciones + datos
-función de orden superior vs polimorfismo</p>
-</div>
-<div class="paragraph">
-<p>posible transformación de imperativo orientado a objetos a imperativo orientado a procesos
-posible transformación de imperativo orientado a objetos a funcional orientado a objetos
-posible transformación de funcional orientado a objetos a funcional orientado a procesos</p>
-</div>
-<div class="paragraph">
-<p>31 por clases con polimorfismo estático en interfaces
-32 por clases con polimorfismo estático en herencia
-32 por prototipos con polimorfismo dinámico por prototipos</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 5%;">
@@ -1282,9 +1313,7 @@ posible transformación de funcional orientado a objetos a funcional orientado a
 </div>
 <div class="sect2">
 <h3 id="según-la-ejecución">Según la Ejecución</h3>
-<div class="paragraph">
-<p>secuencial o concurrente</p>
-</div>
+
 </div>
 <div class="sect2">
 <h3 id="otros-criterios">Otros criterios</h3>
@@ -1332,380 +1361,6 @@ posible transformación de funcional orientado a objetos a funcional orientado a
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/TabalaPeriodicaLenguajes.jpg" alt="TabalaPeriodicaLenguajes"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="tendencias">Tendencias</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Eje</strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="blue">Variables</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">nivel</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="red">bajo nivel</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">alto nivel</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">traducción</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">compilado</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">interpretado</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">sistema de tipos</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">débilmente tipado</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">fuertemente tipado</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">fundamento</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">imperativo</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">funcional</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">saltos</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="red">desestructurado</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">estructurado</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">bloque</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">orientado a procesos</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">orientado a objetos</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="blue">ejecución</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="red">sobre procesos concurrentes con sincronización</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">procesos disjuntos sin sincronización, como secuencial</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Ejes según fundamento y bloque de construcción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CuadranteParadigmas.png" alt="CuadranteParadigmas"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CuadranteParadigmasLenguajes.png" alt="CuadranteParadigmasLenguajes"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>recursividad NO &#8658; procesos! También en datos</p>
-<div class="ulist">
-<ul>
-<li>
-<p>recursividad de datos de datos!!! Lista, ListaVacia y ListaNoVacía</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>recursividad NO &#8658; funcional! También en imperativo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Lista con nodos mutables iterativo y recursivo</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>funciones, orden superior no &#8658; funcional</p>
-<div class="ulist">
-<ul>
-<li>
-<p>no efecto lateral!!!! funciones puras, inmutabilidad</p>
-</li>
-<li>
-<p>no sentencias!!!! &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>funcional NO &#8658; inteligencia artificial</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Ejes según ejecución y sistemas de tipos</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>hablar de posibilidades: metraprogramación, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CuadranteEntornoLenguajes.png" alt="CuadranteEntornoLenguajes"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Programación imperativa</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Programación funcional</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Sentencia <em>if</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="red">con 1 o 2 ramas opcionalmente</span></p>
-</li>
-<li>
-<p><span class="red">dentro de una sentencia secuencial siendo previa y/o posterior opcionalmente a otras sentencias</span></p>
-</li>
-<li>
-<p><span class="red">ejecuta sentencias secuenciales en un orden explícito durante el tiempo de ejecución</span></p>
-</li>
-<li>
-<p><span class="red">la concurrencia exige arduas tareas de sincronización, explicitas en la codificación</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Operador <em>?</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="green">con 2 ramas obligatoriamente</span></p>
-</li>
-<li>
-<p><span class="green">dentro de una expresión</span></p>
-</li>
-<li>
-<p><span class="green">evalúa expresiones sin un orden explícito durante la evaluación de la expresión</span></p>
-</li>
-<li>
-<p><span class="green">no existe el tiempo de ejecución</span></p>
-</li>
-<li>
-<p><span class="green">la concurrencia no exige nada, es implícita en el motor de ejecución</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (&lt;condición&gt;)
-  &lt;sentencia&gt;
-
-<span class="keyword">if</span> (&lt;condición&gt;)
-  &lt;sentencia&gt;
-<span class="keyword">else</span>
-  &lt;sentencia&gt;</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">return</span> &lt;condición&gt; ? &lt;expresión&gt; : &lt;expresión&gt;;
-[source, java]</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">lo único común a todos los paradigmas son los tipos, las constantes, valores inmutables, y las expresiones de operadores y funciones puras</strong></p>
-</li>
-<li>
-<p>[red]*ninguna declaración de variable, ni las sentencias <em>if</em> ni secuencial, ni cualquier función con efectos laterales</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -1959,6 +1614,331 @@ posible transformación de funcional orientado a objetos a funcional orientado a
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="tendencias">Tendencias</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Eje</strong></p>
+</div></div></td>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="blue">Variables</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">nivel</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="red">bajo nivel</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="green">alto nivel</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">traducción</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">compilado</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">interpretado</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">sistema de tipos</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">débilmente tipado</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">fuertemente tipado</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">fundamento</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">imperativo</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">funcional</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">saltos</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="red">desestructurado</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="green">estructurado</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="blue">bloque</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">orientado a procesos</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">orientado a objetos</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><span class="blue">ejecución</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="red">sobre procesos concurrentes con sincronización</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong><span class="green">procesos disjuntos sin sincronización, como secuencial</span></strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Ejes según fundamento y bloque de construcción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CuadranteParadigmas.png" alt="CuadranteParadigmas"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CuadranteParadigmasLenguajes.png" alt="CuadranteParadigmasLenguajes"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Ejes según ejecución y sistemas de tipos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>hablar de posibilidades: metraprogramación, &#8230;&#8203;</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/CuadranteEntornoLenguajes.png" alt="CuadranteEntornoLenguajes"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Programación imperativa</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Programación funcional</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Sentencia <em>if</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">con 1 o 2 ramas opcionalmente</span></p>
+</li>
+<li>
+<p><span class="red">dentro de una sentencia secuencial siendo previa y/o posterior opcionalmente a otras sentencias</span></p>
+</li>
+<li>
+<p><span class="red">ejecuta sentencias secuenciales en un orden explícito durante el tiempo de ejecución</span></p>
+</li>
+<li>
+<p><span class="red">la concurrencia exige arduas tareas de sincronización, explicitas en la codificación</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Operador <em>?</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green">con 2 ramas obligatoriamente</span></p>
+</li>
+<li>
+<p><span class="green">dentro de una expresión</span></p>
+</li>
+<li>
+<p><span class="green">evalúa expresiones sin un orden explícito durante la evaluación de la expresión</span></p>
+</li>
+<li>
+<p><span class="green">no existe el tiempo de ejecución</span></p>
+</li>
+<li>
+<p><span class="green">la concurrencia no exige nada, es implícita en el motor de ejecución</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (&lt;condición&gt;)
+  &lt;sentencia&gt;
+
+<span class="keyword">if</span> (&lt;condición&gt;)
+  &lt;sentencia&gt;
+<span class="keyword">else</span>
+  &lt;sentencia&gt;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">return</span> &lt;condición&gt; ? &lt;expresión&gt; : &lt;expresión&gt;;
+[source, java]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">lo único común a todos los paradigmas son los tipos, las constantes, valores inmutables, y las expresiones de operadores y funciones puras</strong></p>
+</li>
+<li>
+<p>[red]*ninguna declaración de variable, ni las sentencias <em>if</em> ni secuencial, ni cualquier función con efectos laterales</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
