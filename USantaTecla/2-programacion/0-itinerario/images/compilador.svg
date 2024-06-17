@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="260px" preserveAspectRatio="none" style="width:347px;height:260px;background:#222222;" version="1.1" viewBox="0 0 347 260" width="347px" zoomAndPan="magnify"><defs/><g><!--cluster Hardware--><polygon fill="#222222" points="22,34,32,24,325,24,325,238,315,248,22,248,22,34" style="stroke: #FFFFFF; stroke-width: 1.5;"/><line style="stroke: #FFFFFF; stroke-width: 1.5;" x1="315" x2="324" y1="34" y2="25"/><line style="stroke: #FFFFFF; stroke-width: 1.5;" x1="22" x2="315" y1="34" y2="34"/><line style="stroke: #FFFFFF; stroke-width: 1.5;" x1="315" x2="315" y1="34" y2="248"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="121.5" y="58.1074">Hardware</text><!--entity Compilador--><rect fill="#222222" height="48.1133" style="stroke: #A80036; stroke-width: 3.0;" width="142" x="102" y="76"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="97" y="81"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="97" y="114.1133"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="113" y="107.1074">Compilador</text><!--entity Codigo--><rect fill="#222222" height="48.1133" style="stroke: #FFFFFF; stroke-width: 3.0;" width="94" x="38" y="184"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="49" y="215.1074">Codigo</text><!--entity Ejecutable--><rect fill="#222222" height="48.1133" style="stroke: #A80036; stroke-width: 3.0;" width="142" x="167" y="184"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="162" y="189"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="162" y="222.1133"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="178" y="215.1074">Ejecutable</text><!--link Compilador to Codigo--><path d="M153.91,124 C140.39,140.28 122.2,162.19 107.91,179.41 " fill="none" id="Compilador-Codigo" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="104.36,183.68,113.193,179.3235,107.5595,179.8377,107.0453,174.2043,104.36,183.68" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Compilador to Ejecutable--><path d="M187.1,124 C197.09,140.28 210.52,162.19 221.08,179.41 " fill="none" id="Compilador-Ejecutable" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="223.7,183.68,222.4135,173.9155,221.0899,179.4154,215.59,178.0917,223.7,183.68" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="227px" preserveAspectRatio="none" style="width:287px;height:227px;background:#222222;" version="1.1" viewBox="0 0 287 227" width="287px" zoomAndPan="magnify"><defs/><g><!--cluster Hardware--><polygon fill="#222222" points="14,26,24,16,265,16,265,205,255,215,14,215,14,26" style="stroke: #FFFFFF; stroke-width: 1.5;"/><line style="stroke: #FFFFFF; stroke-width: 1.5;" x1="255" x2="264" y1="26" y2="17"/><line style="stroke: #FFFFFF; stroke-width: 1.5;" x1="14" x2="255" y1="26" y2="26"/><line style="stroke: #FFFFFF; stroke-width: 1.5;" x1="255" x2="255" y1="26" y2="215"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="87.5" y="48.5645">Hardware</text><!--entity Compilador--><rect fill="#222222" height="45.2813" style="stroke: #A80036; stroke-width: 3.0;" width="142" x="68" y="57"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="63" y="62"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="63" y="92.2813"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="79" y="86.5645">Compilador</text><!--entity Codigo--><rect fill="#222222" height="45.2813" style="stroke: #FFFFFF; stroke-width: 3.0;" width="94" x="22" y="162"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="33" y="191.5645">Codigo</text><!--entity Binario--><rect fill="#222222" height="45.2813" style="stroke: #A80036; stroke-width: 3.0;" width="106" x="151" y="162"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="146" y="167"/><rect fill="#222222" height="5" style="stroke: #A80036; stroke-width: 3.0;" width="10" x="146" y="197.2813"/><text fill="#FFFFFF" font-family="courier" font-size="20" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="84" x="162" y="191.5645">Binario</text><!--link Compilador to Codigo--><path d="M123.9832,102.0251 C113.1693,118.246 98.5279,140.2081 87.0728,157.3907 " fill="none" id="Compilador-Codigo" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="84.2335,161.6498,92.554,156.3802,87.007,157.4896,85.8977,151.9426,84.2335,161.6498" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--link Compilador to Binario--><path d="M152.9441,102.0251 C162.9856,118.246 176.5812,140.2081 187.2181,157.3907 " fill="none" id="Compilador-Binario" style="stroke: #A9A9A9; stroke-width: 2.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A9A9A9" points="189.8546,161.6498,188.5183,151.892,187.2227,157.3985,181.7162,156.103,189.8546,161.6498" style="stroke: #A9A9A9; stroke-width: 2.0;"/><!--
 @startuml
 skinparam backgroundColor #222222
 skinparam shadowing false
@@ -44,21 +44,21 @@ skinparam component {
 node Hardware {
 component Compilador
 rectangle Codigo
-component Ejecutable
+component Binario
 }
 
 Compilador ..> Codigo
-Compilador ..> Ejecutable
+Compilador ..> Binario
 @enduml
 
-PlantUML version 1.2019.05(Sat Apr 20 18:45:36 CEST 2019)
+PlantUML version 1.2019.05(Sat Apr 20 16:45:36 GMT 2019)
 (GPL source distribution)
-Java Runtime: Java(TM) SE Runtime Environment
-JVM: Java HotSpot(TM) 64-Bit Server VM
-Java Version: 11.0.14+8-LTS-263
-Operating System: Windows 10
-OS Version: 10.0
-Default Encoding: windows-1252
-Language: es
-Country: ES
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_222-b10
+Operating System: Linux
+OS Version: 5.15.146.1-microsoft-standard-WSL2
+Default Encoding: UTF-8
+Language: en
+Country: US
 --></g></svg>
