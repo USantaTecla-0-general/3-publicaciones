@@ -1763,7 +1763,7 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="green">Con el objetivo de la demostración de la correccion del software mediante la precondiciones, postcondiciones e invariantes de los bucles</span></p>
+<p><span class="green">Con el objetivo de la demostración de la correccion del software mediante la <strong>precondiciones</strong>, <strong>postcondiciones</strong> e <strong>invariantes</strong> de los bucles</span></p>
 </li>
 <li>
 <p>Algoritmos como <strong class="blue">bloques de sentencias recursivamente anidados</strong> con sentencias simples, secuenciales, alternativas e iterativas, <strong class="red">sin sentencia GOTO!!!</strong></p>
@@ -2141,6 +2141,74 @@ let y = x + <span class="integer">1</span>;</code></pre>
 </tr>
 </tbody>
 </table>
+<div class="sect4">
+<h5 id="programación-funcional-en-java">Programación Funcional en Java</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 45%;">
+<col style="width: 55%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Los <strong class="blue">flujos imutables</strong> de Java, al igual que las <strong class="blue">colecciones mutables</strong>, la clase <em>File</em>, &#8230;&#8203;, disfrutan de métodos que colaboran con <strong class="blue">funciones anónimas</strong> <strong class="red">(<em>lambda</em>)</strong> que implementan <strong class="red">interfaces funcionales</strong> que permiten varios métodos <em>default</em>, <em>static</em>, &#8230;&#8203;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se encuentran <strong class="red">lejos del paradigma funcional</strong> porque admiten:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">declaración de variables</strong></p>
+</li>
+<li>
+<p><strong class="red">sentencias secuenciales, alternativas e iterativas fuera y dentro del ámbito de la función anónima</strong></p>
+</li>
+<li>
+<p><strong class="red">no devolver ningún valor de retorno</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Son, simplemente, la <strong class="green">implantación de funciones de orden superior mediante objetos función</strong>, a través de un notación sintáctica <span class="green">más compacta que las clases anónimas</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio.</span><span class="delimiter">&quot;</span></span>);
+    Stream.of(<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>,<span class="integer">6</span>,<span class="integer">7</span>,<span class="integer">8</span>,<span class="integer">9</span>,<span class="integer">10</span>)
+      .filter(integer -&gt; {
+        <span class="type">boolean</span> isPrime = <span class="predefined-constant">false</span>;
+        <span class="keyword">if</span> (integer &gt;= <span class="integer">2</span>){
+          <span class="type">int</span> next = <span class="integer">2</span>;
+          <span class="keyword">while</span> (integer % next != <span class="integer">0</span>){
+            next++;
+          }
+          isPrime = integer == next;
+        }
+        <span class="keyword">return</span> isPrime;})
+      .forEach(integer -&gt; {
+        <span class="predefined-type">System</span>.out.println(integer);
+      });
+      <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin.</span><span class="delimiter">&quot;</span></span>);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2155,13 +2223,44 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="blue">Paradigma Orientado a Procesos</strong>, <span class="blue">preponderancia de las operaciones sobre los datos</span>, <strong class="blue">tesis</strong></p>
-</li>
+<p><strong class="blue">Paradigma Orientado a Procesos</strong>, <span class="blue">preponderancia de las operaciones sobre los datos</span></p>
+<div class="ulist">
+<ul>
 <li>
-<p><strong class="red">Paradigma Orientado a Datos</strong>, <span class="blue">preponderancia de los datos sobre las operaciones</span> (1ª forma normal, 2ª forma normal, &#8230;&#8203;, Boyce-Codd), <strong class="red">antitesis</strong></p>
+<p><strong class="blue">tesis</strong> a <span class="blue">imagen de la arquitectura de von Neumman con procesador activo sobre memoria pasiva</span></p>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p><strong class="green">Paradigma Orientado a Objetos</strong>, <span class="blue">equilibrio entre datos y operaciones, conformando una "clase" de objetos reinstanciable</span>, <strong class="green">síntesis</strong></p>
+<p><strong class="red">Paradigma Orientado a Datos</strong>, <span class="red">preponderancia de los datos sobre las operaciones</span> (1ª forma normal, 2ª forma normal, &#8230;&#8203;, Boyce-Codd)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red">antitesis</strong> como <span class="red">reacción a los problemas de mantenibilidad al modificar los datos</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Paradigma Orientado a Objetos</strong>, <span class="green">equilibrio entre datos y operaciones, conformando una "clase" de objetos reinstanciable</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="green">síntesis</strong> como <span class="green">equilibrio entre ambas posturas anteriores</span></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -2196,11 +2295,6 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Ejes según fundamento y bloque de construcción</th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2221,11 +2315,185 @@ let y = x + <span class="integer">1</span>;</code></pre>
 </colgroup>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Con funciones como <strong class="blue">bloque constitutivo de las aplicaciones</strong> software con</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">opcionalmente, entrada de datos y otras funciones</strong>, en tal caso será una <strong class="blue">función de orden superior</strong></p>
+</li>
+<li>
+<p>En el paradigma <strong class="red">imperativo</strong> se permite:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="red">declaración local de <strong>variables</strong> y/o constantes</span></p>
+</li>
+<li>
+<p><span class="red">agrupación de <strong>sentencias</strong> secuenciales, alternativas y/o iterativas</span></p>
+</li>
+<li>
+<p><span class="red"><strong>opcionalmente</strong>, el retorno de un valor de salida</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>En el paradigma <strong class="green">funcional</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="green">declaración local de <strong>constantes</strong></span></p>
+</li>
+<li>
+<p><span class="green">una única <strong>expresión</strong> para la regla de correspondencia</span></p>
+</li>
+<li>
+<p><span class="green"><strong>obligatoriamente</strong>, el retorno de un valor de salida</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">App</span> {
+
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Inicio.</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">ArrayList</span>&lt;<span class="predefined-type">Integer</span>&gt; integerList =
+      <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;<span class="predefined-type">Integer</span>&gt;(<span class="predefined-type">Arrays</span>.asList(<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>,<span class="integer">6</span>,<span class="integer">7</span>,<span class="integer">8</span>,<span class="integer">9</span>,<span class="integer">10</span>));
+    integerList.removeIf(integer -&gt; {
+        <span class="type">boolean</span> isPrime = <span class="predefined-constant">false</span>;
+        <span class="keyword">if</span> (integer &gt;= <span class="integer">2</span>){
+          <span class="type">int</span> next = <span class="integer">2</span>;
+          <span class="keyword">while</span> (integer % next != <span class="integer">0</span>){
+            next++;
+          }
+          isPrime = integer == next;
+        }
+        <span class="keyword">return</span> !isPrime;});
+    <span class="keyword">for</span>(<span class="predefined-type">Integer</span> integer : integerList){
+      <span class="predefined-type">System</span>.out.println(integer);
+    }
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Fin.</span><span class="delimiter">&quot;</span></span>);
+  }
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/imperativoProcesos.jpg" alt="imperativoProcesos"></span></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/funcionalProcesos.jpg" alt="funcionalProcesos"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">(1) Muy frecuentemente</strong> soluciones <strong class="green">mutables e iterativas</strong>, porque es la <span class="green">naturaleza del paradigma</span></p>
+</li>
+<li>
+<p><strong class="blue">(4) Infrecuentemente</strong> soluciones <strong class="blue">mutables y recursivas</strong> o <strong class="blue">inmutables e iterativas</strong> porque el <span class="blue">dominio es recursivo o inmutable</span></p>
+</li>
+<li>
+<p><strong class="red">(7) Muy infrecuentemente</strong> soluciones <strong class="red">inmutables y recursivas</strong> porque el <span class="red">dominio es inmutable y recursiva</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">(1) Muy frecuentemente</strong> soluciones <strong class="green">inmutables y recursivas</strong> porque es la <span class="green">naturaleza del paradigma</span></p>
+</li>
+<li>
+<p><strong class="blue">(4) Infrecuentemente</strong> soluciones <strong class="blue">mutalbes e iterativas</strong> porque se requieren <span class="blue">efectos laterales</span></p>
+</li>
+<li>
+<p><strong class="red">(7) Muy infrecuentemente</strong> soluciones <strong class="red">inmutables e iterativas</strong> o <strong class="red">mutables y recursivas</strong> porque se requieren <span class="red">optimizaciones o efectos laterales</span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Orientado a Procesos</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Mutable</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Inmutable</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Iterativo</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/iterative/process/tads">TAD&#8217;s</a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/iterative/process/highOrder">HighOrder</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="">  </a></p>
+</li>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/iterative/process/highOrder">HighOrder</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Recursivo</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/recursive/process/tads">TAD&#8217;s</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/recursive/process/seal">Sealed</a></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -2323,17 +2591,17 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>un <strong class="green">objeto que combina datos y operaciones válidas sobre esos datos</strong>, <span class="green">cohesionando la legibilidad del software al elevar el sistema de tipos del desarrollador</span></p>
+<p>un <strong class="green">objeto que combina datos y operaciones válidas sobre esos datos, mensajes</strong>, <span class="green">cohesionando la legibilidad del software al elevar el sistema de tipos del desarrollador</span></p>
 </li>
 <li>
-<p><strong class="green">polimorfismo que a través de un enlace dinámico que permite colaborar a un objeto con distintos tipos de objetos</strong> <span class="green">desacoplando el software de sus colaboradores actuales y/o futuros al elevar la abstracción, ocultación, generalización y extensibilidad</span></p>
+<p><strong class="green">polimorfismo (enlace dinámico) que a través de un enlace dinámico permite colaborar a un objeto con distintos tipos de objetos</strong> <span class="green">desacoplando el software de sus colaboradores actuales y/o futuros al elevar la abstracción, ocultación, generalización y extensibilidad</span></p>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong class="red">puro o no</strong>, <em>Eiffel/ Smalltalk vs Java</em> que dispone de tipos primitivos y operadores</p>
+<p><strong class="red">puro o no</strong>, <em>Eiffel/ Smalltalk vs Java</em> que dispone de tipos primitivos con operadores diferentes de objetos con mensajes</p>
 </li>
 <li>
 <p><strong class="red">clases o no</strong>, <em>Javascript vs Java</em> que requiere la definición de cada clase</p>
@@ -2342,10 +2610,10 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <p><strong class="red">herencia o no</strong>, <em>Smalltalk vs Simula</em> que solo incorpora implementación de interfaces</p>
 </li>
 <li>
-<p><strong class="red">mutabilidad o no</strong>, <em>C++ vs Haskell</em> que no permite cambios de estado</p>
+<p><strong class="red">con estado o no</strong>, furto de la cosificacion de un algoritmo: <em>controller, mapper, checker, &#8230;&#8203;</em></p>
 </li>
 <li>
-<p><strong class="red">con estado o no</strong>, furto de la cosificacion de un algoritmo: <em>controller, mapper, checker, &#8230;&#8203;</em></p>
+<p><strong class="red">mutabilidad o no</strong>, <em>C++ vs Haskell</em> que no permite cambios de estado</p>
 </li>
 </ul>
 </div></div></td>
@@ -2364,6 +2632,37 @@ let y = x + <span class="integer">1</span>;</code></pre>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="image"><img src="images/funcionalObjetos.jpg" alt="funcionalObjetos"></span></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">(1) Muy frecuentemente</strong> soluciones <strong class="green">mutables e iterativas</strong>, porque es la <span class="green">naturaleza del paradigma</span></p>
+</li>
+<li>
+<p><strong class="blue">(2) Infrecuentemente</strong> soluciones <strong class="blue">mutables y recursivas</strong> o <strong class="blue">inmutables e iterativas</strong> porque el <span class="blue">dominio es recursivo o inmutable</span></p>
+</li>
+<li>
+<p><strong class="red">(3) Muy infrecuentemente</strong> soluciones <strong class="red">inmutables y recursivas</strong> porque el <span class="red">dominio es inmutable y recursiva</span></p>
+</li>
+<li>
+<p>A través de los <strong class="red">métodos estáticos u objetos función</strong> caben todas las combinaciones del <span class="red">paradigma imperativo orientado a procesos</span></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">(4) Muy frecuentemente</strong> soluciones <strong class="green">inmutables y recursivas</strong> porque es la <span class="green">naturaleza del paradigma</span></p>
+</li>
+<li>
+<p><strong class="red">(7) Infrecuentemente</strong> soluciones <strong class="red">mutalbes e iterativas</strong> o <strong class="red">inmutables e iterativas</strong> o <strong class="red">mutables y recursivas</strong> porque se requieren <span class="red">optimizaciones y/o efectos laterales</span></p>
+</li>
+<li>
+<p>A través de los <strong class="red">métodos estáticos u objetos función</strong> caben todas las combinaciones del <span class="red">paradigma imperativo orientado a procesos</span></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -2387,50 +2686,10 @@ let y = x + <span class="integer">1</span>;</code></pre>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong class="blue">Iterativo</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Procesos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/iterative/process/tads">TAD&#8217;s</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/iterative/process/highOrder">HighOrder</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Procesos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="">  </a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/iterative/process/highOrder">HighOrder</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Objetos</strong></p>
-<div class="ulist">
 <ul>
 <li>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/iterative/object/composition">Composition</a></p>
@@ -2445,15 +2704,8 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/iterative/object/anonymus">Anonymus</a></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Objetos</strong></p>
-<div class="ulist">
 <ul>
 <li>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/iterative/object/composition">Composition</a></p>
@@ -2462,50 +2714,13 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/iterative/object/inherits">Inherits</a></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong class="green">Recursivo</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Procesos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/recursive/process/tads">TAD&#8217;s</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Procesos</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/recursive/process/seal">Sealed</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Objetos</strong></p>
-<div class="ulist">
 <ul>
 <li>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/recursive/object/composition">Composition</a></p>
@@ -2520,24 +2735,14 @@ let y = x + <span class="integer">1</span>;</code></pre>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/mutable/recursive/object/anonymus">Anonymus</a></p>
 </li>
 </ul>
-</div>
-</li>
-</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Orientado a Objetos</strong></p>
-<div class="ulist">
 <ul>
 <li>
 <p><a href="">  </a></p>
 </li>
 <li>
 <p><a href="https://github.com/USantaTecla-tech-java/paradigms/tree/main/src/main/java/es/usantatecla/paradigms/inmutable/recursive/object/inherits">Inherits</a></p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div></div></td>
@@ -3831,6 +4036,104 @@ a11 -&gt; a21 -&gt; a22 -&gt; a12 -&gt; a13 -&gt; a23 =&gt; x = 1
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="programación-no-bloqueante">Programación No Bloqueante</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Solución</th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Javascript</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="blue">Java</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Retrollamadas, <em>Callbacks</em></strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Funciones de orden superior</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Interfaz Funcional con funciones <em>lambda</em></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Futuribles</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Promesas</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>ComputableFuture</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lenguaje</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>async/await</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>VirtualThreads</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong class="blue">Programación Reactiva</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>RxJS</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Reactor de Spring con Flux y Mono</p>
+</li>
+<li>
+<p>Mutiny de Quarkus con Uni y Multi</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="según-otros-criterios">Según otros criterios</h3>
@@ -4108,10 +4411,6 @@ a11 -&gt; a21 -&gt; a22 -&gt; a12 -&gt; a13 -&gt; a23 =&gt; x = 1
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="programación-funcional-reactiva">Programación Funcional Reactiva</h4>
-
-</div>
 </div>
 </div>
 </div>
