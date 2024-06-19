@@ -4002,131 +4002,204 @@ a11 -&gt; a21 -&gt; a22 -&gt; a12 -&gt; a13 -&gt; a23 =&gt; x = 1
 </table>
 </div>
 <div class="sect3">
-<h4 id="paradigma-imperativo-vs-declarativo">Paradigma Imperativo vs Declarativo</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Paradigma Imperativo</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Paradigma Declarativo</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">concurrencia muy compleja/costosa</span>: semáforos, regiones críticas, sincronización de barrera, interbloqueos, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">concurrencia "regalada" por el entorno (intérprete, máquina, &#8230;&#8203;​), "máximamente" paralelizable por la transparencia referencial</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
 <h4 id="programación-no-bloqueante">Programación No Bloqueante</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Solución</th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Javascript</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Java</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Programación Bloqueante</strong></th>
+<th class="tableblock halign-left valign-top"><strong class="green">Programación No Bloqueante</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="red">Cuando un programa ejecuta una operación de E/S, su proceso se bloquea hasta la llegada/salida de los datos</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Motivo por el que se denomina <strong class="red">programación síncrona</strong>: <span class="red">un proceso avanza cuando otro proceso alcanza cierto avance de ejecución</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong class="red">Problemas de escalabilidad</strong> por la <span class="red">planificación y despacho de procesos cuando éstos alcanza un gran volumen</span> (<em><a href="https://en.wikipedia.org/wiki/C10k_problem">problema C10k</a></em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Un servidor web que ejecuta un hilo/proceso por cada petición (miles, cientos de miles, &#8230;&#8203;) con latencias de 250.000.000 de ciclos de procesador desaprovechados en operaciones de E/S</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="green">Cuando un programa ejecuta una operación de E/S, su proceso no se bloquea hasta la llegada/salida de los datos y coontinua su ejecución por otro punto</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Motivo por el que se denomina <strong class="green">programación asíncrona</strong>: <span class="green">un proceso avanza sin que otro proceso alcance cierto avance de ejecución</span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Esto evita el problema de escalabilidad contemplando un <span class="green"><strong>único proceso que atiende una cola de eventos</strong> con peticiones de usuario, resultados de E/S asíncrona de ficheros, red, &#8230;&#8203;</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Motivo por el que se denomina <strong class="green">programación reactiva</strong>: <span class="green">el proceso en ejecución reacciona ante eventos, llegada de datos, &#8230;&#8203;</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/costIO.jpg" alt="costIO"></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="images/eventLoop.jpg" alt="eventLoop"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 65%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Programación Asíncrona No Bloqueante</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong class="blue">Retrollamadas, <em>Callbacks</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<div class="ulist">
 <ul>
 <li>
-<p>Funciones de orden superior</p>
+<p><span class="blue">Se registra en la operación de E/S, la operación que tratará los datos cuando lleguen</span>.</p>
+</li>
+<li>
+<p><span class="blue">Una función de orden superior recibe función continuadora</span></p>
+</li>
+<li>
+<p><strong class="red">Producen un código muy complejo de entender</strong> (<strong class="red"><em>Callback Hell</em></strong>)</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Interfaz Funcional con funciones <em>lambda</em></p>
+<p><em class="blue">Javascript</em>, de forma natural desde su origen con funciones de orden superior</p>
+</li>
+<li>
+<p><em class="blue">Java</em>, desde Java 8 con Interfaz Funcional con funciones <em>lambda</em></p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong class="blue">Futuribles</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<div class="ulist">
 <ul>
 <li>
-<p>Promesas</p>
+<p><span class="blue">versión orientada a objetos de los <em>callbacks</em> orientados a procesos</span></p>
+</li>
+<li>
+<p>Mejoran la gestión de <em>callbacks</em>, pero sólo <strong class="red">soportan un objeto en el futuro y están limitadas</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>ComputableFuture</p>
+<p><em class="blue">Javascript</em>, con <strong class="blue">Promesas</strong></p>
 </li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Lenguaje</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
 <li>
-<p>async/await</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>VirtualThreads</p>
+<p><em class="blue">Java</em>, con <strong class="blue">ComputableFuture</strong></p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong class="blue">Mecanismos particulares de cada lenguaje</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em class="blue">Javascript, C-sharp</em>, con async/await</p>
+</li>
+<li>
+<p><em class="blue">Java</em>, con VirtualThreads</p>
+</li>
+<li>
+<p><em class="blue">Go, Kotlin</em>, con rutinas</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong class="blue">Programación Reactiva</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<div class="ulist">
 <ul>
 <li>
-<p>RxJS</p>
+<p><strong class="green">se considera el modelo más potente</strong>, pero <strong class="red">no es sencillo de usar</strong></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Reactor de Spring con Flux y Mono</p>
+<p><em class="blue">Javascript</em>, con <strong class="blue">RxJS</strong></p>
 </li>
 <li>
-<p>Mutiny de Quarkus con Uni y Multi</p>
+<p><em class="blue">Java</em>, con <a href="https://github.com/MasterCloudApps/2.1.Tecnologias-de-servicios-web/blob/master/tema6-reactive/Spring/reactive-ejem5-users-functional/src/main/java/es/codeurjc/users/UserService.java"><strong class="blue">Reactor de Spring</a> vs <a href="https://github.com/MasterCloudApps/2.1.Tecnologias-de-servicios-web/blob/master/tema6-reactive/Spring/reactive-ejem3-users-imperative/src/main/java/es/codeurjc/users/UserService.java">sin Reactor</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cambian <em class="blue">Stream</em> por <em class="blue">Flux/Multi</em> y <em class="blue">Optional</em> por <em class="blue">Mono/Uni</em></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div></div></td>
@@ -4391,22 +4464,20 @@ a11 -&gt; a21 -&gt; a22 -&gt; a12 -&gt; a13 -&gt; a23 =&gt; x = 1
 <div class="ulist">
 <ul>
 <li>
-<p><strong class="green">Lenguajes multiparadigmaticos:</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/Henry/Leda"><strong class="green">Leda</strong></a>, &#8230;&#8203;,</p>
+<p><strong class="red">El problema del desplazamiento</strong> de C a C++, <strong class="red">Arquitecturas CISC vs RISC</strong>, &#8230;&#8203; <strong class="green">¿Sencillo</strong> o <strong class="red">¿complejo?</strong></p>
 </li>
 <li>
-<p><a href="https://stackoverflow.com/questions/3962604/is-javascript-a-functional-programming-language"><strong class="red">Javascript!?!</strong></a>, &#8230;&#8203;</p>
+<p><strong class="blue">Lenguajes multiparadigmaticos:</strong> <a href="https://github.com/Henry/Leda"><strong class="blue">Leda</strong></a>, &#8230;&#8203;, <a href="https://stackoverflow.com/questions/3962604/is-javascript-a-functional-programming-language"><strong class="red">Javascript!?!</strong></a></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-</li>
-</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
+<p><strong class="red">¿En el caso de que fuera conveniente, arregla los problemas de los proyectos como para justificar la inversión de tiempo/esfuerzo, &#8230;&#8203; que absorbe actualmente &#8230;&#8203; o desde siempre?</strong> <strong class="green">¿Gestión, Requisitos, Análisis, &#8230;&#8203;?</strong></p>
 </div></div></td>
 </tr>
 </tbody>
